@@ -18,8 +18,6 @@ public class PlayerInput : MonoBehaviour
     public float walkSpeed;
     public float jumpForce;
     public float deathfadeDelay;
-    private float horizontalVelocity;
-    
 
     [Header("Booleans")]
     public bool dead;
@@ -29,6 +27,8 @@ public class PlayerInput : MonoBehaviour
 
     [Header("Input Vectors")]
     public Vector2 controlInput;
+    private float horizontalVelocity;
+    private float verticalVelocity;
 
     //Hash ID
     private int MovementID = 0;
@@ -54,11 +54,25 @@ public class PlayerInput : MonoBehaviour
         
     }
 
-    void CharacterInput()
+    void MoveInput()
+    {
+        //horizontalVelocity = Input.GetAxisRaw("Horizontal");
+        //verticalVelocity = Input.GetAxisRaw("Vertical");
+
+
+    }
+
+    void MoveCalc()
     {
 
     }
-    void MoveCalc()
+
+    void JumpInput()
+    {
+
+    }
+
+    void JumpCalc()
     {
 
     }
