@@ -13,18 +13,22 @@ public class PlayerInput : MonoBehaviour
     //Will eventually search spawner out by scene
     public Transform currentSpawn;
 
-
+    [Header("Player Modifiers")]
     public int health;
-    public bool grounded;
     public float walkSpeed;
-    public float jumpSpeed;
+    public float jumpForce;
+    public float deathfadeDelay;
+    private float horizontalVelocity;
+    
+
+    [Header("Booleans")]
+    public bool dead;
+    public bool grounded;
     public bool headBangin;
     public bool interact;
-    
-    public float fadeDelay;
-    public bool dead;
-    public Vector2 controlInput;
 
+    [Header("Input Vectors")]
+    public Vector2 controlInput;
 
     //Hash ID
     private int MovementID = 0;
@@ -32,7 +36,7 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //
+        //Will eventually seek out spawn point by scene
         this.transform.position = currentSpawn.position;
         this.transform.rotation = currentSpawn.rotation;
 
@@ -49,4 +53,15 @@ public class PlayerInput : MonoBehaviour
     {
         
     }
+
+    void CharacterInput()
+    {
+
+    }
+    void MoveCalc()
+    {
+
+    }
+
+
 }
