@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
 
         movement = transform.TransformDirection(movement);
-        movement *= speed;
+        movement *= speed * Time.deltaTime;
 
         transform.position += movement;
         //rb.AddForce(movement);
