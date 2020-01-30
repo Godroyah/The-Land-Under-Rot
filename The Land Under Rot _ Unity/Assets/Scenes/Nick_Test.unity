@@ -1058,7 +1058,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!114 &443218120
 MonoBehaviour:
@@ -1075,13 +1075,13 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   currentSpawn: {fileID: 0}
   health: 0
-  grounded: 0
   walkSpeed: 0
-  jumpSpeed: 0
+  jumpForce: 0
+  deathfadeDelay: 0
+  dead: 0
+  grounded: 0
   headBangin: 0
   interact: 0
-  fadeDelay: 0
-  dead: 0
   controlInput: {x: 0, y: 0}
 --- !u!136 &443218121
 CapsuleCollider:
@@ -1160,7 +1160,7 @@ MeshRenderer:
   m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
+  m_ImportantGI: 1
   m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
