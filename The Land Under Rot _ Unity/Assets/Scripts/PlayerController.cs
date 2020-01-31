@@ -6,25 +6,27 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Components")]
     #region Player Components
-    public GameObject playerCamera;
+    //public GameObject playerCamera;
     private Animator animator;
     public CamControl camControl;
     private Rigidbody rb;
     //Will eventually search spawner out by scene
-    public Transform currentSpawn;
+    //public Transform currentSpawn;
     #endregion
 
     [Header("Player Modifiers")]
     #region Modifiers
     public int health = 3;
     [Range(1, 20)]
-    public float speed = 12;
+    public float moveSpeed = 12f;
     [Range(1, 20)]
     public float jumpStrength = 10f;
-    public float rotateVel = 100;
-    public float minRotationDelay = 15f;
+    //[Range(0,200), Tooltip("Controls how fast the obj rotates when moving.")]
+    //public float rotateVel = 100;
+    //public float minRotationDelay = 15f;
+    [Range(0, 200), Tooltip("Controls how fast the obj rotates when moving.")]
     public float rotationSpeed = 0.1f;
-    public float deathfadeDelay;
+    //public float deathfadeDelay;
     [Range(0.001f,5)]
     public float fallMultiplierFloat = 2f; // TODO: Look at this for GLIDING later
     #endregion
@@ -40,11 +42,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Input")]
     #region Input
+    [Range(0,1), Tooltip("Cutoff for the value when the input is accepted.")]
     public float inputDelay = 0.1f;
-    [Range(0.001f, 1), Tooltip("This determines how responsive the obj is to movement.")]
+    [Range(0.001f, 1), Tooltip("Determines how responsive the obj is to movement.")]
     public float rotationTargetDist = 0.1f;
-    [Range(0, 1), Tooltip("This will be the cutoff distance for when the obj will rotate. This will also be capped by the rotationTargetDist.")]
+    [Range(0, 1), Tooltip("Cutoff distance for when the obj will rotate. This will also be capped by the rotationTargetDist.")]
     public float rotationCutoff = 0f;
+    [HideInInspector]
     public Vector2 controlInput;
     private float horizontalInput;
     private float verticalInput;
@@ -140,7 +144,7 @@ public class PlayerController : MonoBehaviour
         rotationTarget.position = tempDir + transform.position;
 
         movement = rotationTarget.TransformDirection(movement);
-        movement *= speed * Time.deltaTime;
+        movement *= moveSpeed * Time.deltaTime;
 
         transform.position += movement;
         //rb.AddForce(movement);
