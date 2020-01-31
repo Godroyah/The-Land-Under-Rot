@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
         Vector3 tempDir = rotationTarget.TransformDirection(movement * 0.1f); // TODO: Hardcoded Detection Radius
         rotationTarget.position = tempDir + transform.position;
 
-        movement = camControl.transform.TransformDirection(movement);
+        movement = rotationTarget.TransformDirection(movement);
         movement *= speed * Time.deltaTime;
 
         transform.position += movement;
