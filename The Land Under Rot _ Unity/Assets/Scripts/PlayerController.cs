@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour
     [Header("Input")]
     #region Input
     public float inputDelay = 0.1f;
+    [Range(0.001f, 1), Tooltip("This determines how responsive the obj is to movement.")]
+    public float rotationTargetDist = 0.1f;
+    [Range(0,1),Tooltip("This will be the cutoff distance for when the obj will rotate. This will also be capped by the rotationTargetDist.")]
+    public float rotationCutoff = 0f;
     public Vector2 controlInput;
     private float horizontalInput;
     private float verticalInput;
@@ -89,16 +93,9 @@ public class PlayerController : MonoBehaviour
         
         // TODO: Limit this to happen if outside of specific range
         //       Maybe if no input don't move rotationTarget?
-        if (true)
+        if (Vector3.Distance(transform.position, rotationTarget.position) > rotationCutoff )
         {
-            //find the vector pointing from our position to the target
-            Vector3 _direction = (rotationTarget.position - transform.position).normalized;
-
-            //create the rotation we need to be in to look at the target
-            Quaternion _lookRotation = Quaternion.LookRotation(_direction);
-
-            //rotate us over time according to speed until we are in the required rotation
-            transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed);
+            Rotate();
         } 
         
     }
@@ -123,7 +120,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
 
-        Vector3 tempDir = rotationTarget.TransformDirection(movement * 0.1f); // TODO: Hardcoded Detection Radius
+        Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist); // TODO: Hardcoded Detection Radius
         rotationTarget.position = tempDir + transform.position;
 
         movement = rotationTarget.TransformDirection(movement);
@@ -131,6 +128,19 @@ public class PlayerController : MonoBehaviour
 
         transform.position += movement;
         //rb.AddForce(movement);
+    }
+
+    private void Rotate()
+    {
+        //find the vector pointing from our position to the target
+        Vector3 _direction = (rotationTarget.position - transform.position).normalized;
+
+        //create the rotation we need to be in to look at the target
+        Quaternion _lookRotation = Quaternion.LookRotation(_direction);
+
+        //rotate us over time according to speed until we are in the required rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed); // TODO: Smoother Transitions
+                                                                                                                  // ^^ For smoother transitions the speed should increase if the distance is shorter
     }
 
 }
