@@ -19,11 +19,14 @@ public class PlayerController : MonoBehaviour
     public int health = 3;
     [Range(1, 20)]
     public float speed = 12;
+    [Range(1, 20)]
+    public float jumpStrength = 10f;
     public float rotateVel = 100;
     public float minRotationDelay = 15f;
     public float rotationSpeed = 0.1f;
-    public float jumpForce;
     public float deathfadeDelay;
+    [Range(0.001f,5)]
+    public float fallMultiplierFloat = 2f; // TODO: Look at this for GLIDING later
     #endregion
 
     [Header("Booleans")]
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public bool isHeadBangin;
     public bool shouldInteract;
+    public bool shouldJump = false;
     #endregion
 
     [Header("Input")]
@@ -39,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public float inputDelay = 0.1f;
     [Range(0.001f, 1), Tooltip("This determines how responsive the obj is to movement.")]
     public float rotationTargetDist = 0.1f;
-    [Range(0,1),Tooltip("This will be the cutoff distance for when the obj will rotate. This will also be capped by the rotationTargetDist.")]
+    [Range(0, 1), Tooltip("This will be the cutoff distance for when the obj will rotate. This will also be capped by the rotationTargetDist.")]
     public float rotationCutoff = 0f;
     public Vector2 controlInput;
     private float horizontalInput;
@@ -90,14 +94,25 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
 
-        
+
         // TODO: Limit this to happen if outside of specific range
         //       Maybe if no input don't move rotationTarget?
-        if (Vector3.Distance(transform.position, rotationTarget.position) > rotationCutoff )
+        if (Vector3.Distance(transform.position, rotationTarget.position) > rotationCutoff)
         {
             Rotate();
-        } 
-        
+        }
+
+        if (shouldJump)
+        {
+            rb.AddForce(rotationTarget.position + Vector3.up * jumpStrength * 50);
+            shouldJump = false;
+        }
+
+        //faster falling
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplierFloat - 1) * Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
@@ -109,6 +124,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+        shouldJump = Input.GetButtonDown("Jump");
     }
 
     private void Move()
