@@ -6,6 +6,7 @@ public class CamControl : MonoBehaviour
 {
     public Camera myCamera;
     public GameObject target;
+    public Transform rotationTarget;
 
     private bool invertPitch = false;
     public float sensitivity_X = 10f;
@@ -53,7 +54,7 @@ public class CamControl : MonoBehaviour
 
         // TODO: JANK rotation correction
         // Seems like over correction to me
-        target.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+        rotationTarget.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
 
     }
 

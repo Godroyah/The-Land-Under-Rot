@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     #region Player Components
     public GameObject playerCamera;
     private Animator animator;
-    private CamControl camControl;
+    public CamControl camControl;
     private Rigidbody rb;
     //Will eventually search spawner out by scene
     public Transform currentSpawn;
@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Modifiers")]
     #region Modifiers
-    public int health;
+    public int health = 3;
+    [Range(1, 20)]
     public float speed = 12;
     public float rotateVel = 100;
+    public float minRotationDelay = 15f;
+    public float rotationSpeed = 0.1f;
     public float jumpForce;
     public float deathfadeDelay;
     #endregion
@@ -31,13 +34,14 @@ public class PlayerController : MonoBehaviour
     public bool shouldInteract;
     #endregion
 
-    [Header("Input Vectors")]
+    [Header("Input")]
     #region Input
     public float inputDelay = 0.1f;
     public Vector2 controlInput;
     private float horizontalInput;
     private float verticalInput;
     private Quaternion targetRotation;
+    private Transform rotationTarget;
     #endregion
 
     //Hash ID
@@ -50,8 +54,17 @@ public class PlayerController : MonoBehaviour
         else
             rb = GetComponent<Rigidbody>();
 
+        if (camControl == null)
+            Debug.LogWarning("Camera Controller Missing!!");
+
         if (animator != null)
             animator = GetComponent<Animator>();
+
+        rotationTarget = new GameObject().transform;
+        rotationTarget.transform.parent = gameObject.transform;
+        rotationTarget.name = "RotationTarget$$";
+
+        camControl.rotationTarget = rotationTarget;
 
         //camControl = playerCamera.GetComponent<CamControl>();
     }
@@ -72,6 +85,22 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetInput();
+
+        
+        // TODO: Limit this to happen if outside of specific range
+        //       Maybe if no input don't move rotationTarget?
+        if (true)
+        {
+            //find the vector pointing from our position to the target
+            Vector3 _direction = (rotationTarget.position - transform.position).normalized;
+
+            //create the rotation we need to be in to look at the target
+            Quaternion _lookRotation = Quaternion.LookRotation(_direction);
+
+            //rotate us over time according to speed until we are in the required rotation
+            transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed);
+        } 
+        
     }
 
     private void FixedUpdate()
@@ -94,16 +123,14 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
 
-        movement = transform.TransformDirection(movement);
+        Vector3 tempDir = rotationTarget.TransformDirection(movement * 0.1f); // TODO: Hardcoded Detection Radius
+        rotationTarget.position = tempDir + transform.position;
+
+        movement = camControl.transform.TransformDirection(movement);
         movement *= speed * Time.deltaTime;
 
         transform.position += movement;
         //rb.AddForce(movement);
-    }
-
-    public Quaternion GetTargetRotation()
-    {
-        return targetRotation;
     }
 
 }
