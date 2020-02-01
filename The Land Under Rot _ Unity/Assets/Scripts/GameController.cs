@@ -33,30 +33,32 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(mainMenu.activeInHierarchy == true)
+        if(testing)
         {
-            mmenu_Active = true;
+            if (mainMenu.activeInHierarchy == true)
+            {
+                mmenu_Active = true;
+            }
+            else
+            {
+                mmenu_Active = false;
+            }
         }
-        else
-        {
-            mmenu_Active = false;
-        }
-
         Pause();
     }
 
     public void Pause()
     {
-        if(mmenu_Active == false)
+        if((mmenu_Active == false && testing == true) || testing == false)
         {
-            Debug.Log("Active?");
+           // Debug.Log("Active?");
             if (Input.GetButton("Pause"))
             {
                 if (!paused)
                 {
                     Cursor.visible = true;
-                    Time.timeScale = 0;
                     pauseMenu.SetActive(true);
+                    Time.timeScale = 0;
                 }
                 else
                 {
@@ -64,6 +66,14 @@ public class GameController : MonoBehaviour
                     pauseMenu.SetActive(false);
                     Time.timeScale = 1;
                 }
+            }
+
+            if(Input.GetButtonUp("Pause"))
+            {
+                if (!paused)
+                    paused = true;
+                else if (paused)
+                    paused = false;
             }
         }
     }
@@ -73,6 +83,7 @@ public class GameController : MonoBehaviour
         Cursor.visible = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        paused = false;
     }
 
     public void QuitGame()
@@ -85,16 +96,19 @@ public class GameController : MonoBehaviour
 
     public void QuitToMenu()
     {
-        if(testing)
+        Time.timeScale = 1;
+        if (testing)
         {
             pauseMenu.SetActive(false);
             quitOption.SetActive(false);
+            resumeButton.interactable = true;
+            quitButton.interactable = true;
             mainMenu.SetActive(true);
             Time.timeScale = 1;
         }
         else
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -113,6 +127,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            Debug.Log("Quit");
             Application.Quit();
         }
     }
