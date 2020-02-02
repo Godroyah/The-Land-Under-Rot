@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public CamControl camControl;
     private Rigidbody rb;
     //Will eventually search spawner out by scene
-    //public Transform currentSpawn;
+    public Transform currentSpawn;
+    public Transform playerHolder;
     #endregion
 
     [Header("Player Modifiers")]
@@ -85,8 +86,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         // TODO: Find Spawn Point
-        //this.transform.position = currentSpawn.position;
-        //this.transform.rotation = currentSpawn.rotation;
+        this.transform.position = currentSpawn.position;
+        this.transform.rotation = currentSpawn.rotation;
 
         //targetRotation = currentSpawn.rotation;
 
