@@ -201,12 +201,12 @@ public class PlayerController : MonoBehaviour
         transform.rotation = currentSpawn.rotation;
         rb.velocity = Vector3.zero;
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Spawn_Volume"))
         {
-            Spawn_Volume volume = other.GetComponent<Spawn_Volume>();
+            //Spawn_Volume volume = other.GetComponent<Spawn_Volume>();
 
             SpawnType spawnType = SpawnType.NONE;
             //SpawnType spawnType = volume.spawnType;
@@ -230,7 +230,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    */
 }
 
 public enum SpawnType { NONE, START, RESPAWN, KILL }
