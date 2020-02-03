@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MusicSystem : MonoBehaviour
 {
+    private AudioSource oldSource;
     private AudioSource currentSource;
 
     public AudioSource newSource;
+
+    private Coroutine transitioning;
 
     [Range(0.01f, 1f)]
     public float transitionSpeed = 0.1f;
@@ -22,38 +25,42 @@ public class MusicSystem : MonoBehaviour
     {
         if (newSource != null)
         {
-            StartCoroutine(Transition(currentSource, newSource));
-            newSource = null;
+            StopCoroutine(transitioning);
+            transitioning = StartCoroutine(Transition());
         }
     }
 
-    IEnumerator Transition(AudioSource source1, AudioSource source2)
+    IEnumerator Transition()
     {
+        oldSource = currentSource;
+        currentSource = newSource;
+        newSource = null;
+        float sourceCurrent_MaxVolume = currentSource.volume;
+        newSource.volume = 0;
 
-        float source2_MaxVolume = source2.volume;
-        source2.volume = 0;
-
-        while (source1.volume > 0)
+        // Ramps Down the old source
+        while (oldSource.volume > 0)
         {
-            float check = source1.volume - transitionSpeed * Time.deltaTime;
+            float check = oldSource.volume - transitionSpeed * Time.deltaTime;
             if (check < 0f)
             {
-                source1.volume = 0;
+                oldSource.volume = 0;
                 break;
             }
-            source1.volume -= transitionSpeed * Time.deltaTime;
+            oldSource.volume -= transitionSpeed * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
-        while (source2.volume < source2_MaxVolume)
+        // Ramps up the new (current) source
+        while (currentSource.volume < sourceCurrent_MaxVolume)
         {
-            float check = source1.volume + transitionSpeed * Time.deltaTime;
-            if (check > source2_MaxVolume)
+            float check = currentSource.volume + transitionSpeed * Time.deltaTime;
+            if (check > sourceCurrent_MaxVolume)
             {
-                source2.volume = source2_MaxVolume;
+                newSource.volume = sourceCurrent_MaxVolume;
                 break;
             }
-            source2.volume += transitionSpeed * Time.deltaTime;
+            currentSource.volume += transitionSpeed * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
@@ -64,7 +71,13 @@ public class MusicSystem : MonoBehaviour
     {
         if (other.CompareTag("MusicTrigger"))
         {
-            newSource = other.GetComponent<MusicTrigger>().audioSource;
+           AudioSource tempSource = other.GetComponent<MusicTrigger>().audioSource;
+            if (tempSource == currentSource || tempSource == newSource)
+            {
+                Debug.Log("MusicSystem entered the same trigger as the current source");
+            }
+            else
+                newSource = tempSource;
         }
     }
 }
