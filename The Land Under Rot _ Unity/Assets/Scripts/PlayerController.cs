@@ -99,6 +99,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         // TODO: Find Spawn Point
+        if (currentSpawn == null)
+        {
+            currentSpawn = transform;
+        }
+
         this.transform.position = currentSpawn.position;
         this.transform.rotation = currentSpawn.rotation;
 

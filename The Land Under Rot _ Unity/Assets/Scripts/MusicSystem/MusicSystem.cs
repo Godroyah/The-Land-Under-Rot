@@ -36,7 +36,8 @@ public class MusicSystem : MonoBehaviour
         currentSource = newSource;
         newSource = null;
         float sourceCurrent_MaxVolume = currentSource.volume;
-        newSource.volume = 0;
+        currentSource.volume = 0;
+        currentSource.mute = false;
 
         // Ramps Down the old source
         while (oldSource.volume > 0)
@@ -64,6 +65,8 @@ public class MusicSystem : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        oldSource.mute = true;
+
         yield return new WaitForEndOfFrame();
     }
 
@@ -71,13 +74,13 @@ public class MusicSystem : MonoBehaviour
     {
         if (other.CompareTag("MusicTrigger"))
         {
-           AudioSource tempSource = other.GetComponent<MusicTrigger>().audioSource;
-            if (tempSource == currentSource || tempSource == newSource)
+           MusicTrigger trigger = other.GetComponent<MusicTrigger>();
+            if (trigger.audioSource == currentSource || trigger.audioSource == newSource)
             {
                 Debug.Log("MusicSystem entered the same trigger as the current source");
             }
             else
-                newSource = tempSource;
+                newSource = trigger.audioSource;
         }
     }
 }
