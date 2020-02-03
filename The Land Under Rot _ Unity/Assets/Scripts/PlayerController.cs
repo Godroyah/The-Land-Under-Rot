@@ -18,33 +18,44 @@ public class PlayerController : MonoBehaviour
     [Header("Player Modifiers")]
     #region Modifiers
     public int health = 3;
+
     [Range(1, 20)]
     public float moveSpeed = 12f;
+
     [Range(1, 20)]
     public float jumpStrength = 10f;
+
     //[Range(0,200), Tooltip("Controls how fast the obj rotates when moving.")]
     //public float rotateVel = 100;
     //public float minRotationDelay = 15f;
+
     [Range(0, 200), Tooltip("Controls how fast the obj rotates when moving.")]
     public float rotationSpeed = 0.1f;
+
     //public float deathfadeDelay;
-    [Range(0.001f,5)]
+
+    [Range(0.001f, 5)]
     public float fallMultiplierFloat = 2f; // TODO: Look at this for GLIDING later
     #endregion
 
+
     [Header("Booleans")]
     #region Bools
-    public bool isDead;
-    public bool isGrounded;
-    public bool isHeadBangin;
-    public bool shouldInteract;
-    public bool shouldJump = false;
+    private bool isDead;
+    private bool isGrounded;
+    private bool isHeadBangin;
+    private bool shouldInteract = false;
+    private bool shouldJump = false;
     #endregion
+
 
     [Header("Input")]
     #region Input
-    [Range(0,1), Tooltip("Cutoff for the value when the input is accepted.")]
+    [Range(0, 1), Tooltip("Cutoff for the value when the input is accepted.")]
     public float inputDelay = 0.1f;
+    [Range(0, 1), Tooltip("Delay until the next time 'Interact' is available.")]
+    public float interactDelay = 0.1f;
+    private Coroutine interactingCoroutine;
     [Range(0.001f, 1), Tooltip("Determines how responsive the obj is to movement.")]
     public float rotationTargetDist = 0.1f;
     [Range(0, 1), Tooltip("Cutoff distance for when the obj will rotate. This will also be capped by the rotationTargetDist.")]
@@ -56,6 +67,8 @@ public class PlayerController : MonoBehaviour
     private Quaternion targetRotation;
     private Transform rotationTarget;
     #endregion
+
+    private Interactable currentTarget;
 
     //Hash ID
     private int MovementID = 0;
@@ -118,6 +131,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplierFloat - 1) * Time.deltaTime;
         }
+
+        if (shouldInteract && interactingCoroutine == null)
+        {
+            StartCoroutine(Interacting());
+        }
     }
 
     private void FixedUpdate()
@@ -130,10 +148,23 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         shouldJump = Input.GetButtonDown("Jump");
+        shouldInteract = Input.GetButtonDown("Interact");
+    }
+
+    IEnumerator Interacting()
+    {
+        if (currentTarget != null)
+        {
+            currentTarget.Interact(); // TODO: Find interactable target
+        }
+
+        yield return new WaitForSeconds(interactDelay);
+        interactingCoroutine = null;
     }
 
     private void Move()
     {
+        // Don't start accepting input until it peaks the inputDelay
         if (Mathf.Abs(horizontalInput) < inputDelay)
             horizontalInput = 0;
         if (Mathf.Abs(verticalInput) < inputDelay)
@@ -164,4 +195,42 @@ public class PlayerController : MonoBehaviour
                                                                                                                   // ^^ For smoother transitions the speed should increase if the distance is shorter
     }
 
+    private void Respawn()
+    {
+        transform.position = currentSpawn.position;
+        transform.rotation = currentSpawn.rotation;
+        rb.velocity = Vector3.zero;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Spawn_Volume"))
+        {
+            Spawn_Volume volume = other.GetComponent<Spawn_Volume>();
+
+            SpawnType spawnType = SpawnType.NONE;
+            //SpawnType spawnType = volume.spawnType;
+
+            switch (spawnType)
+            {
+                case SpawnType.NONE:
+                    Debug.LogWarning("SpawnType not set!");
+                    break;
+                case SpawnType.START:
+                    break;
+                case SpawnType.RESPAWN:
+                    currentSpawn = volume.spawnPoint.transform;
+                    break;
+                case SpawnType.KILL:
+                    Respawn();
+                    break;
+                default:
+                    Debug.LogWarning("SpawnType Error.");
+                    break;
+            }
+        }
+    }
+
 }
+
+public enum SpawnType { NONE, START, RESPAWN, KILL }
