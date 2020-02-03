@@ -8,7 +8,7 @@ public class Billboard_UI : MonoBehaviour
     //-----(ex. x = 1, y = 1, z = 1 OR x = 2, y = 2, z = 2, ETC.)
 
 
-
+    public Canvas promptCanvas;
     public Transform camTransform;
     //private Canvas thisCanvas;
     //private Camera eventCam;
@@ -22,7 +22,9 @@ public class Billboard_UI : MonoBehaviour
         //camTransform = playerCam.transform;
         //thisCanvas = GetComponent<Canvas>();
         //thisCanvas.worldCamera = playerCam;
-        
+        camTransform = Camera.main.transform;
+        promptCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
+
         startRotation = transform.rotation;
     }
 

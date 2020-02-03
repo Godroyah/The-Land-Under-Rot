@@ -7,6 +7,10 @@ public class Button_Prompter : MonoBehaviour
 {
     public GameObject buttonPromptUI;
 
+    public Transform textObject;
+
+    public Transform imageObject;
+
     public bool NPC;
 
     public bool Sign;
@@ -15,7 +19,7 @@ public class Button_Prompter : MonoBehaviour
 
     public bool EyeGazer;
 
-    private string objectTag;
+    //private string objectTag;
 
     public string signText;
 
@@ -30,10 +34,21 @@ public class Button_Prompter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objectTag = gameObject.tag;
+        //objectTag = gameObject.tag;
+
+        //--------- Seeks out Text component for writing in desired message ----------
         promptText = buttonPromptUI.GetComponentInChildren<Text>();
-        buttonPromptUI.SetActive(false);
-        if(NPC)
+
+        //------- Sets and initially disables image and text portions of the button prompt UI
+        //buttonPromptUI.SetActive(false);
+        textObject = buttonPromptUI.transform.GetChild(0);
+        imageObject = buttonPromptUI.transform.GetChild(1);
+        textObject.gameObject.SetActive(false);
+        imageObject.gameObject.SetActive(false);
+
+
+        // -------- Allows implementer to manually decide what text they want displayed for the button prompt--------
+        if (NPC)
         {
             promptText.text = npcText;
         }
@@ -56,7 +71,9 @@ public class Button_Prompter : MonoBehaviour
         if(player.gameObject.tag == "Player")
         {
             //Instantiate(buttonPromptUI, transform.position, transform.rotation);
-            buttonPromptUI.SetActive(true);
+            //buttonPromptUI.SetActive(true);
+            textObject.gameObject.SetActive(true);
+            imageObject.gameObject.SetActive(true);
         }
     }
 
@@ -64,7 +81,9 @@ public class Button_Prompter : MonoBehaviour
     {
         if(player.gameObject.tag == "Player")
         {
-            buttonPromptUI.SetActive(false);
+            //buttonPromptUI.SetActive(false);
+            textObject.gameObject.SetActive(false);
+            imageObject.gameObject.SetActive(false);
         }
     }
 }
