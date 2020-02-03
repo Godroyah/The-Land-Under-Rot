@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     public GameObject quitOption;
     public Button resumeButton;
     public Button quitButton;
+    public PlayerController playerController;
+    //public Transform playerRespawn;
+    public bool levelStart;
 
     //-----------------------------------------------------------------
 
@@ -24,10 +27,16 @@ public class GameController : MonoBehaviour
     public bool paused;
     public bool mmenu_Active;
 
+    private void Awake()
+    {
+        //playerController.currentSpawn = playerRespawn;
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        paused = false;
+       paused = false;
     }
 
     // Update is called once per frame

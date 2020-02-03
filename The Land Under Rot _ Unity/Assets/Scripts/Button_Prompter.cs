@@ -11,15 +11,17 @@ public class Button_Prompter : MonoBehaviour
 
     public Transform imageObject;
 
+    public bool promptSet;
+
     public bool NPC;
 
     public bool Sign;
 
     public bool Bark;
 
-    public bool EyeGazer;
+    public bool GazeGrowth;
 
-    //private string objectTag;
+    private string promptTag;
 
     public string signText;
 
@@ -34,35 +36,62 @@ public class Button_Prompter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //objectTag = gameObject.tag;
+        promptTag = "Button_Prompt";
 
-        //--------- Seeks out Text component for writing in desired message ----------
-        promptText = buttonPromptUI.GetComponentInChildren<Text>();
-
-        //------- Sets and initially disables image and text portions of the button prompt UI
-        //buttonPromptUI.SetActive(false);
-        textObject = buttonPromptUI.transform.GetChild(0);
-        imageObject = buttonPromptUI.transform.GetChild(1);
-        textObject.gameObject.SetActive(false);
-        imageObject.gameObject.SetActive(false);
-
-
-        // -------- Allows implementer to manually decide what text they want displayed for the button prompt--------
-        if (NPC)
+        foreach(Transform child in transform)
         {
-            promptText.text = npcText;
+            if(child.tag == promptTag)
+            {
+                buttonPromptUI = child.gameObject;
+            }
         }
-        else if(Sign)
+
+
+        //------ If a the Button Prompt BillboardUI object is a child of this object, it will find it and execute the code below
+        //------ Otherwise it will issue a warning that a Billboard UI prefab is needed as a child of this object --------
+        if(buttonPromptUI != null)
         {
-            promptText.text = signText;
+            promptSet = true;
         }
-        else if(Bark)
+
+        
+        if(promptSet)
         {
-            promptText.text = barkText;
+            //buttonPromptUI = transform.Find()
+            //objectTag = gameObject.tag;
+
+            //--------- Seeks out Text component for writing in desired message ----------
+            promptText = buttonPromptUI.GetComponentInChildren<Text>();
+
+            //------- Sets and initially disables image and text portions of the button prompt UI
+            //buttonPromptUI.SetActive(false);
+            textObject = buttonPromptUI.transform.GetChild(0);
+            imageObject = buttonPromptUI.transform.GetChild(1);
+            textObject.gameObject.SetActive(false);
+            imageObject.gameObject.SetActive(false);
+
+
+            // -------- Allows implementer to manually decide what text they want displayed for the button prompt--------
+            if (NPC)
+            {
+                promptText.text = npcText;
+            }
+            else if (Sign)
+            {
+                promptText.text = signText;
+            }
+            else if (Bark)
+            {
+                promptText.text = barkText;
+            }
+            else if (GazeGrowth)
+            {
+                promptText.text = eyeGazerText;
+            }
         }
-        else if(EyeGazer)
+        else
         {
-            promptText.text = eyeGazerText;
+            Debug.LogWarning("Button_Prompt Prefab not set as child! Please parent a Button_Prompt to this object!");
         }
     }
 
