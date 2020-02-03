@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4683291218590199877}
   - component: {fileID: 4683291218590199928}
   - component: {fileID: 4683291218590199930}
+  - component: {fileID: 4683291218695444124}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -80,17 +81,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camControl: {fileID: 4683291218844730959}
+  currentSpawn: {fileID: 0}
+  playerHolder: {fileID: 0}
   health: 0
   moveSpeed: 12
   jumpStrength: 10
   rotationSpeed: 5
   fallMultiplierFloat: 2
-  isDead: 0
-  isGrounded: 0
-  isHeadBangin: 0
-  shouldInteract: 0
-  shouldJump: 0
   inputDelay: 0.1
+  interactDelay: 0.1
   rotationTargetDist: 0.1
   rotationCutoff: 0
   controlInput: {x: 0, y: 0}
@@ -124,6 +123,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &4683291218695444124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683291218590199876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5cebf9450c14c438e7a55703f5ce15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newSource: {fileID: 0}
+  transitionSpeed: 0.1
 --- !u!1 &4683291218776415986
 GameObject:
   m_ObjectHideFlags: 0
