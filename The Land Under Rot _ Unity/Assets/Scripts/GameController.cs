@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public PlayerController playerController;
     //public Transform playerRespawn;
     public bool levelStart;
+    public bool areaSpawnCalc;
 
     //-----------------------------------------------------------------
 

@@ -33,7 +33,7 @@ public class RegionSpawn : MonoBehaviour
                 currentDist = Vector3.Distance(gamePlayer.transform.position, spawnPoints[i].position);
                 if(currentDist < shortestDist)
                 {
-                    currentDist = shortestDist;
+                    shortestDist = currentDist;
                     playerSpawn = spawnPoints[i].transform;
                 }
             }
