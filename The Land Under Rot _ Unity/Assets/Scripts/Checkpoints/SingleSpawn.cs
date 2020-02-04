@@ -34,9 +34,10 @@ public class SingleSpawn : MonoBehaviour
     {
         if(player.CompareTag("Player"))
         {
-            gameController.areaSpawnCalc = false;
+            //gameController.areaSpawnCalc = false;
             //previousSpawn = player.GetComponent<PlayerController>().currentSpawn;
             player.GetComponent<PlayerController>().currentSpawn = spawnPoint;
+            playerSpawn = player.GetComponent<PlayerController>().currentSpawn;
             activeCorridor = true;
         }
     }
