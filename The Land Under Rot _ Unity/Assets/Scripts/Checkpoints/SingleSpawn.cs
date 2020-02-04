@@ -6,7 +6,7 @@ public class SingleSpawn : MonoBehaviour
 {
     public Transform spawnPoint;
     public Transform playerSpawn;
-    public GameController gameController;
+    //public GameController gameController;
     //public Transform previousSpawn;
     //private PlayerController playerController;
 
@@ -14,7 +14,7 @@ public class SingleSpawn : MonoBehaviour
 
     private void Start()
     {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        //gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         if(playerSpawn == null)
         {
