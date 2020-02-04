@@ -11,6 +11,7 @@ public class RegionSpawn : MonoBehaviour
 
 
     public float[] spawnDistances;
+    public int distanceIndex;
 
     //public List<float> spawnDistance;
     //private List<float> spawnDistance;
@@ -63,9 +64,13 @@ public class RegionSpawn : MonoBehaviour
 
                 if(shortestDist > spawnDistances[i])
                 {
-                    shortestDist = spawnDistances[i];
-                    playerSpawn = spawnPoints[i];
+                    distanceIndex = i;
+                    //shortestDist = spawnDistances[i];
+                    //playerSpawn = spawnPoints[i];
                 }
+
+                shortestDist = spawnDistances[distanceIndex];
+                playerSpawn = spawnPoints[distanceIndex];
 
                 
 
