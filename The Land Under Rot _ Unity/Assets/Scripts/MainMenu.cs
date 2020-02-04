@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Tutorial_Area");
         }
         Cursor.visible = false;
     }
