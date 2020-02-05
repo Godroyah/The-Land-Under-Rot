@@ -240,4 +240,4 @@ public class PlayerController : MonoBehaviour
 }
 
 public enum SpawnType { NONE, START, RESPAWN, KILL }
-//public enum SpawnType { NONE, START, RESPAWN, KILL }
+//public enum SpawnType { NONE, START, SINGLE_RESPAWN, REGION_RESPAWN, SINGLE_KILL, REGION_KILL }
