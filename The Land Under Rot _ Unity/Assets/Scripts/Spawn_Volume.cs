@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SpawnType { NONE, START, SINGLE_RESPAWN, REGION_RESPAWN, SINGLE_KILL, REGION_KILL }
+
 public class Spawn_Volume : MonoBehaviour
 {
+    public SpawnType spawnType; // This gives a drop down menu of the spawn types
+
     public Transform spawnPoint;
     public Transform playerSpawn;
-    public Transform[] spawnPoints;
+    public Transform[] spawnPoints; // Couldn't this simply be multiple spawn volumes?
     public float[] spawnDistances;
     public int distanceIndex;
     public bool activeCorridor;
 
+    /*
     public bool single_Spawn;
     public bool region_Spawn;
     public bool single_Kill_Volume;
     public bool region_Kill_Volume;
+    */
 
-    private SpawnType spawnType;
+    
 
     [SerializeField]
     private float shortestDist;
@@ -28,16 +34,7 @@ public class Spawn_Volume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(single_Spawn || region_Spawn)
-        {
-            spawnType = SpawnType.RESPAWN;
-        }
-        else if(single_Kill_Volume || region_Kill_Volume)
-        {
-            spawnType = SpawnType.KILL;
-        }
-
-        if(region_Spawn)
+        if(spawnType == SpawnType.REGION_RESPAWN)
         {
             spawnDistances = new float[spawnPoints.Length];
         }
@@ -46,7 +43,7 @@ public class Spawn_Volume : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(region_Spawn)
+        if(spawnType == SpawnType.REGION_RESPAWN)
         {
             if (activeSpawnArea == true)
             {
@@ -65,7 +62,7 @@ public class Spawn_Volume : MonoBehaviour
                 }
             }
         }
-        else if(single_Spawn)
+        else if(spawnType == SpawnType.SINGLE_RESPAWN)
         {
             if (playerSpawn != spawnPoint)
             {
@@ -78,13 +75,13 @@ public class Spawn_Volume : MonoBehaviour
     {
         if (player.CompareTag("Player"))
         {
-            if(single_Spawn)
+            if(spawnType == SpawnType.SINGLE_RESPAWN)
             {
                 player.GetComponent<PlayerController>().currentSpawn = spawnPoint;
                 playerSpawn = player.GetComponent<PlayerController>().currentSpawn;
                 activeCorridor = true;
             }
-            else if(region_Spawn)
+            else if(spawnType == SpawnType.REGION_RESPAWN)
             {
                 shortestDist = 99999.0f;
                 activeSpawnArea = true;
@@ -94,7 +91,7 @@ public class Spawn_Volume : MonoBehaviour
 
     private void OnTriggerStay(Collider player)
     {
-        if(region_Spawn)
+        if(spawnType == SpawnType.REGION_RESPAWN)
         {
             if(activeSpawnArea)
             {
@@ -105,7 +102,7 @@ public class Spawn_Volume : MonoBehaviour
 
     private void OnTriggerExit(Collider player)
     {
-        if(region_Spawn)
+        if(spawnType == SpawnType.REGION_RESPAWN)
         {
             if (player.CompareTag("Player"))
             {
