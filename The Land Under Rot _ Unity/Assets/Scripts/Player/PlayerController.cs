@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Modifiers")]
     #region Modifiers
-    public int health = 3;
+    //public int health = 3;
 
     [Range(1, 20)]
     public float moveSpeed = 12f;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Booleans")]
     #region Bools
-    public bool isDead;
+    //public bool isDead;
     //private bool isDead;
     private bool isGrounded;
     private bool isHeadBangin;
@@ -145,6 +145,12 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Interacting());
         }
+
+        if(gameController.isDead)
+        {
+            Respawn();
+            gameController.Reset();
+        }
     }
 
     private void FixedUpdate()
@@ -213,6 +219,18 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        //Damage/health test only
+        //-----------------------------------------------------------
+        if(other.CompareTag("Harmful"))
+        {
+            if(gameController.health > 0)
+            {
+                gameController.health -= 1;
+            }
+            Destroy(other.gameObject);
+        }
+        //-----------------------------------------------------------
+
         if(other.CompareTag("Pick_Up"))
         {
             Debug.Log("Pickup detected?");
@@ -233,6 +251,14 @@ public class PlayerController : MonoBehaviour
                 case PickUpType.MULCH:
                     //Count MULCH
                     gameController.mulch += 1;
+                    Destroy(other.gameObject);
+                    break;
+                case PickUpType.HEALTH:
+                    //Add HEALTH
+                    if(gameController.health < 3)
+                    {
+                        gameController.health += 1;
+                    }
                     Destroy(other.gameObject);
                     break;
                 default:

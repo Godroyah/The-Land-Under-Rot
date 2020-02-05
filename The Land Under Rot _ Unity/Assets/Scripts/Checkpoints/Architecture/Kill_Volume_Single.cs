@@ -29,7 +29,7 @@ public class Kill_Volume_Single : MonoBehaviour
         if(player.CompareTag("Player"))
         {
             playerController = player.GetComponent<PlayerController>();
-            playerController.isDead = true;
+            //playerController.isDead = true;
         }
     }
 }

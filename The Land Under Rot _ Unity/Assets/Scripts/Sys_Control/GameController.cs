@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour
     public Text mulchCount;
     public Image[] healthCounter;
 
+    public bool isDead;
+
     //-----------------------------------------------------------------
 
     public bool testing;
@@ -42,6 +44,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        oldHealth = health;
         acornCount.text = acorns.ToString();
         mulchCount.text = mulch.ToString();
         //playerController.currentSpawn = playerRespawn;
@@ -51,6 +54,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       isDead = false;
        paused = false;
     }
 
@@ -70,6 +74,11 @@ public class GameController : MonoBehaviour
         }
         Pause();
         PickUpCount();
+        HealthCount();
+        //if(isDead)
+        //{
+        //    Reset();
+        //}
     }
 
     public void PickUpCount()
@@ -86,6 +95,34 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void HealthCount()
+    {
+        if(oldHealth != health)
+        {
+            for(int i = 0; i < healthCounter.Length; i++)
+            {
+                if(i + 1 > health)
+                {
+                    healthCounter[i].enabled = false;
+                }
+                else if(i + 1 <= health)
+                {
+                    healthCounter[i].enabled = true;
+                }
+            }
+            if(health < 1)
+            {
+                isDead = true;
+            }
+            oldHealth = health;
+        }
+    }
+
+    public void Reset()
+    {
+        health = 3;
+        isDead = false;
+    }
 
     public void Pause()
     {

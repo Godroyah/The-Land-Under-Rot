@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PickUpType { NONE, ACORN, MULCH }
+public enum PickUpType { NONE, ACORN, MULCH, HEALTH}
 
 public class Pick_Up : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class Pick_Up : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pickUpType == PickUpType.ACORN)
+        if(pickUpType == PickUpType.ACORN || pickUpType == PickUpType.HEALTH || CompareTag("Harmful"))
         {
             transform.Rotate(0, 3, 0, Space.World);
         }
