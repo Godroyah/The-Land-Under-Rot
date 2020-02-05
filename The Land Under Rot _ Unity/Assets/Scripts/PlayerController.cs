@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Booleans")]
     #region Bools
-    private bool isDead;
+    public bool isDead;
+    //private bool isDead;
     private bool isGrounded;
     private bool isHeadBangin;
     private bool shouldInteract = false;
@@ -239,3 +240,4 @@ public class PlayerController : MonoBehaviour
 }
 
 public enum SpawnType { NONE, START, RESPAWN, KILL }
+//public enum SpawnType { NONE, START, RESPAWN, KILL }
