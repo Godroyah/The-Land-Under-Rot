@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     private Transform rotationTarget;
     #endregion
 
+    private GameController gameController;
     private Interactable currentTarget;
 
     //Hash ID
@@ -76,6 +77,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("Rigidbody missing on " + gameObject.name);
         else
@@ -210,6 +213,34 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Pick_Up"))
+        {
+            Debug.Log("Pickup detected?");
+            Pick_Up item = other.GetComponent<Pick_Up>();
+
+            PickUpType pickUpType = item.pickUpType;
+
+            switch(pickUpType)
+            {
+                case PickUpType.NONE:
+                    Debug.LogWarning("PickUpType not set!");
+                    break;
+                case PickUpType.ACORN:
+                    //Count ACORN;
+                    gameController.acorns += 1;
+                    Destroy(other.gameObject);
+                    break;
+                case PickUpType.MULCH:
+                    //Count MULCH
+                    gameController.mulch += 1;
+                    Destroy(other.gameObject);
+                    break;
+                default:
+                    Debug.LogWarning("PickUpType Error.");
+                    break;
+            }
+
+        }
         if (other.CompareTag("Spawn_Volume"))
         {
             Debug.Log("Collider detected?");

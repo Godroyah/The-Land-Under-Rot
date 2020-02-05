@@ -16,6 +16,18 @@ public class GameController : MonoBehaviour
     public bool levelStart;
     //public bool areaSpawnCalc;
 
+    public int acorns;
+    private int oldAcorns;
+    public int mulch;
+    private int oldMulch;
+
+    public int health;
+    private int oldHealth;
+
+    public Text acornCount;
+    public Text mulchCount;
+    public Image[] healthCounter;
+
     //-----------------------------------------------------------------
 
     public bool testing;
@@ -30,6 +42,8 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        acornCount.text = acorns.ToString();
+        mulchCount.text = mulch.ToString();
         //playerController.currentSpawn = playerRespawn;
         DontDestroyOnLoad(gameObject);
     }
@@ -55,7 +69,23 @@ public class GameController : MonoBehaviour
             }
         }
         Pause();
+        PickUpCount();
     }
+
+    public void PickUpCount()
+    {
+        if(oldAcorns != acorns)
+        {
+            acornCount.text = acorns.ToString();
+            oldAcorns = acorns;
+        }
+        if(oldMulch != mulch)
+        {
+            mulchCount.text = mulch.ToString();
+            oldMulch = mulch;
+        }
+    }
+
 
     public void Pause()
     {
