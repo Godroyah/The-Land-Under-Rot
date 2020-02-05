@@ -212,6 +212,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Spawn_Volume"))
         {
+            Debug.Log("Collider detected?");
             Spawn_Volume volume = other.GetComponent<Spawn_Volume>();
 
             //SpawnType spawnType = SpawnType.NONE;
