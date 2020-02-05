@@ -47,7 +47,7 @@ public class Spawn_Volume : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activeCorridor && playerSpawn != spawnPoint)
+        if ((spawnType == SpawnType.START || spawnType == SpawnType.RESPAWN) && activeCorridor && playerSpawn != spawnPoint)
         {
             activeCorridor = false;
             playerSpawn = spawnPoint;
