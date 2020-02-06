@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Enemy : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    public int health = 1;
+
+    public override void Interact()
     {
-        
+        base.Interact();
+
+        health = health - 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (health <= 0)
+        {
+            //DIE
+
+            Destroy(gameObject); // TODO: Better enemy death/stun(?)
+        }
     }
 }
