@@ -91,7 +91,7 @@ public class CamControl : MonoBehaviour
         // Calculate rotation and apply to camera
         // **---------------------------------------------**
 
-        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, acceleration);
+        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, acceleration* Time.deltaTime);
 
         transform.eulerAngles = currentRotation;
 
