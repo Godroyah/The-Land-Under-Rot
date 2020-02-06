@@ -203,7 +203,7 @@ public class PlayerController : MonoBehaviour
 
         if (shouldJump)
         {
-            rb.AddForce(rotationTarget.position + (Vector3.up * jumpStrength * 50));
+            rb.AddForce(((rotationTarget.localPosition + Vector3.up).normalized * jumpStrength * 50));
             shouldJump = false;
         }
 
