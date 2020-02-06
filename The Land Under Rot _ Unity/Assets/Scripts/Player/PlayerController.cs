@@ -34,8 +34,16 @@ public class PlayerController : MonoBehaviour
 
     //public float deathfadeDelay;
 
-    [Range(0.001f, 5)]
+    [Range(0.001f, 5), Tooltip("Controls how fast the Player will fall.")]
     public float fallMultiplierFloat = 2f; // TODO: Look at this for GLIDING later
+
+
+    //public bool interactionRange_Visibililty = false;
+    [Range(0f, 5f), Tooltip("Determines the Radius for Interactions.")]
+    public float interactionRange = 1f;
+
+    [Tooltip("This field helps specify that the SphereCollider on the Player is used for Interaction Detection.")]
+    public SphereCollider interactionDetector; // TODO: Will this sphere collider cause issues?
     #endregion
 
     //[Header("Camera Override")]
@@ -94,6 +102,18 @@ public class PlayerController : MonoBehaviour
         if (animator != null)
             animator = GetComponent<Animator>();
 
+        if (interactionDetector == null)
+        {
+            interactionDetector = GetComponent<SphereCollider>();
+            if (interactionDetector == null)
+            {
+                Debug.LogWarning("Interaction Detector SphereCollider Missing Reference!");
+                Debug.Log("Adding a temp collider to " + gameObject.name + ". This requires more resources than starting with the component!");
+                gameObject.AddComponent<SphereCollider>().radius = interactionRange;
+            }
+            
+        }
+
         rotationTarget = new GameObject().transform;
         rotationTarget.transform.parent = gameObject.transform;
         rotationTarget.name = "RotationTarget$$";
@@ -107,7 +127,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         // TODO: Find Spawn Point
-        
+
         if (currentSpawn == null)
         {
             currentSpawn = transform;
@@ -115,7 +135,7 @@ public class PlayerController : MonoBehaviour
 
         this.transform.position = currentSpawn.position;
         this.transform.rotation = currentSpawn.rotation;
-        
+
 
         //targetRotation = currentSpawn.rotation;
 
@@ -125,6 +145,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         GetInput();
 
         #region Interactable Check
@@ -371,6 +393,23 @@ public class PlayerController : MonoBehaviour
                     break;
             }
         }
+    }
+
+    [ExecuteInEditMode]
+    private void OnDrawGizmosSelected()
+    {
+        if (interactionDetector != null)
+        {
+            interactionDetector.radius = interactionRange;
+        }
+        
+
+        /*
+        if (interactionRange_Visibililty)
+        {
+            Gizmos.DrawWireSphere(transform.position + interactionDetection.center, interactionRange);
+        }
+        */
     }
 
 }
