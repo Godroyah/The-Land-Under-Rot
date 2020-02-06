@@ -70,14 +70,16 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     private GameController gameController;
-    private Interactable currentTarget;
+    private Interactable currentTarget = null;
 
     //Hash ID
     private int MovementID = 0;
 
     private void Awake()
     {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        // TODO: Make this not rely on game controller
+        // Player cannot work without it as of rn
+        //gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("Rigidbody missing on " + gameObject.name);
@@ -121,6 +123,72 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
 
+        #region Interactable Check
+
+        //Redefine above
+        List<Interactable> interactables = new List<Interactable>();
+
+        if (interactables.Count > 0) // If there are interactables in range...
+        {
+            Interactable closestTarget = null;
+            float minimalDistance = float.MaxValue;
+            Vector3 screenCenter = new Vector3(Screen.width, Screen.height, 0) / 2;
+
+            for (int targetIndex = 0; targetIndex < interactables.Count; targetIndex++)
+            {
+                Interactable target = interactables[targetIndex];
+                if (target == null) // Check to see if the interactable still exists
+                {
+                    interactables.RemoveAt(targetIndex);
+                    return;
+                }
+                Vector3 targetScreenPoint = Camera.main.WorldToScreenPoint(target.transform.position);
+
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(targetScreenPoint); // TODO: Make sure this ray goes forward
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Transform objectHit = hit.transform;
+
+                    if (hit.collider.gameObject != interactables[targetIndex].gameObject) // If the targeted gameObject wasn't the object hit
+                        continue; // If it doesn't hit, it doesn't see it
+
+                    float distance = Vector2.Distance(targetScreenPoint, screenCenter);
+
+                    if (distance < minimalDistance) // If the targeted gameObject is closer to the center of the screen than the previously found
+                    {
+                        minimalDistance = distance;
+                        closestTarget = target;
+                    }
+                }
+
+                if (closestTarget != null)
+                {
+                    if (currentTarget != null)
+                    {
+                        //ToggleHighlight(tempFocus, false);
+                    }
+                    currentTarget = closestTarget;
+                }
+            }
+
+            if (currentTarget != null)
+            {
+                if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
+                {
+                    ToggleHighlight(currentTarget, true);
+                }
+                else
+                {
+                    ToggleHighlight(currentTarget, false);
+                    currentTarget = null;
+                }
+            }
+        }
+
+        #endregion
+
 
         // TODO: Limit this to happen if outside of specific range
         //       Maybe if no input don't move rotationTarget?
@@ -145,12 +213,13 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Interacting());
         }
-
-        if(gameController.isDead)
+        /* 
+        if (gameController.isDead)
         {
             Respawn();
             gameController.Reset();
         }
+        */
     }
 
     private void FixedUpdate()
@@ -164,6 +233,11 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         shouldJump = Input.GetButtonDown("Jump");
         shouldInteract = Input.GetButtonDown("Interact");
+    }
+
+    private void ToggleHighlight(Interactable focus, bool state)
+    {
+        // TODO: Implement a type of Highlighting
     }
 
     IEnumerator Interacting()
@@ -216,14 +290,14 @@ public class PlayerController : MonoBehaviour
         transform.rotation = currentSpawn.rotation;
         rb.velocity = Vector3.zero;
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         //Damage/health test only
         //-----------------------------------------------------------
-        if(other.CompareTag("Harmful"))
+        if (other.CompareTag("Harmful"))
         {
-            if(gameController.health > 0)
+            if (gameController.health > 0)
             {
                 gameController.health -= 1;
             }
@@ -231,14 +305,14 @@ public class PlayerController : MonoBehaviour
         }
         //-----------------------------------------------------------
 
-        if(other.CompareTag("Pick_Up"))
+        if (other.CompareTag("Pick_Up"))
         {
             Debug.Log("Pickup detected?");
             Pick_Up item = other.GetComponent<Pick_Up>();
 
             PickUpType pickUpType = item.pickUpType;
 
-            switch(pickUpType)
+            switch (pickUpType)
             {
                 case PickUpType.NONE:
                     Debug.LogWarning("PickUpType not set!");
@@ -255,7 +329,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 case PickUpType.HEALTH:
                     //Add HEALTH
-                    if(gameController.health < 3)
+                    if (gameController.health < 3)
                     {
                         gameController.health += 1;
                     }
@@ -294,7 +368,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
+
 }
 
 //public enum SpawnType { NONE, START, RESPAWN, KILL }
