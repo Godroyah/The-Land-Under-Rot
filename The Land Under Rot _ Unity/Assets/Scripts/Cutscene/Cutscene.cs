@@ -11,6 +11,7 @@ public class Cutscene : MonoBehaviour
     public GameObject[] Frames;
 
     GameController gameController;
+    public CutsceneManager cutsceneManager;
 
     public TextDisplayer currentTextDisplayer;
     public bool hasFinishedDisplayingText = false;
@@ -22,19 +23,26 @@ public class Cutscene : MonoBehaviour
         {
             gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }*/
-        if (Background == null)
+
+        GameObject temp = GameObject.Find("@CutsceneManager");
+        if (temp != null)
         {
-            Background = new GameObject();
+            cutsceneManager = temp.GetComponent<CutsceneManager>();
+
+            if (cutsceneManager == null)
+                Debug.LogWarning("Missing CutsceneManger for cutscenes to operate.");
         }
+        
+
+        if (Background == null)
+            Background = new GameObject();
     }
 
 
     private void Start()
     {
         if (Background != null)
-        {
             Background.SetActive(false);
-        }
 
         for (int i = 0; i < Frames.Length; i++)
         {
@@ -58,9 +66,8 @@ public class Cutscene : MonoBehaviour
         for (int i = 0; i < Frames.Length; i++)
         {
             if (i != 0)
-            {
                 Frames[i - 1].SetActive(false);
-            }
+
             Frames[i].SetActive(true);
             while (true)
             {
@@ -102,7 +109,7 @@ public class Cutscene : MonoBehaviour
 
         if (gameController != null)
         {
-            gameController.cutsceneManager.hasActiveCutscene = false;
+            cutsceneManager.hasActiveCutscene = false;
         }
 
         //Camera.main.orthographicSize = tempNum;

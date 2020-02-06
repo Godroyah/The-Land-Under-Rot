@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class TextDisplayer : MonoBehaviour
 {
-    Text textBox;
+    //Text textBox;
+    TextMeshProUGUI textBox; 
     public string fullText = "";
     public string displayedText;
     float textSpeed = 25f;
 
-    Cutscene myCutscene;
+    public Cutscene myCutscene; // TODO: Find a way to find the parent cutscene
     Coroutine tempCoroutine;
 
     GameController gameController;
 
     private void Awake()
     {
-        textBox = GetComponent<Text>();
+        textBox = GetComponent<TextMeshProUGUI>();
 
         /* TODO: Figure out a better, less dependent search
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
@@ -26,7 +28,7 @@ public class TextDisplayer : MonoBehaviour
             gameController = GameObject.FindGameObjectWithTag("@GameController").GetComponent<GameController>();
         }*/
 
-        myCutscene = gameObject.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<Cutscene>();
+        //myCutscene = gameObject.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<Cutscene>();
 
         fullText = textBox.text;
         displayedText = "";
@@ -39,9 +41,9 @@ public class TextDisplayer : MonoBehaviour
 
     private void Update()
     {
-        if (gameController != null && gameController.cutsceneManager != null)
+        if (myCutscene != null && myCutscene.cutsceneManager != null)
         {
-            textSpeed = gameController.cutsceneManager.TextSpeed;
+            textSpeed = myCutscene.cutsceneManager.TextSpeed;
         }
 
         textBox.text = displayedText;
@@ -49,9 +51,9 @@ public class TextDisplayer : MonoBehaviour
 
     private void OnEnable()
     {
-        myCutscene = gameObject.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<Cutscene>(); // TODO: WTF is this
+        //myCutscene = gameObject.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<Cutscene>(); // TODO: WTF is this
 
-        myCutscene.currentTextDisplayer = this;
+        //myCutscene.currentTextDisplayer = this;
         tempCoroutine = StartCoroutine(DisplayText());
     }
 
