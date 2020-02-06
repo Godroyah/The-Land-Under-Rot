@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public CutsceneManager cutsceneManager;
+
     public GameObject mainMenu;
     public GameObject pauseMenu;
     public GameObject quitOption;
