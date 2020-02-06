@@ -60,8 +60,8 @@ public class CamControl : MonoBehaviour
 
     private void GetInput()
     {
-        horizontalInput = Input.GetAxis("Mouse X");
-        verticalInput = Input.GetAxis("Mouse Y");
+        horizontalInput = Input.GetAxisRaw("Mouse X");
+        verticalInput = Input.GetAxisRaw("Mouse Y");
     }
 
     private void Move()
@@ -91,7 +91,7 @@ public class CamControl : MonoBehaviour
         // Calculate rotation and apply to camera
         // **---------------------------------------------**
 
-        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, acceleration);
+        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, acceleration* Time.deltaTime);
 
         transform.eulerAngles = currentRotation;
 
