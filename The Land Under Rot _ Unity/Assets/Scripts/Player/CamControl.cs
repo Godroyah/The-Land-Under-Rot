@@ -60,8 +60,8 @@ public class CamControl : MonoBehaviour
 
     private void GetInput()
     {
-        horizontalInput = Input.GetAxis("Mouse X");
-        verticalInput = Input.GetAxis("Mouse Y");
+        horizontalInput = Input.GetAxisRaw("Mouse X");
+        verticalInput = Input.GetAxisRaw("Mouse Y");
     }
 
     private void Move()

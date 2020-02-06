@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     public float fallMultiplierFloat = 2f; // TODO: Look at this for GLIDING later
     #endregion
 
+    //[Header("Camera Override")]
+
 
     [Header("Booleans")]
     #region Bools
@@ -199,7 +201,7 @@ public class PlayerController : MonoBehaviour
 
         if (shouldJump)
         {
-            rb.AddForce(rotationTarget.position + Vector3.up * jumpStrength * 50);
+            rb.AddForce(rotationTarget.position + (Vector3.up * jumpStrength * 50));
             shouldJump = false;
         }
 
