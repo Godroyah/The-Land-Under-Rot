@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Modifiers")]
     #region Modifiers
-    //public int health = 3;
+    public int health = 3;
 
     [Range(1, 20)]
     public float moveSpeed = 12f;
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Booleans")]
     #region Bools
-    //public bool isDead;
+    public bool isDead;
     //private bool isDead;
     private bool isGrounded;
     private bool isHeadBangin;
@@ -127,6 +127,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         // TODO: Find Spawn Point
+        isDead = false;
 
         if (currentSpawn == null)
         {
@@ -317,15 +318,21 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
+    public void Reset()
+    {
+        health = 3;
+        isDead = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         //Damage/health test only
         //-----------------------------------------------------------
         if (other.CompareTag("Harmful"))
         {
-            if (gameController.health > 0)
+            if (health > 0)
             {
-                gameController.health -= 1;
+                health -= 1;
             }
             Destroy(other.gameObject);
         }
@@ -355,9 +362,9 @@ public class PlayerController : MonoBehaviour
                     break;
                 case PickUpType.HEALTH:
                     //Add HEALTH
-                    if (gameController.health < 3)
+                    if (health < 3)
                     {
-                        gameController.health += 1;
+                        health += 1;
                     }
                     Destroy(other.gameObject);
                     break;

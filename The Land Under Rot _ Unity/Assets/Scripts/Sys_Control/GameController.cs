@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     public int mulch;
     private int oldMulch;
 
-    public int health;
+    public int playerHealth;
     private int oldHealth;
 
     public Text acornCount;
@@ -46,9 +46,12 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        oldHealth = health;
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerHealth = playerController.health;
+        
         acornCount.text = acorns.ToString();
         mulchCount.text = mulch.ToString();
+
         //playerController.currentSpawn = playerRespawn;
         DontDestroyOnLoad(gameObject);
     }
@@ -58,6 +61,7 @@ public class GameController : MonoBehaviour
     {
        isDead = false;
        paused = false;
+       oldHealth = playerHealth;
     }
 
     // Update is called once per frame
@@ -99,30 +103,30 @@ public class GameController : MonoBehaviour
 
     public void HealthCount()
     {
-        if(oldHealth != health)
+        if(oldHealth != playerHealth)
         {
             for(int i = 0; i < healthCounter.Length; i++)
             {
-                if(i + 1 > health)
+                if(i + 1 > playerHealth)
                 {
                     healthCounter[i].enabled = false;
                 }
-                else if(i + 1 <= health)
+                else if(i + 1 <= playerHealth)
                 {
                     healthCounter[i].enabled = true;
                 }
             }
-            if(health < 1)
+            if(playerHealth < 1)
             {
                 isDead = true;
             }
-            oldHealth = health;
+            oldHealth = playerHealth;
         }
     }
 
     public void Reset()
     {
-        health = 3;
+        playerHealth = 3;
         isDead = false;
     }
 
