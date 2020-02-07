@@ -68,6 +68,12 @@ namespace Toon
             meshRenderer = GetComponent<MeshRenderer>();
             if (skinRenderer) skinRenderer.sharedMaterial = material;
             if (meshRenderer) meshRenderer.sharedMaterial = material;
+
+            if (!Application.isPlaying)
+            {
+                Material matInstance = new Material(material);
+                material = matInstance;
+            }
         }
 
         // NOTE: If your game loads lights dynamically, this should be called to init new lights
