@@ -395,7 +395,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
     private void OnDrawGizmosSelected()
     {
         if (interactionDetector != null)
