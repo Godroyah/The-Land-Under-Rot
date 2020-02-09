@@ -50,12 +50,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camControl: {fileID: 6852863769063548741}
   currentSpawn: {fileID: 0}
+  health: 3
   moveSpeed: 12
   jumpStrength: 6.4
   rotationSpeed: 5
   fallMultiplierFloat: 2
   interactionRange: 1.5
   interactionDetector: {fileID: 2768844528437586027}
+  isDead: 0
   inputDelay: 0.1
   interactDelay: 0.1
   rotationTargetDist: 0.1
@@ -291,6 +293,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6852863768240148849}
     m_Modifications:
+    - target: {fileID: 3458369357532953647, guid: 791eb7992dbb7f147a2d0239e16d03e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edeeedfb88e9cb646aff7783b318c769, type: 2}
     - target: {fileID: 5485647015242135694, guid: 791eb7992dbb7f147a2d0239e16d03e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -383,18 +390,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691886962865516203, guid: 791eb7992dbb7f147a2d0239e16d03e2,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6691886962865516203, guid: 791eb7992dbb7f147a2d0239e16d03e2,
-        type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.011
-      objectReference: {fileID: 0}
-    - target: {fileID: 6691886962865516203, guid: 791eb7992dbb7f147a2d0239e16d03e2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6691886962865516203, guid: 791eb7992dbb7f147a2d0239e16d03e2,
         type: 3}

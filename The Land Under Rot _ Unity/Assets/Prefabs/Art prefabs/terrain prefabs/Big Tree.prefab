@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 381244030996764856}
   - component: {fileID: 4811462196306117838}
   - component: {fileID: 8819362972085255591}
+  - component: {fileID: 58011641}
   m_Layer: 0
   m_Name: big tree model
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252677568428335087}
   m_LocalRotation: {x: -0, y: -0.755573, z: -0, w: 0.65506446}
-  m_LocalPosition: {x: 4.01, y: 38.5, z: -44.809998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.91, y: 108.7, z: -57.84}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 7958853444065471183}
   m_RootOrder: 0
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1650d3489fbd9854da589f800a29acb8, type: 2}
+  - {fileID: 2100000, guid: 152a2bd92b84d28418d074ede9ea9909, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1650d3489fbd9854da589f800a29acb8, type: 2}
+  material: {fileID: 0}
   meshCenter: {x: 0, y: 0, z: 0}
   maxLights: 6
   raycast: 1
@@ -99,6 +100,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   raycastFadeSpeed: 10
+--- !u!64 &58011641
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252677568428335087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3191843991455854740, guid: 793b51715d5718d4a9726770cdd5a022, type: 3}
 --- !u!1 &8447148042060580381
 GameObject:
   m_ObjectHideFlags: 0
