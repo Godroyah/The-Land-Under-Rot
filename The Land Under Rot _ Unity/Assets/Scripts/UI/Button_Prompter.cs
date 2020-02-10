@@ -12,24 +12,26 @@ public class Button_Prompter : MonoBehaviour
 
     public GameObject imageObject;
 
-    public string npcText;
+    //public string npcText;
 
     public TextMeshProUGUI promptText;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(billBoardUI != null)
+        if(textObject == null)
         {
-            
-           textObject.SetActive(false);
-           imageObject.SetActive(false);
-           promptText.text = npcText;
-            
+            Debug.LogWarning("Text TMP missing! Please attach the Text TMP child to the textObject reference!");
+        }
+        else if(imageObject == null)
+        {
+            Debug.LogWarning("Image missing! Please attach the Image child to the imageObject reference!");
         }
         else
-        {
-            Debug.LogWarning("Button_Prompt Prefab not set as child! Please parent a Button_Prompt to this object!");
+        {   
+           textObject.SetActive(false);
+           imageObject.SetActive(false);
+           //promptText.text = npcText;
         }
     }
 
@@ -39,8 +41,8 @@ public class Button_Prompter : MonoBehaviour
         {
             //Instantiate(buttonPromptUI, transform.position, transform.rotation);
             //buttonPromptUI.SetActive(true);
-            textObject.gameObject.SetActive(true);
-            imageObject.gameObject.SetActive(true);
+            textObject.SetActive(true);
+            imageObject.SetActive(true);
         }
     }
 
@@ -49,8 +51,8 @@ public class Button_Prompter : MonoBehaviour
         if(player.gameObject.tag == "Player")
         {
             //buttonPromptUI.SetActive(false);
-            textObject.gameObject.SetActive(false);
-            imageObject.gameObject.SetActive(false);
+            textObject.SetActive(false);
+            imageObject.SetActive(false);
         }
     }
 }

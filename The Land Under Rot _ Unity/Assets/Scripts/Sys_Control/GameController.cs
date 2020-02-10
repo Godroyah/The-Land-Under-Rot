@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -26,8 +27,8 @@ public class GameController : MonoBehaviour
     public int playerHealth;
     private int oldHealth;
 
-    public Text acornCount;
-    public Text mulchCount;
+    public TextMeshProUGUI acornCount;
+    public TextMeshProUGUI mulchCount;
     public Image[] healthCounter;
 
     public bool isDead;
