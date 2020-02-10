@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public CutsceneManager cutsceneManager;
+    public DialogueManager dialogueManager;
 
     public GameObject mainMenu;
     public GameObject pauseMenu;
@@ -46,8 +46,27 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        playerHealth = playerController.health;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player)
+        {
+            playerController = player.GetComponent<PlayerController>();
+            if(playerController)
+            {
+                playerHealth = playerController.health;
+            }
+            else
+            {
+                Debug.LogWarning("Player missing playercontroller!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Can't find player!");
+        }
+
+        //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        
         
         acornCount.text = acorns.ToString();
         mulchCount.text = mulch.ToString();
@@ -78,9 +97,12 @@ public class GameController : MonoBehaviour
                 mmenu_Active = false;
             }
         }
-        Pause();
-        PickUpCount();
-        HealthCount();
+        if(playerController != null)
+        {
+            Pause();
+            PickUpCount();
+            HealthCount();
+        }
         //if(isDead)
         //{
         //    Reset();

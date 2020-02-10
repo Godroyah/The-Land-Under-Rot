@@ -80,7 +80,7 @@ public class TextDisplayer : MonoBehaviour
     IEnumerator DisplayText()
     {
         displayedText = "";
-        while (gameController != null && gameController.cutsceneManager == null)
+        while (gameController != null && gameController.dialogueManager == null)
         {
             yield return new WaitForEndOfFrame();
         }
