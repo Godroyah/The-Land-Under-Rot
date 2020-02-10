@@ -24,6 +24,9 @@ public class GameController : MonoBehaviour
     public int mulch;
     private int oldMulch;
 
+    public int playerAcorns;
+    public int playerMulch;
+
     public int playerHealth;
     private int oldHealth;
 
