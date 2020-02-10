@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     [Range(1, 20)]
     public float moveSpeed = 12f;
 
+    [Range(1, 35)]
+    public float runSpeed = 20f;
+
     [Range(0, 200), Tooltip("Controls how fast the obj rotates when changing directions.")]
     public float rotationSpeed = 0.1f;
 
@@ -59,6 +62,7 @@ public class PlayerController : MonoBehaviour
     //private bool isDead;
     private bool isGrounded;
     private bool isHeadBangin;
+    private bool shouldRun = false;
     private bool shouldInteract = false;
     private bool shouldJump = false;
     #endregion
@@ -66,15 +70,21 @@ public class PlayerController : MonoBehaviour
 
     [Header("Input")]
     #region Input
+
     [Range(0, 1), Tooltip("Cutoff for the value when the input is accepted.")]
     public float inputDelay = 0.1f;
+
     [Range(0, 1), Tooltip("Delay until the next time 'Interact' is available.")]
     public float interactDelay = 0.1f;
     private Coroutine interactingCoroutine;
+
+    [Space(5)]
+
     [Range(0.001f, 1), Tooltip("Determines how responsive the obj is to movement.")]
     public float rotationTargetDist = 0.1f;
-    [Range(0, 1), Tooltip("Cutoff distance for when the obj will rotate. This will also be capped by the rotationTargetDist.")]
-    public float rotationCutoff = 0f;
+
+    [Range(0, 1), Tooltip("Cutoff distance for when the obj will rotate. This will be capped by rotationTargetDist as a percentage.")]
+    public float rotationCutoff = 0.1f;
     [HideInInspector]
     public Vector2 controlInput;
     private float horizontalInput;
@@ -115,7 +125,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Adding a temp collider to " + gameObject.name + ". This requires more resources than starting with the component!");
                 gameObject.AddComponent<SphereCollider>().radius = interactionRange;
             }
-            
+
         }
 
         rotationTarget = new GameObject().transform;
@@ -223,7 +233,7 @@ public class PlayerController : MonoBehaviour
 
         // TODO: Limit this to happen if outside of specific range
         //       Maybe if no input don't move rotationTarget?
-        if (Vector3.Distance(transform.position, rotationTarget.position) > rotationCutoff)
+        if (Vector3.Distance(transform.position, rotationTarget.position) > (rotationCutoff * rotationTargetDist))
         {
             Rotate();
         }
@@ -265,6 +275,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+        shouldRun = Input.GetKey(KeyCode.LeftShift);
         shouldJump = Input.GetButtonDown("Jump");
         shouldInteract = Input.GetButtonDown("Interact");
     }
@@ -299,7 +310,11 @@ public class PlayerController : MonoBehaviour
         rotationTarget.position = tempDir + transform.position;
 
         movement = rotationTarget.TransformDirection(movement);
-        movement *= moveSpeed * Time.deltaTime;
+
+        if (shouldRun)
+            movement *= runSpeed * Time.deltaTime;
+        else
+            movement *= moveSpeed * Time.deltaTime;
 
         transform.position += movement;
         //rb.AddForce(movement);
@@ -416,7 +431,7 @@ public class PlayerController : MonoBehaviour
         {
             interactionDetector.radius = interactionRange;
         }
-        
+
 
         /*
         if (interactionRange_Visibililty)
