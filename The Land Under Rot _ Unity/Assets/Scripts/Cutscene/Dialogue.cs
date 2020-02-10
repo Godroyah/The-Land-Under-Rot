@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Cutscene : MonoBehaviour
+public class Dialogue : MonoBehaviour
 {
-    [Tooltip("Name of the Scene for the CutsceneManager to Find")]
+    [Tooltip("Name of the Scene for the DialogueManager to Find")]
     public string SceneName;
     public GameObject Background;
     public GameObject[] Frames;
 
     GameController gameController;
-    public CutsceneManager cutsceneManager;
+    public DialogueManager dialogueManager;
 
     public TextDisplayer currentTextDisplayer;
     public bool hasFinishedDisplayingText = false;
@@ -27,9 +27,9 @@ public class Cutscene : MonoBehaviour
         GameObject temp = GameObject.Find("@CutsceneManager");
         if (temp != null)
         {
-            cutsceneManager = temp.GetComponent<CutsceneManager>();
+            dialogueManager = temp.GetComponent<DialogueManager>();
 
-            if (cutsceneManager == null)
+            if (dialogueManager == null)
                 Debug.LogWarning("Missing CutsceneManger for cutscenes to operate.");
         }
         
@@ -109,7 +109,7 @@ public class Cutscene : MonoBehaviour
 
         if (gameController != null)
         {
-            cutsceneManager.hasActiveCutscene = false;
+            dialogueManager.hasActiveDialogue = false;
         }
 
         //Camera.main.orthographicSize = tempNum;

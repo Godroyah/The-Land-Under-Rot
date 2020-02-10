@@ -13,7 +13,7 @@ public class TextDisplayer : MonoBehaviour
     public string displayedText;
     float textSpeed = 25f;
 
-    public Cutscene myCutscene; // TODO: Find a way to find the parent cutscene
+    public Dialogue myDialogue; // TODO: Find a way to find the parent cutscene
     Coroutine tempCoroutine;
 
     GameController gameController;
@@ -41,9 +41,9 @@ public class TextDisplayer : MonoBehaviour
 
     private void Update()
     {
-        if (myCutscene != null && myCutscene.cutsceneManager != null)
+        if (myDialogue != null && myDialogue.dialogueManager != null)
         {
-            textSpeed = myCutscene.cutsceneManager.TextSpeed;
+            textSpeed = myDialogue.dialogueManager.TextSpeed;
         }
 
         textBox.text = displayedText;
@@ -102,7 +102,7 @@ public class TextDisplayer : MonoBehaviour
             yield return new WaitForSeconds(1f / textSpeed);
         }
 
-        myCutscene.hasFinishedDisplayingText = true;
+        myDialogue.hasFinishedDisplayingText = true;
         yield return null;
     }
 }

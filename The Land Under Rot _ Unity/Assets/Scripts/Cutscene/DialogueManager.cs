@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CutsceneManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
-    public GameObject[] Cutscene_GameObjects;
+    public GameObject[] Dialogue_GameObjects;
 
-    Cutscene[] cutscenes;
+    Dialogue[] dialogues;
 
     public Canvas myCanvas;
 
-    public bool hasActiveCutscene = false;
+    public bool hasActiveDialogue = false;
 
     [Header("Scene Testing")]
     public GameObject TestScene;
@@ -21,14 +21,13 @@ public class CutsceneManager : MonoBehaviour
     [Tooltip("Controls text speed based on a 1/x delay between characters and a 2/x delay on punctuation")]
     public int TextSpeed = 25;
 
-    //cutscene music
+    [Header("Music Stuff")]
     public AudioSource cutsceneMusicAS;
-    public AudioClip cutsceneMusic;
-    //for stopping cutscene music?
-    public bool cutsceneMusicIsPlaying;
+    public AudioClip dialogueMusic;
+    public bool dialogueMusicIsPlaying;
     public bool shouldTurnOffMusic;
 
-    Cutscene cutscene;
+    Dialogue dialogue;
 
     private void Awake()
     {
@@ -51,18 +50,18 @@ public class CutsceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cutscenes = new Cutscene[Cutscene_GameObjects.Length];
+        dialogues = new Dialogue[Dialogue_GameObjects.Length];
 
-        for (int i = 0; i < Cutscene_GameObjects.Length; i++)
+        for (int i = 0; i < Dialogue_GameObjects.Length; i++)
         {
-            cutscenes[i] = Cutscene_GameObjects[i].GetComponent<Cutscene>();
+            dialogues[i] = Dialogue_GameObjects[i].GetComponent<Dialogue>();
         }
         //  OR
         //StartCoroutine(ObtainCutsceneScripts());
 
         if (TestScene != null && isTestingScene)
         {
-            StartCutscene(TestScene.GetComponent<Cutscene>().SceneName);
+            StartCutscene(TestScene.GetComponent<Dialogue>().SceneName);
         }
         else
         {
@@ -73,14 +72,14 @@ public class CutsceneManager : MonoBehaviour
     private void LateUpdate()
     {
         //Debug.Log(battleManager.isInBattle);
-        if (hasActiveCutscene == false && cutsceneMusicIsPlaying == true)
+        if (hasActiveDialogue == false && dialogueMusicIsPlaying == true)
         {
             shouldTurnOffMusic = true;
 
             if (shouldTurnOffMusic == true)
             {
                 cutsceneMusicAS.enabled = false;
-                cutsceneMusicIsPlaying = false;
+                dialogueMusicIsPlaying = false;
                 shouldTurnOffMusic = false;
             }
         }
@@ -88,9 +87,9 @@ public class CutsceneManager : MonoBehaviour
 
     IEnumerator ObtainCutsceneScripts()
     {
-        for (int i = 0; i < Cutscene_GameObjects.Length; i++)
+        for (int i = 0; i < Dialogue_GameObjects.Length; i++)
         {
-            cutscenes[i] = Cutscene_GameObjects[i].GetComponent<Cutscene>();
+            dialogues[i] = Dialogue_GameObjects[i].GetComponent<Dialogue>();
             yield return new WaitForSeconds(1f);
         }
 
@@ -100,15 +99,15 @@ public class CutsceneManager : MonoBehaviour
     public void StartCutscene(string sceneName)
     {
         //Debug.Log(sceneName);
-        if (!hasActiveCutscene)
+        if (!hasActiveDialogue)
         {
-            foreach (Cutscene cutscene in cutscenes)
+            foreach (Dialogue dialogue in dialogues)
             {
-                if (cutscene.SceneName == sceneName)
+                if (dialogue.SceneName == sceneName)
                 {
-                    cutscene.StartScene();
+                    dialogue.StartScene();
                     //Debug.Log(sceneName);
-                    hasActiveCutscene = true;
+                    hasActiveDialogue = true;
                     break;
                 }
             }
