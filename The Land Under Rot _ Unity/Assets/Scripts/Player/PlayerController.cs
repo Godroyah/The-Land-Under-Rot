@@ -237,6 +237,9 @@ public class PlayerController : MonoBehaviour
         {
             Rotate();
         }
+        else
+            rb.angularVelocity = Vector3.zero;
+        
 
         #region Jumping
 
