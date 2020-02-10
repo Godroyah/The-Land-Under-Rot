@@ -22,20 +22,24 @@ public class PlayerController : MonoBehaviour
     [Range(1, 20)]
     public float moveSpeed = 12f;
 
-    [Range(1, 20)]
-    public float jumpStrength = 10f;
-
-    //[Range(0,200), Tooltip("Controls how fast the obj rotates when moving.")]
-    //public float rotateVel = 100;
-    //public float minRotationDelay = 15f;
-
-    [Range(0, 200), Tooltip("Controls how fast the obj rotates when moving.")]
+    [Range(0, 200), Tooltip("Controls how fast the obj rotates when changing directions.")]
     public float rotationSpeed = 0.1f;
+
+
+    [Space(10)] // Adds literal space in the inspector
+
+    [Range(1, 20)]
+    public float jumpVelocity = 10f;
 
     //public float deathfadeDelay;
 
     [Range(0.001f, 5), Tooltip("Controls how fast the Player will fall.")]
-    public float fallMultiplierFloat = 2f; // TODO: Look at this for GLIDING later
+    public float fallMultiplier = 2.5f; // TODO: Look at this for GLIDING later
+
+    [Range(0.001f, 5), Tooltip("Controls how high the player jumps on a shorter press.")]
+    public float lowJumpMultiplier = 2f;
+
+    [Space(10)]// Adds literal space in the inspector
 
 
     //public bool interactionRange_Visibililty = false;
@@ -224,17 +228,20 @@ public class PlayerController : MonoBehaviour
             Rotate();
         }
 
-        if (shouldJump)
-        {
-            rb.AddForce(((rotationTarget.localPosition + Vector3.up).normalized * jumpStrength * 50));
-            shouldJump = false;
-        }
+        #region Jumping
 
         //faster falling
         if (rb.velocity.y < 0)
+            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        else if (rb.velocity.y > 0 && !shouldJump)
+            rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+
+        if (shouldJump)
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplierFloat - 1) * Time.deltaTime;
+            rb.velocity = Vector3.up * jumpVelocity;
         }
+
+        #endregion
 
         if (shouldInteract && interactingCoroutine == null)
         {
