@@ -18,21 +18,20 @@ public class Dialogue : MonoBehaviour
 
     private void Awake()
     {
-        /*TODO: Figure out a better, less dependent search
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
-        {
-            gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        }*/
-
-        GameObject temp = GameObject.Find("@CutsceneManager");
+        GameObject temp = GameObject.Find("@DialogueManager");
         if (temp != null)
         {
             dialogueManager = temp.GetComponent<DialogueManager>();
 
-            if (dialogueManager == null)
-                Debug.LogWarning("Missing CutsceneManger for cutscenes to operate.");
+            if (dialogueManager != null)
+            {
+                if (!dialogueManager.Dialogue_GameObjects.Contains(gameObject))
+                    dialogueManager.Dialogue_GameObjects.Add(gameObject);
+            }
+            else
+                Debug.LogWarning("Missing DialogueManager for dialogues to operate.");
         }
-        
+
 
         if (Background == null)
             Background = new GameObject();
@@ -58,6 +57,8 @@ public class Dialogue : MonoBehaviour
     IEnumerator Scene()
     {
         Debug.Log("Scene Started");
+
+        // TODO: Similar camera-esc zoom for dialogue?
         //float tempNum = Camera.main.orthographicSize;
         //Camera.main.orthographicSize = 11.2f;
 
@@ -98,7 +99,7 @@ public class Dialogue : MonoBehaviour
 
                         break;
                     }
-                    
+
                 }
             }
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3624921424340524299}
   - component: {fileID: 1925187725216735196}
   m_Layer: 0
-  m_Name: Cutscene_EXAMPLE
+  m_Name: Dialogue_EXAMPLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneName: 
   Background: {fileID: 0}
-  Frames: []
-  cutsceneManager: {fileID: 0}
+  Frames:
+  - {fileID: 5811470308196524492}
+  dialogueManager: {fileID: 0}
   currentTextDisplayer: {fileID: 0}
   hasFinishedDisplayingText: 0
 --- !u!1001 &8759405315477664447
@@ -119,6 +120,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8dfa5108d0b6ae40b6c561a9db0bf18, type: 3}
+--- !u!1 &5811470308196524492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2966136909509579635, guid: f8dfa5108d0b6ae40b6c561a9db0bf18,
+    type: 3}
+  m_PrefabInstance: {fileID: 8759405315477664447}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5811470308196524495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2966136909509579632, guid: f8dfa5108d0b6ae40b6c561a9db0bf18,

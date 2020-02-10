@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject[] Dialogue_GameObjects;
+    public List<GameObject> Dialogue_GameObjects;
 
     Dialogue[] dialogues;
 
@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     public int TextSpeed = 25;
 
     [Header("Music Stuff")]
-    public AudioSource cutsceneMusicAS;
+    public AudioSource dialogueMusicAS;
     public AudioClip dialogueMusic;
     public bool dialogueMusicIsPlaying;
     public bool shouldTurnOffMusic;
@@ -50,9 +50,9 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dialogues = new Dialogue[Dialogue_GameObjects.Length];
+        dialogues = new Dialogue[Dialogue_GameObjects.Count];
 
-        for (int i = 0; i < Dialogue_GameObjects.Length; i++)
+        for (int i = 0; i < Dialogue_GameObjects.Count; i++)
         {
             dialogues[i] = Dialogue_GameObjects[i].GetComponent<Dialogue>();
         }
@@ -61,11 +61,11 @@ public class DialogueManager : MonoBehaviour
 
         if (TestScene != null && isTestingScene)
         {
-            StartCutscene(TestScene.GetComponent<Dialogue>().SceneName);
+            StartDialogue(TestScene.GetComponent<Dialogue>().SceneName);
         }
         else
         {
-            StartCutscene("Test");
+            StartDialogue("Test");
         }
     }
 
@@ -78,16 +78,16 @@ public class DialogueManager : MonoBehaviour
 
             if (shouldTurnOffMusic == true)
             {
-                cutsceneMusicAS.enabled = false;
+                dialogueMusicAS.enabled = false;
                 dialogueMusicIsPlaying = false;
                 shouldTurnOffMusic = false;
             }
         }
     }
 
-    IEnumerator ObtainCutsceneScripts()
+    IEnumerator ObtainDialogueScripts()
     {
-        for (int i = 0; i < Dialogue_GameObjects.Length; i++)
+        for (int i = 0; i < Dialogue_GameObjects.Count; i++)
         {
             dialogues[i] = Dialogue_GameObjects[i].GetComponent<Dialogue>();
             yield return new WaitForSeconds(1f);
@@ -96,7 +96,7 @@ public class DialogueManager : MonoBehaviour
         yield return null;
     }
 
-    public void StartCutscene(string sceneName)
+    public void StartDialogue(string sceneName)
     {
         //Debug.Log(sceneName);
         if (!hasActiveDialogue)

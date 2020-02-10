@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class TextDisplayer : MonoBehaviour
 {
     //Text textBox;
-    TextMeshProUGUI textBox; 
+    TextMeshProUGUI textBox;
     public string fullText = "";
     public string displayedText;
     float textSpeed = 25f;
@@ -29,6 +27,8 @@ public class TextDisplayer : MonoBehaviour
         }*/
 
         //myCutscene = gameObject.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<Cutscene>();
+
+        myDialogue = gameObject.GetComponentInParent(typeof(Dialogue)) as Dialogue;
 
         fullText = textBox.text;
         displayedText = "";
@@ -54,6 +54,10 @@ public class TextDisplayer : MonoBehaviour
         //myCutscene = gameObject.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<Cutscene>(); // TODO: WTF is this
 
         //myCutscene.currentTextDisplayer = this;
+
+        myDialogue = gameObject.GetComponentInParent(typeof(Dialogue)) as Dialogue;
+
+        myDialogue.currentTextDisplayer = this;
         tempCoroutine = StartCoroutine(DisplayText());
     }
 

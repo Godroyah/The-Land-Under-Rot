@@ -75,17 +75,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802f77dc779ade249abbb64f77ae9421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cutscene_GameObjects:
+  Dialogue_GameObjects:
   - {fileID: 2039890978591162570}
   - {fileID: 2039890978889549945}
   myCanvas: {fileID: 7967510030629712433}
-  hasActiveCutscene: 0
-  TestScene: {fileID: 0}
+  hasActiveDialogue: 0
+  TestScene: {fileID: 2039890978591162570}
   isTestingScene: 0
   TextSpeed: 25
-  cutsceneMusicAS: {fileID: 0}
-  cutsceneMusic: {fileID: 0}
-  cutsceneMusicIsPlaying: 0
+  dialogueMusicAS: {fileID: 0}
+  dialogueMusic: {fileID: 0}
+  dialogueMusicIsPlaying: 0
   shouldTurnOffMusic: 0
 --- !u!1 &7967510030629712445
 GameObject:
@@ -196,9 +196,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1925187725216735196, guid: 465262e789e8b7b45b60ae9e9e1720a4,
         type: 3}
+      propertyPath: Frames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925187725216735196, guid: 465262e789e8b7b45b60ae9e9e1720a4,
+        type: 3}
       propertyPath: SceneName
       value: Test2
       objectReference: {fileID: 0}
+    - target: {fileID: 1925187725216735196, guid: 465262e789e8b7b45b60ae9e9e1720a4,
+        type: 3}
+      propertyPath: Frames.Array.data[0]
+      value: 
+      objectReference: {fileID: 4482266202324005010}
     - target: {fileID: 2092648564900387417, guid: 465262e789e8b7b45b60ae9e9e1720a4,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -293,6 +303,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7967510029631377758}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4482266202324005010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5811470308196524492, guid: 465262e789e8b7b45b60ae9e9e1720a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7967510029631377758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7967510030004345325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,9 +318,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1925187725216735196, guid: 465262e789e8b7b45b60ae9e9e1720a4,
         type: 3}
+      propertyPath: Frames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925187725216735196, guid: 465262e789e8b7b45b60ae9e9e1720a4,
+        type: 3}
       propertyPath: SceneName
       value: Test1
       objectReference: {fileID: 0}
+    - target: {fileID: 1925187725216735196, guid: 465262e789e8b7b45b60ae9e9e1720a4,
+        type: 3}
+      propertyPath: Frames.Array.data[0]
+      value: 
+      objectReference: {fileID: 4482266202488305697}
     - target: {fileID: 2092648564900387417, guid: 465262e789e8b7b45b60ae9e9e1720a4,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -396,6 +422,12 @@ GameObject:
 --- !u!4 &6691230829898646758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3624921424340524299, guid: 465262e789e8b7b45b60ae9e9e1720a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7967510030004345325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4482266202488305697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5811470308196524492, guid: 465262e789e8b7b45b60ae9e9e1720a4,
     type: 3}
   m_PrefabInstance: {fileID: 7967510030004345325}
   m_PrefabAsset: {fileID: 0}
