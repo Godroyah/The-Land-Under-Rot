@@ -19,13 +19,10 @@ public class GameController : MonoBehaviour
     public bool levelStart;
     //public bool areaSpawnCalc;
 
-    public int acorns;
-    private int oldAcorns;
-    public int mulch;
-    private int oldMulch;
-
     public int playerAcorns;
+    private int oldAcorns;
     public int playerMulch;
+    private int oldMulch;
 
     public int playerHealth;
     private int oldHealth;
@@ -55,11 +52,7 @@ public class GameController : MonoBehaviour
         if (player)
         {
             playerController = player.GetComponent<PlayerController>();
-            if(playerController)
-            {
-                playerHealth = playerController.health;
-            }
-            else
+            if(playerController == null)
             {
                 Debug.LogWarning("Player missing playercontroller!");
             }
@@ -72,8 +65,8 @@ public class GameController : MonoBehaviour
         //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         
         
-        acornCount.text = acorns.ToString();
-        mulchCount.text = mulch.ToString();
+        acornCount.text = playerAcorns.ToString();
+        mulchCount.text = playerMulch.ToString();
 
         //playerController.currentSpawn = playerRespawn;
         DontDestroyOnLoad(gameObject);
@@ -85,12 +78,14 @@ public class GameController : MonoBehaviour
        isDead = false;
        paused = false;
        oldHealth = playerHealth;
+       oldAcorns = playerAcorns;
+       oldMulch = playerMulch;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(testing)
+        if (testing)
         {
             if (mainMenu.activeInHierarchy == true)
             {
@@ -115,21 +110,25 @@ public class GameController : MonoBehaviour
 
     public void PickUpCount()
     {
-        if(oldAcorns != acorns)
+        playerAcorns = playerController.acorns;
+        playerMulch = playerController.mulch;
+
+        if (oldAcorns != playerAcorns)
         {
-            acornCount.text = acorns.ToString();
-            oldAcorns = acorns;
+            acornCount.text = playerAcorns.ToString();
+            oldAcorns = playerAcorns;
         }
-        if(oldMulch != mulch)
+        if(oldMulch != playerMulch)
         {
-            mulchCount.text = mulch.ToString();
-            oldMulch = mulch;
+            mulchCount.text = playerMulch.ToString();
+            oldMulch = playerMulch;
         }
     }
 
     public void HealthCount()
     {
-        if(oldHealth != playerHealth)
+        playerHealth = playerController.health;
+        if (oldHealth != playerHealth)
         {
             for(int i = 0; i < healthCounter.Length; i++)
             {

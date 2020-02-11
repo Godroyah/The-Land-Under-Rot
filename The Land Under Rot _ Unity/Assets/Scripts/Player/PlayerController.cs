@@ -19,6 +19,12 @@ public class PlayerController : MonoBehaviour
     #region Modifiers
     public int health = 3;
 
+    [Header("Player Inventory")]
+    #region Inventory
+    public int acorns;
+    public int mulch;
+    #endregion
+
     [Range(1, 20)]
     public float moveSpeed = 12f;
 
@@ -305,7 +311,7 @@ public class PlayerController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(interactDelay);
-        interactingCoroutine = null;
+        headbuttCoroutine = null;
     }
 
     private void Move()
@@ -387,12 +393,12 @@ public class PlayerController : MonoBehaviour
                 case PickUpType.ACORN:
                     //Count ACORN;
                     //move to Player; have GameController call for it
-                    gameController.acorns += 1;
+                    acorns += 1;
                     Destroy(other.gameObject);
                     break;
                 case PickUpType.MULCH:
                     //Count MULCH
-                    gameController.mulch += 1;
+                    mulch += 1;
                     Destroy(other.gameObject);
                     break;
                 case PickUpType.HEALTH:
