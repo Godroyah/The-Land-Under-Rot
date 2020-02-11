@@ -52,8 +52,9 @@ public class CamControl : MonoBehaviour
     {
         transform.position = target.transform.position;
 
-        // TODO: JANK rotation correction
+
         // Seems like over correction to me
+        // JK THIS IS HIGHLY NEEDED
         rotationTarget.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
 
     }

@@ -19,9 +19,10 @@ public class GazeGrowth : Interactable
         {
             // TODO: Needs proper movement/animation
             case GazeGrowthType.White:
-
+                StartCoroutine(Fungi(0));
                 break;
             case GazeGrowthType.Red:
+                StartCoroutine(Fungi(returnIn));
                 break;
             default:
                 break;

@@ -28,8 +28,9 @@ public class PlayerController : MonoBehaviour
     [Range(0, 200), Tooltip("Controls how fast the obj rotates when changing directions.")]
     public float rotationSpeed = 0.1f;
 
-
     [Space(10)] // Adds literal space in the inspector
+
+    #region Jumping Variables
 
     [Range(1, 20)]
     public float jumpVelocity = 10f;
@@ -42,8 +43,9 @@ public class PlayerController : MonoBehaviour
     [Range(0.001f, 5), Tooltip("Controls how high the player jumps on a shorter press.")]
     public float lowJumpMultiplier = 2f;
 
-    [Space(10)]// Adds literal space in the inspector
+    #endregion
 
+    [Space(10)]// Adds literal space in the inspector
 
     //public bool interactionRange_Visibililty = false;
     [Range(0f, 5f), Tooltip("Determines the Radius for Interactions.")]
@@ -59,12 +61,11 @@ public class PlayerController : MonoBehaviour
     [Header("Booleans")]
     #region Bools
     public bool isDead;
-    //private bool isDead;
     private bool isGrounded;
-    private bool isHeadBangin;
     private bool shouldRun = false;
     private bool shouldInteract = false;
     private bool shouldJump = false;
+    private bool shouldHeadbutt = false;
     #endregion
 
 
@@ -77,6 +78,10 @@ public class PlayerController : MonoBehaviour
     [Range(0, 1), Tooltip("Delay until the next time 'Interact' is available.")]
     public float interactDelay = 0.1f;
     private Coroutine interactingCoroutine;
+
+    [Range(0, 1), Tooltip("Delay until the next time 'Headbutt' is available.")]
+    public float headbuttDelay = 0.1f;
+    private Coroutine headbuttCoroutine;
 
     [Space(5)]
 
@@ -91,20 +96,15 @@ public class PlayerController : MonoBehaviour
     private float verticalInput;
     private Quaternion targetRotation;
     private Transform rotationTarget;
+
+    public List<Interactable> interactables = new List<Interactable>();
     #endregion
 
     private GameController gameController;
     private Interactable currentTarget = null;
 
-    //Hash ID
-    private int MovementID = 0;
-
     private void Awake()
     {
-        // TODO: Make this not rely on game controller
-        // Player cannot work without it as of rn
-        //gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("Rigidbody missing on " + gameObject.name);
         else
@@ -125,7 +125,6 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Adding a temp collider to " + gameObject.name + ". This requires more resources than starting with the component!");
                 gameObject.AddComponent<SphereCollider>().radius = interactionRange;
             }
-
         }
 
         rotationTarget = new GameObject().transform;
@@ -133,8 +132,6 @@ public class PlayerController : MonoBehaviour
         rotationTarget.name = "RotationTarget$$";
 
         camControl.rotationTarget = rotationTarget;
-
-        //camControl = playerCamera.GetComponent<CamControl>();
     }
 
     // Start is called before the first frame update
@@ -150,24 +147,17 @@ public class PlayerController : MonoBehaviour
 
         this.transform.position = currentSpawn.position;
         this.transform.rotation = currentSpawn.rotation;
-
-
-        //targetRotation = currentSpawn.rotation;
-
-        //forwardVel = turnInput = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
         GetInput();
 
         #region Interactable Check
 
         //Redefine above
-        List<Interactable> interactables = new List<Interactable>();
+
 
         if (interactables.Count > 0) // If there are interactables in range...
         {
@@ -208,7 +198,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (currentTarget != null)
                     {
-                        //ToggleHighlight(tempFocus, false);
+                        ToggleHighlight(currentTarget, false);
                     }
                     currentTarget = closestTarget;
                 }
@@ -239,7 +229,7 @@ public class PlayerController : MonoBehaviour
         }
         else
             rb.angularVelocity = Vector3.zero;
-        
+
 
         #region Jumping
 
@@ -260,13 +250,11 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Interacting());
         }
-        /* 
-        if (gameController.isDead)
+
+        if (shouldHeadbutt && headbuttCoroutine == null)
         {
-            Respawn();
-            gameController.Reset();
+
         }
-        */
     }
 
     private void FixedUpdate()
@@ -281,6 +269,7 @@ public class PlayerController : MonoBehaviour
         shouldRun = Input.GetKey(KeyCode.LeftShift);
         shouldJump = Input.GetButtonDown("Jump");
         shouldInteract = Input.GetButtonDown("Interact");
+        shouldHeadbutt = Input.GetButtonDown("Headbutt");
     }
 
     private void ToggleHighlight(Interactable focus, bool state)
@@ -292,7 +281,19 @@ public class PlayerController : MonoBehaviour
     {
         if (currentTarget != null)
         {
-            currentTarget.Interact(); // TODO: Find interactable target
+            currentTarget.Interact();
+        }
+
+        yield return new WaitForSeconds(interactDelay);
+        interactingCoroutine = null;
+    }
+
+    IEnumerator Headbutting()
+    {
+        for (int i = 0; i < interactables.Count; i++)
+        {
+            if (interactables[i] != null)
+                interactables[i].Interact();
         }
 
         yield return new WaitForSeconds(interactDelay);
@@ -309,7 +310,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
 
-        Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist); // TODO: Hardcoded Detection Radius
+        Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist);
         rotationTarget.position = tempDir + transform.position;
 
         movement = rotationTarget.TransformDirection(movement);
@@ -320,7 +321,6 @@ public class PlayerController : MonoBehaviour
             movement *= moveSpeed * Time.deltaTime;
 
         transform.position += movement;
-        //rb.AddForce(movement);
     }
 
     private void Rotate()
@@ -332,8 +332,8 @@ public class PlayerController : MonoBehaviour
         Quaternion _lookRotation = Quaternion.LookRotation(_direction);
 
         //rotate us over time according to speed until we are in the required rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed); // TODO: Smoother Transitions
-                                                                                                                  // ^^ For smoother transitions the speed should increase if the distance is shorter
+        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, Time.deltaTime * rotationSpeed); // For smoother transitions the speed should increase if the distance is shorter
+
     }
 
     private void Respawn()
