@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
     public SphereCollider interactionDetector; // TODO: Will this sphere collider cause issues?
     #endregion
 
+
+    //public CapsuleCollider headButt
     //[Header("Camera Override")]
 
 
@@ -98,6 +100,7 @@ public class PlayerController : MonoBehaviour
     private Transform rotationTarget;
 
     public List<Interactable> interactables = new List<Interactable>();
+    public List<Interactable> headbuttables = new List<Interactable>();
     #endregion
 
     private GameController gameController;
@@ -253,7 +256,7 @@ public class PlayerController : MonoBehaviour
 
         if (shouldHeadbutt && headbuttCoroutine == null)
         {
-
+            StartCoroutine(Headbutting());
         }
     }
 
@@ -290,10 +293,10 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Headbutting()
     {
-        for (int i = 0; i < interactables.Count; i++)
+        for (int i = 0; i < headbuttables.Count; i++)
         {
-            if (interactables[i] != null)
-                interactables[i].Interact();
+            if (headbuttables[i] != null)
+                headbuttables[i].Interact();
         }
 
         yield return new WaitForSeconds(interactDelay);
@@ -351,6 +354,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //HEADBUTTING
+        //if(other.CompareTag(""))
+
         //Damage/health test only
         //-----------------------------------------------------------
         if (other.CompareTag("Harmful"))
