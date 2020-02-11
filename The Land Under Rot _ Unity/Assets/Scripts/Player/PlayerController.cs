@@ -52,7 +52,9 @@ public class PlayerController : MonoBehaviour
     public float interactionRange = 1f;
 
     [Tooltip("This field helps specify that the SphereCollider on the Player is used for Interaction Detection.")]
-    public SphereCollider interactionDetector; // TODO: Will this sphere collider cause issues?
+    //public SphereCollider interactionDetector; // TODO: Will this sphere collider cause issues?
+    public MeshCollider interactionDetector;
+    public CapsuleCollider headButtDetector;
     #endregion
 
 
@@ -121,7 +123,8 @@ public class PlayerController : MonoBehaviour
 
         if (interactionDetector == null)
         {
-            interactionDetector = GetComponent<SphereCollider>();
+            //interactionDetector = GetComponent<SphereCollider>();
+            interactionDetector = GetComponent<MeshCollider>();
             if (interactionDetector == null)
             {
                 Debug.LogWarning("Interaction Detector SphereCollider Missing Reference!");
@@ -354,8 +357,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //HEADBUTTING
-        //if(other.CompareTag(""))
 
         //Damage/health test only
         //-----------------------------------------------------------
@@ -433,25 +434,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    //[ExecuteInEditMode]
-    private void OnDrawGizmosSelected()
-    {
-        if (interactionDetector != null)
-        {
-            interactionDetector.radius = interactionRange;
-        }
-
-
-        /*
-        if (interactionRange_Visibililty)
-        {
-            Gizmos.DrawWireSphere(transform.position + interactionDetection.center, interactionRange);
-        }
-        */
-    }
-
 }
 
-//public enum SpawnType { NONE, START, RESPAWN, KILL }
-//public enum SpawnType { NONE, START, SINGLE_RESPAWN, REGION_RESPAWN, SINGLE_KILL, REGION_KILL }
+
