@@ -11,6 +11,25 @@ public class GazeGrowth : Interactable
     [Range(0f, 25f), Tooltip("If set to 0, the cordyseps will never return.")]
     public float returnIn = 0f;
 
+    GameController gameController;
+
+    private void Start()
+    {
+        #region GameController Search
+        GameObject temp = GameObject.Find("@GameController");
+        if (temp != null)
+        {
+            gameController = temp.GetComponent<GameController>();
+
+            if (gameController == null)
+                Debug.LogWarning("@GameController does not have the 'GameController' script!");
+        }
+        else
+            Debug.LogWarning("Could not find GameController.");
+
+        #endregion
+    }
+
     public override void Interact()
     {
         base.Interact();
@@ -45,6 +64,22 @@ public class GazeGrowth : Interactable
                 transform.position = transform.position + (Vector3.up * 20f);
             }
 
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Headbutt"))
+        {
+            gameController.playerController.headbuttables.Add(this);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Headbutt"))
+        {
+            gameController.playerController.headbuttables.Remove(this);
         }
     }
 }

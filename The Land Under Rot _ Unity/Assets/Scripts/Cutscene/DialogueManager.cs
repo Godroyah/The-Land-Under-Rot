@@ -96,7 +96,7 @@ public class DialogueManager : MonoBehaviour
         yield return null;
     }
 
-    public void StartDialogue(string sceneName)
+    public bool StartDialogue(string sceneName)
     {
         //Debug.Log(sceneName);
         if (!hasActiveDialogue)
@@ -108,7 +108,7 @@ public class DialogueManager : MonoBehaviour
                     dialogue.StartScene();
                     //Debug.Log(sceneName);
                     hasActiveDialogue = true;
-                    break;
+                    return true;
                 }
             }
         }
@@ -116,5 +116,7 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Unable to start new scene '" + sceneName + "' because another scene is still/already started");
         }
+
+        return false;
     }
 }

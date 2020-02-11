@@ -8,6 +8,25 @@ public class Mulch : Interactable
 
     public float spawnJumpHeight = 1f;
 
+    GameController gameController;
+
+    private void Start()
+    {
+        #region GameController Search
+        GameObject temp = GameObject.Find("@GameController");
+        if (temp != null)
+        {
+            gameController = temp.GetComponent<GameController>();
+
+            if (gameController == null)
+                Debug.LogWarning("@GameController does not have the 'GameController' script!");
+        }
+        else
+            Debug.LogWarning("Could not find GameController.");
+
+        #endregion
+    }
+
     public override void Interact()
     {
         base.Interact();
@@ -26,6 +45,22 @@ public class Mulch : Interactable
             temp.transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
 
             rb.AddForce((Vector3.left / 3f) + Vector3.up * spawnJumpHeight);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Headbutt"))
+        {
+            gameController.playerController.headbuttables.Add(this);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Headbutt"))
+        {
+            gameController.playerController.headbuttables.Remove(this);
         }
     }
 }

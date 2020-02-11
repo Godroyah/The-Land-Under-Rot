@@ -4,15 +4,45 @@ using UnityEngine;
 
 public class Gong : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    GameController gameController;
+
+    private void Start()
     {
-        
+        #region GameController Search
+        GameObject temp = GameObject.Find("@GameController");
+        if (temp != null)
+        {
+            gameController = temp.GetComponent<GameController>();
+
+            if (gameController == null)
+                Debug.LogWarning("@GameController does not have the 'GameController' script!");
+        }
+        else
+            Debug.LogWarning("Could not find GameController.");
+
+        #endregion
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Interact()
     {
-        
+        base.Interact();
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Headbutt"))
+        {
+            gameController.playerController.headbuttables.Add(this);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Headbutt"))
+        {
+            gameController.playerController.headbuttables.Remove(this);
+        }
     }
 }
