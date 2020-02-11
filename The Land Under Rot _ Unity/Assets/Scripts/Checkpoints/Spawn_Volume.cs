@@ -42,6 +42,10 @@ public class Spawn_Volume : MonoBehaviour
             activeCorridor = true;
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             playerSpawn = playerController.currentSpawn;
+            
+            //-------------------------------------------------------
+            //----This Start for Demo only---------------------------
+
         }
     }
 

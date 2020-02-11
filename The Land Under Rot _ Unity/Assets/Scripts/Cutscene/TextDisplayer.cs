@@ -1,19 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class TextDisplayer : MonoBehaviour
 {
     //Text textBox;
-    TextMeshProUGUI textBox; 
+    TextMeshProUGUI textBox;
     public string fullText = "";
     public string displayedText;
     float textSpeed = 25f;
 
-    public Cutscene myCutscene; // TODO: Find a way to find the parent cutscene
+    public Dialogue myDialogue; // TODO: Find a way to find the parent cutscene
     Coroutine tempCoroutine;
 
     GameController gameController;
@@ -30,6 +28,8 @@ public class TextDisplayer : MonoBehaviour
 
         //myCutscene = gameObject.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<Cutscene>();
 
+        myDialogue = gameObject.GetComponentInParent(typeof(Dialogue)) as Dialogue;
+
         fullText = textBox.text;
         displayedText = "";
     }
@@ -41,9 +41,9 @@ public class TextDisplayer : MonoBehaviour
 
     private void Update()
     {
-        if (myCutscene != null && myCutscene.cutsceneManager != null)
+        if (myDialogue != null && myDialogue.dialogueManager != null)
         {
-            textSpeed = myCutscene.cutsceneManager.TextSpeed;
+            textSpeed = myDialogue.dialogueManager.TextSpeed;
         }
 
         textBox.text = displayedText;
@@ -54,6 +54,10 @@ public class TextDisplayer : MonoBehaviour
         //myCutscene = gameObject.transform.parent.transform.parent.transform.parent.transform.parent.GetComponent<Cutscene>(); // TODO: WTF is this
 
         //myCutscene.currentTextDisplayer = this;
+
+        myDialogue = gameObject.GetComponentInParent(typeof(Dialogue)) as Dialogue;
+
+        myDialogue.currentTextDisplayer = this;
         tempCoroutine = StartCoroutine(DisplayText());
     }
 
@@ -80,7 +84,7 @@ public class TextDisplayer : MonoBehaviour
     IEnumerator DisplayText()
     {
         displayedText = "";
-        while (gameController != null && gameController.cutsceneManager == null)
+        while (gameController != null && gameController.dialogueManager == null)
         {
             yield return new WaitForEndOfFrame();
         }
@@ -102,7 +106,7 @@ public class TextDisplayer : MonoBehaviour
             yield return new WaitForSeconds(1f / textSpeed);
         }
 
-        myCutscene.hasFinishedDisplayingText = true;
+        myDialogue.hasFinishedDisplayingText = true;
         yield return null;
     }
 }

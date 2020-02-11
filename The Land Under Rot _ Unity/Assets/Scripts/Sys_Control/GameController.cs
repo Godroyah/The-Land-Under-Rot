@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public CutsceneManager cutsceneManager;
+    public DialogueManager dialogueManager;
 
     public GameObject mainMenu;
     public GameObject pauseMenu;
@@ -23,11 +24,14 @@ public class GameController : MonoBehaviour
     public int mulch;
     private int oldMulch;
 
+    public int playerAcorns;
+    public int playerMulch;
+
     public int playerHealth;
     private int oldHealth;
 
-    public Text acornCount;
-    public Text mulchCount;
+    public TextMeshProUGUI acornCount;
+    public TextMeshProUGUI mulchCount;
     public Image[] healthCounter;
 
     public bool isDead;
@@ -46,8 +50,27 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        playerHealth = playerController.health;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player)
+        {
+            playerController = player.GetComponent<PlayerController>();
+            if(playerController)
+            {
+                playerHealth = playerController.health;
+            }
+            else
+            {
+                Debug.LogWarning("Player missing playercontroller!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Can't find player!");
+        }
+
+        //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        
         
         acornCount.text = acorns.ToString();
         mulchCount.text = mulch.ToString();
@@ -78,9 +101,12 @@ public class GameController : MonoBehaviour
                 mmenu_Active = false;
             }
         }
-        Pause();
-        PickUpCount();
-        HealthCount();
+        if(playerController != null)
+        {
+            Pause();
+            PickUpCount();
+            HealthCount();
+        }
         //if(isDead)
         //{
         //    Reset();

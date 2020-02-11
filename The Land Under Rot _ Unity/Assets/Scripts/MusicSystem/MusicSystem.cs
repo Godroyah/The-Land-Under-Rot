@@ -23,7 +23,7 @@ public class MusicSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (newSource != null)
+        if (newSource != null && (oldSource.volume <= 0 || oldSource == null ))
         {
             StopCoroutine(transitioning);
             transitioning = StartCoroutine(Transition());

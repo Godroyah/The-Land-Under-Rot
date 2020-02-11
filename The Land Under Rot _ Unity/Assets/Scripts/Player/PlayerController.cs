@@ -237,6 +237,9 @@ public class PlayerController : MonoBehaviour
         {
             Rotate();
         }
+        else
+            rb.angularVelocity = Vector3.zero;
+        
 
         #region Jumping
 
@@ -374,6 +377,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 case PickUpType.ACORN:
                     //Count ACORN;
+                    //move to Player; have GameController call for it
                     gameController.acorns += 1;
                     Destroy(other.gameObject);
                     break;
