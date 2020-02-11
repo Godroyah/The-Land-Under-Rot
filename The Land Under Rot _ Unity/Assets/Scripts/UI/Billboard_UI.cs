@@ -35,10 +35,12 @@ public class Billboard_UI : MonoBehaviour
             {
                 Debug.LogWarning("GameController not active in scene!");
             }
+            camTransform = billBoardCam.transform;
+            promptCanvas.worldCamera = billBoardCam;
         }
         
-        camTransform = billBoardCam.transform;
-        promptCanvas.worldCamera = billBoardCam;
+
+        
         startRotation = transform.rotation;
 
         if (textObject != null)
@@ -62,6 +64,11 @@ public class Billboard_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!forInteractable && camControl == null)
+        {
+            camTransform = billBoardCam.transform;
+            promptCanvas.worldCamera = billBoardCam;
+        }
         //----------------------------------------------------------------------------------------
         //-------Multiply the start rotation of Button Prompt with that of the camera-------------
         transform.rotation = camTransform.rotation * startRotation;
