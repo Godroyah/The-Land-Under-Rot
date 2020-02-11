@@ -24,7 +24,7 @@ public class Button_Prompter : MonoBehaviour
     {
         if (gameController == null)
         {
-            gameController = GameObject.Find("GameController").GetComponent<GameController>();
+            gameController = GameObject.Find("@GameController").GetComponent<GameController>();
             if (gameController != null)
             {
                 billboardUI.billBoardCam = gameController.playerController.camControl.myCamera;

@@ -27,7 +27,7 @@ public class Billboard_UI : MonoBehaviour
         {
             if (gameController == null)
             {
-                gameController = GameObject.Find("GameController").GetComponent<GameController>();
+                gameController = GameObject.Find("@GameController").GetComponent<GameController>();
                 if (gameController != null)
                     billBoardCam = gameController.playerController.camControl.myCamera;
             }

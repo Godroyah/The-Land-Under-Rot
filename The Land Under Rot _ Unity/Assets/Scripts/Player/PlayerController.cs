@@ -125,6 +125,8 @@ public class PlayerController : MonoBehaviour
         {
             //interactionDetector = GetComponent<SphereCollider>();
             interactionDetector = GetComponent<MeshCollider>();
+
+            //Redundant now that we're using a Mesh Collider?
             if (interactionDetector == null)
             {
                 Debug.LogWarning("Interaction Detector SphereCollider Missing Reference!");
