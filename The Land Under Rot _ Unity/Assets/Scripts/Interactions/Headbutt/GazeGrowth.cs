@@ -8,6 +8,21 @@ public class GazeGrowth : Interactable
 
     public GameObject[] cordyseps;
 
+    //public Transform[] cordys_Start_Position;
+
+    private Vector3 cordys_Start_Position;
+
+    private Vector3 cordys_Lowered_Position;
+
+    public float lowerDistance;
+
+    //private Vector3 cordyRaisedVector;
+
+    //private Vector3 cordyLoweredVector;
+
+    [Range(0f, 1f), Tooltip("Set to change how quickly cordyseps transition.")]
+    public float rateOfChange;
+
     [Range(0f, 25f), Tooltip("If set to 0, the cordyseps will never return.")]
     public float returnIn = 0f;
 
@@ -28,6 +43,14 @@ public class GazeGrowth : Interactable
             Debug.LogWarning("Could not find GameController.");
 
         #endregion
+
+        //for(int i = 0; i < cordyseps.Length; i++)
+        //{
+        //    cordys_Start_Position[i].position = cordyseps[i].transform.position;
+        //}
+
+        //cordyRaisedVector = new Vector3(cordys_Raised_Position.position.x, cordys_Raised_Position.position.y, cordys_Raised_Position.position.z);
+        //cordyLoweredVector = new Vector3(cordys_Lowered_Position.position.x, cordys_Lowered_Position.position.y, cordys_Lowered_Position.position.z);
     }
 
     public override void Interact()
@@ -50,9 +73,16 @@ public class GazeGrowth : Interactable
 
     IEnumerator Fungi(float waitTime)
     {
+        
         foreach (GameObject fungi in cordyseps)
         {
-            transform.position = transform.position - (Vector3.down * 20f);
+            Debug.Log("Shrinking!");
+
+            cordys_Start_Position = new Vector3(fungi.transform.position.x, fungi.transform.position.y, fungi.transform.position.z);
+            cordys_Lowered_Position = new Vector3(fungi.transform.position.x, fungi.transform.position.y - lowerDistance, fungi.transform.position.z);
+
+            transform.position = Vector3.Lerp(cordys_Start_Position, cordys_Lowered_Position, rateOfChange);
+            //transform.position = transform.position - (Vector3.down * 20f);
         }
 
         if (waitTime != 0)
@@ -61,7 +91,8 @@ public class GazeGrowth : Interactable
 
             foreach (GameObject fungi in cordyseps)
             {
-                transform.position = transform.position + (Vector3.up * 20f);
+                transform.position = Vector3.Lerp(cordys_Lowered_Position, cordys_Start_Position, rateOfChange);
+                //transform.position = transform.position + (Vector3.up * 20f);
             }
 
         }
