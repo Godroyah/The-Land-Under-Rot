@@ -6,18 +6,57 @@ public class Billboard_UI : MonoBehaviour
 {
     //-----WARNING! Make sure XYX Scale you parent the Button_Prompt to are equivalent! 
     //-----(ex. x = 1, y = 1, z = 1 OR x = 2, y = 2, z = 2, ETC.)
-    public Canvas promptCanvas;
+
+    public GameController gameController;
+    public Camera billBoardCam;
     public Transform camTransform;
+    public Canvas promptCanvas;
+    private CamControl camControl;
+    public GameObject textObject;
+    public GameObject imageObject;
+
+    public bool forInteractable;
+    public bool tutorial;
 
     Quaternion startRotation;
 
     // Start is called before the first frame update
     void Start()
     {
-        camTransform = Camera.main.transform;
-        promptCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
-
+        if(forInteractable)
+        {
+            if (gameController == null)
+            {
+                gameController = GameObject.Find("GameController").GetComponent<GameController>();
+                if (gameController != null)
+                    billBoardCam = gameController.playerController.camControl.myCamera;
+            }
+            else
+            {
+                Debug.LogWarning("GameController not active in scene!");
+            }
+        }
+        
+        camTransform = billBoardCam.transform;
+        promptCanvas.worldCamera = billBoardCam;
         startRotation = transform.rotation;
+
+        if (textObject != null)
+        {
+            textObject.SetActive(false);
+        }
+        else if(tutorial)
+        {
+            Debug.LogWarning("Text TMP is missing from Tutorial Billboard UI! Please reconnect reference!");
+        }
+        if(imageObject != null)
+        {
+            imageObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Billboard UI image is missing! Please reconnect reference!");
+        }
     }
 
     // Update is called once per frame

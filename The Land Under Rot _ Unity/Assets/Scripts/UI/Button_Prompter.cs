@@ -6,52 +6,76 @@ using UnityEngine;
 
 public class Button_Prompter : MonoBehaviour
 {
-    public GameObject billBoardUI;
+    public GameController gameController;
+
+    public Billboard_UI billboardUI;
 
     public GameObject textObject;
 
     public GameObject imageObject;
 
-    //public string npcText;
-
     public TextMeshProUGUI promptText;
+
+    public bool tutorial;
+    //If tutorial prompt; make this true;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(textObject == null)
+        if (gameController == null)
         {
-            Debug.LogWarning("Text TMP missing! Please attach the Text TMP child to the textObject reference!");
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
+            if (gameController != null)
+                billboardUI.billBoardCam = gameController.playerController.camControl.myCamera;
         }
-        else if(imageObject == null)
+        else
+        {
+            Debug.LogWarning("GameController not active in scene!");
+        }
+
+        if (textObject == null)
+        {
+            if(tutorial)
+                Debug.LogWarning("Text TMP missing! If this is a Tutorial Button Prompt, please attach the Text TMP child to the textObject reference!");
+        }
+        else if(textObject != null)
+        {
+            textObject.SetActive(false);
+        }
+        if (imageObject == null)
         {
             Debug.LogWarning("Image missing! Please attach the Image child to the imageObject reference!");
         }
         else
-        {   
-           textObject.SetActive(false);
-           imageObject.SetActive(false);
-           //promptText.text = npcText;
+        {
+            imageObject.SetActive(false);
         }
     }
 
     void OnTriggerEnter(Collider player)
     {
-        if(player.gameObject.tag == "Player")
+        if (player.gameObject.tag == "Player")
         {
-            //Instantiate(buttonPromptUI, transform.position, transform.rotation);
-            //buttonPromptUI.SetActive(true);
-            textObject.SetActive(true);
+            if (gameController == null)
+            {
+                billboardUI.camTransform = player.GetComponent<PlayerController>().camControl.myCamera.transform;
+            }
+            if(textObject != null)
+            {
+                textObject.SetActive(true);
+            }
             imageObject.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider player)
     {
-        if(player.gameObject.tag == "Player")
+        if (player.gameObject.tag == "Player")
         {
-            //buttonPromptUI.SetActive(false);
-            textObject.SetActive(false);
+            if(textObject != null)
+            {
+                textObject.SetActive(false);
+            }
             imageObject.SetActive(false);
         }
     }
