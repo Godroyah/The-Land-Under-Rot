@@ -127,6 +127,9 @@ public class PlayerController : MonoBehaviour
         if (animator != null)
             animator = GetComponent<Animator>();
 
+        headButtDetector.enabled = false;
+
+        //Is the whole check redundant since the detector is on its own object now/just reworked to grab component on object instead of just component?
         if (interactionDetector == null)
         {
             //interactionDetector = GetComponent<SphereCollider>();
@@ -304,13 +307,15 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Headbutting()
     {
-        for (int i = 0; i < headbuttables.Count; i++)
-        {
-            if (headbuttables[i] != null)
-                headbuttables[i].Interact();
-        }
+        headButtDetector.enabled = true;
+        //for (int i = 0; i < headbuttables.Count; i++)
+        //{
+        //    if (headbuttables[i] != null)
+        //        headbuttables[i].Interact();
+        //}
 
         yield return new WaitForSeconds(interactDelay);
+        headButtDetector.enabled = false;
         headbuttCoroutine = null;
     }
 

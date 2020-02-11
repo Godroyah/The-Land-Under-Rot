@@ -36,15 +36,16 @@ public class Bark : Interactable
     {
         if (other.CompareTag("Headbutt"))
         {
-            gameController.playerController.headbuttables.Add(this);
+            Interact();
+            //gameController.playerController.headbuttables.Add(this);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Headbutt"))
-        {
-            gameController.playerController.headbuttables.Remove(this);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Headbutt"))
+    //    {
+    //        gameController.playerController.headbuttables.Remove(this);
+    //    }
+    //}
 }
