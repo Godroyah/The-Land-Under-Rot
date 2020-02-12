@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     [Header("Booleans")]
     #region Bools
     public bool isDead;
+    public bool infiniteJumping = false;
     private bool isGrounded;
     private bool shouldRun = false;
     private bool shouldInteract = false;
@@ -277,6 +278,10 @@ public class PlayerController : MonoBehaviour
                     canJump = true;
                 }
             }
+        }
+        else if (infiniteJumping)
+        {
+            canJump = true;
         }
 
         if (shouldJump && canJump)
