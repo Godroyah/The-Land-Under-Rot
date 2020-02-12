@@ -36,7 +36,7 @@ public class GazeGrowth : Interactable
 
     //[Range(0f, 1f), Tooltip("Set to change how quickly cordyseps transition.")]
     //public 
-    private float moveSmoothing = 0;
+    private float rateStorage;
 
     [SerializeField]
     private float rateOfChange = 0.1f;
@@ -48,6 +48,10 @@ public class GazeGrowth : Interactable
 
     private void Start()
     {
+        rateStorage = rateOfChange;
+        cordys_Start_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y, cordysepBarrier.transform.position.z);
+        cordys_Lowered_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y - lowerDistance, cordysepBarrier.transform.position.z);
+
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
         if (temp != null)
@@ -112,7 +116,7 @@ public class GazeGrowth : Interactable
     {
         //cordys_Start_Position = new Vector3[cordyseps.Length];
         //cordys_Lowered_Position = new Vector3[cordyseps.Length];
-
+        rateOfChange = rateStorage;
         float iteration = rateOfChange;
         //int i = 0;
         //for(int i = 0; i > cordyseps.Length; i++)
@@ -127,8 +131,8 @@ public class GazeGrowth : Interactable
         //        yield return null;
         //    }
         //}
-        cordys_Start_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y, cordysepBarrier.transform.position.z);
-        cordys_Lowered_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y - lowerDistance, cordysepBarrier.transform.position.z);
+        //cordys_Start_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y, cordysepBarrier.transform.position.z);
+        //cordys_Lowered_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y - lowerDistance, cordysepBarrier.transform.position.z);
 
         while (rateOfChange < 1.0f)
         {
@@ -137,7 +141,10 @@ public class GazeGrowth : Interactable
             yield return null;
         }
 
-
+        if(waitTime != 0)
+        {
+            StartCoroutine(DelayReturn(waitTime));
+        }
         //foreach (GameObject fungi in cordyseps)
         //{
         //    cordys_Start_Position = new Vector3(fungi.transform.position.x, fungi.transform.position.y, fungi.transform.position.z);
@@ -151,6 +158,40 @@ public class GazeGrowth : Interactable
         //        yield return null;
         //    }
         //}
+    }
+
+    IEnumerator DelayReturn(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        StartCoroutine(ReturnVines());
+    }
+
+    IEnumerator ReturnVines()
+    {
+        rateOfChange = rateStorage;
+        float iteration = rateOfChange;
+        //int i = 0;
+        //for(int i = 0; i > cordyseps.Length; i++)
+        //{
+        //    cordys_Start_Position[i] = new Vector3(cordyseps[i].transform.position.x, cordyseps[i].transform.position.y, cordyseps[i].transform.position.z);
+        //    cordys_Lowered_Position[i] = new Vector3(cordyseps[i].transform.position.x, cordyseps[i].transform.position.y - lowerDistance, cordyseps[i].transform.position.z);
+
+        //    while(Vector3.Distance(cordyseps[i].transform.position, cordys_Lowered_Position[i]) > 0.1)
+        //    {
+        //        cordyseps[i].transform.position = Vector3.Lerp(cordys_Start_Position[i], cordys_Lowered_Position[i], rateOfChange);
+        //        rateOfChange += iteration;
+        //        yield return null;
+        //    }
+        //}
+        //cordys_Start_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y, cordysepBarrier.transform.position.z);
+        //cordys_Lowered_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y - lowerDistance, cordysepBarrier.transform.position.z);
+
+        while (rateOfChange < 1.0f)
+        {
+            cordysepBarrier.transform.position = Vector3.Lerp(cordysepBarrier.transform.position, cordys_Start_Position, rateOfChange);
+            rateOfChange += iteration;
+            yield return null;
+        }
     }
 
     IEnumerator Fungu(float waitTime)
