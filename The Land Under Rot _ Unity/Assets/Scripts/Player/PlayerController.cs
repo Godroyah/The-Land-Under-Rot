@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
     private bool shouldRun = false;
     private bool shouldInteract = false;
     private bool shouldJump = false;
+    private bool canJump = false;
     private bool shouldHeadbutt = false;
     #endregion
 
@@ -256,9 +257,33 @@ public class PlayerController : MonoBehaviour
         else if (rb.velocity.y > 0 && !shouldJump)
             rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 
-        if (shouldJump)
+        if (!canJump && shouldJump)
+        {
+            // Bit shift the index of the layer (8) to get a bit mask
+            int layerMask = 1 << 8;
+
+            // This would cast rays only against colliders in layer 8.
+            // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+            layerMask = ~layerMask;
+
+            RaycastHit hit;
+            // Does the ray intersect any objects excluding the player layer
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5f))
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+                Debug.Log("Did Hit");
+                if (hit.distance < 2.4f) // TODO: Hardcoded Raycast distance check
+                {
+                    canJump = true;
+                }
+            }
+        }
+
+        if (shouldJump && canJump)
         {
             rb.velocity = Vector3.up * jumpVelocity;
+
+            canJump = false;
         }
 
         #endregion
