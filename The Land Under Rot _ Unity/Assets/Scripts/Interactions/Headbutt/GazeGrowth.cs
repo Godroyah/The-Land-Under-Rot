@@ -16,12 +16,19 @@ public class GazeGrowth : Interactable
 
     public float lowerDistance;
 
+    public float moveDuration;
+
+    private float currentDuration;
+
     //private Vector3 cordyRaisedVector;
 
     //private Vector3 cordyLoweredVector;
 
-    [Range(0f, 1f), Tooltip("Set to change how quickly cordyseps transition.")]
-    public float rateOfChange;
+    //[Range(0f, 1f), Tooltip("Set to change how quickly cordyseps transition.")]
+    //public 
+    public float moveSmoothing;
+    
+    private float rateOfChange;
 
     [Range(0f, 25f), Tooltip("If set to 0, the cordyseps will never return.")]
     public float returnIn = 0f;
@@ -74,14 +81,23 @@ public class GazeGrowth : Interactable
     IEnumerator Fungi(float waitTime)
     {
         
+
         foreach (GameObject fungi in cordyseps)
         {
+            currentDuration = 0;
+            rateOfChange = 0;
             Debug.Log("Shrinking!");
 
             cordys_Start_Position = new Vector3(fungi.transform.position.x, fungi.transform.position.y, fungi.transform.position.z);
             cordys_Lowered_Position = new Vector3(fungi.transform.position.x, fungi.transform.position.y - lowerDistance, fungi.transform.position.z);
 
-            transform.position = Vector3.Lerp(cordys_Start_Position, cordys_Lowered_Position, rateOfChange);
+            while(currentDuration < moveDuration)
+            {
+                //rateOfChange = Mathf.InverseLerp(0, moveDuration, currentDuration);
+                rateOfChange = currentDuration / moveDuration;
+                fungi.transform.position = Vector3.Lerp(cordys_Start_Position, cordys_Lowered_Position, rateOfChange);
+                currentDuration += Time.deltaTime;
+            }
             //transform.position = transform.position - (Vector3.down * 20f);
         }
 
@@ -91,7 +107,16 @@ public class GazeGrowth : Interactable
 
             foreach (GameObject fungi in cordyseps)
             {
-                transform.position = Vector3.Lerp(cordys_Lowered_Position, cordys_Start_Position, rateOfChange);
+                currentDuration = 0;
+                rateOfChange = 0;
+
+                while (currentDuration < moveDuration)
+                {
+                    //rateOfChange = Mathf.InverseLerp(0, moveDuration, currentDuration);
+                    rateOfChange = currentDuration / moveDuration;
+                    fungi.transform.position = Vector3.Lerp(cordys_Start_Position, cordys_Lowered_Position, rateOfChange);
+                    currentDuration += Time.deltaTime;
+                }
                 //transform.position = transform.position + (Vector3.up * 20f);
             }
 
