@@ -94,7 +94,7 @@ public class GazeGrowth : Interactable
             while(currentDuration < moveDuration)
             {
                 //rateOfChange = Mathf.InverseLerp(0, moveDuration, currentDuration);
-                rateOfChange = currentDuration / moveDuration;
+                rateOfChange = (currentDuration / moveDuration);
                 fungi.transform.position = Vector3.Lerp(cordys_Start_Position, cordys_Lowered_Position, rateOfChange);
                 currentDuration += Time.deltaTime;
             }
