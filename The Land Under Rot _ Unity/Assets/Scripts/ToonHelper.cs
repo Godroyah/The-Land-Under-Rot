@@ -32,7 +32,9 @@ namespace Toon
     {
 
         // Params
-        [SerializeField] Material material = null;
+        [SerializeField] Material material;
+        //Material material = null;
+        Material matInstance;
         [SerializeField] Vector3 meshCenter = Vector3.zero;
         [SerializeField] int maxLights = 6;
 
@@ -66,14 +68,42 @@ namespace Toon
             if (!material) return;
             skinRenderer = GetComponent<SkinnedMeshRenderer>();
             meshRenderer = GetComponent<MeshRenderer>();
-            if (skinRenderer) skinRenderer.sharedMaterial = material;
-            if (meshRenderer) meshRenderer.sharedMaterial = material;
 
+            matInstance = new Material(material);
+            //material = matInstance;
+
+            if (skinRenderer) skinRenderer.sharedMaterial = matInstance;
+            if (meshRenderer) meshRenderer.sharedMaterial = matInstance;
+
+            /*
             if (!Application.isPlaying)
             {
                 Material matInstance = new Material(material);
                 material = matInstance;
             }
+            */
+            /*
+            skinRenderer = GetComponent<SkinnedMeshRenderer>();
+            meshRenderer = GetComponent<MeshRenderer>();
+
+            if (skinRenderer)
+            {
+                material = new Material(skinRenderer.sharedMaterial);
+                Material matInstance = new Material(material);
+                material = matInstance;
+
+                skinRenderer.sharedMaterial = material;
+            }
+
+            if (meshRenderer)
+            {
+                material = new Material(meshRenderer.sharedMaterial);
+                Material matInstance = new Material(material);
+                material = matInstance;
+
+                meshRenderer.sharedMaterial = material;
+            }
+            */
         }
 
         // NOTE: If your game loads lights dynamically, this should be called to init new lights
@@ -124,7 +154,7 @@ namespace Toon
 
         void UpdateMaterial()
         {
-            if (!material) return;
+            if (!matInstance) return;
 
             // Refresh light data
             List<LightSet> sortedLights = new List<LightSet>();
@@ -137,7 +167,8 @@ namespace Toon
             }
 
             // Sort lights by brightness
-            sortedLights.Sort((x, y) => {
+            sortedLights.Sort((x, y) =>
+            {
                 float yBrightness = y.color.grayscale * y.atten;
                 float xBrightness = x.color.grayscale * x.atten;
                 return yBrightness.CompareTo(xBrightness);
@@ -154,16 +185,16 @@ namespace Toon
                 Color color = lightSet.color;
                 color.a = Mathf.Clamp(lightSet.atten, 0.01f, 0.99f); // UV might wrap around if attenuation is >1 or 0<
 
-                material.SetVector($"_L{i}_dir", lightSet.dir.normalized);
-                material.SetColor($"_L{i}_color", color);
+                matInstance.SetVector($"_L{i}_dir", lightSet.dir.normalized);
+                matInstance.SetColor($"_L{i}_color", color);
                 i++;
             }
 
             // Turn off the remaining light slots
             while (i <= maxLights)
             {
-                material.SetVector($"_L{i}_dir", Vector3.up);
-                material.SetColor($"_L{i}_color", Color.black);
+                matInstance.SetVector($"_L{i}_dir", Vector3.up);
+                matInstance.SetColor($"_L{i}_color", Color.black);
                 i++;
             }
 
