@@ -31,26 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5252281961312053853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5263754777764537578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  meshCenter: {x: 0, y: 0, z: 0}
-  maxLights: 6
-  raycast: 1
-  raycastMask:
-    serializedVersion: 2
-    m_Bits: 0
-  raycastFadeSpeed: 10
 --- !u!64 &9169633893912004591
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -65,6 +45,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -4667168826490181233, guid: e2c794f26d0de4048a2982dea4aea9d4, type: 3}
+--- !u!114 &5252281961312053853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263754777764537578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: e12e1957226cf1a4eabc0410f84d6893, type: 2}
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1001 &4192129984718241251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e12e1957226cf1a4eabc0410f84d6893, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: e2c794f26d0de4048a2982dea4aea9d4,
         type: 3}
       propertyPath: m_Name
