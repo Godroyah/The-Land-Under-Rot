@@ -400,56 +400,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        //Damage/health test only
-        //-----------------------------------------------------------
-        if (other.CompareTag("Harmful"))
-        {
-            if (health > 0)
-            {
-                health -= 1;
-            }
-            Destroy(other.gameObject);
-        }
-        //-----------------------------------------------------------
-
-        if (other.CompareTag("Pick_Up"))
-        {
-            Debug.Log("Pickup detected?");
-            Pick_Up item = other.GetComponent<Pick_Up>();
-
-            PickUpType pickUpType = item.pickUpType;
-
-            switch (pickUpType)
-            {
-                case PickUpType.NONE:
-                    Debug.LogWarning("PickUpType not set!");
-                    break;
-                case PickUpType.ACORN:
-                    //Count ACORN;
-                    //move to Player; have GameController call for it
-                    acorns += 1;
-                    Destroy(other.gameObject);
-                    break;
-                case PickUpType.MULCH:
-                    //Count MULCH
-                    mulch += 1;
-                    Destroy(other.gameObject);
-                    break;
-                case PickUpType.HEALTH:
-                    //Add HEALTH
-                    if (health < 3)
-                    {
-                        health += 1;
-                    }
-                    Destroy(other.gameObject);
-                    break;
-                default:
-                    Debug.LogWarning("PickUpType Error.");
-                    break;
-            }
-
-        }
         if (other.CompareTag("Spawn_Volume"))
         {
             Debug.Log("Collider detected?");

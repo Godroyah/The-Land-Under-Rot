@@ -20,6 +20,9 @@ public class GazeGrowth : Interactable
 
     private float rateStorage;
 
+    [SerializeField]
+    private bool waitReturn;
+
     [Range(0f, 1.0f), Tooltip("Adjust speed of cordyceps lowering and raising.")]
     private float rateOfChange = 0.1f;
 
@@ -30,6 +33,7 @@ public class GazeGrowth : Interactable
 
     private void Start()
     {
+        waitReturn = false;
         rateStorage = rateOfChange;
         cordys_Start_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y, cordysepBarrier.transform.position.z);
         cordys_Lowered_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y - lowerDistance, cordysepBarrier.transform.position.z);
@@ -61,6 +65,7 @@ public class GazeGrowth : Interactable
                 StartCoroutine(Fungi(0));
                 break;
             case GazeGrowthType.Red:
+                if(!waitReturn)
                 StartCoroutine(Fungi(returnIn));
                 break;
             default:
@@ -103,6 +108,7 @@ public class GazeGrowth : Interactable
 
     IEnumerator DelayReturn(float waitTime)
     {
+        waitReturn = true;
         yield return new WaitForSeconds(waitTime);
         StartCoroutine(ReturnCords());
     }
@@ -118,6 +124,8 @@ public class GazeGrowth : Interactable
             rateOfChange += iteration;
             yield return null;
         }
+
+        waitReturn = false;
     }
 
     
