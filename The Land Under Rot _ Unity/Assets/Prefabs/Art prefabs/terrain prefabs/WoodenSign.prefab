@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 1979584858454595914}
   - component: {fileID: 6729815737718554438}
   - component: {fileID: 4469560407657216193}
-  - component: {fileID: 7295903974420719587}
   - component: {fileID: 6933469431667824000}
+  - component: {fileID: 2644474410141575480}
   m_Layer: 0
   m_Name: SignModel
   m_TagString: Untagged
@@ -111,20 +111,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7295903974420719587
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8484031123844557138}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4731625221394857352, guid: 7ed9882f7a7582c4494ab8fafb229cae, type: 3}
 --- !u!114 &6933469431667824000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +131,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   raycastFadeSpeed: 10
+--- !u!65 &2644474410141575480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8484031123844557138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2525774, y: 1.5270547, z: 1.4094448}
+  m_Center: {x: 0.0061168782, y: 0.45976037, z: -0.009226352}
