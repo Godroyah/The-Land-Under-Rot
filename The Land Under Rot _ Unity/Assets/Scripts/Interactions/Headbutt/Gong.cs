@@ -10,24 +10,17 @@ public class Gong : Interactable
 
     public GameObject cinematicCamera;
 
+    private Camera cameraComponent;
+
     private Gong_Cam gongCamController;
 
     private bool firstInteraction;
 
-    //Transform currentViewPoint;
-
-    //public Transform[] viewPoints;
-
-    //public float[] sceneTime;
-
-    //public bool[] glideToShot;
-
-    //public float transitionSpeed;
-
     private void Start()
     {
         gongCamController = cinematicCamera.GetComponent<Gong_Cam>();
-        cinematicCamera.SetActive(false);
+        cameraComponent = cinematicCamera.GetComponent<Camera>();
+        cameraComponent.enabled = false;
         firstInteraction = true;
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
@@ -60,17 +53,20 @@ public class Gong : Interactable
 
     private void Update()
     {
-        if(gongCamController.startScene)
+        if(playerController != null)
         {
-            playerController.enabled = false;
-            playerController.camControl.myCamera.enabled = false;
-            cinematicCamera.GetComponent<Camera>().enabled = true;
-        }
-        else
-        {
-            cinematicCamera.GetComponent<Camera>().enabled = false;
-            playerController.camControl.myCamera.enabled = true;
-            playerController.enabled = true;
+            if (gongCamController.startScene)
+            {
+                playerController.enabled = false;
+                playerController.camControl.myCamera.enabled = false;
+                cameraComponent.enabled = true;
+            }
+            else
+            {
+                cameraComponent.enabled = false;
+                playerController.camControl.myCamera.enabled = true;
+                playerController.enabled = true;
+            }
         }
     }
 

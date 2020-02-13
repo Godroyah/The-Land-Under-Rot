@@ -26,7 +26,6 @@ public class Gong_Cam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         currentTime = sceneTime;
         currentScene = 0;
     }
@@ -35,25 +34,29 @@ public class Gong_Cam : MonoBehaviour
     void Update()
     {
         currentViewPoint = viewPoints[currentScene];
+        Debug.Log(viewPoints.Length);
 
         if(startScene)
         {
-            if(currentScene < viewPoints.Length)
-            {
+            
+            
                 if (currentTime < 0)
                 {
                     currentTime = sceneTime;
-                    currentScene += 1;
+                    if(currentScene != viewPoints.Length - 1)
+                    {
+                        currentScene += 1;
+                    }
                 }
                 currentTime -= Time.deltaTime;
-            }
-            else
-            {
-                if (currentTime > 0)
+            
+            
+            
+                if (currentTime < 0 && currentScene >= viewPoints.Length - 1)
                 {
                     startScene = false;
                 }
-            }
+            
         }
     }
 
