@@ -8,6 +8,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public DialogueManager dialogueManager;
+    public CutsceneManager cutsceneManager;
 
     public GameObject mainMenu;
     public GameObject pauseMenu;

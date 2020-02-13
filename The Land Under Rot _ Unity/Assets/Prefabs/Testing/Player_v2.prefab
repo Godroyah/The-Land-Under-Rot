@@ -83,6 +83,8 @@ MonoBehaviour:
   camControl: {fileID: 325822710659731452}
   currentSpawn: {fileID: 0}
   health: 3
+  acorns: 0
+  mulch: 0
   moveSpeed: 12
   runSpeed: 20
   rotationSpeed: 5
@@ -91,12 +93,17 @@ MonoBehaviour:
   lowJumpMultiplier: 2
   interactionRange: 1.5
   interactionDetector: {fileID: 9075637398003761362}
+  headButtDetector: {fileID: 0}
   isDead: 0
+  infiniteJumping: 0
   inputDelay: 0.1
   interactDelay: 0.1
+  headbuttDelay: 0.1
   rotationTargetDist: 0.1
   rotationCutoff: 0.1
   controlInput: {x: 0, y: 0}
+  interactables: []
+  headbuttables: []
 --- !u!136 &325822709870426571
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -295,6 +302,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 325822709870426568}
     m_Modifications:
+    - target: {fileID: 3458369357532953647, guid: 791eb7992dbb7f147a2d0239e16d03e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5485647015242135694, guid: 791eb7992dbb7f147a2d0239e16d03e2,
         type: 3}
       propertyPath: m_LocalPosition.x

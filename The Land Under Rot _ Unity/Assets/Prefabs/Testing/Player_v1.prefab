@@ -51,18 +51,27 @@ MonoBehaviour:
   camControl: {fileID: 6852863769063548741}
   currentSpawn: {fileID: 0}
   health: 3
+  acorns: 0
+  mulch: 0
   moveSpeed: 12
-  jumpStrength: 6.4
+  runSpeed: 20
   rotationSpeed: 5
-  fallMultiplierFloat: 2
+  jumpVelocity: 10
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
   interactionRange: 1.5
   interactionDetector: {fileID: 2768844528437586027}
+  headButtDetector: {fileID: 0}
   isDead: 0
+  infiniteJumping: 0
   inputDelay: 0.1
   interactDelay: 0.1
+  headbuttDelay: 0.1
   rotationTargetDist: 0.1
   rotationCutoff: 0
   controlInput: {x: 0, y: 0}
+  interactables: []
+  headbuttables: []
 --- !u!136 &6852863768240148850
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -297,7 +306,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: edeeedfb88e9cb646aff7783b318c769, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5485647015242135694, guid: 791eb7992dbb7f147a2d0239e16d03e2,
         type: 3}
       propertyPath: m_LocalPosition.x
