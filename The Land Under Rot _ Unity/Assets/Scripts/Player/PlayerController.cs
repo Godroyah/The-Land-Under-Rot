@@ -201,8 +201,10 @@ public class PlayerController : MonoBehaviour
                 {
                     Transform objectHit = hit.transform;
 
+                    /*
                     if (hit.collider.gameObject != interactables[targetIndex].gameObject) // If the targeted gameObject wasn't the object hit
                         continue; // If it doesn't hit, it doesn't see it
+                    */
 
                     float distance = Vector2.Distance(targetScreenPoint, screenCenter);
 
@@ -222,7 +224,7 @@ public class PlayerController : MonoBehaviour
                     currentTarget = closestTarget;
                 }
             }
-
+            /*
             if (currentTarget != null)
             {
                 if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
@@ -234,6 +236,19 @@ public class PlayerController : MonoBehaviour
                     ToggleHighlight(currentTarget, false);
                     currentTarget = null;
                 }
+            }*/
+        }
+
+        if (currentTarget != null)
+        {
+            if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
+            {
+                ToggleHighlight(currentTarget, true);
+            }
+            else
+            {
+                ToggleHighlight(currentTarget, false);
+                currentTarget = null;
             }
         }
 

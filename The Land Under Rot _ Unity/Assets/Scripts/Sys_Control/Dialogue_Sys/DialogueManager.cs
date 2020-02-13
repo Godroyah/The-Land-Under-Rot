@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     Dialogue[] dialogues;
 
     public Canvas myCanvas;
+    private GameController gameController;
 
     public bool hasActiveDialogue = false;
 
@@ -31,19 +32,21 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        /* TODO: Figure out a better, less dependent search
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(0))
+        #region GameController/DialogueManager Search
+        GameObject temp = GameObject.Find("@GameController");
+        if (temp != null)
         {
-            /* 
-            GameController gameController = GameObject.FindGameObjectWithTag("@GameController").GetComponent<GameController>();
+            gameController = temp.GetComponent<GameController>();
             if (gameController != null)
-            {
-                //gameController.cutsceneManager = this;
-            }
-            
-            isTestingScene = false;
+                gameController.dialogueManager = this;
+            else
+                Debug.LogWarning("@GameController does not have the 'GameController' script!");
         }
-    */
+        else
+        {
+            Debug.LogWarning("Could not find GameController.");
+        }
+        #endregion
         myCanvas.worldCamera = Camera.main;
     }
 

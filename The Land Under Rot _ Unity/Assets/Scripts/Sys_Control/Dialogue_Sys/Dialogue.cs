@@ -7,7 +7,6 @@ public class Dialogue : MonoBehaviour
 {
     [Tooltip("Name of the Scene for the DialogueManager to Find")]
     public string SceneName;
-    public GameObject Background;
     public GameObject[] Frames;
 
     GameController gameController;
@@ -31,18 +30,11 @@ public class Dialogue : MonoBehaviour
             else
                 Debug.LogWarning("Missing DialogueManager for dialogues to operate.");
         }
-
-
-        if (Background == null)
-            Background = new GameObject();
     }
 
 
     private void Start()
     {
-        if (Background != null)
-            Background.SetActive(false);
-
         for (int i = 0; i < Frames.Length; i++)
         {
             Frames[i].SetActive(false);
@@ -61,8 +53,6 @@ public class Dialogue : MonoBehaviour
         // TODO: Similar camera-esc zoom for dialogue?
         //float tempNum = Camera.main.orthographicSize;
         //Camera.main.orthographicSize = 11.2f;
-
-        Background.SetActive(true);
 
         for (int i = 0; i < Frames.Length; i++)
         {
@@ -105,7 +95,6 @@ public class Dialogue : MonoBehaviour
         }
 
         hasFinishedDisplayingText = false;
-        Background.SetActive(false);
         Frames[Frames.Length - 1].SetActive(false);
 
         if (gameController != null)

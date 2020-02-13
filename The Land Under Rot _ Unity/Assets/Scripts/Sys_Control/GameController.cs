@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
         if (player)
         {
             playerController = player.GetComponent<PlayerController>();
-            if(playerController == null)
+            if (playerController == null)
             {
                 Debug.LogWarning("Player missing playercontroller!");
             }
@@ -64,10 +64,11 @@ public class GameController : MonoBehaviour
         }
 
         //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        
-        
-        acornCount.text = playerAcorns.ToString();
-        mulchCount.text = playerMulch.ToString();
+
+        if (acornCount != null)
+            acornCount.text = playerAcorns.ToString();
+        if (mulchCount != null)
+            mulchCount.text = playerMulch.ToString();
 
         //playerController.currentSpawn = playerRespawn;
         DontDestroyOnLoad(gameObject);
@@ -76,11 +77,11 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       isDead = false;
-       paused = false;
-       oldHealth = playerHealth;
-       oldAcorns = playerAcorns;
-       oldMulch = playerMulch;
+        isDead = false;
+        paused = false;
+        oldHealth = playerHealth;
+        oldAcorns = playerAcorns;
+        oldMulch = playerMulch;
     }
 
     // Update is called once per frame
@@ -97,7 +98,7 @@ public class GameController : MonoBehaviour
                 mmenu_Active = false;
             }
         }
-        if(playerController != null)
+        if (playerController != null)
         {
             Pause();
             PickUpCount();
@@ -119,7 +120,7 @@ public class GameController : MonoBehaviour
             acornCount.text = playerAcorns.ToString();
             oldAcorns = playerAcorns;
         }
-        if(oldMulch != playerMulch)
+        if (oldMulch != playerMulch)
         {
             mulchCount.text = playerMulch.ToString();
             oldMulch = playerMulch;
@@ -131,18 +132,18 @@ public class GameController : MonoBehaviour
         playerHealth = playerController.health;
         if (oldHealth != playerHealth)
         {
-            for(int i = 0; i < healthCounter.Length; i++)
+            for (int i = 0; i < healthCounter.Length; i++)
             {
-                if(i + 1 > playerHealth)
+                if (i + 1 > playerHealth)
                 {
                     healthCounter[i].enabled = false;
                 }
-                else if(i + 1 <= playerHealth)
+                else if (i + 1 <= playerHealth)
                 {
                     healthCounter[i].enabled = true;
                 }
             }
-            if(playerHealth < 1)
+            if (playerHealth < 1)
             {
                 isDead = true;
             }
@@ -158,9 +159,9 @@ public class GameController : MonoBehaviour
 
     public void Pause()
     {
-        if((mmenu_Active == false && testing == true) || testing == false)
+        if ((mmenu_Active == false && testing == true) || testing == false)
         {
-           // Debug.Log("Active?");
+            // Debug.Log("Active?");
             if (Input.GetButton("Pause"))
             {
                 if (!paused)
@@ -177,7 +178,7 @@ public class GameController : MonoBehaviour
                 }
             }
 
-            if(Input.GetButtonUp("Pause"))
+            if (Input.GetButtonUp("Pause"))
             {
                 if (!paused)
                     paused = true;
@@ -230,7 +231,7 @@ public class GameController : MonoBehaviour
 
     public void QuitApplication()
     {
-        if(testing)
+        if (testing)
         {
             Debug.Log("Quit");
         }

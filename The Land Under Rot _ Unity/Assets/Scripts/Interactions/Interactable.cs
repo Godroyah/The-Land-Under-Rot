@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public float radius = 3f;
-
-    public float interactDelay = 1f;
+    protected PlayerController playerController;
 
     private void Awake()
     {
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("This interactable does not have a Rigidbody!");
+
+        #region PlayerController Search
+        GameObject temp = GameObject.FindGameObjectWithTag("Player");
+        if (temp != null)
+        {
+            playerController = temp.GetComponent<PlayerController>();
+            if (playerController == null)
+                Debug.LogWarning("Player does not have the 'PlayerController' script!");
+        }
+        else
+        {
+            Debug.LogWarning("Could not find PlayerController.");
+        }
+        #endregion
     }
 
     public virtual void Interact()
