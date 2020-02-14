@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
     public int mulch;
     #endregion
 
-    [Range(1, 20)]
+    [Range(1, 50)]
     public float moveSpeed = 12f;
 
-    [Range(1, 35)]
+    [Range(1, 50)]
     public float runSpeed = 20f;
 
     [Range(0, 200), Tooltip("Controls how fast the obj rotates when changing directions.")]
@@ -38,15 +38,15 @@ public class PlayerController : MonoBehaviour
 
     #region Jumping Variables
 
-    [Range(1, 20)]
+    [Range(1, 50)]
     public float jumpVelocity = 10f;
 
     //public float deathfadeDelay;
 
-    [Range(0.001f, 5), Tooltip("Controls how fast the Player will fall.")]
+    [Range(0.001f, 50), Tooltip("Controls how fast the Player will fall.")]
     public float fallMultiplier = 2.5f; // TODO: Look at this for GLIDING later
 
-    [Range(0.001f, 5), Tooltip("Controls how high the player jumps on a shorter press.")]
+    [Range(0.001f, 50), Tooltip("Controls how high the player jumps on a shorter press.")]
     public float lowJumpMultiplier = 2f;
 
     #endregion
@@ -286,8 +286,8 @@ public class PlayerController : MonoBehaviour
             // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5f))
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
-                Debug.Log("Did Hit");
+                //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+                //Debug.Log("Did Hit");
                 if (hit.distance < 2.4f) // TODO: Hardcoded Raycast distance check
                 {
                     canJump = true;
