@@ -5,76 +5,106 @@ using UnityEngine;
 public class Gong_Cam : MonoBehaviour
 {
 
-    [SerializeField]
     public bool startScene;
 
     Transform currentViewPoint;
 
-    public Transform[] viewPoints;
+    public Shot[] shots;
 
-    //public float[] sceneTime;
-    public float sceneTime;
     public float currentTime;
-    [SerializeField]
+
     private int currentScene;
-
-    //public bool[] glideToShot;
-    public bool glideToShot;
-
-    public float transitionSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = sceneTime;
         currentScene = 0;
+        currentTime = shots[currentScene].sceneTime;
+
+        if (shots[0] != null)
+        {
+            foreach (Shot shot in shots)
+            {
+                if (shot.sceneTime < 1.0f)
+                {
+                    shot.sceneTime = 3.0f;
+                }
+                if (shot.transitionSpeed < 1.0f)
+                {
+                    shot.transitionSpeed = 1.0f;
+                }
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentViewPoint = viewPoints[currentScene];
-        Debug.Log(viewPoints.Length);
 
-        if(startScene)
+        currentViewPoint = shots[currentScene].viewpoint;
+        //Debug.Log(shots.Length);
+
+        if (startScene)
         {
-            
-            
-                if (currentTime < 0)
+
+            if (currentTime < 0)
+            {
+                if (currentScene != shots.Length - 1)
                 {
-                    currentTime = sceneTime;
-                    if(currentScene != viewPoints.Length - 1)
-                    {
-                        currentScene += 1;
-                    }
+                    currentScene += 1;
                 }
-                currentTime -= Time.deltaTime;
-            
-            
-            
-                if (currentTime < 0 && currentScene >= viewPoints.Length - 1)
+                currentTime = shots[currentScene].sceneTime;
+                if(shots[currentScene].sceneTime <= 0)
                 {
-                    startScene = false;
+                    Debug.LogWarning("Scene Time for shot" + currentScene + " is too close to 0! Please increase to a minimum of 1!");
                 }
-            
+            }
+            currentTime -= Time.deltaTime;
+
+            if (currentTime < 0 && currentScene >= shots.Length - 1)
+            {
+                //gongController.firstInteraction = false;
+                startScene = false;
+            }
+
         }
     }
 
     private void LateUpdate()
     {
-        if(glideToShot)
+        if (startScene)
         {
-            transform.position = Vector3.Lerp(transform.position, currentViewPoint.position, transitionSpeed * Time.deltaTime);
+            if (shots[currentScene].canGlide)
+            {
+                transform.position = Vector3.Lerp(transform.position, currentViewPoint.position, shots[currentScene].transitionSpeed * Time.deltaTime);
 
-            Vector3 currentAngle = new Vector3(
-                Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentViewPoint.rotation.eulerAngles.x, transitionSpeed * Time.deltaTime),
-                Mathf.LerpAngle(transform.rotation.eulerAngles.y, currentViewPoint.rotation.eulerAngles.y, transitionSpeed * Time.deltaTime),
-                Mathf.LerpAngle(transform.rotation.eulerAngles.z, currentViewPoint.rotation.eulerAngles.z, transitionSpeed * Time.deltaTime));
+                Quaternion currentAngle = Quaternion.Euler(
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentViewPoint.rotation.eulerAngles.x, shots[currentScene].transitionSpeed * Time.deltaTime),
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.y, currentViewPoint.rotation.eulerAngles.y, shots[currentScene].transitionSpeed * Time.deltaTime),
+                    Mathf.LerpAngle(transform.rotation.eulerAngles.z, currentViewPoint.rotation.eulerAngles.z, shots[currentScene].transitionSpeed * Time.deltaTime));
+
+                transform.rotation = currentAngle;
+            }
+            else
+            {
+                transform.position = currentViewPoint.transform.position;
+                transform.rotation = currentViewPoint.transform.rotation;
+            }
         }
         else
         {
-            transform.position = currentViewPoint.transform.position;
-            transform.rotation = currentViewPoint.transform.rotation;
+            transform.position = shots[currentScene].viewpoint.position;
+            transform.rotation = shots[currentScene].viewpoint.rotation;
         }
     }
+}
+
+[System.Serializable]
+public class Shot
+{
+    public string name = "Empty String";
+    public bool canGlide = false;
+    public float sceneTime = 1f;
+    public float transitionSpeed = 1f;
+    public Transform viewpoint;
 }

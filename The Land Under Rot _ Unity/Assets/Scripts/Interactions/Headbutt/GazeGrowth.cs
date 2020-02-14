@@ -61,7 +61,7 @@ public class GazeGrowth : Interactable
         switch (growthType)
         {
             // TODO: Needs proper movement/animation
-            case GazeGrowthType.White:
+            case GazeGrowthType.Blue:
                 StartCoroutine(Fungi(0));
                 break;
             case GazeGrowthType.Red:
@@ -150,5 +150,5 @@ public class GazeGrowth : Interactable
 
 public enum GazeGrowthType
 {
-    White, Red
+    Blue, Red
 }

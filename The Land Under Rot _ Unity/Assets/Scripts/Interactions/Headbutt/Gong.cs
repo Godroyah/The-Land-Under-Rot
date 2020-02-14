@@ -6,22 +6,32 @@ public class Gong : Interactable
 {
     GameController gameController;
 
-    PlayerController playerController;
-
     public GameObject cinematicCamera;
 
     private Camera cameraComponent;
 
     private Gong_Cam gongCamController;
 
-    private bool firstInteraction;
+    GameObject[] playerUI;
+
+    public bool firstInteraction;
+    public bool interactionStarted;
 
     private void Start()
     {
+        playerUI = new GameObject[GameObject.FindGameObjectsWithTag("Player_UI").Length];
+        playerUI = GameObject.FindGameObjectsWithTag("Player_UI");
+
         gongCamController = cinematicCamera.GetComponent<Gong_Cam>();
         cameraComponent = cinematicCamera.GetComponent<Camera>();
+
         cameraComponent.enabled = false;
         firstInteraction = true;
+        interactionStarted = false;
+
+        if (objPreferences != null && audioSource != null)
+            audioSource.clip = objPreferences.headbutt_AudioClip;
+
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
         if (temp != null)
@@ -41,11 +51,16 @@ public class Gong : Interactable
     {
         base.Interact();
 
-        //Play Gong Sound effect
+        // Moved 'PlaySound' to the base Interactable
+        // bc each obj will play a sound if they have one
+        // regardless of the object. And if they don't have one 
+        // assigned then they won't play a sound 
 
-        if(firstInteraction)
+        if (firstInteraction)
         {
             gongCamController.startScene = true;
+            interactionStarted = true;
+
             //StartCoroutine(ShowTime());
         }
 
@@ -53,19 +68,36 @@ public class Gong : Interactable
 
     private void Update()
     {
-        if(playerController != null)
+        if (playerController != null && firstInteraction)
+        //&& firstInteraction
         {
-            if (gongCamController.startScene)
+            if (gongCamController.startScene && interactionStarted)
             {
+
                 playerController.enabled = false;
                 playerController.camControl.myCamera.enabled = false;
+
+                foreach (GameObject ui in playerUI)
+                {
+                    ui.SetActive(false);
+                }
+
+                playerController.camControl.enabled = false;
                 cameraComponent.enabled = true;
             }
-            else
+            else if (interactionStarted && !gongCamController.startScene)
             {
                 cameraComponent.enabled = false;
+                playerController.camControl.enabled = true;
+
+                foreach (GameObject ui in playerUI)
+                {
+                    ui.SetActive(true);
+                }
+
                 playerController.camControl.myCamera.enabled = true;
                 playerController.enabled = true;
+                firstInteraction = false;
             }
         }
     }
@@ -74,7 +106,6 @@ public class Gong : Interactable
     {
         if (other.CompareTag("Headbutt"))
         {
-            playerController = other.GetComponentInParent<PlayerController>();
             Interact();
             //gameController.playerController.headbuttables.Add(this);
         }

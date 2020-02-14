@@ -5,6 +5,8 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     protected PlayerController playerController;
+    protected ObjectPreferences objPreferences;
+    protected AudioSource audioSource;
 
     private void Awake()
     {
@@ -24,12 +26,18 @@ public class Interactable : MonoBehaviour
             Debug.LogWarning("Could not find PlayerController.");
         }
         #endregion
+
+        objPreferences = GetComponent<ObjectPreferences>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Interact()
     {
         // This method is meant to be overwritten
         Debug.Log(gameObject.name + " has been interacted with.");
+
+        if (objPreferences != null && audioSource != null)
+            audioSource.Play();
     }
 }
 
