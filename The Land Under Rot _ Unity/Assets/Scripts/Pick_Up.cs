@@ -27,12 +27,12 @@ public class Pick_Up : MonoBehaviour
         }
     }
 
-    IEnumerator KillCollider()
-    {
-        yield return new WaitForSeconds(0.1f);
+    //IEnumerator KillCollider()
+    //{
+    //    yield return new WaitForSeconds(0.1f);
 
-        mulchCollider.enabled = false;
-    }
+    //    mulchCollider.enabled = false;
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
