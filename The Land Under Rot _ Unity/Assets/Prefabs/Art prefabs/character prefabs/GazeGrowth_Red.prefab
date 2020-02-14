@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b3707c60065f2644a8e9c579ca898a9, type: 2}
+  - {fileID: 0}
   - {fileID: 2100000, guid: 9a69da76242fe2d42aadad3ca60dbc0a, type: 2}
   - {fileID: 2100000, guid: b3dacec602c2f3d4d8d99e521ac14461, type: 2}
   - {fileID: 2100000, guid: 9fc8426da45db4e4697a15fc2ae99fcd, type: 2}
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: 1b3707c60065f2644a8e9c579ca898a9, type: 2}
   meshCenter: {x: 0, y: 0, z: 0}
   maxLights: 6
   raycast: 1
@@ -117,6 +117,54 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -3040176738090845008, guid: a51ff7777be2b2549a67b4c6092d114f, type: 3}
+--- !u!1 &6206078866379595971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5681635275475125069}
+  - component: {fileID: 7470865362672363321}
+  m_Layer: 0
+  m_Name: '@GazeGrowth'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5681635275475125069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6206078866379595971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2080297379611150314}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7470865362672363321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6206078866379595971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537c1bb5be2c38945b72218abf6a7072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growthType: 1
+  cordysepBarrier: {fileID: 0}
+  lowerDistance: 8
+  waitReturn: 1
+  returnIn: 5
 --- !u!1 &9170197832227463114
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080297379611150314}
   m_Layer: 0
-  m_Name: gazer growth
+  m_Name: GazeGrowth_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,6 +193,7 @@ Transform:
   m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_Children:
   - {fileID: 863988930434291945}
+  - {fileID: 5681635275475125069}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
