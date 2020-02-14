@@ -33,10 +33,14 @@ public class GazeGrowth : Interactable
 
     private void Start()
     {
-        waitReturn = false;
-        rateStorage = rateOfChange;
-        cordys_Start_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y, cordysepBarrier.transform.position.z);
-        cordys_Lowered_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y - lowerDistance, cordysepBarrier.transform.position.z);
+        if (cordysepBarrier != null)
+        {
+            waitReturn = false;
+            rateStorage = rateOfChange;
+            cordys_Start_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y, cordysepBarrier.transform.position.z);
+            cordys_Lowered_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y - lowerDistance, cordysepBarrier.transform.position.z);
+        }
+
 
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
@@ -56,26 +60,30 @@ public class GazeGrowth : Interactable
 
     public override void Interact()
     {
-        base.Interact();
-
-        switch (growthType)
+        if (cordysepBarrier != null)
         {
-            // TODO: Needs proper movement/animation
-            case GazeGrowthType.Blue:
-                StartCoroutine(Fungi(0));
-                break;
-            case GazeGrowthType.Red:
-                if(!waitReturn)
-                StartCoroutine(Fungi(returnIn));
-                break;
-            default:
-                break;
+            base.Interact();
+
+            switch (growthType)
+            {
+                // TODO: Needs proper movement/animation
+                case GazeGrowthType.Blue:
+                    StartCoroutine(Fungi(0));
+                    break;
+                case GazeGrowthType.Red:
+                    if (!waitReturn)
+                        StartCoroutine(Fungi(returnIn));
+                    break;
+                default:
+                    break;
+            }
         }
+
     }
 
     IEnumerator Fungi(float waitTime)
     {
-        
+
         rateOfChange = rateStorage;
         float iteration = rateOfChange;
 
@@ -86,7 +94,7 @@ public class GazeGrowth : Interactable
             yield return null;
         }
 
-        if(waitTime != 0)
+        if (waitTime != 0)
         {
             StartCoroutine(DelayReturn(waitTime));
         }
@@ -128,7 +136,7 @@ public class GazeGrowth : Interactable
         waitReturn = false;
     }
 
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
