@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 5154103883600281325}
   - component: {fileID: 5154103883600281324}
   - component: {fileID: 5154103883600281323}
+  - component: {fileID: 4257499882928944758}
   m_Layer: 0
   m_Name: actual_gong
   m_TagString: Untagged
@@ -198,6 +199,24 @@ MonoBehaviour:
   cinematicCamera: {fileID: 5154103884727477041}
   firstInteraction: 0
   interactionStarted: 0
+--- !u!114 &4257499882928944758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5154103883600281321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7499c73bf46f5ad4d96d2fa608a4e947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headbutt_ParticleEffect: {fileID: 0}
+  headbutt_AudioClip: {fileID: 0}
+  walk_ParticleEffect: {fileID: 0}
+  walk_AudioClip: {fileID: 0}
+  interact_ParticleEffect: {fileID: 0}
+  interact_AudioClip: {fileID: 0}
 --- !u!1 &5154103884420973936
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: 552a4d0a41c923748bf345a7371b9a98, type: 2}
   meshCenter: {x: 0, y: 0, z: 0}
   maxLights: 6
   raycast: 1

@@ -29,6 +29,9 @@ public class Gong : Interactable
         firstInteraction = true;
         interactionStarted = false;
 
+        if (objPreferences != null && audioSource != null)
+            audioSource.clip = objPreferences.headbutt_AudioClip;
+
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
         if (temp != null)
@@ -49,12 +52,14 @@ public class Gong : Interactable
         base.Interact();
 
         //Play Gong Sound effect
+        if (objPreferences != null && audioSource != null)
+            audioSource.Play();
 
-        if(firstInteraction)
+        if (firstInteraction)
         {
             gongCamController.startScene = true;
             interactionStarted = true;
-            
+
             //StartCoroutine(ShowTime());
         }
 
@@ -62,12 +67,12 @@ public class Gong : Interactable
 
     private void Update()
     {
-        if(playerController != null && firstInteraction)
+        if (playerController != null && firstInteraction)
         //&& firstInteraction
         {
             if (gongCamController.startScene && interactionStarted)
             {
-                
+
                 playerController.enabled = false;
                 playerController.camControl.myCamera.enabled = false;
 
@@ -79,7 +84,7 @@ public class Gong : Interactable
                 playerController.camControl.enabled = false;
                 cameraComponent.enabled = true;
             }
-            else if(interactionStarted && !gongCamController.startScene)
+            else if (interactionStarted && !gongCamController.startScene)
             {
                 cameraComponent.enabled = false;
                 playerController.camControl.enabled = true;
