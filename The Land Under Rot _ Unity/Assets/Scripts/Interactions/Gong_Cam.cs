@@ -4,44 +4,42 @@ using UnityEngine;
 
 public class Gong_Cam : MonoBehaviour
 {
-    //public Gong gongController;
 
     public bool startScene;
 
     Transform currentViewPoint;
 
-    //public Transform[] viewPoints;
-
     public Shot[] shots;
 
-    //public float[] sceneTime;
-    //public float sceneTime;
     public float currentTime;
 
     private int currentScene;
 
-    //public bool[] glideToShot;
-    //public bool glideToShot;
-
-    //public float transitionSpeed;
-
     // Start is called before the first frame update
     void Start()
     {
-        //gongController = GetComponent<Gong>();
         currentScene = 0;
         currentTime = shots[currentScene].sceneTime;
+
+        if (shots[0] != null)
+        {
+            foreach (Shot shot in shots)
+            {
+                if (shot.sceneTime < 1.0f)
+                {
+                    shot.sceneTime = 3.0f;
+                }
+                if (shot.transitionSpeed < 1.0f)
+                {
+                    shot.transitionSpeed = 1.0f;
+                }
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (shots[0] != null)
-        //{
-        //    shots[0].viewpoint = 
-
-        //    shots[shots.Length - 1].viewpoint
-        //}
 
         currentViewPoint = shots[currentScene].viewpoint;
         //Debug.Log(shots.Length);
