@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 5752987966791750187}
   - component: {fileID: 8224955774646340878}
   - component: {fileID: 3447656927394607892}
+  - component: {fileID: 9037787643915336823}
   m_Layer: 0
   m_Name: pCylinder3
   m_TagString: Untagged
@@ -234,6 +235,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &9037787643915336823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864390470702590182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49648422, y: 3.418498, z: 1.3679397}
+  m_Center: {x: -0.000000014901161, y: -0.019055605, z: -0.02279538}
 --- !u!1 &8372836279588146570
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +258,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4785377952265944985}
   - component: {fileID: 1342623267251187408}
-  - component: {fileID: 3423340890975702778}
   m_Layer: 0
   m_Name: lamppost
   m_TagString: Untagged
@@ -289,16 +302,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   raycastFadeSpeed: 10
---- !u!65 &3423340890975702778
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8372836279588146570}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
