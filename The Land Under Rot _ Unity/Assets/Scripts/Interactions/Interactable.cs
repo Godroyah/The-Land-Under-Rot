@@ -35,6 +35,9 @@ public class Interactable : MonoBehaviour
     {
         // This method is meant to be overwritten
         Debug.Log(gameObject.name + " has been interacted with.");
+
+        if (objPreferences != null && audioSource != null)
+            audioSource.Play();
     }
 }
 

@@ -51,9 +51,10 @@ public class Gong : Interactable
     {
         base.Interact();
 
-        //Play Gong Sound effect
-        if (objPreferences != null && audioSource != null)
-            audioSource.Play();
+        // Moved 'PlaySound' to the base Interactable
+        // bc each obj will play a sound if they have one
+        // regardless of the object. And if they don't have one 
+        // assigned then they won't play a sound 
 
         if (firstInteraction)
         {
