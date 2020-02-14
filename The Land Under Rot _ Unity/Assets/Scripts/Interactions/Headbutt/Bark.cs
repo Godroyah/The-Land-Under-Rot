@@ -6,6 +6,7 @@ public class Bark : Interactable
 {
 
     GameController gameController;
+    public GameObject barkContainer;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class Bark : Interactable
         base.Interact();
 
         // TODO: Switch from Destroy to Particle/Anim
-        Destroy(gameObject);
+        Destroy(barkContainer);
     }
 
     private void OnTriggerEnter(Collider other)

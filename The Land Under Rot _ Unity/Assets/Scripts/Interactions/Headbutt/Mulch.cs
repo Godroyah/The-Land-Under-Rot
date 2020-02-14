@@ -6,7 +6,13 @@ public class Mulch : Interactable
 {
     public GameObject[] objsToSpawn;
 
+    public GameObject mulchContainer;
+
+    public Collider mulchCollider;
+
     public float spawnJumpHeight = 1f;
+
+    private int numberSpawned;
 
     GameController gameController;
 
@@ -31,6 +37,31 @@ public class Mulch : Interactable
     {
         base.Interact();
 
+        mulchCollider.enabled = false;
+
+        //foreach (GameObject obj in objsToSpawn)
+        //{
+        //    GameObject temp = Instantiate(obj, transform);
+        //    temp.transform.position = transform.position;
+
+        //    Rigidbody rb;
+        //    rb = temp.GetComponent<Rigidbody>();
+
+        //    if (rb == null) // TODO: Mulch Spawn Rigidbodies
+        //        rb = temp.AddComponent<Rigidbody>();
+
+        //    temp.transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
+
+        //    rb.AddForce((Vector3.left / 3f) + Vector3.up * spawnJumpHeight);
+
+        //    numberSpawned += 1;
+        //}
+
+        //if (numberSpawned >= objsToSpawn.Length)
+        //    Destroy(mulchContainer);
+
+
+
         foreach (GameObject obj in objsToSpawn)
         {
             GameObject temp = Instantiate(obj, transform);
@@ -45,22 +76,33 @@ public class Mulch : Interactable
             temp.transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
 
             rb.AddForce((Vector3.left / 3f) + Vector3.up * spawnJumpHeight);
+
+            numberSpawned += 1;
         }
+
+        if (numberSpawned >= objsToSpawn.Length)
+        {
+            transform.DetachChildren();
+            Destroy(mulchContainer);
+        }
+            
+
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Headbutt"))
         {
-            gameController.playerController.headbuttables.Add(this);
+            Interact();
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Headbutt"))
-        {
-            gameController.playerController.headbuttables.Remove(this);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Headbutt"))
+    //    {
+    //        gameController.playerController.headbuttables.Remove(this);
+    //    }
+    //}
 }
