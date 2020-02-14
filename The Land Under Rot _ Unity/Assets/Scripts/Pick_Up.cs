@@ -6,12 +6,16 @@ public enum PickUpType { NONE, ACORN, MULCH, HEALTH, HARMFUL}
 
 public class Pick_Up : MonoBehaviour
 {
-    public PickUpType pickUpType; //Drop down menu for the types of pickups (Acorn, Mulch, etc.)
+    public PickUpType pickUpType; //Drop down menu for the types of pickups (Acorn, Mulch, etc.)'
+    //public Collider mulchCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //if(pickUpType == PickUpType.MULCH)
+        //{
+        //    StartCoroutine(KillCollider());
+        //}
     }
 
     // Update is called once per frame
@@ -21,6 +25,13 @@ public class Pick_Up : MonoBehaviour
         {
             transform.Rotate(0, 3, 0, Space.World);
         }
+    }
+
+    IEnumerator KillCollider()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        mulchCollider.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)

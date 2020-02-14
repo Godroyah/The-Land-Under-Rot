@@ -10,7 +10,7 @@ public class Mulch : Interactable
 
     public Collider mulchCollider;
 
-    public float spawnJumpHeight = 1f;
+    public float spawnJumpHeight;
 
     private int numberSpawned;
 
@@ -64,18 +64,21 @@ public class Mulch : Interactable
 
         foreach (GameObject obj in objsToSpawn)
         {
-            GameObject temp = Instantiate(obj, transform);
+            GameObject temp;
+            temp = Instantiate(obj, transform) as GameObject;
             temp.transform.position = transform.position;
 
             Rigidbody rb;
-            rb = temp.GetComponent<Rigidbody>();
+            rb = temp.GetComponentInChildren<Rigidbody>();
+                
+                //GetComponent<Rigidbody>();
 
             if (rb == null) // TODO: Mulch Spawn Rigidbodies
                 rb = temp.AddComponent<Rigidbody>();
 
             temp.transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
 
-            rb.AddForce((Vector3.left / 3f) + Vector3.up * spawnJumpHeight);
+            rb.AddForce((Vector3.left / 3f) + mulchContainer.transform.up * spawnJumpHeight);
 
             numberSpawned += 1;
         }
