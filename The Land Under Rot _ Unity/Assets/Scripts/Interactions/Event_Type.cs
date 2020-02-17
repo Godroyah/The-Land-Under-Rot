@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//public enum EventName { NONE, LIZARD_CART}
+
 public class Event_Type : MonoBehaviour
 {
     protected bool playEvent;
 
-    [SerializeField]
     protected string eventName;
 
     private void Awake()
@@ -21,5 +22,8 @@ public class Event_Type : MonoBehaviour
 
     }
 
-
+    private void Update()
+    {
+        
+    }
 }

@@ -10,10 +10,9 @@ public class LizardCart : Event_Type
         
     }
 
+
     public override void StartEvent()
     {
-        base.StartEvent();
-
 
     }
 

@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3251795472989187912}
-  m_LocalRotation: {x: -0, y: 0.49559918, z: -0, w: 0.8685514}
+  m_LocalRotation: {x: 0, y: 0.49560267, z: 0, w: 0.8685494}
   m_LocalPosition: {x: -62.006115, y: 19.592949, z: -44.42486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headbutt_ParticleEffect: {fileID: 0}
-  headbutt_AudioClip: {fileID: 0}
+  headbutt_AudioClip: {fileID: 8300000, guid: 0b328fc9b6afb2645bdfca7e49477d20, type: 3}
   walk_ParticleEffect: {fileID: 0}
   walk_AudioClip: {fileID: 0}
   interact_ParticleEffect: {fileID: 0}
@@ -437,29 +437,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScene: 0
   shots:
-  - name: 
+  - name: '*Player Cam Here'
     canGlide: 1
-    sceneTime: 5
+    isEventTrigger: 0
+    eventObject: {fileID: 0}
+    sceneTime: 3
     transitionSpeed: 3
     viewpoint: {fileID: 0}
   - name: 
     canGlide: 1
-    sceneTime: 5
+    isEventTrigger: 0
+    eventObject: {fileID: 0}
+    sceneTime: 3
     transitionSpeed: 3
     viewpoint: {fileID: 5154103882896024796}
   - name: 
     canGlide: 1
-    sceneTime: 5
+    isEventTrigger: 0
+    eventObject: {fileID: 0}
+    sceneTime: 3
     transitionSpeed: 3
     viewpoint: {fileID: 5154103883118240408}
   - name: 
     canGlide: 1
-    sceneTime: 5
+    isEventTrigger: 0
+    eventObject: {fileID: 0}
+    sceneTime: 3
     transitionSpeed: 3
     viewpoint: {fileID: 5154103884819618357}
-  - name: 
+  - name: '*Player Cam Here'
     canGlide: 1
-    sceneTime: 5
+    isEventTrigger: 0
+    eventObject: {fileID: 0}
+    sceneTime: 3
     transitionSpeed: 3
     viewpoint: {fileID: 0}
   currentTime: 3
@@ -599,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 552a4d0a41c923748bf345a7371b9a98, type: 2}
+  material: {fileID: 0}
   meshCenter: {x: 0, y: 0, z: 0}
   maxLights: 6
   raycast: 1
