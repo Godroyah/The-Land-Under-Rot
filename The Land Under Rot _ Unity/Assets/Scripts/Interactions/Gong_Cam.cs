@@ -58,6 +58,13 @@ public class Gong_Cam : MonoBehaviour
                 {
                     Debug.LogWarning("Scene Time for shot" + currentScene + " is too close to 0! Please increase to a minimum of 1!");
                 }
+                if(shots[currentScene].isEventTrigger )
+                {
+                    if(shots[currentScene].eventObject != null)
+                    {
+                        //shots[currentScene].eventObject.GetComponent<>
+                    }
+                }
             }
             currentTime -= Time.deltaTime;
 
@@ -104,6 +111,8 @@ public class Shot
 {
     public string name = "Empty String";
     public bool canGlide = false;
+    public bool isEventTrigger = false;
+    public GameObject eventObject;
     public float sceneTime = 1f;
     public float transitionSpeed = 1f;
     public Transform viewpoint;
