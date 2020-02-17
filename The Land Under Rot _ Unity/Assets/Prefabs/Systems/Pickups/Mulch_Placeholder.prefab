@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1655458068761561697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7764632518094198118}
-  m_Layer: 0
-  m_Name: mulchPhysics
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7764632518094198118
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655458068761561697}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6164576416276008366}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6164576414847936964
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,8 +711,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6164576416276008366}
-  - component: {fileID: 6564061254095485451}
   - component: {fileID: 7885994978041626863}
+  - component: {fileID: 6564061254095485451}
   - component: {fileID: 6539646679997818066}
   - component: {fileID: 8009808927864335016}
   m_Layer: 0
@@ -763,24 +733,10 @@ Transform:
   m_LocalPosition: {x: -3.84, y: 0.9, z: -2.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7764632518094198118}
   - {fileID: 8109590002395298825}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6564061254095485451
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6164576416276008365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.75
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &7885994978041626863
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -793,6 +749,19 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &6564061254095485451
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164576416276008365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6539646679997818066
 Rigidbody:
@@ -823,7 +792,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpType: 2
-  mulchCollider: {fileID: 7885994978041626863}
 --- !u!1 &6164576416286609585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,5 +1303,5 @@ Transform:
   - {fileID: 6164576416298762431}
   - {fileID: 6164576415710820995}
   m_Father: {fileID: 6164576416276008366}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

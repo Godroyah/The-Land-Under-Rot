@@ -7,15 +7,16 @@ public enum PickUpType { NONE, ACORN, MULCH, HEALTH, HARMFUL}
 public class Pick_Up : MonoBehaviour
 {
     public PickUpType pickUpType; //Drop down menu for the types of pickups (Acorn, Mulch, etc.)'
-    //public Collider mulchCollider;
+    private Collider mulchCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        //if(pickUpType == PickUpType.MULCH)
-        //{
-        //    StartCoroutine(KillCollider());
-        //}
+        if (pickUpType == PickUpType.MULCH)
+        {
+            mulchCollider = GetComponent<Collider>();
+            StartCoroutine(KillCollider());
+        }
     }
 
     // Update is called once per frame
@@ -27,12 +28,12 @@ public class Pick_Up : MonoBehaviour
         }
     }
 
-    //IEnumerator KillCollider()
-    //{
-    //    yield return new WaitForSeconds(0.1f);
+    IEnumerator KillCollider()
+    {
+        yield return new WaitForSeconds(0.1f);
 
-    //    mulchCollider.enabled = false;
-    //}
+        mulchCollider.enabled = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -54,6 +55,7 @@ public class Pick_Up : MonoBehaviour
                     break;
                 case PickUpType.MULCH:
                     //Count MULCH
+                    mulchCollider.enabled = false;
                     playerController.mulch += 1;
                     Destroy(gameObject);
                     break;
@@ -78,6 +80,10 @@ public class Pick_Up : MonoBehaviour
                     break;
             }
 
+        }
+        else if(pickUpType == PickUpType.MULCH)
+        {
+            mulchCollider.enabled = true;
         }
     }
 }

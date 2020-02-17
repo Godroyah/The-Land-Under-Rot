@@ -6,6 +6,8 @@ public class Mulch : Interactable
 {
     public GameObject[] objsToSpawn;
 
+    public Transform[] objSpawns;
+
     public GameObject mulchContainer;
 
     public Collider mulchCollider;
@@ -14,10 +16,31 @@ public class Mulch : Interactable
 
     private int numberSpawned;
 
+    private float itemDirectionX;
+    private float itemDirectionZ;
+
+    private float directionControllerX;
+    private float directionControllerZ;
+
+    //private Bounds spawnBounds;
+
+    //[SerializeField]
+    //private Vector3 randomSpawn;
+
+    //private Vector3 spawnStart;
+
     GameController gameController;
 
     private void Start()
     {
+        
+        //randomSpawn = Vector3.zero;
+        //spawnBounds = mulchCollider.bounds;
+
+        //spawnStart = mulchCollider.transform.position;
+
+        //randomSpawn = spawnStart;
+
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
         if (temp != null)
@@ -39,46 +62,64 @@ public class Mulch : Interactable
 
         mulchCollider.enabled = false;
 
-        //foreach (GameObject obj in objsToSpawn)
-        //{
-        //    GameObject temp = Instantiate(obj, transform);
-        //    temp.transform.position = transform.position;
-
-        //    Rigidbody rb;
-        //    rb = temp.GetComponent<Rigidbody>();
-
-        //    if (rb == null) // TODO: Mulch Spawn Rigidbodies
-        //        rb = temp.AddComponent<Rigidbody>();
-
-        //    temp.transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
-
-        //    rb.AddForce((Vector3.left / 3f) + Vector3.up * spawnJumpHeight);
-
-        //    numberSpawned += 1;
-        //}
-
-        //if (numberSpawned >= objsToSpawn.Length)
-        //    Destroy(mulchContainer);
-
-
-
         foreach (GameObject obj in objsToSpawn)
         {
             GameObject temp;
             temp = Instantiate(obj, transform) as GameObject;
-            temp.transform.position = transform.position;
+
+            temp.transform.position = objSpawns[numberSpawned].position;
+
+            //Randomize Spawning - Revisit
+            #region
+            //if(randomSpawn == spawnStart)
+            // {
+            //     temp.transform.position = randomSpawn;
+            // }
+            //else
+            // {
+            //     randomSpawn = new Vector3(Random.Range(spawnBounds.min.x, spawnBounds.max.x), Random.Range(spawnBounds.min.y, spawnBounds.max.y), Random.Range(spawnBounds.min.z, spawnBounds.max.z));
+            // }
+
+            //if(randomSpawn == Vector3.zero)
+            //{
+            //    randomSpawn = new Vector3(Random.Range )
+            //}
+
+            //temp.transform.position = new Vector3(Random.Range())
+
+            //transform.position;
+            #endregion  //Randomize spawning
 
             Rigidbody rb;
             rb = temp.GetComponentInChildren<Rigidbody>();
-                
-                //GetComponent<Rigidbody>();
 
             if (rb == null) // TODO: Mulch Spawn Rigidbodies
                 rb = temp.AddComponent<Rigidbody>();
 
+            directionControllerX = Random.Range(0, 1);
+            directionControllerZ = Random.Range(0, 1);
+
+            if(directionControllerX > 0.5)
+            {
+                itemDirectionX = 100f;
+            }
+            else
+            {
+                itemDirectionX = -100f;
+            }
+
+            if(directionControllerZ > 0.5)
+            {
+                itemDirectionZ = 100f;
+            }
+            else
+            {
+                itemDirectionZ = -100f;
+            }
+
             temp.transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
 
-            rb.AddForce((Vector3.left / 3f) + mulchContainer.transform.up * spawnJumpHeight);
+            rb.AddForce((new Vector3(Random.Range(-1, 1) * itemDirectionX, 0, Random.Range(-1, 1) * itemDirectionZ) + mulchContainer.transform.up * spawnJumpHeight));
 
             numberSpawned += 1;
         }
