@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
-    [HideInInspector, Tooltip("Name of the Scene for the DialogueManager to Find")]
+    [Tooltip("Name of the Scene for the DialogueManager to Find")]
     public string sceneName;
     public GameObject[] Frames;
 

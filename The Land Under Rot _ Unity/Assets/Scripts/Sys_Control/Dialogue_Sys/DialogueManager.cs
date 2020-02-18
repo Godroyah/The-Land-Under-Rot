@@ -64,7 +64,7 @@ public class DialogueManager : MonoBehaviour
 
         if (TestScene != null && isTestingScene)
         {
-            StartDialogue(TestScene.GetComponent<Dialogue>().SceneName);
+            StartDialogue(TestScene.GetComponent<Dialogue>().sceneName);
         }
         else
         {
@@ -106,7 +106,7 @@ public class DialogueManager : MonoBehaviour
         {
             foreach (Dialogue dialogue in dialogues)
             {
-                if (dialogue.SceneName == sceneName)
+                if (dialogue.sceneName == sceneName)
                 {
                     dialogue.StartScene();
                     //Debug.Log(sceneName);
