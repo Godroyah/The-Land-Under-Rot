@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject playerCamera;
     private Animator animator;
     public CamControl camControl;
-    private Rigidbody rb;
+    public Rigidbody Rb { get; private set; }
     //Will eventually search spawner out by scene
     public Transform currentSpawn;
     //public Transform playerHolder;
@@ -73,11 +73,11 @@ public class PlayerController : MonoBehaviour
     public bool isDead;
     public bool infiniteJumping = false;
     private bool isGrounded;
-    private bool shouldRun = false;
-    private bool shouldInteract = false;
-    private bool shouldJump = false;
-    private bool canJump = false;
-    private bool shouldHeadbutt = false;
+    public bool ShouldRun { get; private set; }
+    public bool ShouldInteract { get; private set; }
+    public bool ShouldJump { get; private set; }
+    public bool CanJump { get; private set; }
+    public bool ShouldHeadbutt { get; private set; }
     #endregion
 
 
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("Rigidbody missing on " + gameObject.name);
         else
-            rb = GetComponent<Rigidbody>();
+            Rb = GetComponent<Rigidbody>();
 
         if (camControl == null)
             Debug.LogWarning("Camera Controller Missing!!");
@@ -262,18 +262,18 @@ public class PlayerController : MonoBehaviour
             Rotate();
         }
         else
-            rb.angularVelocity = Vector3.zero;
+            Rb.angularVelocity = Vector3.zero;
 
 
         #region Jumping
 
         //faster falling
-        if (rb.velocity.y < 0)
-            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        else if (rb.velocity.y > 0 && !shouldJump)
-            rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        if (Rb.velocity.y < 0)
+            Rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        else if (Rb.velocity.y > 0 && !ShouldJump)
+            Rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 
-        if (!canJump && shouldJump)
+        if (!CanJump && ShouldJump)
         {
             // Bit shift the index of the layer (8) to get a bit mask
             int layerMask = 1 << 8;
@@ -290,30 +290,30 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log("Did Hit");
                 if (hit.distance < 2.4f) // TODO: Hardcoded Raycast distance check
                 {
-                    canJump = true;
+                    CanJump = true;
                 }
             }
         }
         else if (infiniteJumping)
         {
-            canJump = true;
+            CanJump = true;
         }
 
-        if (shouldJump && canJump)
+        if (ShouldJump && CanJump)
         {
-            rb.velocity = Vector3.up * jumpVelocity;
+            Rb.velocity = Vector3.up * jumpVelocity;
 
-            canJump = false;
+            CanJump = false;
         }
 
         #endregion
 
-        if (shouldInteract && interactingCoroutine == null)
+        if (ShouldInteract && interactingCoroutine == null)
         {
             StartCoroutine(Interacting());
         }
 
-        if (shouldHeadbutt && headbuttCoroutine == null)
+        if (ShouldHeadbutt && headbuttCoroutine == null)
         {
             StartCoroutine(Headbutting());
         }
@@ -328,10 +328,10 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        shouldRun = Input.GetKey(KeyCode.LeftShift);
-        shouldJump = Input.GetButtonDown("Jump");
-        shouldInteract = Input.GetButtonDown("Interact");
-        shouldHeadbutt = Input.GetButtonDown("Headbutt");
+        ShouldRun = Input.GetKey(KeyCode.LeftShift);
+        ShouldJump = Input.GetButtonDown("Jump");
+        ShouldInteract = Input.GetButtonDown("Interact");
+        ShouldHeadbutt = Input.GetButtonDown("Headbutt");
     }
 
     private void ToggleHighlight(Interactable focus, bool state)
@@ -379,7 +379,7 @@ public class PlayerController : MonoBehaviour
 
         movement = rotationTarget.TransformDirection(movement);
 
-        if (shouldRun)
+        if (ShouldRun)
             movement *= runSpeed * Time.deltaTime;
         else
             movement *= moveSpeed * Time.deltaTime;
@@ -404,7 +404,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = currentSpawn.position;
         transform.rotation = currentSpawn.rotation;
-        rb.velocity = Vector3.zero;
+        Rb.velocity = Vector3.zero;
     }
 
     public void Reset()
