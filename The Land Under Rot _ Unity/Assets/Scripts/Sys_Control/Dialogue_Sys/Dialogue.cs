@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Dialogue : MonoBehaviour
 {
     [Tooltip("Name of the Scene for the DialogueManager to Find")]
-    public string sceneName;
+    public string SceneName;
     public GameObject[] Frames;
 
     GameController gameController;
@@ -39,12 +39,6 @@ public class Dialogue : MonoBehaviour
         {
             Frames[i].SetActive(false);
         }
-    }
-
-    [ExecuteInEditMode]
-    private void Update()
-    {
-        sceneName = gameObject.name;
     }
 
     public void StartScene()
