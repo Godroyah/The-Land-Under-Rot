@@ -400,7 +400,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void Respawn()
+    public void Respawn()
     {
         transform.position = currentSpawn.position;
         transform.rotation = currentSpawn.rotation;
@@ -413,35 +413,35 @@ public class PlayerController : MonoBehaviour
         isDead = false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Spawn_Volume"))
-        {
-            Debug.Log("Collider detected?");
-            Spawn_Volume volume = other.GetComponent<Spawn_Volume>();
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Spawn_Volume"))
+    //    {
+    //        Debug.Log("Collider detected?");
+    //        Spawn_Volume volume = other.GetComponent<Spawn_Volume>();
 
-            //SpawnType spawnType = SpawnType.NONE;
-            SpawnType spawnType = volume.spawnType;
+    //        //SpawnType spawnType = SpawnType.NONE;
+    //        SpawnType spawnType = volume.spawnType;
 
-            switch (spawnType)
-            {
-                case SpawnType.NONE:
-                    Debug.LogWarning("SpawnType not set!");
-                    break;
-                case SpawnType.START:
-                    break;
-                case SpawnType.RESPAWN:
-                    currentSpawn = volume.spawnPoint.transform;
-                    break;
-                case SpawnType.KILL:
-                    Respawn();
-                    break;
-                default:
-                    Debug.LogWarning("SpawnType Error.");
-                    break;
-            }
-        }
-    }
+    //        switch (spawnType)
+    //        {
+    //            case SpawnType.NONE:
+    //                Debug.LogWarning("SpawnType not set!");
+    //                break;
+    //            case SpawnType.START:
+    //                break;
+    //            case SpawnType.RESPAWN:
+    //                currentSpawn = volume.spawnPoint.transform;
+    //                break;
+    //            case SpawnType.KILL:
+    //                Respawn();
+    //                break;
+    //            default:
+    //                Debug.LogWarning("SpawnType Error.");
+    //                break;
+    //        }
+    //    }
+    //}
 }
 
 

@@ -9,7 +9,7 @@ public class Spawn_Volume : MonoBehaviour
     public SpawnType spawnType; // This gives a drop down menu of the spawn types
 
     public Transform spawnPoint;
-    public Transform playerSpawn;
+    private Transform playerSpawn;
     public bool activeCorridor;
     public PlayerController playerController;
 
@@ -99,11 +99,17 @@ public class Spawn_Volume : MonoBehaviour
     {
         if (player.CompareTag("Player"))
         {
-            if(spawnType == SpawnType.RESPAWN)
+            playerController = player.GetComponent<PlayerController>();
+            if (spawnType == SpawnType.RESPAWN)
             {
                 //player.GetComponent<PlayerController>().currentSpawn = spawnPoint;
-                playerSpawn = player.GetComponent<PlayerController>().currentSpawn;
+                playerSpawn = playerController.currentSpawn;
+                playerController.currentSpawn = spawnPoint.transform;
                 activeCorridor = true;
+            }
+            else if(spawnType == SpawnType.KILL)
+            {
+                playerController.Respawn();
             }
             //else if(spawnType == SpawnType.REGION_RESPAWN)
             //{
