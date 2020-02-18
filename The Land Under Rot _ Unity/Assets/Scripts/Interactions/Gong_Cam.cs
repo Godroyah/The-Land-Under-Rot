@@ -68,9 +68,9 @@ public class Gong_Cam : MonoBehaviour
                 }
                 if(shots[currentScene].isEventTrigger )
                 {
-                    if(shots[currentScene].eventObject != null)
+                    if(shots[currentScene].eventType != null)
                     {
-                        //shots[currentScene].eventObject.GetComponent<>
+                        shots[currentScene].eventType.StartEvent();
                     }
                 }
             }
@@ -123,7 +123,8 @@ public class Shot
     public string name = "Empty String";
     public bool canGlide = false;
     public bool isEventTrigger = false;
-    public GameObject eventObject;
+    //public bool hasTriggerTime = false;
+    public Event_Type eventType;
     [Range(1f, 20f)]
     public float sceneTime = 1f;
     [Range(1f, 20f)]

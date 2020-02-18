@@ -6,13 +6,11 @@ using UnityEngine;
 
 public class Event_Type : MonoBehaviour
 {
-    protected bool playEvent;
-
-    protected string eventName;
+    public string eventName;
 
     private void Awake()
     {
-        playEvent = false;
+        
     }
 
     public virtual void StartEvent()
