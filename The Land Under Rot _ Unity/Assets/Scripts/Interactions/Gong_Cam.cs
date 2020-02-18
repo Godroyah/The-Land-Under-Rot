@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Gong_Cam : MonoBehaviour
 {
-
     public bool startScene;
 
     Transform currentViewPoint;
@@ -20,6 +19,15 @@ public class Gong_Cam : MonoBehaviour
     {
         currentScene = 0;
         currentTime = shots[currentScene].sceneTime;
+        
+        if (shots[0].viewpoint == null)
+        {
+            shots[0].viewpoint = GameObject.Find("@GameController").GetComponent<GameController>().playerController.camControl.myCamera.transform;
+            if (shots[shots.Length - 1].viewpoint == null)
+                {
+                    shots[shots.Length - 1].viewpoint = shots[0].viewpoint;
+                }
+        }
 
         if (shots[0] != null)
         {
@@ -100,8 +108,11 @@ public class Gong_Cam : MonoBehaviour
         }
         else
         {
-            transform.position = shots[currentScene].viewpoint.position;
-            transform.rotation = shots[currentScene].viewpoint.rotation;
+            if(shots[0].viewpoint != null)
+            {
+                transform.position = shots[currentScene].viewpoint.position;
+                transform.rotation = shots[currentScene].viewpoint.rotation;
+            }
         }
     }
 }
@@ -113,7 +124,9 @@ public class Shot
     public bool canGlide = false;
     public bool isEventTrigger = false;
     public GameObject eventObject;
+    [Range(1f, 20f)]
     public float sceneTime = 1f;
+    [Range(1f, 20f)]
     public float transitionSpeed = 1f;
     public Transform viewpoint;
 }

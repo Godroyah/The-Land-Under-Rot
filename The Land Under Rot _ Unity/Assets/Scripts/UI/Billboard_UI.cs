@@ -7,7 +7,9 @@ public class Billboard_UI : MonoBehaviour
     //-----WARNING! Make sure XYX Scale you parent the Button_Prompt to are equivalent! 
     //-----(ex. x = 1, y = 1, z = 1 OR x = 2, y = 2, z = 2, ETC.)
 
-    public GameController gameController;
+    private PlayerController playerController;
+    private GameController gameController;
+
     public Camera billBoardCam;
     public Transform camTransform;
     public Canvas promptCanvas;
@@ -28,13 +30,26 @@ public class Billboard_UI : MonoBehaviour
             if (gameController == null)
             {
                 gameController = GameObject.Find("@GameController").GetComponent<GameController>();
-                if (gameController != null)
-                    billBoardCam = gameController.playerController.camControl.myCamera;
+                
+                if (gameController == null)
+                {
+                    playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
+                }
             }
             else
             {
                 Debug.LogWarning("GameController not active in scene!");
             }
+
+            if (gameController != null)
+                billBoardCam = gameController.playerController.camControl.myCamera;
+            else if(playerController != null)
+                billBoardCam = playerController.camControl.myCamera;
+            else if(gameController == null && playerController == null)
+            {
+                Debug.LogWarning("Player and GameController both missing! Must AT LEAST have Player present in scene!");
+            }
+
             camTransform = billBoardCam.transform;
             promptCanvas.worldCamera = billBoardCam;
         }
