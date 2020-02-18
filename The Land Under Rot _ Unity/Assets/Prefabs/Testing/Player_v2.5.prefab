@@ -144,12 +144,12 @@ MonoBehaviour:
   health: 3
   acorns: 0
   mulch: 0
-  moveSpeed: 12
+  moveSpeed: 20
   runSpeed: 20
   rotationSpeed: 5
-  jumpVelocity: 10
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  jumpVelocity: 40
+  fallMultiplier: 10
+  lowJumpMultiplier: 7
   interactionRange: 1.5
   interactionDetector: {fileID: 6496811478216644456}
   headButtDetector: {fileID: 6496811478467054182}
@@ -232,13 +232,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6822040399017918019}
-  m_LocalRotation: {x: 0.05925405, y: -0, z: -0, w: 0.998243}
-  m_LocalPosition: {x: 0, y: 2.849, z: -6.82}
+  m_LocalRotation: {x: 0.10224262, y: -0, z: -0, w: 0.9947595}
+  m_LocalPosition: {x: 0, y: 5.8, z: -10.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6822040399025308646}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 6.794, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.737, y: 0, z: 0}
 --- !u!20 &6822040399017918017
 Camera:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   rotationTarget: {fileID: 0}
   sensitivity_X: 10
   sensitivity_Y: 10
-  pitchMinMax: {x: -20, y: 45}
+  pitchMinMax: {x: -45, y: 45}
   acceleration: 1.39
 --- !u!1 &6822040400341533122
 GameObject:
@@ -389,7 +389,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: edeeedfb88e9cb646aff7783b318c769, type: 2}
     - target: {fileID: 5485647015242135694, guid: 791eb7992dbb7f147a2d0239e16d03e2,
         type: 3}
       propertyPath: m_LocalPosition.x
