@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public DialogueManager dialogueManager;
     public CutsceneManager cutsceneManager;
 
-    public GameObject mainMenu;
+    //public GameObject mainMenu;
     public GameObject pauseMenu;
     public GameObject quitOption;
     public Button resumeButton;
@@ -44,10 +44,12 @@ public class GameController : MonoBehaviour
     //once MainMenu has its own scene
 
     public bool paused;
-    public bool mmenu_Active;
+    //public bool mmenu_Active;
 
     private void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player)
@@ -87,17 +89,17 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (testing)
-        {
-            if (mainMenu.activeInHierarchy == true)
-            {
-                mmenu_Active = true;
-            }
-            else
-            {
-                mmenu_Active = false;
-            }
-        }
+        //if (testing)
+        //{
+        //    if (mainMenu.activeInHierarchy == true)
+        //    {
+        //        mmenu_Active = true;
+        //    }
+        //    else
+        //    {
+        //        mmenu_Active = false;
+        //    }
+        //}
         if (playerController != null)
         {
             Pause();
@@ -159,20 +161,23 @@ public class GameController : MonoBehaviour
 
     public void Pause()
     {
-        if ((mmenu_Active == false && testing == true) || testing == false)
-        {
+        //if ((mmenu_Active == false && testing == true) || testing == false)
+        if (testing == false)
+            {
             // Debug.Log("Active?");
             if (Input.GetButton("Pause"))
             {
                 if (!paused)
                 {
                     Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                     pauseMenu.SetActive(true);
                     Time.timeScale = 0;
                 }
                 else
                 {
                     Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
                     pauseMenu.SetActive(false);
                     Time.timeScale = 1;
                 }
@@ -213,7 +218,7 @@ public class GameController : MonoBehaviour
             quitOption.SetActive(false);
             resumeButton.interactable = true;
             quitButton.interactable = true;
-            mainMenu.SetActive(true);
+            //mainMenu.SetActive(true);
             Time.timeScale = 1;
         }
         else
