@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
     [Range(0, 1), Tooltip("Delay until the next time 'Headbutt' is available.")]
     public float headbuttDelay = 0.1f;
-    private Coroutine headbuttCoroutine;
+    public Coroutine HeadbuttCoroutine { get; private set; }
 
     [Space(5)]
 
@@ -104,8 +104,8 @@ public class PlayerController : MonoBehaviour
     public float rotationCutoff = 0.1f;
     [HideInInspector]
     public Vector2 controlInput;
-    private float horizontalInput;
-    private float verticalInput;
+    public float HorizontalInput { get; private set; }
+    public float VerticalInput { get; private set; }
     private Quaternion targetRotation;
     private Transform rotationTarget;
 
@@ -313,7 +313,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Interacting());
         }
 
-        if (ShouldHeadbutt && headbuttCoroutine == null)
+        if (ShouldHeadbutt && HeadbuttCoroutine == null)
         {
             StartCoroutine(Headbutting());
         }
@@ -326,8 +326,8 @@ public class PlayerController : MonoBehaviour
 
     private void GetInput()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        HorizontalInput = Input.GetAxis("Horizontal");
+        VerticalInput = Input.GetAxis("Vertical");
         ShouldRun = Input.GetKey(KeyCode.LeftShift);
         ShouldJump = Input.GetButtonDown("Jump");
         ShouldInteract = Input.GetButtonDown("Interact");
@@ -361,18 +361,18 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(interactDelay);
         headButtDetector.enabled = false;
-        headbuttCoroutine = null;
+        HeadbuttCoroutine = null;
     }
 
     private void Move()
     {
         // Don't start accepting input until it peaks the inputDelay
-        if (Mathf.Abs(horizontalInput) < inputDelay)
-            horizontalInput = 0;
-        if (Mathf.Abs(verticalInput) < inputDelay)
-            verticalInput = 0;
+        if (Mathf.Abs(HorizontalInput) < inputDelay)
+            HorizontalInput = 0;
+        if (Mathf.Abs(VerticalInput) < inputDelay)
+            VerticalInput = 0;
 
-        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
+        Vector3 movement = new Vector3(HorizontalInput, 0, VerticalInput);
 
         Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist);
         rotationTarget.position = tempDir + transform.position;

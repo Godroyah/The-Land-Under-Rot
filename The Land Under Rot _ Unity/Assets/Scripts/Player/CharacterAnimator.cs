@@ -23,7 +23,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         #region Jumping
 
-        if (playerController.ShouldJump && playerController.CanJump)
+        if (playerController.ShouldJump)
         {
             animator.SetTrigger("Jump_Button_Trigger");
         }
@@ -32,10 +32,11 @@ public class CharacterAnimator : MonoBehaviour
         if (rb.velocity.y < 0)
             animator.SetBool("Airborne_Bool", true);
         //else if (rb.velocity.y > 0 && !playerController.ShouldJump)
-            //animator.SetBool("Airborne_Bool", true);
+        //animator.SetBool("Airborne_Bool", true);
 
         if (!playerController.CanJump)
         {
+            #region Raycast Layer Masking
             // Bit shift the index of the layer (8) to get a bit mask
             int layerMask = 1 << 8;
 
@@ -45,16 +46,31 @@ public class CharacterAnimator : MonoBehaviour
 
             RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
+            #endregion
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5f))
             {
-                if (hit.distance < landDistance) // TODO: Hardcoded Raycast distance check
+                if (hit.distance < landDistance)
                 {
                     animator.SetBool("Airborne_Bool", false);
                 }
             }
         }
 
-        
+        if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
+            animator.SetTrigger("Run_Button_Trigger");
+
+
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+            animator.SetBool("Holding_Run_Bool", true);
+        else
+            animator.SetBool("Holding_Run_Bool", false);
+
+
+
+        if (playerController.ShouldHeadbutt && playerController.HeadbuttCoroutine == null)
+        {
+            animator.SetTrigger("Headbutt_Button_Trigger");
+        }
 
         #endregion
     }
