@@ -22,6 +22,8 @@ public class Mulch : Interactable
     private float directionControllerX;
     private float directionControllerZ;
 
+    public bool isTutorial;
+
     //private Bounds spawnBounds;
 
     //[SerializeField]
@@ -60,80 +62,83 @@ public class Mulch : Interactable
     {
         base.Interact();
 
-        mulchCollider.enabled = false;
-        if(objsToSpawn.Length == spawnPoints.Length)
+        if(!isTutorial)
         {
-            foreach (GameObject obj in objsToSpawn)
+            mulchCollider.enabled = false;
+            if (objsToSpawn.Length == spawnPoints.Length)
             {
-                GameObject temp;
-                temp = Instantiate(obj, transform) as GameObject;
-
-                temp.transform.position = spawnPoints[numberSpawned].position;
-
-                //Randomize Spawning - Revisit
-                #region
-                //if(randomSpawn == spawnStart)
-                // {
-                //     temp.transform.position = randomSpawn;
-                // }
-                //else
-                // {
-                //     randomSpawn = new Vector3(Random.Range(spawnBounds.min.x, spawnBounds.max.x), Random.Range(spawnBounds.min.y, spawnBounds.max.y), Random.Range(spawnBounds.min.z, spawnBounds.max.z));
-                // }
-
-                //if(randomSpawn == Vector3.zero)
-                //{
-                //    randomSpawn = new Vector3(Random.Range )
-                //}
-
-                //temp.transform.position = new Vector3(Random.Range())
-
-                //transform.position;
-                #endregion  //Randomize spawning
-
-                Rigidbody rb;
-                rb = temp.GetComponentInChildren<Rigidbody>();
-
-                if (rb == null) // TODO: Mulch Spawn Rigidbodies
-                    rb = temp.AddComponent<Rigidbody>();
-
-                directionControllerX = Random.Range(0, 1);
-                directionControllerZ = Random.Range(0, 1);
-
-                if (directionControllerX > 0.5)
+                foreach (GameObject obj in objsToSpawn)
                 {
-                    itemDirectionX = 100f;
+                    GameObject temp;
+                    temp = Instantiate(obj, transform) as GameObject;
+
+                    temp.transform.position = spawnPoints[numberSpawned].position;
+
+                    //Randomize Spawning - Revisit
+                    #region
+                    //if(randomSpawn == spawnStart)
+                    // {
+                    //     temp.transform.position = randomSpawn;
+                    // }
+                    //else
+                    // {
+                    //     randomSpawn = new Vector3(Random.Range(spawnBounds.min.x, spawnBounds.max.x), Random.Range(spawnBounds.min.y, spawnBounds.max.y), Random.Range(spawnBounds.min.z, spawnBounds.max.z));
+                    // }
+
+                    //if(randomSpawn == Vector3.zero)
+                    //{
+                    //    randomSpawn = new Vector3(Random.Range )
+                    //}
+
+                    //temp.transform.position = new Vector3(Random.Range())
+
+                    //transform.position;
+                    #endregion  //Randomize spawning
+
+                    Rigidbody rb;
+                    rb = temp.GetComponentInChildren<Rigidbody>();
+
+                    if (rb == null) // TODO: Mulch Spawn Rigidbodies
+                        rb = temp.AddComponent<Rigidbody>();
+
+                    directionControllerX = Random.Range(0, 1);
+                    directionControllerZ = Random.Range(0, 1);
+
+                    if (directionControllerX > 0.5)
+                    {
+                        itemDirectionX = 100f;
+                    }
+                    else
+                    {
+                        itemDirectionX = -100f;
+                    }
+
+                    if (directionControllerZ > 0.5)
+                    {
+                        itemDirectionZ = 100f;
+                    }
+                    else
+                    {
+                        itemDirectionZ = -100f;
+                    }
+
+                    temp.transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
+
+                    rb.AddForce((new Vector3(Random.Range(-1, 1) * itemDirectionX, 0, Random.Range(-1, 1) * itemDirectionZ) + mulchContainer.transform.up * spawnJumpHeight));
+
+                    numberSpawned += 1;
                 }
-                else
+
+                if (numberSpawned >= objsToSpawn.Length)
                 {
-                    itemDirectionX = -100f;
+                    transform.DetachChildren();
+                    Destroy(mulchContainer);
                 }
-
-                if (directionControllerZ > 0.5)
-                {
-                    itemDirectionZ = 100f;
-                }
-                else
-                {
-                    itemDirectionZ = -100f;
-                }
-
-                temp.transform.rotation = Quaternion.Euler(0, Random.Range(-180, 180), 0);
-
-                rb.AddForce((new Vector3(Random.Range(-1, 1) * itemDirectionX, 0, Random.Range(-1, 1) * itemDirectionZ) + mulchContainer.transform.up * spawnJumpHeight));
-
-                numberSpawned += 1;
             }
-
-            if (numberSpawned >= objsToSpawn.Length)
+            else
             {
-                transform.DetachChildren();
-                Destroy(mulchContainer);
+                Debug.LogWarning("Objs To Spawn and Spawn Points arrays on Mulch do not have the same number of elements!");
             }
-        }
-        else
-        {
-            Debug.LogWarning("Objs To Spawn and Spawn Points arrays on Mulch do not have the same number of elements!");
         }
     }
 
