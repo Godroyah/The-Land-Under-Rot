@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public DialogueManager dialogueManager;
     public CutsceneManager cutsceneManager;
 
-    //public GameObject mainMenu;
+    public GameObject mainMenu;
     public GameObject pauseMenu;
     public GameObject quitOption;
     public Button resumeButton;
@@ -48,8 +48,11 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        if(mainMenu == null)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player)
@@ -171,14 +174,20 @@ public class GameController : MonoBehaviour
                 {
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
-                    pauseMenu.SetActive(true);
+                    if(pauseMenu != null)
+                    {
+                        pauseMenu.SetActive(true);
+                    }
                     Time.timeScale = 0;
                 }
                 else
                 {
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
-                    pauseMenu.SetActive(false);
+                    if (pauseMenu != null)
+                    {
+                        pauseMenu.SetActive(false);
+                    }
                     Time.timeScale = 1;
                 }
             }
@@ -188,7 +197,11 @@ public class GameController : MonoBehaviour
                 if (!paused)
                     paused = true;
                 else if (paused)
+                {
+                    //Cursor.visible = false;
+                    //Cursor.lockState = CursorLockMode.Locked;
                     paused = false;
+                }
             }
         }
     }
