@@ -65,8 +65,7 @@ public class PlayerController : MonoBehaviour
     public MeshCollider interactionDetector;
     public CapsuleCollider headButtDetector;
     public Transform groundChecker;
-    public Transform topCapsule;
-    public Transform bottomCapsule;
+    public Transform collisionChecker;
 
     private int playerLayerMask;
     #endregion
@@ -371,10 +370,11 @@ public class PlayerController : MonoBehaviour
         rotationTarget.position = tempDir + transform.position;
 
         //bool hasCollided = Physics.CheckCapsule(temp, 1.77f, playerLayerMask, QueryTriggerInteraction.Ignore);
-        bool hasCollided = Physics.CheckCapsule(topCapsule.position, bottomCapsule.position, 1.77f, playerLayerMask, QueryTriggerInteraction.Ignore);
-        Debug.Log(hasCollided);
-        if (IsGrounded && hasCollided)
-        {
+        bool hasCollided = Physics.CheckBox(collisionChecker.position, new Vector3(0.75f, 1.75f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
+
+        //Debug.Log(hasCollided);
+        //if (IsGrounded && !hasCollided)
+        //{
             float targetSpeed;
             if (ShouldRun)
                 targetSpeed = runVelocity;
@@ -382,14 +382,6 @@ public class PlayerController : MonoBehaviour
                 targetSpeed = moveVelocity;
 
             movement = rotationTarget.TransformDirection(movement) * targetSpeed;
-            /*
-            if (ShouldRun)
-                movement *= runSpeed * Time.deltaTime;
-            else
-                movement *= moveSpeed * Time.deltaTime;
-
-            transform.position += movement;
-            */
 
             // Apply a force that attempts to reach our target velocity
             Vector3 velocity = Rb.velocity;
@@ -399,7 +391,7 @@ public class PlayerController : MonoBehaviour
             velocityChange.y = 0;
 
             Rb.AddForce(velocityChange, ForceMode.VelocityChange);
-        }
+        //}
 
     }
 
