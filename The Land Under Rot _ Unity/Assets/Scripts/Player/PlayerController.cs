@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("This field helps specify that the SphereCollider on the Player is used for Interaction Detection.")]
     //public SphereCollider interactionDetector; // TODO: Will this sphere collider cause issues?
     public MeshCollider interactionDetector;
-    public CapsuleCollider headButtDetector;
+    public SphereCollider headButtDetector;
     #endregion
 
 
@@ -92,8 +92,11 @@ public class PlayerController : MonoBehaviour
     public float interactDelay = 0.1f;
     private Coroutine interactingCoroutine;
 
+    [Range(0, 1), Tooltip("Delay until the 'Headbutt' swings forward.")]
+    public float headbuttStartDelay = 1.0f;
     [Range(0, 1), Tooltip("Delay until the next time 'Headbutt' is available.")]
-    public float headbuttDelay = 0.1f;
+    public float headbuttFinishDelay = 0.1f;
+    //public float headbuttDelay = 0.1f;
     public Coroutine HeadbuttCoroutine { get; private set; }
 
     [Space(5)]
@@ -353,14 +356,9 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Headbutting()
     {
+        yield return new WaitForSeconds(headbuttStartDelay);
         headButtDetector.enabled = true;
-        //for (int i = 0; i < headbuttables.Count; i++)
-        //{
-        //    if (headbuttables[i] != null)
-        //        headbuttables[i].Interact();
-        //}
-
-        yield return new WaitForSeconds(interactDelay);
+        yield return new WaitForSeconds(headbuttFinishDelay);
         headButtDetector.enabled = false;
         HeadbuttCoroutine = null;
     }
