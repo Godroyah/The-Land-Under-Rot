@@ -364,13 +364,21 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(VerticalInput) < inputDelay)
             VerticalInput = 0;
 
-        Vector3 movement = new Vector3(HorizontalInput, 0, VerticalInput);
+        bool hasCollided = Physics.CheckBox(collisionChecker.position, new Vector3(0.75f, 1.75f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
+
+        Vector3 movement;
+
+        if (!IsGrounded && hasCollided)
+            movement = Vector3.zero;
+        else
+           movement = new Vector3(HorizontalInput, 0, VerticalInput);
+
 
         Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist);
         rotationTarget.position = tempDir + transform.position;
 
         //bool hasCollided = Physics.CheckCapsule(temp, 1.77f, playerLayerMask, QueryTriggerInteraction.Ignore);
-        bool hasCollided = Physics.CheckBox(collisionChecker.position, new Vector3(0.75f, 1.75f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
+        
 
         //Debug.Log(hasCollided);
         //if (IsGrounded && !hasCollided)
