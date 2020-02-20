@@ -41,6 +41,7 @@ public class Spawn_Volume : MonoBehaviour
         {
             activeCorridor = true;
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            playerController.currentSpawn = spawnPoint;
             playerSpawn = playerController.currentSpawn;
             
             //-------------------------------------------------------

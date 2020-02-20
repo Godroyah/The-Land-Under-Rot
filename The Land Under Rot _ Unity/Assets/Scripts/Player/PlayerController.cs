@@ -27,10 +27,12 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     [Range(1, 50)]
-    public float moveSpeed = 12f;
+    public float moveVelocity = 12f;
 
     [Range(1, 50)]
-    public float runSpeed = 20f;
+    public float runVelocity = 20f;
+
+    float maxVelocityChange = 10f;
 
     [Range(0, 200), Tooltip("Controls how fast the obj rotates when changing directions.")]
     public float rotationSpeed = 0.1f;
@@ -62,6 +64,11 @@ public class PlayerController : MonoBehaviour
     //public SphereCollider interactionDetector; // TODO: Will this sphere collider cause issues?
     public MeshCollider interactionDetector;
     public CapsuleCollider headButtDetector;
+    public Transform groundChecker;
+    public Transform topCapsule;
+    public Transform bottomCapsule;
+
+    private int playerLayerMask;
     #endregion
 
 
@@ -73,11 +80,10 @@ public class PlayerController : MonoBehaviour
     #region Bools
     public bool isDead;
     public bool infiniteJumping = false;
-    private bool isGrounded;
     public bool ShouldRun { get; private set; }
     public bool ShouldInteract { get; private set; }
     public bool ShouldJump { get; private set; }
-    public bool CanJump { get; private set; }
+    public bool IsGrounded { get; private set; }
     public bool ShouldHeadbutt { get; private set; }
     #endregion
 
@@ -167,12 +173,21 @@ public class PlayerController : MonoBehaviour
 
         this.transform.position = currentSpawn.position;
         this.transform.rotation = currentSpawn.rotation;
+
+        // Bit shift the index of the layer (8) to get a bit mask
+        playerLayerMask = 1 << 8;
+
+        // This would cast rays only against colliders in layer 8.
+        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+        playerLayerMask = ~playerLayerMask;
     }
 
     // Update is called once per frame
     void Update()
     {
         GetInput();
+
+        IsGrounded = Physics.CheckSphere(groundChecker.position, 0.2f, playerLayerMask, QueryTriggerInteraction.Ignore);
 
         #region Interactable Check
 
@@ -274,37 +289,16 @@ public class PlayerController : MonoBehaviour
         else if (Rb.velocity.y > 0 && !ShouldJump)
             Rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 
-        if (!CanJump && ShouldJump)
+        if (infiniteJumping)
         {
-            // Bit shift the index of the layer (8) to get a bit mask
-            int layerMask = 1 << 8;
-
-            // This would cast rays only against colliders in layer 8.
-            // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-            layerMask = ~layerMask;
-
-            RaycastHit hit;
-            // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5f))
-            {
-                //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
-                //Debug.Log("Did Hit");
-                if (hit.distance < 2.4f) // TODO: Hardcoded Raycast distance check
-                {
-                    CanJump = true;
-                }
-            }
-        }
-        else if (infiniteJumping)
-        {
-            CanJump = true;
+            IsGrounded = true;
         }
 
-        if (ShouldJump && CanJump)
+        if (ShouldJump && IsGrounded)
         {
             Rb.velocity = Vector3.up * jumpVelocity;
 
-            CanJump = false;
+            IsGrounded = false;
         }
 
         #endregion
@@ -360,7 +354,7 @@ public class PlayerController : MonoBehaviour
         //        headbuttables[i].Interact();
         //}
 
-        yield return new WaitForSeconds(interactDelay);
+        yield return new WaitForSeconds(headbuttDelay);
         headButtDetector.enabled = false;
         HeadbuttCoroutine = null;
     }
@@ -378,14 +372,37 @@ public class PlayerController : MonoBehaviour
         Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist);
         rotationTarget.position = tempDir + transform.position;
 
-        movement = rotationTarget.TransformDirection(movement);
+        //bool hasCollided = Physics.CheckCapsule(temp, 1.77f, playerLayerMask, QueryTriggerInteraction.Ignore);
+        bool hasCollided = Physics.CheckCapsule(topCapsule.position, bottomCapsule.position, 1.77f, playerLayerMask, QueryTriggerInteraction.Ignore);
+        Debug.Log(hasCollided);
+        if (IsGrounded && hasCollided)
+        {
+            float targetSpeed;
+            if (ShouldRun)
+                targetSpeed = runVelocity;
+            else
+                targetSpeed = moveVelocity;
 
-        if (ShouldRun)
-            movement *= runSpeed * Time.deltaTime;
-        else
-            movement *= moveSpeed * Time.deltaTime;
+            movement = rotationTarget.TransformDirection(movement) * targetSpeed;
+            /*
+            if (ShouldRun)
+                movement *= runSpeed * Time.deltaTime;
+            else
+                movement *= moveSpeed * Time.deltaTime;
 
-        transform.position += movement;
+            transform.position += movement;
+            */
+
+            // Apply a force that attempts to reach our target velocity
+            Vector3 velocity = Rb.velocity;
+            Vector3 velocityChange = (movement - velocity);
+            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+            velocityChange.y = 0;
+
+            Rb.AddForce(velocityChange, ForceMode.VelocityChange);
+        }
+
     }
 
     private void Rotate()
