@@ -53,20 +53,29 @@ public class GameController : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        if (player)
+        if(playerController == null)
         {
-            playerController = player.GetComponent<PlayerController>();
+            playerController = GameObject.Find("Player").GetComponent<PlayerController>();
             if (playerController == null)
             {
-                Debug.LogWarning("Player missing playercontroller!");
+                Debug.LogWarning("Cannot find Player!");
             }
         }
-        else
-        {
-            Debug.LogWarning("Can't find player!");
-        }
+        
+
+        //if (player)
+        //{
+        //    playerController = player.GetComponent<PlayerController>();
+        //    if (playerController == null)
+        //    {
+        //        Debug.LogWarning("Player missing playercontroller!");
+        //    }
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("Can't find player!");
+        //}
 
         //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 

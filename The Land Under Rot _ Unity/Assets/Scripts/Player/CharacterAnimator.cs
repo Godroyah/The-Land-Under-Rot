@@ -41,11 +41,14 @@ public class CharacterAnimator : MonoBehaviour
                 animator.SetBool("Airborne_Bool", false);
             }
 
-            if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
+            //if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
+            //    animator.SetTrigger("Run_Button_Trigger");
+
+            if (!animator.GetBool("Airborne_Bool") && (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
                 animator.SetTrigger("Run_Button_Trigger");
 
 
-            if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+            if (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f)
                 animator.SetBool("Holding_Run_Bool", true);
             else
                 animator.SetBool("Holding_Run_Bool", false);

@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("This field helps specify that the SphereCollider on the Player is used for Interaction Detection.")]
     //public SphereCollider interactionDetector; // TODO: Will this sphere collider cause issues?
     public MeshCollider interactionDetector;
-    public CapsuleCollider headButtDetector;
+    public SphereCollider headButtDetector;
     public Transform groundChecker;
     public Transform collisionChecker;
 
@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
     public bool ShouldJump { get; private set; }
     public bool IsGrounded { get; private set; }
     public bool ShouldHeadbutt { get; private set; }
+    public bool JustHeadButted { get; private set; }
     #endregion
 
 
@@ -113,6 +114,7 @@ public class PlayerController : MonoBehaviour
     public float rotationCutoff = 0.1f;
     [HideInInspector]
     public Vector2 controlInput;
+    public float HeadbuttInput { get; private set; }
     public float HorizontalInput { get; private set; }
     public float VerticalInput { get; private set; }
     private Quaternion targetRotation;
@@ -165,6 +167,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        JustHeadButted = true;
         // TODO: Find Spawn Point
         isDead = false;
 
@@ -329,6 +332,40 @@ public class PlayerController : MonoBehaviour
         ShouldJump = Input.GetButtonDown("Jump");
         ShouldInteract = Input.GetButtonDown("Interact");
         ShouldHeadbutt = Input.GetButtonDown("Headbutt");
+        HeadbuttInput = Input.GetAxis("Headbutt");
+
+        
+        if(HeadbuttInput > 0.1)
+        {
+            if(JustHeadButted)
+            {
+                ShouldHeadbutt = true;
+            }
+            JustHeadButted = false;
+        }
+        else
+        {
+            JustHeadButted = true;
+        }
+
+
+        //if (HeadbuttInput < 0.1)
+        //{
+        //    if (!JustHeadButted)
+        //    {
+        //        ShouldHeadbutt = true;
+        //    }
+        //    JustHeadButted = true;
+        //}
+        //else
+        //{
+        //    JustHeadButted = false;
+        //}
+
+
+
+        //else
+        //    ShouldHeadbutt = false;
     }
 
     private void ToggleHighlight(Interactable focus, bool state)
@@ -354,6 +391,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(headbuttFinishDelay);
         headButtDetector.enabled = false;
         HeadbuttCoroutine = null;
+        //ShouldHeadbutt = false;
     }
 
     private void Move()

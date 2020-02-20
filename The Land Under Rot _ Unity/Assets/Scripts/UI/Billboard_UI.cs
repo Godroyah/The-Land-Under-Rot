@@ -33,7 +33,7 @@ public class Billboard_UI : MonoBehaviour
                 
                 if (gameController == null)
                 {
-                    playerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
+                    playerController = GameObject.Find("Player").GetComponent<PlayerController>();
                 }
             }
             else
