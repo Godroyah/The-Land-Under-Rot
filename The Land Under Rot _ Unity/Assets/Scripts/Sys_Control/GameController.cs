@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject mainMenu;
     public GameObject pauseMenu;
     public GameObject quitOption;
+    public GameObject pauseEventSystem;
     public Button resumeButton;
     public Button quitButton;
     public PlayerController playerController;
@@ -186,6 +187,7 @@ public class GameController : MonoBehaviour
                     if(pauseMenu != null)
                     {
                         pauseMenu.SetActive(true);
+                        
                     }
                     Time.timeScale = 0;
                 }
@@ -196,6 +198,9 @@ public class GameController : MonoBehaviour
                     if (pauseMenu != null)
                     {
                         pauseMenu.SetActive(false);
+                        quitOption.SetActive(false);
+                        resumeButton.interactable = true;
+                        quitButton.interactable = true;
                     }
                     Time.timeScale = 1;
                 }
@@ -229,6 +234,7 @@ public class GameController : MonoBehaviour
         resumeButton.interactable = false;
         quitButton.interactable = false;
         quitOption.SetActive(true);
+        pauseEventSystem.SetActive(false);
     }
 
     public void QuitToMenu()
@@ -254,6 +260,7 @@ public class GameController : MonoBehaviour
         quitOption.SetActive(false);
         resumeButton.interactable = true;
         quitButton.interactable = true;
+        pauseEventSystem.SetActive(true);
     }
 
     public void QuitApplication()
