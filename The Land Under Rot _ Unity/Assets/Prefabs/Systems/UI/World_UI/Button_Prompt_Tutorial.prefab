@@ -97,8 +97,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2, y: 1.8}
+  m_AnchoredPosition: {x: 0, y: -0.36}
+  m_SizeDelta: {x: 4, y: 3.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7020941380745441128
 CanvasRenderer:
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d37933b065b33a24dad278c128ffffa7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4adfeeb4c3b4f1149937b0b7272bcae7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -254,6 +254,7 @@ MonoBehaviour:
   promptCanvas: {fileID: 7020941381028381565}
   textObject: {fileID: 7020941381565397061}
   imageObject: {fileID: 7020941380745441133}
+  forInteractable: 0
   tutorial: 1
 --- !u!1 &7020941381164742069
 GameObject:
@@ -270,7 +271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7020941381164742065
 Transform:
   m_ObjectHideFlags: 0
@@ -352,8 +353,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: (CHILD OBJECT > TEXT (TMP) to Edit Text )
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a06247530767aa545b97bd558d0b7a8c, type: 2}
+  m_sharedMaterial: {fileID: 7944484477952152859, guid: a06247530767aa545b97bd558d0b7a8c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -395,7 +397,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 35
+  m_firstOverflowCharacterIndex: 21
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -424,7 +426,7 @@ MonoBehaviour:
     spaceCount: 8
     wordCount: 7
     linkCount: 0
-    lineCount: 3
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
