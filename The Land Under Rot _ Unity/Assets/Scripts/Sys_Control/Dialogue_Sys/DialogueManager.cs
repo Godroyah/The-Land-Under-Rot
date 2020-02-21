@@ -122,4 +122,19 @@ public class DialogueManager : MonoBehaviour
 
         return false;
     }
+
+    public bool StartDialogue(Dialogue dialogue)
+    {
+        //Debug.Log(sceneName);
+        if (!hasActiveDialogue)
+        {
+            dialogue.StartScene();
+        }
+        else
+        {
+            Debug.Log("Unable to start new scene '" + dialogue.SceneName + "' because another scene is still/already started");
+        }
+
+        return false;
+    }
 }

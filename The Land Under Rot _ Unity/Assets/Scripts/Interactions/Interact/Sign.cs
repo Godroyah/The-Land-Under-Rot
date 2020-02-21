@@ -9,6 +9,7 @@ public class Sign : Interactable
 
     GameController gameController;
     DialogueManager dialogueManager;
+    public Dialogue dialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -44,22 +45,21 @@ public class Sign : Interactable
     {
         base.Interact();
 
-
+        if (dialogue != null)
+            dialogueManager.StartDialogue(dialogue);
+        else
+            dialogueManager.StartDialogue("Test");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Interact"))
-        {
             gameController.playerController.interactables.Add(this);
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Interact"))
-        {
             gameController.playerController.interactables.Remove(this);
-        }
     }
 }
