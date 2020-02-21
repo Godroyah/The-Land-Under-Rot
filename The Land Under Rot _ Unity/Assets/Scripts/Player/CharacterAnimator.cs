@@ -31,7 +31,7 @@ public class CharacterAnimator : MonoBehaviour
             }
 
             //faster falling
-            if (rb.velocity.y < 0 && !playerController.IsGrounded)
+            if (/*rb.velocity.y < 0 && */!playerController.IsGrounded)
                 animator.SetBool("Airborne_Bool", true);
             //else if (rb.velocity.y > 0 && !playerController.ShouldJump)
             //animator.SetBool("Airborne_Bool", true);
@@ -41,11 +41,11 @@ public class CharacterAnimator : MonoBehaviour
                 animator.SetBool("Airborne_Bool", false);
             }
 
-            //if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
-            //    animator.SetTrigger("Run_Button_Trigger");
-
-            if (!animator.GetBool("Airborne_Bool") && (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
+            if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
                 animator.SetTrigger("Run_Button_Trigger");
+
+            //if (!animator.GetBool("Airborne_Bool") && (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
+            //    animator.SetTrigger("Run_Button_Trigger");
 
 
             if (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f)
