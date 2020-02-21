@@ -22,7 +22,7 @@ public class Pick_Up : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pickUpType == PickUpType.ACORN || pickUpType == PickUpType.HEALTH || pickUpType == PickUpType.HARMFUL)
+        if((pickUpType == PickUpType.ACORN || pickUpType == PickUpType.HEALTH || pickUpType == PickUpType.HARMFUL) && Time.timeScale > 0)
         {
             transform.Rotate(0, 3, 0, Space.World);
         }
