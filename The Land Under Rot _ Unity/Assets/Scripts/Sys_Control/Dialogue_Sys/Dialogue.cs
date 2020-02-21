@@ -97,7 +97,7 @@ public class Dialogue : MonoBehaviour
         hasFinishedDisplayingText = false;
         Frames[Frames.Length - 1].SetActive(false);
 
-        if (gameController != null)
+        if (dialogueManager != null)
         {
             dialogueManager.hasActiveDialogue = false;
         }
