@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour
         {
             playerController = temp.GetComponent<PlayerController>();
             if (playerController == null)
-                Debug.LogWarning("Player does not have the 'PlayerController' script!");
+                Debug.LogWarning("Player does not have the 'PlayerController' script or something is additionally tagged 'Player'");
         }
         else
         {
