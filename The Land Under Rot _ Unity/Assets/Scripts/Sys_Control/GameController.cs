@@ -21,6 +21,16 @@ public class GameController : MonoBehaviour
     public bool levelStart;
     //public bool areaSpawnCalc;
 
+    #region Bools
+    public bool area_Tutorial = false;
+    public bool bus_Called = false;
+
+    [Space(1)]
+
+    public bool area_Stinkhorn = false;
+    public bool area_TreeSeat = false;
+    #endregion
+
     public int playerAcorns;
     private int oldAcorns;
     public int playerMulch;
@@ -49,13 +59,13 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        if(mainMenu == null)
+        if (mainMenu == null)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        if(playerController == null)
+        if (playerController == null)
         {
             playerController = GameObject.Find("Player").GetComponent<PlayerController>();
             if (playerController == null)
@@ -63,7 +73,7 @@ public class GameController : MonoBehaviour
                 Debug.LogWarning("Cannot find Player!");
             }
         }
-        
+
 
         //if (player)
         //{
@@ -176,7 +186,7 @@ public class GameController : MonoBehaviour
     {
         //if ((mmenu_Active == false && testing == true) || testing == false)
         if (testing == false)
-            {
+        {
             // Debug.Log("Active?");
             if (Input.GetButton("Pause"))
             {
@@ -184,10 +194,10 @@ public class GameController : MonoBehaviour
                 {
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
-                    if(pauseMenu != null)
+                    if (pauseMenu != null)
                     {
                         pauseMenu.SetActive(true);
-                        
+
                     }
                     Time.timeScale = 0;
                 }

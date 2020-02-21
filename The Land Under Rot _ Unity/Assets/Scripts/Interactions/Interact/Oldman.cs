@@ -44,7 +44,10 @@ public class Oldman : Interactable
     {
         base.Interact();
 
-
+        if (gameController != null)
+        {
+            // Select which dialogue to 'say'
+        }
     }
 
     private void OnTriggerEnter(Collider other)

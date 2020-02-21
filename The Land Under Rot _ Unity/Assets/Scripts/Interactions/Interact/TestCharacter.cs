@@ -51,7 +51,7 @@ public class TestCharacter : Interactable
     {
         if (other.CompareTag("Interact"))
         {
-            playerController.interactables.Add(this);
+            gameController.playerController.interactables.Add(this);
         }
     }
 
@@ -59,7 +59,7 @@ public class TestCharacter : Interactable
     {
         if (other.CompareTag("Interact"))
         {
-            playerController.interactables.Remove(this);
+            gameController.playerController.interactables.Remove(this);
         }
     }
 }
