@@ -24,8 +24,13 @@ public class GameController : MonoBehaviour
     #region Bools
     public bool area_Tutorial = false;
     public bool bus_Called = false;
-
     [Space(1)]
+    public bool tutorial_HasTalked_Rootford_Intro1 = false;
+    public bool tutorial_HasTalked_Rootford_Intro2 = false;
+    [Space(1)]
+    public bool tutorial_HasTalked_BusDriver_1 = false;
+
+    [Space(5)]
 
     public bool area_Stinkhorn = false;
     public bool area_TreeSeat = false;

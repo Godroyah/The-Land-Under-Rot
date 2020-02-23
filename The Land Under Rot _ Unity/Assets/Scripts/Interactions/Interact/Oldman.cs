@@ -47,6 +47,28 @@ public class Oldman : Interactable
         if (gameController != null)
         {
             // Select which dialogue to 'say'
+            if (!gameController.bus_Called)
+            {
+                if (!gameController.tutorial_HasTalked_Rootford_Intro1)
+                {
+                    dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_1);
+                    gameController.tutorial_HasTalked_Rootford_Intro1 = true;
+                }
+                else if (!gameController.tutorial_HasTalked_Rootford_Intro2)
+                {
+                    dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_2);
+                    gameController.tutorial_HasTalked_Rootford_Intro2 = true;
+                }
+                else
+                {
+                    dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_3_Repeat);
+                }
+            }
+            else
+            {
+                dialogueManager.StartDialogue(Reply.SS_Rootford_Bus_1_Repeat);
+            }
+            
         }
     }
 

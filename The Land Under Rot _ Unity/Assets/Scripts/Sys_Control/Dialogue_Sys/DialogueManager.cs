@@ -66,10 +66,6 @@ public class DialogueManager : MonoBehaviour
         {
             StartDialogue(TestScene.GetComponent<Dialogue>().SceneName);
         }
-        else
-        {
-            StartDialogue("Test");
-        }
     }
 
     private void LateUpdate()
@@ -123,6 +119,30 @@ public class DialogueManager : MonoBehaviour
         return false;
     }
 
+    public bool StartDialogue(Reply sceneName)
+    {
+        //Debug.Log(sceneName);
+        if (!hasActiveDialogue)
+        {
+            foreach (Dialogue dialogue in dialogues)
+            {
+                if (dialogue.SceneName == sceneName.ToString())
+                {
+                    dialogue.StartScene();
+                    //Debug.Log(sceneName);
+                    hasActiveDialogue = true;
+                    return true;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Unable to start new scene '" + sceneName + "' because another scene is still/already started");
+        }
+
+        return false;
+    }
+
     public bool StartDialogue(Dialogue dialogue)
     {
         //Debug.Log(sceneName);
@@ -137,4 +157,15 @@ public class DialogueManager : MonoBehaviour
 
         return false;
     }
+}
+public enum Reply
+{
+    SS_Rootford_Intro_1,
+    SS_Rootford_Intro_2,
+    SS_Rootford_Intro_3_Repeat,
+    SS_Rootford_Bus_1_Repeat,
+    SS_BusDriver_1,
+    SS_BusDriver_2_Repeat,
+    MrPots_Sign,
+    Test
 }
