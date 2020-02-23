@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
     private void Awake()
     {
         if (!GetComponent<Rigidbody>())
-            Debug.LogWarning("This interactable does not have a Rigidbody!");
+            Debug.LogWarning("This interactable ("+ gameObject.name + ") does not have a Rigidbody!");
 
         #region PlayerController Search
         GameObject temp = GameObject.FindGameObjectWithTag("Player");
