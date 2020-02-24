@@ -63,7 +63,7 @@ public class Cutscene : MonoBehaviour
 
 
         if (cutsceneManager.playerController != null)
-            cutsceneManager.playerController.enabled = false;
+            cutsceneManager.playerController.enabled = true;
 
         yield return null;
     }
