@@ -8,6 +8,7 @@ public class Area_Title : MonoBehaviour
 {
     public string area_Title;
     public GameObject title_Canvas;
+    public TextMeshProUGUI region_Text;
     bool hasPlayed = false;
 
     void ActivateTitleUI()
@@ -15,7 +16,7 @@ public class Area_Title : MonoBehaviour
         GameObject titleCard = Instantiate(title_Canvas);
         if(title_Canvas != null)
         {
-            titleCard.GetComponent<Destroy_UI>().SetName(area_Title);
+            region_Text = title_Canvas.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         }
         hasPlayed = true;
     }
@@ -27,4 +28,19 @@ public class Area_Title : MonoBehaviour
             ActivateTitleUI();
         }
     }
+
+    public void DestroyTitle()
+    {
+        Destroy(gameObject);
+    }
+
+    public void SetName(string text)
+    {
+        region_Text.text = text;
+    }
+
+    //IEnumerator Title_Card()
+    //{
+
+    //}
 }
