@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class Oldman : Interactable
 {
-    public GameObject billboard;
-    private Billboard_UI billboard_UI;
-
     GameController gameController;
     DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        billboard_UI = billboard.GetComponent<Billboard_UI>();
-
         #region GameController/DialogueManager Search
         GameObject temp = GameObject.Find("@GameController");
         if (temp != null)

@@ -373,7 +373,10 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleHighlight(Interactable focus, bool state)
     {
-        // TODO: Implement a type of Highlighting
+        if (focus.billboard_UI != null)
+        {
+            focus.billboard_UI.SetActive(state);
+        }
     }
 
     IEnumerator Interacting()

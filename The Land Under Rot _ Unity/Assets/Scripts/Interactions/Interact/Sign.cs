@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Sign : Interactable
 {
-    public GameObject billboard;
-    private Billboard_UI billboard_UI;
-
     GameController gameController;
     DialogueManager dialogueManager;
     public Dialogue dialogue;
@@ -14,8 +11,6 @@ public class Sign : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        billboard_UI = billboard.GetComponent<Billboard_UI>();
-
         #region GameController/DialogueManager Search
         GameObject temp = GameObject.Find("@GameController");
         if (temp != null)
@@ -39,6 +34,8 @@ public class Sign : Interactable
             }
         }
         #endregion
+
+        billboard_UI.SetActive(false);
     }
 
     public override void Interact()

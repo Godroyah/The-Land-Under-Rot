@@ -8,6 +8,8 @@ public class Interactable : MonoBehaviour
     protected ObjectPreferences objPreferences;
     protected AudioSource audioSource;
 
+    public GameObject billboard_UI;
+
     private void Awake()
     {
         if (!GetComponent<Rigidbody>())

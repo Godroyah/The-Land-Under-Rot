@@ -68,7 +68,7 @@ public class Billboard_UI : MonoBehaviour
         }
         if(imageObject != null)
         {
-            imageObject.SetActive(false);
+            //imageObject.SetActive(false);
         }
         else
         {
