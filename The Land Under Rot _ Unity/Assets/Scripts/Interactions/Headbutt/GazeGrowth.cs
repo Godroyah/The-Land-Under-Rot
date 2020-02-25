@@ -31,6 +31,7 @@ public class GazeGrowth : Interactable
 
     GameController gameController;
 
+
     private void Start()
     {
         if (cordysepBarrier != null)
@@ -77,6 +78,7 @@ public class GazeGrowth : Interactable
                 default:
                     break;
             }
+
         }
 
     }

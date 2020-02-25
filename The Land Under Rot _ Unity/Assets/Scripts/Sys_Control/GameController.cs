@@ -77,6 +77,8 @@ public class GameController : MonoBehaviour
             {
                 Debug.LogWarning("Cannot find Player!");
             }
+            else
+                playerController.gameController = this;
         }
 
 
@@ -138,7 +140,9 @@ public class GameController : MonoBehaviour
         //{
         //    Reset();
         //}
+
     }
+
 
     public void PickUpCount()
     {

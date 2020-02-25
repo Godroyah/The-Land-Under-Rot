@@ -50,9 +50,10 @@ public class Dialogue : MonoBehaviour
     {
         Debug.Log("Scene Started");
 
-        // TODO: Similar camera-esc zoom for dialogue?
-        //float tempNum = Camera.main.orthographicSize;
-        //Camera.main.orthographicSize = 11.2f;
+        if (dialogueManager != null)
+        {
+            dialogueManager.hasActiveDialogue = true;
+        }
 
         for (int i = 0; i < Frames.Length; i++)
         {

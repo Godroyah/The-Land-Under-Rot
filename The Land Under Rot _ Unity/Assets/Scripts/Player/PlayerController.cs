@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
     public List<Interactable> headbuttables = new List<Interactable>();
     #endregion
 
-    private GameController gameController;
+    public GameController gameController;
     private Interactable currentTarget = null;
 
     private void Awake()
@@ -334,10 +334,10 @@ public class PlayerController : MonoBehaviour
         ShouldHeadbutt = Input.GetButtonDown("Headbutt");
         HeadbuttInput = Input.GetAxis("Headbutt");
 
-        
-        if(HeadbuttInput > 0.1)
+
+        if (HeadbuttInput > 0.1)
         {
-            if(JustHeadButted)
+            if (JustHeadButted)
             {
                 ShouldHeadbutt = true;
             }
@@ -409,34 +409,35 @@ public class PlayerController : MonoBehaviour
         if (!IsGrounded && hasCollided)
             movement = Vector3.zero;
         else
-           movement = new Vector3(HorizontalInput, 0, VerticalInput);
+            movement = new Vector3(HorizontalInput, 0, VerticalInput);
 
 
         Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist);
+
         rotationTarget.position = tempDir + transform.position;
 
         //bool hasCollided = Physics.CheckCapsule(temp, 1.77f, playerLayerMask, QueryTriggerInteraction.Ignore);
-        
+
 
         //Debug.Log(hasCollided);
         //if (IsGrounded && !hasCollided)
         //{
-            float targetSpeed;
-            if (ShouldRun)
-                targetSpeed = runVelocity;
-            else
-                targetSpeed = moveVelocity;
+        float targetSpeed;
+        if (ShouldRun)
+            targetSpeed = runVelocity;
+        else
+            targetSpeed = moveVelocity;
 
-            movement = rotationTarget.TransformDirection(movement) * targetSpeed;
+        movement = rotationTarget.TransformDirection(movement) * targetSpeed;
 
-            // Apply a force that attempts to reach our target velocity
-            Vector3 velocity = Rb.velocity;
-            Vector3 velocityChange = (movement - velocity);
-            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
-            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
-            velocityChange.y = 0;
+        // Apply a force that attempts to reach our target velocity
+        Vector3 velocity = Rb.velocity;
+        Vector3 velocityChange = (movement - velocity);
+        velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+        velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+        velocityChange.y = 0;
 
-            Rb.AddForce(velocityChange, ForceMode.VelocityChange);
+        Rb.AddForce(velocityChange, ForceMode.VelocityChange);
         //}
 
     }

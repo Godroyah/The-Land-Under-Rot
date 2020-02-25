@@ -102,6 +102,10 @@ public class TextDisplayer : MonoBehaviour
             {
                 yield return new WaitForSeconds(1f / textSpeed);
             }
+            else if (fullText[i] == ' ')
+            {
+                continue;
+            }
 
             yield return new WaitForSeconds(1f / textSpeed);
         }
