@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     [Range(0, 200), Tooltip("Controls how fast the obj rotates when changing directions.")]
     public float rotationSpeed = 0.1f;
 
+    [Range(0, 5), Tooltip("Controls how quickly fade out occurs after dying.")]
+    public float respawnTime;
+
     [Space(10)] // Adds literal space in the inspector
 
     #region Jumping Variables
@@ -461,6 +464,14 @@ public class PlayerController : MonoBehaviour
         transform.rotation = currentSpawn.rotation;
         Rb.velocity = Vector3.zero;
     }
+
+    //IEnumerator Respawn()
+    //{
+    //    yield return new WaitForSeconds(respawnTime);
+
+
+
+    //}
 
     public void Reset()
     {

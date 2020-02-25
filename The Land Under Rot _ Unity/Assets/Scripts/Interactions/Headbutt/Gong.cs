@@ -16,11 +16,16 @@ public class Gong : Interactable
 
     public bool firstInteraction;
     public bool interactionStarted;
+    public bool alwaysInteract;
+
+    public bool canSound;
+    //TODO: This is janky AF; fix later
 
     private void Start()
     {
         playerUI = new GameObject[GameObject.FindGameObjectsWithTag("Player_UI").Length];
         playerUI = GameObject.FindGameObjectsWithTag("Player_UI");
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 
         gongCamController = cinematicCamera.GetComponent<Gong_Cam>();
         cameraComponent = cinematicCamera.GetComponent<Camera>();
@@ -29,8 +34,13 @@ public class Gong : Interactable
         firstInteraction = true;
         interactionStarted = false;
 
-        if (objPreferences != null && audioSource != null)
-            audioSource.clip = objPreferences.headbutt_AudioClip;
+
+        if(canSound)
+        {
+            if (objPreferences != null && audioSource != null)
+                audioSource.clip = objPreferences.headbutt_AudioClip;
+        }
+        
 
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
@@ -56,7 +66,7 @@ public class Gong : Interactable
         // regardless of the object. And if they don't have one 
         // assigned then they won't play a sound 
 
-        if (firstInteraction)
+        if (firstInteraction || alwaysInteract)
         {
             gongCamController.startScene = true;
             interactionStarted = true;
@@ -68,7 +78,7 @@ public class Gong : Interactable
 
     private void Update()
     {
-        if (playerController != null && firstInteraction)
+        if (playerController != null && (firstInteraction || alwaysInteract))
         //&& firstInteraction
         {
             if (gongCamController.startScene && interactionStarted)

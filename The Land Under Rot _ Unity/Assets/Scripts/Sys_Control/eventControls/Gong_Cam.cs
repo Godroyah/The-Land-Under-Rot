@@ -23,10 +23,10 @@ public class Gong_Cam : MonoBehaviour
         if (shots[0].viewpoint == null)
         {
             shots[0].viewpoint = GameObject.Find("@GameController").GetComponent<GameController>().playerController.camControl.myCamera.transform;
-            if (shots[shots.Length - 1].viewpoint == null)
-                {
-                    shots[shots.Length - 1].viewpoint = shots[0].viewpoint;
-                }
+        }
+        if (shots[shots.Length - 1].viewpoint == null)
+        {
+            shots[shots.Length - 1].viewpoint = shots[0].viewpoint;
         }
 
         if (shots[0] != null)
@@ -48,6 +48,12 @@ public class Gong_Cam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!startScene)
+        {
+            currentScene = 0;
+            currentTime = shots[currentScene].sceneTime;
+        }
+        //TODO: Kinda jank just for reuse of Red GazeGrowth
 
         currentViewPoint = shots[currentScene].viewpoint;
         //Debug.Log(shots.Length);

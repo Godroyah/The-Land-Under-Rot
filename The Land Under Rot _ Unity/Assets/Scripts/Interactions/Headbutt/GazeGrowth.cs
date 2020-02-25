@@ -10,6 +10,8 @@ public class GazeGrowth : Interactable
 
     public GameObject cordysepBarrier;
 
+    private SphereCollider thisDetector;
+
     private Vector3 cordys_Start_Position;
 
     private Vector3 cordys_Lowered_Position;
@@ -17,6 +19,8 @@ public class GazeGrowth : Interactable
     private float dropDistance;
 
     public float lowerDistance;
+
+    public float cordyDelay;
 
     private float rateStorage;
 
@@ -35,6 +39,8 @@ public class GazeGrowth : Interactable
 
     private void Start()
     {
+        thisDetector = GetComponent<SphereCollider>();
+
         if (cordysepBarrier != null)
         {
             waitReturn = false;
@@ -69,6 +75,8 @@ public class GazeGrowth : Interactable
             animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
             animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
 
+            thisDetector.enabled = false;
+
             switch (growthType)
             {
                 // TODO: Needs proper movement/animation
@@ -93,6 +101,8 @@ public class GazeGrowth : Interactable
         rateOfChange = rateStorage;
         float iteration = rateOfChange;
 
+        yield return new WaitForSeconds(cordyDelay);
+
         while (rateOfChange < 1.0f)
         {
             cordysepBarrier.transform.position = Vector3.Lerp(cordysepBarrier.transform.position, cordys_Lowered_Position, rateOfChange);
@@ -104,20 +114,6 @@ public class GazeGrowth : Interactable
         {
             StartCoroutine(DelayReturn(waitTime));
         }
-
-        //foreach (GameObject fungi in cordyseps)
-        //{
-        //    cordys_Start_Position = new Vector3(fungi.transform.position.x, fungi.transform.position.y, fungi.transform.position.z);
-        //    cordys_Lowered_Position = new Vector3(fungi.transform.position.x, fungi.transform.position.y - lowerDistance, fungi.transform.position.z);
-
-        //    //while (Vector3.Distance(fungi.transform.position, cordys_Lowered_Position) > 0.1)
-        //    while(rateOfChange < 1.0f)
-        //    {
-        //        fungi.transform.position = Vector3.Lerp(cordys_Start_Position, cordys_Lowered_Position, rateOfChange);
-        //        rateOfChange += iteration;
-        //        yield return null;
-        //    }
-        //}
     }
 
     IEnumerator DelayReturn(float waitTime)
@@ -139,6 +135,7 @@ public class GazeGrowth : Interactable
             yield return null;
         }
 
+        thisDetector.enabled = true;
         waitReturn = false;
 
         animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), false);
@@ -151,17 +148,8 @@ public class GazeGrowth : Interactable
         if (other.CompareTag("Headbutt"))
         {
             Interact();
-            //gameController.playerController.headbuttables.Add(this);
         }
     }
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Headbutt"))
-    //    {
-    //        gameController.playerController.headbuttables.Remove(this);
-    //    }
-    //}
 }
 
 public enum GazeGrowthType
