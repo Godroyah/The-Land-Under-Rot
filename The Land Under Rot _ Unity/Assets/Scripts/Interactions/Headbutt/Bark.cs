@@ -7,9 +7,16 @@ public class Bark : Interactable
 
     GameController gameController;
     public GameObject barkContainer;
+    ObjectPreferences objPrefs;
+    ParticleSystem playerParticles;
+    ParticleSystem barkParticles;
 
     private void Start()
     {
+        objPreferences = GetComponent<ObjectPreferences>();
+        playerParticles = objPreferences.headbutt_ParticleEffect_player.GetComponent<ParticleSystem>();
+        barkParticles = objPreferences.headbutt_ParticleEffect_obj.GetComponent<ParticleSystem>();
+
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
         if (temp != null)
@@ -30,6 +37,9 @@ public class Bark : Interactable
         base.Interact();
 
         // TODO: Switch from Destroy to Particle/Anim
+
+        playerParticles.Play();
+        barkParticles.Play();
         Destroy(barkContainer);
     }
 
@@ -41,6 +51,8 @@ public class Bark : Interactable
             //gameController.playerController.headbuttables.Add(this);
         }
     }
+
+
 
     //private void OnTriggerExit(Collider other)
     //{

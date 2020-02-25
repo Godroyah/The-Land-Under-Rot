@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ObjectPreferences : MonoBehaviour
 {
-    public GameObject headbutt_ParticleEffect;
-    public AudioClip headbutt_AudioClip;
+    public GameObject headbutt_ParticleEffect_obj;
+    public GameObject headbutt_ParticleEffect_player;
 
     [Space(5)]
+
+    public AudioClip headbutt_AudioClip;
+
+    [Space(8)]
 
     public GameObject walk_ParticleEffect;
     public AudioClip walk_AudioClip;
 
-    [Space(5)]
+    [Space(8)]
 
     public GameObject interact_ParticleEffect;
     public AudioClip interact_AudioClip;
