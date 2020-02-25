@@ -7,6 +7,8 @@ public class CharacterAnimator : MonoBehaviour
     PlayerController playerController;
     Rigidbody rb;
     Animator animator;
+    float inputValue;
+    bool justMoved;
 
     public float landDistance = 2f;
 
@@ -41,11 +43,23 @@ public class CharacterAnimator : MonoBehaviour
                 animator.SetBool("Airborne_Bool", false);
             }
 
-            if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
-                animator.SetTrigger("Run_Button_Trigger");
-
-            //if (!animator.GetBool("Airborne_Bool") && (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
+            //if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
             //    animator.SetTrigger("Run_Button_Trigger");
+
+            if (!animator.GetBool("Airborne_Bool") && (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
+            {
+                if (!justMoved)
+                {
+                    animator.SetTrigger("Run_Button_Trigger");
+                }
+                justMoved = true;
+
+            }
+            else
+                justMoved = false;
+
+
+
 
 
             if (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f)

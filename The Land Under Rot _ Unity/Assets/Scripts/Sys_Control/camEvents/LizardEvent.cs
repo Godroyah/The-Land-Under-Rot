@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LizardEvent : Event_Type
 {
+    GameController gameController;
     public float moveSpeed;
     public float turnSpeed;
     private int currentPoint;
@@ -15,9 +16,15 @@ public class LizardEvent : Event_Type
     public MeshRenderer lizardRenderer;
     public Transform[] wayPoints;
 
+    private void Awake()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        
         //currentPoint = 0;
         lizardCollider.enabled = false;
         lizardRenderer.enabled = false;
@@ -57,6 +64,7 @@ public class LizardEvent : Event_Type
             }
             //currentPoint = i;
         }
+        gameController.bus_Called = true;
     }
 
 }
