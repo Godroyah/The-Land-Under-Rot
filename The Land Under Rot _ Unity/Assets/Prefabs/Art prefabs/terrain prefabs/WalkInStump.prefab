@@ -31,6 +31,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1616765325817307280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443727700554858022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 68f86ea06d21f1d43a97fe8daa08caee, type: 2}
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1001 &436788197695809327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,7 +132,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 68f86ea06d21f1d43a97fe8daa08caee, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 94c8dbf28296c3043a620d4440aee651,
         type: 3}
       propertyPath: m_Name
@@ -120,6 +140,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c8dbf28296c3043a620d4440aee651, type: 3}
+--- !u!1 &8443727700554858022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 94c8dbf28296c3043a620d4440aee651,
+    type: 3}
+  m_PrefabInstance: {fileID: 436788197695809327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4860928003043249205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 94c8dbf28296c3043a620d4440aee651,

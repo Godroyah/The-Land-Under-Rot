@@ -197,6 +197,8 @@ public class PlayerController : MonoBehaviour
 
         IsGrounded = Physics.CheckSphere(groundChecker.position, 0.2f, playerLayerMask, QueryTriggerInteraction.Ignore);
 
+
+
         #region Interactable Check
 
         //Redefine above
