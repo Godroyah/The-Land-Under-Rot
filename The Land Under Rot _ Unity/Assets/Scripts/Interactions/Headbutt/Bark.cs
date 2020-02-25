@@ -13,9 +13,13 @@ public class Bark : Interactable
 
     private void Start()
     {
-        objPreferences = GetComponent<ObjectPreferences>();
-        playerParticles = objPreferences.headbutt_ParticleEffect_player.GetComponent<ParticleSystem>();
-        barkParticles = objPreferences.headbutt_ParticleEffect_obj.GetComponent<ParticleSystem>();
+        objPrefs = GetComponent<ObjectPreferences>();
+        if(objPrefs != null)
+        {
+            playerParticles = objPreferences.headbutt_ParticleEffect_player.GetComponent<ParticleSystem>();
+            barkParticles = objPreferences.headbutt_ParticleEffect_obj.GetComponent<ParticleSystem>();
+        }
+        
 
         #region GameController Search
         GameObject temp = GameObject.Find("@GameController");
