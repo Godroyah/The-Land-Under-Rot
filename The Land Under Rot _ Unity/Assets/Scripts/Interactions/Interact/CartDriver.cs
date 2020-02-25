@@ -51,15 +51,16 @@ public class CartDriver : Interactable
     {
         if (other.CompareTag("Interact"))
         {
-            gameController.playerController.interactables.Add(this);
+            if (playerController == null)
+                playerController = other.GetComponentInParent<PlayerController>();
+            else
+                playerController.interactables.Add(this);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Interact"))
-        {
-            gameController.playerController.interactables.Remove(this);
-        }
+            playerController.interactables.Remove(this);
     }
 }

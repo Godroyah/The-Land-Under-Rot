@@ -13,19 +13,19 @@ public class Interactable : MonoBehaviour
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("This interactable ("+ gameObject.name + ") does not have a Rigidbody!");
 
-        #region PlayerController Search
-        GameObject temp = GameObject.FindGameObjectWithTag("Player");
-        if (temp != null)
-        {
-            playerController = temp.GetComponent<PlayerController>();
-            if (playerController == null)
-                Debug.LogWarning("Player does not have the 'PlayerController' script or something is additionally tagged 'Player'");
-        }
-        else
-        {
-            Debug.LogWarning("Could not find PlayerController.");
-        }
-        #endregion
+        //#region PlayerController Search
+        //GameObject temp = GameObject.FindGameObjectWithTag("Player");
+        //if (temp != null)
+        //{
+        //    playerController = temp.GetComponent<PlayerController>();
+        //    if (playerController == null)
+        //        Debug.LogWarning("Player does not have the 'PlayerController' script or something is additionally tagged 'Player'");
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("Could not find PlayerController.");
+        //}
+        //#endregion
 
         objPreferences = GetComponent<ObjectPreferences>();
         audioSource = GetComponent<AudioSource>();

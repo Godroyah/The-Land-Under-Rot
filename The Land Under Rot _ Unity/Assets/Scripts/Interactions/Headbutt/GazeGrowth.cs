@@ -30,6 +30,7 @@ public class GazeGrowth : Interactable
     public float returnIn = 0f;
 
     GameController gameController;
+    public Animator animator;
 
 
     private void Start()
@@ -64,6 +65,9 @@ public class GazeGrowth : Interactable
         if (cordysepBarrier != null)
         {
             base.Interact();
+
+            animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
+            animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
 
             switch (growthType)
             {
@@ -136,6 +140,8 @@ public class GazeGrowth : Interactable
         }
 
         waitReturn = false;
+
+        animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), false);
     }
 
 
@@ -161,4 +167,9 @@ public class GazeGrowth : Interactable
 public enum GazeGrowthType
 {
     Blue, Red
+}
+
+public enum GG_Anim
+{
+    Gaze_Hit_Trigger, Gaze_Cry_Bool
 }
