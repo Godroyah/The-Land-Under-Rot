@@ -5,6 +5,8 @@ using UnityEngine;
 public class LizardEvent : Event_Type
 {
     GameController gameController;
+    public Animator lizardAnim;
+
     public float moveSpeed;
     public float turnSpeed;
     private int currentPoint;
@@ -13,7 +15,10 @@ public class LizardEvent : Event_Type
     private Vector3 newDirection;
 
     public MeshCollider lizardCollider;
-    public MeshRenderer lizardRenderer;
+    public SkinnedMeshRenderer lizardRenderer;
+    public SkinnedMeshRenderer peaPodRenderer;
+    public MeshRenderer cartRenderer;
+
     public Transform[] wayPoints;
 
     private void Awake()
@@ -28,6 +33,9 @@ public class LizardEvent : Event_Type
         //currentPoint = 0;
         lizardCollider.enabled = false;
         lizardRenderer.enabled = false;
+        peaPodRenderer.enabled = false;
+        cartRenderer.enabled = false;
+
         //distToPoint = Vector3.Distance(transform.position, wayPoints[currentPoint].position);
     }
 
@@ -49,6 +57,8 @@ public class LizardEvent : Event_Type
     {
         lizardRenderer.enabled = true;
         lizardCollider.enabled = true;
+        peaPodRenderer.enabled = true;
+        cartRenderer.enabled = true;
         for (int i = 0; i < wayPoints.Length; i++)
         {
             targetDirection = wayPoints[i].position - transform.position;
@@ -64,6 +74,7 @@ public class LizardEvent : Event_Type
             }
             //currentPoint = i;
         }
+        lizardAnim.SetTrigger("End_Lizard");
         gameController.bus_Called = true;
     }
 
