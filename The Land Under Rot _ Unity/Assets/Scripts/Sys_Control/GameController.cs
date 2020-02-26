@@ -151,13 +151,19 @@ public class GameController : MonoBehaviour
 
         if (oldAcorns != playerAcorns)
         {
-            acornCount.text = playerAcorns.ToString();
-            oldAcorns = playerAcorns;
+            if(acornCount != null)
+            {
+                acornCount.text = playerAcorns.ToString();
+                oldAcorns = playerAcorns;
+            }
         }
         if (oldMulch != playerMulch)
         {
-            mulchCount.text = playerMulch.ToString();
-            oldMulch = playerMulch;
+            if(mulchCount != null)
+            {
+                mulchCount.text = playerMulch.ToString();
+                oldMulch = playerMulch;
+            }
         }
     }
 
