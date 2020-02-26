@@ -8,15 +8,29 @@ public class Pick_Up : MonoBehaviour
 {
     public PickUpType pickUpType; //Drop down menu for the types of pickups (Acorn, Mulch, etc.)'
     private Collider mulchCollider;
+    private ObjectPreferences objPref;
+    private AudioSource acornAudio;
 
     // Start is called before the first frame update
     void Start()
     {
+        objPref = GetComponent<ObjectPreferences>();
+        acornAudio = GetComponent<AudioSource>();
+
         if (pickUpType == PickUpType.MULCH)
         {
             mulchCollider = GetComponent<Collider>();
             StartCoroutine(KillCollider());
         }
+
+        if(pickUpType == PickUpType.ACORN)
+        {
+            if (objPref != null && acornAudio != null)
+            {
+                acornAudio.clip = objPref.pickup_AudioClip;
+            }
+        }
+        
     }
 
     // Update is called once per frame
@@ -50,6 +64,11 @@ public class Pick_Up : MonoBehaviour
                 case PickUpType.ACORN:
                     //Count ACORN;
                     //move to Player; have GameController call for it
+                    acornAudio.Play();
+                    if(acornAudio.isPlaying)
+                    {
+                        Debug.Log("Playing!");
+                    }
                     playerController.acorns += 1;
                     Destroy(gameObject);
                     break;

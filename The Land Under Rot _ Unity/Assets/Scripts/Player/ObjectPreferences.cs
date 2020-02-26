@@ -20,4 +20,8 @@ public class ObjectPreferences : MonoBehaviour
 
     public GameObject interact_ParticleEffect;
     public AudioClip interact_AudioClip;
+
+    [Space(8)]
+    public GameObject pickup_ParticleEffect;
+    public AudioClip pickup_AudioClip;
 }
