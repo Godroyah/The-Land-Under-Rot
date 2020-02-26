@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 0.1f;
 
     [Range(0, 5), Tooltip("Controls how quickly fade out occurs after dying.")]
-    public float fadeDelay;
+    public float respawnTime;
 
     [Space(10)] // Adds literal space in the inspector
 
@@ -128,24 +128,10 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     public GameController gameController;
-    public GameObject fadePane;
-    private Fade_Done fadeDone;
-    private Animator fadeAnim;
     private Interactable currentTarget = null;
 
     private void Awake()
     {
-        if (fadePane == null)
-        {
-            fadePane = GameObject.Find("FadePane");
-            fadeDone = fadePane.GetComponent<Fade_Done>();
-            fadeAnim = fadePane.GetComponent<Animator>();
-        }
-        else
-        {
-            Debug.LogWarning("FadePane missing from scene!");
-        }
-
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("Rigidbody missing on " + gameObject.name);
         else
@@ -207,11 +193,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Reset();
         GetInput();
 
-        IsGrounded = Physics.CheckSphere(groundChecker.position, 0.4f, playerLayerMask, QueryTriggerInteraction.Ignore);
-        //IsGrounded = Physics.CheckBox(groundChecker.position, new Vector3(0.75f, 0.25f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
+        IsGrounded = Physics.CheckSphere(groundChecker.position, 0.2f, playerLayerMask, QueryTriggerInteraction.Ignore);
 
 
 
@@ -310,7 +294,7 @@ public class PlayerController : MonoBehaviour
         #region Jumping
 
         //faster falling
-        if (Rb.velocity.y < 0.1f)
+        if (Rb.velocity.y < 0)
             Rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         else if (Rb.velocity.y > 0 && !ShouldJump)
             Rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
@@ -347,16 +331,14 @@ public class PlayerController : MonoBehaviour
 
     private void GetInput()
     {
-        if (!isDead)
-        {
-            HorizontalInput = Input.GetAxis("Horizontal");
-            VerticalInput = Input.GetAxis("Vertical");
-            ShouldRun = Input.GetKey(KeyCode.LeftShift);
-            ShouldJump = Input.GetButtonDown("Jump");
-            ShouldInteract = Input.GetButtonDown("Interact");
-            ShouldHeadbutt = Input.GetButtonDown("Headbutt");
-            HeadbuttInput = Input.GetAxis("Headbutt");
-        }
+        HorizontalInput = Input.GetAxis("Horizontal");
+        VerticalInput = Input.GetAxis("Vertical");
+        ShouldRun = Input.GetKey(KeyCode.LeftShift);
+        ShouldJump = Input.GetButtonDown("Jump");
+        ShouldInteract = Input.GetButtonDown("Interact");
+        ShouldHeadbutt = Input.GetButtonDown("Headbutt");
+        HeadbuttInput = Input.GetAxis("Headbutt");
+
 
         if (HeadbuttInput > 0.1)
         {
@@ -433,10 +415,7 @@ public class PlayerController : MonoBehaviour
         Vector3 movement;
 
         if (!IsGrounded && hasCollided)
-        {
-            //Rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             movement = Vector3.zero;
-        }
         else
             movement = new Vector3(HorizontalInput, 0, VerticalInput);
 
@@ -484,43 +463,25 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void KillPlayer()
+    public void Respawn()
     {
-        StartCoroutine("FadeOut");
+        transform.position = currentSpawn.position;
+        transform.rotation = currentSpawn.rotation;
+        Rb.velocity = Vector3.zero;
     }
 
-    IEnumerator FadeOut()
-    {
-        isDead = true;
-        HorizontalInput = 0;
-        VerticalInput = 0;
-
-        yield return new WaitForSeconds(fadeDelay);
-
-        fadeAnim.SetTrigger("FadeOut");
-    }
-
-    //public void FadeOver()
+    //IEnumerator Respawn()
     //{
-    //    transform.position = currentSpawn.position;
-    //    transform.rotation = currentSpawn.rotation;
-    //    Rb.velocity = Vector3.zero;
+    //    yield return new WaitForSeconds(respawnTime);
+
+
+
     //}
 
     public void Reset()
     {
-        if (fadeDone.fadeOver)
-        {
-            transform.position = currentSpawn.position;
-            transform.rotation = currentSpawn.rotation;
-            Rb.velocity = Vector3.zero;
-            health = 3;
-            isDead = false;
-            fadeAnim.ResetTrigger("FadeOut");
-            fadeAnim.SetTrigger("FadeIn");
-            fadeDone.fadeOver = false;
-        }
-
+        health = 3;
+        isDead = false;
     }
 
     private void OnTriggerEnter(Collider other)
