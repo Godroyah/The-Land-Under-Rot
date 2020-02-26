@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LizardEvent : Event_Type
 {
@@ -29,7 +30,7 @@ public class LizardEvent : Event_Type
     // Start is called before the first frame update
     void Start()
     {
-        
+
         //currentPoint = 0;
         lizardCollider.enabled = false;
         lizardRenderer.enabled = false;
@@ -50,7 +51,7 @@ public class LizardEvent : Event_Type
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator FollowTrack()
@@ -76,6 +77,10 @@ public class LizardEvent : Event_Type
         }
         lizardAnim.SetTrigger("End_Lizard");
         gameController.bus_Called = true;
+
+        yield return new WaitForSeconds(2f); // TODO: REMOVE ME
+
+        SceneManager.LoadScene(0);
     }
 
 }

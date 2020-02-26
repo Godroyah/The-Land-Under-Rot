@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class Cutscene : MonoBehaviour
 {
@@ -41,6 +42,20 @@ public class Cutscene : MonoBehaviour
     public void StartScene()
     {
         StartCoroutine(Scene());
+        StartCoroutine(CheckForEndScene());
+    }
+
+    IEnumerator CheckForEndScene()
+    {
+        while (true)
+        {
+            yield return new WaitForEndOfFrame();
+            if (Input.GetButton("Interact"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            
+        }
     }
 
     IEnumerator Scene()
@@ -54,6 +69,7 @@ public class Cutscene : MonoBehaviour
         video.enabled = true;
 
         video.Play();
+        
 
         yield return new WaitForSeconds((float)video.length);
 
@@ -64,6 +80,8 @@ public class Cutscene : MonoBehaviour
 
         if (cutsceneManager.playerController != null)
             cutsceneManager.playerController.enabled = true;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         yield return null;
     }
