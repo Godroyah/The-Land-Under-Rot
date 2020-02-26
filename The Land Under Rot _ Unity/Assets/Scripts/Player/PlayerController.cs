@@ -210,7 +210,8 @@ public class PlayerController : MonoBehaviour
         Reset();
         GetInput();
 
-        IsGrounded = Physics.CheckSphere(groundChecker.position, 0.2f, playerLayerMask, QueryTriggerInteraction.Ignore);
+        IsGrounded = Physics.CheckSphere(groundChecker.position, 0.4f, playerLayerMask, QueryTriggerInteraction.Ignore);
+        //IsGrounded = Physics.CheckBox(groundChecker.position, new Vector3(0.75f, 0.25f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
 
 
 
@@ -309,7 +310,7 @@ public class PlayerController : MonoBehaviour
         #region Jumping
 
         //faster falling
-        if (Rb.velocity.y < 0)
+        if (Rb.velocity.y < 0.1f)
             Rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         else if (Rb.velocity.y > 0 && !ShouldJump)
             Rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
@@ -432,7 +433,10 @@ public class PlayerController : MonoBehaviour
         Vector3 movement;
 
         if (!IsGrounded && hasCollided)
+        {
+            //Rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             movement = Vector3.zero;
+        }
         else
             movement = new Vector3(HorizontalInput, 0, VerticalInput);
 
