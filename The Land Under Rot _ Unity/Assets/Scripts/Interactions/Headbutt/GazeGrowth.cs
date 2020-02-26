@@ -75,6 +75,8 @@ public class GazeGrowth : Interactable
             animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
             animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
 
+
+
             thisDetector.enabled = false;
 
             switch (growthType)

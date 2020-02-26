@@ -16,8 +16,8 @@ public class Bark : Interactable
         objPrefs = GetComponent<ObjectPreferences>();
         if(objPrefs != null)
         {
-            playerParticles = objPreferences.headbutt_ParticleEffect_player.GetComponent<ParticleSystem>();
-            barkParticles = objPreferences.headbutt_ParticleEffect_obj.GetComponent<ParticleSystem>();
+            playerParticles = objPrefs.headbutt_ParticleEffect_player.GetComponent<ParticleSystem>();
+            barkParticles = objPrefs.headbutt_ParticleEffect_obj.GetComponent<ParticleSystem>();
         }
         
 
@@ -52,17 +52,7 @@ public class Bark : Interactable
         if (other.CompareTag("Headbutt"))
         {
             Interact();
-            //gameController.playerController.headbuttables.Add(this);
         }
     }
 
-
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Headbutt"))
-    //    {
-    //        gameController.playerController.headbuttables.Remove(this);
-    //    }
-    //}
 }
