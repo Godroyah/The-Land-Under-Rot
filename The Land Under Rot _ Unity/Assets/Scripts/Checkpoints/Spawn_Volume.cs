@@ -110,7 +110,7 @@ public class Spawn_Volume : MonoBehaviour
             }
             else if(spawnType == SpawnType.KILL)
             {
-                playerController.Respawn();
+                playerController.KillPlayer();
             }
             //else if(spawnType == SpawnType.REGION_RESPAWN)
             //{
