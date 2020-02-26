@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,9 +14,6 @@ public class PlayerController : MonoBehaviour
     //Will eventually search spawner out by scene
     public Transform currentSpawn;
     //public Transform playerHolder;
-    public GameObject deathPane;
-    private Image blackOut;
-    
     #endregion
 
     [Header("Player Modifiers")]
@@ -43,9 +39,6 @@ public class PlayerController : MonoBehaviour
 
     [Range(0, 5), Tooltip("Controls how quickly fade out occurs after dying.")]
     public float respawnTime;
-
-    [Range(0, 10), Tooltip("Controls how long the player waits to fade to black after death.")]
-    public float fadeDelay;
 
     [Space(10)] // Adds literal space in the inspector
 
@@ -139,11 +132,6 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        if(deathPane != null)
-        {
-            blackOut = deathPane.GetComponent<Image>();
-        }
-
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("Rigidbody missing on " + gameObject.name);
         else
@@ -343,17 +331,15 @@ public class PlayerController : MonoBehaviour
 
     private void GetInput()
     {
-        if(!isDead)
-        {
-            HorizontalInput = Input.GetAxis("Horizontal");
-            VerticalInput = Input.GetAxis("Vertical");
-            ShouldRun = Input.GetKey(KeyCode.LeftShift);
-            ShouldJump = Input.GetButtonDown("Jump");
-            ShouldInteract = Input.GetButtonDown("Interact");
-            ShouldHeadbutt = Input.GetButtonDown("Headbutt");
-            HeadbuttInput = Input.GetAxis("Headbutt");
-        }
-       
+        HorizontalInput = Input.GetAxis("Horizontal");
+        VerticalInput = Input.GetAxis("Vertical");
+        ShouldRun = Input.GetKey(KeyCode.LeftShift);
+        ShouldJump = Input.GetButtonDown("Jump");
+        ShouldInteract = Input.GetButtonDown("Interact");
+        ShouldHeadbutt = Input.GetButtonDown("Headbutt");
+        HeadbuttInput = Input.GetAxis("Headbutt");
+
+
         if (HeadbuttInput > 0.1)
         {
             if (JustHeadButted)
@@ -477,28 +463,20 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void KillPlayer()
+    public void Respawn()
     {
-        StartCoroutine("Respawn");
+        transform.position = currentSpawn.position;
+        transform.rotation = currentSpawn.rotation;
+        Rb.velocity = Vector3.zero;
     }
 
-    IEnumerator Respawn()
-    {
-        isDead = true;   
-        yield return new WaitForSeconds(fadeDelay);
+    //IEnumerator Respawn()
+    //{
+    //    yield return new WaitForSeconds(respawnTime);
 
-        if(isDead)
-        {
-            transform.position = currentSpawn.position;
-            transform.rotation = currentSpawn.rotation;
-            Rb.velocity = Vector3.zero;
-            isDead = false;
-        }
-        else
-        {
-           
-        }
-    }
+
+
+    //}
 
     public void Reset()
     {
