@@ -33,6 +33,8 @@ public class Oldman : Interactable
             }
         }
         #endregion
+
+        billboard_UI.SetActive(false);
     }
 
     public override void Interact()
@@ -72,7 +74,10 @@ public class Oldman : Interactable
         if (other.CompareTag("Interact"))
         {
             if (playerController == null)
+            {
                 playerController = other.GetComponentInParent<PlayerController>();
+                playerController.interactables.Add(this);
+            }
             else
                 playerController.interactables.Add(this);
         }

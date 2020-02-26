@@ -52,7 +52,10 @@ public class CartDriver : Interactable
         if (other.CompareTag("Interact"))
         {
             if (playerController == null)
+            {
                 playerController = other.GetComponentInParent<PlayerController>();
+                playerController.interactables.Add(this);
+            }
             else
                 playerController.interactables.Add(this);
         }
