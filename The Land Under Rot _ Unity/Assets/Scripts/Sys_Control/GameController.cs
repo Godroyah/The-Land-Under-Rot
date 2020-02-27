@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     //public Transform playerRespawn;
     public bool levelStart;
     //public bool areaSpawnCalc;
+    
 
     #region Bools
     public bool area_Tutorial = false;
@@ -81,6 +82,7 @@ public class GameController : MonoBehaviour
                 playerController.gameController = this;
         }
 
+        //fadeAnim = GetComponent<Animator>();
 
         //if (player)
         //{
