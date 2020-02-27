@@ -372,25 +372,6 @@ public class PlayerController : MonoBehaviour
         {
             JustHeadButted = true;
         }
-
-
-        //if (HeadbuttInput < 0.1)
-        //{
-        //    if (!JustHeadButted)
-        //    {
-        //        ShouldHeadbutt = true;
-        //    }
-        //    JustHeadButted = true;
-        //}
-        //else
-        //{
-        //    JustHeadButted = false;
-        //}
-
-
-
-        //else
-        //    ShouldHeadbutt = false;
     }
 
     private void ToggleHighlight(Interactable focus, bool state)
@@ -419,7 +400,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(headbuttFinishDelay);
         headButtDetector.enabled = false;
         HeadbuttCoroutine = null;
-        //ShouldHeadbutt = false;
     }
 
     private void Move()
@@ -509,13 +489,6 @@ public class PlayerController : MonoBehaviour
         fadeAnim.SetTrigger("FadeOut");
     }
 
-    //public void FadeOver()
-    //{
-    //    transform.position = currentSpawn.position;
-    //    transform.rotation = currentSpawn.rotation;
-    //    Rb.velocity = Vector3.zero;
-    //}
-
     public void Reset()
     {
         if (fadePane != null && fadeDone.fadeOver)
@@ -539,36 +512,6 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Spawn_Volume"))
-    //    {
-    //        Debug.Log("Collider detected?");
-    //        Spawn_Volume volume = other.GetComponent<Spawn_Volume>();
-
-    //        //SpawnType spawnType = SpawnType.NONE;
-    //        SpawnType spawnType = volume.spawnType;
-
-    //        switch (spawnType)
-    //        {
-    //            case SpawnType.NONE:
-    //                Debug.LogWarning("SpawnType not set!");
-    //                break;
-    //            case SpawnType.START:
-    //                break;
-    //            case SpawnType.RESPAWN:
-    //                currentSpawn = volume.spawnPoint.transform;
-    //                break;
-    //            case SpawnType.KILL:
-    //                Respawn();
-    //                break;
-    //            default:
-    //                Debug.LogWarning("SpawnType Error.");
-    //                break;
-    //        }
-    //    }
-    //}
 }
 
 

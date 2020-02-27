@@ -16,7 +16,8 @@ public class Area_Title : MonoBehaviour
         GameObject titleCard = Instantiate(title_Canvas);
         if(title_Canvas != null)
         {
-            region_Text = title_Canvas.gameObject.GetComponentInChildren<TextMeshProUGUI>();
+            title_Canvas.GetComponent<Destroy_UI>().SetName(area_Title);
+            //region_Text = title_Canvas.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         }
         hasPlayed = true;
     }
