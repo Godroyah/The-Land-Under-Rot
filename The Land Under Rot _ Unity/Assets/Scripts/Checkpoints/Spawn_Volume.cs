@@ -100,7 +100,7 @@ public class Spawn_Volume : MonoBehaviour
     {
         if (player.CompareTag("Player"))
         {
-            playerController = player.GetComponent<PlayerController>();
+            playerController = player.GetComponentInParent<PlayerController>();
             if (spawnType == SpawnType.RESPAWN)
             {
                 //player.GetComponent<PlayerController>().currentSpawn = spawnPoint;

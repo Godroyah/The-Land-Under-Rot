@@ -54,7 +54,7 @@ public class Pick_Up : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Pick me up!");
-            PlayerController playerController = other.GetComponent<PlayerController>();
+            PlayerController playerController = other.GetComponentInParent<PlayerController>();
 
             switch (pickUpType)
             {
