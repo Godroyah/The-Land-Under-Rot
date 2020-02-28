@@ -11,6 +11,8 @@ public class Pick_Up : MonoBehaviour
     private ObjectPreferences objPref;
     private AudioSource acornAudio;
 
+    private PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +56,11 @@ public class Pick_Up : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Pick me up!");
-            PlayerController playerController = other.GetComponentInParent<PlayerController>();
+
+            if (playerController == null)
+            {
+                playerController = other.GetComponentInParent<PlayerController>();
+            }
 
             switch (pickUpType)
             {

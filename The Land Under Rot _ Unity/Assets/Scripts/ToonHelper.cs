@@ -30,7 +30,7 @@ namespace Toon
     [ExecuteInEditMode]
     public class ToonHelper : MonoBehaviour
     {
-
+        bool isActive = true;
         // Params
         [SerializeField] Material material;
         //Material material = null;
@@ -53,14 +53,20 @@ namespace Toon
 
         void Start()
         {
-            Init();
-            GetLights();
+            if (isActive)
+            {
+                Init();
+                GetLights();
+            }
         }
 
         void OnValidate()
         {
-            Init();
-            Update();
+            if (isActive)
+            {
+                Init();
+                GetLights();
+            }
         }
 
         void Init()
