@@ -209,7 +209,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Reset();
+       // Reset();
         GetInput();
 
         IsGrounded = Physics.CheckSphere(groundChecker.position, 0.4f, playerLayerMask, QueryTriggerInteraction.Ignore);
@@ -491,8 +491,8 @@ public class PlayerController : MonoBehaviour
 
     public void Reset()
     {
-        if (fadePane != null && fadeDone.fadeOver)
-        {
+        //if (fadePane != null && fadeDone.fadeOver)
+        //{
             transform.position = currentSpawn.position;
             transform.rotation = currentSpawn.rotation;
             Rb.velocity = Vector3.zero;
@@ -500,8 +500,8 @@ public class PlayerController : MonoBehaviour
             isDead = false;
             fadeAnim.ResetTrigger("FadeOut");
             fadeAnim.SetTrigger("FadeIn");
-            fadeDone.fadeOver = false;
-        }
+            //fadeDone.fadeOver = false;
+        //}
 
     }
 

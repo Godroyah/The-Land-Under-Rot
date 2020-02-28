@@ -7,27 +7,36 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [Header("Script Calls")]
+    #region Script Calls
     public DialogueManager dialogueManager;
     public CutsceneManager cutsceneManager;
+    public PlayerController playerController;
+    #endregion
 
+    [Header("Menu Components")]
+    #region Menu Components
     public GameObject mainMenu;
     public GameObject pauseMenu;
     public GameObject quitOption;
     public GameObject pauseEventSystem;
     public Button resumeButton;
     public Button quitButton;
-    public PlayerController playerController;
-    //public Transform playerRespawn;
-    public bool levelStart;
-    //public bool areaSpawnCalc;
+    #endregion
 
+    [Header("Bools")]
     #region Bools
+    public bool levelStart;
+    public bool isDead;
+    public bool paused;
+
+    [Space(5)]
     public bool area_Tutorial = false;
     public bool bus_Called = false;
-    [Space(1)]
+    [Space(5)]
     public bool tutorial_HasTalked_Rootford_Intro1 = false;
     public bool tutorial_HasTalked_Rootford_Intro2 = false;
-    [Space(1)]
+    [Space(5)]
     public bool tutorial_HasTalked_BusDriver_1 = false;
 
     [Space(5)]
@@ -36,19 +45,24 @@ public class GameController : MonoBehaviour
     public bool area_TreeSeat = false;
     #endregion
 
+    [Header("Inventory Count")]
+    #region Inventory Count
     public int playerAcorns;
     private int oldAcorns;
     public int playerMulch;
     private int oldMulch;
-
+    [Space(2)]
     public int playerHealth;
     private int oldHealth;
+    #endregion
+
+    [Header("Player UI Components")]
 
     public TextMeshProUGUI acornCount;
     public TextMeshProUGUI mulchCount;
     public Image[] healthCounter;
 
-    public bool isDead;
+    [Header("Testing Only")]
 
     //-----------------------------------------------------------------
 
@@ -59,7 +73,7 @@ public class GameController : MonoBehaviour
     //Turn this off on MainMenuHolder AND GameController gameobjects
     //once MainMenu has its own scene
 
-    public bool paused;
+    
     //public bool mmenu_Active;
 
     private void Awake()
@@ -191,11 +205,11 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void Reset()
-    {
-        playerHealth = 3;
-        isDead = false;
-    }
+    //public void Reset()
+    //{
+    //    playerHealth = 3;
+    //    isDead = false;
+    //}
 
     public void Pause()
     {
