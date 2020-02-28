@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Fade_Done : MonoBehaviour
 {
-
-    public bool fadeOver;
+    PlayerController playerController;
+    //public bool fadeOver;
 
     // Start is called before the first frame update
     void Start()
     {
-        fadeOver = false;
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        //fadeOver = false;
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class Fade_Done : MonoBehaviour
 
     public void FadeOver()
     {
-        fadeOver = true;
+        playerController.Reset();
+       // fadeOver = true;
     }
 }
