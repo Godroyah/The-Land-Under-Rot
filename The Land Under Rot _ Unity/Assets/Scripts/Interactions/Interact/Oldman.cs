@@ -61,11 +61,11 @@ public class Oldman : Interactable
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_3_Repeat);
                 }
             }
-            else
+            else if (gameController.bus_Called && gameController.tutorial_HasTalked_Rootford_Intro2 )
             {
                 dialogueManager.StartDialogue(Reply.SS_Rootford_Bus_1_Repeat);
             }
-            
+
         }
     }
 
