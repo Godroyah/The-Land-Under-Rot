@@ -59,22 +59,22 @@ public class CharacterAnimator : MonoBehaviour
                 justMoved = false;
 
 
+            #endregion
 
 
-
-            if (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f)
+            if ((Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f) && !playerController.StopPlayer)
                 animator.SetBool("Holding_Run_Bool", true);
             else
                 animator.SetBool("Holding_Run_Bool", false);
 
 
 
-            if (playerController.ShouldHeadbutt && playerController.HeadbuttCoroutine == null)
+            if (playerController.ShouldHeadbutt && playerController.HeadbuttCoroutine == null && !playerController.StopPlayer)
             {
                 animator.SetTrigger("Headbutt_Button_Trigger");
             }
 
-            #endregion
+           
         }
 
     }

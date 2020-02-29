@@ -150,6 +150,16 @@ public class GameController : MonoBehaviour
             PickUpCount();
             HealthCount();
         }
+
+        if (playerController != null && dialogueManager != null)
+        {
+            if (dialogueManager.hasActiveDialogue)
+            {
+                playerController.StopPlayer = true;
+            }
+            else
+                playerController.StopPlayer = false;
+        }
         //if(isDead)
         //{
         //    Reset();

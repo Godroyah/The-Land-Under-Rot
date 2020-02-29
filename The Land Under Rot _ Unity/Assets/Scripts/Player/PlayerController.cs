@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded { get; private set; }
     public bool ShouldHeadbutt { get; private set; }
     public bool JustHeadButted { get; private set; }
+    public bool StopPlayer { get; set; }
     #endregion
 
 
@@ -137,7 +138,7 @@ public class PlayerController : MonoBehaviour
     {
         fadePane = GameObject.Find("FadePane");
 
-        if(fadePane != null)
+        if (fadePane != null)
         {
             fadeDone = fadePane.GetComponent<Fade_Done>();
             fadeAnim = fadePane.GetComponent<Animator>();
@@ -146,7 +147,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogWarning("FadePane missing from scene!");
         }
-        
+
 
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("Rigidbody missing on " + gameObject.name);
@@ -209,7 +210,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Reset();
+        // Reset();
         GetInput();
 
         IsGrounded = Physics.CheckSphere(groundChecker.position, 0.4f, playerLayerMask, QueryTriggerInteraction.Ignore);
@@ -322,7 +323,7 @@ public class PlayerController : MonoBehaviour
             IsGrounded = true;
         }
 
-        if (ShouldJump && IsGrounded)
+        if (ShouldJump && IsGrounded && !StopPlayer)
         {
             Rb.velocity = Vector3.up * jumpVelocity;
 
@@ -331,12 +332,12 @@ public class PlayerController : MonoBehaviour
 
         #endregion
 
-        if (ShouldInteract && interactingCoroutine == null)
+        if (ShouldInteract && interactingCoroutine == null && !StopPlayer)
         {
             StartCoroutine(Interacting());
         }
 
-        if (ShouldHeadbutt && HeadbuttCoroutine == null)
+        if (ShouldHeadbutt && HeadbuttCoroutine == null && !StopPlayer)
         {
             StartCoroutine(Headbutting());
         }
@@ -344,7 +345,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (!StopPlayer)
+        {
+            Move();
+        }
+        else
+            rotationTarget.position = transform.position;
+        
     }
 
     private void GetInput()
@@ -418,14 +425,17 @@ public class PlayerController : MonoBehaviour
         {
             //Rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             movement = Vector3.zero;
+            //movement = new Vector3(HorizontalInput, 0, VerticalInput) * 0.5f;
+            //movement = Vector3.down;
         }
         else
             movement = new Vector3(HorizontalInput, 0, VerticalInput);
 
-
         Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist);
 
         rotationTarget.position = tempDir + transform.position;
+
+
 
         //bool hasCollided = Physics.CheckCapsule(temp, 1.77f, playerLayerMask, QueryTriggerInteraction.Ignore);
 
@@ -468,8 +478,8 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
-        if(fadePane != null)
-        StartCoroutine("FadeOut");
+        if (fadePane != null)
+            StartCoroutine("FadeOut");
         else
         {
             transform.position = currentSpawn.position;
@@ -493,14 +503,14 @@ public class PlayerController : MonoBehaviour
     {
         //if (fadePane != null && fadeDone.fadeOver)
         //{
-            transform.position = currentSpawn.position;
-            transform.rotation = currentSpawn.rotation;
-            Rb.velocity = Vector3.zero;
-            health = 3;
-            isDead = false;
-            fadeAnim.ResetTrigger("FadeOut");
-            fadeAnim.SetTrigger("FadeIn");
-            //fadeDone.fadeOver = false;
+        transform.position = currentSpawn.position;
+        transform.rotation = currentSpawn.rotation;
+        Rb.velocity = Vector3.zero;
+        health = 3;
+        isDead = false;
+        fadeAnim.ResetTrigger("FadeOut");
+        fadeAnim.SetTrigger("FadeIn");
+        //fadeDone.fadeOver = false;
         //}
 
     }

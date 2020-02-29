@@ -65,7 +65,7 @@ public class Dialogue : MonoBehaviour
             {
                 // TODO: Extremely high polling number for user input
                 yield return new WaitForSeconds(0.00001f);
-                if (Input.GetButtonUp("Submit"))
+                if (Input.GetButtonUp("Interact"))
                 {
                     if (hasFinishedDisplayingText || currentTextDisplayer == null)
                     {
@@ -82,7 +82,7 @@ public class Dialogue : MonoBehaviour
                         {
                             // TODO: Extremely high polling number for user input
                             yield return new WaitForSeconds(0.00001f);
-                            if (Input.GetButtonUp("Submit"))
+                            if (Input.GetButtonUp("Interact"))
                             {
                                 break;
                             }
