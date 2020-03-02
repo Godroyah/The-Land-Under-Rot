@@ -117,7 +117,13 @@ public class GameController : MonoBehaviour
             mulchCount.text = playerMulch.ToString();
 
         //playerController.currentSpawn = playerRespawn;
-        DontDestroyOnLoad(gameObject);
+
+        GameObject temp = GameObject.Find("@GameController");
+        if (!temp)
+            DontDestroyOnLoad(gameObject);
+        else
+            Destroy(gameObject);
+        
     }
 
     // Start is called before the first frame update
