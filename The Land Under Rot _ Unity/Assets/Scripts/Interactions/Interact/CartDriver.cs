@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CartDriver : Interactable
 {
-    public GameObject billboard;
-    private Billboard_UI billboard_UI;
+    //public GameObject billboard;
+    //private Billboard_UI billboardUI;
 
     GameController gameController;
     DialogueManager dialogueManager;
@@ -13,7 +13,7 @@ public class CartDriver : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        billboard_UI = billboard.GetComponent<Billboard_UI>();
+        //billboardUI = billboard.GetComponent<Billboard_UI>();
 
         #region GameController/DialogueManager Search
         GameObject temp = GameObject.Find("@GameController");

@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
 {
     [Header("Script Calls")]
     #region Script Calls
+    private static GameController _instance = null;
+    public static GameController Instance { get { return _instance;  } }
     public DialogueManager dialogueManager;
     public CutsceneManager cutsceneManager;
     public PlayerController playerController;
@@ -78,22 +80,37 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        if (mainMenu == null)
+        if(_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            _instance = this;
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-
-        if (playerController == null)
-        {
-            playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-            if (playerController == null)
-            {
-                Debug.LogWarning("Cannot find Player!");
-            }
-            else
-                playerController.gameController = this;
-        }
+            
+        //if (playerController == null)
+        //{
+        //    playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        //    if (playerController == null)
+        //    {
+        //        Debug.LogWarning("Cannot find Player!");
+        //    }
+        //    else
+        //        playerController.gameController = this;
+        //}
 
 
         //if (player)
@@ -118,11 +135,11 @@ public class GameController : MonoBehaviour
 
         //playerController.currentSpawn = playerRespawn;
 
-        GameObject temp = GameObject.Find("@GameController");
-        if (!temp)
-            DontDestroyOnLoad(gameObject);
-        else
-            Destroy(gameObject);
+        //GameObject temp = GameObject.Find("@GameController");
+        //if (!temp)
+        //    DontDestroyOnLoad(gameObject);
+        //else
+        //    Destroy(gameObject);
         
     }
 
@@ -303,6 +320,7 @@ public class GameController : MonoBehaviour
             quitButton.interactable = true;
             //mainMenu.SetActive(true);
             Time.timeScale = 1;
+            
         }
         else
         {

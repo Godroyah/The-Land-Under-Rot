@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TestCharacter : Interactable
 {
-    public GameObject billboard;
-    private Billboard_UI billboard_UI;
+    //public GameObject billboard;
+    //private Billboard_UI billboard_UI;
 
     GameController gameController;
     DialogueManager dialogueManager;
@@ -13,7 +13,7 @@ public class TestCharacter : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        billboard_UI = billboard.GetComponent<Billboard_UI>();
+        //billboard_UI = billboard.GetComponent<Billboard_UI>();
 
         #region GameController/DialogueManager Search
         GameObject temp = GameObject.Find("@GameController");

@@ -14,8 +14,6 @@ public class TextDisplayer : MonoBehaviour
     public Dialogue myDialogue; // TODO: Find a way to find the parent cutscene
     Coroutine tempCoroutine;
 
-    GameController gameController;
-
     private void Awake()
     {
         textBox = GetComponent<TextMeshProUGUI>();
@@ -84,10 +82,15 @@ public class TextDisplayer : MonoBehaviour
     IEnumerator DisplayText()
     {
         displayedText = "";
-        while (gameController != null && gameController.dialogueManager == null)
+        if(GameController.Instance != null)
         {
-            yield return new WaitForEndOfFrame();
+            while (GameController.Instance.dialogueManager == null)
+            {
+                yield return new WaitForEndOfFrame();
+            }
         }
+        else
+            yield return null;
 
         while (fullText.Length < 1)
         {

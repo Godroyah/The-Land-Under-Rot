@@ -8,12 +8,12 @@ public class Billboard_UI : MonoBehaviour
     //-----(ex. x = 1, y = 1, z = 1 OR x = 2, y = 2, z = 2, ETC.)
 
     private PlayerController playerController;
-    private GameController gameController;
+    //private GameController gameController;
 
     public Camera billBoardCam;
     public Transform camTransform;
     public Canvas promptCanvas;
-    private CamControl camControl;
+    //private CamControl camControl;
     public GameObject textObject;
     public GameObject imageObject;
 
@@ -27,28 +27,10 @@ public class Billboard_UI : MonoBehaviour
     {
         if(forInteractable)
         {
-            if (gameController == null)
-            {
-                gameController = GameObject.Find("@GameController").GetComponent<GameController>();
-                
-                if (gameController == null)
-                {
-                    playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-                }
-            }
-            else
-            {
-                Debug.LogWarning("GameController not active in scene!");
-            }
-
-            if (gameController != null)
-                billBoardCam = gameController.playerController.camControl.myCamera;
-            else if(playerController != null)
-                billBoardCam = playerController.camControl.myCamera;
-            else if(gameController == null && playerController == null)
-            {
-                Debug.LogWarning("Player and GameController both missing! Must AT LEAST have Player present in scene!");
-            }
+            if (GameController.Instance != null)
+                billBoardCam = GameController.Instance.playerController.camControl.myCamera;
+            //else if(playerController != null)
+            //    billBoardCam = playerController.camControl.myCamera;
 
             camTransform = billBoardCam.transform;
             promptCanvas.worldCamera = billBoardCam;
@@ -79,7 +61,7 @@ public class Billboard_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!forInteractable && camControl == null)
+        if(!forInteractable)
         {
             camTransform = billBoardCam.transform;
             promptCanvas.worldCamera = billBoardCam;

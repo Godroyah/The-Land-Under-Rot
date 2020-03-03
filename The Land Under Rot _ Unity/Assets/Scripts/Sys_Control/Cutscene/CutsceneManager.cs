@@ -7,7 +7,7 @@ public class CutsceneManager : MonoBehaviour
     public List<GameObject> cutscene_GameObjects;
 
     Cutscene[] cutscenes;
-    public GameController gameController;
+
     public PlayerController playerController;
 
     public bool hasActiveCutscene = false;
@@ -26,71 +26,13 @@ public class CutsceneManager : MonoBehaviour
     public bool cutsceneMusicIsPlaying;
     public bool shouldTurnOffMusic;
 
-    private void Awake()
-    {
-        #region GameController/DialogueManager Search
-        GameObject temp = GameObject.Find("@GameController");
-        if (temp != null)
-        {
-            gameController = temp.GetComponent<GameController>();
-            if (gameController != null)
-                gameController.cutsceneManager = this;
-            else
-                Debug.LogWarning("@GameController does not have the 'GameController' script!");
-        }
-        else
-        {
-            // Direct Finding
-            Debug.LogWarning("Could not find GameController.");
-
-            #endregion
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        if (gameController != null)
-        {
-            if (gameController.playerController != null)
-                playerController = gameController.playerController;
-            else
-            {
-                #region PlayerController Search
-                GameObject temp = GameObject.FindGameObjectWithTag("Player");
-                if (temp != null)
-                {
-                    playerController = temp.GetComponent<PlayerController>();
-                    if (playerController == null)
-                        Debug.LogWarning("Player does not have the 'PlayerController' script!");
-                }
-                else
-                {
-                    // Direct Finding
-                    Debug.LogWarning("Could not find PlayerController.");
-                }
-                #endregion
-            }
-        }
-        else
-        {
-            #region PlayerController Search
-            GameObject temp = GameObject.FindGameObjectWithTag("Player");
-            if (temp != null)
-            {
-                playerController = temp.GetComponent<PlayerController>();
-                if (playerController == null)
-                    Debug.LogWarning("Player does not have the 'PlayerController' script!");
-            }
-            else
-            {
-                // Direct Finding
-                Debug.LogWarning("Could not find PlayerController.");
-            }
-            #endregion
-        }
+        GameController.Instance.cutsceneManager = this;
 
-
+        if (GameController.Instance.playerController != null)
+            playerController = GameController.Instance.playerController;
 
         cutscenes = new Cutscene[cutscene_GameObjects.Count];
 

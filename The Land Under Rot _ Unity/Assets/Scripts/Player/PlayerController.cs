@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
     public List<Interactable> headbuttables = new List<Interactable>();
     #endregion
 
-    public GameController gameController;
+    
     public GameObject fadePane;
     private Fade_Done fadeDone;
     private Animator fadeAnim;
@@ -187,6 +187,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameController.Instance.playerController = this;
+
         JustHeadButted = true;
         // TODO: Find Spawn Point
         isDead = false;
