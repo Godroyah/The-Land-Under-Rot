@@ -10,6 +10,7 @@ public class Destroy_UI : MonoBehaviour
     public void SetName(string text)
     {
         area_Title.text = text;
+        Debug.Log("Renamed");
     }
 
     public void DestroyTitle()

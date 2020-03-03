@@ -22,19 +22,22 @@ public class Button_Prompter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameController == null)
-        {
-            gameController = GameObject.Find("@GameController").GetComponent<GameController>();
-            if (gameController != null)
-            {
-                billboardUI.billBoardCam = gameController.playerController.camControl.myCamera;
-                billboardUI.camTransform = billboardUI.billBoardCam.transform;
-            }
-        }
-        else
-        {
-            Debug.LogWarning("GameController not active in scene!");
-        }
+        billboardUI.billBoardCam = GameController.Instance.playerController.camControl.myCamera;
+        billboardUI.camTransform = billboardUI.billBoardCam.transform;
+
+        //if (gameController == null)
+        //{
+        //    gameController = GameObject.Find("@GameController").GetComponent<GameController>();
+        //    if (gameController != null)
+        //    {
+        //        billboardUI.billBoardCam = gameController.playerController.camControl.myCamera;
+        //        billboardUI.camTransform = billboardUI.billBoardCam.transform;
+        //    }
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("GameController not active in scene!");
+        //}
 
         if (textObject == null)
         {

@@ -262,6 +262,7 @@ public class GameController : MonoBehaviour
 
                     }
                     Time.timeScale = 0;
+                    //paused = true;
                 }
                 else
                 {
@@ -275,6 +276,7 @@ public class GameController : MonoBehaviour
                         quitButton.interactable = true;
                     }
                     Time.timeScale = 1;
+                    //paused = false;
                 }
             }
 

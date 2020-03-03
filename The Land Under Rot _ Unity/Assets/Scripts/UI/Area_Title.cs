@@ -8,17 +8,21 @@ public class Area_Title : MonoBehaviour
 {
     public string area_Title;
     public GameObject title_Canvas;
-    public TextMeshProUGUI region_Text;
+    //public TextMeshProUGUI region_Text;
     bool hasPlayed = false;
 
     void ActivateTitleUI()
     {
+        title_Canvas.GetComponent<Destroy_UI>().SetName(area_Title);
         GameObject titleCard = Instantiate(title_Canvas);
-        if(title_Canvas != null)
-        {
-            title_Canvas.GetComponent<Destroy_UI>().SetName(area_Title);
-            //region_Text = title_Canvas.gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        }
+        
+        //if (title_Canvas != null)
+        //{
+        //    //region_Text = title_Canvas.GetComponent<TextMeshProUGUI>();
+        //    //region_Text.text = area_Title;
+        //    title_Canvas.GetComponent<Destroy_UI>().SetName(area_Title);
+        //    //region_Text = title_Canvas.gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        //}
         hasPlayed = true;
     }
 
@@ -30,15 +34,15 @@ public class Area_Title : MonoBehaviour
         }
     }
 
-    public void DestroyTitle()
-    {
-        Destroy(gameObject);
-    }
+    //public void DestroyTitle()
+    //{
+    //    Destroy(gameObject);
+    //}
 
-    public void SetName(string text)
-    {
-        region_Text.text = text;
-    }
+    //public void SetName(string text)
+    //{
+    //    //region_Text.text = text;
+    //}
 
     //IEnumerator Title_Card()
     //{
