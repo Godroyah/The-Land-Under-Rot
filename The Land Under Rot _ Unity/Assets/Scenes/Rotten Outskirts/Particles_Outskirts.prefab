@@ -56,11 +56,6 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.minScalar
       value: 8.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3506120258225099957, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5497277921983948803, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
         type: 3}
       propertyPath: m_Name
@@ -146,11 +141,6 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.minScalar
       value: 8.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3506120258225099957, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5497277921983948803, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
         type: 3}
       propertyPath: m_Name
@@ -228,8 +218,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3506120258225099957, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
         type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 8
+      propertyPath: InitialModule.startSize.scalar
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3506120258225099957, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
         type: 3}
@@ -238,28 +228,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3506120258225099957, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
         type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 7
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3506120258225099957, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
         type: 3}
       propertyPath: ClampVelocityModule.dampen
       value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3506120258225099957, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
-        type: 3}
-      propertyPath: ClampVelocityModule.magnitude.scalar
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102283345404613466, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.64000165
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102283345404613466, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.120004475
       objectReference: {fileID: 0}
     - target: {fileID: 4102283345404613466, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
         type: 3}
@@ -270,6 +245,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.75063294
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102283345404613466, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.64000165
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102283345404613466, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.120004475
       objectReference: {fileID: 0}
     - target: {fileID: 4102283345404613466, guid: fba8cfb5c2eb26544ac6c04d4e31ac48,
         type: 3}
@@ -353,12 +338,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2713797032302613189, guid: 5b43528cf752a1c439bc063d1f4c3a95,
         type: 3}
-      propertyPath: m_LocalScale.y
+      propertyPath: m_LocalScale.x
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2713797032302613189, guid: 5b43528cf752a1c439bc063d1f4c3a95,
         type: 3}
-      propertyPath: m_LocalScale.x
+      propertyPath: m_LocalScale.y
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2713797032302613189, guid: 5b43528cf752a1c439bc063d1f4c3a95,
