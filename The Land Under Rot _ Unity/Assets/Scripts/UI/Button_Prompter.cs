@@ -61,7 +61,7 @@ public class Button_Prompter : MonoBehaviour
         {
             if (gameController == null)
             {
-                billboardUI.camTransform = player.GetComponent<PlayerController>().camControl.myCamera.transform;
+                billboardUI.camTransform = player.GetComponentInParent<PlayerController>().camControl.myCamera.transform;
             }
             if(textObject != null)
             {
