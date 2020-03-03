@@ -216,8 +216,6 @@ public class PlayerController : MonoBehaviour
         IsGrounded = Physics.CheckSphere(groundChecker.position, 0.4f, playerLayerMask, QueryTriggerInteraction.Ignore);
         //IsGrounded = Physics.CheckBox(groundChecker.position, new Vector3(0.75f, 0.25f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
 
-
-
         #region Interactable Check
 
         //Redefine above
@@ -313,7 +311,7 @@ public class PlayerController : MonoBehaviour
         #region Jumping
 
         //faster falling
-        if (Rb.velocity.y < 0.1f)
+        if (Rb.velocity.y < 0f)
             Rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         else if (Rb.velocity.y > 0 && !ShouldJump)
             Rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
@@ -351,7 +349,7 @@ public class PlayerController : MonoBehaviour
         }
         else
             rotationTarget.position = transform.position;
-        
+
     }
 
     private void GetInput()
@@ -449,6 +447,7 @@ public class PlayerController : MonoBehaviour
         else
             targetSpeed = moveVelocity;
 
+
         movement = rotationTarget.TransformDirection(movement) * targetSpeed;
 
         // Apply a force that attempts to reach our target velocity
@@ -456,9 +455,10 @@ public class PlayerController : MonoBehaviour
         Vector3 velocityChange = (movement - velocity);
         velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
         velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
-        velocityChange.y = 0;
+        //velocityChange.y = 0;
+        velocityChange.y = Physics.gravity.y/ 10;
 
-        Rb.AddForce(velocityChange, ForceMode.VelocityChange);
+        Rb.AddForce(velocityChange * Time.deltaTime * 50, ForceMode.VelocityChange);
         //}
 
     }
