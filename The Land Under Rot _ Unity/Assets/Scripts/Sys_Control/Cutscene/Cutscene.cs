@@ -16,26 +16,33 @@ public class Cutscene : MonoBehaviour
 
     private void Awake()
     {
-        GameObject temp = GameObject.Find("@CutsceneManager");
-        if (temp != null)
-        {
-            cutsceneManager = temp.GetComponent<CutsceneManager>();
-
-            if (cutsceneManager != null)
-            {
-                if (!cutsceneManager.cutscene_GameObjects.Contains(gameObject))
-                    cutsceneManager.cutscene_GameObjects.Add(gameObject);
-            }
-            else
-                Debug.LogWarning("Missing CutsceneManager for cutscenes to operate.");
-        }
-
         video.enabled = false;
 
         video.playOnAwake = false;
         video.renderMode = VideoRenderMode.CameraNearPlane;
         video.isLooping = false;
         video.targetCamera = Camera.main;
+
+    }
+
+    private void Start()
+    {
+        if (cutsceneManager == null)
+        {
+            GameObject temp = GameObject.Find("@CutsceneManager");
+            if (temp != null)
+            {
+                cutsceneManager = temp.GetComponent<CutsceneManager>();
+
+                if (cutsceneManager != null)
+                {
+                    if (!cutsceneManager.cutscene_GameObjects.Contains(gameObject))
+                        cutsceneManager.cutscene_GameObjects.Add(gameObject);
+                }
+                else
+                    Debug.LogWarning("Missing CutsceneManager for cutscenes to operate.");
+            }
+        }
 
     }
 
@@ -54,7 +61,7 @@ public class Cutscene : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            
+
         }
     }
 
@@ -69,7 +76,7 @@ public class Cutscene : MonoBehaviour
         video.enabled = true;
 
         video.Play();
-        
+
 
         yield return new WaitForSeconds((float)video.length);
 

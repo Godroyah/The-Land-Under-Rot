@@ -26,6 +26,15 @@ public class CutsceneManager : MonoBehaviour
     public bool cutsceneMusicIsPlaying;
     public bool shouldTurnOffMusic;
 
+    private void Awake()
+    {
+        for (int i = 0; i < cutscene_GameObjects.Count; i++)
+        {
+            cutscenes[i] = cutscene_GameObjects[i].GetComponent<Cutscene>();
+            cutscenes[i].cutsceneManager = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +45,7 @@ public class CutsceneManager : MonoBehaviour
 
         cutscenes = new Cutscene[cutscene_GameObjects.Count];
 
-        for (int i = 0; i < cutscene_GameObjects.Count; i++)
-        {
-            cutscenes[i] = cutscene_GameObjects[i].GetComponent<Cutscene>();
-        }
+        
         //  OR
         //StartCoroutine(ObtainCutsceneScripts());
 
