@@ -24,57 +24,60 @@ public class CharacterAnimator : MonoBehaviour
     void Update()
     {
         if (playerController.enabled == true)
-        {
-            #region Jumping
-
-            if (playerController.ShouldJump)
+            if (!playerController.StopPlayer)
             {
-                animator.SetTrigger("Jump_Button_Trigger");
-            }
+                #region Jumping
 
-            //faster falling
-            if (/*rb.velocity.y < 0 && */!playerController.IsGrounded)
-                animator.SetBool("Airborne_Bool", true);
-            //else if (rb.velocity.y > 0 && !playerController.ShouldJump)
-            //animator.SetBool("Airborne_Bool", true);
-
-            if (playerController.IsGrounded)
-            {
-                animator.SetBool("Airborne_Bool", false);
-            }
-
-            //if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
-            //    animator.SetTrigger("Run_Button_Trigger");
-
-            if (!animator.GetBool("Airborne_Bool") && (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
-            {
-                if (!justMoved)
+                if (playerController.ShouldJump)
                 {
-                    animator.SetTrigger("Run_Button_Trigger");
+                    animator.SetTrigger("Jump_Button_Trigger");
                 }
-                justMoved = true;
+
+                //faster falling
+                if (/*rb.velocity.y < 0 && */!playerController.IsGrounded)
+                    animator.SetBool("Airborne_Bool", true);
+                //else if (rb.velocity.y > 0 && !playerController.ShouldJump)
+                //animator.SetBool("Airborne_Bool", true);
+
+
+
+                //if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
+                //    animator.SetTrigger("Run_Button_Trigger");
+
+                if (!animator.GetBool("Airborne_Bool") && (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
+                {
+                    if (!justMoved)
+                    {
+                        animator.SetTrigger("Run_Button_Trigger");
+                    }
+                    justMoved = true;
+
+                }
+                else
+                    justMoved = false;
+
+
+                #endregion
+
+
+                if ((Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
+                    animator.SetBool("Holding_Run_Bool", true);
+                else
+                    animator.SetBool("Holding_Run_Bool", false);
+
+
+
+                if (playerController.ShouldHeadbutt && playerController.HeadbuttCoroutine == null)
+                {
+                    animator.SetTrigger("Headbutt_Button_Trigger");
+                }
+
 
             }
-            else
-                justMoved = false;
 
-
-            #endregion
-
-
-            if ((Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f) && !playerController.StopPlayer)
-                animator.SetBool("Holding_Run_Bool", true);
-            else
-                animator.SetBool("Holding_Run_Bool", false);
-
-
-
-            if (playerController.ShouldHeadbutt && playerController.HeadbuttCoroutine == null && !playerController.StopPlayer)
-            {
-                animator.SetTrigger("Headbutt_Button_Trigger");
-            }
-
-           
+        if (playerController.IsGrounded)
+        {
+            animator.SetBool("Airborne_Bool", false);
         }
 
     }

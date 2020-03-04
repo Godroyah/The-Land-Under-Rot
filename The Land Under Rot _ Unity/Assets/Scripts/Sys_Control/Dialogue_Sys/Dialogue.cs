@@ -61,11 +61,12 @@ public class Dialogue : MonoBehaviour
                 Frames[i - 1].SetActive(false);
 
             Frames[i].SetActive(true);
+            yield return new WaitForEndOfFrame();
             while (true)
             {
                 // TODO: Extremely high polling number for user input
                 yield return new WaitForSeconds(0.00001f);
-                if (Input.GetButtonUp("Interact"))
+                if (Input.GetButtonDown("Interact"))
                 {
                     if (hasFinishedDisplayingText || currentTextDisplayer == null)
                     {
@@ -82,7 +83,7 @@ public class Dialogue : MonoBehaviour
                         {
                             // TODO: Extremely high polling number for user input
                             yield return new WaitForSeconds(0.00001f);
-                            if (Input.GetButtonUp("Interact"))
+                            if (Input.GetButtonDown("Interact"))
                             {
                                 break;
                             }
