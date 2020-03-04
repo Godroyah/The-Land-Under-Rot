@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     [Header("Script Calls")]
     #region Script Calls
     private static GameController _instance = null;
-    public static GameController Instance { get { return _instance;  } }
+    public static GameController Instance { get { return _instance; } }
     public DialogueManager dialogueManager;
     public CutsceneManager cutsceneManager;
     public PlayerController playerController;
@@ -75,19 +75,20 @@ public class GameController : MonoBehaviour
     //Turn this off on MainMenuHolder AND GameController gameobjects
     //once MainMenu has its own scene
 
-    
+
     //public bool mmenu_Active;
 
     private void Awake()
     {
-        if(_instance != null && _instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             _instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -100,7 +101,7 @@ public class GameController : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-            
+
         //if (playerController == null)
         //{
         //    playerController = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -140,7 +141,7 @@ public class GameController : MonoBehaviour
         //    DontDestroyOnLoad(gameObject);
         //else
         //    Destroy(gameObject);
-        
+
     }
 
     // Start is called before the first frame update
@@ -198,7 +199,7 @@ public class GameController : MonoBehaviour
 
         if (oldAcorns != playerAcorns)
         {
-            if(acornCount != null)
+            if (acornCount != null)
             {
                 acornCount.text = playerAcorns.ToString();
                 oldAcorns = playerAcorns;
@@ -206,7 +207,7 @@ public class GameController : MonoBehaviour
         }
         if (oldMulch != playerMulch)
         {
-            if(mulchCount != null)
+            if (mulchCount != null)
             {
                 mulchCount.text = playerMulch.ToString();
                 oldMulch = playerMulch;
@@ -322,7 +323,7 @@ public class GameController : MonoBehaviour
             quitButton.interactable = true;
             //mainMenu.SetActive(true);
             Time.timeScale = 1;
-            
+
         }
         else
         {

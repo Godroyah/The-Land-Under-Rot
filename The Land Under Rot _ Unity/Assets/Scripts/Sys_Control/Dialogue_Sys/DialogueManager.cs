@@ -44,6 +44,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < Dialogue_GameObjects.Count; i++)
         {
             dialogues[i] = Dialogue_GameObjects[i].GetComponent<Dialogue>();
+            dialogues[i].dialogueManager = this;
         }
         //  OR
         //StartCoroutine(ObtainCutsceneScripts());

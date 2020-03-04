@@ -15,24 +15,6 @@ public class Dialogue : MonoBehaviour
     public TextDisplayer currentTextDisplayer;
     public bool hasFinishedDisplayingText = false;
 
-    private void Awake()
-    {
-        GameObject temp = GameObject.Find("@DialogueManager");
-        if (temp != null)
-        {
-            dialogueManager = temp.GetComponent<DialogueManager>();
-
-            if (dialogueManager != null)
-            {
-                if (!dialogueManager.Dialogue_GameObjects.Contains(gameObject))
-                    dialogueManager.Dialogue_GameObjects.Add(gameObject);
-            }
-            else
-                Debug.LogWarning("Missing DialogueManager for dialogues to operate.");
-        }
-    }
-
-
     private void Start()
     {
         for (int i = 0; i < Frames.Length; i++)

@@ -16,14 +16,8 @@ public class Oldman : Interactable
     {
         base.Interact();
 
-        if (dialogueManager == null)
-        {
-            if (GameController.Instance.dialogueManager != null)
-                dialogueManager = GameController.Instance.dialogueManager;
-            else
-                Debug.LogWarning("GameController.Instance does not have the 'DialogueManager'!");
-        }
-        
+        if (GameController.Instance.dialogueManager != null)
+            dialogueManager = GameController.Instance.dialogueManager;
 
         if (GameController.Instance != null)
         {

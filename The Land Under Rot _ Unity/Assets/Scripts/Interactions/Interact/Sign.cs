@@ -11,8 +11,6 @@ public class Sign : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        //dialogueManager = GameController.Instance.dialogueManager;
-
         //#region GameController/DialogueManager Search
         //GameObject temp = GameObject.Find("@GameController");
         //if (temp != null)
@@ -44,13 +42,16 @@ public class Sign : Interactable
     {
         base.Interact();
 
-        if (dialogueManager == null)
-        {
-            if (GameController.Instance.dialogueManager != null)
-                dialogueManager = GameController.Instance.dialogueManager;
-            else
-                Debug.LogWarning("GameController.Instance does not have the 'DialogueManager'!");
-        }
+        if (GameController.Instance.dialogueManager != null)
+            dialogueManager = GameController.Instance.dialogueManager;
+
+        //if (dialogueManager == null)
+        //{
+        //    if (GameController.Instance.dialogueManager != null)
+        //        dialogueManager = GameController.Instance.dialogueManager;
+        //    else
+        //        Debug.LogWarning("GameController.Instance does not have the 'DialogueManager'!");
+        //}
 
         if (dialogue != null)
             dialogueManager.StartDialogue(dialogue);
