@@ -86,9 +86,8 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            //DontDestroyOnLoad(gameObject);
-            _instance = this;
             DontDestroyOnLoad(gameObject);
+            _instance = this;
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
