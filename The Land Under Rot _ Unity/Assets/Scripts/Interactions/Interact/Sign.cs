@@ -4,36 +4,38 @@ using UnityEngine;
 
 public class Sign : Interactable
 {
-    GameController gameController;
+    //GameController gameController;
     DialogueManager dialogueManager;
     public Dialogue dialogue;
 
     // Start is called before the first frame update
     void Start()
     {
-        #region GameController/DialogueManager Search
-        GameObject temp = GameObject.Find("@GameController");
-        if (temp != null)
-        {
-            gameController = temp.GetComponent<GameController>();
-            if (gameController != null)
-                dialogueManager = gameController.dialogueManager;
-            else
-                Debug.LogWarning("@GameController does not have the 'GameController' script!");
-        }
-        else
-        {
-            // Direct Finding
-            Debug.LogWarning("Could not find GameController. Will default to direct search.");
-            temp = GameObject.Find("@DialogueManager");
-            if (temp != null)
-            {
-                dialogueManager = temp.GetComponent<DialogueManager>();
-                if (dialogueManager == null)
-                    Debug.LogWarning("@DialogueManager does not have the 'DialogueManager' script!");
-            }
-        }
-        #endregion
+        dialogueManager = GameController.Instance.dialogueManager;
+
+        //#region GameController/DialogueManager Search
+        //GameObject temp = GameObject.Find("@GameController");
+        //if (temp != null)
+        //{
+        //    gameController = temp.GetComponent<GameController>();
+        //    if (gameController != null)
+        //        dialogueManager = gameController.dialogueManager;
+        //    else
+        //        Debug.LogWarning("@GameController does not have the 'GameController' script!");
+        //}
+        //else
+        //{
+        //    // Direct Finding
+        //    Debug.LogWarning("Could not find GameController. Will default to direct search.");
+        //    temp = GameObject.Find("@DialogueManager");
+        //    if (temp != null)
+        //    {
+        //        dialogueManager = temp.GetComponent<DialogueManager>();
+        //        if (dialogueManager == null)
+        //            Debug.LogWarning("@DialogueManager does not have the 'DialogueManager' script!");
+        //    }
+        //}
+        //#endregion
 
         billboard_UI.SetActive(false);
     }
