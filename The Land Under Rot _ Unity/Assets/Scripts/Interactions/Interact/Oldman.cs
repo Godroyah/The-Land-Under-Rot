@@ -4,36 +4,11 @@ using UnityEngine;
 
 public class Oldman : Interactable
 {
-    GameController gameController;
     DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        #region GameController/DialogueManager Search
-        GameObject temp = GameObject.Find("@GameController");
-        if (temp != null)
-        {
-            gameController = temp.GetComponent<GameController>();
-            if (gameController != null)
-                dialogueManager = gameController.dialogueManager;
-            else
-                Debug.LogWarning("@GameController does not have the 'GameController' script!");
-        }
-        else
-        {
-            // Direct Finding
-            Debug.LogWarning("Could not find GameController. Will default to direct search.");
-            temp = GameObject.Find("@DialogueManager");
-            if (temp != null)
-            {
-                dialogueManager = temp.GetComponent<DialogueManager>();
-                if (dialogueManager == null)
-                    Debug.LogWarning("@DialogueManager does not have the 'DialogueManager' script!");
-            }
-        }
-        #endregion
-
         billboard_UI.SetActive(false);
     }
 
@@ -41,27 +16,36 @@ public class Oldman : Interactable
     {
         base.Interact();
 
-        if (gameController != null)
+        if (dialogueManager == null)
+        {
+            if (GameController.Instance.dialogueManager != null)
+                dialogueManager = GameController.Instance.dialogueManager;
+            else
+                Debug.LogWarning("GameController.Instance does not have the 'DialogueManager'!");
+        }
+        
+
+        if (GameController.Instance != null)
         {
             // Select which dialogue to 'say'
-            if (!gameController.bus_Called)
+            if (!GameController.Instance.bus_Called)
             {
-                if (!gameController.tutorial_HasTalked_Rootford_Intro1)
+                if (!GameController.Instance.tutorial_HasTalked_Rootford_Intro1)
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_1);
-                    gameController.tutorial_HasTalked_Rootford_Intro1 = true;
+                    GameController.Instance.tutorial_HasTalked_Rootford_Intro1 = true;
                 }
-                else if (!gameController.tutorial_HasTalked_Rootford_Intro2)
+                else if (!GameController.Instance.tutorial_HasTalked_Rootford_Intro2)
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_2);
-                    gameController.tutorial_HasTalked_Rootford_Intro2 = true;
+                    GameController.Instance.tutorial_HasTalked_Rootford_Intro2 = true;
                 }
                 else
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_3_Repeat);
                 }
             }
-            else if (gameController.bus_Called && gameController.tutorial_HasTalked_Rootford_Intro2 )
+            else if (GameController.Instance.bus_Called && GameController.Instance.tutorial_HasTalked_Rootford_Intro2)
             {
                 dialogueManager.StartDialogue(Reply.SS_Rootford_Bus_1_Repeat);
             }
