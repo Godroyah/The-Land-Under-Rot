@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Gong : Interactable
 {
-    GameController gameController;
-
     public GameObject cinematicCamera;
 
     private Camera cameraComponent;
@@ -17,6 +15,7 @@ public class Gong : Interactable
     public bool firstInteraction;
     public bool interactionStarted;
     public bool alwaysInteract;
+    public bool sceneStarted;
 
     public bool canSound;
     //TODO: This is janky AF; fix later
@@ -33,28 +32,14 @@ public class Gong : Interactable
         cameraComponent.enabled = false;
         firstInteraction = true;
         interactionStarted = false;
+        sceneStarted = false;
 
 
-        if(canSound)
+        if (canSound)
         {
             if (objPreferences != null && audioSource != null)
                 audioSource.clip = objPreferences.headbutt_AudioClip;
         }
-        
-
-        #region GameController Search
-        GameObject temp = GameObject.Find("@GameController");
-        if (temp != null)
-        {
-            gameController = temp.GetComponent<GameController>();
-
-            if (gameController == null)
-                Debug.LogWarning("@GameController does not have the 'GameController' script!");
-        }
-        else
-            Debug.LogWarning("Could not find GameController.");
-
-        #endregion
     }
 
     public override void Interact()
@@ -71,45 +56,65 @@ public class Gong : Interactable
             gongCamController.startScene = true;
             interactionStarted = true;
 
-            //StartCoroutine(ShowTime());
+            StartCoroutine(ShowTime());
         }
 
     }
 
     private void Update()
     {
-        if (playerController != null && (firstInteraction || alwaysInteract))
-        //&& firstInteraction
+        if (interactionStarted && !gongCamController.startScene && sceneStarted)
         {
-            if (gongCamController.startScene && interactionStarted)
-            {
-
-                playerController.enabled = false;
-                playerController.camControl.myCamera.enabled = false;
-
-                foreach (GameObject ui in playerUI)
-                {
-                    ui.SetActive(false);
-                }
-
-                playerController.camControl.enabled = false;
-                cameraComponent.enabled = true;
-            }
-            else if (interactionStarted && !gongCamController.startScene)
-            {
-                cameraComponent.enabled = false;
-                playerController.camControl.enabled = true;
-
-                foreach (GameObject ui in playerUI)
-                {
-                    ui.SetActive(true);
-                }
-
-                playerController.camControl.myCamera.enabled = true;
-                playerController.enabled = true;
-                firstInteraction = false;
-            }
+            StartCoroutine(EndTime());
         }
+    }
+
+    IEnumerator ShowTime()
+    {
+        gongCamController.startScene = true;
+        interactionStarted = true;
+        sceneStarted = true;
+
+
+        if (gongCamController.startScene && interactionStarted)
+        {
+
+            //playerController.enabled = false;
+            playerController.StopPlayer = true;
+            //if(playerController.IsGrounded)
+            Debug.Log("1");
+            playerController.camControl.myCamera.enabled = false;
+
+            foreach (GameObject ui in playerUI)
+            {
+                ui.SetActive(false);
+            }
+
+            playerController.camControl.enabled = false;
+            cameraComponent.enabled = true;
+        }
+
+        yield return null;
+    }
+
+
+    IEnumerator EndTime()
+    {
+
+        cameraComponent.enabled = false;
+        playerController.camControl.enabled = true;
+
+        foreach (GameObject ui in playerUI)
+        {
+            ui.SetActive(true);
+        }
+        Debug.Log("2");
+        playerController.camControl.myCamera.enabled = true;
+        playerController.StopPlayer = false;
+        firstInteraction = false;
+        sceneStarted = false;
+
+        yield return new WaitForEndOfFrame();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -117,23 +122,6 @@ public class Gong : Interactable
         if (other.CompareTag("Headbutt"))
         {
             Interact();
-            //gameController.playerController.headbuttables.Add(this);
         }
     }
-
-    //IEnumerator ShowTime()
-    //{
-    //    playerController.enabled = false;
-    //    playerController.camControl.myCamera.enabled = false;
-
-
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Headbutt"))
-    //    {
-    //        gameController.playerController.headbuttables.Remove(this);
-    //    }
-    //}
 }

@@ -350,7 +350,7 @@ public class PlayerController : MonoBehaviour
             Move();
         }
         else
-            rotationTarget.position = transform.position;
+            rotationTarget.position = Vector3.zero;
 
     }
 

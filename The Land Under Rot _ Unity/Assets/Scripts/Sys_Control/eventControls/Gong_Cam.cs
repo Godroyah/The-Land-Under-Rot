@@ -22,7 +22,7 @@ public class Gong_Cam : MonoBehaviour
         
         if (shots[0].viewpoint == null)
         {
-            shots[0].viewpoint = GameObject.Find("@GameController").GetComponent<GameController>().playerController.camControl.myCamera.transform;
+            shots[0].viewpoint = GameController.Instance.playerController.camControl.myCamera.transform;
         }
         if (shots[shots.Length - 1].viewpoint == null)
         {
