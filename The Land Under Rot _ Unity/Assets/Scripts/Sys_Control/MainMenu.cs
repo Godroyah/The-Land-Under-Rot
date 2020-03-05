@@ -24,12 +24,6 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void StartGame()
     {
         if(testing)
