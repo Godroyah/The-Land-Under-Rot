@@ -18,7 +18,6 @@ public class GameController : MonoBehaviour
 
     [Header("Menu Components")]
     #region Menu Components
-    public GameObject mainMenu;
     public GameObject pauseMenu;
     public GameObject quitOption;
     public GameObject pauseEventSystem;
@@ -30,7 +29,7 @@ public class GameController : MonoBehaviour
     #region Bools
     public bool levelStart;
     public bool isDead;
-    public bool paused;
+    //public bool paused;
 
     [Space(5)]
     public bool area_Tutorial = false;
@@ -64,19 +63,7 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI mulchCount;
     public Image[] healthCounter;
 
-    [Header("Testing Only")]
-
-    //-----------------------------------------------------------------
-
-    public bool testing;
-
-    //-----------------------------------------------------------------
-    //Only for testing both Main and Pause Menu in same scene;
-    //Turn this off on MainMenuHolder AND GameController gameobjects
-    //once MainMenu has its own scene
-
-
-    //public bool mmenu_Active;
+    
 
     private void Awake()
     {
@@ -147,7 +134,6 @@ public class GameController : MonoBehaviour
     void Start()
     {
         isDead = false;
-        paused = false;
         oldHealth = playerHealth;
         oldAcorns = playerAcorns;
         oldMulch = playerMulch;
@@ -169,7 +155,7 @@ public class GameController : MonoBehaviour
         //}
         if (playerController != null)
         {
-            Pause();
+            //Pause();
             PickUpCount();
             HealthCount();
         }
@@ -243,111 +229,4 @@ public class GameController : MonoBehaviour
     //    playerHealth = 3;
     //    isDead = false;
     //}
-
-    public void Pause()
-    {
-        //if ((mmenu_Active == false && testing == true) || testing == false)
-        if (testing == false)
-        {
-            // Debug.Log("Active?");
-            if (Input.GetButton("Pause"))
-            {
-                if (!paused)
-                {
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
-                    if (pauseMenu != null)
-                    {
-                        pauseMenu.SetActive(true);
-
-                    }
-                    Time.timeScale = 0;
-                    //paused = true;
-                }
-                else
-                {
-                    Cursor.visible = false;
-                    Cursor.lockState = CursorLockMode.Locked;
-                    if (pauseMenu != null)
-                    {
-                        pauseMenu.SetActive(false);
-                        quitOption.SetActive(false);
-                        resumeButton.interactable = true;
-                        quitButton.interactable = true;
-                    }
-                    Time.timeScale = 1;
-                    //paused = false;
-                }
-            }
-
-            if (Input.GetButtonUp("Pause"))
-            {
-                if (!paused)
-                    paused = true;
-                else if (paused)
-                {
-                    //Cursor.visible = false;
-                    //Cursor.lockState = CursorLockMode.Locked;
-                    paused = false;
-                }
-            }
-        }
-    }
-
-    public void Resume()
-    {
-        Cursor.visible = false;
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1;
-        paused = false;
-    }
-
-    public void QuitGame()
-    {
-        //pauseMenu.SetActive(false);
-        resumeButton.interactable = false;
-        quitButton.interactable = false;
-        quitOption.SetActive(true);
-        pauseEventSystem.SetActive(false);
-    }
-
-    public void QuitToMenu()
-    {
-        Time.timeScale = 1;
-        if (testing)
-        {
-            pauseMenu.SetActive(false);
-            quitOption.SetActive(false);
-            resumeButton.interactable = true;
-            quitButton.interactable = true;
-            //mainMenu.SetActive(true);
-            Time.timeScale = 1;
-
-        }
-        else
-        {
-            SceneManager.LoadScene(0);
-        }
-    }
-
-    public void CancelQuit()
-    {
-        quitOption.SetActive(false);
-        resumeButton.interactable = true;
-        quitButton.interactable = true;
-        pauseEventSystem.SetActive(true);
-    }
-
-    public void QuitApplication()
-    {
-        if (testing)
-        {
-            Debug.Log("Quit");
-        }
-        else
-        {
-            Debug.Log("Quit");
-            Application.Quit();
-        }
-    }
 }
