@@ -74,6 +74,10 @@ public class CharacterAnimator : MonoBehaviour
 
 
             }
+            else
+            {
+                animator.SetBool("Holding_Run_Bool", false);
+            }
 
         if (playerController.IsGrounded)
         {
