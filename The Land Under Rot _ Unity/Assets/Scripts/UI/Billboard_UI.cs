@@ -61,7 +61,7 @@ public class Billboard_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!forInteractable)
+        if(!forInteractable && billBoardCam != null)
         {
             camTransform = billBoardCam.transform;
             promptCanvas.worldCamera = billBoardCam;

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LizardEvent : Event_Type
 {
-    GameController gameController;
+    
     public Animator lizardAnim;
 
     public float moveSpeed;
@@ -22,15 +22,10 @@ public class LizardEvent : Event_Type
 
     public Transform[] wayPoints;
 
-    private void Awake()
-    {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
         //currentPoint = 0;
         lizardCollider.enabled = false;
         lizardRenderer.enabled = false;
@@ -76,7 +71,7 @@ public class LizardEvent : Event_Type
             //currentPoint = i;
         }
         lizardAnim.SetTrigger("End_Lizard");
-        gameController.bus_Called = true;
+        GameController.Instance.bus_Called = true;
 
         yield return new WaitForSeconds(2f); // TODO: REMOVE ME
 
