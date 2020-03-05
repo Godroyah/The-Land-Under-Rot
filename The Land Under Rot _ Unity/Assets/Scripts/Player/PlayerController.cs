@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
     [Header("Booleans")]
     #region Bools
     public bool isDead;
+    public bool eventActive;
     public bool infiniteJumping = false;
     public bool ShouldRun { get; private set; }
     public bool ShouldInteract { get; private set; }
@@ -118,9 +119,9 @@ public class PlayerController : MonoBehaviour
     public float rotationCutoff = 0.1f;
     [HideInInspector]
     public Vector2 controlInput;
-    public float HeadbuttInput { get; private set; }
-    public float HorizontalInput { get; private set; }
-    public float VerticalInput { get; private set; }
+    public float HeadbuttInput { get; set; }
+    public float HorizontalInput { get; set; }
+    public float VerticalInput { get; set; }
     private Quaternion targetRotation;
     private Transform rotationTarget;
 
@@ -192,6 +193,7 @@ public class PlayerController : MonoBehaviour
         JustHeadButted = true;
         // TODO: Find Spawn Point
         isDead = false;
+        eventActive = false;
 
         if (currentSpawn == null)
         {
@@ -212,6 +214,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Reset();
         GetInput();
 
@@ -356,7 +359,7 @@ public class PlayerController : MonoBehaviour
 
     private void GetInput()
     {
-        if (!isDead)
+        if (!isDead && !eventActive)
         {
             HorizontalInput = Input.GetAxis("Horizontal");
             VerticalInput = Input.GetAxis("Vertical");
@@ -366,6 +369,7 @@ public class PlayerController : MonoBehaviour
             ShouldHeadbutt = Input.GetButtonDown("Headbutt");
             HeadbuttInput = Input.GetAxis("Headbutt");
         }
+        
 
         if (HeadbuttInput > 0.1)
         {
