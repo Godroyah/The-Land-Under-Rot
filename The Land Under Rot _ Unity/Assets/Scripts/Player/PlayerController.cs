@@ -493,6 +493,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator FadeOut()
     {
         isDead = true;
+        camControl.lockPosition = true;
         HorizontalInput = 0;
         VerticalInput = 0;
 
@@ -513,6 +514,7 @@ public class PlayerController : MonoBehaviour
             fadeAnim.ResetTrigger("FadeOut");
             fadeAnim.SetTrigger("FadeIn");
             fadeDone.fadeOver = false;
+            camControl.lockPosition = false;
         }
 
     }
