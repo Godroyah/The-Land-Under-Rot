@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -120,6 +120,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &133891647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133891649}
+  - component: {fileID: 133891648}
+  m_Layer: 0
+  m_Name: '@GameController'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &133891648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133891647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc11dce4dc7426438f962a0f3cfad5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 0}
+  cutsceneManager: {fileID: 0}
+  playerController: {fileID: 0}
+  mainMenu: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  quitOption: {fileID: 0}
+  pauseEventSystem: {fileID: 0}
+  resumeButton: {fileID: 0}
+  quitButton: {fileID: 0}
+  levelStart: 0
+  isDead: 0
+  paused: 0
+  area_Tutorial: 0
+  bus_Called: 0
+  tutorial_HasTalked_Rootford_Intro1: 0
+  tutorial_HasTalked_Rootford_Intro2: 0
+  tutorial_HasTalked_BusDriver_1: 0
+  area_Stinkhorn: 0
+  area_TreeSeat: 0
+  playerAcorns: 0
+  playerMulch: 0
+  playerHealth: 0
+  acornCount: {fileID: 0}
+  mulchCount: {fileID: 0}
+  healthCounter: []
+  testing: 0
+--- !u!4 &133891649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133891647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &455518052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 219837145378430461, guid: ac65d5d4e7e59084f9267b8cf6f03aca,
+    type: 3}
+  m_PrefabInstance: {fileID: 854217165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +293,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1569792915967668226, guid: ac65d5d4e7e59084f9267b8cf6f03aca,
+        type: 3}
+      propertyPath: cutscene_GameObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569792915967668226, guid: ac65d5d4e7e59084f9267b8cf6f03aca,
+        type: 3}
+      propertyPath: cutscene_GameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 455518052}
+    - target: {fileID: 1569792915967668226, guid: ac65d5d4e7e59084f9267b8cf6f03aca,
+        type: 3}
+      propertyPath: TestScene
+      value: 
+      objectReference: {fileID: 455518052}
+    - target: {fileID: 1569792915967668226, guid: ac65d5d4e7e59084f9267b8cf6f03aca,
+        type: 3}
+      propertyPath: isTestingScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1569792915978016790, guid: ac65d5d4e7e59084f9267b8cf6f03aca,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -28,6 +28,8 @@ public class CutsceneManager : MonoBehaviour
 
     private void Awake()
     {
+        cutscenes = new Cutscene[cutscene_GameObjects.Count];
+
         for (int i = 0; i < cutscene_GameObjects.Count; i++)
         {
             cutscenes[i] = cutscene_GameObjects[i].GetComponent<Cutscene>();
@@ -43,7 +45,7 @@ public class CutsceneManager : MonoBehaviour
         if (GameController.Instance.playerController != null)
             playerController = GameController.Instance.playerController;
 
-        cutscenes = new Cutscene[cutscene_GameObjects.Count];
+        
 
         
         //  OR

@@ -20,6 +20,8 @@ public class CamControl : MonoBehaviour
     Vector3 rotationSmoothVelocity;
     Vector3 currentRotation;
 
+    public bool lockPosition = false;
+
     float yaw;
     float pitch;
 
@@ -45,13 +47,20 @@ public class CamControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (!lockPosition)
+        {
+            Move();
+        }
+
+
     }
 
     private void LateUpdate()
     {
-        transform.position = target.transform.position;
-
+        if (!lockPosition)
+        {
+            transform.position = target.transform.position;
+        }
 
         // Seems like over correction to me
         // JK THIS IS HIGHLY NEEDED
@@ -92,7 +101,7 @@ public class CamControl : MonoBehaviour
         // Calculate rotation and apply to camera
         // **---------------------------------------------**
 
-        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, acceleration* Time.deltaTime);
+        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, acceleration * Time.deltaTime);
 
         transform.eulerAngles = currentRotation;
 
