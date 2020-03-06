@@ -4,14 +4,9 @@ using UnityEngine;
 
 //public enum EventName { NONE, LIZARD_CART}
 
-public class Event_Type : MonoBehaviour
+public class Event_Type : Interactable
 {
     public string eventName;
-
-    private void Awake()
-    {
-        
-    }
 
     public virtual void StartEvent()
     {
@@ -20,8 +15,4 @@ public class Event_Type : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        
-    }
 }
