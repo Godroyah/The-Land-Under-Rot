@@ -168,6 +168,7 @@ MonoBehaviour:
   - name: 
     canGlide: 0
     isEventTrigger: 0
+    holdFrame: 0
     eventType: {fileID: 0}
     sceneTime: 2
     transitionSpeed: 1
@@ -175,6 +176,7 @@ MonoBehaviour:
   - name: 
     canGlide: 1
     isEventTrigger: 0
+    holdFrame: 0
     eventType: {fileID: 0}
     sceneTime: 2
     transitionSpeed: 3
@@ -192,7 +194,6 @@ GameObject:
   - component: {fileID: 1998652955939066138}
   - component: {fileID: 4011797536076001541}
   - component: {fileID: 8536831223775294864}
-  - component: {fileID: 1651077060}
   m_Layer: 0
   m_Name: '@GazeGrowth'
   m_TagString: Untagged
@@ -263,25 +264,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1651077060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733519546757518798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f537971a10a58f47a8d056c0a6f979b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  billboard_UI: {fileID: 0}
-  cinematicCamera: {fileID: 2070275744}
-  firstInteraction: 0
-  interactionStarted: 0
-  alwaysInteract: 1
-  sceneStarted: 0
-  canSound: 0
 --- !u!64 &7848727557073609740
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -306,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080297379611150314}
   m_Layer: 0
-  m_Name: old GazeGrowth_Red
+  m_Name: GazeGrowth_Red_OLD_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
