@@ -50,19 +50,7 @@ public class GazeGrowth : Interactable
         }
 
 
-        #region GameController Search
-        GameObject temp = GameObject.Find("@GameController");
-        if (temp != null)
-        {
-            gameController = temp.GetComponent<GameController>();
-
-            if (gameController == null)
-                Debug.LogWarning("@GameController does not have the 'GameController' script!");
-        }
-        else
-            Debug.LogWarning("Could not find GameController.");
-
-        #endregion
+        gameController = GameController.Instance;
 
     }
 
