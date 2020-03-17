@@ -8,7 +8,7 @@ public class Gong : Interactable
 
     private Camera cameraComponent;
 
-    private Gong_Cam gongCamController;
+    private Event_Cam gongCamController;
 
     GameObject[] playerUI;
 
@@ -26,7 +26,7 @@ public class Gong : Interactable
         playerUI = GameObject.FindGameObjectsWithTag("Player_UI");
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 
-        gongCamController = cinematicCamera.GetComponent<Gong_Cam>();
+        gongCamController = cinematicCamera.GetComponent<Event_Cam>();
         cameraComponent = cinematicCamera.GetComponent<Camera>();
 
         cameraComponent.enabled = false;
