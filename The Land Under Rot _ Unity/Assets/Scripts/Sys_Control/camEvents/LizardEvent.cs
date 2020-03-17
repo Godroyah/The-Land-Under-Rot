@@ -43,6 +43,12 @@ public class LizardEvent : Event_Type
         StartCoroutine(FollowTrack());
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     IEnumerator FollowTrack()
     {
         lizardRenderer.enabled = true;

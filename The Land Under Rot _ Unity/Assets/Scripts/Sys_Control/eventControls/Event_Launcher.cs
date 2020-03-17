@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Event_Cam : MonoBehaviour
+public class Event_Launcher : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
