@@ -129,6 +129,7 @@ public class Shot
     public string name = "Empty String";
     public bool canGlide = false;
     public bool isEventTrigger = false;
+    public bool isDialogueEvent = false;
     //public bool hasTriggerTime = false;
     public Event_Type eventType;
     [Range(1f, 20f)]

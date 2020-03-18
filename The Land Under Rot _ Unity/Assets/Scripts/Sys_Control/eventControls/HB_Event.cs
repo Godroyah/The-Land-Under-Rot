@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gong : Interactable
+public class HB_Event : Interactable
 {
-    //Headbutt_Event
     public GameObject cinematicCamera;
 
     private Camera cameraComponent;
@@ -42,18 +41,6 @@ public class Gong : Interactable
                 audioSource.clip = objPreferences.headbutt_AudioClip;
         }
     }
-
-    //public void KickOffEvent()
-    //{
-    //    if (firstInteraction || alwaysInteract)
-    //    {
-    //        eventCamController.startScene = true;
-    //        interactionStarted = true;
-
-    //        StartCoroutine(ShowTime());
-    //    }
-    //}
-
 
     public override void Interact()
     {

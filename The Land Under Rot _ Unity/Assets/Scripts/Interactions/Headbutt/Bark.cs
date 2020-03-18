@@ -4,36 +4,30 @@ using UnityEngine;
 
 public class Bark : Interactable
 {
-
+    public bool isEvent;
     GameController gameController;
     public GameObject barkContainer;
     ObjectPreferences objPrefs;
     ParticleSystem playerParticles;
     ParticleSystem barkParticles;
+    public GameObject eventBark;
+    Gong gongControl;
 
     private void Start()
     {
+        if(isEvent)
+        {
+            gongControl = eventBark.GetComponent<Gong>();
+        }
+
         objPrefs = GetComponent<ObjectPreferences>();
         if(objPrefs != null)
         {
             playerParticles = objPrefs.headbutt_ParticleEffect_player.GetComponent<ParticleSystem>();
             barkParticles = objPrefs.headbutt_ParticleEffect_obj.GetComponent<ParticleSystem>();
         }
-        
 
-        #region GameController Search
-        GameObject temp = GameObject.Find("@GameController");
-        if (temp != null)
-        {
-            gameController = temp.GetComponent<GameController>();
-
-            if (gameController == null)
-                Debug.LogWarning("@GameController does not have the 'GameController' script!");
-        }
-        else
-            Debug.LogWarning("Could not find GameController.");
-
-        #endregion
+        gameController = GameController.Instance;
     }
 
     public override void Interact()
@@ -44,6 +38,10 @@ public class Bark : Interactable
 
         playerParticles.Play();
         barkParticles.Play();
+        if(isEvent)
+        {
+            gongControl.Interact();
+        }
         Destroy(barkContainer);
     }
 
