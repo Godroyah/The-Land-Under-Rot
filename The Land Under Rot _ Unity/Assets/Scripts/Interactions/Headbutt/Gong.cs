@@ -63,7 +63,7 @@ public class Gong : Interactable
 
     private void Update()
     {
-        
+
         if (interactionStarted && !gongCamController.startScene && sceneStarted)
         {
             StartCoroutine(EndTime());
@@ -83,10 +83,10 @@ public class Gong : Interactable
             playerController.HorizontalInput = 0;
             playerController.VerticalInput = 0;
             playerController.HeadbuttInput = 0;
-            
+
             playerController.eventActive = true;
-          
-            
+
+
             playerController.camControl.myCamera.enabled = false;
 
             foreach (GameObject ui in playerUI)
@@ -112,11 +112,11 @@ public class Gong : Interactable
         {
             ui.SetActive(true);
         }
-        
+
         playerController.camControl.myCamera.enabled = true;
-        
+
         playerController.eventActive = false;
-        
+
         playerController.HorizontalInput = Input.GetAxis("Horizontal");
         playerController.VerticalInput = Input.GetAxis("Vertical");
         playerController.HeadbuttInput = Input.GetAxis("Headbutt");

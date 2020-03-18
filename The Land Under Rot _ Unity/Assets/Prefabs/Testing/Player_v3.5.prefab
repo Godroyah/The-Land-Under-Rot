@@ -338,7 +338,7 @@ MonoBehaviour:
   moveVelocity: 20
   runVelocity: 20
   rotationSpeed: 5
-  respawnTime: 0
+  fadeDelay: 0
   jumpVelocity: 23
   fallMultiplier: 5.5
   lowJumpMultiplier: 4
@@ -348,6 +348,7 @@ MonoBehaviour:
   groundChecker: {fileID: 1484572840}
   collisionChecker: {fileID: 217479787}
   isDead: 0
+  eventActive: 0
   infiniteJumping: 0
   inputDelay: 0.1
   interactDelay: 0.1
@@ -358,7 +359,7 @@ MonoBehaviour:
   controlInput: {x: 0, y: 0}
   interactables: []
   headbuttables: []
-  gameController: {fileID: 0}
+  fadePane: {fileID: 0}
 --- !u!136 &347174939014070519
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -624,6 +625,7 @@ MonoBehaviour:
   sensitivity_Y: 10
   pitchMinMax: {x: -30, y: 45}
   acceleration: 1.39
+  lockPosition: 0
 --- !u!1 &347174940594812133
 GameObject:
   m_ObjectHideFlags: 0
