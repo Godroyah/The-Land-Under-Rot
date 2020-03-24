@@ -8,10 +8,20 @@ public class Interactable : MonoBehaviour
     protected ObjectPreferences objPreferences;
     protected AudioSource audioSource;
 
+    private Event_Trigger eventTrigger;
     public GameObject billboard_UI;
+    public bool usesCamEvent;
 
     private void Awake()
     {
+        if(usesCamEvent)
+        {
+            eventTrigger = GetComponent<Event_Trigger>();
+            if(eventTrigger == null)
+            {
+                Debug.LogWarning("This object is marked as using a Cam Event! Either mark 'usesCamEvent' as false or attach an Event_Trigger script to this object!");
+            }
+        }
         if (!GetComponent<Rigidbody>())
             Debug.LogWarning("This interactable ("+ gameObject.name + ") does not have a Rigidbody!");
 
@@ -37,6 +47,11 @@ public class Interactable : MonoBehaviour
     {
         // This method is meant to be overwritten
         Debug.Log(gameObject.name + " has been interacted with.");
+
+        //if(usesCamEvent)
+        //{
+
+        //}
 
         if (objPreferences != null && audioSource != null)
             audioSource.Play();

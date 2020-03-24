@@ -10,11 +10,15 @@ public class Bark : Interactable
     ObjectPreferences objPrefs;
     ParticleSystem playerParticles;
     ParticleSystem barkParticles;
+    
     public GameObject eventBark;
+    //Temporary until EventTrigger script is in place
+
     Gong gongControl;
 
     private void Start()
     {
+        //Remove once new EventTrigger script is in place
         if(isEvent)
         {
             gongControl = eventBark.GetComponent<Gong>();

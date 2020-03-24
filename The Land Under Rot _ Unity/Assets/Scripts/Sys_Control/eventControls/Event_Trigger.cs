@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HB_Event : Interactable
+public class Event_Trigger : MonoBehaviour
 {
+    private PlayerController playerController;
+
     public GameObject cinematicCamera;
 
     private Camera cameraComponent;
@@ -35,31 +37,40 @@ public class HB_Event : Interactable
         sceneStarted = false;
 
 
-        if (canSound)
-        {
-            if (objPreferences != null && audioSource != null)
-                audioSource.clip = objPreferences.headbutt_AudioClip;
-        }
+        //if (canSound)
+        //{
+        //    if (objPreferences != null && audioSource != null)
+        //        audioSource.clip = objPreferences.headbutt_AudioClip;
+        //}
     }
 
-    public override void Interact()
-    {
-        base.Interact();
+    //public void KickOffEvent()
+    //{
+    //    if (firstInteraction || alwaysInteract)
+    //    {
+    //        eventCamController.startScene = true;
+    //        interactionStarted = true;
 
-        // Moved 'PlaySound' to the base Interactable
-        // bc each obj will play a sound if they have one
-        // regardless of the object. And if they don't have one 
-        // assigned then they won't play a sound 
+    //        StartCoroutine(ShowTime());
+    //    }
+    //}
 
-        if (firstInteraction || alwaysInteract)
-        {
-            eventCamController.startScene = true;
-            interactionStarted = true;
 
-            StartCoroutine(ShowTime());
-        }
+    //public override void Interact()
+    //{
+    //    base.Interact();
 
-    }
+    //    if (firstInteraction || alwaysInteract)
+    //    {
+    //        eventCamController.startScene = true;
+    //        interactionStarted = true;
+
+    //        StartCoroutine(ShowTime());
+    //    }
+
+    //}
+
+
 
     private void Update()
     {
@@ -67,6 +78,17 @@ public class HB_Event : Interactable
         if (interactionStarted && !eventCamController.startScene && sceneStarted)
         {
             StartCoroutine(EndTime());
+        }
+    }
+
+    public void InitiateEvent()
+    {
+        if (firstInteraction || alwaysInteract)
+        {
+            eventCamController.startScene = true;
+            interactionStarted = true;
+
+            StartCoroutine(ShowTime());
         }
     }
 
@@ -126,11 +148,11 @@ public class HB_Event : Interactable
         yield return new WaitForEndOfFrame();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Headbutt"))
-        {
-            Interact();
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Headbutt"))
+    //    {
+    //        Interact();
+    //    }
+    //}
 }

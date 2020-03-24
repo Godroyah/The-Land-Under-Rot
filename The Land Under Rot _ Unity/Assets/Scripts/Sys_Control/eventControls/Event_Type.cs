@@ -8,11 +8,6 @@ public class Event_Type : MonoBehaviour
 {
     public string eventName;
 
-    private void Awake()
-    {
-        
-    }
-
     public virtual void StartEvent()
     {
         //This method is meant to be overwritten
@@ -20,8 +15,4 @@ public class Event_Type : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        
-    }
 }

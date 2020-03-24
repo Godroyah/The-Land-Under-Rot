@@ -77,6 +77,11 @@ public class GazeGrowth : Interactable
                     if (!waitReturn)
                         StartCoroutine(Fungi(returnIn));
                     break;
+                //Below temporary until functions for Green and Yellow Gazegrowths are added;
+                case GazeGrowthType.Green:
+                    break;
+                case GazeGrowthType.Yellow:
+                    break;
                 default:
                     break;
             }
@@ -144,7 +149,7 @@ public class GazeGrowth : Interactable
 
 public enum GazeGrowthType
 {
-    Blue, Red
+    Blue, Red, Green, Yellow
 }
 
 public enum GG_Anim
