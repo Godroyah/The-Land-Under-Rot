@@ -10,14 +10,18 @@ public class Interactable : MonoBehaviour
 
     private Event_Trigger eventTrigger;
     public GameObject billboard_UI;
+
     public bool usesCamEvent;
+    public bool headbuttActivation;
+    public bool dialogueActivation;
+    public bool remoteActivation;
 
     private void Awake()
     {
-        if(usesCamEvent)
+        if (usesCamEvent)
         {
             eventTrigger = GetComponent<Event_Trigger>();
-            if(eventTrigger == null)
+            if (eventTrigger == null)
             {
                 Debug.LogWarning("This object is marked as using a Cam Event! Either mark 'usesCamEvent' as false or attach an Event_Trigger script to this object!");
             }
@@ -48,10 +52,21 @@ public class Interactable : MonoBehaviour
         // This method is meant to be overwritten
         Debug.Log(gameObject.name + " has been interacted with.");
 
-        //if(usesCamEvent)
-        //{
+        if (usesCamEvent)
+        {
+            if(headbuttActivation)
+            {
 
-        //}
+            }
+            else if(dialogueActivation)
+            {
+
+            }
+            else if(remoteActivation)
+            {
+
+            }
+        }
 
         if (objPreferences != null && audioSource != null)
             audioSource.Play();

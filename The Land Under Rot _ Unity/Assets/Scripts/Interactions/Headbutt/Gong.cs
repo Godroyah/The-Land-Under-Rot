@@ -18,6 +18,10 @@ public class Gong : Interactable
     public bool alwaysInteract;
     public bool sceneStarted;
 
+    //public bool headbuttActivation;
+    //public bool dialogueActivation;
+    //public bool remoteActivation;
+
     public bool canSound;
     //TODO: This is janky AF; fix later
 
