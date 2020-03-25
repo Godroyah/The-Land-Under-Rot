@@ -12,9 +12,6 @@ public class Interactable : MonoBehaviour
     public GameObject billboard_UI;
 
     public bool usesCamEvent;
-    public bool headbuttActivation;
-    public bool dialogueActivation;
-    public bool remoteActivation;
 
     private void Awake()
     {
@@ -54,18 +51,7 @@ public class Interactable : MonoBehaviour
 
         if (usesCamEvent)
         {
-            if(headbuttActivation)
-            {
-
-            }
-            else if(dialogueActivation)
-            {
-
-            }
-            else if(remoteActivation)
-            {
-
-            }
+            eventTrigger.InitiateEvent();
         }
 
         if (objPreferences != null && audioSource != null)

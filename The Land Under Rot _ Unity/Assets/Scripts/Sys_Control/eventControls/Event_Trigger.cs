@@ -44,18 +44,6 @@ public class Event_Trigger : MonoBehaviour
         //}
     }
 
-    //public void KickOffEvent()
-    //{
-    //    if (firstInteraction || alwaysInteract)
-    //    {
-    //        eventCamController.startScene = true;
-    //        interactionStarted = true;
-
-    //        StartCoroutine(ShowTime());
-    //    }
-    //}
-
-
     //public override void Interact()
     //{
     //    base.Interact();
@@ -69,8 +57,6 @@ public class Event_Trigger : MonoBehaviour
     //    }
 
     //}
-
-
 
     private void Update()
     {

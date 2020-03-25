@@ -47,17 +47,6 @@ public class Gong : Interactable
         }
     }
 
-    //public void KickOffEvent()
-    //{
-    //    if (firstInteraction || alwaysInteract)
-    //    {
-    //        eventCamController.startScene = true;
-    //        interactionStarted = true;
-
-    //        StartCoroutine(ShowTime());
-    //    }
-    //}
-
 
     public override void Interact()
     {
