@@ -36,7 +36,7 @@ namespace Toon
         //Material material = null;
         Material matInstance;
         [SerializeField] Vector3 meshCenter = Vector3.zero;
-        [SerializeField] int maxLights = 6;
+        [SerializeField] int maxLights = 2;
 
         [Header("Shade check")]
         [SerializeField] bool raycast = true;
