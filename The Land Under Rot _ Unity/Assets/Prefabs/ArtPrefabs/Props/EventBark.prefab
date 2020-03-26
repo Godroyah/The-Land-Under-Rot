@@ -191,7 +191,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3414086823731512096}
-  - component: {fileID: 2317378808793519010}
+  - component: {fileID: 1415534244702047323}
+  - component: {fileID: 2504820681999336830}
   m_Layer: 0
   m_Name: EventBark
   m_TagString: Untagged
@@ -215,7 +216,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.17600001, y: 182.57, z: 3.042}
---- !u!114 &2317378808793519010
+--- !u!114 &1415534244702047323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,17 +225,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 3414086823731512103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f537971a10a58f47a8d056c0a6f979b, type: 3}
+  m_Script: {fileID: 11500000, guid: e56d054762d0f4044a49f65032ff7948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  billboard_UI: {fileID: 0}
-  usesCamEvent: 0
   cinematicCamera: {fileID: 2317378808256736391}
-  firstInteraction: 0
-  interactionStarted: 0
   alwaysInteract: 0
-  sceneStarted: 0
   canSound: 0
+--- !u!65 &2504820681999336830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3414086823731512103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45503256, y: 0.9999998, z: 1}
+  m_Center: {x: 0.5271792, y: -0.04317033, z: -0.005156578}
 --- !u!1 &3414086824195743884
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,9 +351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d2854072769be41bd9c38f30892a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventTrigger: {fileID: 0}
   billboard_UI: {fileID: 0}
   usesCamEvent: 0
-  isEvent: 1
   barkContainer: {fileID: 6647498827203100937}
   eventBark: {fileID: 3414086823731512103}
 --- !u!114 &8514218548650601036

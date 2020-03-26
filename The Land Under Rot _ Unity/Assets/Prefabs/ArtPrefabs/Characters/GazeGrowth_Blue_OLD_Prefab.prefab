@@ -573,8 +573,7 @@ GameObject:
   - component: {fileID: 4827274090009747427}
   - component: {fileID: 3425367195191406184}
   - component: {fileID: 7140791238620803339}
-  - component: {fileID: 5785300376101255683}
-  - component: {fileID: 1990448067573659902}
+  - component: {fileID: 3919584972362066052}
   m_Layer: 0
   m_Name: '@GazeGrowth'
   m_TagString: Untagged
@@ -622,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   billboard_UI: {fileID: 0}
-  usesCamEvent: 0
+  usesCamEvent: 1
   growthType: 0
   cordysepBarrier: {fileID: 0}
   lowerDistance: 15
@@ -646,7 +645,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5785300376101255683
+--- !u!114 &3919584972362066052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -655,36 +654,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6263101587201027615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f537971a10a58f47a8d056c0a6f979b, type: 3}
+  m_Script: {fileID: 11500000, guid: e56d054762d0f4044a49f65032ff7948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  billboard_UI: {fileID: 0}
-  usesCamEvent: 0
   cinematicCamera: {fileID: 1861621381}
-  firstInteraction: 0
-  interactionStarted: 0
   alwaysInteract: 1
-  sceneStarted: 0
-  canSound: 0
---- !u!114 &1990448067573659902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6263101587201027615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f537971a10a58f47a8d056c0a6f979b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  billboard_UI: {fileID: 0}
-  usesCamEvent: 0
-  cinematicCamera: {fileID: 1861621381}
-  firstInteraction: 0
-  interactionStarted: 0
-  alwaysInteract: 1
-  sceneStarted: 0
   canSound: 0
 --- !u!1 &6609878635431611887
 GameObject:

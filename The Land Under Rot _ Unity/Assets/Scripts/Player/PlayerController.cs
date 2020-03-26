@@ -183,6 +183,8 @@ public class PlayerController : MonoBehaviour
         rotationTarget.name = "RotationTarget$$";
 
         camControl.rotationTarget = rotationTarget;
+
+        //GameController.Instance.playerController = this;
     }
 
     // Start is called before the first frame update

@@ -14,12 +14,20 @@ public class Event_Cam : MonoBehaviour
 
     private int currentScene;
 
+    private Vector3 restingPoint;
+
     // Start is called before the first frame update
     void Start()
     {
+        restingPoint = Vector3.zero;
         currentScene = 0;
         currentTime = shots[currentScene].sceneTime;
-        
+
+        Invoke("Setup", 1);
+    }
+
+    void Setup()
+    {
         if (shots[0].viewpoint == null)
         {
             shots[0].viewpoint = GameController.Instance.playerController.camControl.myCamera.transform;
@@ -52,6 +60,7 @@ public class Event_Cam : MonoBehaviour
         {
             currentScene = 0;
             currentTime = shots[currentScene].sceneTime;
+            transform.position = restingPoint;
         }
         //TODO: Kinda jank just for reuse of Red GazeGrowth
 

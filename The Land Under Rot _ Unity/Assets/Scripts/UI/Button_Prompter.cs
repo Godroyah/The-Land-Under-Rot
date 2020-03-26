@@ -22,8 +22,10 @@ public class Button_Prompter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        billboardUI.billBoardCam = GameController.Instance.playerController.camControl.myCamera;
-        billboardUI.camTransform = billboardUI.billBoardCam.transform;
+        Invoke("AssignCam", 1);
+        //gameController = GameController.Instance;
+        //billboardUI.billBoardCam = gameController.playerController.camControl.myCamera;
+        //billboardUI.camTransform = billboardUI.billBoardCam.transform;
 
         //if (gameController == null)
         //{
@@ -56,6 +58,13 @@ public class Button_Prompter : MonoBehaviour
         {
             imageObject.SetActive(false);
         }
+    }
+
+    void AssignCam()
+    {
+        gameController = GameController.Instance;
+        billboardUI.billBoardCam = gameController.playerController.camControl.myCamera;
+        billboardUI.camTransform = billboardUI.billBoardCam.transform;
     }
 
     void OnTriggerEnter(Collider player)

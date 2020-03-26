@@ -132,7 +132,8 @@ GameObject:
   - component: {fileID: 5154103883600281322}
   - component: {fileID: 5154103883600281325}
   - component: {fileID: 5154103883600281324}
-  - component: {fileID: 5154103883600281323}
+  - component: {fileID: 3274017071594787779}
+  - component: {fileID: 3745695218511308302}
   - component: {fileID: 4257499882928944758}
   - component: {fileID: 3983183949059633759}
   m_Layer: 0
@@ -185,7 +186,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5154103883600281323
+--- !u!114 &3274017071594787779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,12 +199,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   billboard_UI: {fileID: 0}
-  usesCamEvent: 0
+  usesCamEvent: 1
+--- !u!114 &3745695218511308302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5154103883600281321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56d054762d0f4044a49f65032ff7948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   cinematicCamera: {fileID: 5154103884727477041}
-  firstInteraction: 0
-  interactionStarted: 0
   alwaysInteract: 0
-  sceneStarted: 0
   canSound: 0
 --- !u!114 &4257499882928944758
 MonoBehaviour:

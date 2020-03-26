@@ -14,10 +14,10 @@ public class Event_Trigger : MonoBehaviour
 
     GameObject[] playerUI;
 
-    public bool firstInteraction;
-    public bool interactionStarted;
+    private bool firstInteraction;
+    private bool interactionStarted;
     public bool alwaysInteract;
-    public bool sceneStarted;
+    private bool sceneStarted;
 
     public bool canSound;
     //TODO: This is janky AF; fix later

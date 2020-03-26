@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class Bark : Interactable
 {
-    public bool isEvent;
+    //public bool isEvent;
     GameController gameController;
     public GameObject barkContainer;
     ObjectPreferences objPrefs;
     ParticleSystem playerParticles;
     ParticleSystem barkParticles;
+    BoxCollider thisTrigger;
     
-    public GameObject eventBark;
+    //public GameObject eventBark;
     //Temporary until EventTrigger script is in place
 
-    Gong gongControl;
+    //Gong gongControl;
 
     private void Start()
     {
         //Remove once new EventTrigger script is in place
-        if(isEvent)
-        {
-            gongControl = eventBark.GetComponent<Gong>();
-        }
+        //if(isEvent)
+        //{
+        //    gongControl = eventBark.GetComponent<Gong>();
+        //}
+        thisTrigger = GetComponent<BoxCollider>();
 
         objPrefs = GetComponent<ObjectPreferences>();
         if(objPrefs != null)
@@ -42,10 +44,11 @@ public class Bark : Interactable
 
         playerParticles.Play();
         barkParticles.Play();
-        if(isEvent)
-        {
-            gongControl.Interact();
-        }
+        thisTrigger.enabled = false;
+        //if(isEvent)
+        //{
+        //    gongControl.Interact();
+        //}
         Destroy(barkContainer);
     }
 

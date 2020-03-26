@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 1998652955939066138}
   - component: {fileID: 4011797536076001541}
   - component: {fileID: 8536831223775294864}
+  - component: {fileID: 7772124594672470313}
   m_Layer: 0
   m_Name: '@GazeGrowth'
   m_TagString: Untagged
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   billboard_UI: {fileID: 0}
-  usesCamEvent: 0
+  usesCamEvent: 1
   growthType: 1
   cordysepBarrier: {fileID: 0}
   lowerDistance: 8
@@ -265,6 +266,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7772124594672470313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733519546757518798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56d054762d0f4044a49f65032ff7948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinematicCamera: {fileID: 2070275744}
+  alwaysInteract: 1
+  canSound: 0
 --- !u!64 &7848727557073609740
 MeshCollider:
   m_ObjectHideFlags: 0

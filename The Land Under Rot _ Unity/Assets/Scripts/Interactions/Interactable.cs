@@ -23,8 +23,8 @@ public class Interactable : MonoBehaviour
                 Debug.LogWarning("This object is marked as using a Cam Event! Either mark 'usesCamEvent' as false or attach an Event_Trigger script to this object!");
             }
         }
-        if (!GetComponent<Rigidbody>())
-            Debug.LogWarning("This interactable ("+ gameObject.name + ") does not have a Rigidbody!");
+        //if (!GetComponent<Rigidbody>())
+        //    Debug.LogWarning("This interactable ("+ gameObject.name + ") does not have a Rigidbody!");
 
         //#region PlayerController Search
         //GameObject temp = GameObject.FindGameObjectWithTag("Player");
