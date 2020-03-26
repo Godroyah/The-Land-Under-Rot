@@ -14,12 +14,15 @@ public class Event_Cam : MonoBehaviour
 
     private int currentScene;
 
-    private Vector3 restingPoint;
+    //private Transform restingPoint;
+
+    //private Vector3 restingPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        restingPoint = Vector3.zero;
+        //restingPoint = transform.position;
+        //transform.position = restingPoint;
         currentScene = 0;
         currentTime = shots[currentScene].sceneTime;
 
@@ -60,7 +63,7 @@ public class Event_Cam : MonoBehaviour
         {
             currentScene = 0;
             currentTime = shots[currentScene].sceneTime;
-            transform.position = restingPoint;
+            //transform.position = restingPoint;
         }
         //TODO: Kinda jank just for reuse of Red GazeGrowth
 
@@ -69,7 +72,7 @@ public class Event_Cam : MonoBehaviour
 
         if (startScene)
         {
-
+            
             if (currentTime < 0)
             {
                 if (currentScene != shots.Length - 1)
@@ -121,14 +124,19 @@ public class Event_Cam : MonoBehaviour
                 transform.rotation = currentViewPoint.transform.rotation;
             }
         }
-        else
-        {
-            if(shots[0].viewpoint != null)
-            {
-                transform.position = shots[currentScene].viewpoint.position;
-                transform.rotation = shots[currentScene].viewpoint.rotation;
-            }
-        }
+        //else
+        //{
+        //    if(shots[0].viewpoint != null)
+        //    {
+        //        transform.position = shots[currentScene].viewpoint.position;
+        //        transform.rotation = shots[currentScene].viewpoint.rotation;
+        //    }
+        //    if (shots[0].viewpoint != null)
+        //    {
+        //        transform.position = restingPoint;
+        //        transform.rotation = Quaternion.identity;
+        //    }
+        //}
     }
 }
 
