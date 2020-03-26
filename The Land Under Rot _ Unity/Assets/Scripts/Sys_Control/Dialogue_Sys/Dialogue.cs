@@ -86,6 +86,10 @@ public class Dialogue : MonoBehaviour
             dialogueManager.hasActiveDialogue = false;
         }
 
+        //Debug.Log("Dialogue is done!");
+
+
+
         //Camera.main.orthographicSize = tempNum;
         yield return null;
     }

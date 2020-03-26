@@ -11,7 +11,12 @@ public class Interactable : MonoBehaviour
     private Event_Trigger eventTrigger;
     public GameObject billboard_UI;
 
+
+    //Determines whether or not interactable can activate a cutscene and how the cutscene should be activated through this interactable
     public bool usesCamEvent;
+    public bool headButtActivation;
+    public bool dialogueActivation;
+    public bool triggerActivation;
 
     private void Awake()
     {
@@ -49,9 +54,22 @@ public class Interactable : MonoBehaviour
         // This method is meant to be overwritten
         Debug.Log(gameObject.name + " has been interacted with.");
 
+
+        //Interactable cutscene activation
         if (usesCamEvent)
         {
-            eventTrigger.InitiateEvent();
+            if(headButtActivation)
+            {
+                eventTrigger.InitiateEvent();
+            }
+            else if(dialogueActivation)
+            {
+
+            }
+            //else if(triggerActivation)
+            //{
+
+            //}
         }
 
         if (objPreferences != null && audioSource != null)
