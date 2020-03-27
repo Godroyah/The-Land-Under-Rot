@@ -8,7 +8,7 @@ public class CartDriver : Interactable
     //private Billboard_UI billboardUI;
 
     GameController gameController;
-    DialogueManager dialogueManager;
+    //DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()

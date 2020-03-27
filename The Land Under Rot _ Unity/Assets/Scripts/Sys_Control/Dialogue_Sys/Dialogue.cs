@@ -9,17 +9,28 @@ public class Dialogue : MonoBehaviour
     public string SceneName;
     public GameObject[] Frames;
 
+    Event_Trigger eventTrigger;
     GameController gameController;
     public DialogueManager dialogueManager;
 
     public TextDisplayer currentTextDisplayer;
     public bool hasFinishedDisplayingText = false;
+    public bool isCamEventActive;
 
     private void Start()
     {
         for (int i = 0; i < Frames.Length; i++)
         {
             Frames[i].SetActive(false);
+        }
+
+        if(isCamEventActive)
+        {
+            if(eventTrigger == null)
+            {
+                eventTrigger = GetComponent<Event_Trigger>();
+                //Include LogWarning if no Event_Trigger component is included
+            }
         }
     }
 
@@ -87,7 +98,10 @@ public class Dialogue : MonoBehaviour
         }
 
         //Debug.Log("Dialogue is done!");
-
+        if(dialogueManager.prepCamEvent && isCamEventActive)
+        {
+            eventTrigger.InitiateEvent();
+        }
 
 
         //Camera.main.orthographicSize = tempNum;

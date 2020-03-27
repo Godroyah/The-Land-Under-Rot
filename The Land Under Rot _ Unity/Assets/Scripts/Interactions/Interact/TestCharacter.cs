@@ -8,7 +8,7 @@ public class TestCharacter : Interactable
     //private Billboard_UI billboard_UI;
 
     GameController gameController;
-    DialogueManager dialogueManager;
+    //DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()

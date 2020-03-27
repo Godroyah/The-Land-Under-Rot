@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Oldman : Interactable
 {
-    DialogueManager dialogueManager;
+    //DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()

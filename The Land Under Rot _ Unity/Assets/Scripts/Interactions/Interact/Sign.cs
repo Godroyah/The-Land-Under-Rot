@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sign : Interactable
 {
     //GameController gameController;
-    DialogueManager dialogueManager;
+    //DialogueManager dialogueManager;
     public Dialogue dialogue;
 
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class Sign : Interactable
         //}
         //#endregion
 
-        billboard_UI.SetActive(false);
+       // billboard_UI.SetActive(false);
     }
 
     public override void Interact()

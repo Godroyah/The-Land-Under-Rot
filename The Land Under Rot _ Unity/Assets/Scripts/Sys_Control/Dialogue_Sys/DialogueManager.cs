@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
 
     public Canvas myCanvas;
 
+    public bool prepCamEvent;
     public bool hasActiveDialogue = false;
 
     [Header("Scene Testing")]
@@ -26,6 +27,8 @@ public class DialogueManager : MonoBehaviour
     public AudioClip dialogueMusic;
     public bool dialogueMusicIsPlaying;
     public bool shouldTurnOffMusic;
+
+    private bool activeDialogueEvent;
 
     Dialogue dialogue;
 
@@ -53,6 +56,8 @@ public class DialogueManager : MonoBehaviour
         {
             StartDialogue(TestScene.GetComponent<Dialogue>().SceneName);
         }
+
+        
     }
 
     private void LateUpdate()

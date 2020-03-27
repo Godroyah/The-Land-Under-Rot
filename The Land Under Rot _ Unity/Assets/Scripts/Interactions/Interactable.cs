@@ -7,8 +7,11 @@ public class Interactable : MonoBehaviour
     protected PlayerController playerController;
     protected ObjectPreferences objPreferences;
     protected AudioSource audioSource;
+    protected DialogueManager dialogueManager;
 
     private Event_Trigger eventTrigger;
+    
+
     public GameObject billboard_UI;
 
 
@@ -18,9 +21,11 @@ public class Interactable : MonoBehaviour
     public bool dialogueActivation;
     public bool triggerActivation;
 
+   
+
     private void Awake()
     {
-        if (usesCamEvent)
+        if (usesCamEvent && headButtActivation)
         {
             eventTrigger = GetComponent<Event_Trigger>();
             if (eventTrigger == null)
@@ -62,9 +67,9 @@ public class Interactable : MonoBehaviour
             {
                 eventTrigger.InitiateEvent();
             }
-            else if(dialogueActivation)
+            else if (dialogueActivation)
             {
-
+                dialogueManager.prepCamEvent = true;
             }
             //else if(triggerActivation)
             //{
