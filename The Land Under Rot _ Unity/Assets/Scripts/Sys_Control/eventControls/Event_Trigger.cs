@@ -95,14 +95,14 @@ public class Event_Trigger : MonoBehaviour
             playerController.eventActive = true;
 
 
-            playerController.camControl.myCamera.enabled = false;
+            //playerController.camControl.myCamera.enabled = false;
 
             foreach (GameObject ui in playerUI)
             {
                 ui.SetActive(false);
             }
 
-            playerController.camControl.enabled = false;
+            //playerController.camControl.enabled = false;
             cameraComponent.enabled = true;
         }
 
@@ -114,14 +114,14 @@ public class Event_Trigger : MonoBehaviour
     {
 
         cameraComponent.enabled = false;
-        playerController.camControl.enabled = true;
+        //playerController.camControl.enabled = true;
 
         foreach (GameObject ui in playerUI)
         {
             ui.SetActive(true);
         }
 
-        playerController.camControl.myCamera.enabled = true;
+        //playerController.camControl.myCamera.enabled = true;
 
         playerController.eventActive = false;
 

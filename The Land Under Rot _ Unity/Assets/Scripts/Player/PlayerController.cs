@@ -223,58 +223,74 @@ public class PlayerController : MonoBehaviour
         IsGrounded = Physics.CheckSphere(groundChecker.position, 0.4f, playerLayerMask, QueryTriggerInteraction.Ignore);
         //IsGrounded = Physics.CheckBox(groundChecker.position, new Vector3(0.75f, 0.25f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
 
-        #region Interactable Check
+        //if (Camera.main.enabled)
+        //{
+            #region Interactable Check
 
-        //Redefine above
+            //Redefine above
 
 
-        if (interactables.Count > 0) // If there are interactables in range...
-        {
-            Interactable closestTarget = null;
-            float minimalDistance = float.MaxValue;
-            Vector3 screenCenter = new Vector3(Screen.width, Screen.height, 0) / 2;
-
-            for (int targetIndex = 0; targetIndex < interactables.Count; targetIndex++)
+            if (interactables.Count > 0) // If there are interactables in range...
             {
-                Interactable target = interactables[targetIndex];
-                if (target == null) // Check to see if the interactable still exists
+                Interactable closestTarget = null;
+                float minimalDistance = float.MaxValue;
+                Vector3 screenCenter = new Vector3(Screen.width, Screen.height, 0) / 2;
+
+                for (int targetIndex = 0; targetIndex < interactables.Count; targetIndex++)
                 {
-                    interactables.RemoveAt(targetIndex);
-                    return;
-                }
-                Vector3 targetScreenPoint = Camera.main.WorldToScreenPoint(target.transform.position);
-
-                RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(targetScreenPoint); // TODO: Make sure this ray goes forward
-
-                if (Physics.Raycast(ray, out hit))
-                {
-                    Transform objectHit = hit.transform;
-
-                    /*
-                    if (hit.collider.gameObject != interactables[targetIndex].gameObject) // If the targeted gameObject wasn't the object hit
-                        continue; // If it doesn't hit, it doesn't see it
-                    */
-
-                    float distance = Vector2.Distance(targetScreenPoint, screenCenter);
-
-                    if (distance < minimalDistance) // If the targeted gameObject is closer to the center of the screen than the previously found
+                    Interactable target = interactables[targetIndex];
+                    if (target == null) // Check to see if the interactable still exists
                     {
-                        minimalDistance = distance;
-                        closestTarget = target;
+                        interactables.RemoveAt(targetIndex);
+                        return;
+                    }
+                    Vector3 targetScreenPoint = Camera.main.WorldToScreenPoint(target.transform.position);
+
+                    RaycastHit hit;
+                    Ray ray = Camera.main.ScreenPointToRay(targetScreenPoint); // TODO: Make sure this ray goes forward
+
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        Transform objectHit = hit.transform;
+
+                        /*
+                        if (hit.collider.gameObject != interactables[targetIndex].gameObject) // If the targeted gameObject wasn't the object hit
+                            continue; // If it doesn't hit, it doesn't see it
+                        */
+
+                        float distance = Vector2.Distance(targetScreenPoint, screenCenter);
+
+                        if (distance < minimalDistance) // If the targeted gameObject is closer to the center of the screen than the previously found
+                        {
+                            minimalDistance = distance;
+                            closestTarget = target;
+                        }
+                    }
+
+                    if (closestTarget != null)
+                    {
+                        if (currentTarget != null)
+                        {
+                            ToggleHighlight(currentTarget, false);
+                        }
+                        currentTarget = closestTarget;
                     }
                 }
-
-                if (closestTarget != null)
+                /*
+                if (currentTarget != null)
                 {
-                    if (currentTarget != null)
+                    if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
+                    {
+                        ToggleHighlight(currentTarget, true);
+                    }
+                    else
                     {
                         ToggleHighlight(currentTarget, false);
+                        currentTarget = null;
                     }
-                    currentTarget = closestTarget;
-                }
-            }
-            /*
+                }*/
+            //}
+
             if (currentTarget != null)
             {
                 if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
@@ -286,24 +302,10 @@ public class PlayerController : MonoBehaviour
                     ToggleHighlight(currentTarget, false);
                     currentTarget = null;
                 }
-            }*/
-        }
-
-        if (currentTarget != null)
-        {
-            if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
-            {
-                ToggleHighlight(currentTarget, true);
             }
-            else
-            {
-                ToggleHighlight(currentTarget, false);
-                currentTarget = null;
-            }
+
+            #endregion
         }
-
-        #endregion
-
 
         // TODO: Limit this to happen if outside of specific range
         //       Maybe if no input don't move rotationTarget?

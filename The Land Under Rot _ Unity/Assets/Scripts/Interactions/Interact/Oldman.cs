@@ -5,6 +5,7 @@ using UnityEngine;
 public class Oldman : Interactable
 {
     //DialogueManager dialogueManager;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -14,10 +15,10 @@ public class Oldman : Interactable
 
     public override void Interact()
     {
-        base.Interact();
-
         if (GameController.Instance.dialogueManager != null)
             dialogueManager = GameController.Instance.dialogueManager;
+
+        base.Interact();
 
         if (GameController.Instance != null)
         {
