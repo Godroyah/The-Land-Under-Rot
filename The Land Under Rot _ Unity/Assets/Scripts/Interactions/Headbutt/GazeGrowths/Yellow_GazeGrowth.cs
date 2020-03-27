@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Green_GazeGrowth : GazeGrowth
+public class Yellow_GazeGrowth : GazeGrowth
 {
-    public bool isOpen = false;
+    public float duration = 1f;
 
-    public GameObject openColliders;
-    public GameObject closedColliders;
+    private float opacity = 1f;
+    private float timerValue = 0f;
+    private Coroutine timer;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,14 @@ public class Green_GazeGrowth : GazeGrowth
     // Update is called once per frame
     void Update()
     {
+        if (opacity == 0f)
+        {
+            if (timer != null)
+                StopCoroutine(timer);
 
+
+            timer = StartCoroutine(Timer(duration));
+        }
     }
 
     public override void Interact()
@@ -31,19 +39,6 @@ public class Green_GazeGrowth : GazeGrowth
         animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
         */
 
-        isOpen = !isOpen;
-
-        // Alternates the colliders so that one is always on
-        openColliders.SetActive(isOpen);
-        closedColliders.SetActive(!isOpen);
-
-        /* Original Test
-        if (isOpen)
-        {
-            openColliders.SetActive(isOpen);
-            closedColliders.SetActive(!isOpen);
-        }
-        */
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,6 +46,19 @@ public class Green_GazeGrowth : GazeGrowth
         if (other.CompareTag("Headbutt"))
         {
             Interact();
+        }
+    }
+
+    IEnumerator Timer(float a_Duration)
+    {
+        timerValue = a_Duration;
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            timerValue -= 0.5f;
+
+            if (timerValue <= 0)
+                break;
         }
     }
 }
