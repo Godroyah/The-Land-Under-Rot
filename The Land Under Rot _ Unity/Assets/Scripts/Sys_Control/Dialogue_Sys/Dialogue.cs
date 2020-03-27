@@ -98,11 +98,10 @@ public class Dialogue : MonoBehaviour
         }
 
         //Debug.Log("Dialogue is done!");
-        if(dialogueManager.prepCamEvent && isCamEventActive)
+        if (dialogueManager.prepCamEvent && isCamEventActive)
         {
             eventTrigger.InitiateEvent();
         }
-
 
         //Camera.main.orthographicSize = tempNum;
         yield return null;

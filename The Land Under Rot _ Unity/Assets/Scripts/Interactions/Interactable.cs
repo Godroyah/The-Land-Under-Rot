@@ -67,6 +67,7 @@ public class Interactable : MonoBehaviour
             }
             else if (dialogueActivation)
             {
+                Debug.Log("Prep scene");
                 dialogueManager.prepCamEvent = true;
             }
             //else if(triggerActivation)

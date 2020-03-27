@@ -18,6 +18,7 @@ public class Oldman : Interactable
         if (GameController.Instance.dialogueManager != null)
             dialogueManager = GameController.Instance.dialogueManager;
 
+        //Interact MUST come after dialogue manager call to ensure any camera events called word properly
         base.Interact();
 
         if (GameController.Instance != null)
