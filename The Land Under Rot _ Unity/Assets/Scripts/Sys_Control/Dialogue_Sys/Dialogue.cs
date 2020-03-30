@@ -37,11 +37,22 @@ public class Dialogue : MonoBehaviour
     public void StartScene()
     {
         StartCoroutine(Scene());
+
+        //Correct code is below but is currently bugged; needs fix to turn off StopPlayer in PlayerController
+
+        //if (!isCamEventActive)
+        //{
+        //    StartCoroutine(Scene());
+        //}
+        //else if(isCamEventActive && eventTrigger.interactionStarted == false)
+        //{
+        //    StartCoroutine(Scene());
+        //}
     }
 
     IEnumerator Scene()
     {
-        Debug.Log("Scene Started");
+        //Debug.Log("Scene Started");
 
         if (dialogueManager != null)
         {
@@ -50,6 +61,7 @@ public class Dialogue : MonoBehaviour
 
         for (int i = 0; i < Frames.Length; i++)
         {
+          //  Debug.Log("Depth Level 1");
             if (i != 0)
                 Frames[i - 1].SetActive(false);
 
@@ -57,10 +69,12 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForEndOfFrame();
             while (true)
             {
+            //    Debug.Log("Depth Level 2");
                 // TODO: Extremely high polling number for user input
                 yield return new WaitForSeconds(0.00001f);
                 if (Input.GetButtonDown("Interact"))
                 {
+              //      Debug.Log("Depth Level 3");
                     if (hasFinishedDisplayingText || currentTextDisplayer == null)
                     {
                         hasFinishedDisplayingText = false;
@@ -74,10 +88,12 @@ public class Dialogue : MonoBehaviour
                         yield return new WaitForSeconds(0.1f);
                         while (true)
                         {
+                //            Debug.Log("Depth Level 4");
                             // TODO: Extremely high polling number for user input
                             yield return new WaitForSeconds(0.00001f);
                             if (Input.GetButtonDown("Interact"))
                             {
+                  //              Debug.Log("Depth Level 5");
                                 break;
                             }
                         }
@@ -97,6 +113,8 @@ public class Dialogue : MonoBehaviour
             dialogueManager.hasActiveDialogue = false;
         }
 
+        //Calls on Event_Trigger to start a cam event
+        //KNOWN BUG: Currently is causing the next (or last) frame of dialogue to repeat during cam event.
         //Debug.Log("Dialogue is done!");
         if (dialogueManager.prepCamEvent && isCamEventActive)
         {

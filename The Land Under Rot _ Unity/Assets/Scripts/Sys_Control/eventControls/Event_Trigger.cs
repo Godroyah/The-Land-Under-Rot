@@ -15,7 +15,7 @@ public class Event_Trigger : MonoBehaviour
     GameObject[] playerUI;
 
     private bool firstInteraction;
-    private bool interactionStarted;
+    public bool interactionStarted;
     public bool alwaysInteract;
     private bool sceneStarted;
 
@@ -130,6 +130,7 @@ public class Event_Trigger : MonoBehaviour
         playerController.HeadbuttInput = Input.GetAxis("Headbutt");
         firstInteraction = false;
         sceneStarted = false;
+        interactionStarted = false;
 
         yield return new WaitForEndOfFrame();
     }
