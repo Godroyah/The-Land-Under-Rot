@@ -149,6 +149,9 @@ public class DialogueManager : MonoBehaviour
 
         return false;
     }
+
+
+
 }
 public enum Reply
 {

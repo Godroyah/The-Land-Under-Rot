@@ -36,18 +36,18 @@ public class Dialogue : MonoBehaviour
 
     public void StartScene()
     {
-        StartCoroutine(Scene());
+        //StartCoroutine(Scene());
 
         //Correct code is below but is currently bugged; needs fix to turn off StopPlayer in PlayerController
 
-        //if (!isCamEventActive)
-        //{
-        //    StartCoroutine(Scene());
-        //}
-        //else if(isCamEventActive && eventTrigger.interactionStarted == false)
-        //{
-        //    StartCoroutine(Scene());
-        //}
+        if (!isCamEventActive)
+        {
+            StartCoroutine(Scene());
+        }
+        else if (isCamEventActive && eventTrigger.interactionStarted == false)
+        {
+            StartCoroutine(Scene());
+        }
     }
 
     IEnumerator Scene()
@@ -56,6 +56,7 @@ public class Dialogue : MonoBehaviour
 
         if (dialogueManager != null)
         {
+            //Debug.Log("Still working?");
             dialogueManager.hasActiveDialogue = true;
         }
 
@@ -108,17 +109,19 @@ public class Dialogue : MonoBehaviour
         hasFinishedDisplayingText = false;
         Frames[Frames.Length - 1].SetActive(false);
 
-        if (dialogueManager != null)
-        {
-            dialogueManager.hasActiveDialogue = false;
-        }
-
         //Calls on Event_Trigger to start a cam event
         //KNOWN BUG: Currently is causing the next (or last) frame of dialogue to repeat during cam event.
         //Debug.Log("Dialogue is done!");
         if (dialogueManager.prepCamEvent && isCamEventActive)
         {
+            //dialogueManager.hasActiveDialogue = false;
             eventTrigger.InitiateEvent();
+            yield return new WaitUntil(() => eventTrigger.GetEventCam().startScene == false);
+        }
+
+        if (dialogueManager != null)
+        {
+            dialogueManager.hasActiveDialogue = false;
         }
 
         //Camera.main.orthographicSize = tempNum;

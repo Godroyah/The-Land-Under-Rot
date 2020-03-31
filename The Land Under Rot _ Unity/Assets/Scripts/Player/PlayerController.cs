@@ -217,7 +217,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Debug.Log(interactingCoroutine);
-        Debug.Log(StopPlayer);
+        //Debug.Log(StopPlayer);
+        //Debug.Log(eventActive);
         
         Reset();
         GetInput();
