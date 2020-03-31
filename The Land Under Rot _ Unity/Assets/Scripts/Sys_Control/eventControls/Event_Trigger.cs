@@ -44,6 +44,11 @@ public class Event_Trigger : MonoBehaviour
         //}
     }
 
+    public Event_Cam GetEventCam()
+    {
+        return eventCamController;
+    }
+
     //public override void Interact()
     //{
     //    base.Interact();
