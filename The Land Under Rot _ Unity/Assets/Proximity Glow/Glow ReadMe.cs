@@ -1,5 +1,5 @@
 ﻿// *To create new proximity glowing prefab* 
-// 1) Replace sphere mesh and renderer on proximityGlowSample with intended mesh and renderer. 
+// 1) Replace model with intended mesh. 
 // 2) Make sure look at constraint on HaloEffect has the camera assigned to it and is active.
 // 3) Make sure "Halo Fade" script on HaloEffect and "Proximity Glow" script on parent has the player 
 //    assigned to the player variable and the light assigned to the light variable.
