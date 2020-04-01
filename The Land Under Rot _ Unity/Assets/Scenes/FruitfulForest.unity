@@ -120,6 +120,46 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!21 &4161962
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &10088299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,7 +171,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1511467978}
+      objectReference: {fileID: 2124589927}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -502,7 +542,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1687350120}
+      objectReference: {fileID: 335716849}
     - target: {fileID: 8863303955587991033, guid: fe782e59d7a242f40bc531b923fb02b8,
         type: 3}
       propertyPath: m_Name
@@ -565,46 +605,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe782e59d7a242f40bc531b923fb02b8, type: 3}
---- !u!21 &73884698
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &74870225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -741,7 +741,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1580872629}
+      objectReference: {fileID: 1973877544}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0170e4dcd9648438f0cdb079736858, type: 3}
 --- !u!4 &74870226 stripped
@@ -913,7 +913,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 721588640}
+      objectReference: {fileID: 1238704189}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0170e4dcd9648438f0cdb079736858, type: 3}
 --- !u!1 &90235048
@@ -1008,6 +1008,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90235048}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &94731474
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathStraightRampMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &102951215
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarBranch1Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 2cf098ac84bb3424e835fbfe20a5048a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &102999597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1896,7 @@ Transform:
   - {fileID: 1540150313}
   - {fileID: 866178507}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159045038
 GameObject:
@@ -1910,46 +1990,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159045038}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &162785754
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &163521800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1961,7 +2001,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1634150116}
+      objectReference: {fileID: 514595499}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2259,46 +2299,6 @@ Transform:
   m_Father: {fileID: 1864990685}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -122.297005, z: 0}
---- !u!21 &181531205
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeEyeMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &182128087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,7 +2346,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1353913568}
+      objectReference: {fileID: 658439108}
     - target: {fileID: 2840417009542152660, guid: 31fa3b38d204cf74e8da11e4728319db,
         type: 3}
       propertyPath: m_Name
@@ -2356,7 +2356,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1636392914}
+      objectReference: {fileID: 1509452923}
     - target: {fileID: 5741738089099185177, guid: 31fa3b38d204cf74e8da11e4728319db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2416,7 +2416,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2000057708}
+      objectReference: {fileID: 1000689184}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fa3b38d204cf74e8da11e4728319db, type: 3}
 --- !u!4 &188546536 stripped
@@ -2425,46 +2425,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 188546535}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &192430539
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathIntersectionMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 83185af137e6be744bf67867fa341841, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &201722593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,20 +2553,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205122108}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &208369112 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
-    type: 3}
-  m_PrefabInstance: {fileID: 163521800}
-  m_PrefabAsset: {fileID: 0}
---- !u!21 &213830620
+--- !u!21 &208268217
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarBranch3Mat
+  m_Name: StarTreeFruitMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -2620,7 +2574,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 615bdd159803f2d46a7210e3d2e4f279, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -2639,6 +2593,12 @@ Material:
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
     - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!4 &208369112 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 163521800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &214087156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,7 +2820,7 @@ Transform:
   - {fileID: 1877835040}
   - {fileID: 266783382}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &228318662
 GameObject:
@@ -3046,6 +3006,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235388463}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &239355966
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &239644360
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,46 +3138,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239644360}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &242518449
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveRampMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 75a11df100e016346a2a9723b461f8f4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &242533358
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,46 +3506,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252583732}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &260376850
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &266783381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,46 +3598,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266783381}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &267725975
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeMainMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 3308157d928cd984c821dcb49e484576, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &271695681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3729,7 +3609,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 740156207}
+      objectReference: {fileID: 4161962}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4211,14 +4091,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299528384}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &309525372
+--- !u!21 &308791536
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathStraightRampMat
+  m_Name: StarPathCurveRampMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -4232,7 +4112,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
+        m_Texture: {fileID: 2800000, guid: 75a11df100e016346a2a9723b461f8f4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -4322,7 +4202,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 351565974}
+      objectReference: {fileID: 859010355}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54932c77932ccc445a32c291c0377d1e, type: 3}
 --- !u!4 &310688219 stripped
@@ -4342,7 +4222,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2105010169}
+      objectReference: {fileID: 1548746186}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4702,6 +4582,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328066676}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &335716849
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarBranch1Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 2cf098ac84bb3424e835fbfe20a5048a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &339987236
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,14 +4990,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347522968}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &351565974
+--- !u!21 &348895408
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathStraightRampMat
+  m_Name: StarPathStraightMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -5091,7 +5011,47 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
+        m_Texture: {fileID: 2800000, guid: e1a013f1134b6674c84ac282819c88c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &362436704
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -5291,7 +5251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &383799449
 GameObject:
@@ -5385,6 +5345,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383799449}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &384270283
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathStraightRampMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &400397064
 GameObject:
   m_ObjectHideFlags: 0
@@ -5580,7 +5580,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1907790120}
+      objectReference: {fileID: 1182065370}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5724,7 +5724,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 909008121}
+      objectReference: {fileID: 1229682332}
     - target: {fileID: 7560702084040915385, guid: ffed533df636002458b90ddb74f58227,
         type: 3}
       propertyPath: m_Name
@@ -5916,6 +5916,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421934820}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &426170872
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FruitPlatformMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 269bb78c8c220844dbe978027c6ece87, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &426489161
 GameObject:
   m_ObjectHideFlags: 0
@@ -6744,6 +6784,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448956003}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &449635857
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathStraightRampMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &453074078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6836,6 +6916,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453074078}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &464907412
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathCurveRampMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 75a11df100e016346a2a9723b461f8f4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &465242839
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,46 +7324,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510222955}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &512049498
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &513019547
 GameObject:
   m_ObjectHideFlags: 0
@@ -7336,6 +7416,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513019547}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &514595499
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &517924678
 GameObject:
   m_ObjectHideFlags: 0
@@ -7520,6 +7640,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521771723}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &523723064
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathCurveMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &526817051
 GameObject:
   m_ObjectHideFlags: 0
@@ -7612,6 +7772,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526817051}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &549589566
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathCurveMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &550635011
 GameObject:
   m_ObjectHideFlags: 0
@@ -7645,7 +7845,7 @@ Transform:
   - {fileID: 23908478}
   - {fileID: 453074079}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &562454680
 GameObject:
@@ -7739,54 +7939,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562454680}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &564089221
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Seedling_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 62ddec1c777806249bd856336c79464e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: f70c4f5463a6fef4fb8ed262d3f9a6ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 1
-    - Vector1_4DD94F62: 10
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
-    - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &565028730
 GameObject:
   m_ObjectHideFlags: 0
@@ -7879,6 +8031,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565028730}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &574020756
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathStraightRampMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &574606557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7965,7 +8157,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 213830620}
+      objectReference: {fileID: 1847202938}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a73db6f9151d20f4eb5aad8f3ce7516e, type: 3}
 --- !u!1001 &578494139
@@ -8039,7 +8231,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 732005148}
+      objectReference: {fileID: 94731474}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54932c77932ccc445a32c291c0377d1e, type: 3}
 --- !u!4 &578494140 stripped
@@ -8177,14 +8369,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593808610}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &604087732
+--- !u!21 &608059148
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveMat
+  m_Name: StarPathStraightMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -8198,7 +8390,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Texture: {fileID: 2800000, guid: e1a013f1134b6674c84ac282819c88c6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -8248,7 +8440,7 @@ Transform:
   - {fileID: 104512355}
   - {fileID: 400397065}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &614938029
 PrefabInstance:
@@ -8321,7 +8513,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 731790015}
+      objectReference: {fileID: 1942353567}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0170e4dcd9648438f0cdb079736858, type: 3}
 --- !u!4 &614938030 stripped
@@ -8330,6 +8522,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 614938029}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &638511233
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathTieMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 073a6fad76fe6b64f94deedf85af8c17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &640261374
 GameObject:
   m_ObjectHideFlags: 0
@@ -8585,7 +8817,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 260376850}
+      objectReference: {fileID: 1666821817}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0170e4dcd9648438f0cdb079736858, type: 3}
 --- !u!1 &655142969
@@ -8623,6 +8855,46 @@ Transform:
   m_Father: {fileID: 1864990685}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 161.057, z: 0}
+--- !u!21 &658439108
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeEyeMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &660258528
 GameObject:
   m_ObjectHideFlags: 0
@@ -8715,46 +8987,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660258528}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &666438211
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarBranch3Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 615bdd159803f2d46a7210e3d2e4f279, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &666470286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8766,7 +8998,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 512049498}
+      objectReference: {fileID: 362436704}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8907,7 +9139,7 @@ Transform:
   - {fileID: 781640107}
   - {fileID: 1216984284}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680946662
 GameObject:
@@ -9129,7 +9361,7 @@ Transform:
   - {fileID: 1083104512}
   - {fileID: 473871776}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696558306
 GameObject:
@@ -9294,7 +9526,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1434823416}
+      objectReference: {fileID: 1343958562}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f34137ca47bf2074688478d6d51ecb79, type: 3}
 --- !u!4 &698512239 stripped
@@ -9374,7 +9606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1927800224}
+      objectReference: {fileID: 549589566}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0170e4dcd9648438f0cdb079736858, type: 3}
 --- !u!4 &699081950 stripped
@@ -9659,126 +9891,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721510202}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &721588640
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
---- !u!21 &731790015
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
---- !u!21 &732005148
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathStraightRampMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &732559779
 GameObject:
   m_ObjectHideFlags: 0
@@ -9871,46 +9983,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732559779}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &740156207
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &744112058
 GameObject:
   m_ObjectHideFlags: 0
@@ -10095,46 +10167,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744440671}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &744478588
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &751618472
 GameObject:
   m_ObjectHideFlags: 0
@@ -10613,7 +10645,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1708585128}
+      objectReference: {fileID: 102951215}
     - target: {fileID: 2631553098521669753, guid: fe782e59d7a242f40bc531b923fb02b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11344,8 +11376,88 @@ Transform:
   - {fileID: 292492078}
   - {fileID: 1380314992}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &859010355
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathStraightRampMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &864476747
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &866178506
 GameObject:
   m_ObjectHideFlags: 0
@@ -11438,6 +11550,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866178506}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &892082111
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathCurveMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &898819297
 GameObject:
   m_ObjectHideFlags: 0
@@ -11622,46 +11774,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901691938}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &909008121
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarBranch2Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: cc0555690792b3a478d49e351fa99bdf, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &913438629
 GameObject:
   m_ObjectHideFlags: 0
@@ -11754,6 +11866,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913438629}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &923990332
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeEyeMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &927307019
 GameObject:
   m_ObjectHideFlags: 0
@@ -11846,46 +11998,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927307019}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &930620457
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathStraightMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: e1a013f1134b6674c84ac282819c88c6, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &939088552
 GameObject:
   m_ObjectHideFlags: 0
@@ -12285,7 +12397,7 @@ PrefabInstance:
     - target: {fileID: 3311134048348192859, guid: 54932c77932ccc445a32c291c0377d1e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -60
+      value: -61.9
       objectReference: {fileID: 0}
     - target: {fileID: 3311134048348192859, guid: 54932c77932ccc445a32c291c0377d1e,
         type: 3}
@@ -12330,13 +12442,13 @@ PrefabInstance:
     - target: {fileID: 3311134048348192859, guid: 54932c77932ccc445a32c291c0377d1e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.0269183
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8871522113038404027, guid: 54932c77932ccc445a32c291c0377d1e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 309525372}
+      objectReference: {fileID: 449635857}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54932c77932ccc445a32c291c0377d1e, type: 3}
 --- !u!4 &957454129 stripped
@@ -12489,7 +12601,7 @@ Transform:
   - {fileID: 1226149941}
   - {fileID: 1399714516}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969700289
 GameObject:
@@ -12752,7 +12864,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1082680825}
+      objectReference: {fileID: 308791536}
     - target: {fileID: 6260300659316467007, guid: 106aa2c8cfee012429cf3b86a6a98412,
         type: 3}
       propertyPath: raycast
@@ -12986,46 +13098,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985125644}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &986400929
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeEyeMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &990793946
 GameObject:
   m_ObjectHideFlags: 0
@@ -13430,6 +13502,46 @@ Transform:
   m_Father: {fileID: 1864990685}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -60.026, z: 0}
+--- !u!21 &1000689184
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeEyeMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1000831943
 GameObject:
   m_ObjectHideFlags: 0
@@ -13522,20 +13634,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000831943}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1015567759 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
-    type: 3}
-  m_PrefabInstance: {fileID: 271695681}
-  m_PrefabAsset: {fileID: 0}
---- !u!21 &1015594429
+--- !u!21 &1003280072
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathIntersectionMat
+  m_Name: StarTreeEyeMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -13549,7 +13655,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 83185af137e6be744bf67867fa341841, type: 3}
+        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -13568,6 +13674,52 @@ Material:
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
     - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &1007634797
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeEyeMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!4 &1015567759 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 271695681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1017952507
 GameObject:
   m_ObjectHideFlags: 0
@@ -14029,14 +14181,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029579272}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1035887920
+--- !u!21 &1042937685
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
+  m_Name: StarTreeMainMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -14050,7 +14202,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3308157d928cd984c821dcb49e484576, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -14069,6 +14221,54 @@ Material:
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
     - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &1051494605
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Seedling_Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 62ddec1c777806249bd856336c79464e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: f70c4f5463a6fef4fb8ed262d3f9a6ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 1
+    - Vector1_4DD94F62: 10
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
+    - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L3_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L4_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L5_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L6_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1059188083
 GameObject:
   m_ObjectHideFlags: 0
@@ -14288,49 +14488,9 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 930620457}
+      objectReference: {fileID: 1905262596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f34137ca47bf2074688478d6d51ecb79, type: 3}
---- !u!21 &1082680825
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveRampMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 75a11df100e016346a2a9723b461f8f4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1083104511
 GameObject:
   m_ObjectHideFlags: 0
@@ -14515,6 +14675,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085181067}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1105607173
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarBranch1Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 2cf098ac84bb3424e835fbfe20a5048a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1106287821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14591,7 +14791,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 604087732}
+      objectReference: {fileID: 892082111}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0170e4dcd9648438f0cdb079736858, type: 3}
 --- !u!4 &1106287822 stripped
@@ -14795,7 +14995,7 @@ PrefabInstance:
     - target: {fileID: 6053955466739331082, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6053955466739331082, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
         type: 3}
@@ -14821,49 +15021,9 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 564089221}
+      objectReference: {fileID: 1051494605}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df, type: 3}
---- !u!21 &1118986862
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeEyeMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1122427133
 GameObject:
   m_ObjectHideFlags: 0
@@ -15508,46 +15668,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152496633}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1155599059
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1155671049
 GameObject:
   m_ObjectHideFlags: 0
@@ -15584,6 +15704,46 @@ Transform:
   m_Father: {fileID: 1864990685}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 52.985, z: 0}
+--- !u!21 &1165609017
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FruitRailingMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 40b9560a1f402644d94387ab11e5980f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1170717778
 GameObject:
   m_ObjectHideFlags: 0
@@ -15768,6 +15928,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176162383}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1182065370
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1182066745
 GameObject:
   m_ObjectHideFlags: 0
@@ -15958,6 +16158,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199162703}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1215517237
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1216984283
 GameObject:
   m_ObjectHideFlags: 0
@@ -16338,7 +16578,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2104819011}
+      objectReference: {fileID: 208268217}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16514,6 +16754,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226205051}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1229682332
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarBranch2Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: cc0555690792b3a478d49e351fa99bdf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1235022407
 GameObject:
   m_ObjectHideFlags: 0
@@ -16606,6 +16886,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235022407}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1238704189
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathCurveMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1240434918
 GameObject:
   m_ObjectHideFlags: 0
@@ -16801,7 +17121,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1118986862}
+      objectReference: {fileID: 1007634797}
     - target: {fileID: 2840417009542152660, guid: 31fa3b38d204cf74e8da11e4728319db,
         type: 3}
       propertyPath: m_Name
@@ -16811,7 +17131,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 181531205}
+      objectReference: {fileID: 923990332}
     - target: {fileID: 5741738089099185177, guid: 31fa3b38d204cf74e8da11e4728319db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16871,7 +17191,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 986400929}
+      objectReference: {fileID: 1003280072}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fa3b38d204cf74e8da11e4728319db, type: 3}
 --- !u!4 &1245753551 stripped
@@ -17352,7 +17672,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 192430539}
+      objectReference: {fileID: 1551724870}
     - target: {fileID: 4854517403973212692, guid: 34563476ad5b00a4890c560722312dd7,
         type: 3}
       propertyPath: m_Name
@@ -17432,7 +17752,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1035887920}
+      objectReference: {fileID: 864476747}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17706,7 +18026,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1155599059}
+      objectReference: {fileID: 1215517237}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18348,6 +18668,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333061393}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1343958562
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathStraightMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: e1a013f1134b6674c84ac282819c88c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1352118621
 GameObject:
   m_ObjectHideFlags: 0
@@ -18440,46 +18800,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352118621}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1353913568
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeEyeMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1355814174
 GameObject:
   m_ObjectHideFlags: 0
@@ -18987,7 +19307,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1972339298}
+      objectReference: {fileID: 1836290736}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19071,6 +19391,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1399714515}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1415189634
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FruitRailingMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 40b9560a1f402644d94387ab11e5980f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1418344544
 GameObject:
   m_ObjectHideFlags: 0
@@ -19199,46 +19559,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420854666}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1434823416
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathStraightMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: e1a013f1134b6674c84ac282819c88c6, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1439056637
 GameObject:
   m_ObjectHideFlags: 0
@@ -19462,7 +19782,7 @@ Transform:
   - {fileID: 1274179611}
   - {fileID: 1221073488}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1465106895
 GameObject:
@@ -19659,7 +19979,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 744478588}
+      objectReference: {fileID: 239355966}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19862,7 +20182,40 @@ Transform:
   - {fileID: 680946663}
   - {fileID: 969700290}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1482052558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482052559}
+  m_Layer: 0
+  m_Name: RAILINGS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1482052559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482052558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7074383034526797993}
+  - {fileID: 7677773715311113717}
+  - {fileID: 7132933337934733056}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492122770
 GameObject:
@@ -20140,14 +20493,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502445732}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1511467978
+--- !u!21 &1509452923
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
+  m_Name: StarTreeEyeMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -20161,7 +20514,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -20216,46 +20569,6 @@ Transform:
   m_Father: {fileID: 964699095}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1524072400
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1524970876
 GameObject:
   m_ObjectHideFlags: 0
@@ -20440,6 +20753,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540150312}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1548746186
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1549933205
 GameObject:
   m_ObjectHideFlags: 0
@@ -20532,6 +20885,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549933205}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1551724870
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathIntersectionMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 83185af137e6be744bf67867fa341841, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1554068691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
@@ -20722,46 +21115,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569473662}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1576320103
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathIntersectionMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 83185af137e6be744bf67867fa341841, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1578557669
 GameObject:
   m_ObjectHideFlags: 0
@@ -20854,46 +21207,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578557669}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1580872629
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1603691289
 GameObject:
   m_ObjectHideFlags: 0
@@ -20986,6 +21299,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603691289}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1603882527
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FruitRailingMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 40b9560a1f402644d94387ab11e5980f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1606657991
 GameObject:
   m_ObjectHideFlags: 0
@@ -21298,126 +21651,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628358866}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1631459960
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarBranch1Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 2cf098ac84bb3424e835fbfe20a5048a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
---- !u!21 &1634150116
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
---- !u!21 &1636392914
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeEyeMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1651243945
 GameObject:
   m_ObjectHideFlags: 0
@@ -21718,7 +21951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &1663681393
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -21774,7 +22007,7 @@ Transform:
   m_LocalScale: {x: -0.1926801, y: 1.4392, z: 1.4392}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664995724
 GameObject:
@@ -21869,6 +22102,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664995724}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1666821817
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathCurveMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1668163335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21940,7 +22213,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2131938564}
+      objectReference: {fileID: 348895408}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f34137ca47bf2074688478d6d51ecb79, type: 3}
 --- !u!1 &1668644636
@@ -22127,6 +22400,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675797643}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1677317358
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathIntersectionMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 83185af137e6be744bf67867fa341841, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1677931085
 GameObject:
   m_ObjectHideFlags: 0
@@ -22255,46 +22568,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686036246}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1687350120
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarBranch1Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 2cf098ac84bb3424e835fbfe20a5048a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1692508769
 GameObject:
   m_ObjectHideFlags: 0
@@ -22608,46 +22881,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706174677}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1708585128
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarBranch1Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 2cf098ac84bb3424e835fbfe20a5048a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1709058952
 GameObject:
   m_ObjectHideFlags: 0
@@ -23016,6 +23249,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726164163}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1731296323
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathEndMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: e224dd211add83e47975c725522f3eb0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &1742882056
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathCurveMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1749911645
 GameObject:
   m_ObjectHideFlags: 0
@@ -23425,86 +23738,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 68162898}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1775190847
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarBranch2Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: cc0555690792b3a478d49e351fa99bdf, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
---- !u!21 &1776785357
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathStraightRampMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1785518668
 GameObject:
   m_ObjectHideFlags: 0
@@ -23944,7 +24177,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1524072400}
+      objectReference: {fileID: 523723064}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0170e4dcd9648438f0cdb079736858, type: 3}
 --- !u!4 &1800543132 stripped
@@ -24045,6 +24278,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800885085}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1800967844
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathIntersectionMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 83185af137e6be744bf67867fa341841, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1816478730
 GameObject:
   m_ObjectHideFlags: 0
@@ -24505,6 +24778,86 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830859057}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1836290736
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+--- !u!21 &1847202938
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarBranch3Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 615bdd159803f2d46a7210e3d2e4f279, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1864990684
 GameObject:
   m_ObjectHideFlags: 0
@@ -24549,7 +24902,7 @@ Transform:
   - {fileID: 201722594}
   - {fileID: 1398246755}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1871093776
 GameObject:
@@ -24827,6 +25180,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877835039}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1878733428
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarBranch3Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 615bdd159803f2d46a7210e3d2e4f279, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1889026571
 GameObject:
   m_ObjectHideFlags: 0
@@ -25195,7 +25588,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900346919}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1905568677
+--- !u!21 &1905262596
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -25217,46 +25610,6 @@ Material:
     m_TexEnvs:
     - Texture2D_3D81286D:
         m_Texture: {fileID: 2800000, guid: e1a013f1134b6674c84ac282819c88c6, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
---- !u!21 &1907790120
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -25367,14 +25720,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919510545}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1927800224
+--- !u!21 &1925115239
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathCurveMat
+  m_Name: StarTreeFruitMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -25388,7 +25741,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -25811,6 +26164,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941813587}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1942353567
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarPathCurveMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1953510856
 GameObject:
   m_ObjectHideFlags: 0
@@ -26093,14 +26486,14 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966672615}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1972339298
+--- !u!21 &1973877544
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
+  m_Name: StarPathCurveMat
   m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
     type: 3}
   m_ShaderKeywords: 
@@ -26114,7 +26507,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Texture: {fileID: 2800000, guid: f955377e686d291449cc2065b952e7c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8C31FB47:
@@ -26225,46 +26618,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977534104}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1983018356
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1988050772
 GameObject:
   m_ObjectHideFlags: 0
@@ -26357,46 +26710,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988050772}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &2000057708
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeEyeMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 96e8e27b82aa6e442846e2d7cd4eb8e2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &2000695620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26408,7 +26721,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1983018356}
+      objectReference: {fileID: 2075852693}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26607,7 +26920,7 @@ Transform:
   m_Children:
   - {fileID: 842737523}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2013038092
 GameObject:
@@ -26804,7 +27117,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1576320103}
+      objectReference: {fileID: 1800967844}
     - target: {fileID: 4854517403973212692, guid: 34563476ad5b00a4890c560722312dd7,
         type: 3}
       propertyPath: m_Name
@@ -27138,7 +27451,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2138093513}
+      objectReference: {fileID: 574020756}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54932c77932ccc445a32c291c0377d1e, type: 3}
 --- !u!4 &2058269190 stripped
@@ -27423,12 +27736,92 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074396708}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &2075852693
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &2081850697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
     type: 3}
   m_PrefabInstance: {fileID: 2000695620}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &2083724944
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarBranch2Mat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: cc0555690792b3a478d49e351fa99bdf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2095682061
 GameObject:
   m_ObjectHideFlags: 0
@@ -27619,86 +28012,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102751868}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &2104819011
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
---- !u!21 &2105010169
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarTreeFruitMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2106058342
 GameObject:
   m_ObjectHideFlags: 0
@@ -27975,6 +28288,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118478400}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &2124589927
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StarTreeFruitMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_3D81286D:
+        m_Texture: {fileID: 2800000, guid: 6ad03decad796c049b1b7512969ced0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C31FB47:
+        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1EC5F790: 10
+    - Vector1_4DD94F62: 20
+    - Vector1_A4820D62: -1
+    m_Colors:
+    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
+    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
+    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2125513463
 GameObject:
   m_ObjectHideFlags: 0
@@ -28067,46 +28420,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125513463}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &2131938564
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathStraightMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: e1a013f1134b6674c84ac282819c88c6, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2136608384
 GameObject:
   m_ObjectHideFlags: 0
@@ -28147,48 +28460,82 @@ Transform:
   - {fileID: 1549933206}
   - {fileID: 939088553}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &2138093513
-Material:
-  serializedVersion: 6
+--- !u!1001 &339988862573399541
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: StarPathStraightRampMat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 414dfe7d506cb8b4080bfce1b5e8fd17, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 932eb35965aa50440aa9a3376e7dd67e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 10
-    - Vector1_4DD94F62: 20
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 5.340313, g: 5.340313, b: 5.340313, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -87.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -61.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154986352370445495, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041568561023841166, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_Name
+      value: StarPathTie
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190730594790663689, guid: 987e32d9f6cea2d43917131b91835fb2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 638511233}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 987e32d9f6cea2d43917131b91835fb2, type: 3}
 --- !u!1001 &494299657631531502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28260,7 +28607,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 162785754}
+      objectReference: {fileID: 1742882056}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0170e4dcd9648438f0cdb079736858, type: 3}
 --- !u!4 &494299657631531503 stripped
@@ -28269,6 +28616,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 494299657631531502}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1520012041102493650
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2346034965932609967, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_Name
+      value: StarPathEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363895406986744108, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1731296323}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369360534048997017, guid: def95f732991a3a4ebd552cc1f0d1862,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: def95f732991a3a4ebd552cc1f0d1862, type: 3}
 --- !u!1001 &1619861391000274480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28280,7 +28701,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1015594429}
+      objectReference: {fileID: 1677317358}
     - target: {fileID: 4854517403973212692, guid: 34563476ad5b00a4890c560722312dd7,
         type: 3}
       propertyPath: m_Name
@@ -28435,7 +28856,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 267725975}
+      objectReference: {fileID: 1042937685}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c1d488cda03974ebdd8d16e63701df, type: 3}
 --- !u!4 &2762131852525752465 stripped
@@ -28444,6 +28865,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2762131852525752464}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3055145227362940414
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3754701676424745344, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 426170872}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109342507022311901, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829183664073889059, guid: 8a1cb7fd4e0f48544bf6b0e01097b678,
+        type: 3}
+      propertyPath: m_Name
+      value: FruitPlatform
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a1cb7fd4e0f48544bf6b0e01097b678, type: 3}
 --- !u!1001 &3073074383874236254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28515,7 +29010,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1905568677}
+      objectReference: {fileID: 608059148}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f34137ca47bf2074688478d6d51ecb79, type: 3}
 --- !u!4 &3073074383874236255 stripped
@@ -28595,7 +29090,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1776785357}
+      objectReference: {fileID: 384270283}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54932c77932ccc445a32c291c0377d1e, type: 3}
 --- !u!4 &4066281733113772365 stripped
@@ -28670,7 +29165,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1775190847}
+      objectReference: {fileID: 2083724944}
     - target: {fileID: 7560702084040915385, guid: ffed533df636002458b90ddb74f58227,
         type: 3}
       propertyPath: m_Name
@@ -28755,7 +29250,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 666438211}
+      objectReference: {fileID: 1878733428}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a73db6f9151d20f4eb5aad8f3ce7516e, type: 3}
 --- !u!4 &5878751757191963391 stripped
@@ -28775,7 +29270,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 73884698}
+      objectReference: {fileID: 1925115239}
     - target: {fileID: 8076739604020946892, guid: 2c4af48d7bebaa646b351db8c9e25e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28859,6 +29354,246 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6475320397634366712}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7074383034526797992
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1482052559}
+    m_Modifications:
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -59.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649353214272033889, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_Name
+      value: FruitRailing1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593016713778061301, guid: 749181a34e6f0354ba755cc065f79548,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1603882527}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 749181a34e6f0354ba755cc065f79548, type: 3}
+--- !u!4 &7074383034526797993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1821164873796009719, guid: 749181a34e6f0354ba755cc065f79548,
+    type: 3}
+  m_PrefabInstance: {fileID: 7074383034526797992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7132933337934733055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1482052559}
+    m_Modifications:
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.186611
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -75.706055
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118650272120576136, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_Name
+      value: FruitRailing3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370280146284407894, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1415189634}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 318199e87d2d03f42bbcbdea7ed58f34, type: 3}
+--- !u!4 &7132933337934733056 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3699305846216985825, guid: 318199e87d2d03f42bbcbdea7ed58f34,
+    type: 3}
+  m_PrefabInstance: {fileID: 7132933337934733055}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7677773715311113716
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1482052559}
+    m_Modifications:
+    - target: {fileID: 768972238531622331, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1165609017}
+    - target: {fileID: 1468307417006418360, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_Name
+      value: FruitRailing2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3583641
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -72.09591
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4d810de3743997428e1bfb088b75e6c, type: 3}
+--- !u!4 &7677773715311113717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3172129027066910989, guid: a4d810de3743997428e1bfb088b75e6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7677773715311113716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8352354977169706096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28935,7 +29670,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 242518449}
+      objectReference: {fileID: 464907412}
     - target: {fileID: 7324755914693797127, guid: 106aa2c8cfee012429cf3b86a6a98412,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -29005,7 +29740,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1631459960}
+      objectReference: {fileID: 1105607173}
     - target: {fileID: 8863303955587991033, guid: fe782e59d7a242f40bc531b923fb02b8,
         type: 3}
       propertyPath: m_Name
