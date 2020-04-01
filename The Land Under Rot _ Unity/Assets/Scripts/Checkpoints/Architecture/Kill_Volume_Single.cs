@@ -9,20 +9,6 @@ public class Kill_Volume_Single : MonoBehaviour
     public bool healthDrain;
     public GameObject gamePlayer;
     public PlayerController playerController;
-    
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider player)
     {

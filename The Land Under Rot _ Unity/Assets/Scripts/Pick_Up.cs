@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PickUpType { NONE, ACORN, MULCH, HEALTH, HARMFUL}
+//public enum PickUpType { NONE, ACORN, MULCH, HEALTH, HARMFUL}
+public enum PickUpType { NONE, ACORN}
 
 public class Pick_Up : MonoBehaviour
 {
@@ -19,11 +20,11 @@ public class Pick_Up : MonoBehaviour
         objPref = GetComponent<ObjectPreferences>();
         acornAudio = GetComponent<AudioSource>();
 
-        if (pickUpType == PickUpType.MULCH)
-        {
-            mulchCollider = GetComponent<Collider>();
-            StartCoroutine(KillCollider());
-        }
+        //if (pickUpType == PickUpType.MULCH)
+        //{
+        //    mulchCollider = GetComponent<Collider>();
+        //    StartCoroutine(KillCollider());
+        //}
 
         if(pickUpType == PickUpType.ACORN)
         {
@@ -38,7 +39,12 @@ public class Pick_Up : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((pickUpType == PickUpType.ACORN || pickUpType == PickUpType.HEALTH || pickUpType == PickUpType.HARMFUL) && Time.timeScale > 0)
+        //if((pickUpType == PickUpType.ACORN || pickUpType == PickUpType.HEALTH || pickUpType == PickUpType.HARMFUL) && Time.timeScale > 0)
+        //{
+        //    transform.Rotate(0, 3, 0, Space.World);
+        //}
+
+        if (pickUpType == PickUpType.ACORN  && Time.timeScale > 0)
         {
             transform.Rotate(0, 3, 0, Space.World);
         }
@@ -78,37 +84,37 @@ public class Pick_Up : MonoBehaviour
                     playerController.acorns += 1;
                     Destroy(gameObject);
                     break;
-                case PickUpType.MULCH:
-                    //Count MULCH
-                    mulchCollider.enabled = false;
-                    playerController.mulch += 1;
-                    Destroy(gameObject);
-                    break;
-                case PickUpType.HEALTH:
-                    //Add HEALTH
-                    if (playerController.health < 3)
-                    {
-                        playerController.health += 1;
-                    }
-                    Destroy(gameObject);
-                    break;
-                case PickUpType.HARMFUL:
-                    //Take HEALTH
-                    if (playerController.health > 0)
-                    {
-                        playerController.health -= 1;
-                    }
-                    Destroy(gameObject);
-                    break;
+                //case PickUpType.MULCH:
+                //    //Count MULCH
+                //    mulchCollider.enabled = false;
+                //    playerController.mulch += 1;
+                //    Destroy(gameObject);
+                //    break;
+                //case PickUpType.HEALTH:
+                //    //Add HEALTH
+                //    if (playerController.health < 3)
+                //    {
+                //        playerController.health += 1;
+                //    }
+                //    Destroy(gameObject);
+                //    break;
+                //case PickUpType.HARMFUL:
+                //    //Take HEALTH
+                //    if (playerController.health > 0)
+                //    {
+                //        playerController.health -= 1;
+                //    }
+                //    Destroy(gameObject);
+                //    break;
                 default:
                     Debug.LogWarning("PickUpType Error.");
                     break;
             }
 
         }
-        else if(pickUpType == PickUpType.MULCH)
-        {
-            mulchCollider.enabled = true;
-        }
+        //else if(pickUpType == PickUpType.MULCH)
+        //{
+        //    mulchCollider.enabled = true;
+        //}
     }
 }
