@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Modifiers")]
     #region Modifiers
-    public int health = 3;
+    //public int health = 3;
 
     [Header("Player Inventory")]
     #region Inventory
@@ -520,7 +520,7 @@ public class PlayerController : MonoBehaviour
             transform.position = currentSpawn.position;
             transform.rotation = currentSpawn.rotation;
             Rb.velocity = Vector3.zero;
-            health = 3;
+            //health = 3;
             isDead = false;
             fadeAnim.ResetTrigger("FadeOut");
             fadeAnim.SetTrigger("FadeIn");

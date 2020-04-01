@@ -53,15 +53,15 @@ public class GameController : MonoBehaviour
     public int playerMulch;
     private int oldMulch;
     [Space(2)]
-    public int playerHealth;
-    private int oldHealth;
+    //public int playerHealth;
+    //private int oldHealth;
     #endregion
 
     [Header("Player UI Components")]
 
     public TextMeshProUGUI acornCount;
     public TextMeshProUGUI mulchCount;
-    public Image[] healthCounter;
+    //public Image[] healthCounter;
 
     
 
@@ -134,7 +134,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         isDead = false;
-        oldHealth = playerHealth;
+        //oldHealth = playerHealth;
         oldAcorns = playerAcorns;
         oldMulch = playerMulch;
     }
@@ -157,7 +157,7 @@ public class GameController : MonoBehaviour
         {
             //Pause();
             PickUpCount();
-            HealthCount();
+            //HealthCount();
         }
 
         if (playerController != null && dialogueManager != null)
@@ -200,29 +200,29 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void HealthCount()
-    {
-        playerHealth = playerController.health;
-        if (oldHealth != playerHealth)
-        {
-            for (int i = 0; i < healthCounter.Length; i++)
-            {
-                if (i + 1 > playerHealth)
-                {
-                    healthCounter[i].enabled = false;
-                }
-                else if (i + 1 <= playerHealth)
-                {
-                    healthCounter[i].enabled = true;
-                }
-            }
-            if (playerHealth < 1)
-            {
-                isDead = true;
-            }
-            oldHealth = playerHealth;
-        }
-    }
+    //public void HealthCount()
+    //{
+    //    playerHealth = playerController.health;
+    //    if (oldHealth != playerHealth)
+    //    {
+    //        for (int i = 0; i < healthCounter.Length; i++)
+    //        {
+    //            if (i + 1 > playerHealth)
+    //            {
+    //                healthCounter[i].enabled = false;
+    //            }
+    //            else if (i + 1 <= playerHealth)
+    //            {
+    //                healthCounter[i].enabled = true;
+    //            }
+    //        }
+    //        if (playerHealth < 1)
+    //        {
+    //            isDead = true;
+    //        }
+    //        oldHealth = playerHealth;
+    //    }
+    //}
 
     //public void Reset()
     //{
