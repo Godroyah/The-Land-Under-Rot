@@ -27,10 +27,10 @@ namespace Toon
         }
     }
 
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
     public class ToonHelper : MonoBehaviour
     {
-        bool isActive = true;
+        bool isActive = false;
         // Params
         [SerializeField] Material material;
         //Material material = null;
@@ -81,35 +81,7 @@ namespace Toon
             if (skinRenderer) skinRenderer.sharedMaterial = matInstance;
             if (meshRenderer) meshRenderer.sharedMaterial = matInstance;
 
-            /*
-            if (!Application.isPlaying)
-            {
-                Material matInstance = new Material(material);
-                material = matInstance;
-            }
-            */
-            /*
-            skinRenderer = GetComponent<SkinnedMeshRenderer>();
-            meshRenderer = GetComponent<MeshRenderer>();
 
-            if (skinRenderer)
-            {
-                material = new Material(skinRenderer.sharedMaterial);
-                Material matInstance = new Material(material);
-                material = matInstance;
-
-                skinRenderer.sharedMaterial = material;
-            }
-
-            if (meshRenderer)
-            {
-                material = new Material(meshRenderer.sharedMaterial);
-                Material matInstance = new Material(material);
-                material = matInstance;
-
-                meshRenderer.sharedMaterial = material;
-            }
-            */
         }
 
         // NOTE: If your game loads lights dynamically, this should be called to init new lights
@@ -147,15 +119,18 @@ namespace Toon
 
         void Update()
         {
-            posAbs = transform.position + meshCenter;
-
-            // Always update lighting while in editor
-            if (Application.isEditor && !Application.isPlaying)
+            if (isActive)
             {
-                GetLights();
-            }
+                posAbs = transform.position + meshCenter;
 
-            UpdateMaterial();
+                // Always update lighting while in editor
+                if (Application.isEditor && !Application.isPlaying)
+                {
+                    GetLights();
+                }
+
+                UpdateMaterial();
+            }
         }
 
         void UpdateMaterial()
