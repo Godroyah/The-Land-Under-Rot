@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MulchType { NONE, BROWN, GREEN, YELLOW }
+
 public class Mulch : Interactable
 {
 
@@ -25,6 +27,8 @@ public class Mulch : Interactable
     // public Collider mulchCollider;
     #endregion
 
+    public MulchType mulchType;
+
     public MeshRenderer fullMulch;
 
     public MeshRenderer depletedMulch;
@@ -33,20 +37,46 @@ public class Mulch : Interactable
 
     GameController gameController;
 
+    //ParticleSystem playerParticles;
+    ParticleSystem mulchParticles;
+
     private void Start()
     {
         gameController = GameController.Instance;
 
-
+        if (objPrefs != null)
+        {
+            mulchParticles = objPrefs.headbutt_ParticleEffect_obj.GetComponent<ParticleSystem>();
+        }
     }
 
     public override void Interact()
     {
         base.Interact();
 
-        if(!isTutorial)
+        if(!isTutorial && gameController.hasBottles)
         {
+            switch(mulchType)
+            {
+                case MulchType.NONE:
+                    Debug.LogWarning("Mulch type is not set! Cannot progress!");
+                    break;
+                case MulchType.BROWN:
+                    gameController.hasBrownMulch = true;
+                    break;
+                case MulchType.GREEN:
+                    gameController.hasGreenMulch = true;
+                    break;
+                case MulchType.YELLOW:
+                    gameController.hasYellowMulch = true;
+                    break;
+                default:
+                    Debug.LogWarning("MulchType Error.");
+                    break;
+            }
+            mulchParticles.Play();
             fullMulch.enabled = false;
+            depletedMulch.enabled = true;
 
         }
 

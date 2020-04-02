@@ -5,7 +5,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     protected PlayerController playerController;
-    protected ObjectPreferences objPreferences;
+    protected ObjectPreferences objPrefs;
     protected AudioSource audioSource;
     protected DialogueManager dialogueManager;
 
@@ -48,7 +48,7 @@ public class Interactable : MonoBehaviour
         //}
         //#endregion
 
-        objPreferences = GetComponent<ObjectPreferences>();
+        objPrefs = GetComponent<ObjectPreferences>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -76,7 +76,7 @@ public class Interactable : MonoBehaviour
             //}
         }
 
-        if (objPreferences != null && audioSource != null)
+        if (objPrefs != null && audioSource != null)
             audioSource.Play();
     }
 }

@@ -7,7 +7,7 @@ public class Bark : Interactable
     //public bool isEvent;
     GameController gameController;
     public GameObject barkContainer;
-    ObjectPreferences objPrefs;
+    //ObjectPreferences objPrefs;
     ParticleSystem playerParticles;
     ParticleSystem barkParticles;
     BoxCollider thisTrigger;
@@ -26,7 +26,7 @@ public class Bark : Interactable
         //}
         thisTrigger = GetComponent<BoxCollider>();
 
-        objPrefs = GetComponent<ObjectPreferences>();
+        //objPrefs = GetComponent<ObjectPreferences>();
         if(objPrefs != null)
         {
             playerParticles = objPrefs.headbutt_ParticleEffect_player.GetComponent<ParticleSystem>();

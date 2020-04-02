@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Inventory")]
     #region Inventory
     public int acorns;
-    public int mulch;
+    //public int mulch;
     #endregion
 
     [Range(1, 50)]

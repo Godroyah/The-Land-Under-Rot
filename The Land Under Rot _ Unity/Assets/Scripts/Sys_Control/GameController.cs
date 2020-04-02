@@ -30,6 +30,16 @@ public class GameController : MonoBehaviour
     public bool levelStart;
     public bool isDead;
     //public bool paused;
+    [Space(5)]
+    public bool hasBottles;
+    [Space(5)]
+    public bool hasBrownMulch;
+    public bool hasGreenMulch;
+    public bool hasYellowMulch;
+    [Space(5)]
+    public bool angelTreeAwake;
+    public bool starTreeAwake;
+    public bool willowTreeAwake;
 
     [Space(5)]
     public bool area_Tutorial = false;
@@ -50,8 +60,8 @@ public class GameController : MonoBehaviour
     #region Inventory Count
     public int playerAcorns;
     private int oldAcorns;
-    public int playerMulch;
-    private int oldMulch;
+    //public int playerMulch;
+    //private int oldMulch;
     [Space(2)]
     //public int playerHealth;
     //private int oldHealth;
@@ -60,7 +70,7 @@ public class GameController : MonoBehaviour
     [Header("Player UI Components")]
 
     public TextMeshProUGUI acornCount;
-    public TextMeshProUGUI mulchCount;
+    //public TextMeshProUGUI mulchCount;
     //public Image[] healthCounter;
 
     
@@ -117,8 +127,8 @@ public class GameController : MonoBehaviour
 
         if (acornCount != null)
             acornCount.text = playerAcorns.ToString();
-        if (mulchCount != null)
-            mulchCount.text = playerMulch.ToString();
+        //if (mulchCount != null)
+        //    mulchCount.text = playerMulch.ToString();
 
         //playerController.currentSpawn = playerRespawn;
 
@@ -136,7 +146,7 @@ public class GameController : MonoBehaviour
         isDead = false;
         //oldHealth = playerHealth;
         oldAcorns = playerAcorns;
-        oldMulch = playerMulch;
+        //oldMulch = playerMulch;
     }
 
     // Update is called once per frame
@@ -180,7 +190,7 @@ public class GameController : MonoBehaviour
     public void PickUpCount()
     {
         playerAcorns = playerController.acorns;
-        playerMulch = playerController.mulch;
+        //playerMulch = playerController.mulch;
 
         if (oldAcorns != playerAcorns)
         {
@@ -190,14 +200,14 @@ public class GameController : MonoBehaviour
                 oldAcorns = playerAcorns;
             }
         }
-        if (oldMulch != playerMulch)
-        {
-            if (mulchCount != null)
-            {
-                mulchCount.text = playerMulch.ToString();
-                oldMulch = playerMulch;
-            }
-        }
+        //if (oldMulch != playerMulch)
+        //{
+        //    if (mulchCount != null)
+        //    {
+        //        mulchCount.text = playerMulch.ToString();
+        //        oldMulch = playerMulch;
+        //    }
+        //}
     }
 
     //public void HealthCount()
