@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -13,13 +14,30 @@ public class PauseMenu : MonoBehaviour
     public Button resumeButton;
     public Button quitButton;
 
+    public RawImage acornDisplay;
+    public TextMeshProUGUI acornText;
+
+    public RawImage brownBottle;
+    public RawImage greenBottle;
+    public RawImage yellowBottle;
+
+    GameController gameController;
+
     public bool paused;
 
     private void Start()
     {
         paused = false;
-    }
 
+        gameController = GameController.Instance;
+
+        //acornDisplay = GetComponent<RawImage>();
+        //acornText = GetComponent<TextMeshProUGUI>();
+
+        //brownBottle = GetComponent<RawImage>();
+        //greenBottle = GetComponent<RawImage>();
+        //yellowBottle = GetComponent<RawImage>();
+    }
 
     private void Update()
     {
@@ -40,7 +58,14 @@ public class PauseMenu : MonoBehaviour
                     if (pauseMenu != null)
                     {
                         pauseMenu.SetActive(true);
-
+                        acornDisplay.enabled = true;
+                        acornText.enabled = true;
+                        if(gameController.hasBottles)
+                        {
+                            brownBottle.enabled = true;
+                            greenBottle.enabled = true;
+                            yellowBottle.enabled = true;
+                        }
                     }
                     Time.timeScale = 0;
                     //paused = true;
@@ -55,7 +80,7 @@ public class PauseMenu : MonoBehaviour
                         quitOption.SetActive(false);
                         resumeButton.interactable = true;
                         quitButton.interactable = true;
-                    }
+                }
                     Time.timeScale = 1;
                     //paused = false;
                 }
@@ -67,9 +92,17 @@ public class PauseMenu : MonoBehaviour
                     paused = true;
                 else if (paused)
                 {
-                    //Cursor.visible = false;
-                    //Cursor.lockState = CursorLockMode.Locked;
-                    paused = false;
+                //Cursor.visible = false;
+                //Cursor.lockState = CursorLockMode.Locked;
+                acornDisplay.enabled = false;
+                acornText.enabled = false;
+                if (gameController.hasBottles)
+                {
+                    brownBottle.enabled = false;
+                    greenBottle.enabled = false;
+                    yellowBottle.enabled = false;
+                }
+                paused = false;
                 }
             }
         
@@ -79,6 +112,14 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.visible = false;
         pauseMenu.SetActive(false);
+        acornDisplay.enabled = false;
+        acornText.enabled = false;
+        if (gameController.hasBottles)
+        {
+            brownBottle.enabled = false;
+            greenBottle.enabled = false;
+            yellowBottle.enabled = false;
+        }
         Time.timeScale = 1;
         paused = false;
     }
