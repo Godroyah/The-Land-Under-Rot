@@ -10,8 +10,6 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
     private Vector3 cordys_Lowered_Position;
 
-    private float dropDistance;
-
     public float lowerDistance;
 
     public float cordyDelay;
