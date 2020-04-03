@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MulchType { NONE, BROWN, GREEN, YELLOW }
+public enum MulchType { NONE, ANGEL, STAR, WILLOW }
 
 public class Mulch : Interactable
 {
@@ -61,23 +61,23 @@ public class Mulch : Interactable
                 case MulchType.NONE:
                     Debug.LogWarning("Mulch type is not set! Cannot progress!");
                     break;
-                case MulchType.BROWN:
+                case MulchType.ANGEL:
                     gameController.hasBrownMulch = true;
                     break;
-                case MulchType.GREEN:
+                case MulchType.STAR:
                     gameController.hasGreenMulch = true;
                     break;
-                case MulchType.YELLOW:
+                case MulchType.WILLOW:
                     gameController.hasYellowMulch = true;
                     break;
                 default:
                     Debug.LogWarning("MulchType Error.");
                     break;
             }
+            if(!depletedMulch.enabled)
             mulchParticles.Play();
-            fullMulch.enabled = false;
             depletedMulch.enabled = true;
-
+            fullMulch.enabled = false;
         }
 
         #region OldFunctionality
