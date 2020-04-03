@@ -7,7 +7,7 @@ using UnityEngine;
 public class SelfReport : MonoBehaviour
 {
     //public enum Report_Type {PAUSE_MENU, QUIT_MENU, PAUSE_EVENTS, RESUME, QUIT}
-    public enum Report_Type { BROWN, GREEN, YELLOW, ACORN }
+    public enum Report_Type { NONE, BROWN, GREEN, YELLOW, ACORN }
     public Report_Type reportType;
 
     // Start is called before the first frame update
@@ -15,6 +15,9 @@ public class SelfReport : MonoBehaviour
     {
         switch (reportType)
         {
+            case Report_Type.NONE:
+                Debug.LogWarning("You haven't picked a report type!");
+                break;
             case Report_Type.BROWN:
                 GameController.Instance.brownBottle = GetComponent<RawImage>();
                 break;

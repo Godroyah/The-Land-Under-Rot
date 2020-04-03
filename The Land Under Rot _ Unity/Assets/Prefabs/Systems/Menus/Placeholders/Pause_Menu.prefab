@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2514b04b441fe044aaaf302ed3e3dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reportType: 3
+  reportType: 4
 --- !u!1 &2684744798927901062
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2514b04b441fe044aaaf302ed3e3dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reportType: 1
+  reportType: 2
 --- !u!1 &2778125826366485479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,9 +1383,9 @@ MonoBehaviour:
   quitButton: {fileID: 7453632317719050746}
   acornDisplay: {fileID: 304248025062244729}
   acornText: {fileID: 2021509640625351794}
-  brownBottle: {fileID: 738869519182817110}
-  greenBottle: {fileID: 5507885201287349146}
-  yellowBottle: {fileID: 2913087850693586442}
+  angelBottle: {fileID: 738869519182817110}
+  starBottle: {fileID: 5507885201287349146}
+  willowBottle: {fileID: 2913087850693586442}
   paused: 0
 --- !u!1 &4439571658551428187
 GameObject:
@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2514b04b441fe044aaaf302ed3e3dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reportType: 2
+  reportType: 3
 --- !u!1 &7804010379347368743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1805,19 @@ RectTransform:
   m_AnchoredPosition: {x: 250, y: -130}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1385304681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157966215681130177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79360d8ade49de4bbab02428ff4fe6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottleType: 0
 --- !u!114 &1483054802354168899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,7 +1830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2514b04b441fe044aaaf302ed3e3dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reportType: 0
+  reportType: 1
 --- !u!1001 &1044436686938332825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,6 +2061,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82251711160054518, guid: 41b039971c125a84ab4a4f1a726e18f5,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82251711160054518, guid: 41b039971c125a84ab4a4f1a726e18f5,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82251711160054518, guid: 41b039971c125a84ab4a4f1a726e18f5,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1806234579014492157, guid: 41b039971c125a84ab4a4f1a726e18f5,
         type: 3}

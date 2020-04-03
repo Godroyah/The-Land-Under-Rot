@@ -63,12 +63,15 @@ public class Mulch : Interactable
                     break;
                 case MulchType.ANGEL:
                     gameController.hasBrownMulch = true;
+                    gameController.FillBrownBottle();
                     break;
                 case MulchType.STAR:
                     gameController.hasGreenMulch = true;
+                    gameController.FillGreenBottle();
                     break;
                 case MulchType.WILLOW:
                     gameController.hasYellowMulch = true;
+                    gameController.FillYellowBottle();
                     break;
                 default:
                     Debug.LogWarning("MulchType Error.");

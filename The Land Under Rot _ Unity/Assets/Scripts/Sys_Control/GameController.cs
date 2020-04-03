@@ -16,14 +16,14 @@ public class GameController : MonoBehaviour
     public PlayerController playerController;
     #endregion
 
-    [Header("Menu Components")]
-    #region Menu Components
-    public GameObject pauseMenu;
-    public GameObject quitOption;
-    public GameObject pauseEventSystem;
-    public Button resumeButton;
-    public Button quitButton;
-    #endregion
+    //[Header("Menu Components")]
+    //#region Menu Components
+    //public GameObject pauseMenu;
+    //public GameObject quitOption;
+    //public GameObject pauseEventSystem;
+    //public Button resumeButton;
+    //public Button quitButton;
+    //#endregion
 
     [Header("Bools")]
     #region Bools
@@ -70,10 +70,14 @@ public class GameController : MonoBehaviour
     [Header("Player UI Components")]
 
     public TextMeshProUGUI acornCount;
-
+    [Space(5)]
     public RawImage brownBottle;
     public RawImage greenBottle;
     public RawImage yellowBottle;
+    [Space(5)]
+    public RenderTexture angelTexture;
+    public RenderTexture starTexture;
+    public RenderTexture willowTexture;
     //public TextMeshProUGUI mulchCount;
     //public Image[] healthCounter;
 
@@ -169,7 +173,7 @@ public class GameController : MonoBehaviour
         //}
         if (playerController != null)
         {
-            //Pause();
+            
             PickUpCount();
             //HealthCount();
         }
@@ -190,6 +194,20 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void FillBrownBottle()
+    {
+        brownBottle.texture = angelTexture;
+    }
+
+    public void FillGreenBottle()
+    {
+        greenBottle.texture = starTexture;
+    }
+
+    public void FillYellowBottle()
+    {
+        yellowBottle.texture = willowTexture;
+    }
 
     public void PickUpCount()
     {
