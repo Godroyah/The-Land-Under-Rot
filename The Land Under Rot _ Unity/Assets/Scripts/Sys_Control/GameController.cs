@@ -70,6 +70,10 @@ public class GameController : MonoBehaviour
     [Header("Player UI Components")]
 
     public TextMeshProUGUI acornCount;
+
+    public RawImage brownBottle;
+    public RawImage greenBottle;
+    public RawImage yellowBottle;
     //public TextMeshProUGUI mulchCount;
     //public Image[] healthCounter;
 
