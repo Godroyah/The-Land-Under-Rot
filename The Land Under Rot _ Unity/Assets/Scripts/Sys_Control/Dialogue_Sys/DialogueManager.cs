@@ -155,6 +155,16 @@ public class DialogueManager : MonoBehaviour
 }
 public enum Reply
 {
+    //TreeSeat
+    Sleepy_AngelTree,
+    Awake_AngelTree,
+    AngelTree_PostCutscene,
+    Mulchant_Intro,
+    Mulchant_No_Mulch,
+    Mulchant_Gathered_Mulch_PreCutscene,
+    Mulchant_Tree_Is_Awake,
+
+    //Stinkhorn_Stop
     SS_Rootford_Intro_1,
     SS_Rootford_Intro_2,
     SS_Rootford_Intro_3_Repeat,
