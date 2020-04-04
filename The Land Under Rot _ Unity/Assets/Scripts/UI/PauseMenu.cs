@@ -54,7 +54,7 @@ public class PauseMenu : MonoBehaviour
                         pauseMenu.SetActive(true);
                         acornDisplay.enabled = true;
                         acornText.enabled = true;
-                        if(gameController.hasBottles)
+                        if(gameController.mulchant_GivenBottles)
                         {
                             if(!gameController.angelTreeAwake)
                             angelBottle.enabled = true;
@@ -93,7 +93,7 @@ public class PauseMenu : MonoBehaviour
                 //Cursor.lockState = CursorLockMode.Locked;
                 acornDisplay.enabled = false;
                 acornText.enabled = false;
-                if (gameController.hasBottles)
+                if (gameController.mulchant_GivenBottles)
                 {
                     angelBottle.enabled = false;
                     starBottle.enabled = false;
@@ -111,7 +111,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         acornDisplay.enabled = false;
         acornText.enabled = false;
-        if (gameController.hasBottles)
+        if (gameController.mulchant_GivenBottles)
         {
             angelBottle.enabled = false;
             starBottle.enabled = false;

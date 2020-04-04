@@ -54,7 +54,7 @@ public class Mulch : Interactable
     {
         base.Interact();
 
-        if(!isTutorial && gameController.hasBottles)
+        if(!isTutorial && gameController.mulchant_GivenBottles)
         {
             switch(mulchType)
             {

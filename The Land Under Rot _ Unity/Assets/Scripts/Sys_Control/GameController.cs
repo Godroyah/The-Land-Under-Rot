@@ -30,8 +30,9 @@ public class GameController : MonoBehaviour
     public bool levelStart;
     public bool isDead;
     //public bool paused;
+
     [Space(5)]
-    public bool hasBottles;
+    public bool mulchant_GivenBottles;
     [Space(5)]
     public bool hasBrownMulch;
     public bool hasGreenMulch;
@@ -49,6 +50,10 @@ public class GameController : MonoBehaviour
     public bool tutorial_HasTalked_Rootford_Intro2 = false;
     [Space(5)]
     public bool tutorial_HasTalked_BusDriver_1 = false;
+
+    //[Space(5)]
+    //public bool treeSeat_HasTalked_Mulchant_GaveBottle = false;
+    //public bool 
 
     [Space(5)]
 

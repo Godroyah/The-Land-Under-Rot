@@ -13,12 +13,6 @@ public class Fade_Done : MonoBehaviour
         fadeOver = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void FadeOver()
     {
         fadeOver = true;
