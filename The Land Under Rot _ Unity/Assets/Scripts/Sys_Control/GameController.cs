@@ -41,6 +41,8 @@ public class GameController : MonoBehaviour
     public bool angelTreeAwake;
     public bool starTreeAwake;
     public bool willowTreeAwake;
+    [Space(5)]
+    public bool revealNewAreas;
 
     [Space(5)]
     public bool area_Tutorial = false;
