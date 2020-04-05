@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Mulchant_Talk : Interactable
 {
-
     public Animator mulchantAnim;
-
 
     void Start()
     {
