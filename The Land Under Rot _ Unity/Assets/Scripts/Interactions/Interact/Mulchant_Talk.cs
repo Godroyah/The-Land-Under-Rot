@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Mulchant_Talk : Interactable
 {
+
+    public Animator mulchantAnim;
+
+
     void Start()
     {
+        //mulchantAnim = GetComponent<Animator>();
+
         billboard_UI.SetActive(false);
     }
 
@@ -36,6 +42,7 @@ public class Mulchant_Talk : Interactable
             {
                 if(!GameController.Instance.angelTreeAwake)
                 {
+                    mulchantAnim.SetTrigger("GotMulch");
                     dialogueManager.StartDialogue(Reply.Mulchant_Gathered_Mulch_PreCutscene);
                     GameController.Instance.angelTreeAwake = true;
                 }
