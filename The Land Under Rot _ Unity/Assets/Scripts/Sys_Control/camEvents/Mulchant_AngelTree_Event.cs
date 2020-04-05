@@ -5,35 +5,46 @@ using UnityEngine;
 public class Mulchant_AngelTree_Event : Event_Type
 {
     public Animator treeAnim;
-    public Animator mulchantAnim;
-
-    public GameObject eventMulchant;
-    //or MeshRenderer?
-
+    public Animator mulchantStandInAnim;
+    public SkinnedMeshRenderer eventMulchant;
+   
+    [Range(1f, 20f)]
     public float mulchantDelay;
+    [Range(1f, 20f)]
     public float treeDelay;
+    //[Range(1f, 20f)]
+    //public float endSceneDelay;
+
+    GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameController = GameController.Instance;
+        eventMulchant.enabled = false;
     }
 
     public override void StartEvent()
     {
         base.StartEvent();
 
-       // StartCoroutine(TreeAwakening());
+       StartCoroutine(TreeAwakening());
     }
 
-    //IEnumerator TreeAwakening()
-    //{
-
-    //}
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator TreeAwakening()
     {
-        
+        eventMulchant.enabled = true;
+
+        yield return new WaitForSeconds(mulchantDelay);
+
+        mulchantStandInAnim.SetTrigger("AwakenTree");
+
+        yield return new WaitForSeconds(treeDelay);
+
+        treeAnim.SetBool("Awake", true);
+        eventMulchant.enabled = false;
+        gameController.angelTreeAwake = true;
+
+        //yield return new WaitForSeconds(endSceneDelay);
     }
 }
