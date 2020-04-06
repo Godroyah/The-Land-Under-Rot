@@ -376,7 +376,6 @@ GameObject:
   - component: {fileID: 6310257876300264086}
   - component: {fileID: 4363901178549914916}
   - component: {fileID: 4363901178549914912}
-  - component: {fileID: 4363901178549914913}
   m_Layer: 0
   m_Name: breakableBark model
   m_TagString: Untagged
@@ -424,7 +423,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 00487e51231953446bcae29ad535df95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -474,23 +473,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0141381, y: 0.013934643, z: 0.011730945}
   m_Center: {x: 0.0024545707, y: -0.0006373437, z: 0.00074442767}
---- !u!114 &4363901178549914913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5741627825583998538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 4eeb14627beec3d4e98af6b4f1448f78, type: 2}
-  meshCenter: {x: 0, y: 0, z: 0}
-  maxLights: 6
-  raycast: 1
-  raycastMask:
-    serializedVersion: 2
-    m_Bits: 0
-  raycastFadeSpeed: 10
