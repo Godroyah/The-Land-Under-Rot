@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: f3cad942e05cf1b488ff0539b63ed4d2,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -283,13 +283,16 @@ MonoBehaviour:
   dialogueManager: {fileID: 0}
   cutsceneManager: {fileID: 0}
   playerController: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  quitOption: {fileID: 0}
-  pauseEventSystem: {fileID: 0}
-  resumeButton: {fileID: 0}
-  quitButton: {fileID: 0}
   levelStart: 0
   isDead: 0
+  mulchant_GivenBottles: 0
+  hasBrownMulch: 0
+  hasGreenMulch: 0
+  hasYellowMulch: 0
+  angelTreeAwake: 0
+  starTreeAwake: 0
+  willowTreeAwake: 0
+  revealNewAreas: 0
   area_Tutorial: 0
   bus_Called: 0
   tutorial_HasTalked_Rootford_Intro1: 0
@@ -298,11 +301,13 @@ MonoBehaviour:
   area_Stinkhorn: 0
   area_TreeSeat: 0
   playerAcorns: 0
-  playerMulch: 0
-  playerHealth: 3
   acornCount: {fileID: 0}
-  mulchCount: {fileID: 0}
-  healthCounter: []
+  brownBottle: {fileID: 0}
+  greenBottle: {fileID: 0}
+  yellowBottle: {fileID: 0}
+  angelTexture: {fileID: 0}
+  starTexture: {fileID: 0}
+  willowTexture: {fileID: 0}
 --- !u!4 &103191255
 Transform:
   m_ObjectHideFlags: 0
@@ -317,54 +322,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &237646227
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PurpleMushroom_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 72c2b66dda4ddc04cbc5540032da3daa, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: f70c4f5463a6fef4fb8ed262d3f9a6ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 1
-    - Vector1_4DD94F62: 10
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
-    - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &344551571
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,26 +927,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53447956
-      objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53447956
-      objectReference: {fileID: 0}
     - target: {fileID: 3328101539688647120, guid: 99c43b18c7ce75f4dacfff8598932847,
         type: 3}
       propertyPath: m_Name
       value: Purple Mushroom Model (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 6365143664708334932, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 907266009}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c43b18c7ce75f4dacfff8598932847, type: 3}
 --- !u!4 &492631733 stripped
@@ -1356,54 +1298,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 597126753}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &684107664
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: nuthead mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 62ddec1c777806249bd856336c79464e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: 36cdb6af132d5bd4a985737a10f97751, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 1
-    - Vector1_4DD94F62: 0
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 1, g: 1, b: 1, a: 0}
-    - Color_883398E3: {r: 1, g: 1, b: 1, a: 0}
-    - Color_8B8927CD: {r: 2.670157, g: 2.670157, b: 2.670157, a: 1}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0.99}
-    - _L1_dir: {r: -0.06168723, g: 0.97559345, b: 0.2107418, a: 0}
-    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
-    - _L3_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L3_dir: {r: 0, g: 1, b: 0, a: 0}
-    - _L4_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L4_dir: {r: 0, g: 1, b: 0, a: 0}
-    - _L5_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L5_dir: {r: 0, g: 1, b: 0, a: 0}
-    - _L6_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L6_dir: {r: 0, g: 1, b: 0, a: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1371,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: -1.114e-42, y: 6e-45, z: 2.4e-44, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1495,102 +1389,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!21 &870656277
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ChunMushroom_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 1f8e48acf25c16a4787f3e0d6cc92c93, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: f70c4f5463a6fef4fb8ed262d3f9a6ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 1
-    - Vector1_4DD94F62: 10
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
-    - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
---- !u!21 &882132138
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PurpleMushroom_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 72c2b66dda4ddc04cbc5540032da3daa, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: f70c4f5463a6fef4fb8ed262d3f9a6ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 1
-    - Vector1_4DD94F62: 10
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
-    - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &904019353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,54 +1421,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &907266009
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PurpleMushroom_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 72c2b66dda4ddc04cbc5540032da3daa, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: f70c4f5463a6fef4fb8ed262d3f9a6ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 1
-    - Vector1_4DD94F62: 10
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
-    - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &967400722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,6 +1468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa1c64948a2a6f418c2890e0878e83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventTrigger: {fileID: 0}
   billboard_UI: {fileID: 0}
   usesCamEvent: 0
   headButtActivation: 0
@@ -1953,54 +1704,6 @@ Transform:
   m_Father: {fileID: 1894880204}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1163128540
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PurpleMushroom_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 72c2b66dda4ddc04cbc5540032da3daa, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: f70c4f5463a6fef4fb8ed262d3f9a6ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 1
-    - Vector1_4DD94F62: 10
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
-    - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1278940008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2063,26 +1766,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53447956
-      objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53447956
-      objectReference: {fileID: 0}
     - target: {fileID: 3328101539688647120, guid: 99c43b18c7ce75f4dacfff8598932847,
         type: 3}
       propertyPath: m_Name
       value: Purple Mushroom Model
       objectReference: {fileID: 0}
-    - target: {fileID: 6365143664708334932, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 1721995316}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c43b18c7ce75f4dacfff8598932847, type: 3}
 --- !u!4 &1278940009 stripped
@@ -2246,26 +1934,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53447956
-      objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53447956
-      objectReference: {fileID: 0}
     - target: {fileID: 3328101539688647120, guid: 99c43b18c7ce75f4dacfff8598932847,
         type: 3}
       propertyPath: m_Name
       value: Purple Mushroom Model (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6365143664708334932, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 882132138}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c43b18c7ce75f4dacfff8598932847, type: 3}
 --- !u!4 &1368987389 stripped
@@ -2336,26 +2009,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53447956
-      objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53447956
-      objectReference: {fileID: 0}
     - target: {fileID: 3328101539688647120, guid: 99c43b18c7ce75f4dacfff8598932847,
         type: 3}
       propertyPath: m_Name
       value: Purple Mushroom Model (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 6365143664708334932, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 1163128540}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c43b18c7ce75f4dacfff8598932847, type: 3}
 --- !u!4 &1375268338 stripped
@@ -2832,54 +2490,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604281937}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1721995316
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PurpleMushroom_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: 5a6b6d3d2a719614390e0d98c0d56844,
-    type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_3D81286D:
-        m_Texture: {fileID: 2800000, guid: 72c2b66dda4ddc04cbc5540032da3daa, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_8C31FB47:
-        m_Texture: {fileID: 2800000, guid: f70c4f5463a6fef4fb8ed262d3f9a6ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1EC5F790: 1
-    - Vector1_4DD94F62: 10
-    - Vector1_A4820D62: -1
-    m_Colors:
-    - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
-    - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
-    - _L1_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_color: {r: 1, g: 1, b: 1, a: 0}
-    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1894880203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,26 +2586,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53447956
-      objectReference: {fileID: 0}
-    - target: {fileID: 1762195460468276163, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53447956
-      objectReference: {fileID: 0}
     - target: {fileID: 3328101539688647120, guid: 99c43b18c7ce75f4dacfff8598932847,
         type: 3}
       propertyPath: m_Name
       value: Purple Mushroom Model (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6365143664708334932, guid: 99c43b18c7ce75f4dacfff8598932847,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 237646227}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c43b18c7ce75f4dacfff8598932847, type: 3}
 --- !u!4 &1957618755 stripped
@@ -3011,11 +2606,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3109409544154986447, guid: 621fbaba69e3a2a49aae6c9a19453e0a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 870656277}
     - target: {fileID: 6045311644570367715, guid: 621fbaba69e3a2a49aae6c9a19453e0a,
         type: 3}
       propertyPath: m_Name
@@ -3160,156 +2750,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3162976056104024992, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.022894394
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056104024992, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.000000014756099
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056104024992, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 9.313226e-10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056154060313, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.021562878
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056154060313, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.000027883007
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056154060313, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.029511202
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056292517483, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.00000008726566
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056292517483, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.0128521025
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056292517483, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 0.000000011733198
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056437693674, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.04103806
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056437693674, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.0018715317
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976056437693674, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.0000000040163286
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057004462251, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.04575264
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057004462251, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.0002949083
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057004462251, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.000000009731306
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057077617911, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.00063258037
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057077617911, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.000000038132896
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057077617911, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 0.031954616
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057408236640, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.04101457
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057408236640, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.002121324
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057408236640, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.000000005878973
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057633915543, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.021565668
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057633915543, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.0004812779
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057633915543, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 0.029508207
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057784524642, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.00000008726566
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057784524642, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.0128521025
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976057784524642, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: -0.000000017599797
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976058124731587, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.02287029
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976058124731587, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.000000036210682
-      objectReference: {fileID: 0}
-    - target: {fileID: 3162976058124731587, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 0.000000007654307
-      objectReference: {fileID: 0}
     - target: {fileID: 6053955466739331082, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3370,11 +2810,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_v4.0
       objectReference: {fileID: 0}
-    - target: {fileID: 7596186758439501073, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 684107664}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df, type: 3}
 --- !u!1001 &7967510031619654906

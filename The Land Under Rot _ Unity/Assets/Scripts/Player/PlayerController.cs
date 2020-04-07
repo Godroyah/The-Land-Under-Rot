@@ -442,7 +442,7 @@ public class PlayerController : MonoBehaviour
         else
             movement = new Vector3(HorizontalInput, 0, VerticalInput);
 
-        Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist);
+        Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist).normalized;
 
         rotationTarget.position = tempDir + transform.position;
 
