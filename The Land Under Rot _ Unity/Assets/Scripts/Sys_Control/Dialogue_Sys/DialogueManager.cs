@@ -156,6 +156,7 @@ public class DialogueManager : MonoBehaviour
 public enum Reply
 {
     //TreeSeat
+    // - Key_Dialogue
     Sleepy_AngelTree,
     Awake_AngelTree,
     AngelTree_PostCutscene,
@@ -163,6 +164,37 @@ public enum Reply
     Mulchant_No_Mulch,
     Mulchant_Gathered_Mulch_PreCutscene,
     Mulchant_Tree_Is_Awake,
+    Return_To_Stinkhorn,
+
+    // - Other Dialogue
+    TS_Rootford_Intro,
+    TS_Rootford_Repeat,
+    Catkin_Intro,
+    CK_Spoke_To_Mulchant,
+    CK_Tree_Is_Awake,
+    Catkin_Repeat_1,
+    Catkin_Repeat_2,
+    Catkin_Repeat_3,
+    Catkin_Repeat_4,
+    Pedalton,
+    Carrot_Slug_Intro,
+    Carrot_Slug_Repeat_1,
+    Carrot_Slug_Repeat_2,
+    Carrot_Slug_Repeat_3,
+    Carrot_Slug_Repeat_4,
+    Stranger_Intro,
+    Stranger_Tree_Is_Awake,
+    Stranger_Repeat_1,
+    Stranger_Repeat_2,
+    Stranger_Repeat_3,
+    Miss_Stamen_Intro,
+    Miss_Stamen_Spoke_To_Mulchant,
+    Miss_Stamen_Tree_Is_Awake,
+    Miss_Stamen_Repeat_1,
+    Miss_Stamen_Repeat_2,
+    Buddy,
+    TS_Fenway_Exit,
+    TS_Fenway_Mulch,
 
     //Stinkhorn_Stop
     SS_Rootford_Intro_1,
