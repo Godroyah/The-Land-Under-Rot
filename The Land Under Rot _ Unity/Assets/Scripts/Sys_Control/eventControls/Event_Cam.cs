@@ -72,7 +72,13 @@ public class Event_Cam : MonoBehaviour
 
         if (startScene)
         {
-            
+            if(shots[currentScene].isEventTrigger && currentScene == 0)
+            {
+                if (shots[currentScene].eventType != null)
+                {
+                    shots[currentScene].eventType.StartEvent();
+                }
+            }
             if (currentTime < 0)
             {
                 if (currentScene != shots.Length - 1)
@@ -84,7 +90,8 @@ public class Event_Cam : MonoBehaviour
                 {
                     Debug.LogWarning("Scene Time for shot" + currentScene + " is too close to 0! Please increase to a minimum of 1!");
                 }
-                if(shots[currentScene].isEventTrigger )
+                //Debug.Log(currentScene);
+                if(shots[currentScene].isEventTrigger)
                 {
                     if(shots[currentScene].eventType != null)
                     {

@@ -21,34 +21,41 @@ public class AngelTree_NewAreas_Event : Event_Type
 
     [Header("Fruit Branch Parameters")]
 
-    [Range(1f, 20f)]
+    [Range(1f, 40f)]
     public float fruitEntranceDelay;
-    [Range(1f, 20f)]
+    [Range(1f, 60f)]
     public float fruitEntranceLowerDist;
-    [Range(0.1f, 10.0f)]
+    [Range(0.1f, 1.0f)]
     public float dropSpeedFruit;
 
     [Space(3)]
 
     [Header("Willow Branch Parameters")]
 
-    [Range(1f, 20f)]
+    [Range(1f, 40f)]
     public float willowEntranceDelay;
-    [Range(1f, 20f)]
+    [Range(1f, 60f)]
     public float willowEntranceLowerDist;
-    [Range(0.1f, 10.0f)]
+    [Range(0.1f, 1.0f)]
     public float dropSpeedWillow;
 
     [Space(3)]
 
     [Header("Angel Boss Branch Parameters")]
 
-    [Range(1f, 20f)]
+    [Range(1f, 40f)]
     public float treeSeatBossBranchDelay;
-    [Range(1f, 20f)]
+    [Range(1f, 60f)]
     public float treeSeatBossBranchLowerDist;
-    [Range(0.1f, 10.0f)]
+    [Range(0.1f, 1.0f)]
     public float dropSpeedAngelBoss;
+
+    [Space(3)]
+
+    [Header ("Speed Ceiling")]
+
+    [Range(1.0f, 15.0f)]
+    public float totalSpeed;
 
     [Space(3)]
 
@@ -62,7 +69,6 @@ public class AngelTree_NewAreas_Event : Event_Type
         dropRecorderFruit = dropSpeedFruit;
         dropRecorderWillow = dropSpeedWillow;
         dropRecorderAngelBoss = dropSpeedAngelBoss;
-
 
         fruitStartPos = new Vector3(fruitEntranceBranches.transform.position.x, fruitEntranceBranches.transform.position.y, fruitEntranceBranches.transform.position.z);
         fruitLoweredPos = new Vector3(fruitEntranceBranches.transform.position.x, fruitEntranceBranches.transform.position.y - fruitEntranceLowerDist, fruitEntranceBranches.transform.position.z);
@@ -78,43 +84,54 @@ public class AngelTree_NewAreas_Event : Event_Type
     {
         base.StartEvent();
 
-        StartCoroutine(RevealNewAreas());
+        StartCoroutine(RevealFruitfulForest());
+        StartCoroutine(RevealUnderstump());
+        StartCoroutine(RevealBoss());
     }
 
-    IEnumerator RevealNewAreas()
+    IEnumerator RevealFruitfulForest()
     {
         dropSpeedFruit = dropRecorderFruit;
-        dropSpeedWillow = dropRecorderWillow;
-        dropSpeedAngelBoss = dropRecorderAngelBoss;
-
         float fruitIteration = dropSpeedFruit;
-        float willowIteration = dropSpeedWillow;
-        float angelBossIteration = dropSpeedAngelBoss;
 
         yield return new WaitForSeconds(fruitEntranceDelay);
 
-        while (dropSpeedFruit < 1.0f)
+        while (dropSpeedFruit < totalSpeed)
         {
-            fruitEntranceBranches.transform.position = Vector3.Lerp(fruitEntranceBranches.transform.position, fruitLoweredPos, dropSpeedFruit);
-            dropSpeedFruit += fruitIteration;
+            fruitEntranceBranches.transform.position = Vector3.Lerp(fruitEntranceBranches.transform.position, fruitLoweredPos, dropSpeedFruit * Time.deltaTime);
+            dropSpeedFruit += fruitIteration * Time.deltaTime;
             yield return null;
         }
+    }
+
+    IEnumerator RevealUnderstump()
+    {
+        dropSpeedWillow = dropRecorderWillow;
+        float willowIteration = dropSpeedWillow;
 
         yield return new WaitForSeconds(willowEntranceDelay);
 
-        while (dropSpeedFruit < 1.0f)
+        while (dropSpeedWillow < totalSpeed)
         {
-            willowEntranceBranches.transform.position = Vector3.Lerp(willowEntranceBranches.transform.position, willowLoweredPos, dropSpeedWillow);
-            dropSpeedWillow += willowIteration;
+            willowEntranceBranches.transform.position = Vector3.Lerp(willowEntranceBranches.transform.position, willowLoweredPos, dropSpeedWillow * Time.deltaTime);
+            dropSpeedWillow += willowIteration * Time.deltaTime;
             yield return null;
         }
+    }
+
+    IEnumerator RevealBoss()
+    {
+        //Debug.Log("Triggered");
+       
+        dropSpeedAngelBoss = dropRecorderAngelBoss;
+        float angelBossIteration = dropSpeedAngelBoss;
 
         yield return new WaitForSeconds(treeSeatBossBranchDelay);
 
-        while (dropSpeedFruit < 1.0f)
+        while (dropSpeedAngelBoss < totalSpeed)
         {
-            treeSeatBossBranch.transform.position = Vector3.Lerp(treeSeatBossBranch.transform.position, angelBossBranchLoweredPos, dropSpeedAngelBoss);
-            dropSpeedAngelBoss += angelBossIteration;
+            treeSeatBossBranch.transform.position = Vector3.Lerp(treeSeatBossBranch.transform.position, angelBossBranchLoweredPos, dropSpeedAngelBoss * Time.deltaTime);
+            dropSpeedAngelBoss += angelBossIteration * Time.deltaTime;
             yield return null;
         }
     }
