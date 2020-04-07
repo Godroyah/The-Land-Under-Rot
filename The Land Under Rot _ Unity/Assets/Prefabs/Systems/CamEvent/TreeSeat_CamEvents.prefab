@@ -65,6 +65,50 @@ Transform:
   m_Father: {fileID: 4737851848216392622}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2711434929547854380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8813776472840336452}
+  - component: {fileID: 1425570383754808513}
+  m_Layer: 0
+  m_Name: ViewPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8813776472840336452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711434929547854380}
+  m_LocalRotation: {x: -0.1888799, y: -0.3659642, z: 0.076120675, w: -0.90807503}
+  m_LocalPosition: {x: -5.76, y: 4.11, z: 3.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4737851848570872945}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 23.5, y: 403.9, z: 0}
+--- !u!65 &1425570383754808513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711434929547854380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4599842638965207806
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,13 +155,17 @@ MonoBehaviour:
   eventName: New_Areas_Revealed
   fruitEntranceBranches: {fileID: 0}
   willowEntranceBranches: {fileID: 0}
-  treaSeatBossBranch: {fileID: 0}
-  fruitEntranceDelay: 0
-  willowEntranceDelay: 0
-  treeSeatBossBranchDelay: 0
-  fruitEntranceLowerDist: 0
-  willowEntranceLowerDist: 0
-  treeSeatBossBranchLowerDist: 0
+  treeSeatBossBranch: {fileID: 0}
+  fruitEntranceDelay: 2
+  fruitEntranceLowerDist: 50
+  dropSpeedFruit: 0.1
+  willowEntranceDelay: 6
+  willowEntranceLowerDist: 50
+  dropSpeedWillow: 0.1
+  treeSeatBossBranchDelay: 10
+  treeSeatBossBranchLowerDist: 50
+  dropSpeedAngelBoss: 0.1
+  totalSpeed: 3
 --- !u!1 &4737851848216392621
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +198,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -85.66, z: 0}
+--- !u!1 &8044622773396382930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4226999021650358120}
+  - component: {fileID: 2405086180991851625}
+  m_Layer: 0
+  m_Name: ViewPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4226999021650358120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8044622773396382930}
+  m_LocalRotation: {x: -0.20325103, y: -0.06062169, z: 0.012609332, w: -0.97716683}
+  m_LocalPosition: {x: -8.392, y: 4.398, z: 3.004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4737851848570872945}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 23.5, y: 367.1, z: 0}
+--- !u!65 &2405086180991851625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8044622773396382930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &396741636182174541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,6 +461,96 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5661980279323447924}
     m_Modifications:
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[0].name
+      value: Fruit Branch Drops
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[0].isEventTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[0].eventType
+      value: 
+      objectReference: {fileID: 2478486413589410328}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[0].sceneTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[1].name
+      value: Willow Branch Drops
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[1].sceneTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[1].transitionSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[1].viewpoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[2].name
+      value: Boss Branch Drops
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[2].sceneTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[2].transitionSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[2].viewpoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[3].name
+      value: Return to Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[3].canGlide
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[3].sceneTime
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[3].transitionSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860076172795575022, guid: d7b2762185f21044f8bc2108a86568d1,
+        type: 3}
+      propertyPath: shots.Array.data[3].viewpoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1860076173176094565, guid: d7b2762185f21044f8bc2108a86568d1,
         type: 3}
       propertyPath: eventTrigger
@@ -460,6 +642,12 @@ Transform:
 --- !u!95 &4737851848426498829 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1860076172972979600, guid: d7b2762185f21044f8bc2108a86568d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6345688749595909789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4737851848570872945 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1860076172795575020, guid: d7b2762185f21044f8bc2108a86568d1,
     type: 3}
   m_PrefabInstance: {fileID: 6345688749595909789}
   m_PrefabAsset: {fileID: 0}
