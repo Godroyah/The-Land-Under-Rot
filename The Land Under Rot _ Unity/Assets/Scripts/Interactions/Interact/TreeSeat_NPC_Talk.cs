@@ -274,4 +274,25 @@ public class TreeSeat_NPC_Talk : Interactable
 
         yield return null;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Interact"))
+        {
+            if (playerController == null)
+            {
+                playerController = other.GetComponentInParent<PlayerController>();
+                playerController.interactables.Add(this);
+            }
+            else
+                playerController.interactables.Add(this);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Interact"))
+            playerController.interactables.Remove(this);
+    }
+
 }
