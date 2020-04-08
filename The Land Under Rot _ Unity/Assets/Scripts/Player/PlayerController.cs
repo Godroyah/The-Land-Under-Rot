@@ -402,7 +402,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Interacting()
     {
-        if (currentTarget != null)
+        if (currentTarget != null && interactables.Contains(currentTarget))
         {
             currentTarget.Interact();
         }
