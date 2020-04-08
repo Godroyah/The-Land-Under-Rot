@@ -10,11 +10,12 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenu;
     public GameObject quitOption;
-    public GameObject pauseEventSystem;
-    public Button resumeButton;
-    public Button quitButton;
+    //public GameObject pauseEventSystem;
+    public GameObject decoration;
+    //public Button resumeButton;
+    //public Button quitButton;
 
-    public RawImage acornDisplay;
+    //public RawImage acornDisplay;
     public TextMeshProUGUI acornText;
 
     public RawImage angelBottle;
@@ -52,7 +53,8 @@ public class PauseMenu : MonoBehaviour
                     if (pauseMenu != null)
                     {
                         pauseMenu.SetActive(true);
-                        acornDisplay.enabled = true;
+                        decoration.SetActive(true);
+                       // acornDisplay.enabled = true;
                         acornText.enabled = true;
                         if(gameController.mulchant_GivenBottles)
                         {
@@ -75,8 +77,10 @@ public class PauseMenu : MonoBehaviour
                     {
                         pauseMenu.SetActive(false);
                         quitOption.SetActive(false);
-                        resumeButton.interactable = true;
-                        quitButton.interactable = true;
+                        decoration.SetActive(false);
+                        acornText.enabled = false;
+                    //resumeButton.interactable = true;
+                    //quitButton.interactable = true;
                 }
                     Time.timeScale = 1;
                     //paused = false;
@@ -91,7 +95,7 @@ public class PauseMenu : MonoBehaviour
                 {
                 //Cursor.visible = false;
                 //Cursor.lockState = CursorLockMode.Locked;
-                acornDisplay.enabled = false;
+                //acornDisplay.enabled = false;
                 acornText.enabled = false;
                 if (gameController.mulchant_GivenBottles)
                 {
@@ -109,7 +113,8 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.visible = false;
         pauseMenu.SetActive(false);
-        acornDisplay.enabled = false;
+        decoration.SetActive(false);
+        //acornDisplay.enabled = false;
         acornText.enabled = false;
         if (gameController.mulchant_GivenBottles)
         {
@@ -124,10 +129,11 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         //pauseMenu.SetActive(false);
-        resumeButton.interactable = false;
-        quitButton.interactable = false;
+        //resumeButton.interactable = false;
+        //quitButton.interactable = false;
         quitOption.SetActive(true);
-        pauseEventSystem.SetActive(false);
+        pauseMenu.SetActive(false);
+        //pauseEventSystem.SetActive(false);
     }
 
     public void QuitToMenu()
@@ -139,10 +145,11 @@ public class PauseMenu : MonoBehaviour
 
     public void CancelQuit()
     {
+        pauseMenu.SetActive(true);
         quitOption.SetActive(false);
-        resumeButton.interactable = true;
-        quitButton.interactable = true;
-        pauseEventSystem.SetActive(true);
+        //resumeButton.interactable = true;
+        //quitButton.interactable = true;
+        //pauseEventSystem.SetActive(true);
     }
 
     public void QuitApplication()

@@ -8,7 +8,7 @@ public enum PickUpType { NONE, ACORN}
 public class Pick_Up : MonoBehaviour
 {
     public PickUpType pickUpType; //Drop down menu for the types of pickups (Acorn, Mulch, etc.)'
-    private Collider mulchCollider;
+    //private Collider mulchCollider;
     private ObjectPreferences objPref;
     private AudioSource acornAudio;
 
@@ -54,7 +54,7 @@ public class Pick_Up : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        mulchCollider.enabled = false;
+        //mulchCollider.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
