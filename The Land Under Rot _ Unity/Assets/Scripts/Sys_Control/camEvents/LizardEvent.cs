@@ -69,7 +69,7 @@ public class LizardEvent : Event_Type
 
         yield return new WaitForSeconds(2f); // TODO: REMOVE ME
 
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
     }
 
 }
