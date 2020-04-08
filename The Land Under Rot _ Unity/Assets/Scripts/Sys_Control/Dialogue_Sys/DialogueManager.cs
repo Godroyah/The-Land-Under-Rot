@@ -204,5 +204,11 @@ public enum Reply
     SS_BusDriver_1,
     SS_BusDriver_2_Repeat,
     MrPots_Sign,
-    Test
+    Test,
+
+    //Tutorial_Area
+    Tut_Fenway_Movement,
+    Tut_Fenway_Headbutt,
+    Tut_Fenway_Jump,
+    Tut_Blue_GG_Fenway
 }
