@@ -31,6 +31,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
                 if (playerController.ShouldJump)
                 {
                     animator.SetTrigger(CharAnimation.Jump_Start_Trigger.ToString());
+                    animator.SetBool(CharAnimation.Is_Jumping_Bool.ToString(), true);
                 }
 
                 //faster falling
@@ -84,6 +85,23 @@ public class CharacterAnimatorV2 : MonoBehaviour
         }
 
     }
+
+    IEnumerator IsJumpingCheck()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+
+        while (true)
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump V2") == false) // '0' references the anim layer
+            {
+                animator.SetBool(CharAnimation.Is_Jumping_Bool.ToString(), false);
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+    }
 }
 
 public enum CharAnimation
@@ -95,6 +113,6 @@ public enum CharAnimation
     Is_Falling_Bool,
     Is_Drowning_Bool, // not set up yet
     Is_Walking_Bool,
+    Is_Jumping_Bool,
     Is_Sprinting_Bool // not set up yet
 }
-//animator.SetTrigger(CharAnimation.Headbutt_Trigger.ToString());
