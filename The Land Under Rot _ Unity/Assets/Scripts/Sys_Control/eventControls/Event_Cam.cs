@@ -26,7 +26,8 @@ public class Event_Cam : MonoBehaviour
         currentScene = 0;
         currentTime = shots[currentScene].sceneTime;
 
-        Invoke("Setup", 1);
+        //Invoke("Setup", 1);
+        GameController.Instance.updateCameras += UpdateCamera;
     }
 
     void Setup()
@@ -144,6 +145,11 @@ public class Event_Cam : MonoBehaviour
         //        transform.rotation = Quaternion.identity;
         //    }
         //}
+    }
+
+    public void UpdateCamera(Camera newCamera)
+    {
+        Setup();
     }
 }
 
