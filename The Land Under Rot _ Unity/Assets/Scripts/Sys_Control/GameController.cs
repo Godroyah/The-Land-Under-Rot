@@ -142,6 +142,8 @@ public class GameController : MonoBehaviour
 
         if (acornCount != null)
             acornCount.text = playerAcorns.ToString();
+        
+
         //if (mulchCount != null)
         //    mulchCount.text = playerMulch.ToString();
 
@@ -160,7 +162,7 @@ public class GameController : MonoBehaviour
     {
         isDead = false;
         //oldHealth = playerHealth;
-        oldAcorns = playerAcorns;
+        Invoke("SetAcorns", 1);
         //oldMulch = playerMulch;
     }
 
@@ -200,6 +202,14 @@ public class GameController : MonoBehaviour
         //}
 
     }
+
+    public void SetAcorns()
+    {
+        playerAcorns = playerController.acorns;
+        acornCount.text = playerAcorns.ToString();
+        oldAcorns = playerAcorns;
+    }
+
 
     public void FillBrownBottle()
     {
