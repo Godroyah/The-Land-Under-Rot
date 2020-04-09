@@ -198,13 +198,9 @@ public class PlayerController : MonoBehaviour
         isDead = false;
         eventActive = false;
 
-        if (currentSpawn == null)
-        {
-            currentSpawn = transform;
-        }
+        StartSpawn();
 
-        this.transform.position = currentSpawn.position;
-        this.transform.rotation = currentSpawn.rotation;
+        //Invoke("StartSpawn", 1);
 
         // Bit shift the index of the layer (8) to get a bit mask
         playerLayerMask = 1 << 8;
@@ -399,6 +395,18 @@ public class PlayerController : MonoBehaviour
         {
             focus.billboard_UI.SetActive(state);
         }
+    }
+
+    void StartSpawn()
+    {
+
+        if (currentSpawn == null)
+        {
+            currentSpawn = transform;
+        }
+
+        this.transform.position = currentSpawn.position;
+        this.transform.rotation = currentSpawn.rotation;
     }
 
     IEnumerator Interacting()
