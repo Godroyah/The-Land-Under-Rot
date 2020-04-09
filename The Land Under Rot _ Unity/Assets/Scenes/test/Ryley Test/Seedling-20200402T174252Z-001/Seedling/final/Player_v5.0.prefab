@@ -56,8 +56,8 @@ MonoBehaviour:
   runVelocity: 20
   rotationSpeed: 5
   fadeDelay: 0
-  jumpVelocity: 37
-  fallMultiplier: 5.5
+  jumpVelocity: 40
+  fallMultiplier: 4.5
   lowJumpMultiplier: 4
   interactionRange: 1.5
   interactionDetector: {fileID: 338676998872640367}
@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 15400759151362630}
   - component: {fileID: 15400759151362631}
   - component: {fileID: 7666298405126990730}
+  - component: {fileID: 6015915547698305752}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -250,6 +251,21 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &6015915547698305752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15400759151362628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b52f1a3e0461b43a4c413b67b822b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistance: 1
+  maxDistance: 4
+  smoothing: 10
 --- !u!1 &15400759175299046
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 15400759151362630}
   target: {fileID: 15400758889286123}
-  rotationTarget: {fileID: 15400758889286100}
   sensitivity_X: 5
   sensitivity_Y: 5
   pitchMinMax: {x: -30, y: 45}
