@@ -30,6 +30,21 @@ public class Spawn_Volume : MonoBehaviour
     //[SerializeField]
     //private float shortestDist;
 
+    private void Awake()
+    {
+        if (spawnType == SpawnType.START)
+        {
+            activeCorridor = true;
+            playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+            playerController.currentSpawn = spawnPoint;
+            playerSpawn = playerController.currentSpawn;
+
+            //-------------------------------------------------------
+            //----This Start for Demo only---------------------------
+
+        }
+    }
+
     //Start is called before the first frame update
     void Start()
     {
@@ -37,23 +52,13 @@ public class Spawn_Volume : MonoBehaviour
         //{
         //    spawnDistances = new float[spawnPoints.Length];
         //}
-        if(spawnType == SpawnType.START)
-        {
-            activeCorridor = true;
-            playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-            playerController.currentSpawn = spawnPoint;
-            playerSpawn = playerController.currentSpawn;
-            
-            //-------------------------------------------------------
-            //----This Start for Demo only---------------------------
-
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((spawnType == SpawnType.START || spawnType == SpawnType.RESPAWN) && activeCorridor && playerSpawn != spawnPoint)
+        if ((spawnType == SpawnType.START || spawnType == SpawnType.RESPAWN && activeCorridor && playerSpawn != spawnPoint))
         {
             activeCorridor = false;
             playerSpawn = spawnPoint;
