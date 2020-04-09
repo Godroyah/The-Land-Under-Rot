@@ -155,6 +155,7 @@ public class DialogueManager : MonoBehaviour
 }
 public enum Reply
 {
+    #region TreeSeat Dialogue
     //TreeSeat
     // - Key_Dialogue
     Sleepy_AngelTree,
@@ -195,7 +196,10 @@ public enum Reply
     Buddy,
     TS_Fenway_Exit,
     TS_Fenway_Mulch,
+    #endregion
 
+
+    #region Stinkhorn Dialogue
     //Stinkhorn_Stop
     SS_Rootford_Intro_1,
     SS_Rootford_Intro_2,
@@ -204,11 +208,18 @@ public enum Reply
     SS_BusDriver_1,
     SS_BusDriver_2_Repeat,
     MrPots_Sign,
+    Stink_Fenway_Intro,
+    Stink_Fenway_Repeat,
+    Red_GG_Fenway,
+    Secrets_Fenway,
     Test,
+    #endregion
 
+    #region Tutorial_Area Dialogue
     //Tutorial_Area
     Tut_Fenway_Movement,
     Tut_Fenway_Headbutt,
     Tut_Fenway_Jump,
     Tut_Blue_GG_Fenway
+    #endregion
 }
