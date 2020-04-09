@@ -88,7 +88,9 @@ public class GameController : MonoBehaviour
     //public TextMeshProUGUI mulchCount;
     //public Image[] healthCounter;
 
-    
+    public Camera mainCamera;
+    public delegate void UpdateCameras(Camera newCamera);
+    public UpdateCameras updateCameras;
 
     private void Awake()
     {
@@ -278,4 +280,9 @@ public class GameController : MonoBehaviour
     //    playerHealth = 3;
     //    isDead = false;
     //}
+
+    public void UpdateMainCamera(Camera newCamera)
+    {
+        updateCameras(newCamera);
+    }
 }

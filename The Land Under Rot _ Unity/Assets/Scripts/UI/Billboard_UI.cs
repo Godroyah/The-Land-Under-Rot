@@ -25,30 +25,21 @@ public class Billboard_UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(forInteractable)
+        if (forInteractable)
         {
-            if (GameController.Instance != null)
-                billBoardCam = GameController.Instance.playerController.camControl.myCamera;
-            //else if(playerController != null)
-            //    billBoardCam = playerController.camControl.myCamera;
-
-            camTransform = billBoardCam.transform;
-            promptCanvas.worldCamera = billBoardCam;
+            GameController.Instance.updateCameras += UpdateCamera;
         }
-        
-
-        
         startRotation = transform.rotation;
 
         if (textObject != null)
         {
             textObject.SetActive(false);
         }
-        else if(tutorial)
+        else if (tutorial)
         {
             Debug.LogWarning("Text TMP is missing from Tutorial Billboard UI! Please reconnect reference!");
         }
-        if(imageObject != null)
+        if (imageObject != null)
         {
             //imageObject.SetActive(false);
         }
@@ -61,15 +52,30 @@ public class Billboard_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!forInteractable && billBoardCam != null)
+        if (!forInteractable && billBoardCam != null)
         {
             camTransform = billBoardCam.transform;
             promptCanvas.worldCamera = billBoardCam;
         }
         //----------------------------------------------------------------------------------------
         //-------Multiply the start rotation of Button Prompt with that of the camera-------------
-        transform.rotation = camTransform.rotation * startRotation;
+        if (camTransform != null)
+        {
+            transform.rotation = camTransform.rotation * startRotation;
+        }
         //----------------------------------------------------------------------------------------
         //-------This will keep the UI facing the camera at all times (Billboarding)
+    }
+
+    public void UpdateCamera(Camera newCamera)
+    {
+        if (GameController.Instance != null)
+            billBoardCam = GameController.Instance.mainCamera;
+        //else if(playerController != null)
+        //    billBoardCam = playerController.camControl.myCamera;
+
+        camTransform = billBoardCam.transform;
+        promptCanvas.worldCamera = billBoardCam;
+
     }
 }

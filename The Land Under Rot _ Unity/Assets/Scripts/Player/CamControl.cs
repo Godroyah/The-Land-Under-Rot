@@ -6,7 +6,7 @@ public class CamControl : MonoBehaviour
 {
     public Camera myCamera;
     public GameObject target;
-    public Transform rotationTarget;
+    private Transform rotationTarget;
 
     private bool invertPitch = false;
     public float sensitivity_X = 10f;
@@ -31,7 +31,7 @@ public class CamControl : MonoBehaviour
         if (myCamera == null)
         {
             Debug.LogWarning("No assigned camera found. Defaulting to MAIN");
-            myCamera = Camera.main;
+            myCamera = GameController.Instance.mainCamera;
         }
 
         yaw = transform.eulerAngles.y;
@@ -106,5 +106,10 @@ public class CamControl : MonoBehaviour
         transform.eulerAngles = currentRotation;
 
         // **----------------------------------------------------------------------------->>
+    }
+
+    public void SetCameraTarget(Transform target)
+    {
+        rotationTarget = target;
     }
 }

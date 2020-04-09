@@ -22,7 +22,7 @@ public class Button_Prompter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("AssignCam", 1);
+        //Invoke("AssignCam", 1);
         //gameController = GameController.Instance;
         //billboardUI.billBoardCam = gameController.playerController.camControl.myCamera;
         //billboardUI.camTransform = billboardUI.billBoardCam.transform;
@@ -40,6 +40,8 @@ public class Button_Prompter : MonoBehaviour
         //{
         //    Debug.LogWarning("GameController not active in scene!");
         //}
+
+        GameController.Instance.updateCameras += UpdateCamera;
 
         if (textObject == null)
         {
@@ -60,21 +62,25 @@ public class Button_Prompter : MonoBehaviour
         }
     }
 
+    /*
     void AssignCam()
     {
         gameController = GameController.Instance;
-        billboardUI.billBoardCam = gameController.playerController.camControl.myCamera;
+        billboardUI.billBoardCam = GameController.Instance.mainCamera;
         billboardUI.camTransform = billboardUI.billBoardCam.transform;
     }
+    */
 
     void OnTriggerEnter(Collider player)
     {
         if (player.gameObject.tag == "Player")
         {
+            /*
             if (gameController == null)
             {
-                billboardUI.camTransform = player.GetComponentInParent<PlayerController>().camControl.myCamera.transform;
+                billboardUI.camTransform = GameController.Instance.mainCamera.transform;
             }
+            */
             if(textObject != null)
             {
                 textObject.SetActive(true);
@@ -93,5 +99,12 @@ public class Button_Prompter : MonoBehaviour
             }
             imageObject.SetActive(false);
         }
+    }
+
+    public void UpdateCamera(Camera newCamera)
+    {
+        billboardUI.billBoardCam = newCamera;
+        billboardUI.camTransform = newCamera.transform;
+
     }
 }

@@ -33,7 +33,7 @@ public class Event_Cam : MonoBehaviour
     {
         if (shots[0].viewpoint == null)
         {
-            shots[0].viewpoint = GameController.Instance.playerController.camControl.myCamera.transform;
+            shots[0].viewpoint = GameController.Instance.mainCamera.transform;
         }
         if (shots[shots.Length - 1].viewpoint == null)
         {

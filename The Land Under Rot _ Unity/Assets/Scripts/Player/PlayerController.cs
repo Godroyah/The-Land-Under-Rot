@@ -182,7 +182,8 @@ public class PlayerController : MonoBehaviour
         rotationTarget.transform.parent = gameObject.transform;
         rotationTarget.name = "RotationTarget$$";
 
-        camControl.rotationTarget = rotationTarget;
+        //camControl.rotationTarget = rotationTarget;
+        camControl.SetCameraTarget(rotationTarget);
 
         //GameController.Instance.playerController = this;
     }
