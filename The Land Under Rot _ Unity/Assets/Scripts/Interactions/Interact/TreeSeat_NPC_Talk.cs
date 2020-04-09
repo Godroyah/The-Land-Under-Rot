@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum TreeSeat_NPC { NONE, CATKIN, BUDDY, LIZARD, ROOTFORD, MS_STAMEN,
-    EXIT_FENWAY, MULCH_FENWAY, PEDALTON, CARROT_SLUG, STRANGER}
+    EXIT_FENWAY, MULCH_FENWAY, PEDALTON, CARROT_SLUG, STRANGER, GOURDO}
 
 //PEAPOD ^ ?
 
@@ -56,10 +56,10 @@ public class TreeSeat_NPC_Talk : Interactable
                     StartCoroutine(MsStamen());
                     break;
                 case TreeSeat_NPC.EXIT_FENWAY:
-                    StartCoroutine(ExitFenway());
+                    dialogueManager.StartDialogue(Reply.TS_Fenway_Exit);
                     break;
                 case TreeSeat_NPC.MULCH_FENWAY:
-                    StartCoroutine(MulchFenway());
+                    dialogueManager.StartDialogue(Reply.TS_Fenway_Mulch);
                     break;
                 case TreeSeat_NPC.PEDALTON:
                     StartCoroutine(Pedalton());
@@ -70,6 +70,11 @@ public class TreeSeat_NPC_Talk : Interactable
                 case TreeSeat_NPC.STRANGER:
                     StartCoroutine(Stranger());
                     break;
+                case TreeSeat_NPC.GOURDO:
+                default:
+                    Debug.LogWarning("NPC type error");
+                    break;
+                
             }
         }
     }
@@ -132,15 +137,6 @@ public class TreeSeat_NPC_Talk : Interactable
 
         //Require separate script for yes/no functionality?
 
-    IEnumerator Lizard()
-    {
-        Debug.Log("Grrr, Hiss, I don't say things yet.");
-
-        //dialogueManager.StartDialogue(Reply
-
-       yield return null;
-    }
-
     IEnumerator Rootford()
     {
         if (!isIntroduced)
@@ -188,20 +184,6 @@ public class TreeSeat_NPC_Talk : Interactable
         }
 
         yield return null;
-    }
-
-    IEnumerator ExitFenway()
-    {
-        dialogueManager.StartDialogue(Reply.TS_Fenway_Exit);
-
-       yield return null;
-    }
-
-    IEnumerator MulchFenway()
-    {
-       dialogueManager.StartDialogue(Reply.TS_Fenway_Mulch);
-
-       yield return null;
     }
 
     IEnumerator Pedalton()
@@ -270,6 +252,63 @@ public class TreeSeat_NPC_Talk : Interactable
             {
                 dialogueManager.StartDialogue(Reply.Stranger_Repeat_3);
             }
+        }
+
+        yield return null;
+    }
+
+    IEnumerator Gourdo()
+    {
+        if (!isIntroduced)
+        {
+            dialogueManager.StartDialogue(Reply.Gourdo_Intro);
+            isIntroduced = true;
+        }
+        else if (GameController.Instance.angelTreeAwake && !angelTreeAwake)
+        {
+            dialogueManager.StartDialogue(Reply.Gourdo_Tree_Is_Awake);
+            angelTreeAwake = true;
+        }
+        else
+        {
+            randomTalk = Random.Range(1, 4);
+
+            if (randomTalk == 1)
+            {
+                dialogueManager.StartDialogue(Reply.Gourdo_Repeat_1);
+            }
+            else if (randomTalk == 2)
+            {
+                dialogueManager.StartDialogue(Reply.Gourdo_Repeat_2);
+            }
+            else if (randomTalk == 3)
+            {
+                dialogueManager.StartDialogue(Reply.Gourdo_Repeat_3);
+            }
+        }
+
+        yield return null;
+    }
+
+    IEnumerator Lizard()
+    {
+        randomTalk = Random.Range(1, 5);
+
+        if (randomTalk == 1)
+        {
+            dialogueManager.StartDialogue(Reply.Lizard_1);
+        }
+        else if (randomTalk == 2)
+        {
+            dialogueManager.StartDialogue(Reply.Lizard_2);
+        }
+        else if (randomTalk == 3)
+        {
+            dialogueManager.StartDialogue(Reply.Lizard_3);
+        }
+        else if(randomTalk == 4)
+        {
+            dialogueManager.StartDialogue(Reply.Lizard_4);
         }
 
         yield return null;

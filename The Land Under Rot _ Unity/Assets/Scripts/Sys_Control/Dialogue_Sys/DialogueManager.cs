@@ -196,6 +196,15 @@ public enum Reply
     Buddy,
     TS_Fenway_Exit,
     TS_Fenway_Mulch,
+    Gourdo_Intro,
+    Gourdo_Tree_Is_Awake,
+    Gourdo_Repeat_1,
+    Gourdo_Repeat_2,
+    Gourdo_Repeat_3,
+    Lizard_1,
+    Lizard_2,
+    Lizard_3,
+    Lizard_4,
     #endregion
 
 
