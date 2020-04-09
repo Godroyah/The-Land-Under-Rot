@@ -71,6 +71,8 @@ public class TreeSeat_NPC_Talk : Interactable
                     StartCoroutine(Stranger());
                     break;
                 case TreeSeat_NPC.GOURDO:
+                    StartCoroutine(Gourdo());
+                    break;
                 default:
                     Debug.LogWarning("NPC type error");
                     break;
