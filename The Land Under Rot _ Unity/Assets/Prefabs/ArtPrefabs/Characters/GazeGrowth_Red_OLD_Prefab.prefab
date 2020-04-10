@@ -212,6 +212,64 @@ Transform:
   m_Father: {fileID: 5234498216391775026}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &865244945854001048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8629907368952607703}
+  - component: {fileID: 7047566377735907145}
+  - component: {fileID: 35939311171946959}
+  m_Layer: 0
+  m_Name: CordyCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8629907368952607703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865244945854001048}
+  m_LocalRotation: {x: -0, y: -0.7085101, z: -0, w: -0.7057007}
+  m_LocalPosition: {x: 54.297134, y: 11.26, z: 59.15734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2080297379611150314}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7047566377735907145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865244945854001048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 8.17, z: 9.62}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &35939311171946959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865244945854001048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0af388eb23c0b4e95725dc3e22d7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redGazeGrowth: {fileID: 0}
 --- !u!1 &999263287327486179
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +433,7 @@ MonoBehaviour:
   cordysepBarrier: {fileID: 0}
   lowerDistance: 8
   cordyDelay: 1
+  isCordyReached: 0
   waitReturn: 1
   returnIn: 20
 --- !u!54 &8536831223775294864
@@ -1026,6 +1085,7 @@ Transform:
   - {fileID: 999263287327486178}
   - {fileID: 991600808385132610}
   - {fileID: 1936870155}
+  - {fileID: 8629907368952607703}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

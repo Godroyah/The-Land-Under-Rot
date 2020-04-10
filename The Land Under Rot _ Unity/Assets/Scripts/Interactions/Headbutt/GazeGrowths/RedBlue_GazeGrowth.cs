@@ -16,6 +16,8 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
     private float rateStorage;
 
+    public bool isCordyReached;
+
     [SerializeField]
     private bool waitReturn;
 
@@ -70,7 +72,7 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
     IEnumerator Fungi(float waitTime)
     {
-
+    
         rateOfChange = rateStorage;
         float iteration = rateOfChange;
 
@@ -93,7 +95,10 @@ public class RedBlue_GazeGrowth : GazeGrowth
     {
         waitReturn = true;
         yield return new WaitForSeconds(waitTime);
-        StartCoroutine(ReturnCords());
+        if(!isCordyReached)
+        {
+            StartCoroutine(ReturnCords());
+        }
     }
 
     IEnumerator ReturnCords()
