@@ -24,9 +24,9 @@ public class Dialogue : MonoBehaviour
             Frames[i].SetActive(false);
         }
 
-        if(isCamEventActive)
+        if (isCamEventActive)
         {
-            if(eventTrigger == null)
+            if (eventTrigger == null)
             {
                 eventTrigger = GetComponent<Event_Trigger>();
                 //Include LogWarning if no Event_Trigger component is included
@@ -59,48 +59,88 @@ public class Dialogue : MonoBehaviour
 
         for (int i = 0; i < Frames.Length; i++)
         {
-          //  Debug.Log("Depth Level 1");
+            //  Debug.Log("Depth Level 1");
             if (i != 0)
                 Frames[i - 1].SetActive(false);
-
             Frames[i].SetActive(true);
+
             yield return new WaitForEndOfFrame();
-            while (true)
+
+            yield return new WaitUntil(() => Input.GetButtonDown("Interact"));
+
+            //      Debug.Log("Depth Level 3");
+            if (hasFinishedDisplayingText || currentTextDisplayer == null)
             {
-            //    Debug.Log("Depth Level 2");
-                // TODO: Extremely high polling number for user input
-                yield return new WaitForSeconds(0.00001f);
-                if (Input.GetButtonDown("Interact"))
-                {
-              //      Debug.Log("Depth Level 3");
-                    if (hasFinishedDisplayingText || currentTextDisplayer == null)
-                    {
-                        hasFinishedDisplayingText = false;
-                        currentTextDisplayer = null;
-                        break;
-                    }
-                    else
-                    {
-                        currentTextDisplayer.DisplayFullText();
-                        //Wait for text to display full text
-                        yield return new WaitForSeconds(0.1f);
-                        while (true)
-                        {
-                //            Debug.Log("Depth Level 4");
-                            // TODO: Extremely high polling number for user input
-                            yield return new WaitForSeconds(0.00001f);
-                            if (Input.GetButtonDown("Interact"))
-                            {
-                  //              Debug.Log("Depth Level 5");
-                                break;
-                            }
-                        }
-
-                        break;
-                    }
-
-                }
+                hasFinishedDisplayingText = false;
+                currentTextDisplayer = null;
+                continue; // This continues to the next frame
             }
+            else
+            {
+                currentTextDisplayer.DisplayFullText();
+                //Wait for text to display full text
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            // Check if the Frame has a DialogueOption
+            Frame tempFrame = Frames[i].GetComponent<Frame>();
+            if (tempFrame != null)
+            {
+                yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
+
+                if (tempFrame.Get_ShouldContinue() == false)
+                {
+                    i = Frames.Length + 2;
+                    break;
+                }
+                else
+                    continue; // This skips the need to press the interact key again
+
+            }
+
+            yield return new WaitUntil(() => Input.GetButtonDown("Interact"));
+
+            #region OldCode
+            //yield return new WaitForEndOfFrame();
+            //while (true)
+            //{
+            ////    Debug.Log("Depth Level 2");
+            //    // TODO: Extremely high polling number for user input
+            //    yield return new WaitForSeconds(0.00001f);
+            //    if (Input.GetButtonDown("Interact"))
+            //    {
+            //  //      Debug.Log("Depth Level 3");
+            //        if (hasFinishedDisplayingText || currentTextDisplayer == null)
+            //        {
+            //            hasFinishedDisplayingText = false;
+            //            currentTextDisplayer = null;
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            currentTextDisplayer.DisplayFullText();
+            //            //Wait for text to display full text
+            //            yield return new WaitForSeconds(0.1f);
+
+
+            //            while (true)
+            //            {
+            //    //            Debug.Log("Depth Level 4");
+            //                // TODO: Extremely high polling number for user input
+            //                yield return new WaitForSeconds(0.00001f);
+            //                if (Input.GetButtonDown("Interact"))
+            //                {
+            //      //              Debug.Log("Depth Level 5");
+            //                    break;
+            //                }
+            //            }
+
+            //            break;
+            //        }
+
+            //    }
+            //}
+            #endregion
         }
 
         hasFinishedDisplayingText = false;
@@ -125,3 +165,19 @@ public class Dialogue : MonoBehaviour
         yield return null;
     }
 }
+
+/*
+// Check if the Frame has a DialogueOption
+Frame tempFrame = Frames[i].GetComponent<Frame>();
+                        if (tempFrame != null)
+                        {
+                            yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
+
+                            if (tempFrame.Get_ShouldContinue() == false)
+                            {
+                                i = Frames.Length + 2;
+                                break;
+                            }
+
+                        }
+    */
