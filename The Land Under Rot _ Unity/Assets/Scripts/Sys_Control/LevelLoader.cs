@@ -27,6 +27,19 @@ public class LevelLoader : MonoBehaviour
 
     }
 
+    public void LoadScene()
+    {
+        if (!triggered)
+        {
+            triggered = true;
+
+            //SceneManager.LoadSceneAsync(sceneToLoad.buildIndex, LoadSceneMode.Additive);
+            //StartCoroutine(CheckForLevelLoaded());
+
+            StartCoroutine(LoadYourAsyncScene());
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!triggered)
