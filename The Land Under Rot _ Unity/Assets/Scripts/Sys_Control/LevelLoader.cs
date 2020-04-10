@@ -10,6 +10,7 @@ public class LevelLoader : MonoBehaviour
     public int previousSceneIndex;
 
     private Scene loadingScene;
+    private Scene sceneToLoad;
     
     private bool triggered = false;
 
@@ -80,27 +81,11 @@ public class LevelLoader : MonoBehaviour
 
         SceneManager.SetActiveScene(loadingScene);
 
-        // Move this loader to the loading scene so we can unload the previous scene
+        // Protect assets from deletion
         this.gameObject.transform.parent = null;
+        //GameController.Instance.transform.parent = null;
         SceneManager.MoveGameObjectToScene(this.gameObject, loadingScene);
-
-        #endregion
-
-        #region SceneToLoad
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoadIndex, LoadSceneMode.Additive);
-        //AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(previousSceneIndex);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return new WaitForSeconds(2f);
-            //yield return null;
-        }
-
-        Debug.Log(SceneManager.GetSceneByBuildIndex(sceneToLoadIndex).name + " has been loaded." +
-            "Starting to Unload the Loading Scene");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneToLoadIndex));
+        //SceneManager.MoveGameObjectToScene(GameController.Instance.gameObject, loadingScene);
 
         #endregion
 
@@ -114,9 +99,33 @@ public class LevelLoader : MonoBehaviour
             //yield return null;
         }
 
+        #endregion
+
+        Debug.Log("The previous scene has been unloaded. Starting to load the next scene.");
+
+        #region SceneToLoad
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoadIndex, LoadSceneMode.Additive);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return new WaitForSeconds(2f);
+            //yield return null;
+        }
+
+        sceneToLoad = SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex(sceneToLoadIndex).name); 
+        SceneManager.SetActiveScene(sceneToLoad);
+
+        // Protect assets from deletion
+        //SceneManager.MoveGameObjectToScene(GameController.Instance.gameObject, sceneToLoad);
+
+        #endregion
+
+        // Unloading the LoadingScene
         SceneManager.UnloadSceneAsync(loadingScene);
         yield return null;
 
-        #endregion
+
     }
 }

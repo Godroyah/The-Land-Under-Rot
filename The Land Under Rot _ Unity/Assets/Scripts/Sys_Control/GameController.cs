@@ -100,7 +100,6 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
             _instance = this;
         }
 
