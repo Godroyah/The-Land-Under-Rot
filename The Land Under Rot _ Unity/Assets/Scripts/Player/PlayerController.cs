@@ -357,7 +357,7 @@ public class PlayerController : MonoBehaviour
             Move();
         }
         else
-            rotationTarget.position = Vector3.zero;
+            rotationTarget.position = new Vector3(currentTarget.transform.position.x, transform.position.y, currentTarget.transform.position.z);
 
     }
 
@@ -512,6 +512,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator FadeOut()
     {
+        //move isDead out of here so the FadePane's applications can be expanded
         isDead = true;
         camControl.lockPosition = true;
         HorizontalInput = 0;
@@ -530,6 +531,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = currentSpawn.rotation;
             Rb.velocity = Vector3.zero;
             //health = 3;
+
+            
             isDead = false;
             fadeAnim.ResetTrigger("FadeOut");
             fadeAnim.SetTrigger("FadeIn");

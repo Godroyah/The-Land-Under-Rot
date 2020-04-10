@@ -36,9 +36,6 @@ public class Dialogue : MonoBehaviour
 
     public void StartScene()
     {
-        //StartCoroutine(Scene());
-
-        //Correct code is below but is currently bugged; needs fix to turn off StopPlayer in PlayerController
 
         if (!isCamEventActive)
         {
