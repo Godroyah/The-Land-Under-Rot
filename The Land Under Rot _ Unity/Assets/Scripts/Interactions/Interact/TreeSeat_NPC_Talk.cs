@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum TreeSeat_NPC { NONE, CATKIN, BUDDY, LIZARD, ROOTFORD, MS_STAMEN,
-    EXIT_FENWAY, MULCH_FENWAY, PEDALTON, CARROT_SLUG, STRANGER, GOURDO}
+    EXIT_FENWAY, MULCH_FENWAY, PEDALTON, CARROT_SLUG, STRANGER, GOURDO, PEAPOD}
 
 //PEAPOD ^ ?
 
@@ -43,9 +43,9 @@ public class TreeSeat_NPC_Talk : Interactable
                 case TreeSeat_NPC.BUDDY:
                     StartCoroutine(Buddy());
                     break;
-                //case TreeSeat_NPC.PEAPOD:
-                //    StartCoroutine(PeadPod());
-                    //break;
+                case TreeSeat_NPC.PEAPOD:
+                    StartCoroutine(PeaPod());
+                    break;
                 case TreeSeat_NPC.LIZARD:
                     StartCoroutine(Lizard());
                     break;
@@ -129,15 +129,15 @@ public class TreeSeat_NPC_Talk : Interactable
        yield return null;
     }
 
-    //IEnumerator PeadPod()
-    //{
-    //    dialogueManager.StartDialogue(Reply.Peap
+    IEnumerator PeaPod()
+    {
+        dialogueManager.StartDialogue(Reply.Return_To_Stinkhorn);
 
 
-    //   yield return null;
-    //}
+       yield return null;
+    }
 
-        //Require separate script for yes/no functionality?
+    //Require separate script for yes/no functionality?
 
     IEnumerator Rootford()
     {
