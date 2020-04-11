@@ -86,11 +86,13 @@ public class Dialogue : MonoBehaviour
             Frame tempFrame = Frames[i].GetComponent<Frame>();
             if (tempFrame != null)
             {
+                Debug.Log("Unlocking Now!");
                 Cursor.lockState = CursorLockMode.None;
+                Debug.Log("Can You See Me?");
                 Cursor.visible = true;
-
+                Debug.Log("Cursor Unlocked");
                 yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
-
+                Debug.Log("Cursor Frozen");
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
 
