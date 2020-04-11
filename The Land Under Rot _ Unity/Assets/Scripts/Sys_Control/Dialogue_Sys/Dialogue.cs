@@ -66,13 +66,43 @@ public class Dialogue : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
 
-            yield return new WaitUntil(() => Input.GetButtonDown("Interact"));
+            // Wait while the text hasn't finished or the player interacts to finish the text
+            yield return new WaitUntil(() => (Input.GetButtonDown("Interact") || (hasFinishedDisplayingText || currentTextDisplayer == null)));
 
             //      Debug.Log("Depth Level 3");
             if (hasFinishedDisplayingText || currentTextDisplayer == null)
             {
                 hasFinishedDisplayingText = false;
                 currentTextDisplayer = null;
+
+                // Check if the Frame has a DialogueOption
+                Frame tempFrame = Frames[i].GetComponent<Frame>();
+                if (tempFrame != null)
+                {
+                    Debug.Log("Unlocking Now!");
+                    Cursor.lockState = CursorLockMode.None;
+                    Debug.Log("Can You See Me?");
+                    Cursor.visible = true;
+                    Debug.Log("Cursor Unlocked");
+                    yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
+                    Debug.Log("Cursor Frozen");
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+
+                    if (tempFrame.Get_ShouldContinue() == false)
+                    {
+                        i = Frames.Length + 2;
+                        break;
+                    }
+                    else
+                        continue; // This skips the need to press the interact key again
+
+                }
+                else
+                {
+                    yield return new WaitUntil(() => Input.GetButtonDown("Interact"));
+                }
+                
                 continue; // This continues to the next frame
             }
             else
@@ -82,31 +112,10 @@ public class Dialogue : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
-            // Check if the Frame has a DialogueOption
-            Frame tempFrame = Frames[i].GetComponent<Frame>();
-            if (tempFrame != null)
-            {
-                Debug.Log("Unlocking Now!");
-                Cursor.lockState = CursorLockMode.None;
-                Debug.Log("Can You See Me?");
-                Cursor.visible = true;
-                Debug.Log("Cursor Unlocked");
-                yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
-                Debug.Log("Cursor Frozen");
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
 
-                if (tempFrame.Get_ShouldContinue() == false)
-                {
-                    i = Frames.Length + 2;
-                    break;
-                }
-                else
-                    continue; // This skips the need to press the interact key again
-
-            }
 
             yield return new WaitUntil(() => Input.GetButtonDown("Interact"));
+
 
             #region OldCode
             //yield return new WaitForEndOfFrame();
