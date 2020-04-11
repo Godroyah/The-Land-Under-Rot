@@ -76,9 +76,11 @@ public class LevelLoader : MonoBehaviour
         loadingScene = SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex(loadingSceneIndex).name);
         while (!loadingScene.isLoaded)
         {
+            Debug.Log("NOT_YET_LOADED");
             yield return new WaitForEndOfFrame();
         }
 
+        Debug.Log("LOADED");
         SceneManager.SetActiveScene(loadingScene);
 
         // Protect assets from deletion
@@ -95,13 +97,16 @@ public class LevelLoader : MonoBehaviour
 
         while (!asyncUnload.isDone)
         {
-            yield return new WaitForSeconds(2f);
+            Debug.Log("NOT_YET_UNLOADED");
+            //yield return new WaitForSeconds(2f);
+            yield return new WaitForEndOfFrame();
             //yield return null;
         }
-
+        Debug.Log("UNLOADED");
         #endregion
 
         Debug.Log("The previous scene has been unloaded. Starting to load the next scene.");
+        Time.timeScale = 1;
 
         #region SceneToLoad
 
@@ -110,7 +115,8 @@ public class LevelLoader : MonoBehaviour
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
-            yield return new WaitForSeconds(2f);
+            //yield return new WaitForSeconds(2f);
+            yield return new WaitForEndOfFrame();
             //yield return null;
         }
 

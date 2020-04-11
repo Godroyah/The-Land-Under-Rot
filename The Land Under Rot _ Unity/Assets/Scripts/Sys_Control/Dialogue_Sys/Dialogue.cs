@@ -87,8 +87,13 @@ public class Dialogue : MonoBehaviour
             if (tempFrame != null)
             {
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
                 yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
+
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
                 if (tempFrame.Get_ShouldContinue() == false)
                 {
                     i = Frames.Length + 2;
