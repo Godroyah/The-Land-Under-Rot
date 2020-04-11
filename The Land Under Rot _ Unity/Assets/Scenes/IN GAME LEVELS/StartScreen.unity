@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 14cf47ce7871a094a9764a1648195d8b, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -96,8 +96,9 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingDataAsset: {fileID: 112000000, guid: b2af771d040485a4580b885355da2f23,
+    type: 2}
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -158,15 +159,16 @@ MonoBehaviour:
   dialogueManager: {fileID: 0}
   cutsceneManager: {fileID: 0}
   playerController: {fileID: 0}
-  mainMenu: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  quitOption: {fileID: 0}
-  pauseEventSystem: {fileID: 0}
-  resumeButton: {fileID: 0}
-  quitButton: {fileID: 0}
   levelStart: 0
   isDead: 0
-  paused: 0
+  mulchant_GivenBottles: 0
+  hasBrownMulch: 0
+  hasGreenMulch: 0
+  hasYellowMulch: 0
+  angelTreeAwake: 0
+  starTreeAwake: 0
+  willowTreeAwake: 0
+  revealNewAreas: 0
   area_Tutorial: 0
   bus_Called: 0
   tutorial_HasTalked_Rootford_Intro1: 0
@@ -175,12 +177,14 @@ MonoBehaviour:
   area_Stinkhorn: 0
   area_TreeSeat: 0
   playerAcorns: 0
-  playerMulch: 0
-  playerHealth: 0
   acornCount: {fileID: 0}
-  mulchCount: {fileID: 0}
-  healthCounter: []
-  testing: 0
+  brownBottle: {fileID: 0}
+  greenBottle: {fileID: 0}
+  yellowBottle: {fileID: 0}
+  angelTexture: {fileID: 0}
+  starTexture: {fileID: 0}
+  willowTexture: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!4 &324817977
 Transform:
   m_ObjectHideFlags: 0
