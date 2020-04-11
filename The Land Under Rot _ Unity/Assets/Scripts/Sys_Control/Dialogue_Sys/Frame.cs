@@ -25,6 +25,11 @@ public class Frame : MonoBehaviour
         return shouldWait;
     }
 
+    public void Reset_ShouldWait()
+    {
+        shouldWait = true;
+    }
+
     public bool Get_ShouldContinue()
     {
         return shouldContinue;
