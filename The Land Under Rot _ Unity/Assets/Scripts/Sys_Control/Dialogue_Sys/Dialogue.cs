@@ -115,6 +115,34 @@ public class Dialogue : MonoBehaviour
                 currentTextDisplayer.DisplayFullText();
                 //Wait for text to display full text
                 yield return new WaitForSeconds(0.1f);
+
+                // Check if the Frame has a DialogueOption
+                Frame tempFrame = Frames[i].GetComponent<Frame>();
+                if (tempFrame != null)
+                {
+                    Debug.Log("Unlocking Now!");
+                    Cursor.lockState = CursorLockMode.None;
+                    Debug.Log("Can You See Me?");
+                    Cursor.visible = true;
+                    Debug.Log("Cursor Unlocked");
+                    yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
+                    Debug.Log("Cursor Frozen");
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+
+                    if (tempFrame.Get_ShouldContinue() == false)
+                    {
+                        i = Frames.Length + 2;
+                        break;
+                    }
+                    else
+                    {
+                        tempFrame.Reset_ShouldWait();
+                        continue; // This skips the need to press the interact key again
+                    }
+                        
+
+                }
             }
 
 

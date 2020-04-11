@@ -193,9 +193,14 @@ public class GameController : MonoBehaviour
             if (dialogueManager.hasActiveDialogue)
             {
                 playerController.StopPlayer = true;
+                playerController.camControl.lockPosition = true;
             }
             else
+            {
                 playerController.StopPlayer = false;
+                playerController.camControl.lockPosition = false;
+            }
+                
         }
         //if(isDead)
         //{
