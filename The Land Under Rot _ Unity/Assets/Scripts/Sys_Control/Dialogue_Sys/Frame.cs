@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class Frame : MonoBehaviour
 {
+    public EventSystem dialogueButtons;
+    public GameObject firstButton;
+
     public bool HasDialogueOption = true;
     private bool shouldWait = true;
     private bool shouldContinue = true;
@@ -13,6 +17,7 @@ public class Frame : MonoBehaviour
     private void Start()
     {
         myDialogue = gameObject.transform.parent.GetComponent<Dialogue>();
+        //dialogueButtons.firstSelectedGameObject = startButton;
     }
 
     public void ContinueDialogue()

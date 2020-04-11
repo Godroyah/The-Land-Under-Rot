@@ -88,6 +88,10 @@ public class Dialogue : MonoBehaviour
                     //Debug.Log("Can You See Me?");
                     Cursor.visible = true;
                     //Debug.Log("Cursor Unlocked");
+                    if(tempFrame.dialogueButtons.firstSelectedGameObject != tempFrame.firstButton)
+                    {
+                        tempFrame.dialogueButtons.firstSelectedGameObject = tempFrame.firstButton;
+                    }
                     yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
                     //Debug.Log("Cursor Frozen");
                     camControl.lockPosition = false;
