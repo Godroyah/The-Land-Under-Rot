@@ -18,6 +18,7 @@ public class Frame : MonoBehaviour
     public void ContinueDialogue()
     {
         shouldWait = false;
+        Invoke("Reset_ShouldWait", 1);
     }
 
     public bool Get_ShouldWait()

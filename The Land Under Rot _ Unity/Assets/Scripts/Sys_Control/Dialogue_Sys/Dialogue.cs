@@ -129,10 +129,12 @@ public class Dialogue : MonoBehaviour
                     Debug.Log("Cursor Frozen");
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
+                    //tempFrame.Reset_ShouldWait();
 
                     if (tempFrame.Get_ShouldContinue() == false)
                     {
                         i = Frames.Length + 2;
+                        //tempFrame.Reset_ShouldWait();
                         break;
                     }
                     else
@@ -140,8 +142,6 @@ public class Dialogue : MonoBehaviour
                         tempFrame.Reset_ShouldWait();
                         continue; // This skips the need to press the interact key again
                     }
-                        
-
                 }
             }
 
