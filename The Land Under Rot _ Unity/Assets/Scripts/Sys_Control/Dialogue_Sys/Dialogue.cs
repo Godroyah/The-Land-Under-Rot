@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour
     public string SceneName;
     public GameObject[] Frames;
 
+    CamControl camControl;
     Event_Trigger eventTrigger;
     GameController gameController;
     public DialogueManager dialogueManager;
@@ -19,6 +20,8 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
+        camControl = GameObject.Find("Camera_Jig").GetComponent<CamControl>();
+
         for (int i = 0; i < Frames.Length; i++)
         {
             Frames[i].SetActive(false);
@@ -70,7 +73,7 @@ public class Dialogue : MonoBehaviour
             yield return new WaitUntil(() => (Input.GetButtonDown("Interact") || (hasFinishedDisplayingText || currentTextDisplayer == null)));
 
             //      Debug.Log("Depth Level 3");
-            if (hasFinishedDisplayingText || currentTextDisplayer == null)
+            if (Input.GetButtonDown("Interact") || hasFinishedDisplayingText || currentTextDisplayer == null)
             {
                 hasFinishedDisplayingText = false;
                 currentTextDisplayer = null;
@@ -79,13 +82,15 @@ public class Dialogue : MonoBehaviour
                 Frame tempFrame = Frames[i].GetComponent<Frame>();
                 if (tempFrame != null)
                 {
-                    Debug.Log("Unlocking Now!");
+                    //Debug.Log("Unlocking Now!");
+                    camControl.lockPosition = true;
                     Cursor.lockState = CursorLockMode.None;
-                    Debug.Log("Can You See Me?");
+                    //Debug.Log("Can You See Me?");
                     Cursor.visible = true;
-                    Debug.Log("Cursor Unlocked");
+                    //Debug.Log("Cursor Unlocked");
                     yield return new WaitWhile(() => tempFrame.Get_ShouldWait() == true);
-                    Debug.Log("Cursor Frozen");
+                    //Debug.Log("Cursor Frozen");
+                    camControl.lockPosition = false;
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
 

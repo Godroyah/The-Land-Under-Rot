@@ -24,6 +24,7 @@ public class Peapod_Stinkhorn : Interactable
             if(!isIntroduced)
             {
                 dialogueManager.StartDialogue(Reply.SS_BusDriver_1);
+                isIntroduced = true;
             }
             else
             {
