@@ -13,7 +13,7 @@ public class Gong : Interactable
         // bc each obj will play a sound if they have one
         // regardless of the object. And if they don't have one 
         // assigned then they won't play a sound 
-
+        GameController.Instance.bus_Called = true;
     }
 
     private void OnTriggerEnter(Collider other)
