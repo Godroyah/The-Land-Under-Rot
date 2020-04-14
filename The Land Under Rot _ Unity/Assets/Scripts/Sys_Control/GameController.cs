@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
 
     [Space(5)]
     public bool area_Tutorial = false;
-    public bool bus_Called = false;
+    public bool tutorial_bus_Called = false;
     [Space(5)]
     public bool tutorial_HasTalked_Rootford_Intro1 = false;
     public bool tutorial_HasTalked_Rootford_Intro2 = false;
@@ -288,5 +288,40 @@ public class GameController : MonoBehaviour
     public void UpdateMainCamera(Camera newCamera)
     {
         updateCameras(newCamera);
+    }
+
+    public void SaveGame()
+    {
+        SaveSystem.SaveGame();
+    }
+
+    public void LoadGame()
+    {
+        GameData data = SaveSystem.LoadGame();
+
+        playerAcorns = data.playerAcorns;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+
+        mulchant_GivenBottles = data.mulchant_GivenBottles;
+
+        hasBrownMulch = data.hasBrownMulch;
+        hasGreenMulch = data.hasGreenMulch;
+        hasYellowMulch = data.hasYellowMulch;
+
+        angelTreeAwake = data.angelTreeAwake;
+        starTreeAwake = data.starTreeAwake;
+        willowTreeAwake = data.willowTreeAwake;
+
+        revealNewAreas = data.revealNewAreas;
+
+        area_Tutorial = data.area_Tutorial;
+        tutorial_bus_Called = data.tutorial_bus_Called;
+        tutorial_HasTalked_Rootford_Intro1 = data.tutorial_HasTalked_Rootford_Intro1;
+        tutorial_HasTalked_Rootford_Intro2 = data.tutorial_HasTalked_Rootford_Intro2;
+        tutorial_HasTalked_BusDriver_1 = data.tutorial_HasTalked_BusDriver_1;
     }
 }
