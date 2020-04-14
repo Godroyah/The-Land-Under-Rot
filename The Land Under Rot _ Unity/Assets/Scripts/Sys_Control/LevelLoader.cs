@@ -85,9 +85,9 @@ public class LevelLoader : MonoBehaviour
 
         // Protect assets from deletion
         this.gameObject.transform.parent = null;
-        //GameController.Instance.transform.parent = null;
+        GameController.Instance.transform.parent = null;
         SceneManager.MoveGameObjectToScene(this.gameObject, loadingScene);
-        //SceneManager.MoveGameObjectToScene(GameController.Instance.gameObject, loadingScene);
+        SceneManager.MoveGameObjectToScene(GameController.Instance.gameObject, loadingScene);
 
         #endregion
 
@@ -124,7 +124,7 @@ public class LevelLoader : MonoBehaviour
         SceneManager.SetActiveScene(sceneToLoad);
 
         // Protect assets from deletion
-        //SceneManager.MoveGameObjectToScene(GameController.Instance.gameObject, sceneToLoad);
+        SceneManager.MoveGameObjectToScene(GameController.Instance.gameObject, sceneToLoad);
 
         #endregion
 
