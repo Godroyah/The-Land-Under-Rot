@@ -11015,6 +11015,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9148782019332426997}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &550765806
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550765804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7221311
+  m_Height: 6.404007
+  m_Direction: 1
+  m_Center: {x: -0.43493783, y: -2.219261, z: 0.17994924}
 --- !u!64 &550765807
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11029,6 +11043,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 272620219224400015, guid: 6aa8566f5d995e646b6e9c6ef3dd1cda, type: 3}
+--- !u!136 &550765808
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550765804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.65973616
+  m_Height: 3.795965
+  m_Direction: 1
+  m_Center: {x: -0.04922805, y: 3.5233033, z: 0.077807635}
 --- !u!1001 &552894500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29972,6 +30000,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 756629635}
+    - target: {fileID: 2758184612692516647, guid: febfb37163b8b704fb463051652196fd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3814435207294981353, guid: febfb37163b8b704fb463051652196fd,
         type: 3}
       propertyPath: m_Mesh
@@ -35803,7 +35836,7 @@ MonoBehaviour:
   willowTreeAwake: 0
   revealNewAreas: 0
   area_Tutorial: 0
-  bus_Called: 0
+  tutorial_bus_Called: 0
   tutorial_HasTalked_Rootford_Intro1: 0
   tutorial_HasTalked_Rootford_Intro2: 0
   tutorial_HasTalked_BusDriver_1: 0
