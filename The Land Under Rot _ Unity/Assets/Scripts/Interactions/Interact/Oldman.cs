@@ -41,7 +41,7 @@ public class Oldman : Interactable
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_3_Repeat);
                 }
             }
-            else if (GameController.Instance.tutorial_bus_Called && GameController.Instance.tutorial_HasTalked_Rootford_Intro2)
+            else if (GameController.Instance.tutorial_bus_Called/* && GameController.Instance.tutorial_HasTalked_Rootford_Intro2*/)
             {
                 dialogueManager.StartDialogue(Reply.SS_Rootford_Bus_1_Repeat);
             }
