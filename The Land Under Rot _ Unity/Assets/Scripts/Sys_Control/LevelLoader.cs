@@ -91,6 +91,8 @@ public class LevelLoader : MonoBehaviour
 
         #endregion
 
+        GameController.Instance.SaveGame();
+
         #region Unload
 
         AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(previousSceneIndex);
