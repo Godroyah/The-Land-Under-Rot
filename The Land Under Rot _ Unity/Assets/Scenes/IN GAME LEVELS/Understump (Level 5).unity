@@ -5135,6 +5135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_v4.0
       objectReference: {fileID: 0}
+    - target: {fileID: 6053955466739331083, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7596186758439501073, guid: d56a0a7e7ba5c5e4c8d34bf4aef396df,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5450,13 +5455,16 @@ MonoBehaviour:
   dialogueManager: {fileID: 0}
   cutsceneManager: {fileID: 0}
   playerController: {fileID: 183285294}
-  pauseMenu: {fileID: 0}
-  quitOption: {fileID: 0}
-  pauseEventSystem: {fileID: 0}
-  resumeButton: {fileID: 0}
-  quitButton: {fileID: 0}
   levelStart: 0
   isDead: 0
+  mulchant_GivenBottles: 0
+  hasBrownMulch: 0
+  hasGreenMulch: 0
+  hasYellowMulch: 0
+  angelTreeAwake: 0
+  starTreeAwake: 0
+  willowTreeAwake: 0
+  revealNewAreas: 0
   area_Tutorial: 0
   bus_Called: 0
   tutorial_HasTalked_Rootford_Intro1: 0
@@ -5465,11 +5473,14 @@ MonoBehaviour:
   area_Stinkhorn: 0
   area_TreeSeat: 0
   playerAcorns: 0
-  playerMulch: 0
-  playerHealth: 0
   acornCount: {fileID: 0}
-  mulchCount: {fileID: 0}
-  healthCounter: []
+  brownBottle: {fileID: 0}
+  greenBottle: {fileID: 0}
+  yellowBottle: {fileID: 0}
+  angelTexture: {fileID: 0}
+  starTexture: {fileID: 0}
+  willowTexture: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!4 &254534037
 Transform:
   m_ObjectHideFlags: 0
