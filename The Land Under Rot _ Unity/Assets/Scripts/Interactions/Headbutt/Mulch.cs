@@ -40,6 +40,14 @@ public class Mulch : Interactable
     //ParticleSystem playerParticles;
     ParticleSystem mulchParticles;
 
+    public string mulchMessage;
+
+    public GameObject youGotMulch;
+
+    Mulch_Collected mulchCollected;
+
+    //bool hasPlayed = false;
+
     private void Start()
     {
         gameController = GameController.Instance;
@@ -79,6 +87,7 @@ public class Mulch : Interactable
             }
             if(!depletedMulch.enabled)
             mulchParticles.Play();
+            ActivateMessage();
             depletedMulch.enabled = true;
             fullMulch.enabled = false;
         }
@@ -163,6 +172,17 @@ public class Mulch : Interactable
         //    }
         //}
         #endregion
+    }
+
+    void ActivateMessage()
+    {
+        mulchCollected = youGotMulch.GetComponent<Mulch_Collected>();
+        mulchCollected.mulch_text.text = mulchMessage;
+        //mulchCollected.textLength = mulchMessage.Length;
+        //mulchCollected.SetName(mulchMessage);
+        GameObject mulchAnnouncement = Instantiate(youGotMulch);
+       // mulchCollected.GotMulch();
+        //hasPlayed = true;
     }
 
     private void OnTriggerEnter(Collider other)
