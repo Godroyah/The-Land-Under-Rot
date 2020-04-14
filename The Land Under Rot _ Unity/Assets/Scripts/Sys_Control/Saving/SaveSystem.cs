@@ -21,7 +21,8 @@ public static class SaveSystem
 
     public static GameData LoadGame()
     {
-        string path = Application.persistentDataPath + "/gamedata.lur";
+        //string path = Application.persistentDataPath + "/gamedata.lur";
+        string path = Path.Combine(Application.persistentDataPath, "gamedata.lur");
 
         if (File.Exists(path))
         {
