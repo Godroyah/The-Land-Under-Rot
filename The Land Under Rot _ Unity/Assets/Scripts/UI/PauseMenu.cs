@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject quitOption;
     public GameObject settingsOption;
+    public GameObject acornBoy;
+    public GameObject post;
     //public GameObject pauseEventSystem;
     public GameObject decoration;
     //public Button resumeButton;
@@ -131,12 +133,28 @@ public class PauseMenu : MonoBehaviour
     {
         settingsOption.SetActive(true);
         pauseMenu.SetActive(false);
+        acornBoy.SetActive(false);
+        post.SetActive(false);
+        angelBottle.enabled = false;
+        starBottle.enabled = false;
+        willowBottle.enabled = false;
+        acornText.enabled = false;
+
     }
 
     public void Back()
     {
         pauseMenu.SetActive(true);
         settingsOption.SetActive(false);
+        acornBoy.SetActive(true);
+        post.SetActive(true);
+        acornText.enabled = true;
+        if (!gameController.angelTreeAwake)
+            angelBottle.enabled = true;
+        if (!gameController.starTreeAwake)
+            starBottle.enabled = true;
+        if (!gameController.willowTreeAwake)
+            willowBottle.enabled = true;
     }
 
     public void QuitGame()

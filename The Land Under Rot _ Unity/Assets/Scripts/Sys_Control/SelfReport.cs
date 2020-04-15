@@ -7,7 +7,7 @@ using UnityEngine;
 public class SelfReport : MonoBehaviour
 {
     //public enum Report_Type {PAUSE_MENU, QUIT_MENU, PAUSE_EVENTS, RESUME, QUIT}
-    public enum Report_Type { NONE, BROWN, GREEN, YELLOW, ACORN }
+    public enum Report_Type { NONE, BROWN, GREEN, YELLOW, ACORN, LOOK_SLIDER }
     public Report_Type reportType;
 
     // Start is called before the first frame update
@@ -29,6 +29,9 @@ public class SelfReport : MonoBehaviour
                 break;
             case Report_Type.ACORN:
                 GameController.Instance.acornCount = GetComponent<TextMeshProUGUI>();
+                break;
+            case Report_Type.LOOK_SLIDER:
+                GameController.Instance.sensitivitySlider = GetComponent<Slider>();
                 break;
             default:
                 break;

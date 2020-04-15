@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
     #endregion
 
     [Header("Look Sensitivity")]
+    public Slider sensitivitySlider;
     public float lookSensitivityX = 10.0f;
     public float lookSensitivityY = 10.0f;
     //10 initially for both
