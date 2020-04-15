@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
     public List<Interactable> headbuttables = new List<Interactable>();
     #endregion
 
-    
+
     public GameObject fadePane;
     private Fade_Done fadeDone;
     private Animator fadeAnim;
@@ -216,7 +216,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(interactingCoroutine);
         //Debug.Log(StopPlayer);
         //Debug.Log(eventActive);
-        
+
         Reset();
         GetInput();
 
@@ -225,70 +225,87 @@ public class PlayerController : MonoBehaviour
 
         //if (Camera.main.enabled)
         //{
-            #region Interactable Check
+        #region Interactable Check
 
-            //Redefine above
+        //Redefine above
+        #region Testing
+        if (Input.GetKeyUp(KeyCode.F12))
+        {
 
+            LittleBlue temp = groundChecker.GetComponentInChildren<LittleBlue>(true);
 
-            if (interactables.Count > 0) // If there are interactables in range...
+            if (temp != null)
             {
-                Interactable closestTarget = null;
-                float minimalDistance = float.MaxValue;
-                Vector3 screenCenter = new Vector3(Screen.width, Screen.height, 0) / 2;
+                GameObject temp2 = temp.gameObject;
+                temp2 = Instantiate(temp2);
 
-                for (int targetIndex = 0; targetIndex < interactables.Count; targetIndex++)
+                temp2.transform.position = transform.position + Vector3.up * 20f;
+
+                temp2.transform.parent = null;
+                temp2.SetActive(true);
+            }
+        }
+        #endregion
+
+        if (interactables.Count > 0) // If there are interactables in range...
+        {
+            Interactable closestTarget = null;
+            float minimalDistance = float.MaxValue;
+            Vector3 screenCenter = new Vector3(Screen.width, Screen.height, 0) / 2;
+
+            for (int targetIndex = 0; targetIndex < interactables.Count; targetIndex++)
+            {
+                Interactable target = interactables[targetIndex];
+                if (target == null) // Check to see if the interactable still exists
                 {
-                    Interactable target = interactables[targetIndex];
-                    if (target == null) // Check to see if the interactable still exists
+                    interactables.RemoveAt(targetIndex);
+                    return;
+                }
+                Vector3 targetScreenPoint = Camera.main.WorldToScreenPoint(target.transform.position);
+
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(targetScreenPoint); // TODO: Make sure this ray goes forward
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Transform objectHit = hit.transform;
+
+                    /*
+                    if (hit.collider.gameObject != interactables[targetIndex].gameObject) // If the targeted gameObject wasn't the object hit
+                        continue; // If it doesn't hit, it doesn't see it
+                    */
+
+                    float distance = Vector2.Distance(targetScreenPoint, screenCenter);
+
+                    if (distance < minimalDistance) // If the targeted gameObject is closer to the center of the screen than the previously found
                     {
-                        interactables.RemoveAt(targetIndex);
-                        return;
-                    }
-                    Vector3 targetScreenPoint = Camera.main.WorldToScreenPoint(target.transform.position);
-
-                    RaycastHit hit;
-                    Ray ray = Camera.main.ScreenPointToRay(targetScreenPoint); // TODO: Make sure this ray goes forward
-
-                    if (Physics.Raycast(ray, out hit))
-                    {
-                        Transform objectHit = hit.transform;
-
-                        /*
-                        if (hit.collider.gameObject != interactables[targetIndex].gameObject) // If the targeted gameObject wasn't the object hit
-                            continue; // If it doesn't hit, it doesn't see it
-                        */
-
-                        float distance = Vector2.Distance(targetScreenPoint, screenCenter);
-
-                        if (distance < minimalDistance) // If the targeted gameObject is closer to the center of the screen than the previously found
-                        {
-                            minimalDistance = distance;
-                            closestTarget = target;
-                        }
-                    }
-
-                    if (closestTarget != null)
-                    {
-                        if (currentTarget != null)
-                        {
-                            ToggleHighlight(currentTarget, false);
-                        }
-                        currentTarget = closestTarget;
+                        minimalDistance = distance;
+                        closestTarget = target;
                     }
                 }
-                /*
-                if (currentTarget != null)
+
+                if (closestTarget != null)
                 {
-                    if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
-                    {
-                        ToggleHighlight(currentTarget, true);
-                    }
-                    else
+                    if (currentTarget != null)
                     {
                         ToggleHighlight(currentTarget, false);
-                        currentTarget = null;
                     }
-                }*/
+                    currentTarget = closestTarget;
+                }
+            }
+            /*
+            if (currentTarget != null)
+            {
+                if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
+                {
+                    ToggleHighlight(currentTarget, true);
+                }
+                else
+                {
+                    ToggleHighlight(currentTarget, false);
+                    currentTarget = null;
+                }
+            }*/
             //}
 
             if (currentTarget != null)
@@ -373,7 +390,7 @@ public class PlayerController : MonoBehaviour
             ShouldHeadbutt = Input.GetButtonDown("Headbutt");
             HeadbuttInput = Input.GetAxis("Headbutt");
         }
-        
+
 
         if (HeadbuttInput > 0.1)
         {
@@ -478,7 +495,7 @@ public class PlayerController : MonoBehaviour
         velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
         velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
         //velocityChange.y = 0;
-        velocityChange.y = Physics.gravity.y/ 10;
+        velocityChange.y = Physics.gravity.y / 10;
 
         Rb.AddForce(velocityChange * Time.deltaTime * 50, ForceMode.VelocityChange);
         //}
@@ -532,7 +549,7 @@ public class PlayerController : MonoBehaviour
             Rb.velocity = Vector3.zero;
             //health = 3;
 
-            
+
             isDead = false;
             fadeAnim.ResetTrigger("FadeOut");
             fadeAnim.SetTrigger("FadeIn");
