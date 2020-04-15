@@ -9,8 +9,10 @@ public class CamControl : MonoBehaviour
     private Transform rotationTarget;
 
     private bool invertPitch = false;
-    public float sensitivity_X = 10f;
-    public float sensitivity_Y = 10f;
+    float sensitivity_X;
+    //10
+    float sensitivity_Y;
+    //10
     private float horizontalInput;
     private float verticalInput;
 
@@ -28,11 +30,14 @@ public class CamControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sensitivity_X = GameController.Instance.lookSensitivityX;
+        sensitivity_Y = GameController.Instance.lookSensitivityY;
         if (myCamera == null)
         {
             Debug.LogWarning("No assigned camera found. Defaulting to MAIN");
             myCamera = GameController.Instance.mainCamera;
         }
+
 
         yaw = transform.eulerAngles.y;
         pitch = transform.eulerAngles.x;

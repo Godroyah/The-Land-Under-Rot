@@ -63,6 +63,11 @@ public class GameController : MonoBehaviour
     public bool area_TreeSeat = false;
     #endregion
 
+    [Header("Look Sensitivity")]
+    public float lookSensitivityX = 10.0f;
+    public float lookSensitivityY = 10.0f;
+    //10 initially for both
+
     [Header("Inventory Count")]
     #region Inventory Count
     public int playerAcorns;
