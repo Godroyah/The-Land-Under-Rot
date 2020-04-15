@@ -32,7 +32,7 @@ public class CamControl : MonoBehaviour
     void Start()
     {
         gameController = GameController.Instance;
-        gameController.camControl = GetComponent<CamControl>();
+        gameController.camControl = this;
         sensitivity_X = gameController.lookSensitivityX;
         sensitivity_Y = gameController.lookSensitivityY;
         if (myCamera == null)
