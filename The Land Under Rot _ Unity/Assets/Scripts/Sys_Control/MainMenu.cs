@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
-    
+    public GameObject settingsOption;
+    public Slider sensitivitySlider;
+    public TextMeshProUGUI sensitivityValue;
+
+    GameController gameController;
+
     //-----------------------------------------------------------------
 
     public bool testing;
@@ -22,6 +28,23 @@ public class MainMenu : MonoBehaviour
     {
         if(Time.timeScale != 1)
         Time.timeScale = 1;
+
+        gameController = GameController.Instance;
+        gameController.sensitivityBar = sensitivitySlider;
+        sensitivitySlider.onValueChanged.AddListener(delegate { gameController.SensitivityValueCheckMain(); });
+        gameController.mainMenu = GetComponent<MainMenu>();
+    }
+
+    public void Settings()
+    {
+        settingsOption.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+
+    public void Back()
+    {
+        mainMenu.SetActive(true);
+        settingsOption.SetActive(false);
     }
 
     public void StartGame()

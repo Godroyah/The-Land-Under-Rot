@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
 
         gameController = GameController.Instance;
         gameController.sensitivityBar = sensitivitySlider;
-        sensitivitySlider.onValueChanged.AddListener(delegate { gameController.SensitivityValueCheck(); });
+        sensitivitySlider.onValueChanged.AddListener(delegate { gameController.SensitivityValueCheckPause(); });
         gameController.pauseMenu = GetComponent<PauseMenu>();
     }
 

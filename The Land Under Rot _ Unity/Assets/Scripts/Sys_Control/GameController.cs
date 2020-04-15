@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public PlayerController playerController;
     public CamControl camControl;
     public PauseMenu pauseMenu;
+    public MainMenu mainMenu;
     #endregion
 
     //[Header("Menu Components")]
@@ -68,8 +69,8 @@ public class GameController : MonoBehaviour
     [Header("Look Sensitivity")]
     //public GameObject sensitivitySlider;
     public Slider sensitivityBar;
-    public float lookSensitivityX = 10.0f;
-    public float lookSensitivityY = 10.0f;
+    public float lookSensitivityX = 5.0f;
+    public float lookSensitivityY = 5.0f;
     //10 initially for both
 
     [Header("Inventory Count")]
@@ -172,9 +173,17 @@ public class GameController : MonoBehaviour
     {
         isDead = false;
         //oldHealth = playerHealth;
-        Invoke("SetAcorns", 1);
+        if(playerController != null)
+        {
+            Invoke("SetAcorns", 1);
+        }
 
-        if(pauseMenu != null)
+        if(mainMenu != null)
+        {
+            mainMenu.sensitivityValue.text = lookSensitivityX.ToString();
+        }
+
+        else if (pauseMenu != null)
         {
             pauseMenu.sensitivityValue.text = lookSensitivityX.ToString();
         }
@@ -223,13 +232,22 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void SensitivityValueCheck()
+    public void SensitivityValueCheckPause()
     {
         lookSensitivityX = sensitivityBar.value;
         lookSensitivityY = sensitivityBar.value;
         camControl.sensitivity_X = lookSensitivityX;
         camControl.sensitivity_Y = lookSensitivityY;
         pauseMenu.sensitivityValue.text = pauseMenu.sensitivitySlider.value.ToString();
+    }
+
+    public void SensitivityValueCheckMain()
+    {
+        lookSensitivityX = sensitivityBar.value;
+        lookSensitivityY = sensitivityBar.value;
+        //camControl.sensitivity_X = lookSensitivityX;
+        //camControl.sensitivity_Y = lookSensitivityY;
+        mainMenu.sensitivityValue.text = mainMenu.sensitivitySlider.value.ToString();
     }
 
     public void SetAcorns()
