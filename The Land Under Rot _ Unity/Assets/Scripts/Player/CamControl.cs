@@ -7,11 +7,12 @@ public class CamControl : MonoBehaviour
     public Camera myCamera;
     public GameObject target;
     private Transform rotationTarget;
+    GameController gameController;
 
     private bool invertPitch = false;
-    float sensitivity_X;
+    public float sensitivity_X;
     //10
-    float sensitivity_Y;
+    public float sensitivity_Y;
     //10
     private float horizontalInput;
     private float verticalInput;
@@ -30,12 +31,14 @@ public class CamControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sensitivity_X = GameController.Instance.lookSensitivityX;
-        sensitivity_Y = GameController.Instance.lookSensitivityY;
+        gameController = GameController.Instance;
+        gameController.camControl = GetComponent<CamControl>();
+        sensitivity_X = gameController.lookSensitivityX;
+        sensitivity_Y = gameController.lookSensitivityY;
         if (myCamera == null)
         {
             Debug.LogWarning("No assigned camera found. Defaulting to MAIN");
-            myCamera = GameController.Instance.mainCamera;
+            myCamera = gameController.mainCamera;
         }
 
 
@@ -48,6 +51,7 @@ public class CamControl : MonoBehaviour
     void Update()
     {
         GetInput();
+        
     }
 
     private void FixedUpdate()

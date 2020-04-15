@@ -7,31 +7,31 @@ using UnityEngine;
 public class SelfReport : MonoBehaviour
 {
     //public enum Report_Type {PAUSE_MENU, QUIT_MENU, PAUSE_EVENTS, RESUME, QUIT}
-    public enum Report_Type { NONE, BROWN, GREEN, YELLOW, ACORN, LOOK_SLIDER }
+    public enum Report_Type { NONE, BROWN, GREEN, YELLOW, ACORN}
     public Report_Type reportType;
+    GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameController.Instance;
+
         switch (reportType)
         {
             case Report_Type.NONE:
                 Debug.LogWarning("You haven't picked a report type!");
                 break;
             case Report_Type.BROWN:
-                GameController.Instance.brownBottle = GetComponent<RawImage>();
+                gameController.brownBottle = GetComponent<RawImage>();
                 break;
             case Report_Type.GREEN:
-                GameController.Instance.greenBottle = GetComponent<RawImage>();
+                gameController.greenBottle = GetComponent<RawImage>();
                 break;
             case Report_Type.YELLOW:
-                GameController.Instance.yellowBottle = GetComponent<RawImage>();
+                gameController.yellowBottle = GetComponent<RawImage>();
                 break;
             case Report_Type.ACORN:
-                GameController.Instance.acornCount = GetComponent<TextMeshProUGUI>();
-                break;
-            case Report_Type.LOOK_SLIDER:
-                GameController.Instance.sensitivitySlider = GetComponent<Slider>();
+                gameController.acornCount = GetComponent<TextMeshProUGUI>();
                 break;
             default:
                 break;

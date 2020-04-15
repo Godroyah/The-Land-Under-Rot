@@ -20,6 +20,8 @@ public class PauseMenu : MonoBehaviour
 
     //public RawImage acornDisplay;
     public TextMeshProUGUI acornText;
+    public Slider sensitivitySlider;
+    public TextMeshProUGUI sensitivityValue;
 
     public RawImage angelBottle;
     public RawImage starBottle;
@@ -34,6 +36,9 @@ public class PauseMenu : MonoBehaviour
         paused = false;
 
         gameController = GameController.Instance;
+        gameController.sensitivityBar = sensitivitySlider;
+        sensitivitySlider.onValueChanged.AddListener(delegate { gameController.SensitivityValueCheck(); });
+        gameController.pauseMenu = GetComponent<PauseMenu>();
     }
 
     private void Update()

@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     public DialogueManager dialogueManager;
     public CutsceneManager cutsceneManager;
     public PlayerController playerController;
+    public CamControl camControl;
+    public PauseMenu pauseMenu;
     #endregion
 
     //[Header("Menu Components")]
@@ -64,7 +66,8 @@ public class GameController : MonoBehaviour
     #endregion
 
     [Header("Look Sensitivity")]
-    public Slider sensitivitySlider;
+    //public GameObject sensitivitySlider;
+    public Slider sensitivityBar;
     public float lookSensitivityX = 10.0f;
     public float lookSensitivityY = 10.0f;
     //10 initially for both
@@ -170,6 +173,11 @@ public class GameController : MonoBehaviour
         isDead = false;
         //oldHealth = playerHealth;
         Invoke("SetAcorns", 1);
+
+        if(pauseMenu != null)
+        {
+            pauseMenu.sensitivityValue.text = lookSensitivityX.ToString();
+        }
         //oldMulch = playerMulch;
     }
 
@@ -213,6 +221,15 @@ public class GameController : MonoBehaviour
         //    Reset();
         //}
 
+    }
+
+    public void SensitivityValueCheck()
+    {
+        lookSensitivityX = sensitivityBar.value;
+        lookSensitivityY = sensitivityBar.value;
+        camControl.sensitivity_X = lookSensitivityX;
+        camControl.sensitivity_Y = lookSensitivityY;
+        pauseMenu.sensitivityValue.text = pauseMenu.sensitivitySlider.value.ToString();
     }
 
     public void SetAcorns()
