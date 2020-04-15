@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenu;
     public GameObject quitOption;
+    public GameObject settingsOption;
     //public GameObject pauseEventSystem;
     public GameObject decoration;
     //public Button resumeButton;
@@ -124,6 +125,18 @@ public class PauseMenu : MonoBehaviour
         }
         Time.timeScale = 1;
         paused = false;
+    }
+
+    public void Settings()
+    {
+        settingsOption.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void Back()
+    {
+        pauseMenu.SetActive(true);
+        settingsOption.SetActive(false);
     }
 
     public void QuitGame()
