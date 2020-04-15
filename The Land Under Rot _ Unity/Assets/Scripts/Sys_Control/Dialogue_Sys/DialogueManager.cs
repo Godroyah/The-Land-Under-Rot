@@ -155,6 +155,32 @@ public class DialogueManager : MonoBehaviour
 }
 public enum Reply
 {
+    #region FruitForest Dialogue
+    Mulchant_Intro_FF,
+    Mulchant_No_Mulch_FF,
+    Mulchant_Gathered_Mulch_FF,
+    Mulchant_Tree_Awake_FF,
+    Star_Tree_Sleeping,
+    Star_Tree_Awake,
+    Star_Tree_Worms_Gone,
+    Star_Tree_Repeat_1,
+    Star_Tree_Repeat_2,
+    Little_Blue_Intro,
+    Little_Blue_Tree_Awake,
+    Little_Blue_Repeat_1,
+    Little_Blue_Repeat_2,
+    Banan_Intro,
+    Banan_Tree_Awake,
+    Banan_Repeat_1,
+    Banan_Repeat_2,
+    Strawbert_Intro,
+    Strawbert_Tree_Awake,
+    Strawbert_Repeat_1,
+    Strawbert_Repeat_2,
+    One_Way_Bark_Fenway,
+    Green_GG_Fenway,
+    #endregion
+
     #region TreeSeat Dialogue
     //TreeSeat
     // - Key_Dialogue
@@ -206,7 +232,6 @@ public enum Reply
     Lizard_3,
     Lizard_4,
     #endregion
-
 
     #region Stinkhorn Dialogue
     //Stinkhorn_Stop
