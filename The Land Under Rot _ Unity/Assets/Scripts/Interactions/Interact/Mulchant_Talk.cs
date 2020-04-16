@@ -58,7 +58,7 @@ public class Mulchant_Talk : Interactable
         {
             if (playerController == null)
             {
-                playerController = other.GetComponentInParent<PlayerController>();
+                playerController = GameController.Instance.playerController;
                 playerController.interactables.Add(this);
             }
             else
