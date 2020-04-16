@@ -52,7 +52,7 @@ public class TestCharacter : Interactable
         if (other.CompareTag("Interact"))
         {
             if (playerController == null)
-                playerController = other.GetComponentInParent<PlayerController>();
+                playerController = GameController.Instance.playerController;
             else
                 playerController.interactables.Add(this);
         }

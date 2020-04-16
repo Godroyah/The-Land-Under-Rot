@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
 
     public Canvas myCanvas;
 
+    public NPC_Emotes[] npcs;
+
     public bool prepCamEvent;
     public bool hasActiveDialogue = false;
 
@@ -35,6 +37,14 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         myCanvas.worldCamera = Camera.main;
+
+        //dialogues = new Dialogue[Dialogue_GameObjects.Count];
+
+        //for (int i = 0; i < Dialogue_GameObjects.Count; i++)
+        //{
+        //    dialogues[i] = Dialogue_GameObjects[i].GetComponent<Dialogue>();
+        //    dialogues[i].dialogueManager = this;
+        //}
     }
 
     // Start is called before the first frame update
@@ -49,6 +59,11 @@ public class DialogueManager : MonoBehaviour
             dialogues[i] = Dialogue_GameObjects[i].GetComponent<Dialogue>();
             dialogues[i].dialogueManager = this;
         }
+
+        //for(int i = 0; i < npcs.Length; i++)
+        //{
+        //    npcs[i].emote = npcs[i].Emote.ToString();
+        //}
         //  OR
         //StartCoroutine(ObtainCutsceneScripts());
 
@@ -150,9 +165,29 @@ public class DialogueManager : MonoBehaviour
         return false;
     }
 
-
-
 }
+
+[System.Serializable]
+public class NPC_Emotes
+{
+    //public ManagerEmote Emote;
+    //public string emote;
+    public string NPC;
+    public EmoteParticles npcEmotes;
+}
+
+//public enum ManagerEmote
+//{
+//    SLEEPING,
+//    WAITING,
+//    EXCLAMATION,
+//    ANGRY,
+//    SHOCKED,
+//    CONFUSED,
+//    DIZZY,
+//    HAPPY
+//}
+
 public enum Reply
 {
     #region FruitForest Dialogue

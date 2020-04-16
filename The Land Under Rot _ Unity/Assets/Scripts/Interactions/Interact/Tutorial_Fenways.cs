@@ -55,7 +55,7 @@ public class Tutorial_Fenways : Interactable
         {
             if (playerController == null)
             {
-                playerController = other.GetComponentInParent<PlayerController>();
+                playerController = GameController.Instance.playerController;
                 playerController.interactables.Add(this);
             }
             else

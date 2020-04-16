@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Dialogue : MonoBehaviour
 {
     [Tooltip("Name of the Scene for the DialogueManager to Find")]
     public string SceneName;
     public GameObject[] Frames;
 
+    [Space(5)]
+
+    [Header("Emote ID")]
+    public string NPC;
+    EmoteCheck emoteCheck;
     CamControl camControl;
     Event_Trigger eventTrigger;
     GameController gameController;
+    [Space(10)]
     public DialogueManager dialogueManager;
 
     public TextDisplayer currentTextDisplayer;
@@ -20,10 +27,17 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
+        //if(Emotes.Length != Frames.Length)
+        //{
+        //    Debug.LogWarning("Please match and assign emotes for each frame of dialogue!");
+        //}
+
         camControl = GameObject.Find("Camera_Jig").GetComponent<CamControl>();
 
         for (int i = 0; i < Frames.Length; i++)
         {
+            //emoteChecks[i] = Frames[i].GetComponent<EmoteCheck>();
+            //emoteChecks[i].dialogueManager = dialogueManager;
             Frames[i].SetActive(false);
         }
 
@@ -50,6 +64,49 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+    IEnumerator FindEmote()
+    {
+        for(int i = 0; i < dialogueManager.npcs.Length; i++)
+        {
+            if (NPC == dialogueManager.npcs[i].NPC)
+            {
+                if (emoteCheck.Emote == EmoteType.SLEEPING)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Sleeping.Play();
+                }
+                else if (emoteCheck.Emote == EmoteType.WAITING)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Waiting.Play();
+                }
+                else if (emoteCheck.Emote == EmoteType.EXCLAMATION)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Exclamation.Play();
+                }
+                else if (emoteCheck.Emote == EmoteType.ANGRY)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Angry.Play();
+                }
+                else if (emoteCheck.Emote == EmoteType.SHOCKED)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Shocked.Play();
+                }
+                else if (emoteCheck.Emote == EmoteType.CONFUSED)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Confused.Play();
+                }
+                else if (emoteCheck.Emote == EmoteType.DIZZY)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Dizzy.Play();
+                }
+                else if (emoteCheck.Emote == EmoteType.HAPPY)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Happy.Play();
+                } 
+            }
+        }
+        yield return null;
+    }
+
     IEnumerator Scene()
     {
         //Debug.Log("Scene Started");
@@ -66,6 +123,14 @@ public class Dialogue : MonoBehaviour
             if (i != 0)
                 Frames[i - 1].SetActive(false);
             Frames[i].SetActive(true);
+            emoteCheck = Frames[i].GetComponent<EmoteCheck>();
+            if(emoteCheck != null)
+            {
+                if (emoteCheck.play == true)
+                {
+                    StartCoroutine(FindEmote());
+                }
+            }
 
             yield return new WaitForEndOfFrame();
 
