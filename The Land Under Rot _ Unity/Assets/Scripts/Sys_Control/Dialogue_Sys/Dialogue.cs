@@ -94,6 +94,10 @@ public class Dialogue : MonoBehaviour
                 {
                     dialogueManager.npcs[i].npcEmotes.Confused.Play();
                 }
+                else if (emoteCheck.Emote == EmoteType.DIZZY)
+                {
+                    dialogueManager.npcs[i].npcEmotes.Dizzy.Play();
+                }
                 else if (emoteCheck.Emote == EmoteType.HAPPY)
                 {
                     dialogueManager.npcs[i].npcEmotes.Happy.Play();

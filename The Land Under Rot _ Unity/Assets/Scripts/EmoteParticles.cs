@@ -14,6 +14,7 @@ public class EmoteParticles : MonoBehaviour
     public ParticleSystem Angry;
     public ParticleSystem Shocked;
     public ParticleSystem Confused;
+    public ParticleSystem Dizzy;
     public ParticleSystem Happy;
     #endregion
 
