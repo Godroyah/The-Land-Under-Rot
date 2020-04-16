@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
         //{
         #region Interactable Check
 
-        //Redefine above
+        //Redefine above  
         #region Testing
         if (Input.GetKeyUp(KeyCode.F12))
         {
@@ -240,6 +240,37 @@ public class PlayerController : MonoBehaviour
                 temp2 = Instantiate(temp2);
 
                 temp2.transform.position = transform.position + Vector3.up * 20f;
+
+                if (Random.Range(0f, 1f) > 0.9f)
+                {
+                    float newScale = Random.Range(1f, 6f);
+                    temp2.transform.localScale = new Vector3(newScale, newScale, newScale);
+                }
+
+
+
+                temp2.transform.parent = null;
+                temp2.SetActive(true);
+            }
+        }
+        else if (Input.GetKey(KeyCode.F12) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
+        {
+            LittleBlue temp = groundChecker.GetComponentInChildren<LittleBlue>(true);
+
+            if (temp != null)
+            {
+                GameObject temp2 = temp.gameObject;
+                temp2 = Instantiate(temp2);
+
+                temp2.transform.position = transform.position + Vector3.up * 20f;
+
+                if (Random.Range(0f, 1f) > 0.9f)
+                {
+                    float newScale = Random.Range(1f, 6f);
+                    temp2.transform.localScale = new Vector3(newScale, newScale, newScale);
+                }
+
+
 
                 temp2.transform.parent = null;
                 temp2.SetActive(true);
@@ -321,7 +352,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            #endregion
+            #endregion 
         }
 
         // TODO: Limit this to happen if outside of specific range
@@ -564,6 +595,15 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("NextScene"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        if (other.CompareTag("LeafPile"))
+        {
+            ParticleTrigger trigger = other.GetComponent<ParticleTrigger>();
+            if (trigger != null)
+            {
+                trigger.Interact();
+            }
         }
     }
 }

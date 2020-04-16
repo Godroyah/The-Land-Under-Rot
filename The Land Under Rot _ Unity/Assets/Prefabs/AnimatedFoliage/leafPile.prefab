@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -3790,7 +3790,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 33590
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4834,7 +4834,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3512633126621038147}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4856,7 +4856,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.654135, y: 1.2666852, z: 9.554776}
   m_Center: {x: -0.1427917, y: -1.3402709, z: -0.39850298}
---- !u!114 &3305911673365076103
+--- !u!114 &1985866120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4865,17 +4865,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6207639689819983456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
+  m_Script: {fileID: 11500000, guid: ffd3b116c0caf7f45abd8d0ff158a53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  meshCenter: {x: 0, y: 0, z: 0}
-  maxLights: 6
-  raycast: 1
-  raycastMask:
-    serializedVersion: 2
-    m_Bits: 0
-  raycastFadeSpeed: 10
+  particleSystem: {fileID: 6744785779775479916}
 --- !u!1001 &2667286011592660841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4953,10 +4946,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.29383957
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 7248e21ad42dd9645939c26bcac416b1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb0ca1824aa9f9646bdf4f90fbf90dd9, type: 2}
     - target: {fileID: -927199367670048503, guid: 7248e21ad42dd9645939c26bcac416b1,
         type: 3}
       propertyPath: m_Name
       value: leaf_Pile_Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7248e21ad42dd9645939c26bcac416b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: LeafPile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7248e21ad42dd9645939c26bcac416b1, type: 3}
