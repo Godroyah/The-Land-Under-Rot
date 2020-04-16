@@ -6,6 +6,7 @@ public class CamControl : MonoBehaviour
 {
     public Camera myCamera;
     public GameObject target;
+    //public GameObject dialogueTarget;
     private Transform rotationTarget;
     GameController gameController;
 
