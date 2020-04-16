@@ -124,9 +124,12 @@ public class Dialogue : MonoBehaviour
                 Frames[i - 1].SetActive(false);
             Frames[i].SetActive(true);
             emoteCheck = Frames[i].GetComponent<EmoteCheck>();
-            if(emoteCheck.play == true)
+            if(emoteCheck != null)
             {
-                StartCoroutine(FindEmote());
+                if (emoteCheck.play == true)
+                {
+                    StartCoroutine(FindEmote());
+                }
             }
 
             yield return new WaitForEndOfFrame();
