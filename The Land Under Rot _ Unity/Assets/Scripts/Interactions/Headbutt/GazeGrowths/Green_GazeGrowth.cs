@@ -9,6 +9,8 @@ public class Green_GazeGrowth : GazeGrowth
     public GameObject openColliders;
     public GameObject closedColliders;
 
+    public Animator flowerAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +27,16 @@ public class Green_GazeGrowth : GazeGrowth
     {
         base.Interact();
 
-        // TODO: Anim Triggers
-        /*
-        animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
-        animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
-        */
-
         isOpen = !isOpen;
+
+        if (isOpen)
+        {
+            flowerAnimator.SetTrigger(FlowerAnims.Platform_Open.ToString());
+        }
+        else
+        {
+            flowerAnimator.SetTrigger(FlowerAnims.Platform_Close.ToString());
+        }
 
         // Alternates the colliders so that one is always on
         openColliders.SetActive(isOpen);
@@ -53,4 +58,9 @@ public class Green_GazeGrowth : GazeGrowth
             Interact();
         }
     }
+}
+
+public enum FlowerAnims
+{
+    Platform_Open, Platform_Close
 }
