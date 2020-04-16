@@ -10,7 +10,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
     float inputValue;
     bool justMoved;
 
-    public float landDistance = 2f;
+    public ParticleSystem runParticleSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +62,26 @@ public class CharacterAnimatorV2 : MonoBehaviour
 
 
                 if ((Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
+                {
                     animator.SetBool(CharAnimation.Is_Walking_Bool.ToString(), true);
+                    if (!runParticleSystem.isPlaying && playerController.IsGrounded)
+                    {
+                        runParticleSystem.Play();
+                    }
+                    else if (runParticleSystem.isPlaying && !playerController.IsGrounded)
+                    {
+                        runParticleSystem.Stop();
+                    }
+
+                }
                 else
+                {
                     animator.SetBool(CharAnimation.Is_Walking_Bool.ToString(), false);
+                    if (runParticleSystem.isPlaying)
+                    {
+                        runParticleSystem.Stop();
+                    }
+                }
 
 
                 if (playerController.ShouldHeadbutt && playerController.HeadbuttCoroutine == null)
