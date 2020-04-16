@@ -73,7 +73,7 @@ public class Dialogue : MonoBehaviour
             yield return new WaitUntil(() => (Input.GetButtonDown("Interact") || (hasFinishedDisplayingText || currentTextDisplayer == null)));
 
             //      Debug.Log("Depth Level 3");
-            if (Input.GetButtonDown("Interact") || hasFinishedDisplayingText || currentTextDisplayer == null)
+            if (/*Input.GetButtonDown("Interact") ||*/ hasFinishedDisplayingText || currentTextDisplayer == null)
             {
                 hasFinishedDisplayingText = false;
                 currentTextDisplayer = null;
