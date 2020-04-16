@@ -9,12 +9,13 @@ public class EmoteCheck : MonoBehaviour
     //public DialogueManager dialogueManager;
     public Dialogue dialogue;
 
-    [Header("Use the Drop Box, leave the text box BLANK!")]
+    //[Header("Use the Drop Box, leave the text box BLANK!")]
     public EmoteType Emote;
     //public string emote;
 
     [Space(5)]
 
+    [Header("'PLAY' IS NOT A TOY! LEAVE UNCHECKED!")]
     public bool play = false;
    
     //public bool ready = true;
