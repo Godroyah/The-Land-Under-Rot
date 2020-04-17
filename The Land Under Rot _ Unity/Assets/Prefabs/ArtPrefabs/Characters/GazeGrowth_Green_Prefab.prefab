@@ -119,7 +119,7 @@ Transform:
   - {fileID: 731995940}
   - {fileID: 440794884}
   m_Father: {fileID: 2080297379611150314}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2070275744
 GameObject:
@@ -257,6 +257,38 @@ Transform:
   m_Father: {fileID: 5234498216391775026}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &260230007982805765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7668208589892421269}
+  m_Layer: 0
+  m_Name: GreenGazeGrowth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7668208589892421269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260230007982805765}
+  m_LocalRotation: {x: 0.0753733, y: 0.013473663, z: 0.020909846, w: 0.99684507}
+  m_LocalPosition: {x: 3.0300004, y: 0.393, z: -0.19600001}
+  m_LocalScale: {x: 30.126558, y: 30.126556, z: 30.126554}
+  m_Children:
+  - {fileID: 999263287327486178}
+  - {fileID: 991600808385132610}
+  m_Father: {fileID: 2080297379611150314}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630550427135954032
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,64 +333,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &865244945854001048
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8629907368952607703}
-  - component: {fileID: 7047566377735907145}
-  - component: {fileID: 35939311171946959}
-  m_Layer: 0
-  m_Name: CordyCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8629907368952607703
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865244945854001048}
-  m_LocalRotation: {x: -0, y: -0.7085101, z: -0, w: -0.7057007}
-  m_LocalPosition: {x: 54.297134, y: 11.26, z: 59.15734}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2080297379611150314}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7047566377735907145
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865244945854001048}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 8.17, z: 9.62}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &35939311171946959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865244945854001048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a0af388eb23c0b4e95725dc3e22d7b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redGazeGrowth: {fileID: 0}
 --- !u!1 &999263287327486179
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 999263287327486178}
   m_Layer: 0
-  m_Name: gaze growth g
+  m_Name: GazeGrowthModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,12 +356,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999263287327486179}
-  m_LocalRotation: {x: 0.07537329, y: 0.013473663, z: 0.020909844, w: 0.99684507}
-  m_LocalPosition: {x: 3.03, y: 0.393, z: -0.196}
-  m_LocalScale: {x: 30.126554, y: 30.126554, z: 30.126554}
+  m_LocalRotation: {x: -0.000000007450581, y: -0, z: -0.0000000011641532, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5234498216391775026}
-  m_Father: {fileID: 2080297379611150314}
+  m_Father: {fileID: 7668208589892421269}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 8.610001, y: 1.7400001, z: 2.5340002}
 --- !u!1 &1027197761438457955
@@ -478,11 +452,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733519546757518798}
-  m_LocalRotation: {x: -0, y: 0.9467336, z: -0, w: -0.32201785}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.044067603, y: 0.9480855, z: -0.0646251, w: -0.308246}
+  m_LocalPosition: {x: -0.10117583, y: -0.007915533, z: 0.0053638155}
+  m_LocalScale: {x: 0.033193305, y: 0.03319331, z: 0.033193313}
   m_Children: []
-  m_Father: {fileID: 2080297379611150314}
+  m_Father: {fileID: 7668208589892421269}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1998652955939066138
@@ -544,12 +518,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTrigger: {fileID: 7772124594672470313}
   billboard_UI: {fileID: 0}
-  usesCamEvent: 0
-  headButtActivation: 0
+  usesCamEvent: 1
+  headButtActivation: 1
   dialogueActivation: 0
   triggerActivation: 0
   growthType: 2
-  animator: {fileID: 8426297156970988838}
+  animator: {fileID: 9151303155691315488}
+  changeDelay: 0
   isOpen: 0
   openColliders: {fileID: 630550427135954032}
   closedColliders: {fileID: 7970303098406969467}
@@ -1213,10 +1188,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.55, z: 0}
   m_LocalScale: {x: 1.5000015, y: 1.5, z: 1.5000015}
   m_Children:
-  - {fileID: 999263287327486178}
-  - {fileID: 991600808385132610}
+  - {fileID: 7668208589892421269}
   - {fileID: 1936870155}
-  - {fileID: 8629907368952607703}
   - {fileID: 6954802371376274267}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1231,7 +1204,7 @@ PrefabInstance:
     - target: {fileID: 2200003317975177718, guid: a96fff681650ee242a5d6a2bf82692ea,
         type: 3}
       propertyPath: m_Name
-      value: Green_Gaze_Blooming_Platform
+      value: Blooming_Platform
       objectReference: {fileID: 0}
     - target: {fileID: 2200003317975177719, guid: a96fff681650ee242a5d6a2bf82692ea,
         type: 3}
@@ -1271,7 +1244,7 @@ PrefabInstance:
     - target: {fileID: 2200003317975177719, guid: a96fff681650ee242a5d6a2bf82692ea,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2200003317975177719, guid: a96fff681650ee242a5d6a2bf82692ea,
         type: 3}
