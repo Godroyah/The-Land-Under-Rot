@@ -33,13 +33,10 @@ public class Green_GazeGrowth : GazeGrowth
     public override void Interact()
     {
         base.Interact();
-<<<<<<< Updated upstream
-=======
 
         animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
         animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
 
->>>>>>> Stashed changes
         thisDetector.enabled = false;
         StartCoroutine(OpenFlower());
     }
