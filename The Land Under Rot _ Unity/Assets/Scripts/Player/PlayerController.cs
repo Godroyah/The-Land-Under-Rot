@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody Rb { get; private set; }
     //Will eventually search spawner out by scene
     public Transform currentSpawn;
+    public DialogueCam dialogueCam;
     //public Transform playerHolder;
     #endregion
 
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
     public bool ShouldHeadbutt { get; private set; }
     public bool JustHeadButted { get; private set; }
     public bool StopPlayer { get; set; }
+    //public bool isDialogueCamActive = false;
     #endregion
 
 
@@ -133,7 +135,7 @@ public class PlayerController : MonoBehaviour
     public GameObject fadePane;
     private Fade_Done fadeDone;
     private Animator fadeAnim;
-    private Interactable currentTarget = null;
+    public Interactable currentTarget = null;
 
     private void Awake()
     {
@@ -290,6 +292,7 @@ public class PlayerController : MonoBehaviour
                 if (target == null) // Check to see if the interactable still exists
                 {
                     interactables.RemoveAt(targetIndex);
+                    //remove current target here too?
                     return;
                 }
                 Vector3 targetScreenPoint = Camera.main.WorldToScreenPoint(target.transform.position);
@@ -462,6 +465,8 @@ public class PlayerController : MonoBehaviour
         if (currentTarget != null && interactables.Contains(currentTarget))
         {
             currentTarget.Interact();
+
+            dialogueCam.TalkPosition();
         }
 
         yield return new WaitForSeconds(interactDelay);
