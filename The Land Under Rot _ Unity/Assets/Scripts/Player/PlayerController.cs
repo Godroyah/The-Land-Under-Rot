@@ -466,7 +466,10 @@ public class PlayerController : MonoBehaviour
         {
             currentTarget.Interact();
 
-            dialogueCam.TalkPosition();
+            if(dialogueCam != null)
+            {
+                dialogueCam.TalkPosition();
+            }
         }
 
         yield return new WaitForSeconds(interactDelay);
