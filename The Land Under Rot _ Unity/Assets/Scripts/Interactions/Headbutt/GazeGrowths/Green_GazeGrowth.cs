@@ -33,7 +33,7 @@ public class Green_GazeGrowth : GazeGrowth
     public override void Interact()
     {
         base.Interact();
-
+        thisDetector.enabled = false;
         StartCoroutine(OpenFlower());
     }
 
@@ -56,7 +56,7 @@ public class Green_GazeGrowth : GazeGrowth
         openColliders.SetActive(isOpen);
         closedColliders.SetActive(!isOpen);
 
-        thisDetector.enabled = false;
+        
     }
 
     private void OnTriggerEnter(Collider other)
