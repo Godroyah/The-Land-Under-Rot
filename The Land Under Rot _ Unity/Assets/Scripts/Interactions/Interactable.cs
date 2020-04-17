@@ -13,6 +13,9 @@ public class Interactable : MonoBehaviour
 
     public GameObject billboard_UI;
 
+    public Transform dialogueViewPoint;
+
+    //public bool isNPC;
 
     //Determines whether or not interactable can activate a cutscene and how the cutscene should be activated through this interactable
     public bool usesCamEvent;

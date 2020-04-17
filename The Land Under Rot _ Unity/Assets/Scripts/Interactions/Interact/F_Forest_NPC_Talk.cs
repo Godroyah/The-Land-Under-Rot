@@ -9,12 +9,12 @@ public class F_Forest_NPC_Talk : Interactable
 {
     public F_Forest_NPC fruitForest_NPC;
 
-    public bool isIntroduced;
-    public bool starTreeAwake;
+    bool isIntroduced;
+    bool starTreeAwake;
 
-    Animator mulchantAnim;
+    public Animator mulchantAnim;
 
-    public int randomTalk;
+    int randomTalk;
 
     GameController gameController;
 

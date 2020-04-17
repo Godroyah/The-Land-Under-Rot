@@ -16,6 +16,7 @@ public class Dialogue : MonoBehaviour
     public string NPC;
     EmoteCheck emoteCheck;
     CamControl camControl;
+    DialogueCam dialogueCam;
     Event_Trigger eventTrigger;
     GameController gameController;
     [Space(10)]
@@ -33,6 +34,7 @@ public class Dialogue : MonoBehaviour
         //}
 
         camControl = GameObject.Find("Camera_Jig").GetComponent<CamControl>();
+        dialogueCam = GameObject.Find("Dialogue_Cam").GetComponent<DialogueCam>();
 
         for (int i = 0; i < Frames.Length; i++)
         {
@@ -279,6 +281,8 @@ public class Dialogue : MonoBehaviour
         {
             dialogueManager.hasActiveDialogue = false;
         }
+
+        dialogueCam.RestPosition();
 
         //Camera.main.orthographicSize = tempNum;
         yield return null;
