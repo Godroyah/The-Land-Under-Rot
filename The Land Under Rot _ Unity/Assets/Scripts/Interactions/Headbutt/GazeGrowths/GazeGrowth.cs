@@ -5,7 +5,6 @@ using UnityEngine;
 public class GazeGrowth : Interactable
 {
     public GazeGrowthType growthType;
-    public GazeGrowth gg;
 
     protected SphereCollider thisDetector;
 

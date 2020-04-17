@@ -1354,9 +1354,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4918416012303601679}
-  - component: {fileID: 4918416012303601678}
-  - component: {fileID: 4918416012303601675}
+  - component: {fileID: 8037220276685748505}
   - component: {fileID: 4918416012303601673}
+  - component: {fileID: 4918416012303601675}
+  - component: {fileID: 6512134200354074274}
   m_Layer: 0
   m_Name: '@Mulchant_Dialogue'
   m_TagString: Untagged
@@ -1379,7 +1380,7 @@ Transform:
   m_Father: {fileID: 4918416012314259315}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4918416012303601678
+--- !u!114 &8037220276685748505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1388,30 +1389,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4918416012303601676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1c65a9456b3e84fac19777d7db1e08, type: 3}
+  m_Script: {fileID: 11500000, guid: a31e27c0f6db9de4481be644595e2647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventTrigger: {fileID: 0}
   billboard_UI: {fileID: 4918416012596556609}
-  usesCamEvent: 1
+  dialogueViewPoint: {fileID: 0}
+  usesCamEvent: 0
   headButtActivation: 0
-  dialogueActivation: 1
+  dialogueActivation: 0
   triggerActivation: 0
+  fruitForest_NPC: 1
   mulchantAnim: {fileID: 4918416012610736597}
---- !u!136 &4918416012303601675
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4918416012303601676}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.97
-  m_Height: 8.16
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4918416012303601673
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1428,6 +1417,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &4918416012303601675
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918416012303601676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.97
+  m_Height: 8.16
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6512134200354074274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918416012303601676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56d054762d0f4044a49f65032ff7948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinematicCamera: {fileID: 4918416012174469926}
+  interactionStarted: 0
+  alwaysInteract: 0
+  canSound: 0
 --- !u!1 &4918416012314259312
 GameObject:
   m_ObjectHideFlags: 0
