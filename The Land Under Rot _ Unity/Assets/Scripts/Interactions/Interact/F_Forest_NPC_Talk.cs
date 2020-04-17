@@ -105,7 +105,7 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator StarTree()
     {
-        if (gameController.wormsInFruitful)
+        if (!gameController.wormsInFruitfulGone)
         {
             if (!gameController.starTreeAwake)
             {
@@ -114,7 +114,7 @@ public class F_Forest_NPC_Talk : Interactable
             else
             {
                 dialogueManager.StartDialogue(Reply.Star_Tree_Awake);
-                gameController.wormsInFruitful = false;
+                gameController.wormsInFruitfulGone = true;
             }
         }
         else

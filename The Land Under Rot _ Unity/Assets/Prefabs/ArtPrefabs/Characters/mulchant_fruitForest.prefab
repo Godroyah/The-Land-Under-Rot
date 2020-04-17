@@ -1957,9 +1957,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6449456617437642460}
   - component: {fileID: 8235212970950465482}
+  - component: {fileID: 7081342511899069136}
   - component: {fileID: 6449456617437642458}
   - component: {fileID: 6449456617437642456}
-  - component: {fileID: 5160866100532756593}
   m_Layer: 0
   m_Name: '@Mulchant_Dialogue'
   m_TagString: Untagged
@@ -1983,6 +1983,27 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8235212970950465482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449456617437642463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31e27c0f6db9de4481be644595e2647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTrigger: {fileID: 0}
+  billboard_UI: {fileID: 6449456617262128530}
+  dialogueViewPoint: {fileID: 0}
+  usesCamEvent: 0
+  headButtActivation: 0
+  dialogueActivation: 0
+  triggerActivation: 0
+  fruitForest_NPC: 1
+  mulchantAnim: {fileID: 6449456617277308678}
+--- !u!114 &7081342511899069136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2033,22 +2054,6 @@ CapsuleCollider:
   m_Height: 8.16
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5160866100532756593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6449456617437642463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56d054762d0f4044a49f65032ff7948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cinematicCamera: {fileID: 6449456616773912053}
-  interactionStarted: 0
-  alwaysInteract: 0
-  canSound: 0
 --- !u!1 &6449456617456861603
 GameObject:
   m_ObjectHideFlags: 0

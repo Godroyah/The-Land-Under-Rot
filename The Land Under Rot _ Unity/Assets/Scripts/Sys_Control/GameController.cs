@@ -46,7 +46,8 @@ public class GameController : MonoBehaviour
     public bool willowTreeAwake;
     [Space(5)]
     public bool revealNewAreas;
-    public bool wormsInFruitful;
+    //TODO: need a better way to set worms on and off
+    public bool wormsInFruitfulGone;
 
     [Space(5)]
     public bool area_Tutorial = false;
