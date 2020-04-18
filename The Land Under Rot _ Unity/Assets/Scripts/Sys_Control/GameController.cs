@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
     public bool isDead;
     //public bool paused;
 
+    public int tempSceneIndex;
+
     [Space(5)]
     public bool mulchant_GivenBottles;
     [Space(5)]
@@ -153,6 +155,8 @@ public class GameController : MonoBehaviour
 
         //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
+        //playerController.acorns = playerAcorns;
+
         if (acornCount != null)
             acornCount.text = playerAcorns.ToString();
         
@@ -190,6 +194,7 @@ public class GameController : MonoBehaviour
             pauseMenu.sensitivityValue.text = lookSensitivityX.ToString();
         }
         //oldMulch = playerMulch;
+        tempSceneIndex += 1;
     }
 
     // Update is called once per frame
@@ -254,6 +259,7 @@ public class GameController : MonoBehaviour
 
     public void SetAcorns()
     {
+        //TODO: needs to be modified to stop resetting acorns
         playerAcorns = playerController.acorns;
         acornCount.text = playerAcorns.ToString();
         oldAcorns = playerAcorns;
