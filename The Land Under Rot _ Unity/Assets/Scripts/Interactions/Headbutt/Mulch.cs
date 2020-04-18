@@ -62,7 +62,7 @@ public class Mulch : Interactable
     {
         base.Interact();
 
-        if(!isTutorial && gameController.mulchant_GivenBottles)
+        if(!isTutorial)
         {
             switch(mulchType)
             {
@@ -70,8 +70,11 @@ public class Mulch : Interactable
                     Debug.LogWarning("Mulch type is not set! Cannot progress!");
                     break;
                 case MulchType.ANGEL:
-                    gameController.hasBrownMulch = true;
-                    gameController.FillBrownBottle();
+                    if(gameController.mulchant_GivenBottles)
+                    {
+                        gameController.hasBrownMulch = true;
+                        gameController.FillBrownBottle();
+                    }
                     break;
                 case MulchType.STAR:
                     gameController.hasGreenMulch = true;
