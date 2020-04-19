@@ -21,8 +21,11 @@ public class Cutscene : MonoBehaviour
         video.playOnAwake = false;
         video.renderMode = VideoRenderMode.CameraNearPlane;
         video.isLooping = false;
-        video.targetCamera = Camera.main;
+    }
 
+    public void PrepCamera()
+    {
+        video.targetCamera = Camera.main;
     }
 
     private void Start()
@@ -59,7 +62,15 @@ public class Cutscene : MonoBehaviour
             yield return new WaitForEndOfFrame();
             if (Input.GetButton("Interact"))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                StopCoroutine(Scene());
+                //TODO: JANK
+                GameObject GO_Loader = new GameObject();
+                LevelLoader loader = GO_Loader.AddComponent<LevelLoader>();
+                loader.sceneToLoadIndex = BuildOrder.TutorialArea;
+                loader.currentSceneIndex = BuildOrder.CutsceneScene;
+                loader.LoadScene();
+                break;
             }
 
         }
@@ -73,6 +84,7 @@ public class Cutscene : MonoBehaviour
             cutsceneManager.playerController.enabled = false;
 
         cutsceneManager.hasActiveCutscene = true;
+        video.targetCamera = Camera.main;
         video.enabled = true;
 
         video.Play();
@@ -88,8 +100,14 @@ public class Cutscene : MonoBehaviour
         if (cutsceneManager.playerController != null)
             cutsceneManager.playerController.enabled = true;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
+        //TODO: JANK
+        GameObject GO_Loader = new GameObject();
+        LevelLoader loader = GO_Loader.AddComponent<LevelLoader>();
+        loader.sceneToLoadIndex = BuildOrder.TutorialArea;
+        loader.currentSceneIndex = BuildOrder.CutsceneScene;
+        loader.LoadScene();
         yield return null;
     }
 }

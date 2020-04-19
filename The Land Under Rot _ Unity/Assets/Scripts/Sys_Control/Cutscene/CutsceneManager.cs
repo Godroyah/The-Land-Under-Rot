@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -35,19 +36,36 @@ public class CutsceneManager : MonoBehaviour
             cutscenes[i] = cutscene_GameObjects[i].GetComponent<Cutscene>();
             cutscenes[i].cutsceneManager = this;
         }
+
+        StartCoroutine(StartOnActiveScene());
     }
 
-    // Start is called before the first frame update
-    void Start()
+    //Essentially a delayed start function
+    IEnumerator StartOnActiveScene()
     {
-        GameController.Instance.cutsceneManager = this;
+        while (true)
+        {
+            Scene loadingScene = SceneManager.GetSceneByBuildIndex((int)BuildOrder.LoadingLevel);
+            if (!loadingScene.isLoaded || !loadingScene.IsValid())
+            {
+                break;
+            }
+            yield return new WaitForEndOfFrame();
+        }
 
-        if (GameController.Instance.playerController != null)
-            playerController = GameController.Instance.playerController;
+        foreach (Cutscene cutscene in cutscenes)
+        {
+            cutscene.PrepCamera();
+        }
 
-        
+        //GameController.Instance.cutsceneManager = this;
 
-        
+        //if (GameController.Instance.playerController != null)
+        //    playerController = GameController.Instance.playerController;
+
+
+
+
         //  OR
         //StartCoroutine(ObtainCutsceneScripts());
 

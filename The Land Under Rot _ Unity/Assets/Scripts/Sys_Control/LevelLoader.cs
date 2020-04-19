@@ -5,28 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    public int loadingSceneIndex;
-    public int sceneToLoadIndex;
-    public int previousSceneIndex;
+    public BuildOrder sceneToLoadIndex;
+    public BuildOrder currentSceneIndex;
+    [Space(5)]
+    public bool isDisabled = false;
 
     private Scene loadingScene;
     private Scene sceneToLoad;
     
     private bool triggered = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        //sceneToLoad = SceneManager.GetSceneByBuildIndex(sceneToLoadIndex);
-        previousSceneIndex = SceneManager.GetActiveScene().buildIndex;
-    }
+    private float deltaTimeLoading = 0f;
+    private float minDeltaTimeLoading = 5f;
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void LoadScene()
     {
@@ -43,7 +34,7 @@ public class LevelLoader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!triggered)
+        if (!triggered && !isDisabled)
         {
             triggered = true;
 
@@ -67,13 +58,14 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadYourAsyncScene()
     {
-
+        StartCoroutine(Timer());
         #region Loading Level
 
         //Debug.Log("Loading Level");
-        SceneManager.LoadScene(loadingSceneIndex, LoadSceneMode.Additive);
+        SceneManager.LoadScene((int)BuildOrder.LoadingLevel, LoadSceneMode.Additive);
 
-        loadingScene = SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex(loadingSceneIndex).name);
+        //loadingScene = SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex((int)BuildOrder.LoadingLevel).name);
+        loadingScene = SceneManager.GetSceneByBuildIndex((int)BuildOrder.LoadingLevel);
         while (!loadingScene.isLoaded)
         {
             //Debug.Log("NOT_YET_LOADED");
@@ -95,7 +87,7 @@ public class LevelLoader : MonoBehaviour
 
         #region Unload
 
-        AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(previousSceneIndex);
+        AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync((int)currentSceneIndex);
 
         while (!asyncUnload.isDone)
         {
@@ -112,7 +104,7 @@ public class LevelLoader : MonoBehaviour
 
         #region SceneToLoad
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoadIndex, LoadSceneMode.Additive);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((int)sceneToLoadIndex, LoadSceneMode.Additive);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
@@ -122,7 +114,7 @@ public class LevelLoader : MonoBehaviour
             //yield return null;
         }
 
-        sceneToLoad = SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex(sceneToLoadIndex).name); 
+        sceneToLoad = SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex((int)sceneToLoadIndex).name); 
         SceneManager.SetActiveScene(sceneToLoad);
 
         // Protect assets from deletion
@@ -130,10 +122,35 @@ public class LevelLoader : MonoBehaviour
 
         #endregion
 
+        yield return new WaitWhile(() => deltaTimeLoading <= minDeltaTimeLoading);
+
         // Unloading the LoadingScene
         SceneManager.UnloadSceneAsync(loadingScene);
         yield return null;
 
 
     }
+
+    IEnumerator Timer()
+    {
+        while (true)
+        {
+            yield return new WaitForEndOfFrame();
+            deltaTimeLoading += Time.deltaTime;
+        }
+    }
+}
+
+public enum BuildOrder
+{
+    StartScreen,
+    CutsceneScene,
+    TutorialArea,
+    StinkhornStop,
+    TreeSeat,
+    FruitfulForest,
+    Understump,
+    BossLevel,
+    LoadingLevel
+
 }

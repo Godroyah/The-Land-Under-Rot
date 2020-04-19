@@ -55,7 +55,14 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene((int)BuildOrder.CutsceneScene);
+
+            //TODO: JANK
+            GameObject GO_Loader = new GameObject();
+            LevelLoader loader = GO_Loader.AddComponent<LevelLoader>();
+            loader.sceneToLoadIndex = BuildOrder.CutsceneScene;
+            loader.currentSceneIndex = BuildOrder.StartScreen;
+            loader.LoadScene();
         }
         Cursor.visible = false;
     }
