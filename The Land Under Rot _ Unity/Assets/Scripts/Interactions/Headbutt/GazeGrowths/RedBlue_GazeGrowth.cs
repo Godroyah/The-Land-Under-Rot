@@ -44,14 +44,13 @@ public class RedBlue_GazeGrowth : GazeGrowth
     {
         if (cordysepBarrier != null)
         {
+            //eventTrigger.alwaysInteract = false;
+            thisDetector.enabled = false;
+
             base.Interact();
 
             animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
             animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
-
-
-
-            thisDetector.enabled = false;
 
             switch (growthType)
             {
@@ -115,6 +114,7 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
         thisDetector.enabled = true;
         waitReturn = false;
+        //eventTrigger.alwaysInteract = true;
 
         animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), false);
     }
