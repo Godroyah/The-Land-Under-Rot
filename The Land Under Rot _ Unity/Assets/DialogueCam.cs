@@ -23,6 +23,7 @@ public class DialogueCam : MonoBehaviour
 
     public void TalkPosition()
     {
+        Debug.Log("Start Talking");
         if(playerController.currentTarget.dialogueViewPoint != null)
         {
             transform.position = playerController.currentTarget.dialogueViewPoint.position;
@@ -34,13 +35,14 @@ public class DialogueCam : MonoBehaviour
 
     public void RestPosition()
     {
-        //if (playerController.currentTarget.dialogueViewPoint != null)
-        //{
-        //    thisCamera.enabled = false;
+        Debug.Log("Stop Talking");
+        if (playerController.currentTarget.dialogueViewPoint != null)
+        {
+            thisCamera.enabled = false;
 
-        //    transform.position = restPosition.position;
-        //    transform.rotation = restPosition.rotation;
-        //}
+            transform.position = restPosition.position;
+            transform.rotation = restPosition.rotation;
+        }
     }
 
 }
