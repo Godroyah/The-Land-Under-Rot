@@ -612,14 +612,27 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-
-        if (other.CompareTag("LeafPile"))
+        else if (other.CompareTag("LeafPile"))
         {
             ParticleTrigger trigger = other.GetComponent<ParticleTrigger>();
             if (trigger != null)
             {
                 trigger.Interact();
             }
+        }
+        else if (other.CompareTag("DarknessHelper"))
+        {
+            DarknessHelper helper = other.GetComponent<DarknessHelper>();
+            helper.ApplyDarkness();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("DarknessHelper"))
+        {
+            DarknessHelper helper = other.GetComponent<DarknessHelper>();
+            helper.RemoveDarkness();
         }
     }
 }
