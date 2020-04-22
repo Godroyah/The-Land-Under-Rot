@@ -521,9 +521,17 @@ public class PlayerController : MonoBehaviour
         //{
         float targetSpeed;
         if (ShouldRun)
+        {
             targetSpeed = runVelocity;
+            AudioManager.Instance.Play_Run();
+        }
+            
         else
+        {
             targetSpeed = moveVelocity;
+            //Audio Play Walk
+        }
+            
 
 
         movement = rotationTarget.TransformDirection(movement) * targetSpeed;
