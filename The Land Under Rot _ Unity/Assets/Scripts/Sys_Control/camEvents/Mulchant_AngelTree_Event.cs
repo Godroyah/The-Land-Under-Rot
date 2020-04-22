@@ -37,6 +37,7 @@ public class Mulchant_AngelTree_Event : Event_Type
 
         yield return new WaitForSeconds(mulchantDelay);
 
+        AudioManager.Instance.Play_Tree_EyeOpening();
         mulchantStandInAnim.SetTrigger("AwakenTree");
 
         yield return new WaitForSeconds(treeDelay);

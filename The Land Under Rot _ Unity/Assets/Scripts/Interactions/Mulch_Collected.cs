@@ -45,7 +45,9 @@ public class Mulch_Collected : MonoBehaviour
         //float progress = 0.0f;
         //currentCharacter = mulch_text.text[letterCounter].ToString();
 
-       // Debug.Log("Current character is: " + currentCharacter);
+        // Debug.Log("Current character is: " + currentCharacter);
+
+        AudioManager.Instance.Play_Mulch_Smash();
 
         while (letterCounter < thisText.Length)
         {

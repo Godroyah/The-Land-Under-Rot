@@ -77,6 +77,8 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
         yield return new WaitForSeconds(cordyDelay);
 
+        AudioManager.Instance.Play_Cordyceps_GoingUnderground();
+
         while (rateOfChange < 1.0f)
         {
             cordysepBarrier.transform.position = Vector3.Lerp(cordysepBarrier.transform.position, cordys_Lowered_Position, rateOfChange);

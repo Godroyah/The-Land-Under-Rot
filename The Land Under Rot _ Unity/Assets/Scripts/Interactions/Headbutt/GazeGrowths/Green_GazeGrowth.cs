@@ -56,6 +56,7 @@ public class Green_GazeGrowth : GazeGrowth
 
         if (isOpen)
         {
+            AudioManager.Instance.Play_BloomingPlantWoosh();
             flowerAnimator.SetTrigger(FlowerAnims.Platform_Open.ToString());
         }
         else

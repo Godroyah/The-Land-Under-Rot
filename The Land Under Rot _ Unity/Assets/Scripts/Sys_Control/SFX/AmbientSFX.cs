@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum AmbienceType {NONE, BUGS, BUGS_AROUND_LIGHT, WATER, RUNNING_WATER,
-    BIRDS_CHIRPING, FIRE_FLICKERING}
+    BIRDS_CHIRPING, FIRE_FLICKERING, GLOWING_PLANT}
 
 //CAVE, FOREST_SWAMP, FACTORY, PIPE_STEAM, SLUDGE
 
@@ -42,6 +42,9 @@ public class AmbientSFX : MonoBehaviour
                 break;
             case AmbienceType.FIRE_FLICKERING:
                 AudioManager.Instance.Play_Ambient_FireFlickering();
+                break;
+            case AmbienceType.GLOWING_PLANT:
+                AudioManager.Instance.Play_BioluminescentPlantLighting();
                 break;
             //case AmbienceType.PIPE_STEAM:
             //    AudioManager.Instance.Play_PipesSteam();
