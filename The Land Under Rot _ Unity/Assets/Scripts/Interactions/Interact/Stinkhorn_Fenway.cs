@@ -27,6 +27,7 @@ public class Stinkhorn_Fenway : Interactable
 
         if (GameController.Instance != null)
         {
+            AudioManager.Instance.Play_Fenway();
             switch (fenwayType)
             {
                 case Stink_FenwayType.NONE:

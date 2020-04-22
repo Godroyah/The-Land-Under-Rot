@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ContactType { WATER_SPLASH, LEAF_PILE}
+public enum ContactType { MUSHROOM_BOUNCE, WATER_SPLASH, LEAF_PILE}
 
 public class ContactSFX : MonoBehaviour
 {
@@ -14,6 +14,9 @@ public class ContactSFX : MonoBehaviour
         {
             switch(contactType)
             {
+                case ContactType.MUSHROOM_BOUNCE:
+                    AudioManager.Instance.Play_MushroomBounce();
+                    break;
                 case ContactType.WATER_SPLASH:
                     AudioManager.Instance.Play_WaterSplash();
                     break;

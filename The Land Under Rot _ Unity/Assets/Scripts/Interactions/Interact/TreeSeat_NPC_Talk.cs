@@ -56,9 +56,11 @@ public class TreeSeat_NPC_Talk : Interactable
                     StartCoroutine(MsStamen());
                     break;
                 case TreeSeat_NPC.EXIT_FENWAY:
+                    AudioManager.Instance.Play_Fenway();
                     dialogueManager.StartDialogue(Reply.TS_Fenway_Exit);
                     break;
                 case TreeSeat_NPC.MULCH_FENWAY:
+                    AudioManager.Instance.Play_Fenway();
                     dialogueManager.StartDialogue(Reply.TS_Fenway_Mulch);
                     break;
                 case TreeSeat_NPC.PEDALTON:
@@ -83,6 +85,7 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Catkin()
     {
+        AudioManager.Instance.Play_Catkin();
         if(!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Catkin_Intro);
@@ -125,15 +128,14 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Buddy()
     {
+       AudioManager.Instance.Play_Buddy();
        dialogueManager.StartDialogue(Reply.Buddy);
        yield return null;
     }
 
     IEnumerator PeaPod()
     {
-        dialogueManager.StartDialogue(Reply.Return_To_Stinkhorn);
-
-
+       dialogueManager.StartDialogue(Reply.Return_To_Stinkhorn);
        yield return null;
     }
 
@@ -190,6 +192,8 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Pedalton()
     {
+        AudioManager.Instance.Play_Pedalton();
+
         dialogueManager.StartDialogue(Reply.Pedalton);
 
        yield return null;
@@ -197,6 +201,7 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator CarrotSlug()
     {
+        AudioManager.Instance.Play_CarrotSlug();
         if(!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Carrot_Slug_Intro);
@@ -228,6 +233,7 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Stranger()
     {
+        AudioManager.Instance.Play_Cactus();
         if (!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Stranger_Intro);
@@ -261,6 +267,7 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Gourdo()
     {
+        AudioManager.Instance.Play_Gourdo();
         if (!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Gourdo_Intro);
