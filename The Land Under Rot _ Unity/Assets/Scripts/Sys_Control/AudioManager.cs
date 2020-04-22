@@ -319,15 +319,15 @@ public class AudioManager : MonoBehaviour
     {
 
     }
-#endregion
+    #endregion
 
     #region UI
-    public void Play_UI_Click_Menu()
+    public void Play_UI_Click_MainMenu()
     {
 
     }
 
-    public void Play_UI_Click_InGame()
+    public void Play_UI_Click_PauseMenu()
     {
 
     }
