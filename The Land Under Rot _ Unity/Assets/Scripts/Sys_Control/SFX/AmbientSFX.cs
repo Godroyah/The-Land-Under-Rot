@@ -11,7 +11,7 @@ public class AmbientSFX : MonoBehaviour
 {
     Transform player;
 
-    public AmbienceType ambience;
+    public AmbienceType ambientSound;
 
     public float playerProximity;
 
@@ -20,7 +20,7 @@ public class AmbientSFX : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        switch(ambience)
+        switch(ambientSound)
         {
             case AmbienceType.NONE:
                 Debug.Log("Shush");
