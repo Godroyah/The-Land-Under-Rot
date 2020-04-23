@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Mulchant_StarTree_Event : Event_Type
 {
-    public Animator treeAnim;
+    public Animator firstTreeAnim;
+    public Animator secondTreeAnim;
     public Animator mulchantStandInAnim;
     public SkinnedMeshRenderer interactableMulchant;
     public SkinnedMeshRenderer eventMulchant;
@@ -47,7 +48,8 @@ public class Mulchant_StarTree_Event : Event_Type
 
         yield return new WaitForSeconds(treeDelay);
 
-        treeAnim.SetTrigger("Wakeup");
+        firstTreeAnim.SetTrigger("Wakeup");
+        secondTreeAnim.SetTrigger("Wakeup");
         eventMulchant.enabled = false;
         mulchantPrompt.enabled = true;
         interactableMulchant.enabled = true;

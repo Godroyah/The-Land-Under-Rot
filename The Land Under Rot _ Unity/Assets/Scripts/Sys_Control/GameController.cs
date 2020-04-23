@@ -96,9 +96,13 @@ public class GameController : MonoBehaviour
     public RawImage greenBottle;
     public RawImage yellowBottle;
     [Space(5)]
-    public RenderTexture angelTexture;
-    public RenderTexture starTexture;
-    public RenderTexture willowTexture;
+    //public RenderTexture angelTexture;
+    //public RenderTexture starTexture;
+    //public RenderTexture willowTexture;
+
+    public Texture angelTexture;
+    public Texture starTexture;
+    public Texture willowTexture;
     //public TextMeshProUGUI mulchCount;
     //public Image[] healthCounter;
 
