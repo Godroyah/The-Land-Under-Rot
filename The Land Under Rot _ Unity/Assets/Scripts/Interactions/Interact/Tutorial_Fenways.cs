@@ -25,6 +25,7 @@ public class Tutorial_Fenways : Interactable
 
         if (GameController.Instance != null)
         {
+            AudioManager.Instance.Play_Fenway();
             switch(fenwayType)
             {
                 case Tut_FenwayType.NONE:

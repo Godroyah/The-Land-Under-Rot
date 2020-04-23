@@ -36,7 +36,11 @@ public class CharacterAnimatorV2 : MonoBehaviour
 
                 //faster falling
                 if (/*rb.velocity.y < 0 && */!playerController.IsGrounded)
+                {
                     animator.SetBool(CharAnimation.Is_Falling_Bool.ToString(), true);
+                    AudioManager.Instance.Play_Falling();
+                }
+                    
                 //else if (rb.velocity.y > 0 && !playerController.ShouldJump)
                 //animator.SetBool("Airborne_Bool", true);
 
@@ -67,6 +71,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
                     if (!runParticleSystem.isPlaying && playerController.IsGrounded)
                     {
                         runParticleSystem.Play();
+                        AudioManager.Instance.Play_ClothesRustle();
                     }
                     else if (runParticleSystem.isPlaying && !playerController.IsGrounded)
                     {
@@ -99,6 +104,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
         if (playerController.IsGrounded)
         {
             animator.SetBool(CharAnimation.Is_Falling_Bool.ToString(), false);
+            AudioManager.Instance.Play_Landing_OnFeet();
         }
 
     }

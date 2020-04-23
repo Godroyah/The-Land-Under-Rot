@@ -66,6 +66,7 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator Mulchant()
     {
+        AudioManager.Instance.Play_Mulchant();
         // Select which dialogue to 'say'
         if (!gameController.hasGreenMulch)
         {
@@ -105,7 +106,7 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator StarTree()
     {
-        if (gameController.wormsInFruitful)
+        if (!gameController.wormsInFruitfulGone)
         {
             if (!gameController.starTreeAwake)
             {
@@ -114,7 +115,7 @@ public class F_Forest_NPC_Talk : Interactable
             else
             {
                 dialogueManager.StartDialogue(Reply.Star_Tree_Awake);
-                gameController.wormsInFruitful = false;
+                gameController.wormsInFruitfulGone = true;
             }
         }
         else
@@ -174,6 +175,7 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator Banan()
     {
+        AudioManager.Instance.Play_Banan();
         if (!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Banan_Intro);
@@ -203,6 +205,7 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator Strawbert()
     {
+        AudioManager.Instance.Play_Strawberry();
         if (!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Strawbert_Intro);
@@ -232,6 +235,7 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator BarkFenway()
     {
+        AudioManager.Instance.Play_Fenway();
         dialogueManager.StartDialogue(Reply.One_Way_Bark_Fenway);
 
         yield return null;
@@ -239,6 +243,7 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator GreenGazeFenway()
     {
+        AudioManager.Instance.Play_Fenway();
         dialogueManager.StartDialogue(Reply.Green_GG_Fenway);
 
         yield return null;

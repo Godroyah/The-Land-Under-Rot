@@ -244,8 +244,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3378868426690031340}
-  m_LocalRotation: {x: -0.044241793, y: -0, z: -0, w: 0.9990209}
-  m_LocalPosition: {x: 61.7, y: 8.000019, z: 12.1970005}
+  m_LocalRotation: {x: -0.044241805, y: -0, z: -0, w: 0.9990209}
+  m_LocalPosition: {x: 57.59001, y: 26.010002, z: 12.390141}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6657294929016743260}
@@ -1957,9 +1957,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6449456617437642460}
   - component: {fileID: 8235212970950465482}
+  - component: {fileID: 7081342511899069136}
   - component: {fileID: 6449456617437642458}
   - component: {fileID: 6449456617437642456}
-  - component: {fileID: 5160866100532756593}
   m_Layer: 0
   m_Name: '@Mulchant_Dialogue'
   m_TagString: Untagged
@@ -2003,6 +2003,27 @@ MonoBehaviour:
   triggerActivation: 0
   fruitForest_NPC: 1
   mulchantAnim: {fileID: 6449456617277308678}
+--- !u!114 &7081342511899069136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6449456617437642463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31e27c0f6db9de4481be644595e2647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTrigger: {fileID: 0}
+  billboard_UI: {fileID: 6449456617262128530}
+  dialogueViewPoint: {fileID: 0}
+  usesCamEvent: 0
+  headButtActivation: 0
+  dialogueActivation: 0
+  triggerActivation: 0
+  fruitForest_NPC: 1
+  mulchantAnim: {fileID: 6449456617277308678}
 --- !u!54 &6449456617437642458
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2026,29 +2047,13 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6449456617437642463}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 43f08ff01175375458aa2194516ea6f5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.97
   m_Height: 8.16
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5160866100532756593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6449456617437642463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56d054762d0f4044a49f65032ff7948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cinematicCamera: {fileID: 6449456616773912053}
-  interactionStarted: 0
-  alwaysInteract: 0
-  canSound: 0
 --- !u!1 &6449456617456861603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,7 +2079,7 @@ Transform:
   m_GameObject: {fileID: 6449456617456861603}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -26.89, y: 0.9006586, z: -41.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_Children:
   - {fileID: 6449456617442955604}
   - {fileID: 6449456617437642460}

@@ -96,6 +96,8 @@ public class AngelTree_NewAreas_Event : Event_Type
 
         yield return new WaitForSeconds(fruitEntranceDelay);
 
+        AudioManager.Instance.Play_ClearingBranches();
+
         while (dropSpeedFruit < totalSpeed)
         {
             fruitEntranceBranches.transform.position = Vector3.Lerp(fruitEntranceBranches.transform.position, fruitLoweredPos, dropSpeedFruit * Time.deltaTime);
@@ -110,6 +112,9 @@ public class AngelTree_NewAreas_Event : Event_Type
         float willowIteration = dropSpeedWillow;
 
         yield return new WaitForSeconds(willowEntranceDelay);
+
+        AudioManager.Instance.Play_ClearingBranches();
+        AudioManager.Instance.Play_MassiveRootsMoving();
 
         while (dropSpeedWillow < totalSpeed)
         {

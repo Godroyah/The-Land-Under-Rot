@@ -51,7 +51,8 @@ public class PauseMenu : MonoBehaviour
         //THIS RIGHT HERE IS A JANK SOLUTION. Pausing keeps deleting the 3rd bottle reference in SelfReport (which right now is the green bottle but used to be the yellow bottle
         //before I put in the NONE enum. NEED to come back and fix this at a later date but for now this is working.
         gameController.greenBottle = starBottle;
-            // Debug.Log("Active?");
+        // Debug.Log("Active?");
+        AudioManager.Instance.Play_UI_Click_PauseMenu();
             if (Input.GetButton("Pause"))
             {
                 if (!paused)
@@ -119,6 +120,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        AudioManager.Instance.Play_UI_Click_PauseMenu();
         Cursor.visible = false;
         pauseMenu.SetActive(false);
         decoration.SetActive(false);
@@ -136,6 +138,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Settings()
     {
+        AudioManager.Instance.Play_UI_Click_PauseMenu();
         settingsOption.SetActive(true);
         pauseMenu.SetActive(false);
         acornBoy.SetActive(false);
@@ -149,6 +152,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Back()
     {
+        AudioManager.Instance.Play_UI_Click_PauseMenu();
         pauseMenu.SetActive(true);
         settingsOption.SetActive(false);
         acornBoy.SetActive(true);
@@ -164,6 +168,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        AudioManager.Instance.Play_UI_Click_PauseMenu();
         //pauseMenu.SetActive(false);
         //resumeButton.interactable = false;
         //quitButton.interactable = false;
@@ -174,6 +179,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitToMenu()
     {
+        AudioManager.Instance.Play_UI_Click_PauseMenu();
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
         
@@ -181,6 +187,7 @@ public class PauseMenu : MonoBehaviour
 
     public void CancelQuit()
     {
+        AudioManager.Instance.Play_UI_Click_PauseMenu();
         pauseMenu.SetActive(true);
         quitOption.SetActive(false);
         //resumeButton.interactable = true;
@@ -190,7 +197,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitApplication()
     {
-       
+        AudioManager.Instance.Play_UI_Click_PauseMenu();
         Debug.Log("Quit");
         Application.Quit();
         

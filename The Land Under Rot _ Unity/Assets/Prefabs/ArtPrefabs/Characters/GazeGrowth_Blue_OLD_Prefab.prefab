@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 3425367195191406184}
   - component: {fileID: 7140791238620803339}
   - component: {fileID: 3919584972362066052}
+  - component: {fileID: 894229497593164111}
   m_Layer: 0
   m_Name: '@GazeGrowth'
   m_TagString: Untagged
@@ -599,16 +600,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTrigger: {fileID: 0}
   billboard_UI: {fileID: 0}
+  dialogueViewPoint: {fileID: 0}
   usesCamEvent: 1
   headButtActivation: 1
   dialogueActivation: 0
   triggerActivation: 0
   growthType: 0
-  gg: {fileID: 0}
   animator: {fileID: 8937583984626811805}
   cordysepBarrier: {fileID: 0}
   lowerDistance: 15
   cordyDelay: 1
+  isCordyReached: 0
   waitReturn: 0
   returnIn: 5
 --- !u!54 &7140791238620803339
@@ -641,8 +643,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cinematicCamera: {fileID: 1861621381}
   interactionStarted: 0
-  alwaysInteract: 1
+  alwaysInteract: 0
   canSound: 0
+--- !u!135 &894229497593164111
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263101587201027615}
+  m_Material: {fileID: 13400000, guid: 43f08ff01175375458aa2194516ea6f5, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6599371
+  m_Center: {x: 7.7802176e-10, y: 0.12737823, z: 0.032558974}
 --- !u!1 &6609878635431611887
 GameObject:
   m_ObjectHideFlags: 0

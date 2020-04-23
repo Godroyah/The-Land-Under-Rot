@@ -45,6 +45,8 @@ public class LizardEvent : Event_Type
 
     IEnumerator FollowTrack()
     {
+        AudioManager.Instance.Play_Lizard_Walk();
+        AudioManager.Instance.Play_WoodenCartWheels_Dirt();
         lizardRenderer.enabled = true;
         lizardCollider.enabled = true;
         peaPodRenderer.enabled = true;
@@ -67,7 +69,7 @@ public class LizardEvent : Event_Type
         lizardAnim.SetTrigger("End_Lizard");
         GameController.Instance.tutorial_bus_Called = true;
 
-        yield return new WaitForSeconds(2f); // TODO: REMOVE ME
+        //yield return new WaitForSeconds(2f); // TODO: REMOVE ME
 
         //SceneManager.LoadScene(0);
     }

@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 1101620899993613436}
   - component: {fileID: 6197075232199081663}
   - component: {fileID: 1101620899993613437}
+  - component: {fileID: 9113928677980439130}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTrigger: {fileID: 0}
   billboard_UI: {fileID: 0}
+  dialogueViewPoint: {fileID: 0}
   usesCamEvent: 0
   headButtActivation: 0
   dialogueActivation: 0
@@ -183,6 +185,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9113928677980439130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101620899993613439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676e93b2b8bc2a54a8ca561f336f9e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitType: 1
 --- !u!1 &1101620900595193812
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,8 +338,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.012284634, y: 0.013934643, z: 0.011730945}
-  m_Center: {x: 0.0014504361, y: -0.0006368494, z: 0.0006229451}
+  m_Size: {x: 0.0183099, y: 0.013934645, z: 0.011730945}
+  m_Center: {x: 0.0012980304, y: -0.00063677493, z: 0.00060450647}
 --- !u!1001 &369312992
 PrefabInstance:
   m_ObjectHideFlags: 0

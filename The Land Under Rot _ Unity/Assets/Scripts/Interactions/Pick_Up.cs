@@ -76,7 +76,8 @@ public class Pick_Up : MonoBehaviour
                 case PickUpType.ACORN:
                     //Count ACORN;
                     //move to Player; have GameController call for it
-                    acornAudio.Play();
+                    //acornAudio.Play();
+                    AudioManager.Instance.Play_Acorn_Pickup();
                     if(acornAudio.isPlaying)
                     {
                         Debug.Log("Playing!");

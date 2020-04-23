@@ -14,6 +14,8 @@ public class Green_GazeGrowth : GazeGrowth
 
     public Animator flowerAnimator;
 
+    bool isTriggered;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +34,18 @@ public class Green_GazeGrowth : GazeGrowth
 
     public override void Interact()
     {
-        base.Interact();
+        if(!isTriggered)
+        {
+            isTriggered = true;
+            thisDetector.enabled = false;
+            base.Interact();
 
-        animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
-        animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
+            animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
+            animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
 
-        thisDetector.enabled = false;
-        StartCoroutine(OpenFlower());
+
+            StartCoroutine(OpenFlower());
+        }
     }
 
     IEnumerator OpenFlower()
@@ -49,6 +56,7 @@ public class Green_GazeGrowth : GazeGrowth
 
         if (isOpen)
         {
+            AudioManager.Instance.Play_BloomingPlantWoosh();
             flowerAnimator.SetTrigger(FlowerAnims.Platform_Open.ToString());
         }
         else

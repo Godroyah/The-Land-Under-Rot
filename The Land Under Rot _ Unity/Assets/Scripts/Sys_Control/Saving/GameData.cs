@@ -36,9 +36,13 @@ public class GameData
         playerAcorns = gameController.playerAcorns;
 
         position = new float[3];
-        position[0] = gameController.playerController.transform.position.x;
-        position[1] = gameController.playerController.transform.position.y;
-        position[2] = gameController.playerController.transform.position.z;
+        if (gameController.playerController != null)
+        {
+            position[0] = gameController.playerController.transform.position.x;
+            position[1] = gameController.playerController.transform.position.y;
+            position[2] = gameController.playerController.transform.position.z;
+        }
+        
 
         mulchant_GivenBottles = gameController.mulchant_GivenBottles;
 

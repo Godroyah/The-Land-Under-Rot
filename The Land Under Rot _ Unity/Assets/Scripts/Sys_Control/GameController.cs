@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
     public bool isDead;
     //public bool paused;
 
+    public int tempSceneIndex;
+
     [Space(5)]
     public bool mulchant_GivenBottles;
     [Space(5)]
@@ -46,7 +48,8 @@ public class GameController : MonoBehaviour
     public bool willowTreeAwake;
     [Space(5)]
     public bool revealNewAreas;
-    public bool wormsInFruitful;
+    //TODO: need a better way to set worms on and off
+    public bool wormsInFruitfulGone;
 
     [Space(5)]
     public bool area_Tutorial = false;
@@ -93,9 +96,13 @@ public class GameController : MonoBehaviour
     public RawImage greenBottle;
     public RawImage yellowBottle;
     [Space(5)]
-    public RenderTexture angelTexture;
-    public RenderTexture starTexture;
-    public RenderTexture willowTexture;
+    //public RenderTexture angelTexture;
+    //public RenderTexture starTexture;
+    //public RenderTexture willowTexture;
+
+    public Texture angelTexture;
+    public Texture starTexture;
+    public Texture willowTexture;
     //public TextMeshProUGUI mulchCount;
     //public Image[] healthCounter;
 
@@ -152,6 +159,8 @@ public class GameController : MonoBehaviour
 
         //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
+        //playerController.acorns = playerAcorns;
+
         if (acornCount != null)
             acornCount.text = playerAcorns.ToString();
         
@@ -189,6 +198,7 @@ public class GameController : MonoBehaviour
             pauseMenu.sensitivityValue.text = lookSensitivityX.ToString();
         }
         //oldMulch = playerMulch;
+        tempSceneIndex += 1;
     }
 
     // Update is called once per frame
@@ -253,6 +263,7 @@ public class GameController : MonoBehaviour
 
     public void SetAcorns()
     {
+        //TODO: needs to be modified to stop resetting acorns
         playerAcorns = playerController.acorns;
         acornCount.text = playerAcorns.ToString();
         oldAcorns = playerAcorns;

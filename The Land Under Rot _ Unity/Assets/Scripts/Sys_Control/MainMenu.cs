@@ -37,31 +37,42 @@ public class MainMenu : MonoBehaviour
 
     public void Settings()
     {
+        AudioManager.Instance.Play_UI_Click_MainMenu();
         settingsOption.SetActive(true);
         mainMenu.SetActive(false);
     }
 
     public void Back()
     {
+        AudioManager.Instance.Play_UI_Click_MainMenu();
         mainMenu.SetActive(true);
         settingsOption.SetActive(false);
     }
 
     public void StartGame()
     {
-        if(testing)
+        AudioManager.Instance.Play_UI_Click_MainMenu();
+        if (testing)
         {
             mainMenu.SetActive(false);
         }
         else
         {
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene((int)BuildOrder.CutsceneScene);
+
+            //TODO: JANK
+            GameObject GO_Loader = new GameObject();
+            LevelLoader loader = GO_Loader.AddComponent<LevelLoader>();
+            loader.sceneToLoadIndex = BuildOrder.CutsceneScene;
+            loader.currentSceneIndex = BuildOrder.StartScreen;
+            loader.LoadScene();
         }
         Cursor.visible = false;
     }
 
     public void QuitGame()
     {
+        AudioManager.Instance.Play_UI_Click_MainMenu();
         Debug.Log("Quit!");
         Application.Quit();
     }
