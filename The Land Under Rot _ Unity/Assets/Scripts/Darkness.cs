@@ -14,14 +14,15 @@ public class Darkness : MonoBehaviour
     public int steps = 3;
     public float stepDepth = 2f;
     public Maintain direction = Maintain.NONE;
-    public Image UIBlinder;
-    public Material cameraBlinder;
-    private Color blinder;
+    public GameObject cameraBlinder;
+    private MeshRenderer camMeshRenderer;
+
+    public float illuminationDuration = 5f;
     public float transitionDuration = 1;
     private Coroutine newTransition;
     private Coroutine currentTransition;
 
-    private List<GameObject> children = new List<GameObject>();
+    private List<DarknessHelper> helpers = new List<DarknessHelper>();
 
     void Start()
     {
@@ -31,9 +32,9 @@ public class Darkness : MonoBehaviour
         darkMat = new Material(darkMat);
         mRenderer.sharedMaterial = darkMat;
 
-        cameraBlinder = UIBlinder.material;
-        blinder = cameraBlinder.color;
-        cameraBlinder = new Material(cameraBlinder);
+        camMeshRenderer = cameraBlinder.GetComponent<MeshRenderer>();
+
+        camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, 0));
 
         if (baseModel.transform.localScale != Vector3.one)
         {
@@ -92,13 +93,14 @@ public class Darkness : MonoBehaviour
             tempHelp = temp.AddComponent<DarknessHelper>();
             tempHelp.parentDarkness = this;
             tempHelp.SetDarknessLevel(i + 1);
-            children.Add(temp);
+            helpers.Add(tempHelp);
             yield return new WaitForEndOfFrame();
         }
 
         tempHelp = baseModel.AddComponent<DarknessHelper>();
         tempHelp.parentDarkness = this;
         tempHelp.SetDarknessLevel(0);
+        helpers.Add(tempHelp);
     }
 
     IEnumerator LerpAlpha(float percent)
@@ -112,32 +114,48 @@ public class Darkness : MonoBehaviour
         Debug.Log("Lerping alpha");
 
         float time = 0;
-        float originalValue = blinder.a;
+        float originalValue = camMeshRenderer.material.GetColor("_BaseColor").a;
         //blinder.a = percent;
         //Debug.Log(blinder.a);
         //cameraBlinder.color = blinder;
         //UIBlinder.material = cameraBlinder;
         //yield return new WaitForEndOfFrame();
-        
+
         while (time <= transitionDuration)
         {
             yield return new WaitForEndOfFrame();
-            blinder.a = Mathf.Lerp(originalValue, percent, time/transitionDuration);
-            Debug.Log(blinder.a);
-            cameraBlinder.color = blinder;
-            UIBlinder.material = cameraBlinder;
+            float newAlpha = Mathf.Lerp(originalValue, percent, time / transitionDuration);
+
+            camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, newAlpha));
             time += Time.deltaTime;
         }
+
+        camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, percent));
     }
 
-    public void AdjustBlinder(int level)
+    public void AdjustBlinder(float level)
     {
-        if (level < 0)
-            level = 0;
+        if (level <= 0)
+            level = 0.5f;
 
         float percent = level / (steps * 1f);
 
+        percent = 0.5f + (percent * 0.5f);
+
         newTransition = StartCoroutine(LerpAlpha(percent));
+    }
+
+    public void RemoveBlinder()
+    {
+        newTransition = StartCoroutine(LerpAlpha(0));
+    }
+
+    public void Illuminate()
+    {
+        foreach (DarknessHelper helper in helpers)
+        {
+            helper.IlluminateDarkness(illuminationDuration);
+        }
     }
 }
 
