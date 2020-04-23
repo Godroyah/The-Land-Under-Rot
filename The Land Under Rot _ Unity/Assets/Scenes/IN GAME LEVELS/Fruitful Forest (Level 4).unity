@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -13934,6 +13934,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: ab908d978703e88419358bcb22e4c617, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fa3b38d204cf74e8da11e4728319db, type: 3}
+--- !u!95 &408156388 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8735997150254982312, guid: 31fa3b38d204cf74e8da11e4728319db,
+    type: 3}
+  m_PrefabInstance: {fileID: 408156387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &408682418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35501,7 +35507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: Mulchant_StarTree
-  treeAnim: {fileID: 1245753552}
+  firstTreeAnim: {fileID: 1245753552}
+  secondTreeAnim: {fileID: 408156388}
   mulchantStandInAnim: {fileID: 134765465}
   interactableMulchant: {fileID: 4918416011898099297}
   eventMulchant: {fileID: 134765464}
