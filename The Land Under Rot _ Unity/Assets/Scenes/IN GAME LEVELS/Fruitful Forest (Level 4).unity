@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2308,14 +2308,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13539e85db96b4088bb2b3206aec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sleeping: {fileID: 0}
-  Waiting: {fileID: 0}
-  Exclamation: {fileID: 0}
-  Angry: {fileID: 0}
-  Shocked: {fileID: 0}
-  Confused: {fileID: 0}
-  Dizzy: {fileID: 0}
-  Happy: {fileID: 0}
+  Sleeping: {fileID: 64923261}
+  Waiting: {fileID: 64923262}
+  Exclamation: {fileID: 64923267}
+  Angry: {fileID: 64923268}
+  Shocked: {fileID: 64923266}
+  Confused: {fileID: 64923265}
+  Dizzy: {fileID: 64923264}
+  Happy: {fileID: 64923263}
+--- !u!198 &64923261 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2584617126427854717, guid: 1c8217d0a2d2ae64ab827c4442539bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 64923258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &64923262 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5272032709640762624, guid: 1c8217d0a2d2ae64ab827c4442539bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 64923258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &64923263 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1000690863631879304, guid: 1c8217d0a2d2ae64ab827c4442539bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 64923258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &64923264 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5521331080385002964, guid: 1c8217d0a2d2ae64ab827c4442539bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 64923258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &64923265 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8726517964837507314, guid: 1c8217d0a2d2ae64ab827c4442539bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 64923258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &64923266 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8539933999387049598, guid: 1c8217d0a2d2ae64ab827c4442539bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 64923258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &64923267 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5293259027177831556, guid: 1c8217d0a2d2ae64ab827c4442539bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 64923258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &64923268 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5900991701671728053, guid: 1c8217d0a2d2ae64ab827c4442539bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 64923258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &66106632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20571,6 +20619,11 @@ PrefabInstance:
       propertyPath: Emote
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7615045477689963252, guid: b0b8c7601c5a04f41bf9f024da39ce6e,
+        type: 3}
+      propertyPath: Emote
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7615045478043616866, guid: b0b8c7601c5a04f41bf9f024da39ce6e,
         type: 3}
       propertyPath: Emote
@@ -20586,6 +20639,16 @@ PrefabInstance:
       propertyPath: Emote
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7615045478678783282, guid: b0b8c7601c5a04f41bf9f024da39ce6e,
+        type: 3}
+      propertyPath: Emote
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615045478911803891, guid: b0b8c7601c5a04f41bf9f024da39ce6e,
+        type: 3}
+      propertyPath: Emote
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7615045478984739950, guid: b0b8c7601c5a04f41bf9f024da39ce6e,
         type: 3}
       propertyPath: Emote
@@ -20595,6 +20658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Emote
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615045479422572272, guid: b0b8c7601c5a04f41bf9f024da39ce6e,
+        type: 3}
+      propertyPath: Emote
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b8c7601c5a04f41bf9f024da39ce6e, type: 3}
@@ -21052,7 +21120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 597880435}
-  Emote: 0
+  Emote: 7
   play: 0
 --- !u!114 &597880491
 MonoBehaviour:
@@ -21112,7 +21180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 597880435}
-  Emote: 0
+  Emote: 2
   play: 0
 --- !u!114 &597880495
 MonoBehaviour:
