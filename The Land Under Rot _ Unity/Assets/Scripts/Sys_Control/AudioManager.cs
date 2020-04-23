@@ -109,26 +109,31 @@ public class AudioManager : MonoBehaviour
 #endregion
 
     #region Environment
+    //distance
     public void Play_Ambient_BugsAroundLight()
     {
 
     }
 
+    //unless these are specific bugs, no distance needed
     public void Play_Ambient_Bugs()
     {
 
     }
 
+    //unless this is specific water in the location, no distance needed
     public void Play_Ambient_RunningWater()
     {
 
     }
 
+    //distance needed if there are specific birds in the scene 
     public void Play_Ambient_BirdsChirping()
     {
 
     }
 
+    //same as last ones, depends if theres specific water 
     public void Play_Ambience_Water()
     {
 
@@ -149,6 +154,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    //distance
     public void Play_Ambient_FireFlickering()
     {
 
