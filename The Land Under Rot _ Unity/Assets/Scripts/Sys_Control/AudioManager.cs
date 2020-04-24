@@ -106,7 +106,7 @@ public class AudioManager : MonoBehaviour
     {
 
     }
-#endregion
+    #endregion
 
     #region Environment
     //distance
@@ -160,10 +160,10 @@ public class AudioManager : MonoBehaviour
 
     //}
 
-    //public void Play_BloomingPlantWoosh()
-    //{
+    public void Play_BloomingPlantWoosh()
+    {
 
-    //}
+    }
 
     //public void Play_BioluminescentPlantLighting()
     //{
