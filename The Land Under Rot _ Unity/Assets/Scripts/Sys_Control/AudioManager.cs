@@ -110,65 +110,65 @@ public class AudioManager : MonoBehaviour
 
     #region Environment
     //distance
-    public void Play_Ambient_BugsAroundLight()
-    {
+    //public void Play_Ambient_BugsAroundLight()
+    //{
 
-    }
+    //}
 
-    //unless these are specific bugs, no distance needed
-    public void Play_Ambient_Bugs()
-    {
+    ////unless these are specific bugs, no distance needed
+    //public void Play_Ambient_Bugs()
+    //{
 
-    }
+    //}
 
-    //unless this is specific water in the location, no distance needed
-    public void Play_Ambient_RunningWater()
-    {
+    ////unless this is specific water in the location, no distance needed
+    //public void Play_Ambient_RunningWater()
+    //{
 
-    }
+    //}
 
-    //distance needed if there are specific birds in the scene 
-    public void Play_Ambient_BirdsChirping()
-    {
+    ////distance needed if there are specific birds in the scene 
+    //public void Play_Ambient_BirdsChirping()
+    //{
 
-    }
+    //}
 
-    //same as last ones, depends if theres specific water 
-    public void Play_Ambience_Water()
-    {
+    ////same as last ones, depends if theres specific water 
+    //public void Play_Ambience_Water()
+    //{
 
-    }
+    //}
 
-    public void Play_Ambience_Cave()
-    {
+    //public void Play_Ambience_Cave()
+    //{
 
-    }
+    //}
 
-    public void Play_Ambience_ForestSwamp()
-    {
+    //public void Play_Ambience_ForestSwamp()
+    //{
 
-    }
+    //}
 
-    public void Play_Ambience_Factory()
-    {
+    //public void Play_Ambience_Factory()
+    //{
 
-    }
+    //}
 
-    //distance
-    public void Play_Ambient_FireFlickering()
-    {
+    ////distance
+    //public void Play_Ambient_FireFlickering()
+    //{
 
-    }
+    //}
 
-    public void Play_BloomingPlantWoosh()
-    {
+    //public void Play_BloomingPlantWoosh()
+    //{
 
-    }
+    //}
 
-    public void Play_BioluminescentPlantLighting()
-    {
+    //public void Play_BioluminescentPlantLighting()
+    //{
 
-    }
+    //}
 
     public void Play_MassiveRootsMoving()
     {
@@ -239,6 +239,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    //Ms_Stamen
     public void Play_Her()
     {
 
