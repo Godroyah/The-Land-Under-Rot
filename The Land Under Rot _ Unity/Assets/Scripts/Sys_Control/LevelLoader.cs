@@ -7,6 +7,7 @@ public class LevelLoader : MonoBehaviour
 {
     public BuildOrder sceneToLoadIndex;
     public BuildOrder currentSceneIndex;
+    public Transform returnSpawn;
     [Space(5)]
     public bool isDisabled = false;
 
@@ -119,6 +120,17 @@ public class LevelLoader : MonoBehaviour
 
         // Protect assets from deletion
         SceneManager.MoveGameObjectToScene(GameController.Instance.gameObject, sceneToLoad);
+
+        LevelLoader[] foundLevelLoaders = new LevelLoader[5];
+        foundLevelLoaders = FindObjectsOfType<LevelLoader>();
+        foreach (LevelLoader loader in foundLevelLoaders)
+        {
+            if (loader.sceneToLoadIndex == this.currentSceneIndex && loader.currentSceneIndex == this.sceneToLoadIndex)
+            {
+                GameController.Instance.playerController.transform.parent.position = loader.returnSpawn.position;
+            }
+        }
+
 
         #endregion
 
