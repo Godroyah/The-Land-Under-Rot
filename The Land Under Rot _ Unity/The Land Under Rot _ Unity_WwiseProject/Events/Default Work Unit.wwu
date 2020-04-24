@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}" SchemaVersion="94">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Light" ID="{C3E66C7A-42D0-4149-B34F-6C6D4EFF6ABB}"/>
+				<Event Name="TutorialMX" ID="{4898EBA7-5529-4268-8432-7B9329BECFBC}">
+					<ChildrenList>
+						<Action Name="" ID="{719D979E-08E7-4584-B2B0-659A4A34AFDA}" ShortID="81710732">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tutorial" ID="{3B5033B9-A60D-47CC-8363-50C79DAB3129}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="StinkhornMX" ID="{0F99FDD1-CEF3-422C-9725-766E07447557}">
+					<ChildrenList>
+						<Action Name="" ID="{20E47AF1-19A4-4DC1-9CFA-0DBA197A3766}" ShortID="1042712359">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Stinkhorn Stop" ID="{E15A0A35-4B1B-430B-BF14-CCB416F9823B}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

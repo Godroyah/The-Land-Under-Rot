@@ -9,7 +9,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+							<ObjectRef Name="MX" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -107,7 +107,19 @@
 										</MusicTransition>
 									</TransitionList>
 									<Playlist>
-										<MusicPlaylistItem Name="" ID="{1B9E3232-6F14-4441-8156-A93C95668B1D}" ShortID="213990077"/>
+										<MusicPlaylistItem Name="" ID="{1B9E3232-6F14-4441-8156-A93C95668B1D}" ShortID="213990077">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{CF112F39-EBC6-425D-B8CA-6854AB40F75A}" ShortID="755819062">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="LUR Tutorial Track" ID="{8D5527F3-F5F1-487F-A230-7BD3202A82DB}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
 									</Playlist>
 								</MusicPlaylistContainer>
 								<MusicPlaylistContainer Name="Mulchant Theme" ID="{6FE99508-DEE8-46E6-ACAB-84FAF2127C10}" ShortID="831788160">
@@ -194,7 +206,19 @@
 										</MusicTransition>
 									</TransitionList>
 									<Playlist>
-										<MusicPlaylistItem Name="" ID="{7297D636-4197-4524-BD39-B245CECC40C3}" ShortID="241926036"/>
+										<MusicPlaylistItem Name="" ID="{7297D636-4197-4524-BD39-B245CECC40C3}" ShortID="241926036">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{E397C7A2-FADE-477C-99B8-30C5BAB356E0}" ShortID="601763132">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="LUR Mulchant Theme" ID="{BD97D6A8-D791-473E-8C5D-B71AF0030952}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
 									</Playlist>
 								</MusicPlaylistContainer>
 								<MusicPlaylistContainer Name="Tree Seat" ID="{48F4B85D-A22D-46A6-A7FF-A538EAA22CC9}" ShortID="506740823">
@@ -281,7 +305,19 @@
 										</MusicTransition>
 									</TransitionList>
 									<Playlist>
-										<MusicPlaylistItem Name="" ID="{A8584D64-364D-40AB-A632-B871053F125B}" ShortID="1005215081"/>
+										<MusicPlaylistItem Name="" ID="{A8584D64-364D-40AB-A632-B871053F125B}" ShortID="1005215081">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{717D1C34-A556-44AE-B901-4BB12C524C39}" ShortID="96795103">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="LUR Tree Seat Track" ID="{1E4AA7A8-0E4D-4B29-B51E-464C43241A18}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
 									</Playlist>
 								</MusicPlaylistContainer>
 								<MusicPlaylistContainer Name="Stinkhorn Stop" ID="{E15A0A35-4B1B-430B-BF14-CCB416F9823B}" ShortID="918231969">
@@ -343,6 +379,9 @@
 													</SequenceList>
 												</MusicTrack>
 											</ChildrenList>
+											<CueList>
+												<MusicCue Name="Entry Cue" ID="{48469454-F22A-458F-B351-6CC14216CC16}"/>
+												<MusicCue Name="Exit Cue" ID="{623637DE-28C3-4E7D-8117-EC9E63946916}">
 													<PropertyList>
 														<Property Name="CueType" Type="int16" Value="1"/>
 														<Property Name="TimeMs" Type="Real64" Value="131777.777777778"/>
@@ -365,7 +404,19 @@
 										</MusicTransition>
 									</TransitionList>
 									<Playlist>
-										<MusicPlaylistItem Name="" ID="{DB126AE5-661D-40D6-A99A-EA046B0FE1C3}" ShortID="588716409"/>
+										<MusicPlaylistItem Name="" ID="{DB126AE5-661D-40D6-A99A-EA046B0FE1C3}" ShortID="588716409">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{D8393FED-5BB1-49D4-A56D-3E08FB106E91}" ShortID="968018006">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="LUR Stinkhorn Stop" ID="{07DAF596-D881-4DF9-AF5B-802EDC3CF3C5}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
 									</Playlist>
 								</MusicPlaylistContainer>
 								<MusicPlaylistContainer Name="Understump" ID="{34B82A35-A053-4765-985B-94F3EBF83626}" ShortID="610578573">
@@ -452,7 +503,17 @@
 										</MusicTransition>
 									</TransitionList>
 									<Playlist>
-										<MusicPlaylistItem Name="" ID="{D4400290-4C5D-4B2D-870C-AFB5E3E4B3A0}" ShortID="511958425"/>
+										<MusicPlaylistItem Name="" ID="{D4400290-4C5D-4B2D-870C-AFB5E3E4B3A0}" ShortID="511958425">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{42209C34-3087-4E63-ABA3-FB7551BF4F4B}" ShortID="921192082">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0"/>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="LUR Understump Track" ID="{88304688-1BEA-4BF8-AB60-F04BE7A960A5}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
 									</Playlist>
 								</MusicPlaylistContainer>
 								<MusicPlaylistContainer Name="Fruitful Forest" ID="{AFA8A8DD-8C02-4BFC-BEF6-EC1C5C6E584E}" ShortID="911281432">
@@ -539,7 +600,19 @@
 										</MusicTransition>
 									</TransitionList>
 									<Playlist>
-										<MusicPlaylistItem Name="" ID="{5F35E0C8-04E5-49BE-8803-454DE17B2611}" ShortID="293547337"/>
+										<MusicPlaylistItem Name="" ID="{5F35E0C8-04E5-49BE-8803-454DE17B2611}" ShortID="293547337">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{AB03FA76-41AE-4E3E-AD21-6A5DBE134FBC}" ShortID="187264608">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<SegmentRef Name="LUR Fruitful Forest" ID="{BF7FB600-6AAC-4643-9D7F-9CD617B0AA1E}"/>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
 									</Playlist>
 								</MusicPlaylistContainer>
 							</ChildrenList>
@@ -641,7 +714,19 @@
 								</MusicTransition>
 							</TransitionList>
 							<Playlist>
-								<MusicPlaylistItem Name="" ID="{46863C4B-4A01-4F21-835D-30544E6DE6E5}" ShortID="202714154"/>
+								<MusicPlaylistItem Name="" ID="{46863C4B-4A01-4F21-835D-30544E6DE6E5}" ShortID="202714154">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{54B69E27-89E0-4657-9592-4BEA5AC65DB7}" ShortID="825858382">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="LUR Main Menu" ID="{A9397BC8-7058-4B3B-BFCF-8BE5C232D61A}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
 							</Playlist>
 						</MusicPlaylistContainer>
 					</ChildrenList>
