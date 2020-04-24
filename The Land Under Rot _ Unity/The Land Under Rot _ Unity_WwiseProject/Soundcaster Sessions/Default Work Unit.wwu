@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{2DB411E7-7344-4463-9BDC-B4350A68BF78}" SchemaVersion="94">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{2DB411E7-7344-4463-9BDC-B4350A68BF78}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{2DB411E7-7344-4463-9BDC-B4350A68BF78}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Master soundcaster" ID="{75EF649D-2C0C-4D13-93EA-D0D118225020}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Start_Game_Menu" ID="{975088CA-B89F-4E0A-8368-D0F6F0D4B5F0}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="TutorialMX" ID="{4898EBA7-5529-4268-8432-7B9329BECFBC}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Light" ID="{C3E66C7A-42D0-4149-B34F-6C6D4EFF6ABB}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Start_Gameplay" ID="{13A767E9-3607-451E-9347-7600A135C957}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StinkhornMX" ID="{0F99FDD1-CEF3-422C-9725-766E07447557}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Menu" ID="{4F91D3B9-F2F3-4B47-920F-B4E992C202D5}"/>
+						<CurrentStateRef Name="Tutorial" ID="{41A90DF4-02C7-41AD-9C57-09AF792DE63E}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>
