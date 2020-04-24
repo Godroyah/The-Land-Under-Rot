@@ -15,8 +15,10 @@ public class MineCart_Cam_Event : Event_Type
     private float distToPoint;
     private Vector3 targetDirection;
     public Transform tipDirection;
+    //public Vector3 tipDirection;
     public Transform tipAxis;
     private Vector3 newDirection;
+    private Quaternion targetRotation;
 
     bool started;
 
@@ -36,6 +38,13 @@ public class MineCart_Cam_Event : Event_Type
         if(started)
         {
             moveSpeed += 0.5f * Time.deltaTime;
+            if (distToPoint < 0.1f)
+            {
+                //tipAxis.rotation = Quaternion.RotateTowards(tipAxis.rotation, tipDirection.rotation, step);
+                targetRotation = Quaternion.LookRotation(tipDirection.position - tipAxis.position);
+                float step = tipSpeed * Time.deltaTime;
+                tipAxis.rotation = Quaternion.Lerp(tipAxis.rotation, targetRotation, step);
+            }
         }
     }
 
@@ -44,21 +53,25 @@ public class MineCart_Cam_Event : Event_Type
         started = true;
         //AudioManager.Instance.
 
-        targetDirection = wayPoint.position - transform.position;
-        distToPoint = Vector3.Distance(transform.position, wayPoint.position);
+        targetDirection = wayPoint.position - tipAxis.position;
+        distToPoint = Vector3.Distance(tipAxis.position, wayPoint.position);
 
         yield return new WaitForSeconds(1.5f);
 
         while (distToPoint > 0.1f)
         {
-            distToPoint = Vector3.Distance(transform.position, wayPoint.position);
-            targetDirection = wayPoint.position - transform.position;
+            distToPoint = Vector3.Distance(tipAxis.position, wayPoint.position);
+            targetDirection = wayPoint.position - tipAxis.position;
             //newDirection = Vector3.RotateTowards(transform.forward, targetDirection, turnSpeed * Time.deltaTime, 0.0f);
-            transform.position = Vector3.MoveTowards(transform.position, wayPoint.position, moveSpeed * Time.deltaTime);
+            tipAxis.position = Vector3.MoveTowards(tipAxis.position, wayPoint.position, moveSpeed * Time.deltaTime);
             //transform.rotation = Quaternion.LookRotation(newDirection);
 
             yield return null;
         }
+        //if(distToPoint < 0.1f)
+        //{
+        //    started = false;
+        //}
 
         //    for (int i = 0; i < wayPoints.Length; i++)
         //{
@@ -73,11 +86,7 @@ public class MineCart_Cam_Event : Event_Type
         //        transform.rotation = Quaternion.LookRotation(newDirection);
         //        yield return null;
         //    }
-            if(transform.position == wayPoint.position)
-            {
-                newDirection = Vector3.RotateTowards(transform.right, tipDirection.position, tipSpeed * Time.deltaTime, 0.0f);
-                tipAxis.rotation = Quaternion.LookRotation(newDirection);
-            }
+            
             //currentPoint = i;
         //}
         //lizardAnim.SetTrigger("End_Lizard");
