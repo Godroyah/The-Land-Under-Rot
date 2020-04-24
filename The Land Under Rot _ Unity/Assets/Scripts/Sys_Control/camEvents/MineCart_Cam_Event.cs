@@ -44,6 +44,8 @@ public class MineCart_Cam_Event : Event_Type
                 targetRotation = Quaternion.LookRotation(tipDirection.position - tipAxis.position);
                 float step = tipSpeed * Time.deltaTime;
                 tipAxis.rotation = Quaternion.Lerp(tipAxis.rotation, targetRotation, step);
+                cartMulch.SetActive(false);
+                cartMulch.SetActive(true);
             }
         }
     }
