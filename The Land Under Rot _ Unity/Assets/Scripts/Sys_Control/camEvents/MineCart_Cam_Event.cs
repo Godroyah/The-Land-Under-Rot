@@ -9,6 +9,7 @@ public class MineCart_Cam_Event : Event_Type
     public GameObject realMulch;
 
     public float moveSpeed;
+    public float acceleration;
     //public float turnSpeed;
     public float tipSpeed;
     private int currentPoint;
@@ -37,7 +38,7 @@ public class MineCart_Cam_Event : Event_Type
     {
         if(started)
         {
-            moveSpeed += 0.5f * Time.deltaTime;
+            moveSpeed += acceleration * Time.deltaTime;
             if (distToPoint < 0.1f)
             {
                 //tipAxis.rotation = Quaternion.RotateTowards(tipAxis.rotation, tipDirection.rotation, step);
@@ -45,7 +46,7 @@ public class MineCart_Cam_Event : Event_Type
                 float step = tipSpeed * Time.deltaTime;
                 tipAxis.rotation = Quaternion.Lerp(tipAxis.rotation, targetRotation, step);
                 cartMulch.SetActive(false);
-                cartMulch.SetActive(true);
+                realMulch.SetActive(true);
             }
         }
     }
@@ -58,7 +59,7 @@ public class MineCart_Cam_Event : Event_Type
         targetDirection = wayPoint.position - tipAxis.position;
         distToPoint = Vector3.Distance(tipAxis.position, wayPoint.position);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         while (distToPoint > 0.1f)
         {
