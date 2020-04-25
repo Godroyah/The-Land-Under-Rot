@@ -16,8 +16,13 @@ namespace AK
         static const AkUniqueID LIGHT = 1935470627U;
         static const AkUniqueID START_GAME_MENU = 1208688066U;
         static const AkUniqueID START_GAMEPLAY = 3576058218U;
-        static const AkUniqueID STINKHORNMX = 2462793560U;
-        static const AkUniqueID TUTORIALMX = 707085412U;
+        static const AkUniqueID START_MULCHANT_THEME = 123246954U;
+        static const AkUniqueID START_OPENING_CINEMATIC = 3054947144U;
+        static const AkUniqueID START_TREE_SEAT = 2233760634U;
+        static const AkUniqueID START_UNDERSTUMP = 450410057U;
+        static const AkUniqueID STATE_FRUITFUL_FOREST = 198996940U;
+        static const AkUniqueID STATE_STINKHORN = 3972511701U;
+        static const AkUniqueID STATE_TUTORIAL = 1138897517U;
     } // namespace EVENTS
 
     namespace STATES
@@ -39,8 +44,14 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID FRUITFUL_FOREST = 2199362622U;
+                static const AkUniqueID MAIN_MENU = 2005704188U;
+                static const AkUniqueID MULCHANT_THEME = 2745733789U;
+                static const AkUniqueID OPENING_CINEMATIC = 367308553U;
                 static const AkUniqueID STINKHORN = 2675958751U;
+                static const AkUniqueID TREE_SEAT = 2301024359U;
                 static const AkUniqueID TUTORIAL = 3762955427U;
+                static const AkUniqueID UNDERSTUMP = 1352855786U;
             } // namespace STATE
         } // namespace LEVELS
 
@@ -59,6 +70,11 @@ namespace AK
         static const AkUniqueID SFX_AUDIO_BUS = 4084199202U;
         static const AkUniqueID VOICEOVER_AUDIO_BUS = 3089479627U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID NEW_AUXILIARY_BUS = 373392551U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {
