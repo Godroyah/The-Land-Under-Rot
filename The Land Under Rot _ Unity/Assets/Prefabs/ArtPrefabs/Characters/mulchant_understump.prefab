@@ -14903,10 +14903,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 765699823027644932}
-  - component: {fileID: 765699823027644928}
-  - component: {fileID: 765699823027644935}
   - component: {fileID: 765699823027644934}
   - component: {fileID: 765699823027644933}
+  - component: {fileID: 765699823027644928}
+  - component: {fileID: 765699823027644935}
   - component: {fileID: 6180024483961350666}
   m_Layer: 0
   m_Name: '@Mulchant_Dialogue'
@@ -14931,6 +14931,48 @@ Transform:
   m_Father: {fileID: 765699824315652069}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &765699823027644934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765699823027644939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18868a07f5d49af47a21273c66ed813a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTrigger: {fileID: 0}
+  billboard_UI: {fileID: 765699823163984052}
+  dialogueViewPoint: {fileID: 0}
+  usesCamEvent: 0
+  headButtActivation: 0
+  dialogueActivation: 0
+  triggerActivation: 0
+  understump_NPC: 1
+  mulchantAnim: {fileID: 765699824002873045}
+--- !u!114 &765699823027644933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765699823027644939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18868a07f5d49af47a21273c66ed813a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTrigger: {fileID: 0}
+  billboard_UI: {fileID: 765699823163984052}
+  dialogueViewPoint: {fileID: 0}
+  usesCamEvent: 0
+  headButtActivation: 0
+  dialogueActivation: 0
+  triggerActivation: 0
+  understump_NPC: 1
+  mulchantAnim: {fileID: 765699824002873045}
 --- !u!54 &765699823027644928
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14961,48 +15003,6 @@ CapsuleCollider:
   m_Height: 8.16
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &765699823027644934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765699823027644939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18868a07f5d49af47a21273c66ed813a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventTrigger: {fileID: 0}
-  billboard_UI: {fileID: 765699823163984052}
-  dialogueViewPoint: {fileID: 0}
-  usesCamEvent: 0
-  headButtActivation: 0
-  dialogueActivation: 0
-  triggerActivation: 0
-  understump_NPC: 0
-  mulchantAnim: {fileID: 0}
---- !u!114 &765699823027644933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765699823027644939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18868a07f5d49af47a21273c66ed813a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventTrigger: {fileID: 0}
-  billboard_UI: {fileID: 765699823163984052}
-  dialogueViewPoint: {fileID: 0}
-  usesCamEvent: 0
-  headButtActivation: 0
-  dialogueActivation: 0
-  triggerActivation: 0
-  understump_NPC: 0
-  mulchantAnim: {fileID: 0}
 --- !u!114 &6180024483961350666
 MonoBehaviour:
   m_ObjectHideFlags: 0
