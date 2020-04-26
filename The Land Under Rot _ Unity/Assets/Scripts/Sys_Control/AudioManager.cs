@@ -335,7 +335,7 @@ public class AudioManager : MonoBehaviour
     #region UI
     public void Play_UI_Click_MainMenu()
     {
-
+        AkSoundEngine.PostEvent("Click", gameObject);
     }
 
     public void Play_Stinger_Start_MainMenu()
@@ -350,7 +350,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_UI_Click_PauseMenu()
     {
-
+      //  AkSoundEngine.PostEvent("Click", gameObject);
     }
     #endregion
 }

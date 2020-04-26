@@ -13,32 +13,6 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="lur_sfx_CHAR_headbutt_wood" ID="{F8BE0099-074F-4208-BE04-BA8584032DC9}" ShortID="270005002">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-17</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="rot_headbutt_tree" ID="{134AFBAA-E6A3-4B17-936C-FCB36BD9EAA8}" ShortID="308628933">
-									<Language>SFX</Language>
-									<AudioFile>rot_headbutt_tree.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="rot_headbutt_tree" ID="{134AFBAA-E6A3-4B17-936C-FCB36BD9EAA8}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="lur_sfx_CHAR_footsteps_grass" ID="{13B3D3AD-6420-42A2-8771-AFB82B3C8F75}" ShortID="243508612">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
@@ -229,6 +203,58 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="LUR Button Confirm" ID="{2012F63A-4279-4286-83FE-454C2F176D4C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_CHAR_headbutt_wood" ID="{02CFB762-497A-48E6-A21F-47204ABEDCC2}" ShortID="431038328">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-14</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lur_sfx_CHAR_headbutt_wood" ID="{A60C4208-90AB-4E54-B496-6109C324FDC3}" ShortID="1056102786">
+									<Language>SFX</Language>
+									<AudioFile>lur_sfx_CHAR_headbutt_wood.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lur_sfx_CHAR_headbutt_wood" ID="{A60C4208-90AB-4E54-B496-6109C324FDC3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_UI_click" ID="{F227928C-0E62-4F01-98B6-FDF21DBD0408}" ShortID="478961943">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lur_sfx_UI_click" ID="{B9383C52-FD4A-40FD-9BAF-B78594B45C23}" ShortID="929553652">
+									<Language>SFX</Language>
+									<AudioFile>lur_sfx_UI_click.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lur_sfx_UI_click" ID="{B9383C52-FD4A-40FD-9BAF-B78594B45C23}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

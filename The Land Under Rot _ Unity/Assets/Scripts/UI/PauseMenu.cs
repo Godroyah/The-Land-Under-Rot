@@ -52,10 +52,12 @@ public class PauseMenu : MonoBehaviour
         //before I put in the NONE enum. NEED to come back and fix this at a later date but for now this is working.
         gameController.greenBottle = starBottle;
         // Debug.Log("Active?");
-        AudioManager.Instance.Play_UI_Click_PauseMenu();
+        
             if (Input.GetButton("Pause"))
             {
-                if (!paused)
+     // MUSIC TEAM COMMENTED UNTIL FIX PLAYS A MILLION PAUSE SOUNDS AHHHHH          AudioManager.Instance.Play_UI_Click_PauseMenu();
+
+            if (!paused)
                 {
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
@@ -120,7 +122,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        AudioManager.Instance.Play_UI_Click_PauseMenu();
+        AudioManager.Instance.Play_Stinger_Start_MainMenu();
         Cursor.visible = false;
         pauseMenu.SetActive(false);
         decoration.SetActive(false);
@@ -138,7 +140,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Settings()
     {
-        AudioManager.Instance.Play_UI_Click_PauseMenu();
+        AudioManager.Instance.Play_UI_Click_MainMenu();
         settingsOption.SetActive(true);
         pauseMenu.SetActive(false);
         acornBoy.SetActive(false);
@@ -152,7 +154,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Back()
     {
-        AudioManager.Instance.Play_UI_Click_PauseMenu();
+        AudioManager.Instance.Play_UI_Click_MainMenu();
         pauseMenu.SetActive(true);
         settingsOption.SetActive(false);
         acornBoy.SetActive(true);
@@ -168,7 +170,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        AudioManager.Instance.Play_UI_Click_PauseMenu();
+        AudioManager.Instance.Play_UI_Click_MainMenu();
         //pauseMenu.SetActive(false);
         //resumeButton.interactable = false;
         //quitButton.interactable = false;
@@ -179,7 +181,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitToMenu()
     {
-        AudioManager.Instance.Play_UI_Click_PauseMenu();
+        AudioManager.Instance.Play_Stinger_Back_MainMenu();
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
         
@@ -187,7 +189,7 @@ public class PauseMenu : MonoBehaviour
 
     public void CancelQuit()
     {
-        AudioManager.Instance.Play_UI_Click_PauseMenu();
+        AudioManager.Instance.Play_UI_Click_MainMenu();
         pauseMenu.SetActive(true);
         quitOption.SetActive(false);
         //resumeButton.interactable = true;
@@ -197,7 +199,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitApplication()
     {
-        AudioManager.Instance.Play_UI_Click_PauseMenu();
+        AudioManager.Instance.Play_Stinger_Back_MainMenu();
         Debug.Log("Quit");
         Application.Quit();
         
