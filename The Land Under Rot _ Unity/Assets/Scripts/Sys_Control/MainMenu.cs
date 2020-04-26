@@ -51,7 +51,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        AudioManager.Instance.Play_UI_Click_MainMenu();
+        AudioManager.Instance.Play_Stinger_Start_MainMenu();
         if (testing)
         {
             mainMenu.SetActive(false);

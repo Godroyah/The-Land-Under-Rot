@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID HEADBUTT_WOOD = 570067144U;
         static const AkUniqueID LIGHT = 1935470627U;
         static const AkUniqueID ROOTFORD = 1989498786U;
+        static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID START_GAME = 1114964412U;
         static const AkUniqueID START_MULCHANT_THEME = 123246954U;
         static const AkUniqueID START_OPENING_CINEMATIC = 3054947144U;

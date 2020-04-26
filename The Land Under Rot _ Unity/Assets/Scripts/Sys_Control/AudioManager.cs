@@ -333,6 +333,11 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void Play_Stinger_Start_MainMenu()
+    {
+        AkSoundEngine.PostEvent("Start_Button", gameObject);
+    }
+
     public void Play_UI_Click_PauseMenu()
     {
 
