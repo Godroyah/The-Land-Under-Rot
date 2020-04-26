@@ -234,6 +234,11 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void Play_Rootford()
+    {
+        AkSoundEngine.PostEvent("Rootford", gameObject);
+    }
+
     public void Play_Catkin()
     {
 
