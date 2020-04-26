@@ -14,12 +14,12 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BACK_BUTTON = 2886972203U;
-        static const AkUniqueID EYE_BOING = 2334754542U;
-        static const AkUniqueID FOOTSTEPS_GRASS = 7365553U;
-        static const AkUniqueID FOOTSTEPS_STONE = 307640020U;
-        static const AkUniqueID FOOTSTEPS_WOOD = 1732241522U;
-        static const AkUniqueID HEADBUTT_WOOD = 570067144U;
-        static const AkUniqueID LIGHT = 1935470627U;
+        static const AkUniqueID CHAR_FALLING = 2781918869U;
+        static const AkUniqueID CHAR_FOOTSTEPS_GRASS = 3543977830U;
+        static const AkUniqueID CHAR_FOOTSTEPS_STONE = 2543644351U;
+        static const AkUniqueID CHAR_FOOTSTEPS_WOOD = 3744065311U;
+        static const AkUniqueID CHAR_HEADBUTT_WOOD = 3953657551U;
+        static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID ROOTFORD = 1989498786U;
         static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID START_GAME = 1114964412U;

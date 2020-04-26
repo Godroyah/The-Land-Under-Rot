@@ -29,27 +29,27 @@ public class AudioManager : MonoBehaviour
     #region Character
     public void Play_Walk_Grass()
     {
-        AkSoundEngine.PostEvent("footsteps_grass", gameObject);
+        AkSoundEngine.PostEvent("char_footsteps_grass", gameObject);
     }
 
     public void Play_Walk_Stone()
     {
-        AkSoundEngine.PostEvent("footsteps_stone", gameObject);
+        AkSoundEngine.PostEvent("char_footsteps_stone", gameObject);
     }
 
     public void Play_Walk_Dirt()
     {
-        AkSoundEngine.PostEvent("footsteps_grass", gameObject);
+        AkSoundEngine.PostEvent("char_footsteps_grass", gameObject);
     }
 
     public void Play_Walk_Mud()
     {
-        AkSoundEngine.PostEvent("footsteps_grass", gameObject);
+        AkSoundEngine.PostEvent("char_footsteps_grass", gameObject);
     }
 
     public void Play_Walk_Wood()
     {
-        AkSoundEngine.PostEvent("footsteps_wood", gameObject);
+        AkSoundEngine.PostEvent("char_footsteps_wood", gameObject);
     }
 
     public void Play_Walk_Mushroom()
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Headbutt_Wood()
     {
-        AkSoundEngine.PostEvent("Headbutt_Wood", gameObject);
+        AkSoundEngine.PostEvent("char_headbutt_wood", gameObject);
     }
 
     public void Play_Headbutt_Stone()
@@ -84,12 +84,12 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Headbutt_EnemyRecoil()
     {
-        AkSoundEngine.PostEvent("Eye_Boing", gameObject);
+        AkSoundEngine.PostEvent("int_boing", gameObject);
     }
 
     public void Play_Falling()
     {
-
+        AkSoundEngine.PostEvent("char_falling", gameObject);
     }
 
     public void Play_Landing_OnFeet()
