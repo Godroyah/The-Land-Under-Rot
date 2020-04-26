@@ -177,7 +177,7 @@
 						</Sound>
 						<Folder Name="SFX" ID="{D72CE9BE-715C-4753-BE31-D8493C59A887}" ShortID="253765563">
 							<ChildrenList>
-								<Sound Name="Eye_Boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" ShortID="203709604">
+								<Sound Name="lur_sfx_INT_boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" ShortID="203709604">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -198,6 +198,25 @@
 								</Sound>
 							</ChildrenList>
 						</Folder>
+						<Sound Name="lur_sfx_CHAR_falling" ID="{CA741931-42BB-4627-9D0D-179C0138D935}" ShortID="1030998638">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lur_sfx_CHAR_falling" ID="{EB3CF1A2-A534-4A01-B9C8-C55F5B465BC4}" ShortID="134151791">
+									<Language>SFX</Language>
+									<AudioFile>lur_sfx_CHAR_falling.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lur_sfx_CHAR_falling" ID="{EB3CF1A2-A534-4A01-B9C8-C55F5B465BC4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Voiceover" ID="{BEE2A2B9-97E2-404A-93AA-4E692ECBA26E}" ShortID="918045649">
