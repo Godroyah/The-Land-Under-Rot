@@ -62,7 +62,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID LUR = 914478918U;
+        static const AkUniqueID LUR_SOUNDBANK = 4075302472U;
     } // namespace BANKS
 
     namespace BUSSES
@@ -70,12 +70,12 @@ namespace AK
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MX_AUDIO_BUS = 1450019282U;
         static const AkUniqueID SFX_AUDIO_BUS = 4084199202U;
-        static const AkUniqueID VOICEOVER_AUDIO_BUS = 3089479627U;
+        static const AkUniqueID VOX_AUDIO_BUS = 2744997956U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES
     {
-        static const AkUniqueID NEW_AUXILIARY_BUS = 373392551U;
+        static const AkUniqueID REVERB_AUX_BUS = 1494052673U;
     } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
