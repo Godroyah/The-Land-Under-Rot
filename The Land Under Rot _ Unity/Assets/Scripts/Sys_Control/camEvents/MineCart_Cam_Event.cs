@@ -8,6 +8,8 @@ public class MineCart_Cam_Event : Event_Type
     public GameObject cartMulch;
     public GameObject realMulch;
 
+    public Animator cartAnim;
+
     public float moveSpeed;
     public float acceleration;
     //public float turnSpeed;
@@ -15,7 +17,7 @@ public class MineCart_Cam_Event : Event_Type
     private int currentPoint;
     private float distToPoint;
     private Vector3 targetDirection;
-    public Transform tipDirection;
+    //public Transform tipDirection;
     //public Vector3 tipDirection;
     public Transform tipAxis;
     private Vector3 newDirection;
@@ -39,15 +41,15 @@ public class MineCart_Cam_Event : Event_Type
         if(started)
         {
             moveSpeed += acceleration * Time.deltaTime;
-            if (distToPoint < 0.1f)
-            {
-                //tipAxis.rotation = Quaternion.RotateTowards(tipAxis.rotation, tipDirection.rotation, step);
-                targetRotation = Quaternion.LookRotation(tipDirection.position - tipAxis.position);
-                float step = tipSpeed * Time.deltaTime;
-                tipAxis.rotation = Quaternion.Lerp(tipAxis.rotation, targetRotation, step);
-                cartMulch.SetActive(false);
-                realMulch.SetActive(true);
-            }
+            //if (distToPoint < 0.1f)
+            //{
+            //    //tipAxis.rotation = Quaternion.RotateTowards(tipAxis.rotation, tipDirection.rotation, step);
+            //    targetRotation = Quaternion.LookRotation(tipDirection.position - tipAxis.position);
+            //    float step = tipSpeed * Time.deltaTime;
+            //    tipAxis.rotation = Quaternion.Lerp(tipAxis.rotation, targetRotation, step);
+            //    cartMulch.SetActive(false);
+            //    realMulch.SetActive(true);
+            //}
         }
     }
 
@@ -61,6 +63,8 @@ public class MineCart_Cam_Event : Event_Type
 
         yield return new WaitForSeconds(2f);
 
+        cartAnim.SetTrigger("Start_Rolling");
+
         while (distToPoint > 0.1f)
         {
             distToPoint = Vector3.Distance(tipAxis.position, wayPoint.position);
@@ -71,27 +75,11 @@ public class MineCart_Cam_Event : Event_Type
 
             yield return null;
         }
-        //if(distToPoint < 0.1f)
-        //{
-        //    started = false;
-        //}
-
-        //    for (int i = 0; i < wayPoints.Length; i++)
-        //{
-        //    targetDirection = wayPoints[i].position - transform.position;
-        //    distToPoint = Vector3.Distance(transform.position, wayPoints[i].position);
-        //    while (distToPoint > 0.1f)
-        //    {
-        //        distToPoint = Vector3.Distance(transform.position, wayPoints[i].position);
-        //        targetDirection = wayPoints[i].position - transform.position;
-        //        newDirection = Vector3.RotateTowards(transform.forward, targetDirection, turnSpeed * Time.deltaTime, 0.0f);
-        //        transform.position = Vector3.MoveTowards(transform.position, wayPoints[i].position, moveSpeed * Time.deltaTime);
-        //        transform.rotation = Quaternion.LookRotation(newDirection);
-        //        yield return null;
-        //    }
-            
-            //currentPoint = i;
-        //}
-        //lizardAnim.SetTrigger("End_Lizard");
+       
+        if(distToPoint < 0.1f)
+        {
+            cartAnim.SetTrigger("Tip_Over");
+            realMulch.SetActive(true);
+        }
     }
 }
