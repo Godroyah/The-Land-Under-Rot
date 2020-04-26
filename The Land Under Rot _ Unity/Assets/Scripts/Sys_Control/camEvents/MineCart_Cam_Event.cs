@@ -9,6 +9,7 @@ public class MineCart_Cam_Event : Event_Type
     public GameObject realMulch;
 
     public Animator cartAnim;
+    AnimatorStateInfo currentState;
 
     public float moveSpeed;
     public float acceleration;
@@ -80,6 +81,10 @@ public class MineCart_Cam_Event : Event_Type
         {
             cartAnim.SetTrigger("Tip_Over");
             realMulch.SetActive(true);
+
+            yield return new WaitForSeconds(1.0f);
+
+            cartMulch.SetActive(false);
         }
     }
 }
