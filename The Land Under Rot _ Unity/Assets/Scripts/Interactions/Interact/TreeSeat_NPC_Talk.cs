@@ -145,6 +145,7 @@ public class TreeSeat_NPC_Talk : Interactable
     {
         if (!isIntroduced)
         {
+            AudioManager.Instance.Play_Rootford();
             dialogueManager.StartDialogue(Reply.TS_Rootford_Intro);
             isIntroduced = true;
         }
