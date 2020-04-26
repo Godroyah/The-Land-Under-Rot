@@ -143,6 +143,7 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Rootford()
     {
+        AudioManager.Instance.Play_Rootford();
         if (!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.TS_Rootford_Intro);
@@ -158,6 +159,7 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator MsStamen()
     {
+        AudioManager.Instance.Play_Ms_Stamen();
         if (!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Miss_Stamen_Intro);

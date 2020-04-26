@@ -21,6 +21,8 @@ public class Oldman : Interactable
         //Interact MUST come after dialogue manager call to ensure any camera events called word properly
         base.Interact();
 
+        AudioManager.Instance.Play_Rootford();
+
         if (GameController.Instance != null)
         {
             // Select which dialogue to 'say'
