@@ -194,8 +194,12 @@ public class Darkness : MonoBehaviour
         currentIllumination = newIllumination;
 
         killVolume.SetActive(false);
-        yield return new WaitForSeconds(duration);
-        killVolume.SetActive(true);
+        //if(!0)
+        if(duration > 0)
+        {
+            yield return new WaitForSeconds(duration);
+            killVolume.SetActive(true);
+        }
     }
 }
 

@@ -89,7 +89,11 @@ public class DarknessHelper : MonoBehaviour
         currentIllumination = newIllumination;
 
         AdjustAlpha(0);
-        yield return new WaitForSeconds(duration);
-        AdjustAlpha(alphaLevel);
+
+        if(duration > 0)
+        {
+            yield return new WaitForSeconds(duration);
+            AdjustAlpha(alphaLevel);
+        }
     }
 }

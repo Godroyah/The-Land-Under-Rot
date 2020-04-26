@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Yellow_GazeGrowth : GazeGrowth
 {
+
+    [Space(10)]
+
     [Tooltip("This is the time until the GG resets and is interactable again")]
     public float duration = 1f;
     [Tooltip("This overrides the duration variables in all of the dark volumes")]
@@ -13,14 +16,26 @@ public class Yellow_GazeGrowth : GazeGrowth
 
     private float timerValue = 0f;
 
+    private void Start()
+    {
+        thisDetector = GetComponent<SphereCollider>();
+    }
+
     public override void Interact()
     {
         base.Interact();
 
         thisDetector.enabled = false;
 
-        animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
-        animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
+        if(duration > 0)
+        {
+            animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
+            animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
+        }
+        else if (duration < 0)
+        {
+            Debug.LogWarning("Please raise the duration about 0!");
+        }
 
         StartCoroutine(Timer(duration));
         if (overrideDuration)
