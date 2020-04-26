@@ -132,72 +132,73 @@
 				</Folder>
 				<Folder Name="SFX Triggers" ID="{D24DBE7A-9A41-4F46-A135-AA47D4F3E8F9}" ShortID="408616057">
 					<ChildrenList>
-						<Event Name="char_headbutt_wood" ID="{D25A35ED-ACEC-4EF8-B10D-AE998B739D1A}">
+						<Folder Name="Unfinished" ID="{C351BEE7-48A6-44C7-B9EF-23F7A2209554}" ShortID="668932569"/>
+						<Folder Name="Finished" ID="{3254F777-AF18-48D9-B659-E45B4CBF28F6}" ShortID="588017005">
 							<ChildrenList>
-								<Action Name="" ID="{1A6EA1B1-644C-4F38-9957-08B0A9945DFB}" ShortID="725595470">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="lur_sfx_CHAR_headbutt_wood" ID="{F8BE0099-074F-4208-BE04-BA8584032DC9}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="char_falling" ID="{4F3E9394-D5EE-4EC9-8A73-B598ECC70A52}">
+									<ChildrenList>
+										<Action Name="" ID="{2DC9FED5-1A6B-452D-96F8-8C46C1603F0D}" ShortID="489720793">
+											<ReferenceList/>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="char_footsteps_grass" ID="{7F32AE69-0E1D-46C8-B462-6EBACCC53FB5}">
+									<ChildrenList>
+										<Action Name="" ID="{4EFA11CA-F395-48DD-AD38-DBC50ED897FD}" ShortID="530731101">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_CHAR_footsteps_grass" ID="{13B3D3AD-6420-42A2-8771-AFB82B3C8F75}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="char_footsteps_stone" ID="{C4D936C8-7A32-4365-B811-01175518C757}">
+									<ChildrenList>
+										<Action Name="" ID="{95D67D36-5133-49D9-809D-AB58B07ECF69}" ShortID="446549614">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_CHAR_footsteps_stone" ID="{D0219DC6-5697-4CC7-927F-B125976BF8E0}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="char_footsteps_wood" ID="{9A6BD345-0B0E-4264-B2E3-33425C186E73}">
+									<ChildrenList>
+										<Action Name="" ID="{1717017A-88F5-4AF1-B800-828A7E5A8BC9}" ShortID="1052580127">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_CHAR_walking_wood" ID="{E7B3A67B-984E-46FB-9424-B340D4F6B26A}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="char_headbutt_wood" ID="{D25A35ED-ACEC-4EF8-B10D-AE998B739D1A}">
+									<ChildrenList>
+										<Action Name="" ID="{1A6EA1B1-644C-4F38-9957-08B0A9945DFB}" ShortID="725595470">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_CHAR_headbutt_wood" ID="{F8BE0099-074F-4208-BE04-BA8584032DC9}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="int_boing" ID="{8745E51F-B441-4390-BC2B-F20319D8DA9E}">
+									<ChildrenList>
+										<Action Name="" ID="{6BC45C6A-462F-428D-8982-81873631212A}" ShortID="518036940">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_INT_boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
-						<Event Name="char_footsteps_grass" ID="{7F32AE69-0E1D-46C8-B462-6EBACCC53FB5}">
-							<ChildrenList>
-								<Action Name="" ID="{4EFA11CA-F395-48DD-AD38-DBC50ED897FD}" ShortID="530731101">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="lur_sfx_CHAR_footsteps_grass" ID="{13B3D3AD-6420-42A2-8771-AFB82B3C8F75}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="char_footsteps_wood" ID="{9A6BD345-0B0E-4264-B2E3-33425C186E73}">
-							<ChildrenList>
-								<Action Name="" ID="{1717017A-88F5-4AF1-B800-828A7E5A8BC9}" ShortID="1052580127">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="lur_sfx_CHAR_walking_wood" ID="{E7B3A67B-984E-46FB-9424-B340D4F6B26A}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="char_footsteps_stone" ID="{C4D936C8-7A32-4365-B811-01175518C757}">
-							<ChildrenList>
-								<Action Name="" ID="{95D67D36-5133-49D9-809D-AB58B07ECF69}" ShortID="446549614">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="lur_sfx_CHAR_footsteps_stone" ID="{D0219DC6-5697-4CC7-927F-B125976BF8E0}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="int_boing" ID="{8745E51F-B441-4390-BC2B-F20319D8DA9E}">
-							<ChildrenList>
-								<Action Name="" ID="{6BC45C6A-462F-428D-8982-81873631212A}" ShortID="518036940">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="lur_sfx_INT_boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="char_falling" ID="{4F3E9394-D5EE-4EC9-8A73-B598ECC70A52}">
-							<ChildrenList>
-								<Action Name="" ID="{2DC9FED5-1A6B-452D-96F8-8C46C1603F0D}" ShortID="489720793">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="lur_sfx_CHAR_falling" ID="{CA741931-42BB-4627-9D0D-179C0138D935}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Dialogue Triggers" ID="{E2068138-A346-4435-ACB4-A8D947B49ADC}" ShortID="869835423">

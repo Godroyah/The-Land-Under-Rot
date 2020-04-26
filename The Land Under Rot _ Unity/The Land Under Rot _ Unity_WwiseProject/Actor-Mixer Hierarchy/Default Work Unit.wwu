@@ -39,62 +39,6 @@
 								<ActiveSource Name="rot_headbutt_tree" ID="{134AFBAA-E6A3-4B17-936C-FCB36BD9EAA8}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Folder Name="UI" ID="{87CA5129-9C88-4F02-A105-A7C77BBE6200}" ShortID="156928786">
-							<ChildrenList>
-								<Sound Name="lur_sfx_UI_back" ID="{E1E97012-C7E7-4393-9924-681B8EAEB144}" ShortID="1041435627">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-10</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="LUR Button Cancel or Back" ID="{AED6F836-2ED1-4B9F-BFF9-FCD7B8CC3C19}" ShortID="60125920">
-											<Language>SFX</Language>
-											<AudioFile>LUR Button Cancel or Back.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="LUR Button Cancel or Back" ID="{AED6F836-2ED1-4B9F-BFF9-FCD7B8CC3C19}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="lur_sfx_UI_confirm" ID="{148651DC-CC91-4436-9B24-8D1D3C6418A2}" ShortID="731434033">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-10</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="LUR Button Confirm" ID="{2012F63A-4279-4286-83FE-454C2F176D4C}" ShortID="64325497">
-											<Language>SFX</Language>
-											<AudioFile>LUR Button Confirm.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="LUR Button Confirm" ID="{2012F63A-4279-4286-83FE-454C2F176D4C}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-						</Folder>
 						<Sound Name="lur_sfx_CHAR_footsteps_grass" ID="{13B3D3AD-6420-42A2-8771-AFB82B3C8F75}" ShortID="243508612">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
@@ -175,30 +119,20 @@
 								<ActiveSource Name="lur_sfx_CHAR_footsteps_stone" ID="{676D9950-DE52-4B66-88EE-F42E14073B85}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Folder Name="SFX" ID="{D72CE9BE-715C-4753-BE31-D8493C59A887}" ShortID="253765563">
-							<ChildrenList>
-								<Sound Name="lur_sfx_INT_boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" ShortID="203709604">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="boing_12" ID="{4A59A080-EA99-4984-A0CA-D3F77B7690DA}" ShortID="924585488">
-											<Language>SFX</Language>
-											<AudioFile>boing_12.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="boing_12" ID="{4A59A080-EA99-4984-A0CA-D3F77B7690DA}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-						</Folder>
 						<Sound Name="lur_sfx_CHAR_falling" ID="{CA741931-42BB-4627-9D0D-179C0138D935}" ShortID="1030998638">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>44</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-21</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -212,9 +146,89 @@
 									<Language>SFX</Language>
 									<AudioFile>lur_sfx_CHAR_falling.wav</AudioFile>
 								</AudioFileSource>
+								<SourcePlugin Name="SoundSeed Air Wind" ID="{3464E109-1E48-461F-AEC3-43F0BDBD0BC1}" ShortID="493152405" PluginName="SoundSeed Air Wind" CompanyID="0" PluginID="119">
+									<Language>SFX</Language>
+									<PluginData/>
+									<PluginInnerObjectList>
+										<List Name="Deflectors">
+											<PluginInnerObject Name="" ID="{C478F8BD-9E83-49CD-8023-A8F2E1DE7692}" PluginName="Deflector" CompanyID="0" PluginID="121"/>
+										</List>
+									</PluginInnerObjectList>
+								</SourcePlugin>
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="lur_sfx_CHAR_falling" ID="{EB3CF1A2-A534-4A01-B9C8-C55F5B465BC4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_INT_boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" ShortID="203709604">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX Audio Bus" ID="{5A41D550-D2AA-4C0B-A3D7-C8691A2A1A25}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="boing_12" ID="{4A59A080-EA99-4984-A0CA-D3F77B7690DA}" ShortID="924585488">
+									<Language>SFX</Language>
+									<AudioFile>boing_12.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="boing_12" ID="{4A59A080-EA99-4984-A0CA-D3F77B7690DA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_UI_back" ID="{E1E97012-C7E7-4393-9924-681B8EAEB144}" ShortID="1041435627">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX Audio Bus" ID="{5A41D550-D2AA-4C0B-A3D7-C8691A2A1A25}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR Button Cancel or Back" ID="{AED6F836-2ED1-4B9F-BFF9-FCD7B8CC3C19}" ShortID="60125920">
+									<Language>SFX</Language>
+									<AudioFile>LUR Button Cancel or Back.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR Button Cancel or Back" ID="{AED6F836-2ED1-4B9F-BFF9-FCD7B8CC3C19}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_UI_confirm" ID="{148651DC-CC91-4436-9B24-8D1D3C6418A2}" ShortID="731434033">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX Audio Bus" ID="{5A41D550-D2AA-4C0B-A3D7-C8691A2A1A25}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR Button Confirm" ID="{2012F63A-4279-4286-83FE-454C2F176D4C}" ShortID="64325497">
+									<Language>SFX</Language>
+									<AudioFile>LUR Button Confirm.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR Button Confirm" ID="{2012F63A-4279-4286-83FE-454C2F176D4C}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
