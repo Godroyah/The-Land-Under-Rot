@@ -42,6 +42,13 @@
 						<Folder Name="UI" ID="{87CA5129-9C88-4F02-A105-A7C77BBE6200}" ShortID="156928786">
 							<ChildrenList>
 								<Sound Name="lur_sfx_UI_back" ID="{E1E97012-C7E7-4393-9924-681B8EAEB144}" ShortID="1041435627">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -168,6 +175,29 @@
 								<ActiveSource Name="lur_sfx_CHAR_footsteps_stone" ID="{676D9950-DE52-4B66-88EE-F42E14073B85}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Folder Name="SFX" ID="{D72CE9BE-715C-4753-BE31-D8493C59A887}" ShortID="253765563">
+							<ChildrenList>
+								<Sound Name="Eye_Boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" ShortID="203709604">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="boing_12" ID="{4A59A080-EA99-4984-A0CA-D3F77B7690DA}" ShortID="924585488">
+											<Language>SFX</Language>
+											<AudioFile>boing_12.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="boing_12" ID="{4A59A080-EA99-4984-A0CA-D3F77B7690DA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Voiceover" ID="{BEE2A2B9-97E2-404A-93AA-4E692ECBA26E}" ShortID="918045649">

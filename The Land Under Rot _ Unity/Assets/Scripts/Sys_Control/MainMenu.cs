@@ -44,7 +44,7 @@ public class MainMenu : MonoBehaviour
 
     public void Back()
     {
-        AudioManager.Instance.Play_UI_Click_MainMenu();
+        AudioManager.Instance.Play_Stinger_Back_MainMenu();
         mainMenu.SetActive(true);
         settingsOption.SetActive(false);
     }

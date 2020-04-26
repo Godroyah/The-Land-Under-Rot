@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BACK_BUTTON = 2886972203U;
+        static const AkUniqueID EYE_BOING = 2334754542U;
         static const AkUniqueID FOOTSTEPS_GRASS = 7365553U;
         static const AkUniqueID FOOTSTEPS_STONE = 307640020U;
         static const AkUniqueID FOOTSTEPS_WOOD = 1732241522U;

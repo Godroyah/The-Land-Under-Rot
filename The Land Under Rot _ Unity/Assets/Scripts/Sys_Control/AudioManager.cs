@@ -84,7 +84,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Headbutt_EnemyRecoil()
     {
-
+        AkSoundEngine.PostEvent("Eye_Boing", gameObject);
     }
 
     public void Play_Falling()
@@ -209,7 +209,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_EyeBoing()
     {
-
+        AkSoundEngine.PostEvent("Eye_Boing", gameObject);
     }
 
     public void Play_GateFall()
@@ -338,9 +338,15 @@ public class AudioManager : MonoBehaviour
         AkSoundEngine.PostEvent("Start_Button", gameObject);
     }
 
+    public void Play_Stinger_Back_MainMenu()
+    {
+        AkSoundEngine.PostEvent("Back_Button", gameObject);
+    }
+
     public void Play_UI_Click_PauseMenu()
     {
 
     }
     #endregion
 }
+
