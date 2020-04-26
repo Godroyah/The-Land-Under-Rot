@@ -24,42 +24,84 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d66c262e9a30c1439a42480633dd373d
     GuidInternal: 
-    m_lastTime: -8586137673194719803
+    m_lastTime: -8586137453824350793
     List:
-    - name: New_Auxiliary_Bus
+    - name: Reverb_Aux_Bus
       guid: 27af3e5254ff4f4dbe7aaa4b199fadf2
-      id: 373392551
+      id: 1494052673
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: New_Auxiliary_Bus
+      - ElementName: Reverb_Aux_Bus
         ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\New_Auxiliary_Bus
+      Path: Default Work Unit\Master Audio Bus\Reverb_Aux_Bus
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 064bbc1ca2365343907353b58bc27dd1
     GuidInternal: 
-    m_lastTime: -8586137661414333811
+    m_lastTime: -8586137453823852128
     List:
-    - name: LUR
+    - name: LUR_SoundBank
       guid: 48b48698b413444180b96f817ef17101
-      id: 914478918
+      id: 4075302472
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: LUR
+      - ElementName: LUR_SoundBank
         ObjectType: 7
-      Path: Default Work Unit\LUR
+      Path: Default Work Unit\LUR_SoundBank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: af5e013a0288ad42b56d86caa361ed90
     GuidInternal: 
-    m_lastTime: -8586137662103993431
+    m_lastTime: -8586137453824430578
     List:
+    - name: footsteps_grass
+      guid: 69ae327f1d0ec846b4626ebaccc53fb5
+      id: 7365553
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX Triggers
+        ObjectType: 4
+      - ElementName: footsteps_grass
+        ObjectType: 3
+      Path: Default Work Unit\SFX Triggers\footsteps_grass
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: footsteps_stone
+      guid: c836d9c4327a6543b81101175518c757
+      id: 307640020
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX Triggers
+        ObjectType: 4
+      - ElementName: footsteps_stone
+        ObjectType: 3
+      Path: Default Work Unit\SFX Triggers\footsteps_stone
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: footsteps_wood
+      guid: 45d36b9a0e0b6442b2e333425c186e73
+      id: 1732241522
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX Triggers
+        ObjectType: 4
+      - ElementName: footsteps_wood
+        ObjectType: 3
+      Path: Default Work Unit\SFX Triggers\footsteps_wood
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Headbutt_Wood
       guid: ed355ad2ecacf84eb10dae998b739d1a
       id: 570067144
@@ -112,8 +154,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Start Switches\Start_Game_Menu
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Start_Gameplay
       guid: e967a71307361e4593477600a135c957
       id: 3576058218

@@ -29,27 +29,27 @@ public class AudioManager : MonoBehaviour
     #region Character
     public void Play_Walk_Grass()
     {
-
+        AkSoundEngine.PostEvent("footsteps_grass", gameObject);
     }
 
     public void Play_Walk_Stone()
     {
-
+        AkSoundEngine.PostEvent("footsteps_stone", gameObject);
     }
 
     public void Play_Walk_Dirt()
     {
-
+        AkSoundEngine.PostEvent("footsteps_grass", gameObject);
     }
 
     public void Play_Walk_Mud()
     {
-
+        AkSoundEngine.PostEvent("footsteps_grass", gameObject);
     }
 
     public void Play_Walk_Wood()
     {
-
+        AkSoundEngine.PostEvent("footsteps_wood", gameObject);
     }
 
     public void Play_Walk_Mushroom()

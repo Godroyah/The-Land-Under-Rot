@@ -13,8 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID FOOTSTEPS_GRASS = 7365553U;
+        static const AkUniqueID FOOTSTEPS_STONE = 307640020U;
+        static const AkUniqueID FOOTSTEPS_WOOD = 1732241522U;
         static const AkUniqueID HEADBUTT_WOOD = 570067144U;
-        static const AkUniqueID LIGHT = 1935470627U;
         static const AkUniqueID ROOTFORD = 1989498786U;
         static const AkUniqueID START_GAME_MENU = 1208688066U;
         static const AkUniqueID START_GAMEPLAY = 3576058218U;
