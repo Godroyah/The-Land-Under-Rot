@@ -32,10 +32,10 @@ namespace AK
         static const AkUniqueID STATE_FRUITFUL_FOREST = 198996940U;
         static const AkUniqueID STATE_STINKHORN = 3972511701U;
         static const AkUniqueID STATE_TUTORIAL = 1138897517U;
-        static const AkUniqueID STI_ACORN_PICKUP = 222529542U;
-        static const AkUniqueID STI_ANGEL_TREE_AWAKENED = 1916140543U;
-        static const AkUniqueID STI_GROWTH_FUNCTION = 2328116844U;
-        static const AkUniqueID STI_OBTAIN_MULCH = 3306879545U;
+        static const AkUniqueID STG_ACORN_PICKUP = 1760610272U;
+        static const AkUniqueID STG_ANGEL_TREE_AWAKENED = 745316089U;
+        static const AkUniqueID STG_GROWTH_FUNCTION = 1530319798U;
+        static const AkUniqueID STG_OBTAIN_MULCH = 3226351339U;
     } // namespace EVENTS
 
     namespace STATES

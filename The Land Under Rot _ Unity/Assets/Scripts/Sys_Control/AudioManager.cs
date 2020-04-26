@@ -306,7 +306,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Tree_EyeOpening()
     {
-        AkSoundEngine.PostEvent("sti_angel_tree_awakened", gameObject);
+        AkSoundEngine.PostEvent("stg_angel_tree_awakened", gameObject);
 
     }
     #endregion
@@ -315,18 +315,18 @@ public class AudioManager : MonoBehaviour
     public void Play_Cordyceps_GoingUnderground()
     {
         AkSoundEngine.PostEvent("int_cordyceps", gameObject);
-        AkSoundEngine.PostEvent("sti_growth_function", gameObject);
+        AkSoundEngine.PostEvent("stg_growth_function", gameObject);
 
     }
 
     public void Play_ClearingBranches()
     {
-        AkSoundEngine.PostEvent("sti_growth_function", gameObject);
+        AkSoundEngine.PostEvent("stg_growth_function", gameObject);
     }
 
     public void Play_Mulch_Smash()
     {
-        AkSoundEngine.PostEvent("sti_growth_function", gameObject);
+        AkSoundEngine.PostEvent("stg_growth_function", gameObject);
     }
 
     public void Play_Acorn_Pickup()
