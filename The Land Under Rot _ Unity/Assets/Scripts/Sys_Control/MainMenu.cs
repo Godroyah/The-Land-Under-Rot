@@ -72,7 +72,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        AudioManager.Instance.Play_UI_Click_MainMenu();
+        AudioManager.Instance.Play_Stinger_Back_MainMenu();
         Debug.Log("Quit!");
         Application.Quit();
     }

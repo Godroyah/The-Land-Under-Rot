@@ -231,7 +231,7 @@ public class AudioManager : MonoBehaviour
     #region NPC
     public void Play_Fenway()
     {
-
+        AkSoundEngine.PostEvent("Fenway", gameObject);
     }
 
     public void Play_Rootford()

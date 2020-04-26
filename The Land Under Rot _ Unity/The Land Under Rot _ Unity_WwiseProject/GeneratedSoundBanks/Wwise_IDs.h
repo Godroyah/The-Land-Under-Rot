@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID CHAR_FOOTSTEPS_WOOD = 3744065311U;
         static const AkUniqueID CHAR_HEADBUTT_WOOD = 3953657551U;
         static const AkUniqueID CLICK = 1584507803U;
+        static const AkUniqueID FENWAY = 851955753U;
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID ROOTFORD = 1989498786U;
