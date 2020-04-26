@@ -209,7 +209,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_EyeBoing()
     {
-        AkSoundEngine.PostEvent("Eye_Boing", gameObject);
+        AkSoundEngine.PostEvent("int_boing", gameObject);
     }
 
     public void Play_GateFall()
@@ -306,13 +306,15 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Tree_EyeOpening()
     {
+        AkSoundEngine.PostEvent("sti_angel_tree_awakened", gameObject);
 
     }
-#endregion
+    #endregion
 
     #region Stinger
     public void Play_Cordyceps_GoingUnderground()
     {
+        AkSoundEngine.PostEvent("int_boing", gameObject);
 
     }
 
@@ -323,12 +325,12 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Mulch_Smash()
     {
-
+        AkSoundEngine.PostEvent("sti_obtain_mulch", gameObject);
     }
 
     public void Play_Acorn_Pickup()
     {
-
+        AkSoundEngine.PostEvent("sti_acorn_pickup", gameObject);
     }
     #endregion
 
