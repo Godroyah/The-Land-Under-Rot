@@ -14,8 +14,8 @@ public class Mulchant_WillowTree_Event : Event_Type
     public float mulchantDelay;
     [Range(1f, 20f)]
     public float treeDelay;
-    //[Range(1f, 20f)]
-    //public float endSceneDelay;
+    [Range(1f, 20f)]
+    public float endSceneDelay;
 
     GameController gameController;
 
@@ -46,12 +46,14 @@ public class Mulchant_WillowTree_Event : Event_Type
 
         yield return new WaitForSeconds(treeDelay);
 
-        willowTreeAnim.SetTrigger("Wakeup");
-        eventMulchant.enabled = false;
+        willowTreeAnim.SetTrigger("Willow_Awake");
+
         mulchantPrompt.enabled = true;
         interactableMulchant.enabled = true;
         gameController.willowTreeAwake = true;
 
-        //yield return new WaitForSeconds(endSceneDelay);
+        yield return new WaitForSeconds(endSceneDelay);
+
+        eventMulchant.enabled = false;
     }
 }

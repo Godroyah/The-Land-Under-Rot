@@ -12630,6 +12630,7 @@ MonoBehaviour:
   mulchantPrompt: {fileID: 765699824193779469}
   mulchantDelay: 3.25
   treeDelay: 7
+  endSceneDelay: 1.3
 --- !u!1001 &674785897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18531,6 +18532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: mulchant_GivenBottles
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455617974441200885, guid: 030c0c79bc94d6448aee584e53a38bbb,
+        type: 3}
+      propertyPath: hasYellowMulch
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 030c0c79bc94d6448aee584e53a38bbb, type: 3}
@@ -79134,41 +79140,41 @@ MonoBehaviour:
   startScene: 0
   shots:
   - name: Player and Mulchant
-    canGlide: 1
+    canGlide: 0
     isEventTrigger: 0
     eventType: {fileID: 0}
     sceneTime: 3
     transitionSpeed: 3
     viewpoint: {fileID: 765699822443892801}
   - name: Wide of Tree
-    canGlide: 0
+    canGlide: 1
     isEventTrigger: 0
     eventType: {fileID: 0}
     sceneTime: 3
     transitionSpeed: 3
     viewpoint: {fileID: 1969004094}
-  - name: Slide Down to Mulchant
-    canGlide: 1
-    isEventTrigger: 1
-    eventType: {fileID: 669421019}
-    sceneTime: 3
-    transitionSpeed: 3
-    viewpoint: {fileID: 465564904}
-  - name: Shot of Mulchant Mixing
+  - name: Look at Eye
     canGlide: 0
     isEventTrigger: 0
     eventType: {fileID: 0}
-    sceneTime: 5
+    sceneTime: 3
+    transitionSpeed: 3
+    viewpoint: {fileID: 465564904}
+  - name: Slide to Mulchant
+    canGlide: 1
+    isEventTrigger: 1
+    eventType: {fileID: 669421019}
+    sceneTime: 2.5
     transitionSpeed: 2
     viewpoint: {fileID: 1849420572}
-  - name: Zoom to Tree Awakening
+  - name: Mulchant Mixing
     canGlide: 1
     isEventTrigger: 0
     eventType: {fileID: 0}
     sceneTime: 6
     transitionSpeed: 2
     viewpoint: {fileID: 1069297666}
-  - name: Glide back to Player
+  - name: Tree Awakens
     canGlide: 1
     isEventTrigger: 0
     eventType: {fileID: 0}
