@@ -17,9 +17,9 @@ namespace AK
         static const AkUniqueID FOOTSTEPS_STONE = 307640020U;
         static const AkUniqueID FOOTSTEPS_WOOD = 1732241522U;
         static const AkUniqueID HEADBUTT_WOOD = 570067144U;
+        static const AkUniqueID LIGHT = 1935470627U;
         static const AkUniqueID ROOTFORD = 1989498786U;
-        static const AkUniqueID START_GAME_MENU = 1208688066U;
-        static const AkUniqueID START_GAMEPLAY = 3576058218U;
+        static const AkUniqueID START_GAME = 1114964412U;
         static const AkUniqueID START_MULCHANT_THEME = 123246954U;
         static const AkUniqueID START_OPENING_CINEMATIC = 3054947144U;
         static const AkUniqueID START_TREE_SEAT = 2233760634U;

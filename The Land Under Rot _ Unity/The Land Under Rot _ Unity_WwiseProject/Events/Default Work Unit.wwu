@@ -118,7 +118,7 @@
 				</Folder>
 				<Folder Name="Start Switches" ID="{03A86141-8EF6-4249-AFF7-483B921C478E}" ShortID="471800048">
 					<ChildrenList>
-						<Event Name="Start_Game_Menu" ID="{975088CA-B89F-4E0A-8368-D0F6F0D4B5F0}">
+						<Event Name="Start_Game" ID="{975088CA-B89F-4E0A-8368-D0F6F0D4B5F0}">
 							<ChildrenList>
 								<Action Name="" ID="{4873AC1D-44A7-4332-A85F-02F8F2300BE7}" ShortID="670741349">
 									<ReferenceList>
@@ -133,28 +133,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Menu" ID="{4F91D3B9-F2F3-4B47-920F-B4E992C202D5}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Start_Gameplay" ID="{13A767E9-3607-451E-9347-7600A135C957}">
-							<ChildrenList>
-								<Action Name="" ID="{80828FF9-FBD6-43DB-8EFB-B1B8436C2A7C}" ShortID="260561205">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Level Switch" ID="{E02330C2-2BF9-4536-AA2E-9BD642A4BCDC}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{8EFF33A5-FDE2-4021-A134-BDB13462A8C4}" ShortID="980062747">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Level" ID="{937A519E-C207-497D-9DBF-DC5450D0A5C0}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
+											<ObjectRef Name="Main_Menu" ID="{F859AEEF-EBF7-4BC7-ADA2-645030B5F32A}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
