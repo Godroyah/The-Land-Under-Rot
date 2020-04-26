@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID CHAR_HEADBUTT_WOOD = 3953657551U;
         static const AkUniqueID CLICK = 1584507803U;
         static const AkUniqueID INT_BOING = 3774898542U;
+        static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID ROOTFORD = 1989498786U;
         static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID START_GAME = 1114964412U;

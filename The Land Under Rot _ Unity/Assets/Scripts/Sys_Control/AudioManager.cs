@@ -314,18 +314,19 @@ public class AudioManager : MonoBehaviour
     #region Stinger
     public void Play_Cordyceps_GoingUnderground()
     {
-        AkSoundEngine.PostEvent("int_boing", gameObject);
+        AkSoundEngine.PostEvent("int_cordyceps", gameObject);
+        AkSoundEngine.PostEvent("sti_growth_function", gameObject);
 
     }
 
     public void Play_ClearingBranches()
     {
-
+        AkSoundEngine.PostEvent("sti_growth_function", gameObject);
     }
 
     public void Play_Mulch_Smash()
     {
-        AkSoundEngine.PostEvent("sti_obtain_mulch", gameObject);
+        AkSoundEngine.PostEvent("sti_growth_function", gameObject);
     }
 
     public void Play_Acorn_Pickup()

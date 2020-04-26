@@ -315,6 +315,9 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="LUR Gaze Growth Function" ID="{A9F26C8B-884C-47D3-AA33-8AF852C7B5F2}" ShortID="915585608">
+									<PropertyList>
+										<Property Name="TrimBegin" Type="Real64" Value="1.003"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>LUR Gaze Growth Function.wav</AudioFile>
 								</AudioFileSource>
@@ -373,6 +376,37 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="LUR Angel Tree Awakened" ID="{E5EB4E21-3375-4287-BF09-8BCBACBD2841}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_INT_cordyceps" ID="{C4AD3DBD-92CE-47D2-83DF-028531BA0EF0}" ShortID="352190175">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-18</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lur_sfx_INT_cordyceps" ID="{5F1F9712-84C1-470C-88C0-FB1C6DE6CD3E}" ShortID="678820414">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.398"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.708"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>lur_sfx_INT_cordyceps.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lur_sfx_INT_cordyceps" ID="{5F1F9712-84C1-470C-88C0-FB1C6DE6CD3E}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
