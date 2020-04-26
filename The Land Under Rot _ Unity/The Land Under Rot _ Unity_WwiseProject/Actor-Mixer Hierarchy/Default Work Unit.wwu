@@ -382,7 +382,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-18</Value>
+										<Value>-11</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -435,7 +435,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-10</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -459,15 +459,23 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Rootford 1" ID="{0BB4FBFE-5449-4C72-9AB7-D5E161E46CF4}" ShortID="976193351">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.691"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>rot_deep_voice1.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="501400171"/>
+											</ConvertedFileIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Rootford 1" ID="{0BB4FBFE-5449-4C72-9AB7-D5E161E46CF4}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Rootford 2" ID="{D356DE5D-40DE-467E-9421-2510D414D919}" ShortID="464368183">
+								<Sound Name="Rootford 4" ID="{D356DE5D-40DE-467E-9421-2510D414D919}" ShortID="464368183">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -478,6 +486,9 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="rot_deep_voice2" ID="{DD9D87DE-B189-4FAB-B050-30654336EACC}" ShortID="245082681">
+											<PropertyList>
+												<Property Name="TrimBegin" Type="Real64" Value="4.399"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>rot_deep_voice2.wav</AudioFile>
 										</AudioFileSource>
@@ -486,7 +497,7 @@
 										<ActiveSource Name="rot_deep_voice2" ID="{DD9D87DE-B189-4FAB-B050-30654336EACC}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Rootford 3" ID="{BB5E81C1-39F7-4C9C-A98B-62DB65EDCDF3}" ShortID="459635286">
+								<Sound Name="Rootford 5" ID="{BB5E81C1-39F7-4C9C-A98B-62DB65EDCDF3}" ShortID="459635286">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -497,6 +508,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="rot_deep_voice3" ID="{D6580C70-8A77-43E2-A178-70BF1AA8A9F0}" ShortID="28341570">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.623"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>rot_deep_voice3.wav</AudioFile>
 										</AudioFileSource>
@@ -505,7 +520,7 @@
 										<ActiveSource Name="rot_deep_voice3" ID="{D6580C70-8A77-43E2-A178-70BF1AA8A9F0}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Rootford 4" ID="{6DC775E9-2B9E-4841-B35C-1212BC1E3863}" ShortID="1034359408">
+								<Sound Name="Rootford 6" ID="{6DC775E9-2B9E-4841-B35C-1212BC1E3863}" ShortID="1034359408">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -516,12 +531,66 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="rot_deep_voice4" ID="{8ACDD445-BE28-467B-8CC9-B3464E3F0B3D}" ShortID="924002269">
+											<PropertyList>
+												<Property Name="TrimBegin" Type="Real64" Value="0.029"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.796"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>rot_deep_voice4.wav</AudioFile>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="rot_deep_voice4" ID="{8ACDD445-BE28-467B-8CC9-B3464E3F0B3D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Rootford 2" ID="{C7115978-6E95-45CC-9348-2F5EEBBE4D6A}" ShortID="166110464">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="VOX Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rootford 1" ID="{32CFEF70-78D6-4CEC-A072-240D82283E19}" ShortID="501400171">
+											<PropertyList>
+												<Property Name="TrimBegin" Type="Real64" Value="1.661"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.505"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>rot_deep_voice1.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="976193351"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rootford 1" ID="{32CFEF70-78D6-4CEC-A072-240D82283E19}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Rootford 3" ID="{D695F93F-EDE8-4DE1-A955-472E26B3F640}" ShortID="455251441">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="VOX Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rootford 1" ID="{41EC5354-FAF6-4943-9576-84C0E70FD82B}" ShortID="254523943">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.565"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.529"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>rot_deep_voice1.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rootford 1" ID="{41EC5354-FAF6-4943-9576-84C0E70FD82B}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

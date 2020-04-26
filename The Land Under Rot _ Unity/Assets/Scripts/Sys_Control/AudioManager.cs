@@ -331,7 +331,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Acorn_Pickup()
     {
-        AkSoundEngine.PostEvent("sti_acorn_pickup", gameObject);
+        AkSoundEngine.PostEvent("stg_acorn_pickup", gameObject);
     }
     #endregion
 
