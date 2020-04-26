@@ -218,7 +218,11 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(interactingCoroutine);
         //Debug.Log(StopPlayer);
         //Debug.Log(eventActive);
-
+		
+		
+		// Show where the player is on map - Colin's proximity glow
+		Shader.SetGlobalVector("_playerPosition", transform.position);
+		
         Reset();
         GetInput();
 
