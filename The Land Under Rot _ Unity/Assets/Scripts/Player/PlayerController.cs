@@ -550,7 +550,10 @@ public class PlayerController : MonoBehaviour
 
         Rb.AddForce(velocityChange * Time.deltaTime * 50, ForceMode.VelocityChange);
         //}
-
+        //if(HorizontalInput > 0.1 || VerticalInput > 0.1)
+        //{
+        //    if(GameController.Instance.sceneIndex == )
+        //}
     }
 
     private void Rotate()
