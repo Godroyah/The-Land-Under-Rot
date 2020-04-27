@@ -93,24 +93,45 @@
 				<SoundcasterSession Name="SFX Soundcaster Session" ID="{5DE37B27-4878-47A7-8735-B53EB21336CF}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="char_footsteps_stone" ID="{C4D936C8-7A32-4365-B811-01175518C757}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<ObjectRef Name="Start_Game" ID="{975088CA-B89F-4E0A-8368-D0F6F0D4B5F0}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="char_falling" ID="{4F3E9394-D5EE-4EC9-8A73-B598ECC70A52}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<ObjectRef Name="stg_growth_function" ID="{B6DE95AB-F267-4265-A024-EBBC3EFFB7EB}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="char_footsteps_grass" ID="{7F32AE69-0E1D-46C8-B462-6EBACCC53FB5}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<ObjectRef Name="stg_acorn_pickup" ID="{E20C7342-1192-4695-9BA9-ACA45D90E012}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="char_footsteps_wood" ID="{9A6BD345-0B0E-4264-B2E3-33425C186E73}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<ObjectRef Name="stg_angel_tree_awakened" ID="{7173D341-C4E6-4B00-856B-AAA3BF8D3157}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
 							<Position X="3" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="char_headbutt_wood" ID="{D25A35ED-ACEC-4EF8-B10D-AE998B739D1A}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<ObjectRef Name="stg_obtain_mulch" ID="{C5CC3D58-8464-4DDC-93A8-543EA14AC521}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
 							<Position X="4" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Fruitful_Forest" ID="{38CFC43B-C720-4D84-ABA4-853AE4CDC375}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="VOX Soundcaster Session" ID="{73461720-238C-4A79-9D1B-3D79E9AFDB8C}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Start_Game" ID="{975088CA-B89F-4E0A-8368-D0F6F0D4B5F0}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Fenway" ID="{02B0550C-496B-4F95-AE38-42C2A3FF6AAE}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Rootford" ID="{893C44D1-8177-4B58-AC49-EB06BCD57F77}" WorkUnitID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}"/>
+							<Position X="2" Y="0"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
