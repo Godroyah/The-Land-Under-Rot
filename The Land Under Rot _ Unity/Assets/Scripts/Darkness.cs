@@ -99,6 +99,7 @@ public class Darkness : MonoBehaviour
             temp.transform.localScale = this.transform.localScale - (maintainDirection * stepDepth * (i + 1));
             temp.transform.parent = this.transform;
             temp.transform.localPosition = Vector3.zero;
+            temp.transform.localRotation = this.transform.localRotation;
 
             temp.GetComponent<MeshRenderer>().sharedMaterial = darkMat;
             tempHelp = temp.AddComponent<DarknessHelper>();
