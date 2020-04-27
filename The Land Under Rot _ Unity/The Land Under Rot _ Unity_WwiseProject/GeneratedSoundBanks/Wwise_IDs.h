@@ -80,10 +80,11 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID HEAVY_DUCKING_AUDIO_BUS = 1640573219U;
+        static const AkUniqueID LIGHT_DUCKING_AUDIO_BUS = 1255859898U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MX_AUDIO_BUS = 1450019282U;
         static const AkUniqueID SFX_AUDIO_BUS = 4084199202U;
-        static const AkUniqueID VOX_AUDIO_BUS = 2744997956U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES
