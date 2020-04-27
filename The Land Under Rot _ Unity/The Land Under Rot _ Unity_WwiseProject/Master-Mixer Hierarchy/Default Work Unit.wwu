@@ -20,13 +20,13 @@
 								</Property>
 							</PropertyList>
 						</Bus>
-						<Bus Name="VOX Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}">
+						<Bus Name="Light Ducking Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}">
 							<DuckingList>
 								<DuckItem>
 									<BusRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}"/>
 									<DuckingParam>
 										<Volume>-5</Volume>
-										<FadeInTime>1</FadeInTime>
+										<FadeInTime>0.100000001490116</FadeInTime>
 										<FadeOutTime>0.300000011920929</FadeOutTime>
 										<FadeCurve>FadeLog2</FadeCurve>
 										<TargetProp>BusVolume</TargetProp>
@@ -59,6 +59,20 @@
 								</Reference>
 							</ReferenceList>
 						</AuxBus>
+						<Bus Name="Heavy Ducking Audio Bus" ID="{29E54792-7D42-4737-8769-EE0B0666E8A6}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}"/>
+									<DuckingParam>
+										<Volume>-96</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>0.5</FadeOutTime>
+										<FadeCurve>FadeLog1</FadeCurve>
+										<TargetProp>BusVolume</TargetProp>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

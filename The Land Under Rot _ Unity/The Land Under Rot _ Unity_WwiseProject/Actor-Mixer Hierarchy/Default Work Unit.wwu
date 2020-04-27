@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}" PersistMode="Standalone">
 			<ChildrenList>
-				<ActorMixer Name="SFX Mixer" ID="{A7FBCD7B-4473-451A-A324-EF151519EC38}" ShortID="1054986234">
+				<ActorMixer Name="SFX Actor Mixer" ID="{A7FBCD7B-4473-451A-A324-EF151519EC38}" ShortID="1054986234">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -271,113 +271,6 @@
 								<ActiveSource Name="lur_sfx_UI_click" ID="{B9383C52-FD4A-40FD-9BAF-B78594B45C23}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="lur_mx_STG_acorn" ID="{B81EA21C-A51D-43B9-A74D-91D6DEFF6942}" ShortID="613486638">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-9</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="LUR Acorn Collect New" ID="{59BB16B4-BD48-49BB-BFC4-1A2D5CCF3219}" ShortID="863273360">
-									<Language>SFX</Language>
-									<AudioFile>LUR Acorn Collect New.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="LUR Acorn Collect New" ID="{59BB16B4-BD48-49BB-BFC4-1A2D5CCF3219}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="lur_mx_STG_cordyceps" ID="{101BBDF2-CF56-4678-9654-5B764E883444}" ShortID="779744513">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-13</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="LUR Gaze Growth Function" ID="{A9F26C8B-884C-47D3-AA33-8AF852C7B5F2}" ShortID="915585608">
-									<PropertyList>
-										<Property Name="TrimBegin" Type="Real64" Value="1.003"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>LUR Gaze Growth Function.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="LUR Gaze Growth Function" ID="{A9F26C8B-884C-47D3-AA33-8AF852C7B5F2}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="lur_mx_STG_mulch" ID="{76EDEAFE-1659-4522-B03C-F975F04594FD}" ShortID="324052053">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-3</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="LUR Obtain Mulch" ID="{081B0E46-1673-47CE-BC02-6243FF27A7F0}" ShortID="417139651">
-									<Language>SFX</Language>
-									<AudioFile>LUR Obtain Mulch.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="LUR Obtain Mulch" ID="{081B0E46-1673-47CE-BC02-6243FF27A7F0}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="lur_mx_STG_angel_tree_awakened" ID="{089B3EF6-2E6B-4960-BF27-1CBD352CF4FF}" ShortID="790419010">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-9</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="LUR Angel Tree Awakened" ID="{E5EB4E21-3375-4287-BF09-8BCBACBD2841}" ShortID="438113143">
-									<Language>SFX</Language>
-									<AudioFile>LUR Angel Tree Awakened.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="LUR Angel Tree Awakened" ID="{E5EB4E21-3375-4287-BF09-8BCBACBD2841}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="lur_sfx_INT_cordyceps" ID="{C4AD3DBD-92CE-47D2-83DF-028531BA0EF0}" ShortID="352190175">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
@@ -409,15 +302,126 @@
 								<ActiveSource Name="lur_sfx_INT_cordyceps" ID="{5F1F9712-84C1-470C-88C0-FB1C6DE6CD3E}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="lur_mx_STG_acorn" ID="{B81EA21C-A51D-43B9-A74D-91D6DEFF6942}" ShortID="613486638">
+							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Light Ducking Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR Acorn Collect New" ID="{59BB16B4-BD48-49BB-BFC4-1A2D5CCF3219}" ShortID="863273360">
+									<Language>SFX</Language>
+									<AudioFile>LUR Acorn Collect New.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR Acorn Collect New" ID="{59BB16B4-BD48-49BB-BFC4-1A2D5CCF3219}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_mx_STG_cordyceps" ID="{101BBDF2-CF56-4678-9654-5B764E883444}" ShortID="779744513">
+							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Heavy Ducking Audio Bus" ID="{29E54792-7D42-4737-8769-EE0B0666E8A6}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR Gaze Growth Function" ID="{A9F26C8B-884C-47D3-AA33-8AF852C7B5F2}" ShortID="915585608">
+									<PropertyList>
+										<Property Name="TrimBegin" Type="Real64" Value="1.003"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>LUR Gaze Growth Function.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR Gaze Growth Function" ID="{A9F26C8B-884C-47D3-AA33-8AF852C7B5F2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_mx_STG_mulch" ID="{76EDEAFE-1659-4522-B03C-F975F04594FD}" ShortID="324052053">
+							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Heavy Ducking Audio Bus" ID="{29E54792-7D42-4737-8769-EE0B0666E8A6}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR Obtain Mulch" ID="{081B0E46-1673-47CE-BC02-6243FF27A7F0}" ShortID="417139651">
+									<Language>SFX</Language>
+									<AudioFile>LUR Obtain Mulch.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR Obtain Mulch" ID="{081B0E46-1673-47CE-BC02-6243FF27A7F0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_mx_STG_angel_tree_awakened" ID="{089B3EF6-2E6B-4960-BF27-1CBD352CF4FF}" ShortID="790419010">
+							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Heavy Ducking Audio Bus" ID="{29E54792-7D42-4737-8769-EE0B0666E8A6}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR Angel Tree Awakened" ID="{E5EB4E21-3375-4287-BF09-8BCBACBD2841}" ShortID="438113143">
+									<Language>SFX</Language>
+									<AudioFile>LUR Angel Tree Awakened.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR Angel Tree Awakened" ID="{E5EB4E21-3375-4287-BF09-8BCBACBD2841}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
-				<ActorMixer Name="Voiceover" ID="{BEE2A2B9-97E2-404A-93AA-4E692ECBA26E}" ShortID="918045649">
+				<ActorMixer Name="VOX Actor Mixer" ID="{BEE2A2B9-97E2-404A-93AA-4E692ECBA26E}" ShortID="918045649">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="VOX Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+							<ObjectRef Name="Light Ducking Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -554,7 +558,7 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="VOX Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+											<ObjectRef Name="Light Ducking Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -580,7 +584,7 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="VOX Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+											<ObjectRef Name="Light Ducking Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -772,6 +776,16 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Stinger Actor Mixer" ID="{552256FC-C126-4EDE-862B-570AF3813C17}" ShortID="674596205">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Heavy Ducking Audio Bus" ID="{29E54792-7D42-4737-8769-EE0B0666E8A6}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+						</Reference>
+					</ReferenceList>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
