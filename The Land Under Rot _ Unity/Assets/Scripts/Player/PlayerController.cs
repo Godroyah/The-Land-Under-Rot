@@ -218,7 +218,11 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(interactingCoroutine);
         //Debug.Log(StopPlayer);
         //Debug.Log(eventActive);
-
+		
+		
+		// Show where the player is on map - Colin's proximity glow
+		Shader.SetGlobalVector("_playerPosition", transform.position);
+		
         Reset();
         GetInput();
 
@@ -546,7 +550,10 @@ public class PlayerController : MonoBehaviour
 
         Rb.AddForce(velocityChange * Time.deltaTime * 50, ForceMode.VelocityChange);
         //}
-
+        //if(HorizontalInput > 0.1 || VerticalInput > 0.1)
+        //{
+        //    if(GameController.Instance.sceneIndex == )
+        //}
     }
 
     private void Rotate()

@@ -159,6 +159,7 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator MsStamen()
     {
+        AudioManager.Instance.Play_Ms_Stamen();
         if (!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Miss_Stamen_Intro);

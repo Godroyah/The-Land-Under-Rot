@@ -229,6 +229,7 @@ public class AudioManager : MonoBehaviour
 #endregion
 
     #region NPC
+
     public void Play_Fenway()
     {
         AkSoundEngine.PostEvent("Fenway", gameObject);
@@ -244,7 +245,8 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void Play_Her()
+    //Labeled Play_Her in the doc
+    public void Play_Ms_Stamen()
     {
         AkSoundEngine.PostEvent("Her", gameObject);
     }

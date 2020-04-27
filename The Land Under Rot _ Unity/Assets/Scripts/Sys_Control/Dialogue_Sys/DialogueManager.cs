@@ -190,6 +190,21 @@ public class NPC_Emotes
 
 public enum Reply
 {
+    #region Understump Dialogue
+    Mulchant_Intro_US,
+    Mulchant_No_Mulch_US,
+    Mulchant_Gathered_Mulch_US,
+    Mulchant_Tree_Awake_US,
+    Willow_Tree_Asleep,
+    Willow_Tree_Awake,
+    Willow_Tree_Post_Cutscene,
+    Willow_Tree_Repeat_1,
+    Spud_Intro,
+    Spud_Tree_Awake,
+    Spud_Repeat_1,
+    Yellow_GG_Fenway,
+    #endregion
+
     #region FruitForest Dialogue
     Mulchant_Intro_FF,
     Mulchant_No_Mulch_FF,

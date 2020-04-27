@@ -50,6 +50,7 @@ public class GameController : MonoBehaviour
     public bool revealNewAreas;
     //TODO: need a better way to set worms on and off
     public bool wormsInFruitfulGone;
+    public bool underStumpLightsOn;
 
     [Space(5)]
     public bool area_Tutorial = false;
@@ -109,6 +110,8 @@ public class GameController : MonoBehaviour
     public Camera mainCamera;
     public delegate void UpdateCameras(Camera newCamera);
     public UpdateCameras updateCameras;
+
+    public int sceneIndex;
 
     private void Awake()
     {
@@ -181,6 +184,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
         isDead = false;
         //oldHealth = playerHealth;
         if(playerController != null)

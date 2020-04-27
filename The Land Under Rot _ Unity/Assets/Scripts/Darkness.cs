@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +10,13 @@ public class Darkness : MonoBehaviour
 
     private GameObject baseModel;
 
-    [Range(1, 5)]
+    [Range(1, 5), Tooltip("The number of additional layers to use")]
     public int steps = 3;
+    [Tooltip("The distance before the next additional layer")]
     public float stepDepth = 2f;
+    [Tooltip("This is used to 'maintain' the specific axis of the additional layers and not create the illusion of depth.")]
     public Maintain direction = Maintain.NONE;
+    [Tooltip("This generally hides under the Camera and will be found from there if not assigned")]
     public GameObject cameraBlinder;
     private MeshRenderer camMeshRenderer;
 
@@ -21,11 +24,19 @@ public class Darkness : MonoBehaviour
     public float transitionDuration = 1;
     private Coroutine newTransition;
     private Coroutine currentTransition;
+    private Coroutine newIllumination;
+    private Coroutine currentIllumination;
 
     private List<DarknessHelper> helpers = new List<DarknessHelper>();
+    public GameObject killVolume;
 
     void Start()
     {
+        if (cameraBlinder == null)
+        {
+            cameraBlinder = GameController.Instance.playerController.camControl.myCamera.transform.GetChild(0).gameObject;
+        }
+
         baseModel = transform.GetChild(0).gameObject;
         mRenderer = baseModel.GetComponent<MeshRenderer>();
         darkMat = mRenderer.sharedMaterial;
@@ -88,6 +99,7 @@ public class Darkness : MonoBehaviour
             temp.transform.localScale = this.transform.localScale - (maintainDirection * stepDepth * (i + 1));
             temp.transform.parent = this.transform;
             temp.transform.localPosition = Vector3.zero;
+            temp.transform.localRotation = this.transform.localRotation;
 
             temp.GetComponent<MeshRenderer>().sharedMaterial = darkMat;
             tempHelp = temp.AddComponent<DarknessHelper>();
@@ -155,6 +167,39 @@ public class Darkness : MonoBehaviour
         foreach (DarknessHelper helper in helpers)
         {
             helper.IlluminateDarkness(illuminationDuration);
+            if (killVolume != null)
+            {
+                newIllumination = StartCoroutine(Illumination(illuminationDuration));
+            }
+        }
+    }
+
+    public void Illuminate(float duration)
+    {
+        foreach (DarknessHelper helper in helpers)
+        {
+            helper.IlluminateDarkness(duration);
+            if (killVolume != null)
+            {
+                newIllumination = StartCoroutine(Illumination(duration));
+            }
+        }
+    }
+
+    IEnumerator Illumination(float duration)
+    {
+        if (currentIllumination != null)
+        {
+            StopCoroutine(currentIllumination);
+        }
+        currentIllumination = newIllumination;
+
+        killVolume.SetActive(false);
+        //if(!0)
+        if(duration > 0)
+        {
+            yield return new WaitForSeconds(duration);
+            killVolume.SetActive(true);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum U_Stump_NPC { NONE, MULCHANT, WILLOW_TREE, SPUD, FENWAY_1, FENWAY_2}
+public enum U_Stump_NPC { NONE, MULCHANT, WILLOW_TREE, SPUD, FENWAY_YELLOWGAZE}
 
 public class U_Stump_NPC_Talk : Interactable
 {
@@ -48,11 +48,8 @@ public class U_Stump_NPC_Talk : Interactable
                 case U_Stump_NPC.SPUD:
                     StartCoroutine(Spud());
                     break;
-                case U_Stump_NPC.FENWAY_1:
-                    StartCoroutine(Fenway_1());
-                    break;
-                case U_Stump_NPC.FENWAY_2:
-                    StartCoroutine(Fenway_2());
+                case U_Stump_NPC.FENWAY_YELLOWGAZE:
+                    StartCoroutine(Fenway_YellowGaze());
                     break;
             }
         }
@@ -66,12 +63,12 @@ public class U_Stump_NPC_Talk : Interactable
         {
             if (!isIntroduced)
             {
-                //dialogueManager.StartDialogue(Reply.Mulchant_Intro_FF);
+                dialogueManager.StartDialogue(Reply.Mulchant_Intro_US);
                 isIntroduced = true;
             }
             else
             {
-                //dialogueManager.StartDialogue(Reply.Mulchant_No_Mulch_FF);
+                dialogueManager.StartDialogue(Reply.Mulchant_No_Mulch_US);
             }
         }
         else
@@ -86,12 +83,12 @@ public class U_Stump_NPC_Talk : Interactable
                 {
                     Debug.LogWarning("Mulchant Animator not assigned!");
                 }
-               // dialogueManager.StartDialogue(Reply.Mulchant_Gathered_Mulch_FF);
+                dialogueManager.StartDialogue(Reply.Mulchant_Gathered_Mulch_US);
                 gameController.willowTreeAwake = true;
             }
             else
             {
-                //dialogueManager.StartDialogue(Reply.Mulchant_Tree_Awake_FF);
+                dialogueManager.StartDialogue(Reply.Mulchant_Tree_Awake_US);
             }
         }
 
@@ -100,6 +97,31 @@ public class U_Stump_NPC_Talk : Interactable
 
     IEnumerator WillowTree()
     {
+        if (!gameController.underStumpLightsOn)
+        {
+            if (!gameController.willowTreeAwake)
+            {
+                dialogueManager.StartDialogue(Reply.Willow_Tree_Asleep);
+            }
+            else
+            {
+                dialogueManager.StartDialogue(Reply.Willow_Tree_Awake);
+                gameController.underStumpLightsOn = true;
+            }
+        }
+        else
+        {
+            if (!isIntroduced)
+            {
+                dialogueManager.StartDialogue(Reply.Willow_Tree_Post_Cutscene);
+                isIntroduced = true;
+            }
+            else
+            {
+                dialogueManager.StartDialogue(Reply.Willow_Tree_Repeat_1);
+            }
+        }
+
         yield return null;
     }
     //WillowTree Coroutine Here
@@ -108,46 +130,48 @@ public class U_Stump_NPC_Talk : Interactable
     {
         if (!isIntroduced)
         {
-            //dialogueManager.StartDialogue(Reply.Little_Blue_Intro);
+            dialogueManager.StartDialogue(Reply.Spud_Intro);
             isIntroduced = true;
         }
         else if (gameController.willowTreeAwake && !willowTreeAwake)
         {
-            //dialogueManager.StartDialogue(Reply.Little_Blue_Tree_Awake);
+            dialogueManager.StartDialogue(Reply.Spud_Tree_Awake);
             willowTreeAwake = true;
         }
         else
         {
-            //randomTalk = Random.Range(1, 3);
-
-            //if (randomTalk == 1)
-            //{
-            //    dialogueManager.StartDialogue(Reply.Little_Blue_Repeat_1);
-            //}
-            //if (randomTalk == 2)
-            //{
-            //    dialogueManager.StartDialogue(Reply.Little_Blue_Repeat_2);
-            //}
-
+            dialogueManager.StartDialogue(Reply.Spud_Repeat_1);
         }
 
         yield return null;
     }
 
 
-    IEnumerator Fenway_1()
+    IEnumerator Fenway_YellowGaze()
     {
         AudioManager.Instance.Play_Fenway();
-       // dialogueManager.StartDialogue(Reply.One_Way_Bark_Fenway);
+       dialogueManager.StartDialogue(Reply.Yellow_GG_Fenway);
 
         yield return null;
     }
 
-    IEnumerator Fenway_2()
+    private void OnTriggerEnter(Collider other)
     {
-        AudioManager.Instance.Play_Fenway();
-       // dialogueManager.StartDialogue(Reply.One_Way_Bark_Fenway);
+        if (other.CompareTag("Interact"))
+        {
+            if (playerController == null)
+            {
+                playerController = GameController.Instance.playerController;
+                playerController.interactables.Add(this);
+            }
+            else
+                playerController.interactables.Add(this);
+        }
+    }
 
-        yield return null;
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Interact"))
+            playerController.interactables.Remove(this);
     }
 }
