@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BACK_BUTTON = 2886972203U;
+        static const AkUniqueID BUDDY = 3718854415U;
         static const AkUniqueID CHAR_FALLING = 2781918869U;
         static const AkUniqueID CHAR_FOOTSTEPS_GRASS = 3543977830U;
         static const AkUniqueID CHAR_FOOTSTEPS_STONE = 2543644351U;
@@ -21,6 +22,7 @@ namespace AK
         static const AkUniqueID CHAR_HEADBUTT_WOOD = 3953657551U;
         static const AkUniqueID CLICK = 1584507803U;
         static const AkUniqueID FENWAY = 851955753U;
+        static const AkUniqueID HER = 915067362U;
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID ROOTFORD = 1989498786U;

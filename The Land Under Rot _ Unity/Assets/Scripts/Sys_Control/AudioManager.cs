@@ -246,7 +246,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Her()
     {
-
+        AkSoundEngine.PostEvent("Her", gameObject);
     }
 
     public void Play_Strawberry()
@@ -276,7 +276,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Buddy()
     {
-
+        AkSoundEngine.PostEvent("Buddy", gameObject);
     }
 
     public void Play_CarrotSlug()

@@ -143,9 +143,9 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Rootford()
     {
+        AudioManager.Instance.Play_Rootford();
         if (!isIntroduced)
         {
-            AudioManager.Instance.Play_Rootford();
             dialogueManager.StartDialogue(Reply.TS_Rootford_Intro);
             isIntroduced = true;
         }
