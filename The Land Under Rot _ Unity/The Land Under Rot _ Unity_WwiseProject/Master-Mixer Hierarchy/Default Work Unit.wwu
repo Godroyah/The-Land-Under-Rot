@@ -20,7 +20,20 @@
 								</Property>
 							</PropertyList>
 						</Bus>
-						<Bus Name="VOX Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}"/>
+						<Bus Name="VOX Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}"/>
+									<DuckingParam>
+										<Volume>-5</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>0.300000011920929</FadeOutTime>
+										<FadeCurve>FadeLog2</FadeCurve>
+										<TargetProp>BusVolume</TargetProp>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
 						<AuxBus Name="Reverb_Aux_Bus" ID="{523EAF27-FF54-4D4F-BE7A-AA4B199FADF2}">
 							<ReferenceList>
 								<Reference Name="Effect0">
