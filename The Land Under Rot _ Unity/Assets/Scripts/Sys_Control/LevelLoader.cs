@@ -13,7 +13,7 @@ public class LevelLoader : MonoBehaviour
 
     private Scene loadingScene;
     private Scene sceneToLoad;
-    
+
     private bool triggered = false;
 
     private float deltaTimeLoading = 0f;
@@ -115,7 +115,7 @@ public class LevelLoader : MonoBehaviour
             //yield return null;
         }
 
-        sceneToLoad = SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex((int)sceneToLoadIndex).name); 
+        sceneToLoad = SceneManager.GetSceneByName(SceneManager.GetSceneByBuildIndex((int)sceneToLoadIndex).name);
         SceneManager.SetActiveScene(sceneToLoad);
 
         // Protect assets from deletion
@@ -125,9 +125,17 @@ public class LevelLoader : MonoBehaviour
         foundLevelLoaders = FindObjectsOfType<LevelLoader>();
         foreach (LevelLoader loader in foundLevelLoaders)
         {
+            if (loader == null)
+                continue; // incase the previous scene has reminates
+
             if (loader.sceneToLoadIndex == this.currentSceneIndex && loader.currentSceneIndex == this.sceneToLoadIndex)
             {
-                GameController.Instance.playerController.transform.parent.position = loader.returnSpawn.position;
+                if (loader.returnSpawn != null)
+                {
+                    GameController.Instance.playerController.transform.parent.position = loader.returnSpawn.position;
+                }
+
+                break;
             }
         }
 
@@ -164,5 +172,4 @@ public enum BuildOrder
     Understump,
     BossLevel,
     LoadingLevel
-
 }
