@@ -25,27 +25,27 @@ public class AmbientSFX : MonoBehaviour
             case AmbienceType.NONE:
                 Debug.Log("Shush");
                 break;
-            //case AmbienceType.BUGS:
-            //    AudioManager.Instance.Play_Ambient_Bugs();
-            //    break;
-            //case AmbienceType.BUGS_AROUND_LIGHT:
-            //    AudioManager.Instance.Play_Ambient_BugsAroundLight();
-            //    break;
-            //case AmbienceType.WATER:
-            //    AudioManager.Instance.Play_Ambience_Water();
-            //    break;
-            //case AmbienceType.RUNNING_WATER:
-            //    AudioManager.Instance.Play_Ambient_RunningWater();
-            //    break;
-            //case AmbienceType.BIRDS_CHIRPING:
-            //    AudioManager.Instance.Play_Ambient_BirdsChirping();
-            //    break;
-            //case AmbienceType.FIRE_FLICKERING:
-            //    AudioManager.Instance.Play_Ambient_FireFlickering();
-            //    break;
-            //case AmbienceType.GLOWING_PLANT:
-            //    AudioManager.Instance.Play_BioluminescentPlantLighting();
-            //    break;
+            case AmbienceType.BUGS:
+                AudioManager.Instance.Play_Ambient_Bugs();
+                break;
+            case AmbienceType.BUGS_AROUND_LIGHT:
+                AudioManager.Instance.Play_Ambient_BugsAroundLight();
+                break;
+            case AmbienceType.WATER:
+                AudioManager.Instance.Play_Ambience_Water();
+                break;
+            case AmbienceType.RUNNING_WATER:
+                AudioManager.Instance.Play_Ambient_RunningWater();
+                break;
+            case AmbienceType.BIRDS_CHIRPING:
+                AudioManager.Instance.Play_Ambient_BirdsChirping();
+                break;
+            case AmbienceType.FIRE_FLICKERING:
+                AudioManager.Instance.Play_Ambient_FireFlickering();
+                break;
+            case AmbienceType.GLOWING_PLANT:
+                AudioManager.Instance.Play_BioluminescentPlantLighting();
+                break;
             //case AmbienceType.PIPE_STEAM:
             //    AudioManager.Instance.Play_PipesSteam();
             //    break;

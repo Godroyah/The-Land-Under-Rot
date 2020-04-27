@@ -9,6 +9,71 @@
 							<ObjectRef Name="System" ID="{A687859F-1B9B-49BC-84EA-A6286DF92569}" WorkUnitID="{BAEC3044-957D-44C3-8478-6AF001F2D420}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="SFX Audio Bus" ID="{5A41D550-D2AA-4C0B-A3D7-C8691A2A1A25}"/>
+						<Bus Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+						</Bus>
+						<Bus Name="Light Ducking Audio Bus" ID="{4D5A29DA-88EA-4B02-9342-E4186D5E2D7C}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}"/>
+									<DuckingParam>
+										<Volume>-5</Volume>
+										<FadeInTime>0.5</FadeInTime>
+										<FadeOutTime>0.300000011920929</FadeOutTime>
+										<FadeCurve>FadeLog2</FadeCurve>
+										<TargetProp>BusVolume</TargetProp>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<AuxBus Name="Reverb_Aux_Bus" ID="{523EAF27-FF54-4D4F-BE7A-AA4B199FADF2}">
+							<ReferenceList>
+								<Reference Name="Effect0">
+									<Custom CreatedFrom="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}">
+										<Effect Name="Room_Medium_(Custom)" ID="{01BE37FA-88C4-41E3-9709-82B22BEC163E}" ShortID="672887886" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<PropertyList>
+												<Property Name="DecayTime" Type="Real32" Value="1.1"/>
+												<Property Name="Density" Type="Real32" Value="100"/>
+												<Property Name="Diffusion" Type="Real32" Value="46"/>
+												<Property Name="ERLevel" Type="Real32" Value="-23"/>
+												<Property Name="Filter1Freq" Type="Real32" Value="590"/>
+												<Property Name="Filter3Freq" Type="Real32" Value="8440"/>
+												<Property Name="Filter3Gain" Type="Real32" Value="-4.5"/>
+												<Property Name="HFDamping" Type="Real32" Value="2.7"/>
+												<Property Name="Quality" Type="int32" Value="12"/>
+												<Property Name="ReverbLevel" Type="Real32" Value="-22"/>
+												<Property Name="RoomShape" Type="Real32" Value="55"/>
+												<Property Name="RoomSize" Type="Real32" Value="15"/>
+												<Property Name="StereoWidth" Type="Real32" Value="115"/>
+											</PropertyList>
+										</Effect>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
+						<Bus Name="Heavy Ducking Audio Bus" ID="{29E54792-7D42-4737-8769-EE0B0666E8A6}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}"/>
+									<DuckingParam>
+										<Volume>-96</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>0.5</FadeOutTime>
+										<FadeCurve>FadeLog1</FadeCurve>
+										<TargetProp>BusVolume</TargetProp>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

@@ -25,6 +25,7 @@ public class Oldman : Interactable
 
         if (GameController.Instance != null)
         {
+            AudioManager.Instance.Play_Rootford();
             // Select which dialogue to 'say'
             if (!GameController.Instance.tutorial_bus_Called)
             {
