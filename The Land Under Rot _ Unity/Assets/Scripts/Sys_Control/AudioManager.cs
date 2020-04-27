@@ -229,10 +229,6 @@ public class AudioManager : MonoBehaviour
 #endregion
 
     #region NPC
-    public void Play_Rootford()
-    {
-
-    }
 
     public void Play_Fenway()
     {
