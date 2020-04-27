@@ -111,6 +111,8 @@ public class GameController : MonoBehaviour
     public delegate void UpdateCameras(Camera newCamera);
     public UpdateCameras updateCameras;
 
+    public int sceneIndex;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -182,6 +184,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
         isDead = false;
         //oldHealth = playerHealth;
         if(playerController != null)
