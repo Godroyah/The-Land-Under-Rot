@@ -271,7 +271,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Mulchant()
     {
-
+        AkSoundEngine.PostEvent("Mulchant", gameObject);
     }
 
     public void Play_Buddy()
@@ -326,7 +326,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Mulch_Smash()
     {
-        AkSoundEngine.PostEvent("stg_growth_function", gameObject);
+        AkSoundEngine.PostEvent("stg_obtain_mulch", gameObject);
     }
 
     public void Play_Acorn_Pickup()
