@@ -96,8 +96,8 @@ public class AngelTree_NewAreas_Event : Event_Type
 
         yield return new WaitForSeconds(fruitEntranceDelay);
 
-        AudioManager.Instance.Play_ClearingBranches();
-        AudioManager.Instance.Play_MassiveRootsMoving();
+        //AudioManager.Instance.Play_ClearingBranches();
+        //AudioManager.Instance.Play_MassiveRootsMoving();
 
         while (dropSpeedFruit < totalSpeed)
         {
