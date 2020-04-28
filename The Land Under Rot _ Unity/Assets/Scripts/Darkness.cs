@@ -63,7 +63,7 @@ public class Darkness : MonoBehaviour
         for (int i = 0; i < steps; i++)
         {
             //GameObject temp = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            GameObject temp = Instantiate(baseModel);
+            GameObject temp = Instantiate(baseModel, this.transform);
 
             Vector3 maintainDirection = Vector3.zero;
             switch (direction)
@@ -96,10 +96,16 @@ public class Darkness : MonoBehaviour
                     break;
             }
 
-            temp.transform.localScale = this.transform.localScale - (maintainDirection * stepDepth * (i + 1));
+            temp.transform.parent = null;
+            temp.transform.localScale = baseModel.transform.lossyScale - (maintainDirection * stepDepth * (i + 1));
+            temp.transform.parent = this.transform;
+            /*
+            temp.transform.localScale = baseModel.transform.lossyScale - (maintainDirection * stepDepth * (i + 1));
             temp.transform.parent = this.transform;
             temp.transform.localPosition = Vector3.zero;
-            temp.transform.localRotation = this.transform.localRotation;
+            //temp.transform.localRotation = this.transform.localRotation;
+            temp.transform.localRotation = baseModel.transform.localRotation;
+            */
 
             temp.GetComponent<MeshRenderer>().sharedMaterial = darkMat;
             tempHelp = temp.AddComponent<DarknessHelper>();
@@ -196,7 +202,7 @@ public class Darkness : MonoBehaviour
 
         killVolume.SetActive(false);
         //if(!0)
-        if(duration > 0)
+        if (duration > 0)
         {
             yield return new WaitForSeconds(duration);
             killVolume.SetActive(true);

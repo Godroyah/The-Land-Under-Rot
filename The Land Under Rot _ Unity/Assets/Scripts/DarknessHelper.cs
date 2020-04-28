@@ -8,6 +8,7 @@ public class DarknessHelper : MonoBehaviour
     private int darknessLevel;
     private float alphaLevel;
     private MeshRenderer meshRenderer;
+    private Collider collider;
 
     public float transitionDuration = 1;
     private Coroutine newTransition;
@@ -20,6 +21,7 @@ public class DarknessHelper : MonoBehaviour
     {
         darknessLevel = level;
         meshRenderer = GetComponent<MeshRenderer>();
+        collider = GetComponent<Collider>();
         alphaLevel = meshRenderer.material.GetColor("_BaseColor").a;
     }
 
@@ -88,12 +90,14 @@ public class DarknessHelper : MonoBehaviour
         }
         currentIllumination = newIllumination;
 
+        collider.enabled = false;
         AdjustAlpha(0);
 
         if(duration > 0)
         {
             yield return new WaitForSeconds(duration);
             AdjustAlpha(alphaLevel);
+            collider.enabled = true;
         }
     }
 }
