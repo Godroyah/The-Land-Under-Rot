@@ -16,6 +16,9 @@ public class Yellow_GazeGrowth : GazeGrowth
 
     private float timerValue = 0f;
 
+    [Range(1.0f, 10.0f)]
+    public float illuminateDelay;
+
     private void Start()
     {
         thisDetector = GetComponent<SphereCollider>();
@@ -37,6 +40,22 @@ public class Yellow_GazeGrowth : GazeGrowth
             Debug.LogWarning("Please raise the duration about 0!");
         }
 
+        StartCoroutine(DelayThenStart());
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Headbutt"))
+        {
+            Interact();
+        }
+    }
+
+    IEnumerator DelayThenStart()
+    {
+        yield return new WaitForSeconds(illuminateDelay);
+
         StartCoroutine(Timer(duration));
         if (overrideDuration)
         {
@@ -51,15 +70,6 @@ public class Yellow_GazeGrowth : GazeGrowth
             {
                 darkVolumes[i].Illuminate();
             }
-        }
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Headbutt"))
-        {
-            Interact();
         }
     }
 
