@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Worm_RemovalEvent : Event_Type
 {
+    public Animator thankYouPane;
+    public Animator thankYouText;
+
     public GameObject[] worms;
 
     public Vector3[] startPos;
@@ -66,5 +70,15 @@ public class Worm_RemovalEvent : Event_Type
                 yield return null;
             }
         }
+
+        //Remove for next build
+
+        //fadeAnim.SetTrigger("FadeOut");
+        thankYouPane.SetTrigger("ThankYou");
+        thankYouText.SetTrigger("ThankYou");
+
+        yield return new WaitForSeconds(3.0f);
+
+        SceneManager.LoadScene(0);
     }
 }
