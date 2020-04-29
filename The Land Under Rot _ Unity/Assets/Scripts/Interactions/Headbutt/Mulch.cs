@@ -62,7 +62,7 @@ public class Mulch : Interactable
     {
         base.Interact();
 
-        if(!isTutorial)
+        if(!isTutorial && gameController.mulchant_GivenBottles)
         {
             switch(mulchType)
             {
@@ -89,10 +89,12 @@ public class Mulch : Interactable
                     break;
             }
             if(!depletedMulch.enabled)
-            mulchParticles.Play();
-            ActivateMessage();
-            depletedMulch.enabled = true;
-            fullMulch.enabled = false;
+            {
+                mulchParticles.Play();
+                ActivateMessage();
+                fullMulch.enabled = false;
+                depletedMulch.enabled = true;
+            }
         }
 
         #region OldFunctionality
