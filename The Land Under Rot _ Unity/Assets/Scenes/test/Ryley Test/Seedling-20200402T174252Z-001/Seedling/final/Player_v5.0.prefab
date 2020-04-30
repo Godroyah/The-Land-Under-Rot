@@ -138,7 +138,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 5.35, z: -14.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8100536814549153853}
   m_Father: {fileID: 15400759175299041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2370,6 +2371,7 @@ GameObject:
   - component: {fileID: 2286388452959932833}
   - component: {fileID: 7805327455007083030}
   - component: {fileID: 898047028331034401}
+  - component: {fileID: 6042323613309230471}
   m_Layer: 8
   m_Name: Dialogue_Cam
   m_TagString: Untagged
@@ -2448,6 +2450,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 15400758889286122}
   restPosition: {fileID: 15400759151362625}
+--- !u!114 &6042323613309230471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995290750337571919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 2286388452959932833}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &8388538388201028582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2613,15 +2675,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0acda3b0c548a448100d3f0dccaa3d, type: 3}
---- !u!4 &7726092912522846208 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4728447655399360069, guid: 6c0acda3b0c548a448100d3f0dccaa3d,
-    type: 3}
-  m_PrefabInstance: {fileID: 3073225738729416261}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &1897739769142474913 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3526435903517204196, guid: 6c0acda3b0c548a448100d3f0dccaa3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3073225738729416261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7726092912522846208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4728447655399360069, guid: 6c0acda3b0c548a448100d3f0dccaa3d,
     type: 3}
   m_PrefabInstance: {fileID: 3073225738729416261}
   m_PrefabAsset: {fileID: 0}
