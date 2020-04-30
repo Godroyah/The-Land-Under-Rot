@@ -6,7 +6,14 @@ public class CamControl : MonoBehaviour
 {
     public Camera myCamera;
     public GameObject target;
-    //public GameObject dialogueTarget;
+
+    public GameObject cameraBlinder;
+    private MeshRenderer camMeshRenderer;
+    private Coroutine newTransition;
+    private Coroutine currentTransition;
+    [Tooltip("This sets how long it takes for the blinder to adjust.")]
+    public float transitionDuration = 1;
+
     private Transform rotationTarget;
     GameController gameController;
 
@@ -42,10 +49,13 @@ public class CamControl : MonoBehaviour
             myCamera = gameController.mainCamera;
         }
 
-
         yaw = transform.eulerAngles.y;
         pitch = transform.eulerAngles.x;
         currentRotation = transform.eulerAngles;
+
+        // Blinder stuffs
+        camMeshRenderer = cameraBlinder.GetComponent<MeshRenderer>();
+        camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, 0));
     }
 
     // Update is called once per frame
@@ -122,4 +132,40 @@ public class CamControl : MonoBehaviour
     {
         rotationTarget = target;
     }
+
+    #region Camera Blinder
+    IEnumerator LerpAlpha(float percent)
+    {
+        if (currentTransition != null)
+        {
+            StopCoroutine(currentTransition);
+        }
+        currentTransition = newTransition;
+
+        float time = 0;
+        float originalValue = camMeshRenderer.material.GetColor("_BaseColor").a;
+
+        while (time <= transitionDuration)
+        {
+            yield return new WaitForEndOfFrame();
+            float newAlpha = Mathf.Lerp(originalValue, percent, time / transitionDuration);
+
+            camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, newAlpha));
+            time += Time.deltaTime;
+        }
+
+        camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, percent));
+    }
+
+    public void AdjustBlinder(float percent)
+    {
+        newTransition = StartCoroutine(LerpAlpha(percent));
+    }
+
+    public void RemoveBlinder()
+    {
+        Debug.Log("Removing Blinder");
+        AdjustBlinder(0);
+    }
+    #endregion
 }

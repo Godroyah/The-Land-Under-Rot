@@ -38,9 +38,9 @@ public class DarknessHelper : MonoBehaviour
     public void RemoveDarkness()
     {
         Debug.Log("leaving darkness: " + darknessLevel);
-        if (darknessLevel == 0)
+        if (darknessLevel == 0 || parentDarkness.GetCurrentLevel() == -1)
             parentDarkness.RemoveBlinder();
-        else
+        else if (parentDarkness.GetCurrentLevel() < darknessLevel)
             parentDarkness.AdjustBlinder(darknessLevel - 1);
         //newTransition = StartCoroutine(LerpAlpha(alphaLevel));
         AdjustAlpha(alphaLevel);
@@ -64,8 +64,6 @@ public class DarknessHelper : MonoBehaviour
             StopCoroutine(currentTransition);
         }
         currentTransition = newTransition;
-
-        Debug.Log("Lerping alpha");
 
         float time = 0;
         float originalValue = meshRenderer.material.GetColor("_BaseColor").a;
@@ -93,7 +91,7 @@ public class DarknessHelper : MonoBehaviour
         collider.enabled = false;
         AdjustAlpha(0);
 
-        if(duration > 0)
+        if (duration > 0)
         {
             yield return new WaitForSeconds(duration);
             AdjustAlpha(alphaLevel);

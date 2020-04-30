@@ -571,6 +571,8 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+        Debug.Log("1");
+        isDead = true;
         if (fadePane != null)
             StartCoroutine("FadeOut");
         else
@@ -584,7 +586,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator FadeOut()
     {
         //move isDead out of here so the FadePane's applications can be expanded
-        isDead = true;
         camControl.lockPosition = true;
         HorizontalInput = 0;
         VerticalInput = 0;
@@ -603,12 +604,13 @@ public class PlayerController : MonoBehaviour
             Rb.velocity = Vector3.zero;
             //health = 3;
 
-
+            Debug.Log("2");
             isDead = false;
             fadeAnim.ResetTrigger("FadeOut");
             fadeAnim.SetTrigger("FadeIn");
             fadeDone.fadeOver = false;
             camControl.lockPosition = false;
+            camControl.RemoveBlinder();
         }
 
     }
@@ -627,7 +629,7 @@ public class PlayerController : MonoBehaviour
                 trigger.Interact();
             }
         }
-        else if (other.CompareTag("DarknessHelper"))
+        else if (other.CompareTag("DarknessHelper") && !isDead)
         {
             DarknessHelper helper = other.GetComponent<DarknessHelper>();
             helper.ApplyDarkness();
@@ -636,7 +638,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("DarknessHelper"))
+        if (other.CompareTag("DarknessHelper") && !isDead)
         {
             DarknessHelper helper = other.GetComponent<DarknessHelper>();
             helper.RemoveDarkness();
