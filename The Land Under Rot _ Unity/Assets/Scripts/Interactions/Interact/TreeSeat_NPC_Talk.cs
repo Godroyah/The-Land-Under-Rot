@@ -11,6 +11,9 @@ public class TreeSeat_NPC_Talk : Interactable
 {
     public TreeSeat_NPC treeSeatNPC;
 
+    public Animator pedaltonAnim;
+    private DialogueCam dialogueCam;
+
     public bool isIntroduced;
     public bool mulchantMet;
     public bool angelTreeAwake;
@@ -20,6 +23,10 @@ public class TreeSeat_NPC_Talk : Interactable
     void Start()
     {
         billboard_UI.SetActive(false);
+        if (treeSeatNPC == TreeSeat_NPC.PEDALTON)
+        {
+            dialogueCam = GameObject.Find("Dialogue_Cam").GetComponent<DialogueCam>();
+        }
     }
 
     public override void Interact()
@@ -197,6 +204,14 @@ public class TreeSeat_NPC_Talk : Interactable
         AudioManager.Instance.Play_Pedalton();
 
         dialogueManager.StartDialogue(Reply.Pedalton);
+
+        yield return new WaitUntil(() => dialogueCam.thisCamera.enabled == false);
+        pedaltonAnim.SetTrigger("pedalton_up_trigger");
+
+        yield return new WaitUntil(() => dialogueCam.thisCamera.enabled == false);
+        //yield return new WaitUntil(() => dialogueManager.hasActiveDialogue = false);
+        Debug.Log("We done here?");
+        pedaltonAnim.SetTrigger("pedalton_down_trigger");
 
        yield return null;
     }
