@@ -133,6 +133,7 @@ public class LevelLoader : MonoBehaviour
                 if (loader.returnSpawn != null)
                 {
                     GameController.Instance.playerController.transform.parent.position = loader.returnSpawn.position;
+                    GameController.Instance.playerController.transform.parent.rotation = loader.returnSpawn.rotation;
                 }
 
                 break;
