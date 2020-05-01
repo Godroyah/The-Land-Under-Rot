@@ -26,6 +26,7 @@ namespace AK
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID MULCHANT = 2403460855U;
+        static const AkUniqueID RETURN_TREE_SEAT = 1526298514U;
         static const AkUniqueID ROOTFORD = 1989498786U;
         static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID START_GAME = 1114964412U;
