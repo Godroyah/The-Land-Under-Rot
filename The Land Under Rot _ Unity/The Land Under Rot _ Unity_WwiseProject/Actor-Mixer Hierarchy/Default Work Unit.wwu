@@ -1217,6 +1217,147 @@
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</ActorMixer>
+				<ActorMixer Name="Ambiences" ID="{5A4B393A-A02A-408E-B466-B4E16DE32B23}" ShortID="70296302">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-25</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="lur_ambience_fruitful_forest" ID="{FC0091B4-7186-41B2-A586-F36A3C2D3469}" ShortID="537132507">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR_ambience_fruitful_forest" ID="{1C66A5E3-4AFB-495A-B9AA-F360759D233E}" ShortID="923451777">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.337508239947283"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="141.473"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>LUR_ambience_fruitful_forest.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR_ambience_fruitful_forest" ID="{1C66A5E3-4AFB-495A-B9AA-F360759D233E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_ambience_tree_seat" ID="{2167638C-49E7-49E6-B5E9-79FAC5A65947}" ShortID="993778896">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR_ambience_tree_seat" ID="{F266B133-B685-4280-B198-6F583C820AEF}" ShortID="142097146">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="3.51698630136985"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>LUR_ambience_tree_seat.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR_ambience_tree_seat" ID="{F266B133-B685-4280-B198-6F583C820AEF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_ambience_tutorial" ID="{C49AA5E7-7C99-4EDC-B6F8-91C53216D3FE}" ShortID="631571513">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR_ambience_tutorial" ID="{7DFA90CD-BFE5-4E5A-8942-1566AA53C151}" ShortID="746214002">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.38298872716895"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>LUR_ambience_tutorial.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR_ambience_tutorial" ID="{7DFA90CD-BFE5-4E5A-8942-1566AA53C151}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_ambience_understump" ID="{46A3C6AE-624C-4C51-854D-C1BAC5869665}" ShortID="84426278">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LUR_ambience_understump" ID="{54D815A2-A848-48BC-8E40-F76BB5B0B289}" ShortID="155007829">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.35371689497717"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>LUR_ambience_understump.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LUR_ambience_understump" ID="{54D815A2-A848-48BC-8E40-F76BB5B0B289}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_ambience_stinkhorn" ID="{6FB919A6-BE8C-494D-9397-CBDFC513D901}" ShortID="471875956">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lur_ambience_stinkhorn" ID="{7A8F1A73-BADD-4B4D-BCFB-824520F4183B}" ShortID="690670143">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.41669281028166"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="77.76737"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>lur_ambience_stinkhorn.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lur_ambience_stinkhorn" ID="{7A8F1A73-BADD-4B4D-BCFB-824520F4183B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
