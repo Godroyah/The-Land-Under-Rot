@@ -144,6 +144,8 @@ public class LevelLoader : MonoBehaviour
 
         #endregion
 
+        GameController.Instance.UpdateLevel();
+
         yield return new WaitWhile(() => deltaTimeLoading <= minDeltaTimeLoading);
 
         // Unloading the LoadingScene

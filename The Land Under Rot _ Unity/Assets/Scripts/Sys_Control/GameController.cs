@@ -111,6 +111,9 @@ public class GameController : MonoBehaviour
     public delegate void UpdateCameras(Camera newCamera);
     public UpdateCameras updateCameras;
 
+    public delegate void OnLevelLoaded();
+    public OnLevelLoaded onLevelLoaded;
+
     public int sceneIndex;
 
     private void Awake()
@@ -135,50 +138,10 @@ public class GameController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        //if (playerController == null)
-        //{
-        //    playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-        //    if (playerController == null)
-        //    {
-        //        Debug.LogWarning("Cannot find Player!");
-        //    }
-        //    else
-        //        playerController.gameController = this;
-        //}
-
-
-        //if (player)
-        //{
-        //    playerController = player.GetComponent<PlayerController>();
-        //    if (playerController == null)
-        //    {
-        //        Debug.LogWarning("Player missing playercontroller!");
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.LogWarning("Can't find player!");
-        //}
-
-        //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-
         //playerController.acorns = playerAcorns;
 
         if (acornCount != null)
             acornCount.text = playerAcorns.ToString();
-        
-
-        //if (mulchCount != null)
-        //    mulchCount.text = playerMulch.ToString();
-
-        //playerController.currentSpawn = playerRespawn;
-
-        //GameObject temp = GameObject.Find("@GameController");
-        //if (!temp)
-        //    DontDestroyOnLoad(gameObject);
-        //else
-        //    Destroy(gameObject);
-
     }
 
     // Start is called before the first frame update
@@ -186,7 +149,6 @@ public class GameController : MonoBehaviour
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         isDead = false;
-        //oldHealth = playerHealth;
         if(playerController != null)
         {
             Invoke("SetAcorns", 1);
@@ -209,6 +171,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region MenuTest
         //if (testing)
         //{
         //    if (mainMenu.activeInHierarchy == true)
@@ -220,6 +183,7 @@ public class GameController : MonoBehaviour
         //        mmenu_Active = false;
         //    }
         //}
+        #endregion
         if (playerController != null)
         {
             
@@ -313,36 +277,6 @@ public class GameController : MonoBehaviour
         //}
     }
 
-    //public void HealthCount()
-    //{
-    //    playerHealth = playerController.health;
-    //    if (oldHealth != playerHealth)
-    //    {
-    //        for (int i = 0; i < healthCounter.Length; i++)
-    //        {
-    //            if (i + 1 > playerHealth)
-    //            {
-    //                healthCounter[i].enabled = false;
-    //            }
-    //            else if (i + 1 <= playerHealth)
-    //            {
-    //                healthCounter[i].enabled = true;
-    //            }
-    //        }
-    //        if (playerHealth < 1)
-    //        {
-    //            isDead = true;
-    //        }
-    //        oldHealth = playerHealth;
-    //    }
-    //}
-
-    //public void Reset()
-    //{
-    //    playerHealth = 3;
-    //    isDead = false;
-    //}
-
     public void UpdateMainCamera(Camera newCamera)
     {
         updateCameras(newCamera);
@@ -381,5 +315,11 @@ public class GameController : MonoBehaviour
         tutorial_HasTalked_Rootford_Intro1 = data.tutorial_HasTalked_Rootford_Intro1;
         tutorial_HasTalked_Rootford_Intro2 = data.tutorial_HasTalked_Rootford_Intro2;
         tutorial_HasTalked_BusDriver_1 = data.tutorial_HasTalked_BusDriver_1;
+    }
+
+    public void UpdateLevel()
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        onLevelLoaded();
     }
 }
