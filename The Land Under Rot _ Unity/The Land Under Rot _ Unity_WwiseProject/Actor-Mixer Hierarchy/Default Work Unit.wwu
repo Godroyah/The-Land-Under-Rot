@@ -58,6 +58,10 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="lur_sfx_CHAR_walking_wood" ID="{59CD3CCE-30AE-415B-B61B-78DD9874A5E6}" ShortID="319962215">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>lur_sfx_CHAR_walking_wood.wav</AudioFile>
 								</AudioFileSource>
@@ -96,6 +100,12 @@
 						<Sound Name="lur_sfx_CHAR_falling" ID="{CA741931-42BB-4627-9D0D-179C0138D935}" ShortID="1030998638">
 							<PropertyList>
 								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>44</Value>
+									</ValueList>
+								</Property>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
 										<Value>44</Value>
 									</ValueList>

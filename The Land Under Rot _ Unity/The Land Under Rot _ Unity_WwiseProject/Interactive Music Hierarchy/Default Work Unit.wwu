@@ -75,7 +75,7 @@
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-30</Value>
+														<Value>-26</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -106,11 +106,70 @@
 													<ClipList>
 														<MusicClip Name="LUR_ambience_tutorial" ID="{90085869-A942-47B7-B191-912AC67095E9}">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="100958.177083333"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="98169.0434254934"/>
 																<Property Name="FadeInMode" Type="int16" Value="0"/>
 																<Property Name="FadeOutMode" Type="int16" Value="0"/>
 															</PropertyList>
 															<AudioSourceRef Name="LUR_ambience_tutorial" ID="{28E52B51-5FAF-46CC-BB19-31AA81A0DF63}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{420E0D4E-6558-4A34-A734-AC1B671E10B5}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>98.16904</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{55895AEC-240B-447C-A5AA-00D18E9E3224}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>98.16904</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{5A1C2AF7-B25D-4D77-B5D0-37C2553CF943}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>98.16904</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
 														</MusicClip>
 													</ClipList>
 												</MusicTrackSequence>
@@ -122,7 +181,7 @@
 										<MusicCue Name="Exit Cue" ID="{EF175826-A806-4EA4-BAF6-B40817FC65C3}">
 											<PropertyList>
 												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="98048.7755102041"/>
+												<Property Name="TimeMs" Type="Real64" Value="96654.2086812844"/>
 											</PropertyList>
 										</MusicCue>
 									</CueList>
@@ -275,7 +334,7 @@
 							<ChildrenList>
 								<MusicSegment Name="LUR Tree Seat Track" ID="{1E4AA7A8-0E4D-4B29-B51E-464C43241A18}" ShortID="726175917">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="205392"/>
+										<Property Name="EndPosition" Type="Real64" Value="223074.784977449"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -356,11 +415,70 @@
 													<ClipList>
 														<MusicClip Name="LUR_ambience_tree_seat" ID="{8198907A-9F76-48CB-AF56-22688445083F}">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="205392"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="110688.155346165"/>
 																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="1211.04660682654"/>
 															</PropertyList>
 															<AudioSourceRef Name="LUR_ambience_tree_seat" ID="{E772A185-5FA6-46DB-A463-058B8F724098}"/>
+															<PropertyCurveList>
+																<PropertyCurve PropertyName="Highpass">
+																	<Curve Name="" ID="{639FE0BD-E187-41D5-B207-F5B1DBA516A4}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>110.68816</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Lowpass">
+																	<Curve Name="" ID="{DC414F83-B1E7-4255-A973-104FBC0618EA}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>110.68816</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+																<PropertyCurve PropertyName="Volume">
+																	<Curve Name="" ID="{8A3C4A47-376E-49D9-8FC9-A8696D9D80DA}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>0</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>110.68816</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</PropertyCurve>
+															</PropertyCurveList>
 														</MusicClip>
 													</ClipList>
 												</MusicTrackSequence>
@@ -372,7 +490,7 @@
 										<MusicCue Name="Exit Cue" ID="{FF24352C-7A54-47AA-B3B3-6871840CE53E}">
 											<PropertyList>
 												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="110689.659863946"/>
+												<Property Name="TimeMs" Type="Real64" Value="109661.863757587"/>
 											</PropertyList>
 										</MusicCue>
 									</CueList>
@@ -393,6 +511,9 @@
 							</TransitionList>
 							<Playlist>
 								<MusicPlaylistItem Name="" ID="{A8584D64-364D-40AB-A632-B871053F125B}" ShortID="1005215081">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
 									<ChildrenList>
 										<MusicPlaylistItem Name="" ID="{717D1C34-A556-44AE-B901-4BB12C524C39}" ShortID="96795103">
 											<PropertyList>
@@ -423,7 +544,7 @@
 							<ChildrenList>
 								<MusicSegment Name="LUR Stinkhorn Stop" ID="{07DAF596-D881-4DF9-AF5B-802EDC3CF3C5}" ShortID="583392142">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="131777.777777778"/>
+										<Property Name="EndPosition" Type="Real64" Value="262897.8242089"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -460,7 +581,7 @@
 														<MusicClip Name="LUR Stinkhorn Stop" ID="{CDAF3D63-C1F1-42A8-B522-80BCA41D4753}">
 															<PropertyList>
 																<Property Name="EndTrimOffset" Type="Real64" Value="131777.777777778"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="432.530999270606"/>
 																<Property Name="FadeOutMode" Type="int16" Value="0"/>
 															</PropertyList>
 															<AudioSourceRef Name="LUR Stinkhorn Stop" ID="{562BC882-FFAD-4F84-BE30-E4BC0FDDC325}"/>
@@ -475,7 +596,7 @@
 										<MusicCue Name="Exit Cue" ID="{623637DE-28C3-4E7D-8117-EC9E63946916}">
 											<PropertyList>
 												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="131777.777777778"/>
+												<Property Name="TimeMs" Type="Real64" Value="130624.361779723"/>
 											</PropertyList>
 										</MusicCue>
 									</CueList>
@@ -522,7 +643,7 @@
 							<ChildrenList>
 								<MusicSegment Name="LUR Understump Track" ID="{88304688-1BEA-4BF8-AB60-F04BE7A960A5}" ShortID="283966541">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="227937.613162844"/>
+										<Property Name="EndPosition" Type="Real64" Value="255166.948996958"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -643,7 +764,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>112.938666666667</XPos>
-																				<YPos>-0</YPos>
+																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -712,7 +833,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>14.20922</XPos>
-																				<YPos>-0</YPos>
+																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -749,7 +870,7 @@
 										<MusicCue Name="Exit Cue" ID="{472E3C33-85F8-4D3C-B1CD-2AF41B0910DC}">
 											<PropertyList>
 												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="127096.780045351"/>
+												<Property Name="TimeMs" Type="Real64" Value="125706.224464986"/>
 											</PropertyList>
 										</MusicCue>
 									</CueList>
@@ -836,8 +957,7 @@
 														<MusicClip Name="LUR Fruitful Forest" ID="{9343E454-6C5A-48C8-9677-095E26F1594F}">
 															<PropertyList>
 																<Property Name="EndTrimOffset" Type="Real64" Value="114827.596371882"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="FadeInDuration" Type="Real64" Value="303.806303789794"/>
 															</PropertyList>
 															<AudioSourceRef Name="LUR Fruitful Forest" ID="{E20D336D-B3D8-40C3-B86B-7C922440D21C}"/>
 														</MusicClip>
@@ -880,7 +1000,7 @@
 													<ClipList>
 														<MusicClip Name="LUR_ambience_fruitful_forest" ID="{2C479B7C-3255-4030-A68B-D5A7E000E607}">
 															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="115159.679530928"/>
+																<Property Name="EndTrimOffset" Type="Real64" Value="114491.30566259"/>
 																<Property Name="FadeInMode" Type="int16" Value="0"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="1446.91419178248"/>
 															</PropertyList>
@@ -898,7 +1018,7 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>115.15968</XPos>
+																				<XPos>114.49131</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -917,7 +1037,7 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>115.15968</XPos>
+																				<XPos>114.49131</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -936,7 +1056,7 @@
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
-																				<XPos>115.15968</XPos>
+																				<XPos>114.49131</XPos>
 																				<YPos>0</YPos>
 																				<Flags>37</Flags>
 																			</Point>
@@ -955,7 +1075,7 @@
 										<MusicCue Name="Exit Cue" ID="{63A682BC-B4B8-4070-A90E-4F4676A8AD06}">
 											<PropertyList>
 												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="114827.596371882"/>
+												<Property Name="TimeMs" Type="Real64" Value="113760.668120602"/>
 											</PropertyList>
 										</MusicCue>
 									</CueList>
@@ -1054,7 +1174,6 @@
 																<Property Name="EndTrimOffset" Type="Real64" Value="58909.0929705215"/>
 																<Property Name="FadeInMode" Type="int16" Value="0"/>
 																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																<Property Name="PlayAt" Type="Real64" Value="3287.05004540109"/>
 															</PropertyList>
 															<AudioSourceRef Name="LUR Opening Cinematic" ID="{7CC97CA0-22EA-4ADF-A6CE-74329D39B65B}"/>
 														</MusicClip>
@@ -1335,14 +1454,6 @@
 						</Entry>
 						<Entry>
 							<Path>
-								<PathElementRef Name="Opening_Cinematic" ID="{FA8399B5-D7B0-4615-BA77-349D9EB51CA4}"/>
-							</Path>
-							<AudioNodeInfo>
-								<AudioNodeRef Name="Opening Cinematic" ID="{D2D84514-27B8-4986-BB28-569DC4F10AA8}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}" Platform="Linked"/>
-							</AudioNodeInfo>
-						</Entry>
-						<Entry>
-							<Path>
 								<PathElementRef Name="Tree_Seat" ID="{8D4D5187-9454-4162-9DC9-4E685E15DED9}"/>
 							</Path>
 							<AudioNodeInfo>
@@ -1371,6 +1482,14 @@
 							</Path>
 							<AudioNodeInfo>
 								<AudioNodeRef Name="Stinkhorn Stop" ID="{E15A0A35-4B1B-430B-BF14-CCB416F9823B}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Opening_Cinematic" ID="{FA8399B5-D7B0-4615-BA77-349D9EB51CA4}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Opening Cinematic" ID="{D2D84514-27B8-4986-BB28-569DC4F10AA8}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>

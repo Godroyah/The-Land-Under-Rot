@@ -316,14 +316,14 @@ public class AudioManager : MonoBehaviour
     #region Stinger
     public void Play_Cordyceps_GoingUnderground()
     {
+     //   AkSoundEngine.PostEvent("stg_growth_function", gameObject);
         AkSoundEngine.PostEvent("int_cordyceps", gameObject);
-        AkSoundEngine.PostEvent("stg_growth_function", gameObject);
-
+  
     }
 
     public void Play_ClearingBranches()
     {
-        AkSoundEngine.PostEvent("stg_growth_function", gameObject);
+   //     AkSoundEngine.PostEvent("stg_growth_function", gameObject);
     }
 
     public void Play_Mulch_Smash()
@@ -356,6 +356,11 @@ public class AudioManager : MonoBehaviour
     public void Play_UI_Click_PauseMenu()
     {
       //  AkSoundEngine.PostEvent("Click", gameObject);
+    }
+
+    public void Play_Stinger_Start_Cutscene()
+    {
+        AkSoundEngine.PostEvent("Start_Opening_Cinematic", gameObject);
     }
     #endregion
 }

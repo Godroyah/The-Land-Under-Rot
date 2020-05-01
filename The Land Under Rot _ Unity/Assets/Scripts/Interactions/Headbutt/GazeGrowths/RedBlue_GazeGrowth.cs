@@ -63,6 +63,7 @@ public class RedBlue_GazeGrowth : GazeGrowth
                     break;
                 default:
                     break;
+
             }
 
         }
@@ -128,6 +129,7 @@ public class RedBlue_GazeGrowth : GazeGrowth
         if (other.CompareTag("Headbutt"))
         {
             Interact();
+      
         }
     }
 }
