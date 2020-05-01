@@ -8,6 +8,7 @@ public class DarknessHelper : MonoBehaviour
     private int darknessLevel;
     private float alphaLevel;
     private MeshRenderer meshRenderer;
+    private Collider collider;
 
     public float transitionDuration = 1;
     private Coroutine newTransition;
@@ -20,6 +21,7 @@ public class DarknessHelper : MonoBehaviour
     {
         darknessLevel = level;
         meshRenderer = GetComponent<MeshRenderer>();
+        collider = GetComponent<Collider>();
         alphaLevel = meshRenderer.material.GetColor("_BaseColor").a;
     }
 
@@ -36,9 +38,9 @@ public class DarknessHelper : MonoBehaviour
     public void RemoveDarkness()
     {
         Debug.Log("leaving darkness: " + darknessLevel);
-        if (darknessLevel == 0)
+        if (darknessLevel == 0 || parentDarkness.GetCurrentLevel() == -1)
             parentDarkness.RemoveBlinder();
-        else
+        else if (parentDarkness.GetCurrentLevel() < darknessLevel)
             parentDarkness.AdjustBlinder(darknessLevel - 1);
         //newTransition = StartCoroutine(LerpAlpha(alphaLevel));
         AdjustAlpha(alphaLevel);
@@ -63,8 +65,6 @@ public class DarknessHelper : MonoBehaviour
         }
         currentTransition = newTransition;
 
-        Debug.Log("Lerping alpha");
-
         float time = 0;
         float originalValue = meshRenderer.material.GetColor("_BaseColor").a;
 
@@ -88,12 +88,14 @@ public class DarknessHelper : MonoBehaviour
         }
         currentIllumination = newIllumination;
 
+        collider.enabled = false;
         AdjustAlpha(0);
 
-        if(duration > 0)
+        if (duration > 0)
         {
             yield return new WaitForSeconds(duration);
             AdjustAlpha(alphaLevel);
+            collider.enabled = true;
         }
     }
 }

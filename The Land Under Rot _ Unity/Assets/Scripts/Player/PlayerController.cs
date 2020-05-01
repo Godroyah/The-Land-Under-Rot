@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
     public List<Interactable> headbuttables = new List<Interactable>();
     #endregion
 
-
+    GameController gameController;
     public GameObject fadePane;
     private Fade_Done fadeDone;
     private Animator fadeAnim;
@@ -193,7 +193,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameController.Instance.playerController = this;
+        gameController = GameController.Instance;
+        gameController.playerController = this;
 
         JustHeadButted = true;
         // TODO: Find Spawn Point
@@ -509,7 +510,29 @@ public class PlayerController : MonoBehaviour
             //movement = Vector3.down;
         }
         else
+        {
             movement = new Vector3(HorizontalInput, 0, VerticalInput);
+            
+            switch(gameController.sceneIndex)
+            {
+                case 2:
+                    AudioManager.Instance.Play_Walk_Mud();
+                    break;
+                case 3:
+                    AudioManager.Instance.Play_Walk_Dirt();
+                    break;
+                case 4:
+                    AudioManager.Instance.Play_Walk_Grass();
+                    break;
+                case 5:
+                    AudioManager.Instance.Play_Walk_Wood();
+                    break;
+                case 6:
+                    AudioManager.Instance.Play_Walk_Stone();
+                    break;
+            }
+        }
+           
 
         Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist).normalized;
 
@@ -571,6 +594,8 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+        Debug.Log("1");
+        isDead = true;
         if (fadePane != null)
             StartCoroutine("FadeOut");
         else
@@ -584,7 +609,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator FadeOut()
     {
         //move isDead out of here so the FadePane's applications can be expanded
-        isDead = true;
         camControl.lockPosition = true;
         HorizontalInput = 0;
         VerticalInput = 0;
@@ -603,12 +627,13 @@ public class PlayerController : MonoBehaviour
             Rb.velocity = Vector3.zero;
             //health = 3;
 
-
+            Debug.Log("2");
             isDead = false;
             fadeAnim.ResetTrigger("FadeOut");
             fadeAnim.SetTrigger("FadeIn");
             fadeDone.fadeOver = false;
             camControl.lockPosition = false;
+            camControl.RemoveBlinder();
         }
 
     }
@@ -627,7 +652,7 @@ public class PlayerController : MonoBehaviour
                 trigger.Interact();
             }
         }
-        else if (other.CompareTag("DarknessHelper"))
+        else if (other.CompareTag("DarknessHelper") && !isDead)
         {
             DarknessHelper helper = other.GetComponent<DarknessHelper>();
             helper.ApplyDarkness();
@@ -636,7 +661,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("DarknessHelper"))
+        if (other.CompareTag("DarknessHelper") && !isDead)
         {
             DarknessHelper helper = other.GetComponent<DarknessHelper>();
             helper.RemoveDarkness();

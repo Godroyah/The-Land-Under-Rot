@@ -18,6 +18,8 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
     public bool isCordyReached;
 
+    private bool sounded;
+
     [SerializeField]
     private bool waitReturn;
 
@@ -49,6 +51,7 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
             base.Interact();
 
+            AudioManager.Instance.Play_EyeBoing();
             animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
             animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
 
@@ -78,7 +81,12 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
         yield return new WaitForSeconds(cordyDelay);
 
-        AudioManager.Instance.Play_Cordyceps_GoingUnderground();
+        if(!sounded)
+        {
+            AudioManager.Instance.Play_Cordyceps_GoingUnderground();
+            sounded = true;
+        }
+        
 
         while (rateOfChange < 1.0f)
         {

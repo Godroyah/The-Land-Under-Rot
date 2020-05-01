@@ -7,6 +7,7 @@ public class Darkness : MonoBehaviour
 {
     MeshRenderer mRenderer;
     Material darkMat;
+    private CamControl camController;
 
     private GameObject baseModel;
 
@@ -16,14 +17,12 @@ public class Darkness : MonoBehaviour
     public float stepDepth = 2f;
     [Tooltip("This is used to 'maintain' the specific axis of the additional layers and not create the illusion of depth.")]
     public Maintain direction = Maintain.NONE;
-    [Tooltip("This generally hides under the Camera and will be found from there if not assigned")]
-    public GameObject cameraBlinder;
-    private MeshRenderer camMeshRenderer;
+
+    private int currentLevel = -1;
 
     public float illuminationDuration = 5f;
-    public float transitionDuration = 1;
-    private Coroutine newTransition;
-    private Coroutine currentTransition;
+    public float transitionDuration = 5f;
+
     private Coroutine newIllumination;
     private Coroutine currentIllumination;
 
@@ -32,20 +31,11 @@ public class Darkness : MonoBehaviour
 
     void Start()
     {
-        if (cameraBlinder == null)
-        {
-            cameraBlinder = GameController.Instance.playerController.camControl.myCamera.transform.GetChild(0).gameObject;
-        }
-
         baseModel = transform.GetChild(0).gameObject;
         mRenderer = baseModel.GetComponent<MeshRenderer>();
         darkMat = mRenderer.sharedMaterial;
         darkMat = new Material(darkMat);
         mRenderer.sharedMaterial = darkMat;
-
-        camMeshRenderer = cameraBlinder.GetComponent<MeshRenderer>();
-
-        camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, 0));
 
         if (baseModel.transform.localScale != Vector3.one)
         {
@@ -58,12 +48,15 @@ public class Darkness : MonoBehaviour
 
     IEnumerator Setup()
     {
+        yield return new WaitForSeconds(0.1f);
+        camController = GameController.Instance.playerController.camControl;
+
         DarknessHelper tempHelp;
 
         for (int i = 0; i < steps; i++)
         {
             //GameObject temp = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            GameObject temp = Instantiate(baseModel);
+            GameObject temp = Instantiate(baseModel, this.transform);
 
             Vector3 maintainDirection = Vector3.zero;
             switch (direction)
@@ -96,10 +89,16 @@ public class Darkness : MonoBehaviour
                     break;
             }
 
-            temp.transform.localScale = this.transform.localScale - (maintainDirection * stepDepth * (i + 1));
+            temp.transform.parent = null;
+            temp.transform.localScale = baseModel.transform.lossyScale - (maintainDirection * stepDepth * (i + 1));
+            temp.transform.parent = this.transform;
+            /*
+            temp.transform.localScale = baseModel.transform.lossyScale - (maintainDirection * stepDepth * (i + 1));
             temp.transform.parent = this.transform;
             temp.transform.localPosition = Vector3.zero;
-            temp.transform.localRotation = this.transform.localRotation;
+            //temp.transform.localRotation = this.transform.localRotation;
+            temp.transform.localRotation = baseModel.transform.localRotation;
+            */
 
             temp.GetComponent<MeshRenderer>().sharedMaterial = darkMat;
             tempHelp = temp.AddComponent<DarknessHelper>();
@@ -115,38 +114,15 @@ public class Darkness : MonoBehaviour
         helpers.Add(tempHelp);
     }
 
-    IEnumerator LerpAlpha(float percent)
+    public int GetCurrentLevel()
     {
-        if (currentTransition != null)
-        {
-            StopCoroutine(currentTransition);
-        }
-        currentTransition = newTransition;
-
-        Debug.Log("Lerping alpha");
-
-        float time = 0;
-        float originalValue = camMeshRenderer.material.GetColor("_BaseColor").a;
-        //blinder.a = percent;
-        //Debug.Log(blinder.a);
-        //cameraBlinder.color = blinder;
-        //UIBlinder.material = cameraBlinder;
-        //yield return new WaitForEndOfFrame();
-
-        while (time <= transitionDuration)
-        {
-            yield return new WaitForEndOfFrame();
-            float newAlpha = Mathf.Lerp(originalValue, percent, time / transitionDuration);
-
-            camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, newAlpha));
-            time += Time.deltaTime;
-        }
-
-        camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, percent));
+        return currentLevel;
     }
 
     public void AdjustBlinder(float level)
     {
+        currentLevel = Mathf.RoundToInt(level);
+
         if (level <= 0)
             level = 0.5f;
 
@@ -154,12 +130,14 @@ public class Darkness : MonoBehaviour
 
         percent = 0.5f + (percent * 0.5f);
 
-        newTransition = StartCoroutine(LerpAlpha(percent));
+        //newTransition = StartCoroutine(LerpAlpha(percent));
+        camController.AdjustBlinder(percent);
     }
 
     public void RemoveBlinder()
     {
-        newTransition = StartCoroutine(LerpAlpha(0));
+        currentLevel = -1;
+        camController.RemoveBlinder();
     }
 
     public void Illuminate()
@@ -196,7 +174,7 @@ public class Darkness : MonoBehaviour
 
         killVolume.SetActive(false);
         //if(!0)
-        if(duration > 0)
+        if (duration > 0)
         {
             yield return new WaitForSeconds(duration);
             killVolume.SetActive(true);

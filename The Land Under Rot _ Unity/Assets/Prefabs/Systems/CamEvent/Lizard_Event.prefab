@@ -332,26 +332,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3695043608931284580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8176467909405448838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb02189d2c7b311418ef72c3abfc7765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 164399c5c7d988145b0c0e9e299176ec, type: 2}
-  meshCenter: {x: 0, y: 0, z: 0}
-  maxLights: 6
-  raycast: 1
-  raycastMask:
-    serializedVersion: 2
-    m_Bits: 0
-  raycastFadeSpeed: 10
 --- !u!136 &3695043609374884305
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -377,16 +357,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 2336536929951774409, guid: d7307be5bae26a64e80b4641871e767c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2336536929951774409, guid: d7307be5bae26a64e80b4641871e767c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5515416915255397004, guid: d7307be5bae26a64e80b4641871e767c,
         type: 3}
@@ -566,22 +536,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: cart
       objectReference: {fileID: 0}
-    - target: {fileID: 6711534859739199305, guid: 3985381cb58ef9d4e8c5e392d59415ed,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3985381cb58ef9d4e8c5e392d59415ed, type: 3}
---- !u!4 &698958883707600783 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4248123648592681339, guid: 3985381cb58ef9d4e8c5e392d59415ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 3695043608390608628}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &7954280466873635261 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6711534859739199305, guid: 3985381cb58ef9d4e8c5e392d59415ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3695043608390608628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &698958883707600783 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4248123648592681339, guid: 3985381cb58ef9d4e8c5e392d59415ed,
     type: 3}
   m_PrefabInstance: {fileID: 3695043608390608628}
   m_PrefabAsset: {fileID: 0}
@@ -592,11 +557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3695043607888759648}
     m_Modifications:
-    - target: {fileID: 419992215513016691, guid: e4a318f77f4f2354089ff9b79d5ca407,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2832200273445589099, guid: e4a318f77f4f2354089ff9b79d5ca407,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -677,12 +637,6 @@ PrefabInstance:
 --- !u!137 &3932612399008214717 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 419992215513016691, guid: e4a318f77f4f2354089ff9b79d5ca407,
-    type: 3}
-  m_PrefabInstance: {fileID: 3695043608802183118}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8176467909405448838 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4773754770781723976, guid: e4a318f77f4f2354089ff9b79d5ca407,
     type: 3}
   m_PrefabInstance: {fileID: 3695043608802183118}
   m_PrefabAsset: {fileID: 0}
