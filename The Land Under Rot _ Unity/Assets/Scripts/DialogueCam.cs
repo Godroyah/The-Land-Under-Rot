@@ -8,7 +8,7 @@ public class DialogueCam : MonoBehaviour
 
     public Transform restPosition;
 
-    Camera thisCamera;
+    public Camera thisCamera;
 
     // Start is called before the first frame update
     void Start()

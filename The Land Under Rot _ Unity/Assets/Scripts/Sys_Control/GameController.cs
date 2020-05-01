@@ -192,7 +192,8 @@ public class GameController : MonoBehaviour
             Invoke("SetAcorns", 1);
         }
 
-        if(mainMenu != null)
+
+        if (mainMenu != null)
         {
             mainMenu.sensitivityValue.text = lookSensitivityX.ToString();
         }

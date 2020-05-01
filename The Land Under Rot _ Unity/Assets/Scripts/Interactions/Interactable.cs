@@ -64,7 +64,7 @@ public class Interactable : MonoBehaviour
         //Interactable cutscene activation
         if (usesCamEvent)
         {
-            if(headButtActivation)
+            if(headButtActivation || triggerActivation)
             {
                 eventTrigger.InitiateEvent();
             }

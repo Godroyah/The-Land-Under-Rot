@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -159,6 +159,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -170,12 +171,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -221,6 +225,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -232,12 +237,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -369,11 +377,9 @@ Transform:
   m_LocalPosition: {x: 99.9, y: 21, z: -77.7}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
-  - {fileID: 820011394}
   - {fileID: 1084692516}
-  - {fileID: 973889762}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!21 &27362966
 Material:
@@ -408,6 +414,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -419,12 +426,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -930,7 +940,7 @@ Transform:
   - {fileID: 993443343}
   - {fileID: 1679725086}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &84132839
 PrefabInstance:
@@ -1397,6 +1407,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -1408,12 +1419,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -1507,6 +1521,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -1518,12 +1533,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -1599,6 +1617,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -1610,12 +1629,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -1820,6 +1842,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -1830,12 +1853,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
     - _L1_dir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
@@ -2416,6 +2442,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -2427,12 +2454,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -2478,6 +2508,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -2489,12 +2520,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -2654,7 +2688,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &299426027
 GameObject:
@@ -2698,7 +2732,7 @@ Transform:
   - {fileID: 690802400}
   - {fileID: 465446365}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &304395873
 GameObject:
@@ -3392,6 +3426,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -3403,12 +3438,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -3958,7 +3996,7 @@ Transform:
   - {fileID: 730406372}
   - {fileID: 1244748387}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &552879231 stripped
 MonoBehaviour:
@@ -4029,6 +4067,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -4039,12 +4078,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
     - _L1_dir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
@@ -4504,7 +4546,7 @@ PrefabInstance:
     - target: {fileID: 8740657752837657277, guid: 7d71f9143f898824786fb653e26ceb5e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8740657752837657277, guid: 7d71f9143f898824786fb653e26ceb5e,
         type: 3}
@@ -4523,6 +4565,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d71f9143f898824786fb653e26ceb5e, type: 3}
+--- !u!224 &639144312 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2734734045389301769, guid: 7d71f9143f898824786fb653e26ceb5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 639144311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &648470537 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5963340583122603332, guid: 840b9d28f14c19c428478fce506acb81,
@@ -5202,6 +5250,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -5212,12 +5261,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
     - _L1_dir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
@@ -5586,6 +5638,7 @@ MonoBehaviour:
   willowTreeAwake: 0
   revealNewAreas: 0
   wormsInFruitfulGone: 0
+  underStumpLightsOn: 0
   area_Tutorial: 0
   tutorial_bus_Called: 0
   tutorial_HasTalked_Rootford_Intro1: 0
@@ -5605,6 +5658,7 @@ MonoBehaviour:
   starTexture: {fileID: 2800000, guid: 594796dbd07847746a56b737e42e8ae8, type: 3}
   willowTexture: {fileID: 2800000, guid: 8e6e9397a8331d5468804c2c2704d58c, type: 3}
   mainCamera: {fileID: 0}
+  sceneIndex: 0
 --- !u!4 &839508080
 Transform:
   m_ObjectHideFlags: 0
@@ -11094,7 +11148,7 @@ Transform:
   m_LocalScale: {x: 1.4999999, y: 0.1, z: 4.319999}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 1.59, y: 90.109, z: 0}
 --- !u!1 &985891774
 GameObject:
@@ -11363,6 +11417,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -11373,12 +11428,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
     - _L1_dir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
@@ -11502,6 +11560,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -11512,12 +11571,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
     - _L1_dir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
@@ -11620,7 +11682,7 @@ Transform:
   m_LocalScale: {x: 1.5000006, y: 0.10000002, z: 5.5840015}
   m_Children: []
   m_Father: {fileID: 18957921}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -16.85, y: 90.109, z: 0}
 --- !u!1 &1106418708
 GameObject:
@@ -11980,6 +12042,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -11991,12 +12054,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -12124,7 +12190,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!21 &1201678953
 Material:
@@ -12428,6 +12494,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -12439,12 +12506,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -12582,6 +12652,7 @@ Transform:
   - {fileID: 261454269}
   - {fileID: 1384855198}
   - {fileID: 53272318}
+  - {fileID: 844992740812704504}
   m_Father: {fileID: 543622602}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12618,6 +12689,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -12629,12 +12701,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -12940,7 +13015,7 @@ Transform:
   - {fileID: 134779541}
   - {fileID: 1633891806}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1283427297
 PrefabInstance:
@@ -13089,7 +13164,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1290509217
 PrefabInstance:
@@ -14363,6 +14438,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -14374,12 +14450,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -14425,6 +14504,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -14436,12 +14516,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -19518,6 +19601,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -19529,12 +19613,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -19637,6 +19724,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -19648,12 +19736,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -20787,6 +20878,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -20797,12 +20889,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
     - _L1_dir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
@@ -21672,7 +21767,7 @@ Transform:
   - {fileID: 1737037604}
   - {fileID: 2039916960}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1876988004 stripped
 Transform:
@@ -21854,6 +21949,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -21865,12 +21961,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -22006,6 +22105,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -22016,12 +22116,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
     - _L1_dir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
@@ -22370,6 +22473,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -22381,12 +22485,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -22438,6 +22545,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -22449,12 +22557,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -22662,6 +22773,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 10
@@ -22673,12 +22785,15 @@ Material:
     - Vector1_A4820D62: -1
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -23585,6 +23700,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_8686F57E: 1
     - Vector1_1EC5F790: 1
     - Vector1_454D19B7: 0.074
     - Vector1_4DD94F62: 0
@@ -23596,12 +23712,15 @@ Material:
     - Vector1_A4820D62: -30
     - Vector1_A89BA9F0: 0.38
     - Vector1_BA67FB85: 10
+    - _Glow_Power: 0
+    - _Radius: 15
     m_Colors:
     - Color_2086CFAC: {r: 0, g: 0, b: 0, a: 0}
     - Color_49AD8903: {r: 1, g: 1, b: 1, a: 1}
     - Color_883398E3: {r: 2, g: 2, b: 2, a: 0}
     - Color_8B8927CD: {r: 2, g: 2, b: 2, a: 0}
     - Color_B8E417E9: {r: 1, g: 1, b: 1, a: 0}
+    - _Glow_Color: {r: 0, g: 0, b: 0, a: 0}
     - _L1_color: {r: 1, g: 1, b: 1, a: 0}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _L2_color: {r: 1, g: 1, b: 1, a: 0}
@@ -24112,6 +24231,12 @@ PrefabInstance:
       objectReference: {fileID: 1551516030}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a2d06faea8342a4298f7e7e6e333e79, type: 3}
+--- !u!4 &844992740812704504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 876950095122472749, guid: 0a2d06faea8342a4298f7e7e6e333e79,
+    type: 3}
+  m_PrefabInstance: {fileID: 844992740812704503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &931895726192619243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25012,6 +25137,125 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97415d8948f74254b817b8f9dc231bfc, type: 3}
+--- !u!1001 &3593752181434304018
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 639144312}
+    m_Modifications:
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -1.1641532e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125.99995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911680, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593752182346911683, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618,
+        type: 3}
+      propertyPath: m_Name
+      value: ThankYou_Text
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5654d96d1e1b7b44ba47e6ad9bb7c618, type: 3}
 --- !u!4 &3933475111706944805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5921767970201160506, guid: 28619092e8ab2e246a29f9cc4b36fd7f,
@@ -25286,7 +25530,7 @@ PrefabInstance:
     - target: {fileID: 4960073594518447900, guid: 06ba43f0864022d48a902fb65711b980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4960073594518447900, guid: 06ba43f0864022d48a902fb65711b980,
         type: 3}
@@ -25307,7 +25551,7 @@ PrefabInstance:
         type: 3}
       propertyPath: realMulch
       value: 
-      objectReference: {fileID: 1177488513}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06ba43f0864022d48a902fb65711b980, type: 3}
 --- !u!1001 &5154103883166415824
@@ -25894,7 +26138,7 @@ PrefabInstance:
     - target: {fileID: 6784481498351921019, guid: 533938c3afd2daf43b576377574c6e10,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6784481498351921019, guid: 533938c3afd2daf43b576377574c6e10,
         type: 3}
