@@ -51,6 +51,7 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
             base.Interact();
 
+            AudioManager.Instance.Play_EyeBoing();
             animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
             animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
 
