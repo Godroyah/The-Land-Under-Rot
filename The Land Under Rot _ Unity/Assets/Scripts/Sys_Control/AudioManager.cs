@@ -102,6 +102,11 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void Play_Jump()
+    {
+
+    }
+
     public void Play_Landing_OnButt()
     {
 

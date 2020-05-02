@@ -32,6 +32,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
                 {
                     animator.SetTrigger(CharAnimation.Jump_Start_Trigger.ToString());
                     animator.SetBool(CharAnimation.Is_Jumping_Bool.ToString(), true);
+                    AudioManager.Instance.Play_Jump();
                 }
 
                 //faster falling
