@@ -38,7 +38,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
                 if (/*rb.velocity.y < 0 && */!playerController.IsGrounded)
                 {
                     animator.SetBool(CharAnimation.Is_Falling_Bool.ToString(), true);
-                    //AudioManager.Instance.Play_Falling();
+                    //AudioManager.Instance.Play_Falling();    
                 }
                     
                 //else if (rb.velocity.y > 0 && !playerController.ShouldJump)
@@ -92,6 +92,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
                 if (playerController.ShouldHeadbutt && playerController.HeadbuttCoroutine == null)
                 {
                     animator.SetTrigger(CharAnimation.Headbutt_Trigger.ToString());
+                    AudioManager.Instance.Play_Headbutt();
                 }
 
 

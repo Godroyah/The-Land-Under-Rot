@@ -67,6 +67,11 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void Play_Headbutt()
+    {
+
+    }
+
     public void Play_Headbutt_Wood()
     {
         AkSoundEngine.PostEvent("char_headbutt_wood", gameObject);
