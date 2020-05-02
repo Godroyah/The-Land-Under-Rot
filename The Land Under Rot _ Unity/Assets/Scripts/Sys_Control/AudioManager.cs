@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Headbutt_Stone()
     {
-
+        AkSoundEngine.PostEvent("char_headbutt_stone", gameObject);
     }
 
     public void Play_Headbutt_Enemy()

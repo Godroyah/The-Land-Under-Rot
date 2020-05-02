@@ -183,44 +183,6 @@
 								<ActiveSource Name="lur_sfx_CHAR_falling" ID="{EB3CF1A2-A534-4A01-B9C8-C55F5B465BC4}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="lur_sfx_INT_boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" ShortID="203709604">
-							<PropertyList>
-								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
-								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>1</Value>
-									</ValueList>
-								</Property>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-9</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="SFX Audio Bus" ID="{5A41D550-D2AA-4C0B-A3D7-C8691A2A1A25}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="boing_12" ID="{4A59A080-EA99-4984-A0CA-D3F77B7690DA}" ShortID="924585488">
-									<Language>SFX</Language>
-									<AudioFile>boing_12.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="boing_12" ID="{4A59A080-EA99-4984-A0CA-D3F77B7690DA}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="lur_sfx_UI_back" ID="{E1E97012-C7E7-4393-9924-681B8EAEB144}" ShortID="1041435627">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
@@ -271,52 +233,6 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="LUR Button Confirm" ID="{2012F63A-4279-4286-83FE-454C2F176D4C}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="lur_sfx_CHAR_headbutt_wood" ID="{02CFB762-497A-48E6-A21F-47204ABEDCC2}" ShortID="431038328">
-							<PropertyList>
-								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
-								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
-								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>1</Value>
-									</ValueList>
-								</Property>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-15</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="lur_sfx_CHAR_headbutt_wood" ID="{A60C4208-90AB-4E54-B496-6109C324FDC3}" ShortID="1056102786">
-									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.475083476027397"/>
-										<Property Name="FadeOutShape" Type="int16" Value="0"/>
-										<Property Name="LoopEnd" Type="Real64" Value="1.18285894691781"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.352"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>lur_sfx_CHAR_headbutt_wood.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="lur_sfx_CHAR_headbutt_wood" ID="{A60C4208-90AB-4E54-B496-6109C324FDC3}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="lur_sfx_UI_click" ID="{F227928C-0E62-4F01-98B6-FDF21DBD0408}" ShortID="478961943">
@@ -485,6 +401,84 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="LUR Angel Tree Awakened" ID="{E5EB4E21-3375-4287-BF09-8BCBACBD2841}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_INT_boing" ID="{6BEDE124-221F-443A-8C9C-9102AF3F9D77}" ShortID="303842134">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Eye_Boing" ID="{CB16D73E-0DBC-403B-BBCB-72A57ADCAAAB}" ShortID="870337837">
+									<Language>SFX</Language>
+									<AudioFile>Eye_Boing.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Eye_Boing" ID="{CB16D73E-0DBC-403B-BBCB-72A57ADCAAAB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_CHAR_headbutt_wood" ID="{0C4094D1-9977-4C50-BF72-952F1C6091BA}" ShortID="175208408">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LuR_BreakWood" ID="{15903B52-1BB1-4E1C-ACAF-624BA0B4458D}" ShortID="334024107">
+									<Language>SFX</Language>
+									<AudioFile>LuR_BreakWood.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LuR_BreakWood" ID="{15903B52-1BB1-4E1C-ACAF-624BA0B4458D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_CHAR_headbutt_stone" ID="{AB2756D3-3B25-45D9-932F-FF2BF6604AF5}" ShortID="691145196">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="LuR_BreakStone" ID="{1FDA5DA6-658D-4CAF-9C27-C5DBB8442477}" ShortID="345723967">
+									<Language>SFX</Language>
+									<AudioFile>LuR_BreakStone.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="LuR_BreakStone" ID="{1FDA5DA6-658D-4CAF-9C27-C5DBB8442477}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

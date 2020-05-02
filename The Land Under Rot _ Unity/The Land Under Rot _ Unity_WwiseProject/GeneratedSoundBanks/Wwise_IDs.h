@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID CHAR_FOOTSTEPS_GRASS = 3543977830U;
         static const AkUniqueID CHAR_FOOTSTEPS_STONE = 2543644351U;
         static const AkUniqueID CHAR_FOOTSTEPS_WOOD = 3744065311U;
+        static const AkUniqueID CHAR_HEADBUTT_STONE = 2450984751U;
         static const AkUniqueID CHAR_HEADBUTT_WOOD = 3953657551U;
         static const AkUniqueID CLICK = 1584507803U;
         static const AkUniqueID FENWAY = 851955753U;
