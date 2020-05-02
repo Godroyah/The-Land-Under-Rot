@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//public enum Branch_Type { NONE, STAR, WILLOW}
+
 public class Branch_Event : Event_Type
 {
     public GameObject branch;
 
+    GameController gameController;
+
+    public Branch_Type branchType;
+
     Vector3 branchStartPos;
     Vector3 branchLoweredPos;
+    public Vector3 endPos;
 
     [Space(5)]
 
@@ -34,6 +41,12 @@ public class Branch_Event : Event_Type
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameController.Instance;
+        if((branchType == Branch_Type.STAR && gameController.starTreeAwake) || (branchType == Branch_Type.WILLOW && gameController.willowTreeAwake))
+        {
+            transform.position = endPos;
+        }
+
         dropRecorderBranch = dropSpeedBranch;
 
         branchStartPos = new Vector3(branch.transform.position.x, branch.transform.position.y, branch.transform.position.z);
@@ -63,5 +76,7 @@ public class Branch_Event : Event_Type
             dropSpeedBranch += branchIteration * Time.deltaTime;
             yield return null;
         }
+
+        endPos = transform.position;
     }
 }
