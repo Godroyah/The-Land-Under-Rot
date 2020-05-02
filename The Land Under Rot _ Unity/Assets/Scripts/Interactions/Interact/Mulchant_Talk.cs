@@ -5,12 +5,35 @@ using UnityEngine;
 public class Mulchant_Talk : Interactable
 {
     public Animator mulchantAnim;
+    public SkinnedMeshRenderer mulchantRenderer;
+    CapsuleCollider mulchantCollider;
+    GameController gameController;
 
     void Start()
     {
         //mulchantAnim = GetComponent<Animator>();
+        gameController = GameController.Instance;
+        mulchantCollider = GetComponent<CapsuleCollider>();
 
         billboard_UI.SetActive(false);
+
+        if(gameController.starTreeAwake && gameController.willowTreeAwake)
+        {
+            if(mulchantRenderer != null)
+            {
+                mulchantRenderer.enabled = false;
+                mulchantCollider.enabled = false;
+            }
+        }
+        else
+        {
+            if (mulchantRenderer != null)
+            {
+                mulchantRenderer.enabled = true;
+                mulchantCollider.enabled = true;
+            }
+        }
+
     }
 
     public override void Interact()
@@ -41,7 +64,10 @@ public class Mulchant_Talk : Interactable
             {
                 if(!GameController.Instance.angelTreeAwake)
                 {
-                    mulchantAnim.SetTrigger("GotMulch");
+                    if(mulchantAnim != null)
+                    {
+                        mulchantAnim.SetTrigger("GotMulch");
+                    }
                     dialogueManager.StartDialogue(Reply.Mulchant_Gathered_Mulch_PreCutscene);
                     GameController.Instance.angelTreeAwake = true;
                 }

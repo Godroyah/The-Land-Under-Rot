@@ -8,11 +8,19 @@ public class Event_Cam : MonoBehaviour
 
     Transform currentViewPoint;
 
+    public Dialogue conversation;
+
     public Shot[] shots;
 
     public float currentTime;
 
-    private int currentScene;
+    public int currentScene;
+
+    public bool isInteractable;
+
+    private int frameIndexTracker;
+
+    public bool lastShot;
 
     //private Transform restingPoint;
 
@@ -71,6 +79,7 @@ public class Event_Cam : MonoBehaviour
         currentViewPoint = shots[currentScene].viewpoint;
         //Debug.Log(shots.Length);
 
+       
         if (startScene)
         {
             if(shots[currentScene].isEventTrigger && currentScene == 0)
@@ -80,34 +89,72 @@ public class Event_Cam : MonoBehaviour
                     shots[currentScene].eventType.StartEvent();
                 }
             }
-            if (currentTime < 0)
+            if (!isInteractable)
             {
-                if (currentScene != shots.Length - 1)
+                if (currentTime < 0)
                 {
-                    currentScene += 1;
-                }
-                currentTime = shots[currentScene].sceneTime;
-                if(shots[currentScene].sceneTime <= 0)
-                {
-                    Debug.LogWarning("Scene Time for shot" + currentScene + " is too close to 0! Please increase to a minimum of 1!");
-                }
-                //Debug.Log(currentScene);
-                if(shots[currentScene].isEventTrigger)
-                {
-                    if(shots[currentScene].eventType != null)
+                    if (currentScene != shots.Length - 1)
                     {
-                        shots[currentScene].eventType.StartEvent();
+                        currentScene += 1;
+                    }
+                    currentTime = shots[currentScene].sceneTime;
+                    if (shots[currentScene].sceneTime <= 0)
+                    {
+                        Debug.LogWarning("Scene Time for shot" + currentScene + " is too close to 0! Please increase to a minimum of 1!");
+                    }
+                    //Debug.Log(currentScene);
+                    if (shots[currentScene].isEventTrigger)
+                    {
+                        if (shots[currentScene].eventType != null)
+                        {
+                            shots[currentScene].eventType.StartEvent();
+                        }
                     }
                 }
-            }
-            currentTime -= Time.deltaTime;
+                currentTime -= Time.deltaTime;
 
-            if (currentTime < 0 && currentScene >= shots.Length - 1)
+                if (currentTime < 0 && currentScene >= shots.Length - 1)
+                {
+                    //gongController.firstInteraction = false;
+                    startScene = false;
+                }
+            }
+            else
             {
-                //gongController.firstInteraction = false;
-                startScene = false;
-            }
+                if(conversation != null)
+                {
+                    if (conversation.shotChange[conversation.frameIndex] == true)
+                    {
+                        if(frameIndexTracker != conversation.frameIndex)
+                        {
+                            currentScene += 1;
+                            frameIndexTracker = conversation.frameIndex;
+                        }
+                    }
 
+                    if (shots[currentScene].isEventTrigger)
+                    {
+                        if (shots[currentScene].eventType != null)
+                        {
+                            shots[currentScene].eventType.StartEvent();
+                        }
+                    }
+
+                    if(conversation.frameIndex == conversation.Frames.Length - 1)
+                    {
+                        lastShot = true;
+                    }
+
+                    if(lastShot && Input.GetButtonDown("Interact") && conversation.textIsDone)
+                    {
+                        startScene = false;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("You do not have a source conversation referenced!");
+                }
+            }
         }
     }
 

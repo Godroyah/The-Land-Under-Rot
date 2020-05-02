@@ -68,6 +68,7 @@ MonoBehaviour:
   isDead: 0
   eventActive: 0
   infiniteJumping: 0
+  playFootFalls: 0
   inputDelay: 0.1
   interactDelay: 0.1
   headbuttStartDelay: 0.3
@@ -279,6 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15400759175299041}
   - component: {fileID: 15400759175299040}
+  - component: {fileID: 550225121132045278}
   m_Layer: 8
   m_Name: Camera_Jig
   m_TagString: Camera_Jig
@@ -324,6 +326,14 @@ MonoBehaviour:
   pitchMinMax: {x: -30, y: 45}
   acceleration: 1.39
   lockPosition: 0
+--- !u!81 &550225121132045278
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15400759175299046}
+  m_Enabled: 1
 --- !u!1 &15400760470027717
 GameObject:
   m_ObjectHideFlags: 0

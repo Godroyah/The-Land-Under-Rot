@@ -8,6 +8,8 @@ public class Event_Trigger : MonoBehaviour
 
     public GameObject cinematicCamera;
 
+    //public Dialogue conversation;
+
     private Camera cameraComponent;
 
     private Event_Cam eventCamController;
@@ -17,6 +19,7 @@ public class Event_Trigger : MonoBehaviour
     private bool firstInteraction;
     public bool interactionStarted;
     public bool alwaysInteract;
+    public bool interactableShots;
     private bool sceneStarted;
 
     public bool canSound;
@@ -76,6 +79,10 @@ public class Event_Trigger : MonoBehaviour
     {
         if (firstInteraction || alwaysInteract)
         {
+            if(interactableShots)
+            {
+                eventCamController.isInteractable = true;
+            }
             eventCamController.startScene = true;
             interactionStarted = true;
 

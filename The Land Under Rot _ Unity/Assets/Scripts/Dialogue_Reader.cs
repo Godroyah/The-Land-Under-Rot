@@ -22,7 +22,7 @@ public class Dialogue_Reader : MonoBehaviour
 
     private bool isDialogueSpelling = false;
     private bool isDialogueActive = false;
-    private bool isDialogueDone = false;
+    public bool isDialogueDone = false;
 
     // Start is called before the first frame update
     void Start()

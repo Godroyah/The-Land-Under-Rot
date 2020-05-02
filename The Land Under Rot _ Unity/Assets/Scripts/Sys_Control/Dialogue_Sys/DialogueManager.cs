@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
 
     Dialogue[] dialogues;
 
+    //public Dialogue_Reader dialogueReader;
+
     public Canvas myCanvas;
 
     public NPC_Emotes[] npcs;
@@ -50,6 +52,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //dialogueReader = GameObject.Find("Dialogue_Text").GetComponent<Dialogue_Reader>();
         GameController.Instance.dialogueManager = this;
 
         dialogues = new Dialogue[Dialogue_GameObjects.Count];
@@ -242,6 +245,9 @@ public enum Reply
     Mulchant_Gathered_Mulch_PreCutscene,
     Mulchant_Tree_Is_Awake,
     Return_To_Stinkhorn,
+    Mulchant_Exit_Door,
+    Mulchant_Final_Repeat_1,
+    Mulchant_Final_Repeat_2,
 
     // - Other Dialogue
     TS_Rootford_Intro,
