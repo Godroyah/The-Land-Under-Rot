@@ -8,6 +8,8 @@ public class AngelTree_NewAreas_Event : Event_Type
     public GameObject willowEntranceBranches;
     public GameObject treeSeatBossBranch;
 
+    GameController gameController;
+
     Vector3 fruitStartPos;
     Vector3 fruitLoweredPos;
 
@@ -16,6 +18,10 @@ public class AngelTree_NewAreas_Event : Event_Type
 
     Vector3 angelBossBranchStartPos;
     Vector3 angelBossBranchLoweredPos;
+
+    public Vector3 endPosfruit;
+    public Vector3 endPoswillow;
+    public Vector3 endPosboss;
 
     [Space(5)]
 
@@ -66,6 +72,15 @@ public class AngelTree_NewAreas_Event : Event_Type
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameController.Instance;
+
+        if(gameController.revealNewAreas)
+        {
+            fruitEntranceBranches.transform.position = gameController.branchEndPos;
+            willowEntranceBranches.transform.position = gameController.branchEndPos;
+            treeSeatBossBranch.transform.position = gameController.branchEndPos;
+        }
+
         dropRecorderFruit = dropSpeedFruit;
         dropRecorderWillow = dropSpeedWillow;
         dropRecorderAngelBoss = dropSpeedAngelBoss;
@@ -105,6 +120,8 @@ public class AngelTree_NewAreas_Event : Event_Type
             dropSpeedFruit += fruitIteration * Time.deltaTime;
             yield return null;
         }
+
+        //endPosfruit = transform.position;
     }
 
     IEnumerator RevealUnderstump()
@@ -123,6 +140,8 @@ public class AngelTree_NewAreas_Event : Event_Type
             dropSpeedWillow += willowIteration * Time.deltaTime;
             yield return null;
         }
+
+        //endPoswillow = transform.position;
     }
 
     IEnumerator RevealBoss()
@@ -140,5 +159,7 @@ public class AngelTree_NewAreas_Event : Event_Type
             dropSpeedAngelBoss += angelBossIteration * Time.deltaTime;
             yield return null;
         }
+
+        //endPosboss = transform.position;
     }
 }

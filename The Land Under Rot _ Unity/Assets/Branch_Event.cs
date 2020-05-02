@@ -14,7 +14,9 @@ public class Branch_Event : Event_Type
 
     Vector3 branchStartPos;
     Vector3 branchLoweredPos;
-    public Vector3 endPos;
+    //public Vector3 endPos;
+    //Willow: 235, 220, -17
+    //Star: same 
 
     [Space(5)]
 
@@ -42,9 +44,9 @@ public class Branch_Event : Event_Type
     void Start()
     {
         gameController = GameController.Instance;
-        if((branchType == Branch_Type.STAR && gameController.starTreeAwake) || (branchType == Branch_Type.WILLOW && gameController.willowTreeAwake))
+        if ((branchType == Branch_Type.STAR && gameController.starBranchDown) || (branchType == Branch_Type.WILLOW && gameController.willowBranchDown))
         {
-            transform.position = endPos;
+            branch.transform.position = gameController.branchEndPos;
         }
 
         dropRecorderBranch = dropSpeedBranch;
@@ -77,6 +79,13 @@ public class Branch_Event : Event_Type
             yield return null;
         }
 
-        endPos = transform.position;
+        if(branchType == Branch_Type.STAR)
+        {
+            gameController.starBranchDown = true;
+        }
+        else if(branchType == Branch_Type.WILLOW)
+        {
+            gameController.willowBranchDown = true;
+        }
     }
 }

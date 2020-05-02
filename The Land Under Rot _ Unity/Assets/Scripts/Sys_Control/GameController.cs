@@ -51,6 +51,9 @@ public class GameController : MonoBehaviour
     //TODO: need a better way to set worms on and off
     public bool wormsInFruitfulGone;
     public bool underStumpLightsOn;
+    [Space(5)]
+    public bool starBranchDown;
+    public bool willowBranchDown;
 
     [Space(5)]
     public bool area_Tutorial = false;
@@ -115,6 +118,8 @@ public class GameController : MonoBehaviour
     public OnLevelLoaded onLevelLoaded;
 
     public int sceneIndex;
+
+    public Vector3 branchEndPos;
 
     private void Awake()
     {
