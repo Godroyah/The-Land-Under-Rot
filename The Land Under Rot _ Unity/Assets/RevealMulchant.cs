@@ -6,6 +6,7 @@ public class RevealMulchant : Interactable
 {
     public SkinnedMeshRenderer mulchantRenderer;
     SphereCollider eventDetector;
+    public SphereCollider bossBlocker;
     CapsuleCollider mulchantCollider;
 
     bool eventTripped;
@@ -21,6 +22,7 @@ public class RevealMulchant : Interactable
         if(gameController.starTreeAwake && gameController.willowTreeAwake)
         {
             eventDetector.enabled = true;
+            bossBlocker.enabled = false;
         }
     }
 

@@ -174,6 +174,7 @@ public enum BuildOrder
     TreeSeat,
     FruitfulForest,
     Understump,
+    FactoryCutscene,
     BossLevel,
     LoadingLevel
 }
