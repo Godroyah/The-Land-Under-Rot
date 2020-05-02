@@ -237,6 +237,17 @@
 						</Sound>
 						<Sound Name="lur_sfx_UI_click" ID="{F227928C-0E62-4F01-98B6-FDF21DBD0408}" ShortID="478961943">
 							<PropertyList>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-10</Value>
@@ -491,6 +502,46 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="LuR_BreakStone" ID="{1FDA5DA6-658D-4CAF-9C27-C5DBB8442477}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_UI_pause" ID="{FE0BDC7B-497C-4601-BC58-EECCC7F7D557}" ShortID="147526236">
+							<PropertyList>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-19</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="PauseSound" ID="{CF9A08AE-3E3E-4ED3-B041-707FC680ACA0}" ShortID="1021357589">
+									<Language>SFX</Language>
+									<AudioFile>PauseSound.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="651753141"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="PauseSound" ID="{CF9A08AE-3E3E-4ED3-B041-707FC680ACA0}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

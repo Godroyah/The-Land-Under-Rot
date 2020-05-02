@@ -365,7 +365,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_UI_Click_PauseMenu()
     {
-      //  AkSoundEngine.PostEvent("Click", gameObject);
+        AkSoundEngine.PostEvent("Click", gameObject);
     }
 
     public void Play_Stinger_Start_Cutscene()
