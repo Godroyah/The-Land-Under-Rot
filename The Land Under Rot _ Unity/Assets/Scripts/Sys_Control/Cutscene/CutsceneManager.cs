@@ -72,7 +72,7 @@ public class CutsceneManager : MonoBehaviour
         if (TestScene != null && isTestingScene)
         {
             StartCutscene(TestScene.GetComponent<Cutscene>().SceneName);
-            AudioManager.Instance.Play_Stinger_Start_Cutscene();
+         
         }
     }
 
@@ -114,6 +114,7 @@ public class CutsceneManager : MonoBehaviour
                 {
                     cutscene.StartScene();
                     //Debug.Log(sceneName);
+                    AudioManager.Instance.Play_Stinger_Start_Cutscene();
                     return true;
                 }
             }

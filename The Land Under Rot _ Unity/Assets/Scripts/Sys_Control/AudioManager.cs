@@ -222,11 +222,11 @@ public class AudioManager : MonoBehaviour
         AkSoundEngine.PostEvent("int_boing", gameObject);
     }
 
-    public void Play_GateFall()
-    {
+ /* redundant with cordyceps going underground  public void Play_GateFall()
+   // {
 
-    }
-
+   }
+*/ 
     public void Play_LeafPile()
     {
 
