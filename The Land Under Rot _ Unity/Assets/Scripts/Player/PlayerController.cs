@@ -497,6 +497,27 @@ public class PlayerController : MonoBehaviour
             HorizontalInput = 0;
         if (Mathf.Abs(VerticalInput) < inputDelay)
             VerticalInput = 0;
+        if(Mathf.Abs(HorizontalInput) > inputDelay || Mathf.Abs(VerticalInput) > inputDelay)
+        {
+            switch (gameController.sceneIndex)
+            {
+                case 2:
+                    //AudioManager.Instance.Play_Walk_Mud();
+                    break;
+                case 3:
+                    //AudioManager.Instance.Play_Walk_Dirt();
+                    break;
+                case 4:
+                    //AudioManager.Instance.Play_Walk_Grass();
+                    break;
+                case 5:
+                    //AudioManager.Instance.Play_Walk_Wood();
+                    break;
+                case 6:
+                    //AudioManager.Instance.Play_Walk_Stone();
+                    break;
+            }
+        }
 
         bool hasCollided = Physics.CheckBox(collisionChecker.position, new Vector3(0.75f, 1.75f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
 
@@ -513,24 +534,6 @@ public class PlayerController : MonoBehaviour
         {
             movement = new Vector3(HorizontalInput, 0, VerticalInput);
             
-            switch(gameController.sceneIndex)
-            {
-                case 2:
-                    AudioManager.Instance.Play_Walk_Mud();
-                    break;
-                case 3:
-                    AudioManager.Instance.Play_Walk_Dirt();
-                    break;
-                case 4:
-                    AudioManager.Instance.Play_Walk_Grass();
-                    break;
-                case 5:
-                    AudioManager.Instance.Play_Walk_Wood();
-                    break;
-                case 6:
-                    AudioManager.Instance.Play_Walk_Stone();
-                    break;
-            }
         }
            
 
