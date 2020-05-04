@@ -7,6 +7,7 @@ public class Mulchant_AngelTree_Event : Event_Type
     public Animator treeAnim;
     public Animator mulchantStandInAnim;
     public SkinnedMeshRenderer eventMulchant;
+    public GameObject mulchantBottle;
    
     [Range(1f, 20f)]
     public float mulchantDelay;
@@ -39,6 +40,7 @@ public class Mulchant_AngelTree_Event : Event_Type
 
         AudioManager.Instance.Play_Tree_EyeOpening();
         mulchantStandInAnim.SetTrigger("AwakenTree");
+        mulchantBottle.SetActive(true);
 
         yield return new WaitForSeconds(treeDelay);
 
