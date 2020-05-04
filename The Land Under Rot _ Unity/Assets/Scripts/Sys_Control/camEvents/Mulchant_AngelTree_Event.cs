@@ -45,6 +45,7 @@ public class Mulchant_AngelTree_Event : Event_Type
         yield return new WaitForSeconds(treeDelay);
 
         treeAnim.SetBool("Awake", true);
+        mulchantBottle.SetActive(false);
         eventMulchant.enabled = false;
         gameController.angelTreeAwake = true;
 
