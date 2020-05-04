@@ -32,11 +32,6 @@ public class TextDisplayer : MonoBehaviour
         displayedText = "";
     }
 
-    void Start()
-    {
-
-    }
-
     private void Update()
     {
         if (myDialogue != null && myDialogue.dialogueManager != null)
