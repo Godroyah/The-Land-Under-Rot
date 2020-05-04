@@ -8,6 +8,7 @@ public class Mulchant_WillowTree_Event : Event_Type
     public Animator mulchantStandInAnim;
     public SkinnedMeshRenderer interactableMulchant;
     public SkinnedMeshRenderer eventMulchant;
+    public GameObject mulchantBottle;
     public SpriteRenderer mulchantPrompt;
 
     [Range(1f, 20f)]
@@ -43,6 +44,7 @@ public class Mulchant_WillowTree_Event : Event_Type
 
         AudioManager.Instance.Play_Tree_EyeOpening();
         mulchantStandInAnim.SetTrigger("AwakenTree");
+        mulchantBottle.SetActive(true);
 
         yield return new WaitForSeconds(treeDelay);
 
@@ -54,6 +56,7 @@ public class Mulchant_WillowTree_Event : Event_Type
 
         yield return new WaitForSeconds(endSceneDelay);
 
+        mulchantBottle.SetActive(false);
         eventMulchant.enabled = false;
     }
 }
