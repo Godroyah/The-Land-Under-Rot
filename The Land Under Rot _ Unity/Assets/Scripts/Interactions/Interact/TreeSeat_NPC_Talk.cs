@@ -36,8 +36,9 @@ public class TreeSeat_NPC_Talk : Interactable
 
         //Interact MUST come after dialogue manager call to ensure any camera events called word properly
         base.Interact();
+        billboard_UI.SetActive(false);
 
-        if(GameController.Instance != null)
+        if (GameController.Instance != null)
         {
             switch (treeSeatNPC)
             {
@@ -376,7 +377,11 @@ public class TreeSeat_NPC_Talk : Interactable
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Interact"))
+        {
+            billboard_UI.SetActive(false);
             playerController.interactables.Remove(this);
+        }
+            
     }
 
 }

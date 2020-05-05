@@ -23,7 +23,7 @@ public class CartDriver : Interactable
     {
         base.Interact();
 
-
+        billboard_UI.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,6 +43,10 @@ public class CartDriver : Interactable
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Interact"))
+        {
+            billboard_UI.SetActive(false);
             playerController.interactables.Remove(this);
+        }
+            
     }
 }

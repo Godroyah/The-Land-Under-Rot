@@ -20,6 +20,7 @@ public class Oldman : Interactable
 
         //Interact MUST come after dialogue manager call to ensure any camera events called word properly
         base.Interact();
+        billboard_UI.SetActive(false);
 
         AudioManager.Instance.Play_Rootford();
 
@@ -69,6 +70,10 @@ public class Oldman : Interactable
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Interact"))
+        {
+            billboard_UI.SetActive(false);
             playerController.interactables.Remove(this);
+        }
+           
     }
 }
