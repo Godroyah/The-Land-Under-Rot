@@ -10,7 +10,40 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Bus Name="SFX Audio Bus" ID="{5A41D550-D2AA-4C0B-A3D7-C8691A2A1A25}"/>
+						<Bus Name="SFX Bus" ID="{5A41D550-D2AA-4C0B-A3D7-C8691A2A1A25}">
+							<ChildrenList>
+								<Bus Name="LD Bus" ID="{04631846-BED6-42F7-86BC-007E75FE667E}">
+									<DuckingList>
+										<DuckItem>
+											<BusRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}"/>
+											<DuckingParam>
+												<Volume>-5</Volume>
+												<FadeInTime>0.5</FadeInTime>
+												<FadeOutTime>0.300000011920929</FadeOutTime>
+												<FadeCurve>FadeLog1</FadeCurve>
+												<TargetProp>BusVolume</TargetProp>
+											</DuckingParam>
+										</DuckItem>
+									</DuckingList>
+								</Bus>
+								<Bus Name="HD Bus" ID="{7FFA00B1-6EFB-4A3A-AF66-4E83C5276AFF}">
+									<DuckingList>
+										<DuckItem>
+											<BusRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}"/>
+											<DuckingParam>
+												<Volume>-96</Volume>
+												<FadeInTime>1</FadeInTime>
+												<FadeOutTime>0.5</FadeOutTime>
+												<FadeCurve>FadeLog1</FadeCurve>
+												<TargetProp>BusVolume</TargetProp>
+											</DuckingParam>
+										</DuckItem>
+									</DuckingList>
+								</Bus>
+								<Bus Name="Ambience Bus" ID="{4C9DD9F8-53E5-482A-8890-48583ABA002F}"/>
+								<Bus Name="New Audio Bus" ID="{FA1C12ED-B883-4781-83C5-383E6E8C4E63}"/>
+							</ChildrenList>
+						</Bus>
 						<Bus Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}">
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
