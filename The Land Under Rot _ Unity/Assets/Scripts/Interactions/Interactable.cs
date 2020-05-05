@@ -12,6 +12,7 @@ public class Interactable : MonoBehaviour
     public Event_Trigger eventTrigger;
 
     public GameObject billboard_UI;
+    //SpriteRenderer billboardSprite;
 
     public Transform dialogueViewPoint;
 
@@ -34,6 +35,11 @@ public class Interactable : MonoBehaviour
                 Debug.LogWarning("This object is marked as using a Cam Event! Either mark 'usesCamEvent' as false or attach an Event_Trigger script to this object!");
             }
         }
+
+        //if(billboard_UI != null)
+        //{
+        //    billboardSprite = billboard_UI.GetComponent<SpriteRenderer>();
+        //}
         //if (!GetComponent<Rigidbody>())
         //    Debug.LogWarning("This interactable ("+ gameObject.name + ") does not have a Rigidbody!");
 
@@ -60,6 +66,12 @@ public class Interactable : MonoBehaviour
         // This method is meant to be overwritten
         Debug.Log(gameObject.name + " has been interacted with.");
 
+        if(billboard_UI != null)
+        {
+            billboard_UI.SetActive(false);
+        }
+       
+        //billboardSprite.enabled = false;
 
         //Interactable cutscene activation
         if (usesCamEvent)
