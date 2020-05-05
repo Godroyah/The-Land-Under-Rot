@@ -55,23 +55,30 @@ public class GameController : MonoBehaviour
     public bool starBranchDown;
     public bool willowBranchDown;
 
-    [Space(5)]
+    [Header("Tutorial Area")]
     public bool area_Tutorial = false;
-    public bool tutorial_bus_Called = false;
+    public bool tutorial_Interacted_BreakableBark = false;
+    public bool tutorial_Interacted_Cordyceps = false;
+
     [Space(5)]
-    public bool tutorial_HasTalked_Rootford_Intro1 = false;
-    public bool tutorial_HasTalked_Rootford_Intro2 = false;
+    [Header("Stinkhorn")]
+    public bool area_Stinkhorn = false;
+    public bool stinkhorn_bus_Called = false;
     [Space(5)]
-    public bool tutorial_HasTalked_BusDriver_1 = false;
+    public bool stinkhorn_HasTalked_Rootford_Intro1 = false;
+    public bool stinkhorn_HasTalked_Rootford_Intro2 = false;
+    [Space(5)]
+    public bool stinkhorn_HasTalked_BusDriver_1 = false;
+
+     
+
+    [Space(5)]
+    [Header("TreeSeat")]
+    public bool area_TreeSeat = false;
 
     //[Space(5)]
     //public bool treeSeat_HasTalked_Mulchant_GaveBottle = false;
-    //public bool 
-
-    [Space(5)]
-
-    public bool area_Stinkhorn = false;
-    public bool area_TreeSeat = false;
+    //public bool
     #endregion
 
     [Header("Look Sensitivity")]
@@ -156,7 +163,7 @@ public class GameController : MonoBehaviour
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         isDead = false;
-        if(playerController != null)
+        if (playerController != null)
         {
             Invoke("SetAcorns", 1);
         }
@@ -193,7 +200,7 @@ public class GameController : MonoBehaviour
         #endregion
         if (playerController != null)
         {
-            
+
             PickUpCount();
             //HealthCount();
         }
@@ -210,7 +217,7 @@ public class GameController : MonoBehaviour
                 playerController.StopPlayer = false;
                 playerController.camControl.lockPosition = false;
             }
-                
+
         }
         //if(isDead)
         //{
@@ -318,10 +325,10 @@ public class GameController : MonoBehaviour
         revealNewAreas = data.revealNewAreas;
 
         area_Tutorial = data.area_Tutorial;
-        tutorial_bus_Called = data.tutorial_bus_Called;
-        tutorial_HasTalked_Rootford_Intro1 = data.tutorial_HasTalked_Rootford_Intro1;
-        tutorial_HasTalked_Rootford_Intro2 = data.tutorial_HasTalked_Rootford_Intro2;
-        tutorial_HasTalked_BusDriver_1 = data.tutorial_HasTalked_BusDriver_1;
+        stinkhorn_bus_Called = data.tutorial_bus_Called;
+        stinkhorn_HasTalked_Rootford_Intro1 = data.tutorial_HasTalked_Rootford_Intro1;
+        stinkhorn_HasTalked_Rootford_Intro2 = data.tutorial_HasTalked_Rootford_Intro2;
+        stinkhorn_HasTalked_BusDriver_1 = data.tutorial_HasTalked_BusDriver_1;
     }
 
     public void UpdateLevel()

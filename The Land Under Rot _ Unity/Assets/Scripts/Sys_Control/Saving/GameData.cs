@@ -57,9 +57,9 @@ public class GameData
         revealNewAreas = gameController.revealNewAreas;
 
         area_Tutorial = gameController.area_Tutorial;
-        tutorial_bus_Called = gameController.tutorial_bus_Called;
-        tutorial_HasTalked_Rootford_Intro1 = gameController.tutorial_HasTalked_Rootford_Intro1;
-        tutorial_HasTalked_Rootford_Intro2 = gameController.tutorial_HasTalked_Rootford_Intro2;
-        tutorial_HasTalked_BusDriver_1 = gameController.tutorial_HasTalked_BusDriver_1;
+        tutorial_bus_Called = gameController.stinkhorn_bus_Called;
+        tutorial_HasTalked_Rootford_Intro1 = gameController.stinkhorn_HasTalked_Rootford_Intro1;
+        tutorial_HasTalked_Rootford_Intro2 = gameController.stinkhorn_HasTalked_Rootford_Intro2;
+        tutorial_HasTalked_BusDriver_1 = gameController.stinkhorn_HasTalked_BusDriver_1;
     }
 }

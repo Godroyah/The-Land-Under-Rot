@@ -10,7 +10,7 @@ public class Oldman : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        if(GameController.Instance.tutorial_bus_Called == true)
+        if(GameController.Instance.stinkhorn_bus_Called == true)
         {
             Rootford.SetActive(false);
         }
@@ -32,24 +32,24 @@ public class Oldman : Interactable
         {
             AudioManager.Instance.Play_Rootford();
             // Select which dialogue to 'say'
-            if (!GameController.Instance.tutorial_bus_Called)
+            if (!GameController.Instance.stinkhorn_bus_Called)
             {
-                if (!GameController.Instance.tutorial_HasTalked_Rootford_Intro1)
+                if (!GameController.Instance.stinkhorn_HasTalked_Rootford_Intro1)
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_1);
-                    GameController.Instance.tutorial_HasTalked_Rootford_Intro1 = true;
+                    GameController.Instance.stinkhorn_HasTalked_Rootford_Intro1 = true;
                 }
-                else if (!GameController.Instance.tutorial_HasTalked_Rootford_Intro2)
+                else if (!GameController.Instance.stinkhorn_HasTalked_Rootford_Intro2)
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_2);
-                    GameController.Instance.tutorial_HasTalked_Rootford_Intro2 = true;
+                    GameController.Instance.stinkhorn_HasTalked_Rootford_Intro2 = true;
                 }
                 else
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_3_Repeat);
                 }
             }
-            else if (GameController.Instance.tutorial_bus_Called/* && GameController.Instance.tutorial_HasTalked_Rootford_Intro2*/)
+            else if (GameController.Instance.stinkhorn_bus_Called/* && GameController.Instance.tutorial_HasTalked_Rootford_Intro2*/)
             {
                 dialogueManager.StartDialogue(Reply.SS_Rootford_Bus_1_Repeat);
             }

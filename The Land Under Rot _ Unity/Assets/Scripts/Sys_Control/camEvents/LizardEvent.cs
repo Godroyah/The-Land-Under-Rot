@@ -67,7 +67,7 @@ public class LizardEvent : Event_Type
             //currentPoint = i;
         }
         lizardAnim.SetTrigger("End_Lizard");
-        GameController.Instance.tutorial_bus_Called = true;
+        GameController.Instance.stinkhorn_bus_Called = true;
 
         //yield return new WaitForSeconds(2f); // TODO: REMOVE ME
 
