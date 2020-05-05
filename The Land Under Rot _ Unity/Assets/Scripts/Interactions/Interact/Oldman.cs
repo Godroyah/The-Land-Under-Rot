@@ -5,11 +5,15 @@ using UnityEngine;
 public class Oldman : Interactable
 {
     //DialogueManager dialogueManager;
-    
+    public GameObject Rootford;
 
     // Start is called before the first frame update
     void Start()
     {
+        if(GameController.Instance.tutorial_bus_Called == true)
+        {
+            Rootford.SetActive(false);
+        }
         billboard_UI.SetActive(false);
     }
 
