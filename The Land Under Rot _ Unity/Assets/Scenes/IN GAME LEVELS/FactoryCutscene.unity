@@ -168,12 +168,16 @@ MonoBehaviour:
   revealNewAreas: 0
   wormsInFruitfulGone: 0
   underStumpLightsOn: 0
+  starBranchDown: 0
+  willowBranchDown: 0
   area_Tutorial: 0
-  tutorial_bus_Called: 0
-  tutorial_HasTalked_Rootford_Intro1: 0
-  tutorial_HasTalked_Rootford_Intro2: 0
-  tutorial_HasTalked_BusDriver_1: 0
+  tutorial_Interacted_BreakableBark: 0
+  tutorial_Interacted_Cordyceps: 0
   area_Stinkhorn: 0
+  stinkhorn_bus_Called: 0
+  stinkhorn_HasTalked_Rootford_Intro1: 0
+  stinkhorn_HasTalked_Rootford_Intro2: 0
+  stinkhorn_HasTalked_BusDriver_1: 0
   area_TreeSeat: 0
   sensitivityBar: {fileID: 0}
   lookSensitivityX: 5
@@ -188,6 +192,7 @@ MonoBehaviour:
   willowTexture: {fileID: 0}
   mainCamera: {fileID: 0}
   sceneIndex: 0
+  branchEndPos: {x: 0, y: 0, z: 0}
 --- !u!4 &133891649
 Transform:
   m_ObjectHideFlags: 0
@@ -335,7 +340,7 @@ PrefabInstance:
         type: 3}
       propertyPath: TestScene
       value: 
-      objectReference: {fileID: 455518052}
+      objectReference: {fileID: 854217166}
     - target: {fileID: 1569792915967668226, guid: ac65d5d4e7e59084f9267b8cf6f03aca,
         type: 3}
       propertyPath: isTestingScene
@@ -463,6 +468,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac65d5d4e7e59084f9267b8cf6f03aca, type: 3}
+--- !u!1 &854217166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5897055957853341758, guid: ac65d5d4e7e59084f9267b8cf6f03aca,
+    type: 3}
+  m_PrefabInstance: {fileID: 854217165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
