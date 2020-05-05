@@ -81,6 +81,11 @@ public class Cutscene : MonoBehaviour
                     loader.currentSceneIndex = BuildOrder.FactoryCutscene;
                 }
                 loader.LoadScene();
+                if(cutsceneName == CutsceneName.FACTORY_ANIMATIC)
+                {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
                 break;
             }
 
