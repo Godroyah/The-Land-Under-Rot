@@ -33,6 +33,7 @@ public class LizardEvent : Event_Type
         cartRenderer.enabled = false;
 
         //distToPoint = Vector3.Distance(transform.position, wayPoints[currentPoint].position);
+        GameController.Instance.onLevelLoaded += UpdateOnLevelLoad;
     }
 
 
@@ -72,6 +73,23 @@ public class LizardEvent : Event_Type
         //yield return new WaitForSeconds(2f); // TODO: REMOVE ME
 
         //SceneManager.LoadScene(0);
+    }
+
+    public void UpdateOnLevelLoad()
+    {
+        if (GameController.Instance.stinkhorn_bus_Called)
+        {
+            lizardRenderer.enabled = true;
+            lizardCollider.enabled = true;
+            peaPodRenderer.enabled = true;
+            cartRenderer.enabled = true;
+            lizardAnim.SetTrigger("End_Lizard");
+
+            targetDirection = wayPoints[wayPoints.Length - 1].position - wayPoints[wayPoints.Length - 2].position;
+            newDirection = Vector3.RotateTowards(transform.forward, targetDirection,360f, 0.0f);
+            transform.position = wayPoints[wayPoints.Length-1].position;
+            transform.rotation = Quaternion.LookRotation(newDirection);
+        }
     }
 
 }

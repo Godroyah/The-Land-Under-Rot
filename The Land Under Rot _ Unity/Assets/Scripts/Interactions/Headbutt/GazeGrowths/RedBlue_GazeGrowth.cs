@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RedBlue_GazeGrowth : GazeGrowth
 {
+    public Interaction interactionObject;
     public GameObject cordysepBarrier;
 
     private Vector3 cordys_Start_Position;
@@ -40,6 +41,8 @@ public class RedBlue_GazeGrowth : GazeGrowth
             cordys_Start_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y, cordysepBarrier.transform.position.z);
             cordys_Lowered_Position = new Vector3(cordysepBarrier.transform.position.x, cordysepBarrier.transform.position.y - lowerDistance, cordysepBarrier.transform.position.z);
         }
+
+        GameController.Instance.onLevelLoaded += UpdateOnLevelLoad;
     }
 
     public override void Interact()
@@ -58,6 +61,7 @@ public class RedBlue_GazeGrowth : GazeGrowth
             switch (growthType)
             {
                 case GazeGrowthType.Blue:
+                    GameController.Instance.InteractedWith(interactionObject);
                     StartCoroutine(Fungi(0));
                     break;
                 case GazeGrowthType.Red:
@@ -74,18 +78,18 @@ public class RedBlue_GazeGrowth : GazeGrowth
 
     IEnumerator Fungi(float waitTime)
     {
-    
+
         rateOfChange = rateStorage;
         float iteration = rateOfChange;
 
         yield return new WaitForSeconds(cordyDelay);
 
-        if(!sounded)
+        if (!sounded)
         {
             AudioManager.Instance.Play_Cordyceps_GoingUnderground();
             sounded = true;
         }
-        
+
 
         while (rateOfChange < 1.0f)
         {
@@ -104,7 +108,7 @@ public class RedBlue_GazeGrowth : GazeGrowth
     {
         waitReturn = true;
         yield return new WaitForSeconds(waitTime);
-        if(!isCordyReached)
+        if (!isCordyReached)
         {
             StartCoroutine(ReturnCords());
         }
@@ -136,6 +140,16 @@ public class RedBlue_GazeGrowth : GazeGrowth
         if (other.CompareTag("Headbutt"))
         {
             Interact();
+        }
+    }
+
+    public void UpdateOnLevelLoad()
+    {
+        if (GameController.Instance.HasInteracted(interactionObject) && this.gameObject != null)
+        {
+            animator.SetTrigger(GG_Anim.Gaze_Hit_Trigger.ToString());
+            animator.SetBool(GG_Anim.Gaze_Cry_Bool.ToString(), true);
+            cordysepBarrier.transform.position = cordys_Lowered_Position;
         }
     }
 }

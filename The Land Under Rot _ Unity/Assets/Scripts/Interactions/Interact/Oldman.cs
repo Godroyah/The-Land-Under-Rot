@@ -10,11 +10,8 @@ public class Oldman : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        if(GameController.Instance.stinkhorn_bus_Called == true)
-        {
-            Rootford.SetActive(false);
-        }
         billboard_UI.SetActive(false);
+        GameController.Instance.onLevelLoaded += UpdateOnLevelLoad;
     }
 
     public override void Interact()
@@ -78,6 +75,14 @@ public class Oldman : Interactable
             billboard_UI.SetActive(false);
             playerController.interactables.Remove(this);
         }
-           
+
+    }
+
+    public void UpdateOnLevelLoad()
+    {
+        if (GameController.Instance.stinkhorn_bus_Called == true)
+        {
+            Rootford.SetActive(false);
+        }
     }
 }

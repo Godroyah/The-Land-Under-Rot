@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
     [Header("Tutorial Area")]
     public bool area_Tutorial = false;
     public bool tutorial_Interacted_BreakableBark = false;
-    public bool tutorial_Interacted_Cordyceps = false;
+    public bool tutorial_Interacted_BlueCordyceps = false;
 
     [Space(5)]
     [Header("Stinkhorn")]
@@ -69,16 +69,43 @@ public class GameController : MonoBehaviour
     public bool stinkhorn_HasTalked_Rootford_Intro2 = false;
     [Space(5)]
     public bool stinkhorn_HasTalked_BusDriver_1 = false;
+    [Space(5)]
 
-     
+    public bool stinkhorn_Interacted_BreakableBark1 = false; //number is based on encounter order
+    public bool stinkhorn_Interacted_BreakableBark2 = false;
+    public bool stinkhorn_Interacted_BreakableBark3 = false;
+    public bool stinkhorn_Interacted_BlueCordyceps = false;
+    public bool stinkhorn_Interacted_Acorn1 = false;
+    public bool stinkhorn_Interacted_Acorn2 = false;
+    public bool stinkhorn_Interacted_Acorn3 = false;
+    public bool stinkhorn_Interacted_Acorn4 = false;
+    public bool stinkhorn_Interacted_Acorn6 = false;
+    public bool stinkhorn_Interacted_Acorn7 = false;
+    public bool stinkhorn_Interacted_Acorn8 = false;
+    public bool stinkhorn_Interacted_Acorn9 = false;
 
     [Space(5)]
     [Header("TreeSeat")]
     public bool area_TreeSeat = false;
 
+    [Space(5)]
+    public bool treeSeat_Interacted_Acorn0 = false;
+    public bool treeSeat_Interacted_Acorn1 = false;
+    public bool treeSeat_Interacted_Acorn2 = false;
+    public bool treeSeat_Interacted_Acorn3 = false;
     //[Space(5)]
     //public bool treeSeat_HasTalked_Mulchant_GaveBottle = false;
     //public bool
+
+    [Space(5)]
+    [Header("Fruitful")]
+    public bool area_Fruitful = false;
+
+    [Space(5)]
+    public bool fruitful_Interacted_Acorn0 = false;
+    public bool fruitful_Interacted_Acorn1 = false;
+    public bool fruitful_Interacted_Acorn2 = false;
+    public bool fruitful_Interacted_Acorn3 = false;
     #endregion
 
     [Header("Look Sensitivity")]
@@ -91,6 +118,7 @@ public class GameController : MonoBehaviour
     [Header("Inventory Count")]
     #region Inventory Count
     public int playerAcorns;
+    public int maxAcorns = 0;
     private int oldAcorns;
     //public int playerMulch;
     //private int oldMulch;
@@ -155,7 +183,7 @@ public class GameController : MonoBehaviour
         if (acornCount != null)
             acornCount.text = playerAcorns.ToString();
 
-        onLevelLoaded += SaveGame;
+        Instance.onLevelLoaded = Instance.SaveGame; // Resets the delegate every time a new level is loaded
     }
 
     // Start is called before the first frame update
@@ -248,7 +276,7 @@ public class GameController : MonoBehaviour
     {
         //TODO: needs to be modified to stop resetting acorns
         playerAcorns = playerController.acorns;
-        acornCount.text = playerAcorns.ToString();
+        acornCount.text = playerAcorns.ToString() + "/" + maxAcorns.ToString();
         oldAcorns = playerAcorns;
     }
 
@@ -336,4 +364,167 @@ public class GameController : MonoBehaviour
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         onLevelLoaded();
     }
+
+    public void InteractedWith(Interaction obj)
+    {
+        switch (obj)
+        {
+            case Interaction.NONE:
+                Debug.Log("Interaction not Assigned!");
+                break;
+            case Interaction.Tutorial_BreakableBark:
+                tutorial_Interacted_BreakableBark = true;
+                break;
+            case Interaction.Tutorial_BlueCordyceps:
+                tutorial_Interacted_BlueCordyceps = true;
+                break;
+            case Interaction.Stinkhorn_BreakableBark1:
+                stinkhorn_Interacted_BreakableBark1 = true;
+                break;
+            case Interaction.Stinkhorn_BreakableBark2:
+                stinkhorn_Interacted_BreakableBark2 = true;
+                break;
+            case Interaction.Stinkhorn_BreakableBark3:
+                stinkhorn_Interacted_BreakableBark3 = true;
+                break;
+            case Interaction.Stinkhorn_BlueCordyceps:
+                stinkhorn_Interacted_BlueCordyceps = true;
+                break;
+            case Interaction.Stinkhorn_Acorn1:
+                stinkhorn_Interacted_Acorn1 = true;
+                break;
+            case Interaction.Stinkhorn_Acorn2:
+                stinkhorn_Interacted_Acorn2 = true;
+                break;
+            case Interaction.Stinkhorn_Acorn3:
+                stinkhorn_Interacted_Acorn3 = true;
+                break;
+            case Interaction.Stinkhorn_Acorn4:
+                stinkhorn_Interacted_Acorn4 = true;
+                break;
+            case Interaction.Stinkhorn_Acorn6:
+                stinkhorn_Interacted_Acorn6 = true;
+                break;
+            case Interaction.Stinkhorn_Acorn7:
+                stinkhorn_Interacted_Acorn7 = true;
+                break;
+            case Interaction.Stinkhorn_Acorn8:
+                stinkhorn_Interacted_Acorn8 = true;
+                break;
+            case Interaction.Stinkhorn_Acorn9:
+                stinkhorn_Interacted_Acorn9 = true;
+                break;
+            case Interaction.TreeSeat_Acorn0:
+                treeSeat_Interacted_Acorn0 = true;
+                break;
+            case Interaction.TreeSeat_Acorn1:
+                treeSeat_Interacted_Acorn1 = true;
+                break;
+            case Interaction.TreeSeat_Acorn2:
+                treeSeat_Interacted_Acorn2 = true;
+                break;
+            case Interaction.TreeSeat_Acorn3:
+                treeSeat_Interacted_Acorn3 = true;
+                break;
+            case Interaction.Fruitful_Acorn0:
+                fruitful_Interacted_Acorn0 = true;
+                break;
+            case Interaction.Fruitful_Acorn1:
+                fruitful_Interacted_Acorn1 = true;
+                break;
+            case Interaction.Fruitful_Acorn2:
+                fruitful_Interacted_Acorn2 = true;
+                break;
+            case Interaction.Fruitful_Acorn3:
+                fruitful_Interacted_Acorn3 = true;
+                break;
+            default:
+                Debug.Log("Interaction not Assigned!");
+                break;
+        }
+    }
+
+    public bool HasInteracted(Interaction obj)
+    {
+        switch (obj)
+        {
+            case Interaction.NONE:
+                Debug.Log("Interaction not Assigned!");
+                return false;
+            case Interaction.Tutorial_BreakableBark:
+                return tutorial_Interacted_BreakableBark;
+            case Interaction.Tutorial_BlueCordyceps:
+                return tutorial_Interacted_BlueCordyceps;
+            case Interaction.Stinkhorn_BreakableBark1:
+                return stinkhorn_Interacted_BreakableBark1;
+            case Interaction.Stinkhorn_BreakableBark2:
+                return stinkhorn_Interacted_BreakableBark2;
+            case Interaction.Stinkhorn_BreakableBark3:
+                return stinkhorn_Interacted_BreakableBark3;
+            case Interaction.Stinkhorn_BlueCordyceps:
+                return stinkhorn_Interacted_BlueCordyceps;
+            case Interaction.Stinkhorn_Acorn1:
+                return stinkhorn_Interacted_Acorn1;
+            case Interaction.Stinkhorn_Acorn2:
+                return stinkhorn_Interacted_Acorn2;
+            case Interaction.Stinkhorn_Acorn3:
+                return stinkhorn_Interacted_Acorn3;
+            case Interaction.Stinkhorn_Acorn4:
+                return stinkhorn_Interacted_Acorn4;
+            case Interaction.Stinkhorn_Acorn6:
+                return stinkhorn_Interacted_Acorn6;
+            case Interaction.Stinkhorn_Acorn7:
+                return stinkhorn_Interacted_Acorn7;
+            case Interaction.Stinkhorn_Acorn8:
+                return stinkhorn_Interacted_Acorn8;
+            case Interaction.Stinkhorn_Acorn9:
+                return stinkhorn_Interacted_Acorn9;
+            case Interaction.TreeSeat_Acorn0:
+                return treeSeat_Interacted_Acorn0;
+            case Interaction.TreeSeat_Acorn1:
+                return treeSeat_Interacted_Acorn1;
+            case Interaction.TreeSeat_Acorn2:
+                return treeSeat_Interacted_Acorn2;
+            case Interaction.TreeSeat_Acorn3:
+                return treeSeat_Interacted_Acorn3;
+            case Interaction.Fruitful_Acorn0:
+                return fruitful_Interacted_Acorn0;
+            case Interaction.Fruitful_Acorn1:
+                return fruitful_Interacted_Acorn1;
+            case Interaction.Fruitful_Acorn2:
+                return fruitful_Interacted_Acorn2;
+            case Interaction.Fruitful_Acorn3:
+                return fruitful_Interacted_Acorn3 = true;
+            default:
+                Debug.Log("Interaction not Assigned!");
+                return false;
+        }
+    }
+}
+
+public enum Interaction
+{
+    NONE,
+    Tutorial_BreakableBark,
+    Tutorial_BlueCordyceps,
+    Stinkhorn_BreakableBark1,
+    Stinkhorn_BreakableBark2,
+    Stinkhorn_BreakableBark3,
+    Stinkhorn_BlueCordyceps,
+    Stinkhorn_Acorn1,
+    Stinkhorn_Acorn2,
+    Stinkhorn_Acorn3,
+    Stinkhorn_Acorn4,
+    Stinkhorn_Acorn6,
+    Stinkhorn_Acorn7,
+    Stinkhorn_Acorn8,
+    Stinkhorn_Acorn9,
+    TreeSeat_Acorn0,
+    TreeSeat_Acorn1,
+    TreeSeat_Acorn2,
+    TreeSeat_Acorn3,
+    Fruitful_Acorn0,
+    Fruitful_Acorn1,
+    Fruitful_Acorn2,
+    Fruitful_Acorn3,
 }
