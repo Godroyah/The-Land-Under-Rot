@@ -84,7 +84,7 @@ public class LevelLoader : MonoBehaviour
 
         #endregion
 
-        GameController.Instance.SaveGame();
+        //GameController.Instance.SaveGame();
 
         #region Unload
 

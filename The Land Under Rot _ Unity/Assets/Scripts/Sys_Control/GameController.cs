@@ -147,6 +147,8 @@ public class GameController : MonoBehaviour
 
         if (acornCount != null)
             acornCount.text = playerAcorns.ToString();
+
+        onLevelLoaded += SaveGame;
     }
 
     // Start is called before the first frame update
