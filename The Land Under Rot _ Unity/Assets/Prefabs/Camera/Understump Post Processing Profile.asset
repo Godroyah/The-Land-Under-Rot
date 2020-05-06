@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7197319190990643845
+--- !u!114 &-2929317981308120290
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,31 +9,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
-  m_Name: LensDistortion
+  m_Script: {fileID: 11500000, guid: cabde2662242d624a91df3e7b6507120, type: 3}
+  m_Name: TextureFog
   m_EditorClassIdentifier: 
   active: 1
   enabled:
     overrideState: 1
     value: 1
-  intensity:
+  fogPower:
     overrideState: 1
-    value: 20
-  intensityX:
-    overrideState: 0
     value: 1
-  intensityY:
-    overrideState: 0
-    value: 1
-  centerX:
-    overrideState: 0
+  skyboxOffset:
+    overrideState: 1
+    value: 10
+  distanceBlend:
+    overrideState: 1
+    value: 2.5
+  nearPush:
+    overrideState: 1
+    value: 2
+  depthColor:
+    overrideState: 1
+    value: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 0}
+  debugDepth:
+    overrideState: 1
     value: 0
-  centerY:
-    overrideState: 0
-    value: 0
-  scale:
-    overrideState: 0
-    value: 1
 --- !u!114 &-525384342229229502
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -81,8 +81,9 @@ MonoBehaviour:
   - {fileID: 7045279236868988529}
   - {fileID: 6233932226822076324}
   - {fileID: -525384342229229502}
-  - {fileID: -7197319190990643845}
   - {fileID: 4845516480161671086}
+  - {fileID: -2929317981308120290}
+  - {fileID: 8002237240571225468}
 --- !u!114 &1411481331198616355
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1566,3 +1567,37 @@ MonoBehaviour:
       - 0.5
       - 0.5
       - 0.5
+--- !u!114 &8002237240571225468
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 20
+  intensityX:
+    overrideState: 0
+    value: 1
+  intensityY:
+    overrideState: 0
+    value: 1
+  centerX:
+    overrideState: 0
+    value: 0
+  centerY:
+    overrideState: 0
+    value: 0
+  scale:
+    overrideState: 0
+    value: 1
