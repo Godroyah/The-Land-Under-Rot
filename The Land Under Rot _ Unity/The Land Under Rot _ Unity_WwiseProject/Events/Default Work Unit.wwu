@@ -3,10 +3,20 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{3A015EAF-8802-42AD-B56D-86CAA361ED90}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="Levels" ID="{9F859A5E-9DCE-4946-8A1B-5F6A6DDEBC7E}" ShortID="445847496">
+				<Folder Name="MX" ID="{9F859A5E-9DCE-4946-8A1B-5F6A6DDEBC7E}" ShortID="445847496">
 					<ChildrenList>
 						<Event Name="State_Fruitful_Forest" ID="{60F70E93-B887-4891-8B1F-281653B43E2F}">
 							<ChildrenList>
+								<Action Name="" ID="{8D9BF4D4-6EEB-4359-962C-4E2F873AAFC3}" ShortID="40370709">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambiences" ID="{5A4B393A-A02A-408E-B466-B4E16DE32B23}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{804695BB-87BC-48DF-85CC-DCAF10039D7F}" ShortID="1045716328">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
@@ -17,10 +27,27 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{05697B3A-E91C-43FC-96FA-981D758F5818}" ShortID="852126928">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="lur_ambience_fruitful_forest" ID="{FC0091B4-7186-41B2-A586-F36A3C2D3469}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="State_Stinkhorn" ID="{0F99FDD1-CEF3-422C-9725-766E07447557}">
 							<ChildrenList>
+								<Action Name="" ID="{7F32BE5A-729F-4148-A71E-B0680A1039DE}" ShortID="407995018">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambiences" ID="{5A4B393A-A02A-408E-B466-B4E16DE32B23}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{1FB22636-6A98-4A72-901B-E16A5A4F4297}" ShortID="478697981">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
@@ -28,6 +55,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Stinkhorn" ID="{B0F9EC75-B7C4-40F0-9EC1-7372E00EB44D}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{7E0C10ED-88D7-452A-9358-991F5640007E}" ShortID="382536735">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="lur_ambience_stinkhorn" ID="{6FB919A6-BE8C-494D-9397-CBDFC513D901}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -42,6 +76,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Tutorial" ID="{41A90DF4-02C7-41AD-9C57-09AF792DE63E}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{5EE44476-84F9-4826-9625-212AD95926EB}" ShortID="115980110">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="lur_ambience_tutorial" ID="{C49AA5E7-7C99-4EDC-B6F8-91C53216D3FE}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -77,6 +118,16 @@
 						</Event>
 						<Event Name="Start_Tree_Seat" ID="{A45EF3FC-1178-4633-BAC0-9CC15746D862}">
 							<ChildrenList>
+								<Action Name="" ID="{EC058D29-DD49-4BA2-86E5-E7F8E6EFA5B4}" ShortID="906555576">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambiences" ID="{5A4B393A-A02A-408E-B466-B4E16DE32B23}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{7CCC7FED-80D4-40BE-A2D0-A8D5E5F51AB5}" ShortID="516448846">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
@@ -87,10 +138,27 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{959A1D13-C698-412F-A9A2-A3399CA35B64}" ShortID="967818936">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="lur_ambience_tree_seat" ID="{2167638C-49E7-49E6-B5E9-79FAC5A65947}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Start_Understump" ID="{B45B2198-697B-495E-8316-94223773FCBF}">
 							<ChildrenList>
+								<Action Name="" ID="{17673170-F81E-4C8A-BE59-EF77C5DCA53A}" ShortID="893841384">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Ambiences" ID="{5A4B393A-A02A-408E-B466-B4E16DE32B23}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{701693F7-087D-4EAF-A000-1567BF94C8F9}" ShortID="105238381">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
@@ -98,6 +166,13 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Understump" ID="{EDD9A8CE-E6E2-4A5C-8C78-309EF7E95EFC}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{0AE69234-30E4-4DD9-A3C8-2C84A5C521DF}" ShortID="935923164">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="lur_ambience_understump" ID="{46A3C6AE-624C-4C51-854D-C1BAC5869665}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -112,6 +187,34 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Main_Menu" ID="{F859AEEF-EBF7-4BC7-ADA2-645030B5F32A}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Return_Tree_Seat" ID="{078FB857-129B-42EC-A497-0D21B71F4322}">
+							<ChildrenList>
+								<Action Name="" ID="{74BDE052-61FF-4306-8496-BD45D77FDE1C}" ShortID="723456529">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tree_Seat" ID="{8D4D5187-9454-4162-9DC9-4E685E15DED9}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Return_Fruitful_Forest" ID="{9287E741-4CC6-47B0-8BCC-1AE5E94CE1D8}">
+							<ChildrenList>
+								<Action Name="" ID="{C2225BE6-A93E-46D9-B98D-EA24DEF5FC77}" ShortID="74533812">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Fruitful_Forest" ID="{38CFC43B-C720-4D84-ABA4-853AE4CDC375}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -134,7 +237,7 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="SFX Triggers" ID="{D24DBE7A-9A41-4F46-A135-AA47D4F3E8F9}" ShortID="408616057">
+				<Folder Name="SFX" ID="{D24DBE7A-9A41-4F46-A135-AA47D4F3E8F9}" ShortID="408616057">
 					<ChildrenList>
 						<Folder Name="Unfinished" ID="{C351BEE7-48A6-44C7-B9EF-23F7A2209554}" ShortID="668932569"/>
 						<Folder Name="Finished" ID="{3254F777-AF18-48D9-B659-E45B4CBF28F6}" ShortID="588017005">
@@ -182,7 +285,7 @@
 										<Action Name="" ID="{1A6EA1B1-644C-4F38-9957-08B0A9945DFB}" ShortID="725595470">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="lur_sfx_CHAR_headbutt_wood" ID="{02CFB762-497A-48E6-A21F-47204ABEDCC2}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+													<ObjectRef Name="lur_sfx_CHAR_headbutt_wood" ID="{0C4094D1-9977-4C50-BF72-952F1C6091BA}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -193,7 +296,7 @@
 										<Action Name="" ID="{6BC45C6A-462F-428D-8982-81873631212A}" ShortID="518036940">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="lur_sfx_INT_boing" ID="{D920D1DF-5BD7-4EC2-BC1D-96D69AEBC41F}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+													<ObjectRef Name="lur_sfx_INT_boing" ID="{6BEDE124-221F-443A-8C9C-9102AF3F9D77}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -239,7 +342,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+													<ObjectRef Name="MX Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -261,7 +364,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MX Audio Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+													<ObjectRef Name="MX Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -289,11 +392,22 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="char_headbutt_stone" ID="{649E4C16-A0D3-4AFB-B18A-B4BC22D86375}">
+									<ChildrenList>
+										<Action Name="" ID="{31544C9C-066B-4561-B263-93728CE46A0A}" ShortID="201185817">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_CHAR_headbutt_stone" ID="{AB2756D3-3B25-45D9-932F-FF2BF6604AF5}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="Dialogue Triggers" ID="{E2068138-A346-4435-ACB4-A8D947B49ADC}" ShortID="869835423">
+				<Folder Name="VOX" ID="{E2068138-A346-4435-ACB4-A8D947B49ADC}" ShortID="869835423">
 					<ChildrenList>
 						<Event Name="Rootford" ID="{893C44D1-8177-4B58-AC49-EB06BCD57F77}">
 							<ChildrenList>
@@ -352,7 +466,7 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="UI Triggers" ID="{15672DFF-206B-4A3D-B52F-0D7742DD8AE3}" ShortID="324925658">
+				<Folder Name="UI" ID="{15672DFF-206B-4A3D-B52F-0D7742DD8AE3}" ShortID="324925658">
 					<ChildrenList>
 						<Event Name="Start_Button" ID="{47E069A9-CC66-47B8-A822-8EEAC31094C2}">
 							<ChildrenList>
@@ -382,6 +496,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="lur_sfx_UI_click" ID="{F227928C-0E62-4F01-98B6-FDF21DBD0408}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Pause" ID="{88CE0AC7-7C1F-4A84-BE7B-DA9F863F62E9}">
+							<ChildrenList>
+								<Action Name="" ID="{CD39F42D-772C-4CAC-9E43-632DCF5FD1CC}" ShortID="961196188">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="lur_sfx_UI_pause" ID="{FE0BDC7B-497C-4601-BC58-EECCC7F7D557}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

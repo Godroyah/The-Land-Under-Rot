@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID CHAR_FOOTSTEPS_GRASS = 3543977830U;
         static const AkUniqueID CHAR_FOOTSTEPS_STONE = 2543644351U;
         static const AkUniqueID CHAR_FOOTSTEPS_WOOD = 3744065311U;
+        static const AkUniqueID CHAR_HEADBUTT_STONE = 2450984751U;
         static const AkUniqueID CHAR_HEADBUTT_WOOD = 3953657551U;
         static const AkUniqueID CLICK = 1584507803U;
         static const AkUniqueID FENWAY = 851955753U;
@@ -26,6 +27,9 @@ namespace AK
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID MULCHANT = 2403460855U;
+        static const AkUniqueID PAUSE = 3092587493U;
+        static const AkUniqueID RETURN_FRUITFUL_FOREST = 3336759787U;
+        static const AkUniqueID RETURN_TREE_SEAT = 1526298514U;
         static const AkUniqueID ROOTFORD = 1989498786U;
         static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID START_GAME = 1114964412U;
@@ -83,17 +87,14 @@ namespace AK
 
     namespace BUSSES
     {
-        static const AkUniqueID HEAVY_DUCKING_AUDIO_BUS = 1640573219U;
-        static const AkUniqueID LIGHT_DUCKING_AUDIO_BUS = 1255859898U;
+        static const AkUniqueID AMBIENCE_BUS = 4202237879U;
+        static const AkUniqueID CLEAN_BUS = 1348820510U;
+        static const AkUniqueID HD_BUS = 2772244527U;
+        static const AkUniqueID LD_BUS = 879536147U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
-        static const AkUniqueID MX_AUDIO_BUS = 1450019282U;
-        static const AkUniqueID SFX_AUDIO_BUS = 4084199202U;
+        static const AkUniqueID MX_BUS = 3027868960U;
+        static const AkUniqueID SFX_BUS = 1502772432U;
     } // namespace BUSSES
-
-    namespace AUX_BUSSES
-    {
-        static const AkUniqueID REVERB_AUX_BUS = 1494052673U;
-    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

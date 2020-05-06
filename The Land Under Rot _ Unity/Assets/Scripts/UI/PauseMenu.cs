@@ -52,10 +52,11 @@ public class PauseMenu : MonoBehaviour
         //before I put in the NONE enum. NEED to come back and fix this at a later date but for now this is working.
         gameController.greenBottle = starBottle;
         // Debug.Log("Active?");
-     //   AudioManager.Instance.Play_UI_Click_PauseMenu();
+        
 
         if (Input.GetButton("Pause"))
             {
+            AudioManager.Instance.Play_UI_Click_PauseMenu();
             if (!paused)
                 {
                     Cursor.visible = true;

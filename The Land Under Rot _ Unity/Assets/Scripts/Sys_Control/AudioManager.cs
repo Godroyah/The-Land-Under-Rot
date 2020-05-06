@@ -67,6 +67,11 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void Play_Headbutt()
+    {
+
+    }
+
     public void Play_Headbutt_Wood()
     {
         AkSoundEngine.PostEvent("char_headbutt_wood", gameObject);
@@ -74,7 +79,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Headbutt_Stone()
     {
-
+        AkSoundEngine.PostEvent("char_headbutt_stone", gameObject);
     }
 
     public void Play_Headbutt_Enemy()
@@ -93,6 +98,11 @@ public class AudioManager : MonoBehaviour
     }
 
     public void Play_Landing_OnFeet()
+    {
+
+    }
+
+    public void Play_Jump()
     {
 
     }
@@ -212,11 +222,11 @@ public class AudioManager : MonoBehaviour
         AkSoundEngine.PostEvent("int_boing", gameObject);
     }
 
-    public void Play_GateFall()
-    {
+ /* redundant with cordyceps going underground  public void Play_GateFall()
+   // {
 
-    }
-
+   }
+*/ 
     public void Play_LeafPile()
     {
 
@@ -316,14 +326,14 @@ public class AudioManager : MonoBehaviour
     #region Stinger
     public void Play_Cordyceps_GoingUnderground()
     {
+     //   AkSoundEngine.PostEvent("stg_growth_function", gameObject);
         AkSoundEngine.PostEvent("int_cordyceps", gameObject);
-        AkSoundEngine.PostEvent("stg_growth_function", gameObject);
-
+  
     }
 
     public void Play_ClearingBranches()
     {
-        AkSoundEngine.PostEvent("stg_growth_function", gameObject);
+   //     AkSoundEngine.PostEvent("stg_growth_function", gameObject);
     }
 
     public void Play_Mulch_Smash()
@@ -355,7 +365,12 @@ public class AudioManager : MonoBehaviour
 
     public void Play_UI_Click_PauseMenu()
     {
-      //  AkSoundEngine.PostEvent("Click", gameObject);
+        AkSoundEngine.PostEvent("Click", gameObject);
+    }
+
+    public void Play_Stinger_Start_Cutscene()
+    {
+        AkSoundEngine.PostEvent("Start_Opening_Cinematic", gameObject);
     }
     #endregion
 }
