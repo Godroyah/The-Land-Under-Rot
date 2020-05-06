@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bark : Interactable
 {
+    public Interaction interactionObject;
     //public bool isEvent;
     GameController gameController;
     public GameObject barkContainer;
@@ -34,13 +35,14 @@ public class Bark : Interactable
         }
 
         gameController = GameController.Instance;
+        GameController.Instance.onLevelLoaded += UpdateOnLevelLoad;
     }
 
     public override void Interact()
     {
         base.Interact();
 
-        // TODO: Switch from Destroy to Particle/Anim
+        GameController.Instance.InteractedWith(interactionObject);
 
         playerParticles.Play();
         barkParticles.Play();
@@ -57,6 +59,15 @@ public class Bark : Interactable
         if (other.CompareTag("Headbutt"))
         {
             Interact();
+        }
+    }
+
+    public void UpdateOnLevelLoad()
+    {
+        if (GameController.Instance.HasInteracted(interactionObject))
+        {
+            thisTrigger.enabled = false;
+            Destroy(barkContainer);
         }
     }
 

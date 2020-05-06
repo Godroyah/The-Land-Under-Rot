@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//public enum Branch_Type { NONE, STAR, WILLOW}
+
 public class Branch_Event : Event_Type
 {
     public GameObject branch;
 
+    GameController gameController;
+
+    public Branch_Type branchType;
+
     Vector3 branchStartPos;
     Vector3 branchLoweredPos;
+    //public Vector3 endPos;
+    //Willow: 235, 220, -17
+    //Star: same 
 
     [Space(5)]
 
@@ -34,6 +43,12 @@ public class Branch_Event : Event_Type
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameController.Instance;
+        if ((branchType == Branch_Type.STAR && gameController.starBranchDown) || (branchType == Branch_Type.WILLOW && gameController.willowBranchDown))
+        {
+            branch.transform.position = gameController.branchEndPos;
+        }
+
         dropRecorderBranch = dropSpeedBranch;
 
         branchStartPos = new Vector3(branch.transform.position.x, branch.transform.position.y, branch.transform.position.z);
@@ -62,6 +77,15 @@ public class Branch_Event : Event_Type
             branch.transform.position = Vector3.Lerp(branch.transform.position, branchLoweredPos, dropSpeedBranch * Time.deltaTime);
             dropSpeedBranch += branchIteration * Time.deltaTime;
             yield return null;
+        }
+
+        if(branchType == Branch_Type.STAR)
+        {
+            gameController.starBranchDown = true;
+        }
+        else if(branchType == Branch_Type.WILLOW)
+        {
+            gameController.willowBranchDown = true;
         }
     }
 }

@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     private static AudioManager _instance = null;
     public static AudioManager Instance { get { return _instance; } }
 
-    
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -116,13 +116,13 @@ public class AudioManager : MonoBehaviour
     {
 
     }
-#endregion
+    #endregion
 
     #region Environment
     //distance
     public void Play_Ambient_BugsAroundLight()
     {
-    
+
     }
 
     //unless these are specific bugs, no distance needed
@@ -194,7 +194,7 @@ public class AudioManager : MonoBehaviour
     {
 
     }
-#endregion
+    #endregion
 
     #region Interaction
     public void Play_PurchaseNoise()
@@ -222,11 +222,11 @@ public class AudioManager : MonoBehaviour
         AkSoundEngine.PostEvent("int_boing", gameObject);
     }
 
- /* redundant with cordyceps going underground  public void Play_GateFall()
-   // {
+    /* redundant with cordyceps going underground  public void Play_GateFall()
+      // {
 
-   }
-*/ 
+      }
+   */
     public void Play_LeafPile()
     {
 
@@ -236,7 +236,7 @@ public class AudioManager : MonoBehaviour
     {
 
     }
-#endregion
+    #endregion
 
     #region NPC
 
@@ -326,14 +326,14 @@ public class AudioManager : MonoBehaviour
     #region Stinger
     public void Play_Cordyceps_GoingUnderground()
     {
-     //   AkSoundEngine.PostEvent("stg_growth_function", gameObject);
+        //   AkSoundEngine.PostEvent("stg_growth_function", gameObject);
         AkSoundEngine.PostEvent("int_cordyceps", gameObject);
-  
+
     }
 
     public void Play_ClearingBranches()
     {
-   //     AkSoundEngine.PostEvent("stg_growth_function", gameObject);
+        //     AkSoundEngine.PostEvent("stg_growth_function", gameObject);
     }
 
     public void Play_Mulch_Smash()
@@ -373,5 +373,109 @@ public class AudioManager : MonoBehaviour
         AkSoundEngine.PostEvent("Start_Opening_Cinematic", gameObject);
     }
     #endregion
+
+    #region Switch Boards for Multiple Sound Types
+
+    /// <summary>
+    /// To help simplify and consolidate the walking sound calls so that
+    /// the AudioManager is the only place this switch is defined
+    /// </summary>
+    /// <param name="surfaceType"></param>
+    public void Play_Walk(WalkSurface surfaceType)
+    {
+        switch (surfaceType)
+        {
+            case WalkSurface.NONE:
+                Debug.Log("Shush");
+                break;
+            case WalkSurface.GRASS:
+                Play_Walk_Grass();
+                break;
+            case WalkSurface.STONE:
+                Play_Walk_Stone();
+                break;
+            case WalkSurface.DIRT:
+                Play_Walk_Dirt();
+                break;
+            case WalkSurface.MUD:
+                Play_Walk_Mud();
+                break;
+            case WalkSurface.WOOD:
+                Play_Walk_Wood();
+                break;
+            case WalkSurface.MUSHROOM:
+                Play_Walk_Mushroom();
+                break;
+            case WalkSurface.LEAF:
+                Play_Walk_Leaf();
+                break;
+            default:
+                break;
+        }
+    }
+
+    /// <summary>
+    /// To help simplify and consolidate the headbutt sound calls so that
+    /// the AudioManager is the only place this switch is defined
+    /// </summary>
+    /// <param name="surfaceType"></param>
+    public void Play_Headbutt(HeadbuttSurface surfaceType)
+    {
+        switch (surfaceType)
+        {
+            case HeadbuttSurface.NONE:
+                Debug.Log("Shush");
+                break;
+            case HeadbuttSurface.WOOD:
+                Play_Headbutt_Wood();
+                break;
+            case HeadbuttSurface.STONE:
+                Play_Headbutt_Stone();
+                break;
+            case HeadbuttSurface.GAZEGROWTH:
+                Play_EyeBoing();
+                break;
+            case HeadbuttSurface.MULCH:
+                Play_SmashingMulch();
+                break;
+        }
+    }
+
+    /// <summary>
+    /// To help simplify and consolidate the on contact sound calls so that
+    /// the AudioManager is the only place this switch is defined
+    /// </summary>
+    /// <param name="contactType"></param>
+    public void Play_OnContact(ContactType contactType)
+    {
+        switch (contactType)
+        {
+            case ContactType.MUSHROOM_BOUNCE:
+                Play_MushroomBounce();
+                break;
+            case ContactType.WATER_SPLASH:
+                Play_WaterSplash();
+                break;
+            case ContactType.LEAF_PILE:
+                Play_LeafPile();
+                break;
+        }
+    }
+
+    #endregion
 }
 
+public enum WalkSurface
+{
+    NONE, GRASS, STONE, DIRT, MUD, WOOD, MUSHROOM, LEAF
+}
+
+public enum HeadbuttSurface
+{
+    NONE, WOOD, STONE, GAZEGROWTH, MULCH
+}
+
+public enum ContactType
+{
+    MUSHROOM_BOUNCE, WATER_SPLASH, LEAF_PILE
+}

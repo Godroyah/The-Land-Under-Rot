@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //public enum PickUpType { NONE, ACORN, MULCH, HEALTH, HARMFUL}
-public enum PickUpType { NONE, ACORN}
+public enum PickUpType { NONE, ACORN }
 
 public class Pick_Up : MonoBehaviour
 {
     public PickUpType pickUpType; //Drop down menu for the types of pickups (Acorn, Mulch, etc.)'
-    //private Collider mulchCollider;
+    public Interaction interactionObject;
     private ObjectPreferences objPref;
     private AudioSource acornAudio;
 
@@ -26,14 +26,15 @@ public class Pick_Up : MonoBehaviour
         //    StartCoroutine(KillCollider());
         //}
 
-        if(pickUpType == PickUpType.ACORN)
+        if (pickUpType == PickUpType.ACORN)
         {
             if (objPref != null && acornAudio != null)
             {
                 acornAudio.clip = objPref.pickup_AudioClip;
             }
         }
-        
+
+        GameController.Instance.onLevelLoaded += UpdateOnLevelLoad;
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class Pick_Up : MonoBehaviour
         //    transform.Rotate(0, 3, 0, Space.World);
         //}
 
-        if (pickUpType == PickUpType.ACORN  && Time.timeScale > 0)
+        if (pickUpType == PickUpType.ACORN && Time.timeScale > 0)
         {
             transform.Rotate(0, 3, 0, Space.World);
         }
@@ -65,7 +66,7 @@ public class Pick_Up : MonoBehaviour
 
             if (playerController == null)
             {
-                playerController = other.GetComponentInParent<PlayerController>();
+                playerController = GameController.Instance.playerController;
             }
 
             switch (pickUpType)
@@ -78,35 +79,14 @@ public class Pick_Up : MonoBehaviour
                     //move to Player; have GameController call for it
                     //acornAudio.Play();
                     AudioManager.Instance.Play_Acorn_Pickup();
-                    if(acornAudio.isPlaying)
+                    if (acornAudio.isPlaying)
                     {
                         Debug.Log("Playing!");
                     }
                     playerController.acorns += 1;
+                    GameController.Instance.InteractedWith(interactionObject);
                     Destroy(gameObject);
                     break;
-                //case PickUpType.MULCH:
-                //    //Count MULCH
-                //    mulchCollider.enabled = false;
-                //    playerController.mulch += 1;
-                //    Destroy(gameObject);
-                //    break;
-                //case PickUpType.HEALTH:
-                //    //Add HEALTH
-                //    if (playerController.health < 3)
-                //    {
-                //        playerController.health += 1;
-                //    }
-                //    Destroy(gameObject);
-                //    break;
-                //case PickUpType.HARMFUL:
-                //    //Take HEALTH
-                //    if (playerController.health > 0)
-                //    {
-                //        playerController.health -= 1;
-                //    }
-                //    Destroy(gameObject);
-                //    break;
                 default:
                     Debug.LogWarning("PickUpType Error.");
                     break;
@@ -117,5 +97,13 @@ public class Pick_Up : MonoBehaviour
         //{
         //    mulchCollider.enabled = true;
         //}
+    }
+
+    public void UpdateOnLevelLoad()
+    {
+        if (GameController.Instance.HasInteracted(interactionObject))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -35,14 +35,17 @@ public class LevelLoader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!triggered && !isDisabled)
+        if(other.CompareTag("Player"))
         {
-            triggered = true;
+            if (!triggered && !isDisabled)
+            {
+                triggered = true;
 
-            //SceneManager.LoadSceneAsync(sceneToLoad.buildIndex, LoadSceneMode.Additive);
-            //StartCoroutine(CheckForLevelLoaded());
+                //SceneManager.LoadSceneAsync(sceneToLoad.buildIndex, LoadSceneMode.Additive);
+                //StartCoroutine(CheckForLevelLoaded());
 
-            StartCoroutine(LoadYourAsyncScene());
+                StartCoroutine(LoadYourAsyncScene());
+            }
         }
     }
 
@@ -84,7 +87,7 @@ public class LevelLoader : MonoBehaviour
 
         #endregion
 
-        GameController.Instance.SaveGame();
+        //GameController.Instance.SaveGame();
 
         #region Unload
 
@@ -144,6 +147,8 @@ public class LevelLoader : MonoBehaviour
 
         #endregion
 
+        GameController.Instance.UpdateLevel();
+
         yield return new WaitWhile(() => deltaTimeLoading <= minDeltaTimeLoading);
 
         // Unloading the LoadingScene
@@ -172,6 +177,7 @@ public enum BuildOrder
     TreeSeat,
     FruitfulForest,
     Understump,
+    FactoryCutscene,
     BossLevel,
     LoadingLevel
 }

@@ -9,7 +9,9 @@ public class CharacterAnimatorV2 : MonoBehaviour
     Animator animator;
     float inputValue;
     bool justMoved;
+    bool isFalling = false;
 
+    public WalkSurface surfaceType = WalkSurface.NONE;
     public ParticleSystem runParticleSystem;
 
     // Start is called before the first frame update
@@ -73,6 +75,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
                     {
                         runParticleSystem.Play();
                         AudioManager.Instance.Play_ClothesRustle();
+                        AudioManager.Instance.Play_Walk(surfaceType);
                     }
                     else if (runParticleSystem.isPlaying && !playerController.IsGrounded)
                     {
@@ -101,12 +104,30 @@ public class CharacterAnimatorV2 : MonoBehaviour
             else
             {
                 animator.SetBool(CharAnimation.Is_Walking_Bool.ToString(), false);
+                if (runParticleSystem.isPlaying)
+                {
+                    runParticleSystem.Stop();
+                }
             }
 
         if (playerController.IsGrounded)
         {
             animator.SetBool(CharAnimation.Is_Falling_Bool.ToString(), false);
-            AudioManager.Instance.Play_Landing_OnFeet();
+            if (isFalling)
+            {
+                isFalling = false;
+                AudioManager.Instance.Play_Landing_OnFeet();
+            }
+            
+        }
+        else
+        {
+            isFalling = true;
+            AudioManager.Instance.Play_Falling();
+            if (runParticleSystem.isPlaying)
+            {
+                runParticleSystem.Stop();
+            }
         }
 
     }

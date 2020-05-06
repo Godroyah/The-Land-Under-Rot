@@ -5,12 +5,13 @@ using UnityEngine;
 public class Oldman : Interactable
 {
     //DialogueManager dialogueManager;
-    
+    public GameObject Rootford;
 
     // Start is called before the first frame update
     void Start()
     {
         billboard_UI.SetActive(false);
+        GameController.Instance.onLevelLoaded += UpdateOnLevelLoad;
     }
 
     public override void Interact()
@@ -20,6 +21,7 @@ public class Oldman : Interactable
 
         //Interact MUST come after dialogue manager call to ensure any camera events called word properly
         base.Interact();
+        billboard_UI.SetActive(false);
 
         AudioManager.Instance.Play_Rootford();
 
@@ -27,24 +29,24 @@ public class Oldman : Interactable
         {
            
             // Select which dialogue to 'say'
-            if (!GameController.Instance.tutorial_bus_Called)
+            if (!GameController.Instance.stinkhorn_bus_Called)
             {
-                if (!GameController.Instance.tutorial_HasTalked_Rootford_Intro1)
+                if (!GameController.Instance.stinkhorn_HasTalked_Rootford_Intro1)
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_1);
-                    GameController.Instance.tutorial_HasTalked_Rootford_Intro1 = true;
+                    GameController.Instance.stinkhorn_HasTalked_Rootford_Intro1 = true;
                 }
-                else if (!GameController.Instance.tutorial_HasTalked_Rootford_Intro2)
+                else if (!GameController.Instance.stinkhorn_HasTalked_Rootford_Intro2)
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_2);
-                    GameController.Instance.tutorial_HasTalked_Rootford_Intro2 = true;
+                    GameController.Instance.stinkhorn_HasTalked_Rootford_Intro2 = true;
                 }
                 else
                 {
                     dialogueManager.StartDialogue(Reply.SS_Rootford_Intro_3_Repeat);
                 }
             }
-            else if (GameController.Instance.tutorial_bus_Called/* && GameController.Instance.tutorial_HasTalked_Rootford_Intro2*/)
+            else if (GameController.Instance.stinkhorn_bus_Called/* && GameController.Instance.tutorial_HasTalked_Rootford_Intro2*/)
             {
                 dialogueManager.StartDialogue(Reply.SS_Rootford_Bus_1_Repeat);
             }
@@ -69,6 +71,18 @@ public class Oldman : Interactable
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Interact"))
+        {
+            billboard_UI.SetActive(false);
             playerController.interactables.Remove(this);
+        }
+
+    }
+
+    public void UpdateOnLevelLoad()
+    {
+        if (GameController.Instance.stinkhorn_bus_Called == true)
+        {
+            Rootford.SetActive(false);
+        }
     }
 }

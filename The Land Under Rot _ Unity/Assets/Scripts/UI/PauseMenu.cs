@@ -90,6 +90,7 @@ public class PauseMenu : MonoBehaviour
                         quitOption.SetActive(false);
                         decoration.SetActive(false);
                         acornText.enabled = false;
+                        settingsOption.SetActive(false);
                     //resumeButton.interactable = true;
                     //quitButton.interactable = true;
                 }

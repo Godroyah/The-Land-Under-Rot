@@ -7,8 +7,17 @@ using UnityEngine.SceneManagement;
 public class Dialogue : MonoBehaviour
 {
     [Tooltip("Name of the Scene for the DialogueManager to Find")]
+    public int frameIndex;
     public string SceneName;
     public GameObject[] Frames;
+    [Space(5)]
+    [Header("Frame Triggers for Event Cam Shots")]
+    public bool[] shotChange;
+
+
+    [Space(5)]
+    [Header("Text Done?")]
+    public bool textIsDone;
 
     [Space(5)]
 
@@ -51,6 +60,11 @@ public class Dialogue : MonoBehaviour
                 //Include LogWarning if no Event_Trigger component is included
             }
         }
+
+        //if(shotChange.Length > 0)
+        //{
+        //    shotChange[shotChange.Length] = true;
+        //}
     }
 
     public void StartScene()
@@ -121,6 +135,7 @@ public class Dialogue : MonoBehaviour
 
         for (int i = 0; i < Frames.Length; i++)
         {
+            frameIndex = i;
             //  Debug.Log("Depth Level 1");
             if (i != 0)
                 Frames[i - 1].SetActive(false);
@@ -139,9 +154,15 @@ public class Dialogue : MonoBehaviour
             // Wait while the text hasn't finished or the player interacts to finish the text
             yield return new WaitUntil(() => (Input.GetButtonDown("Interact") || (hasFinishedDisplayingText || currentTextDisplayer == null)));
 
+            if (i == Frames.Length - 1)
+            {
+                textIsDone = true;
+            }
+
             //      Debug.Log("Depth Level 3");
             if (/*Input.GetButtonDown("Interact") ||*/ hasFinishedDisplayingText || currentTextDisplayer == null)
             {
+                
                 hasFinishedDisplayingText = false;
                 currentTextDisplayer = null;
 

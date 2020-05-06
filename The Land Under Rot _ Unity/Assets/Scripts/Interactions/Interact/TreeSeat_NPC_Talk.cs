@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum TreeSeat_NPC { NONE, CATKIN, BUDDY, LIZARD, ROOTFORD, MS_STAMEN,
-    EXIT_FENWAY, MULCH_FENWAY, PEDALTON, CARROT_SLUG, STRANGER, GOURDO, PEAPOD}
+    EXIT_FENWAY, MULCH_FENWAY, PEDALTON, CARROT_SLUG, STRANGER, GOURDO, PEAPOD, BOSS_MULCHANT}
 
 //PEAPOD ^ ?
 
@@ -36,13 +36,17 @@ public class TreeSeat_NPC_Talk : Interactable
 
         //Interact MUST come after dialogue manager call to ensure any camera events called word properly
         base.Interact();
+        billboard_UI.SetActive(false);
 
-        if(GameController.Instance != null)
+        if (GameController.Instance != null)
         {
             switch (treeSeatNPC)
             {
                 case TreeSeat_NPC.NONE:
                     Debug.LogWarning("NPC not set!");
+                    break;
+                case TreeSeat_NPC.BOSS_MULCHANT:
+                    StartCoroutine(Boss_Mulchant());
                     break;
                 case TreeSeat_NPC.CATKIN:
                     StartCoroutine(Catkin());
@@ -88,6 +92,22 @@ public class TreeSeat_NPC_Talk : Interactable
                 
             }
         }
+    }
+
+    IEnumerator Boss_Mulchant()
+    {
+        randomTalk = Random.Range(1, 3);
+
+        if (randomTalk == 1)
+        {
+            dialogueManager.StartDialogue(Reply.Mulchant_Final_Repeat_1);
+        }
+        else if (randomTalk == 2)
+        {
+            dialogueManager.StartDialogue(Reply.Mulchant_Final_Repeat_2);
+        }
+
+        yield return null;
     }
 
     IEnumerator Catkin()
@@ -357,7 +377,11 @@ public class TreeSeat_NPC_Talk : Interactable
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Interact"))
+        {
+            billboard_UI.SetActive(false);
             playerController.interactables.Remove(this);
+        }
+            
     }
 
 }

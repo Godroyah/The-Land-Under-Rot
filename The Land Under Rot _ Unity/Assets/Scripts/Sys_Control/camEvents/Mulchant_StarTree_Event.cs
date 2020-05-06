@@ -8,6 +8,7 @@ public class Mulchant_StarTree_Event : Event_Type
     public Animator firstTreeAnim;
     public Animator secondTreeAnim;
     public Animator mulchantStandInAnim;
+    public GameObject mulchantBottle;
     public SkinnedMeshRenderer interactableMulchant;
     public SkinnedMeshRenderer eventMulchant;
     public SpriteRenderer mulchantPrompt;
@@ -45,11 +46,13 @@ public class Mulchant_StarTree_Event : Event_Type
 
         AudioManager.Instance.Play_Tree_EyeOpening();
         mulchantStandInAnim.SetTrigger("AwakenTree");
+        mulchantBottle.SetActive(true);
 
         yield return new WaitForSeconds(treeDelay);
 
         firstTreeAnim.SetTrigger("Wakeup");
         secondTreeAnim.SetTrigger("Wakeup");
+        mulchantBottle.SetActive(false);
         eventMulchant.enabled = false;
         mulchantPrompt.enabled = true;
         interactableMulchant.enabled = true;

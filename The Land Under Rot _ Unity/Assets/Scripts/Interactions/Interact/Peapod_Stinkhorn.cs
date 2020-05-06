@@ -19,6 +19,8 @@ public class Peapod_Stinkhorn : Interactable
         //Interact MUST come after dialogue manager call to ensure any camera events called word properly
         base.Interact();
 
+        billboard_UI.SetActive(false);
+
         if (GameController.Instance != null)
         {
             if(!isIntroduced)
@@ -50,7 +52,11 @@ public class Peapod_Stinkhorn : Interactable
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Interact"))
+        {
+            billboard_UI.SetActive(false);
             playerController.interactables.Remove(this);
+        }
+           
     }
 
 }

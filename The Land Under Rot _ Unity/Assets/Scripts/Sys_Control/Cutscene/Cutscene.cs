@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
+public enum CutsceneName { NONE, OPENING_ANIMATIC, FACTORY_ANIMATIC}
+
 public class Cutscene : MonoBehaviour
 {
     [Tooltip("Name of the Scene for the CutsceneManager to Find")]
     public string SceneName;
+    public CutsceneName cutsceneName;
     public VideoPlayer video;
 
     public CutsceneManager cutsceneManager;
@@ -67,9 +70,22 @@ public class Cutscene : MonoBehaviour
                 //TODO: JANK
                 GameObject GO_Loader = new GameObject();
                 LevelLoader loader = GO_Loader.AddComponent<LevelLoader>();
-                loader.sceneToLoadIndex = BuildOrder.TutorialArea;
-                loader.currentSceneIndex = BuildOrder.CutsceneScene;
+                if(cutsceneName == CutsceneName.OPENING_ANIMATIC)
+                {
+                    loader.sceneToLoadIndex = BuildOrder.TutorialArea;
+                    loader.currentSceneIndex = BuildOrder.CutsceneScene;
+                }
+                else if(cutsceneName == CutsceneName.FACTORY_ANIMATIC)
+                {
+                    loader.sceneToLoadIndex = BuildOrder.StartScreen;
+                    loader.currentSceneIndex = BuildOrder.FactoryCutscene;
+                }
                 loader.LoadScene();
+                if(cutsceneName == CutsceneName.FACTORY_ANIMATIC)
+                {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
                 break;
             }
 
@@ -105,8 +121,16 @@ public class Cutscene : MonoBehaviour
         //TODO: JANK
         GameObject GO_Loader = new GameObject();
         LevelLoader loader = GO_Loader.AddComponent<LevelLoader>();
-        loader.sceneToLoadIndex = BuildOrder.TutorialArea;
-        loader.currentSceneIndex = BuildOrder.CutsceneScene;
+        if (cutsceneName == CutsceneName.OPENING_ANIMATIC)
+        {
+            loader.sceneToLoadIndex = BuildOrder.TutorialArea;
+            loader.currentSceneIndex = BuildOrder.CutsceneScene;
+        }
+        else if (cutsceneName == CutsceneName.FACTORY_ANIMATIC)
+        {
+            loader.sceneToLoadIndex = BuildOrder.StartScreen;
+            loader.currentSceneIndex = BuildOrder.FactoryCutscene;
+        }
         loader.LoadScene();
         yield return null;
     }
