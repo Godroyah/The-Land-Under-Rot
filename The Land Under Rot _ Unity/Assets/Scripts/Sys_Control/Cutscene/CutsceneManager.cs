@@ -114,7 +114,15 @@ public class CutsceneManager : MonoBehaviour
                 {
                     cutscene.StartScene();
                     //Debug.Log(sceneName);
-                    AudioManager.Instance.Play_Stinger_Start_Cutscene();
+                    if (SceneManager.GetActiveScene().buildIndex == (int)BuildOrder.CutsceneScene)
+                    {
+                        AudioManager.Instance.Play_Stinger_Start_Cutscene();
+                    }
+                    else if (SceneManager.GetActiveScene().buildIndex == (int)BuildOrder.FactoryCutscene)
+                    {
+                        Debug.Log("No specific stinger start for factory cutscene");
+                    }
+                    
                     return true;
                 }
             }
