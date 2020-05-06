@@ -42,7 +42,7 @@ public class Bark : Interactable
     {
         base.Interact();
 
-        // TODO: Switch from Destroy to Particle/Anim
+        GameController.Instance.InteractedWith(interactionObject);
 
         playerParticles.Play();
         barkParticles.Play();
