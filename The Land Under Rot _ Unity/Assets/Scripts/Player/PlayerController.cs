@@ -665,6 +665,7 @@ public class PlayerController : MonoBehaviour
             {
                 trigger.Interact();
             }
+            AudioManager.Instance.Play_OnContact(ContactType.LEAF_PILE);
         }
         else if (other.CompareTag("DarknessHelper") && !isDead)
         {

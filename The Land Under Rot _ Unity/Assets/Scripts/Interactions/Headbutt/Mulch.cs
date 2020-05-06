@@ -94,6 +94,7 @@ public class Mulch : Interactable
                 ActivateMessage();
                 fullMulch.enabled = false;
                 depletedMulch.enabled = true;
+                AudioManager.Instance.Play_Mulch_Smash();
             }
         }
 
