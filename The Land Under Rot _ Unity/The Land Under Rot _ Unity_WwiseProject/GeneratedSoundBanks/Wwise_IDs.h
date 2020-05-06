@@ -87,17 +87,14 @@ namespace AK
 
     namespace BUSSES
     {
-        static const AkUniqueID HEAVY_DUCKING_AUDIO_BUS = 1640573219U;
-        static const AkUniqueID LIGHT_DUCKING_AUDIO_BUS = 1255859898U;
+        static const AkUniqueID AMBIENCE_BUS = 4202237879U;
+        static const AkUniqueID CLEAN_BUS = 1348820510U;
+        static const AkUniqueID HD_BUS = 2772244527U;
+        static const AkUniqueID LD_BUS = 879536147U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
-        static const AkUniqueID MX_AUDIO_BUS = 1450019282U;
-        static const AkUniqueID SFX_AUDIO_BUS = 4084199202U;
+        static const AkUniqueID MX_BUS = 3027868960U;
+        static const AkUniqueID SFX_BUS = 1502772432U;
     } // namespace BUSSES
-
-    namespace AUX_BUSSES
-    {
-        static const AkUniqueID REVERB_AUX_BUS = 1494052673U;
-    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {
