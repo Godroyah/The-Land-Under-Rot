@@ -75,6 +75,11 @@ public class GameController : MonoBehaviour
     public bool stinkhorn_Interacted_BreakableBark1 = false; //number is based on encounter order
     public bool stinkhorn_Interacted_BreakableBark2 = false;
     public bool stinkhorn_Interacted_BreakableBark3 = false;
+    public bool fruitful_Interacted_BreakableBark1 = false;
+    public bool fruitful_Interacted_BreakableBark2 = false;
+    public bool fruitful_Interacted_BreakableBark3 = false;
+    public bool fruitful_Interacted_BreakableBark4 = false;
+    public bool fruitful_Interacted_BreakableBark5 = false;
     public bool stinkhorn_Interacted_BlueCordyceps1 = false;
     public bool stinkhorn_Interacted_BlueCordyceps2 = false;
     public bool stinkhorn_Interacted_Acorn1 = false;
@@ -625,6 +630,16 @@ public class GameController : MonoBehaviour
                 return stinkhorn_Interacted_BreakableBark2;
             case Interaction.Stinkhorn_BreakableBark3:
                 return stinkhorn_Interacted_BreakableBark3;
+            case Interaction.Fruitful_BreakableBark1:
+                return fruitful_Interacted_BreakableBark1;
+            case Interaction.Fruitful_BreakableBark2:
+                return fruitful_Interacted_BreakableBark2;
+            case Interaction.Fruitful_BreakableBark3:
+                return fruitful_Interacted_BreakableBark3;
+            case Interaction.Fruitful_BreakableBark4:
+                return fruitful_Interacted_BreakableBark4;
+            case Interaction.Fruitful_BreakableBark5:
+                return fruitful_Interacted_BreakableBark5;
             case Interaction.Stinkhorn_BlueCordyceps1:
                 return stinkhorn_Interacted_BlueCordyceps1;
             case Interaction.Stinkhorn_BlueCordyceps2:
@@ -676,6 +691,11 @@ public enum Interaction
     Stinkhorn_BreakableBark1,
     Stinkhorn_BreakableBark2,
     Stinkhorn_BreakableBark3,
+    Fruitful_BreakableBark1,
+    Fruitful_BreakableBark2,
+    Fruitful_BreakableBark3,
+    Fruitful_BreakableBark4,
+    Fruitful_BreakableBark5,
     Stinkhorn_BlueCordyceps1,
     Stinkhorn_BlueCordyceps2,
     Stinkhorn_Acorn1,
