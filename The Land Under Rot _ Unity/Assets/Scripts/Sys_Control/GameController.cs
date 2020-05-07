@@ -75,7 +75,8 @@ public class GameController : MonoBehaviour
     public bool stinkhorn_Interacted_BreakableBark1 = false; //number is based on encounter order
     public bool stinkhorn_Interacted_BreakableBark2 = false;
     public bool stinkhorn_Interacted_BreakableBark3 = false;
-    public bool stinkhorn_Interacted_BlueCordyceps = false;
+    public bool stinkhorn_Interacted_BlueCordyceps1 = false;
+    public bool stinkhorn_Interacted_BlueCordyceps2 = false;
     public bool stinkhorn_Interacted_Acorn1 = false;
     public bool stinkhorn_Interacted_Acorn2 = false;
     public bool stinkhorn_Interacted_Acorn3 = false;
@@ -547,8 +548,11 @@ public class GameController : MonoBehaviour
             case Interaction.Stinkhorn_BreakableBark3:
                 stinkhorn_Interacted_BreakableBark3 = true;
                 break;
-            case Interaction.Stinkhorn_BlueCordyceps:
-                stinkhorn_Interacted_BlueCordyceps = true;
+            case Interaction.Stinkhorn_BlueCordyceps1:
+                stinkhorn_Interacted_BlueCordyceps1 = true;
+                break;
+            case Interaction.Stinkhorn_BlueCordyceps2:
+                stinkhorn_Interacted_BlueCordyceps2 = true;
                 break;
             case Interaction.Stinkhorn_Acorn1:
                 stinkhorn_Interacted_Acorn1 = true;
@@ -621,8 +625,10 @@ public class GameController : MonoBehaviour
                 return stinkhorn_Interacted_BreakableBark2;
             case Interaction.Stinkhorn_BreakableBark3:
                 return stinkhorn_Interacted_BreakableBark3;
-            case Interaction.Stinkhorn_BlueCordyceps:
-                return stinkhorn_Interacted_BlueCordyceps;
+            case Interaction.Stinkhorn_BlueCordyceps1:
+                return stinkhorn_Interacted_BlueCordyceps1;
+            case Interaction.Stinkhorn_BlueCordyceps2:
+                return stinkhorn_Interacted_BlueCordyceps2;
             case Interaction.Stinkhorn_Acorn1:
                 return stinkhorn_Interacted_Acorn1;
             case Interaction.Stinkhorn_Acorn2:
@@ -670,7 +676,8 @@ public enum Interaction
     Stinkhorn_BreakableBark1,
     Stinkhorn_BreakableBark2,
     Stinkhorn_BreakableBark3,
-    Stinkhorn_BlueCordyceps,
+    Stinkhorn_BlueCordyceps1,
+    Stinkhorn_BlueCordyceps2,
     Stinkhorn_Acorn1,
     Stinkhorn_Acorn2,
     Stinkhorn_Acorn3,
