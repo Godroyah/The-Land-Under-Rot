@@ -58,12 +58,8 @@ public class CamControl : MonoBehaviour
         camMeshRenderer.material.SetColor("_BaseColor", new Color(0, 0, 0, 0));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        GetInput();
-        
-    }
+   
+    
 
     private void FixedUpdate()
     {
@@ -88,11 +84,11 @@ public class CamControl : MonoBehaviour
 
     }
 
-    private void GetInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Mouse X");
-        verticalInput = Input.GetAxisRaw("Mouse Y");
-    }
+    //private void GetInput()
+    //{
+    //    horizontalInput = Input.GetAxisRaw(gameController.camXInput);
+    //    verticalInput = Input.GetAxisRaw(gameController.camYInput);
+    //}
 
     private void Move()
     {
@@ -100,16 +96,16 @@ public class CamControl : MonoBehaviour
         // Get input data and clamp 
         // **---------------------------------------------**
 
-        yaw += Input.GetAxis("Mouse X") * sensitivity_X;
+        yaw += Input.GetAxis(gameController.camXInput) * sensitivity_X;
 
         if (invertPitch)
         {
-            pitch += Input.GetAxis("Mouse Y") * sensitivity_Y;
+            pitch += Input.GetAxis(gameController.camYInput) * sensitivity_Y;
         }
 
         else
         {
-            pitch += Input.GetAxis("Mouse Y") * -sensitivity_Y;
+            pitch += Input.GetAxis(gameController.camYInput) * -sensitivity_Y;
         }
 
         pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);

@@ -137,9 +137,9 @@ public class Event_Trigger : MonoBehaviour
 
         playerController.eventActive = false;
 
-        playerController.HorizontalInput = Input.GetAxis("Horizontal");
-        playerController.VerticalInput = Input.GetAxis("Vertical");
-        playerController.HeadbuttInput = Input.GetAxis("Headbutt");
+        playerController.HorizontalInput = Input.GetAxis(GameController.Instance.horizontalInput);
+        playerController.VerticalInput = Input.GetAxis(GameController.Instance.verticalInput);
+        playerController.HeadbuttInput = Input.GetAxis(GameController.Instance.headbuttInput);
         firstInteraction = false;
         sceneStarted = false;
         interactionStarted = false;

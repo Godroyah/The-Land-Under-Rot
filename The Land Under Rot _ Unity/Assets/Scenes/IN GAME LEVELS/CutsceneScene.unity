@@ -155,6 +155,7 @@ MonoBehaviour:
   camControl: {fileID: 0}
   pauseMenu: {fileID: 0}
   mainMenu: {fileID: 0}
+  inputReader: {fileID: 0}
   levelStart: 0
   isDead: 0
   tempSceneIndex: 0
@@ -168,17 +169,53 @@ MonoBehaviour:
   revealNewAreas: 0
   wormsInFruitfulGone: 0
   underStumpLightsOn: 0
+  starBranchDown: 0
+  willowBranchDown: 0
   area_Tutorial: 0
-  tutorial_bus_Called: 0
-  tutorial_HasTalked_Rootford_Intro1: 0
-  tutorial_HasTalked_Rootford_Intro2: 0
-  tutorial_HasTalked_BusDriver_1: 0
+  tutorial_Interacted_BreakableBark: 0
+  tutorial_Interacted_BlueCordyceps: 0
   area_Stinkhorn: 0
+  stinkhorn_bus_Called: 0
+  stinkhorn_HasTalked_Rootford_Intro1: 0
+  stinkhorn_HasTalked_Rootford_Intro2: 0
+  stinkhorn_HasTalked_BusDriver_1: 0
+  stinkhorn_Interacted_BreakableBark1: 0
+  stinkhorn_Interacted_BreakableBark2: 0
+  stinkhorn_Interacted_BreakableBark3: 0
+  stinkhorn_Interacted_BlueCordyceps: 0
+  stinkhorn_Interacted_Acorn1: 0
+  stinkhorn_Interacted_Acorn2: 0
+  stinkhorn_Interacted_Acorn3: 0
+  stinkhorn_Interacted_Acorn4: 0
+  stinkhorn_Interacted_Acorn6: 0
+  stinkhorn_Interacted_Acorn7: 0
+  stinkhorn_Interacted_Acorn8: 0
+  stinkhorn_Interacted_Acorn9: 0
   area_TreeSeat: 0
+  treeSeat_Interacted_Acorn0: 0
+  treeSeat_Interacted_Acorn1: 0
+  treeSeat_Interacted_Acorn2: 0
+  treeSeat_Interacted_Acorn3: 0
+  area_Fruitful: 0
+  fruitful_Interacted_Acorn0: 0
+  fruitful_Interacted_Acorn1: 0
+  fruitful_Interacted_Acorn2: 0
+  fruitful_Interacted_Acorn3: 0
+  horizontalInput: 
+  verticalInput: 
+  camXInput: 
+  camYInput: 
+  headbuttInput: 
+  jumpInput: 
+  pauseInput: 
+  interactInput: 
+  submitInput: 
+  cancelInput: 
   sensitivityBar: {fileID: 0}
   lookSensitivityX: 5
   lookSensitivityY: 5
   playerAcorns: 0
+  maxAcorns: 0
   acornCount: {fileID: 0}
   brownBottle: {fileID: 0}
   greenBottle: {fileID: 0}
@@ -188,6 +225,7 @@ MonoBehaviour:
   willowTexture: {fileID: 0}
   mainCamera: {fileID: 0}
   sceneIndex: 0
+  branchEndPos: {x: 0, y: 0, z: 0}
 --- !u!4 &133891649
 Transform:
   m_ObjectHideFlags: 0
@@ -342,6 +380,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &785384365
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.2018
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5132322
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -80.98999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099916, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469508206838099918, guid: d24a53b839b46104cb5c1531c851af94,
+        type: 3}
+      propertyPath: m_Name
+      value: '@InputReader'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d24a53b839b46104cb5c1531c851af94, type: 3}
 --- !u!1001 &854217165
 PrefabInstance:
   m_ObjectHideFlags: 0
