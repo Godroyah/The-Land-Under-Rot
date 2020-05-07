@@ -42,7 +42,7 @@ public class Dialogue : MonoBehaviour
         //{
         //    Debug.LogWarning("Please match and assign emotes for each frame of dialogue!");
         //}
-
+        gameController = GameController.Instance;
         camControl = GameObject.Find("Camera_Jig").GetComponent<CamControl>();
         dialogueCam = GameObject.Find("Dialogue_Cam").GetComponent<DialogueCam>();
 
