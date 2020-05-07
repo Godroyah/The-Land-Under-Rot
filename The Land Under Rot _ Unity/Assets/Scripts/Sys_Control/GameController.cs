@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public CamControl camControl;
     public PauseMenu pauseMenu;
     public MainMenu mainMenu;
+    public InputReader inputReader;
     #endregion
 
     //[Header("Menu Components")]
@@ -74,7 +75,13 @@ public class GameController : MonoBehaviour
     public bool stinkhorn_Interacted_BreakableBark1 = false; //number is based on encounter order
     public bool stinkhorn_Interacted_BreakableBark2 = false;
     public bool stinkhorn_Interacted_BreakableBark3 = false;
-    public bool stinkhorn_Interacted_BlueCordyceps = false;
+    public bool fruitful_Interacted_BreakableBark1 = false;
+    public bool fruitful_Interacted_BreakableBark2 = false;
+    public bool fruitful_Interacted_BreakableBark3 = false;
+    public bool fruitful_Interacted_BreakableBark4 = false;
+    public bool fruitful_Interacted_BreakableBark5 = false;
+    public bool stinkhorn_Interacted_BlueCordyceps1 = false;
+    public bool stinkhorn_Interacted_BlueCordyceps2 = false;
     public bool stinkhorn_Interacted_Acorn1 = false;
     public bool stinkhorn_Interacted_Acorn2 = false;
     public bool stinkhorn_Interacted_Acorn3 = false;
@@ -106,6 +113,63 @@ public class GameController : MonoBehaviour
     public bool fruitful_Interacted_Acorn1 = false;
     public bool fruitful_Interacted_Acorn2 = false;
     public bool fruitful_Interacted_Acorn3 = false;
+    #endregion
+
+    #region InputStrings
+
+    //Base Strings
+    public string horizontalInput;
+    public string verticalInput;
+    public string camXInput;
+    public string camYInput;
+    public string headbuttInput;
+    public string jumpInput;
+    public string pauseInput;
+    public string interactInput;
+    public string submitInput;
+    public string cancelInput;
+
+    //PC Axes
+    private string horizPC = "Horizontal PC";
+    private string vertPC = "Vertical PC";
+    private string camXPC = "CamX PC";
+    private string camYPC = "CamY PC";
+    private string headbuttPC = "Headbutt PC";
+
+    //PC Buttons
+    private string jumpPC = "Jump PC";
+    private string pausePC = "Pause PC";
+    private string interactPC = "Interact PC";
+    private string submitPC = "Submit PC";
+    private string cancelPC = "Cancel PC";
+
+    //Xbox Axes
+    private string horizXbox = "Horizontal Xbox";
+    private string vertXbox = "Vertical Xbox";
+    private string camXXbox = "CamX Xbox";
+    private string camYXbox = "CamY Xbox";
+    private string headbuttXbox = "Headbutt Xbox";
+
+    //Xbox Buttons
+    private string jumpXbox = "Jump Xbox";
+    private string pauseXbox = "Pause Xbox";
+    private string interactXbox = "Interact Xbox";
+    private string submitXbox = "Submit Xbox";
+    private string cancelXbox = "Cancel Xbox";
+
+    //PS4 Axes
+    private string horizPS4 = "Horizontal PS4";
+    private string vertPS4 = "Vertical PS4";
+    private string camXPS4 = "CamX PS4";
+    private string camYPS4 = "CamY PS4";
+    private string headbuttPS4 = "Headbutt PS4";
+
+    //PS4 Buttons
+    private string jumpPS4 = "Jump PS4";
+    private string pausePS4 = "Pause PS4";
+    private string interactPS4 = "Interact PS4";
+    private string submitPS4 = "Submit PS4";
+    private string cancelPS4 = "Cancel PS4";
     #endregion
 
     [Header("Look Sensitivity")]
@@ -189,6 +253,19 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //inputReader = GetComponent<InputReader>();
+
+        horizontalInput = horizPC;
+        verticalInput = vertPC;
+        camXInput = camXPC;
+        camYInput = camYPC;
+        headbuttInput = headbuttPC;
+        jumpInput = jumpPC;
+        pauseInput = pausePC;
+        interactInput = interactPC;
+        submitInput = submitPC;
+        cancelInput = cancelPC;
+
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         isDead = false;
         if (playerController != null)
@@ -226,6 +303,95 @@ public class GameController : MonoBehaviour
         //    }
         //}
         #endregion
+
+        #region Determine Input
+
+        Debug.Log(interactInput);
+
+        inputReader.GetInputState();
+
+        if(inputReader.in_State == InputReader.gameInputState.Xbox)
+        {
+            horizontalInput = horizXbox;
+            verticalInput = vertXbox;
+            camXInput = camXXbox;
+            camYInput = camYXbox;
+            headbuttInput = headbuttXbox;
+            jumpInput = jumpXbox;
+            pauseInput = pauseXbox;
+            interactInput = interactXbox;
+            submitInput = submitXbox;
+            cancelInput = cancelXbox;
+        }
+        else if(inputReader.in_State == InputReader.gameInputState.PS4)
+        {
+            horizontalInput = horizPS4;
+            verticalInput = vertPS4;
+            camXInput = camXPS4;
+            camYInput = camYPS4;
+            headbuttInput = headbuttPS4;
+            jumpInput = jumpPS4;
+            pauseInput = pausePS4;
+            interactInput = interactPS4;
+            submitInput = submitPS4;
+            cancelInput = cancelPS4;
+        }
+        else
+        {
+            horizontalInput = horizPC;
+            verticalInput = vertPC;
+            camXInput = camXPC;
+            camYInput = camYPC;
+            headbuttInput = headbuttPC;
+            jumpInput = jumpPC;
+            pauseInput = pausePC;
+            //if(interactInput != interactPC)
+            interactInput = interactPC;
+            submitInput = submitPC;
+            cancelInput = cancelPC;
+        }
+
+        //switch (inputReader.GetInputState())
+        //{
+        //    case InputReader.gameInputState.MouseKeyboard:
+        //        horizontalInput = horizPC;
+        //        verticalInput = vertPC;
+        //        camXInput = camXPC;
+        //        camYInput = camYPC;
+        //        headbuttInput = headbuttPC;
+        //        jumpInput = jumpPC;
+        //        pauseInput = pausePC;
+        //        interactInput = interactPC;
+        //        submitInput = submitPC;
+        //        cancelInput = cancelPC;
+        //        break;
+        //    case InputReader.gameInputState.Xbox:
+        //        horizontalInput = horizXbox;
+        //        verticalInput = vertXbox;
+        //        camXInput = camXXbox;
+        //        camYInput = camYXbox;
+        //        headbuttInput = headbuttXbox;
+        //        jumpInput = jumpXbox;
+        //        pauseInput = pauseXbox;
+        //        interactInput = interactXbox;
+        //        submitInput = submitXbox;
+        //        cancelInput = cancelXbox;
+        //        break;
+        //    case InputReader.gameInputState.PS4:
+        //        horizontalInput = horizPS4;
+        //        verticalInput = vertPS4;
+        //        camXInput = camXPS4;
+        //        camYInput = camYPS4;
+        //        headbuttInput = headbuttPS4;
+        //        jumpInput = jumpPS4;
+        //        pauseInput = pausePS4;
+        //        interactInput = interactPS4;
+        //        submitInput = submitPS4;
+        //        cancelInput = cancelPS4;
+        //        break;
+        //}
+        #endregion
+
         if (playerController != null)
         {
 
@@ -387,8 +553,11 @@ public class GameController : MonoBehaviour
             case Interaction.Stinkhorn_BreakableBark3:
                 stinkhorn_Interacted_BreakableBark3 = true;
                 break;
-            case Interaction.Stinkhorn_BlueCordyceps:
-                stinkhorn_Interacted_BlueCordyceps = true;
+            case Interaction.Stinkhorn_BlueCordyceps1:
+                stinkhorn_Interacted_BlueCordyceps1 = true;
+                break;
+            case Interaction.Stinkhorn_BlueCordyceps2:
+                stinkhorn_Interacted_BlueCordyceps2 = true;
                 break;
             case Interaction.Stinkhorn_Acorn1:
                 stinkhorn_Interacted_Acorn1 = true;
@@ -461,8 +630,20 @@ public class GameController : MonoBehaviour
                 return stinkhorn_Interacted_BreakableBark2;
             case Interaction.Stinkhorn_BreakableBark3:
                 return stinkhorn_Interacted_BreakableBark3;
-            case Interaction.Stinkhorn_BlueCordyceps:
-                return stinkhorn_Interacted_BlueCordyceps;
+            case Interaction.Fruitful_BreakableBark1:
+                return fruitful_Interacted_BreakableBark1;
+            case Interaction.Fruitful_BreakableBark2:
+                return fruitful_Interacted_BreakableBark2;
+            case Interaction.Fruitful_BreakableBark3:
+                return fruitful_Interacted_BreakableBark3;
+            case Interaction.Fruitful_BreakableBark4:
+                return fruitful_Interacted_BreakableBark4;
+            case Interaction.Fruitful_BreakableBark5:
+                return fruitful_Interacted_BreakableBark5;
+            case Interaction.Stinkhorn_BlueCordyceps1:
+                return stinkhorn_Interacted_BlueCordyceps1;
+            case Interaction.Stinkhorn_BlueCordyceps2:
+                return stinkhorn_Interacted_BlueCordyceps2;
             case Interaction.Stinkhorn_Acorn1:
                 return stinkhorn_Interacted_Acorn1;
             case Interaction.Stinkhorn_Acorn2:
@@ -510,7 +691,13 @@ public enum Interaction
     Stinkhorn_BreakableBark1,
     Stinkhorn_BreakableBark2,
     Stinkhorn_BreakableBark3,
-    Stinkhorn_BlueCordyceps,
+    Fruitful_BreakableBark1,
+    Fruitful_BreakableBark2,
+    Fruitful_BreakableBark3,
+    Fruitful_BreakableBark4,
+    Fruitful_BreakableBark5,
+    Stinkhorn_BlueCordyceps1,
+    Stinkhorn_BlueCordyceps2,
     Stinkhorn_Acorn1,
     Stinkhorn_Acorn2,
     Stinkhorn_Acorn3,

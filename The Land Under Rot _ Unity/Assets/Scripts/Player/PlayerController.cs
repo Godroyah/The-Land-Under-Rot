@@ -424,13 +424,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDead && !eventActive)
         {
-            HorizontalInput = Input.GetAxis("Horizontal");
-            VerticalInput = Input.GetAxis("Vertical");
-            ShouldRun = Input.GetKey(KeyCode.LeftShift);
-            ShouldJump = Input.GetButtonDown("Jump");
-            ShouldInteract = Input.GetButtonDown("Interact");
-            ShouldHeadbutt = Input.GetButtonDown("Headbutt");
-            HeadbuttInput = Input.GetAxis("Headbutt");
+            HorizontalInput = Input.GetAxis(gameController.horizontalInput);
+            VerticalInput = Input.GetAxis(gameController.verticalInput);
+            ShouldRun = Input.GetKey(KeyCode.LeftShift); //?????
+            ShouldJump = Input.GetButtonDown(gameController.jumpInput);
+            ShouldInteract = Input.GetButtonDown(gameController.interactInput);
+            ShouldHeadbutt = Input.GetButtonDown(gameController.headbuttInput);
+            HeadbuttInput = Input.GetAxis(gameController.headbuttInput);
         }
 
 

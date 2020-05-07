@@ -56,6 +56,34 @@ public class Mulch : Interactable
         {
             mulchParticles = objPrefs.headbutt_ParticleEffect_obj.GetComponent<ParticleSystem>();
         }
+
+        switch(mulchType)
+        {
+            case MulchType.NONE:
+                Debug.Log("Set the damn mulchtype, Carl.");
+                break;
+            case MulchType.ANGEL:
+                if(gameController.hasBrownMulch)
+                {
+                    fullMulch.enabled = false;
+                }
+                break;
+            case MulchType.STAR:
+                if (gameController.hasGreenMulch)
+                {
+                    fullMulch.enabled = false;
+                }
+                break;
+            case MulchType.WILLOW:
+                if (gameController.hasYellowMulch)
+                {
+                    fullMulch.enabled = false;
+                }
+                break;
+            default:
+                Debug.Log("You dun goofed on the Mulch, Carl");
+                break;
+        }
     }
 
     public override void Interact()
