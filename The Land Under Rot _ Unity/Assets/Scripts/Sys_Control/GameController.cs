@@ -300,7 +300,7 @@ public class GameController : MonoBehaviour
 
         #region Determine Input
 
-        Debug.Log(horizontalInput);
+        Debug.Log(interactInput);
 
         inputReader.GetInputState();
 
@@ -339,6 +339,7 @@ public class GameController : MonoBehaviour
             headbuttInput = headbuttPC;
             jumpInput = jumpPC;
             pauseInput = pausePC;
+            //if(interactInput != interactPC)
             interactInput = interactPC;
             submitInput = submitPC;
             cancelInput = cancelPC;
