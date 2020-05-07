@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GroundBasedRotation : MonoBehaviour
 {
-    public float rotationSpeed = 1f;
+    public int angleToRotateAt = 5;
     private int playerMask;
-    public Vector3 testDirection;
+    //public Vector3 testDirection;
     Quaternion directioning;
     Vector3 hitNormal = Vector3.up;
     Vector3 previousHitNormal = Vector3.up;
@@ -31,7 +31,7 @@ public class GroundBasedRotation : MonoBehaviour
             //float normalsAngle = Mathf.Acos(Vector3.Dot(previousHitNormal, hitNormal) / (previousHitNormal.magnitude * hitNormal.magnitude));
             float normalsAngle = Vector3.Dot(previousHitNormal, hitNormal);
             //if (normalsAngle > (Mathf.Deg2Rad * 5))
-            if (normalsAngle > (Mathf.Deg2Rad * 5))
+            if (normalsAngle > (Mathf.Deg2Rad * angleToRotateAt))
             {
                 Debug.Log(normalsAngle);
                 directioning.SetFromToRotation(transform.up.normalized, hit.normal.normalized);
@@ -65,7 +65,12 @@ public class GroundBasedRotation : MonoBehaviour
         //transform.rotation = rotation;
 
         //directioning.SetFromToRotation(transform.up.normalized, hit.normal.normalized);
-        transform.rotation = directioning * transform.rotation;
+
+        //Vector3 tempDir = directioning.eulerAngles;
+        //directioning = Quaternion.Euler(tempDir.x, 0, tempDir.z);
+
+        transform.localRotation = directioning * transform.rotation;
+        transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles.x, 0, transform.localRotation.eulerAngles.z);
 
     }
 }
