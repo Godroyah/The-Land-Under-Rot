@@ -23,10 +23,11 @@ public class Tutorial_Fenways : Interactable
         //Interact MUST come after dialogue manager call to ensure any camera events called word properly
         base.Interact();
 
-        billboard_UI.SetActive(false);
+        
 
         if (GameController.Instance != null)
         {
+            billboard_UI.SetActive(false);
             AudioManager.Instance.Play_Fenway();
             switch(fenwayType)
             {

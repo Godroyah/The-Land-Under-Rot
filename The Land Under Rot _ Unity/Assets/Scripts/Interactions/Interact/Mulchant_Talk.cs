@@ -47,6 +47,7 @@ public class Mulchant_Talk : Interactable
 
         if (GameController.Instance != null)
         {
+            billboard_UI.SetActive(false);
             AudioManager.Instance.Play_Mulchant();
             // Select which dialogue to 'say'
             if(!GameController.Instance.hasBrownMulch)

@@ -34,6 +34,7 @@ public class F_Forest_NPC_Talk : Interactable
 
         if (gameController != null)
         {
+            billboard_UI.SetActive(false);
             switch (fruitForest_NPC)
             {
                 case F_Forest_NPC.NONE:
