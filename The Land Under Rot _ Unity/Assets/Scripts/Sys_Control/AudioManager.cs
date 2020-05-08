@@ -256,7 +256,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Catkin()
     {
-
+        AkSoundEngine.PostEvent("Catkin", gameObject);
     }
 
     //Labeled Play_Her in the doc
@@ -310,11 +310,14 @@ public class AudioManager : MonoBehaviour
     {
 
     }
+   
 
     public void Play_WillowTree()
     {
-
+        AkSoundEngine.PostEvent("Willowtree", gameObject);
     }
+
+
 
     public void Play_Lizard_Walk()
     {
