@@ -33,7 +33,7 @@ public class Darkness : MonoBehaviour
     {
         Transform temp = transform.GetChild(0);
         if (temp != null)
-            baseModel = .gameObject;
+            baseModel = temp.gameObject;
         else
             Debug.LogWarning("This DarkVolume has no base model as a child!");
         mRenderer = baseModel.GetComponent<MeshRenderer>();
