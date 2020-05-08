@@ -153,10 +153,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1204688678727854539}
-  - component: {fileID: 7492187816453249878}
+  - component: {fileID: 1386325239}
   m_Layer: 0
   m_Name: Bip002 Head
-  m_TagString: Untagged
+  m_TagString: Headbutt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ Transform:
   m_Father: {fileID: 6138709035872253908}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7492187816453249878
+--- !u!135 &1386325239
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,8 +187,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.019526273
-  m_Center: {x: -0.016406959, y: 0.0000000015634836, z: 9.982933e-11}
+  m_Radius: 0.28
+  m_Center: {x: -0.31, y: 0, z: 0}
 --- !u!1 &851828725365235505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,7 +1382,7 @@ MonoBehaviour:
   lowJumpMultiplier: 3.8
   interactionRange: 1.5
   interactionDetector: {fileID: 4444230035576050464}
-  headButtDetector: {fileID: 4115774680824762491}
+  headButtDetector: {fileID: 1386325239}
   groundChecker: {fileID: 4465869234534037959}
   collisionChecker: {fileID: 4465869233249946372}
   isDead: 0
@@ -1400,6 +1400,7 @@ MonoBehaviour:
   headbuttables: []
   fadePane: {fileID: 0}
   currentTarget: {fileID: 0}
+  numCoyoteFrames: 5
 --- !u!54 &4118715223489769882
 Rigidbody:
   m_ObjectHideFlags: 0
