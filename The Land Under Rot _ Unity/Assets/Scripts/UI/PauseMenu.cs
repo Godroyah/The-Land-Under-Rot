@@ -163,11 +163,11 @@ public class PauseMenu : MonoBehaviour
         acornBoy.SetActive(true);
         post.SetActive(true);
         acornText.enabled = true;
-        if (!gameController.angelTreeAwake)
+        if (gameController.angelTreeAwake)
             angelBottle.enabled = true;
-        if (!gameController.starTreeAwake)
+        if (gameController.starTreeAwake)
             starBottle.enabled = true;
-        if (!gameController.willowTreeAwake)
+        if (gameController.willowTreeAwake)
             willowBottle.enabled = true;
     }
 
