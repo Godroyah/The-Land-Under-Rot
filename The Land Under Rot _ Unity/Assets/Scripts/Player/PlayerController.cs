@@ -140,6 +140,7 @@ public class PlayerController : MonoBehaviour
 
     public int numCoyoteFrames = 5;
     private int currentNumOfCoyoteFrames = 0;
+    private float maxY = float.MaxValue;
 
     private void Awake()
     {
@@ -227,11 +228,11 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(interactingCoroutine);
         //Debug.Log(StopPlayer);
         //Debug.Log(eventActive);
-		
-		
-		// Show where the player is on map - Colin's proximity glow
-		Shader.SetGlobalVector("_playerPosition", transform.position);
-		
+
+
+        // Show where the player is on map - Colin's proximity glow
+        Shader.SetGlobalVector("_playerPosition", transform.position);
+
         Reset();
         GetInput();
 
@@ -252,7 +253,7 @@ public class PlayerController : MonoBehaviour
             currentNumOfCoyoteFrames = 0;
             IsGrounded = true;
         }
-            
+
 
         //if (Camera.main.enabled)
         //{
@@ -435,9 +436,12 @@ public class PlayerController : MonoBehaviour
         if (!StopPlayer)
         {
             Move();
+            maxY = transform.position.y;
         }
         else
-            rotationTarget.position = new Vector3(currentTarget.transform.position.x, transform.position.y, currentTarget.transform.position.z);
+        {
+            rotationTarget.position = new Vector3(currentTarget.transform.position.x, Mathf.Clamp(transform.position.y, float.MinValue, maxY), currentTarget.transform.position.z);
+        }
 
     }
 
@@ -495,7 +499,7 @@ public class PlayerController : MonoBehaviour
         {
             currentTarget.Interact();
 
-            if(dialogueCam != null)
+            if (dialogueCam != null)
             {
                 dialogueCam.TalkPosition();
             }
@@ -521,14 +525,14 @@ public class PlayerController : MonoBehaviour
         {
             HorizontalInput = 0;
         }
-            
+
         if (Mathf.Abs(VerticalInput) < inputDelay)
         {
             VerticalInput = 0;
         }
-           
 
-        if((Mathf.Abs(HorizontalInput) > inputDelay || Mathf.Abs(VerticalInput) > inputDelay) && playFootFalls == true)
+
+        if ((Mathf.Abs(HorizontalInput) > inputDelay || Mathf.Abs(VerticalInput) > inputDelay) && playFootFalls == true)
         {
             switch (gameController.sceneIndex)
             {
@@ -565,9 +569,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             movement = new Vector3(HorizontalInput, 0, VerticalInput);
-            
+
         }
-           
+
 
         Vector3 tempDir = rotationTarget.TransformDirection(movement * rotationTargetDist).normalized;
 
@@ -587,13 +591,13 @@ public class PlayerController : MonoBehaviour
             targetSpeed = runVelocity;
             AudioManager.Instance.Play_Run();
         }
-            
+
         else
         {
             targetSpeed = moveVelocity;
             //Audio Play Walk
         }
-            
+
 
 
         movement = rotationTarget.TransformDirection(movement) * targetSpeed;
