@@ -46,4 +46,34 @@ public class EmoteCheck : MonoBehaviour
     {
         play = false;
     }
+    public void Play_Emote(EmoteType emoteType)
+    {
+        switch (emoteType)
+        {
+            case EmoteType.SLEEPING:
+           
+                break;
+            case EmoteType.WAITING:
+               
+                break;
+            case EmoteType.EXCLAMATION:
+               
+                break;
+            case EmoteType.ANGRY:
+             AkSoundEngine.PostEvent("emo_angry", gameObject);
+                break;
+            case EmoteType.SHOCKED:
+            AkSoundEngine.PostEvent("emo_shocked", gameObject);
+                break;
+            case EmoteType.CONFUSED:
+                AkSoundEngine.PostEvent("emo_confused", gameObject);
+                break;
+            case EmoteType.DIZZY:
+          
+                break;
+            case EmoteType.HAPPY:
+                AkSoundEngine.PostEvent("emo_happy", gameObject);
+                break;
+        }
+    }
 }
