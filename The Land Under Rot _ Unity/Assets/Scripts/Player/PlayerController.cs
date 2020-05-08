@@ -142,6 +142,9 @@ public class PlayerController : MonoBehaviour
     private int currentNumOfCoyoteFrames = 0;
     private float maxY = float.MaxValue;
 
+    public ParticleSystem jumpLand_ParticleSystem;
+    private bool onFirstContactWithGround = true;
+
     private void Awake()
     {
         fadePane = GameObject.Find("FadePane");
@@ -246,12 +249,22 @@ public class PlayerController : MonoBehaviour
             if (currentNumOfCoyoteFrames > numCoyoteFrames)
             {
                 IsGrounded = false;
+                onFirstContactWithGround = true;
             }
         }
         else
         {
             currentNumOfCoyoteFrames = 0;
             IsGrounded = true;
+
+            if (onFirstContactWithGround)
+            {
+                onFirstContactWithGround = false;
+                if (!jumpLand_ParticleSystem.isPlaying)
+                {
+                    jumpLand_ParticleSystem.Play();
+                }
+            }
         }
 
 
@@ -416,6 +429,11 @@ public class PlayerController : MonoBehaviour
             Rb.velocity = Vector3.up * jumpVelocity;
 
             IsGrounded = false;
+
+            if (!jumpLand_ParticleSystem.isPlaying)
+            {
+                jumpLand_ParticleSystem.Play();
+            }
         }
 
         #endregion
