@@ -20,6 +20,11 @@ public class Mulchant_StarTree_Event : Event_Type
     //[Range(1f, 20f)]
     //public float endSceneDelay;
 
+    [Space(10), Header("Mulchant Bottle Particle")]
+    public ParticleSystem mulchantBottle_ParticleSystem;
+    [Range(1f, 20f)]
+    public float particleSystemDelay;
+
     GameController gameController;
 
     // Start is called before the first frame update
@@ -34,6 +39,11 @@ public class Mulchant_StarTree_Event : Event_Type
         base.StartEvent();
 
         StartCoroutine(TreeAwakening());
+
+        if (mulchantBottle_ParticleSystem != null)
+        {
+            StartCoroutine(MulchantParticle());
+        }
     }
 
     IEnumerator TreeAwakening()
@@ -59,5 +69,14 @@ public class Mulchant_StarTree_Event : Event_Type
         gameController.starTreeAwake = true;
 
         //yield return new WaitForSeconds(endSceneDelay);
+    }
+
+    IEnumerator MulchantParticle()
+    {
+        yield return new WaitForSeconds(particleSystemDelay);
+        if (!mulchantBottle_ParticleSystem.isPlaying)
+        {
+            mulchantBottle_ParticleSystem.Play();
+        }
     }
 }
