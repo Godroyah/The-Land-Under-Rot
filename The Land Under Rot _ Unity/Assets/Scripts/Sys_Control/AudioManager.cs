@@ -277,6 +277,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Gourdo()
     {
+        AkSoundEngine.PostEvent("Gourdo", gameObject);
 
     }
 

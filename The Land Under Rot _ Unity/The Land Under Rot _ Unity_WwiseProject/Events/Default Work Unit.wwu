@@ -244,7 +244,13 @@
 							<ChildrenList>
 								<Event Name="char_falling" ID="{4F3E9394-D5EE-4EC9-8A73-B598ECC70A52}">
 									<ChildrenList>
-										<Action Name="" ID="{2DC9FED5-1A6B-452D-96F8-8C46C1603F0D}" ShortID="489720793"/>
+										<Action Name="" ID="{2DC9FED5-1A6B-452D-96F8-8C46C1603F0D}" ShortID="489720793">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Char_falling" ID="{84360472-D67A-4D1D-A6C0-250847F5D574}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="char_footsteps_grass" ID="{7F32AE69-0E1D-46C8-B462-6EBACCC53FB5}">
@@ -492,6 +498,28 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Mulchant" ID="{D2DF8950-6197-48DB-A977-8BDD06081FB1}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Gourdo" ID="{E07C0EC0-0BE7-49A9-BDD1-919EF7A0AE50}">
+							<ChildrenList>
+								<Action Name="" ID="{426E6952-66AA-42E8-B454-F1B0A1873FB9}" ShortID="670507922">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Gourdo" ID="{0FD058D8-81EB-441B-97DD-3B83F3CD9EC6}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Strawberry" ID="{C0DFE4FA-D5AE-41F3-9F47-91F60A22B34B}">
+							<ChildrenList>
+								<Action Name="" ID="{EBB7841D-F450-4E0B-A55D-884BAAADE2BD}" ShortID="498445332">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Straweberry" ID="{0E72A947-7BE2-4FAC-80B3-A18882E34DED}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

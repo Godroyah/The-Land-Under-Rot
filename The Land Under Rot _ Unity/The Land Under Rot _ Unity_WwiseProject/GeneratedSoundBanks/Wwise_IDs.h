@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID CHAR_JUMP = 3391211644U;
         static const AkUniqueID CLICK = 1584507803U;
         static const AkUniqueID FENWAY = 851955753U;
+        static const AkUniqueID GOURDO = 2161579817U;
         static const AkUniqueID HER = 915067362U;
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
@@ -48,6 +49,7 @@ namespace AK
         static const AkUniqueID STG_ANGEL_TREE_AWAKENED = 745316089U;
         static const AkUniqueID STG_GROWTH_FUNCTION = 1530319798U;
         static const AkUniqueID STG_OBTAIN_MULCH = 3226351339U;
+        static const AkUniqueID STRAWBERRY = 3554262370U;
     } // namespace EVENTS
 
     namespace STATES

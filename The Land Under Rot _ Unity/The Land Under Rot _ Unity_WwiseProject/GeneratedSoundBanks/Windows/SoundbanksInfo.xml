@@ -33,6 +33,7 @@
 				<Event Id="3391211644" Name="char_jump" ObjectPath="\Events\Default Work Unit\SFX\Finished\char_jump"/>
 				<Event Id="1584507803" Name="Click" ObjectPath="\Events\Default Work Unit\UI\Click"/>
 				<Event Id="851955753" Name="Fenway" ObjectPath="\Events\Default Work Unit\VOX\Fenway"/>
+				<Event Id="2161579817" Name="Gourdo" ObjectPath="\Events\Default Work Unit\VOX\Gourdo"/>
 				<Event Id="915067362" Name="Her" ObjectPath="\Events\Default Work Unit\VOX\Her"/>
 				<Event Id="3774898542" Name="int_boing" ObjectPath="\Events\Default Work Unit\SFX\Finished\int_boing"/>
 				<Event Id="261243135" Name="int_cordyceps" ObjectPath="\Events\Default Work Unit\SFX\Finished\int_cordyceps"/>
@@ -56,6 +57,7 @@
 				<Event Id="745316089" Name="stg_angel_tree_awakened" ObjectPath="\Events\Default Work Unit\SFX\Finished\stg_angel_tree_awakened"/>
 				<Event Id="1530319798" Name="stg_growth_function" ObjectPath="\Events\Default Work Unit\SFX\Finished\stg_growth_function"/>
 				<Event Id="3226351339" Name="stg_obtain_mulch" ObjectPath="\Events\Default Work Unit\SFX\Finished\stg_obtain_mulch"/>
+				<Event Id="3554262370" Name="Strawberry" ObjectPath="\Events\Default Work Unit\VOX\Strawberry"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="2302786" Language="SFX">
@@ -65,6 +67,10 @@
 				<File Id="5577329" Language="SFX">
 					<ShortName>CHAR_footsteps_stone_b.wav</ShortName>
 					<Path>SFX\CHAR_footsteps_stone_b_6296B0F9.wem</Path>
+				</File>
+				<File Id="23336938" Language="SFX">
+					<ShortName>lur_vox_NPC__mulchant_05.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__mulchant_05_B09F49DF.wem</Path>
 				</File>
 				<File Id="28341570" Language="SFX">
 					<ShortName>rot_deep_voice3.wav</ShortName>
@@ -82,6 +88,14 @@
 					<ShortName>lur_vox_NPC_buddy_05.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_buddy_05_B09F49DF.wem</Path>
 				</File>
+				<File Id="122933764" Language="SFX">
+					<ShortName>lur_vox_NPC__mulchant_02.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__mulchant_02_B09F49DF.wem</Path>
+				</File>
+				<File Id="127763210" Language="SFX">
+					<ShortName>lur_vox_NPC__gourdo_02.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__gourdo_02_B09F49DF.wem</Path>
+				</File>
 				<File Id="135291751" Language="SFX">
 					<ShortName>lur_vox_NPC_her_05.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_her_05_B09F49DF.wem</Path>
@@ -93,10 +107,6 @@
 				<File Id="142097146" Language="SFX">
 					<ShortName>LUR_ambience_tree_seat.wav</ShortName>
 					<Path>SFX\LUR_ambience_tree_seat_5A97FBD9.wem</Path>
-				</File>
-				<File Id="149518397" Language="SFX">
-					<ShortName>Mulchant2.wav</ShortName>
-					<Path>SFX\Mulchant2_A01FEDBE.wem</Path>
 				</File>
 				<File Id="155007829" Language="SFX">
 					<ShortName>LUR_ambience_understump.wav</ShortName>
@@ -166,9 +176,17 @@
 					<ShortName>CHAR_jump_a.wav</ShortName>
 					<Path>SFX\CHAR_jump_a_6296B0F9.wem</Path>
 				</File>
+				<File Id="318965252" Language="SFX">
+					<ShortName>lur_vox_NPC__mulchant_06.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__mulchant_06_B09F49DF.wem</Path>
+				</File>
 				<File Id="327863489" Language="SFX">
 					<ShortName>CHAR_footsteps_grass_b.wav</ShortName>
 					<Path>SFX\CHAR_footsteps_grass_b_6296B0F9.wem</Path>
+				</File>
+				<File Id="333245312" Language="SFX">
+					<ShortName>lur_vox_NPC__gourdo_04.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__gourdo_04_B09F49DF.wem</Path>
 				</File>
 				<File Id="334024107" Language="SFX">
 					<ShortName>LuR_BreakWood.wav</ShortName>
@@ -182,6 +200,10 @@
 					<ShortName>LUR Obtain Mulch.wav</ShortName>
 					<Path>SFX\LUR Obtain Mulch_10C4C929.wem</Path>
 				</File>
+				<File Id="431281099" Language="SFX">
+					<ShortName>lur_vox_NPC__gourdo_05.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__gourdo_05_B09F49DF.wem</Path>
+				</File>
 				<File Id="434009415" Language="SFX">
 					<ShortName>LUR Mulchant Theme.wav</ShortName>
 					<Path>SFX\LUR Mulchant Theme_4811579D.wem</Path>
@@ -193,6 +215,14 @@
 				<File Id="438113143" Language="SFX">
 					<ShortName>LUR Angel Tree Awakened.wav</ShortName>
 					<Path>SFX\LUR Angel Tree Awakened_10C4C929.wem</Path>
+				</File>
+				<File Id="450947865" Language="SFX">
+					<ShortName>lur_vox_NPC__mulchant_04.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__mulchant_04_B09F49DF.wem</Path>
+				</File>
+				<File Id="467527341" Language="SFX">
+					<ShortName>lur_vox_NPC__gourdo_01.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__gourdo_01_B09F49DF.wem</Path>
 				</File>
 				<File Id="472042921" Language="SFX">
 					<ShortName>LUR Opening Cinematic.wav</ShortName>
@@ -230,6 +260,10 @@
 					<ShortName>PauseSound.wav</ShortName>
 					<Path>SFX\PauseSound_6296B0F9.wem</Path>
 				</File>
+				<File Id="654926810" Language="SFX">
+					<ShortName>lur_vox_NPC__strawberry_03.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__strawberry_03_B09F49DF.wem</Path>
+				</File>
 				<File Id="671957582" Language="SFX">
 					<ShortName>lur_vox_NPC_buddy_01.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_buddy_01_B09F49DF.wem</Path>
@@ -250,6 +284,10 @@
 					<ShortName>CHAR_jump_b.wav</ShortName>
 					<Path>SFX\CHAR_jump_b_6296B0F9.wem</Path>
 				</File>
+				<File Id="731019388" Language="SFX">
+					<ShortName>lur_vox_NPC__strawberry_01.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__strawberry_01_B09F49DF.wem</Path>
+				</File>
 				<File Id="746214002" Language="SFX">
 					<ShortName>LUR_ambience_tutorial.wav</ShortName>
 					<Path>SFX\LUR_ambience_tutorial_462E5845.wem</Path>
@@ -258,13 +296,13 @@
 					<ShortName>CHAR_footsteps_grass_d.wav</ShortName>
 					<Path>SFX\CHAR_footsteps_grass_d_6296B0F9.wem</Path>
 				</File>
-				<File Id="760475425" Language="SFX">
-					<ShortName>Mulchant1.wav</ShortName>
-					<Path>SFX\Mulchant1_B09F49DF.wem</Path>
-				</File>
 				<File Id="769493582" Language="SFX">
 					<ShortName>LUR Stinkhorn Stop.wav</ShortName>
 					<Path>SFX\LUR Stinkhorn Stop_4811579D.wem</Path>
+				</File>
+				<File Id="773731485" Language="SFX">
+					<ShortName>lur_vox_NPC__gourdo_03.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__gourdo_03_B09F49DF.wem</Path>
 				</File>
 				<File Id="784592910" Language="SFX">
 					<ShortName>Fenway4.wav</ShortName>
@@ -278,6 +316,10 @@
 					<ShortName>CHAR_footsteps_grass_e.wav</ShortName>
 					<Path>SFX\CHAR_footsteps_grass_e_6296B0F9.wem</Path>
 				</File>
+				<File Id="821888560" Language="SFX">
+					<ShortName>lur_vox_NPC__strawberry_06.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__strawberry_06_B09F49DF.wem</Path>
+				</File>
 				<File Id="822434099" Language="SFX">
 					<ShortName>lur_vox_NPC_buddy_03.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_buddy_03_B09F49DF.wem</Path>
@@ -286,9 +328,9 @@
 					<ShortName>lur_vox_NPC_her_02.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_her_02_47DE2BB2.wem</Path>
 				</File>
-				<File Id="859681800" Language="SFX">
-					<ShortName>Mulchant4.wav</ShortName>
-					<Path>SFX\Mulchant4_B09F49DF.wem</Path>
+				<File Id="858047206" Language="SFX">
+					<ShortName>lur_vox_NPC__strawberry_04.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__strawberry_04_289D7077.wem</Path>
 				</File>
 				<File Id="863273360" Language="SFX">
 					<ShortName>LUR Acorn Collect New.wav</ShortName>
@@ -297,6 +339,10 @@
 				<File Id="864773346" Language="SFX">
 					<ShortName>lur_vox_NPC_buddy_04.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_buddy_04_B09F49DF.wem</Path>
+				</File>
+				<File Id="866898532" Language="SFX">
+					<ShortName>Char_falling.wav</ShortName>
+					<Path>SFX\Char_falling_6296B0F9.wem</Path>
 				</File>
 				<File Id="870337837" Language="SFX">
 					<ShortName>Eye_Boing.wav</ShortName>
@@ -309,6 +355,10 @@
 				<File Id="902085705" Language="SFX">
 					<ShortName>INT_gong.wav</ShortName>
 					<Path>SFX\INT_gong_6296B0F9.wem</Path>
+				</File>
+				<File Id="908403750" Language="SFX">
+					<ShortName>lur_vox_NPC__mulchant_03.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__mulchant_03_B09F49DF.wem</Path>
 				</File>
 				<File Id="915585608" Language="SFX">
 					<ShortName>LUR Gaze Growth Function.wav</ShortName>
@@ -354,17 +404,29 @@
 					<ShortName>lur_vox_NPC_buddy_02.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_buddy_02_B09F49DF.wem</Path>
 				</File>
+				<File Id="1010735661" Language="SFX">
+					<ShortName>lur_vox_NPC__strawberry_05.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__strawberry_05_B09F49DF.wem</Path>
+				</File>
 				<File Id="1012564904" Language="SFX">
 					<ShortName>LUR Tree Seat Track.wav</ShortName>
 					<Path>SFX\LUR Tree Seat Track_4811579D.wem</Path>
 				</File>
-				<File Id="1015576496" Language="SFX">
-					<ShortName>Mulchant3.wav</ShortName>
-					<Path>SFX\Mulchant3_539564F7.wem</Path>
+				<File Id="1019759028" Language="SFX">
+					<ShortName>lur_vox_NPC__mulchant_01.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__mulchant_01_B09F49DF.wem</Path>
+				</File>
+				<File Id="1027132290" Language="SFX">
+					<ShortName>lur_vox_NPC__strawberry_02.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__strawberry_02_529842FB.wem</Path>
 				</File>
 				<File Id="1030818423" Language="SFX">
 					<ShortName>Fenway7.wav</ShortName>
 					<Path>SFX\Fenway7_3251A611.wem</Path>
+				</File>
+				<File Id="1042255112" Language="SFX">
+					<ShortName>lur_vox_NPC__gourdo_06.wav</ShortName>
+					<Path>SFX\lur_vox_NPC__gourdo_06_B09F49DF.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
