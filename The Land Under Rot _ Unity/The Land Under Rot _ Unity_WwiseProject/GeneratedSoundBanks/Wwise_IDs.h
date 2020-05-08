@@ -19,13 +19,16 @@ namespace AK
         static const AkUniqueID CHAR_FOOTSTEPS_GRASS = 3543977830U;
         static const AkUniqueID CHAR_FOOTSTEPS_STONE = 2543644351U;
         static const AkUniqueID CHAR_FOOTSTEPS_WOOD = 3744065311U;
+        static const AkUniqueID CHAR_HEADBUTT = 1802740349U;
         static const AkUniqueID CHAR_HEADBUTT_STONE = 2450984751U;
         static const AkUniqueID CHAR_HEADBUTT_WOOD = 3953657551U;
+        static const AkUniqueID CHAR_JUMP = 3391211644U;
         static const AkUniqueID CLICK = 1584507803U;
         static const AkUniqueID FENWAY = 851955753U;
         static const AkUniqueID HER = 915067362U;
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
+        static const AkUniqueID INT_GONG = 1297618496U;
         static const AkUniqueID MULCHANT = 2403460855U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID RETURN_FRUITFUL_FOREST = 3336759787U;

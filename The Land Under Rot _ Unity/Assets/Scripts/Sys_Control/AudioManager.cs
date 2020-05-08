@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
 
     private static AudioManager _instance = null;
     public static AudioManager Instance { get { return _instance; } }
-
+  
 
     private void Awake()
     {
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Headbutt()
     {
-
+        AkSoundEngine.PostEvent("char_headbutt", gameObject);
     }
 
     public void Play_Headbutt_Wood()
@@ -104,7 +104,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Jump()
     {
-
+        AkSoundEngine.PostEvent("char_jump", gameObject);
     }
 
     public void Play_Landing_OnButt()
