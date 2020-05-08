@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Inventory")]
     #region Inventory
-    public int acorns;
+    //public int acorns;
     //public int mulch;
     #endregion
 
@@ -197,7 +197,7 @@ public class PlayerController : MonoBehaviour
         gameController = GameController.Instance;
         gameController.playerController = this;
 
-        gameController.SetAcorns();
+        //gameController.SetAcorns();
 
         playFootFalls = true;
 

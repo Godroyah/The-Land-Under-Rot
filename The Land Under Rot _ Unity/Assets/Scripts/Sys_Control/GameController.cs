@@ -246,7 +246,7 @@ public class GameController : MonoBehaviour
         //playerController.acorns = playerAcorns;
 
         if (acornCount != null)
-            acornCount.text = acorns.ToString();
+            acornCount.text = acorns.ToString() + "/" + maxAcorns.ToString();
 
         Instance.onLevelLoaded = Instance.SaveGame; // Resets the delegate every time a new level is loaded
     }
