@@ -268,10 +268,10 @@ public class GameController : MonoBehaviour
 
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         isDead = false;
-        if (playerController != null)
-        {
-            Invoke("SetAcorns", 1);
-        }
+        //if (playerController != null)
+        //{
+        //    Invoke("SetAcorns", 1);
+        //}
 
 
         if (mainMenu != null)
@@ -441,7 +441,8 @@ public class GameController : MonoBehaviour
     public void SetAcorns()
     {
         //TODO: needs to be modified to stop resetting acorns
-        playerAcorns = playerController.acorns;
+        GameData data = SaveSystem.LoadGame();
+        playerAcorns = data.playerAcorns;
         acornCount.text = playerAcorns.ToString() + "/" + maxAcorns.ToString();
         oldAcorns = playerAcorns;
     }
@@ -464,7 +465,10 @@ public class GameController : MonoBehaviour
 
     public void PickUpCount()
     {
+        GameData data = SaveSystem.LoadGame();
         playerAcorns = playerController.acorns;
+        data.playerAcorns = playerAcorns;
+
         //playerMulch = playerController.mulch;
 
         if (oldAcorns != playerAcorns)

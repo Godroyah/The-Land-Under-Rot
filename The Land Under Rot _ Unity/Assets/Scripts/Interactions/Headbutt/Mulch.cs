@@ -119,7 +119,8 @@ public class Mulch : Interactable
             if(!depletedMulch.enabled)
             {
                 mulchParticles.Play();
-                ActivateMessage();
+                //ActivateMessage();
+                //^ Reactivate when replacement code for Mulch_Collected is available!
                 fullMulch.enabled = false;
                 depletedMulch.enabled = true;
                 AudioManager.Instance.Play_Mulch_Smash();
@@ -211,7 +212,7 @@ public class Mulch : Interactable
     void ActivateMessage()
     {
         mulchCollected = youGotMulch.GetComponent<Mulch_Collected>();
-        mulchCollected.mulch_text.text = mulchMessage;
+        //mulchCollected.mulch_text.text = mulchMessage;
         //mulchCollected.textLength = mulchMessage.Length;
         //mulchCollected.SetName(mulchMessage);
         GameObject mulchAnnouncement = Instantiate(youGotMulch);
