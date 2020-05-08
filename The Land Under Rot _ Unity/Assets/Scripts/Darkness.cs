@@ -31,7 +31,11 @@ public class Darkness : MonoBehaviour
 
     void Start()
     {
-        baseModel = transform.GetChild(0).gameObject;
+        Transform temp = transform.GetChild(0);
+        if (temp != null)
+            baseModel = .gameObject;
+        else
+            Debug.LogWarning("This DarkVolume has no base model as a child!");
         mRenderer = baseModel.GetComponent<MeshRenderer>();
         darkMat = mRenderer.sharedMaterial;
         darkMat = new Material(darkMat);
