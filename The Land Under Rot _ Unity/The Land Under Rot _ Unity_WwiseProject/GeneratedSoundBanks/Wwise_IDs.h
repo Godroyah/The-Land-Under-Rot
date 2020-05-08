@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID BACK_BUTTON = 2886972203U;
         static const AkUniqueID BUDDY = 3718854415U;
+        static const AkUniqueID CATKIN = 3289597467U;
         static const AkUniqueID CHAR_FALLING = 2781918869U;
         static const AkUniqueID CHAR_FOOTSTEPS_GRASS = 3543977830U;
         static const AkUniqueID CHAR_FOOTSTEPS_STONE = 2543644351U;
@@ -30,6 +31,7 @@ namespace AK
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID INT_GONG = 1297618496U;
+        static const AkUniqueID LADYTREE = 763473049U;
         static const AkUniqueID MULCHANT = 2403460855U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID RETURN_FRUITFUL_FOREST = 3336759787U;
@@ -51,6 +53,7 @@ namespace AK
         static const AkUniqueID STG_GROWTH_FUNCTION = 1530319798U;
         static const AkUniqueID STG_OBTAIN_MULCH = 3226351339U;
         static const AkUniqueID STRAWBERRY = 3554262370U;
+        static const AkUniqueID WILLOWTREE = 3564066907U;
     } // namespace EVENTS
 
     namespace STATES
