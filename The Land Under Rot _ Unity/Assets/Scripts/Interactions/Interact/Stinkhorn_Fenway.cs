@@ -28,6 +28,7 @@ public class Stinkhorn_Fenway : Interactable
 
         if (GameController.Instance != null)
         {
+            dialogueManager = GameController.Instance.dialogueManager;
             AudioManager.Instance.Play_Fenway();
             switch (fenwayType)
             {

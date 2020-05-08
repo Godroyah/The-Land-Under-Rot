@@ -23,7 +23,8 @@ public class Peapod_Stinkhorn : Interactable
 
         if (GameController.Instance != null)
         {
-            if(!isIntroduced)
+            billboard_UI.SetActive(false);
+            if (!isIntroduced)
             {
                 dialogueManager.StartDialogue(Reply.SS_BusDriver_1);
                 isIntroduced = true;

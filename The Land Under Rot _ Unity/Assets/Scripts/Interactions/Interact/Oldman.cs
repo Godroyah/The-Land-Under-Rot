@@ -27,7 +27,7 @@ public class Oldman : Interactable
 
         if (GameController.Instance != null)
         {
-           
+            billboard_UI.SetActive(false);
             // Select which dialogue to 'say'
             if (!GameController.Instance.stinkhorn_bus_Called)
             {

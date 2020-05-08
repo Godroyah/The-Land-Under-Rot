@@ -43,7 +43,11 @@ public class Sign : Interactable
         base.Interact();
 
         if (GameController.Instance.dialogueManager != null)
+        {
+            billboard_UI.SetActive(false);
             dialogueManager = GameController.Instance.dialogueManager;
+        }
+            
 
         //if (dialogueManager == null)
         //{

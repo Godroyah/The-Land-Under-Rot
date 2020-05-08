@@ -83,7 +83,7 @@ public class Pick_Up : MonoBehaviour
                     {
                         Debug.Log("Playing!");
                     }
-                    playerController.acorns += 1;
+                    GameController.Instance.acorns += 1;
                     GameController.Instance.InteractedWith(interactionObject);
                     Destroy(gameObject);
                     break;

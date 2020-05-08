@@ -30,6 +30,7 @@ public class CartDriver : Interactable
     {
         if (other.CompareTag("Interact"))
         {
+            billboard_UI.SetActive(false);
             if (playerController == null)
             {
                 playerController = GameController.Instance.playerController;

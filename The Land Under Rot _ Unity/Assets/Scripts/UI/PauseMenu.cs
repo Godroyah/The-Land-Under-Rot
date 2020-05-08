@@ -54,7 +54,7 @@ public class PauseMenu : MonoBehaviour
         // Debug.Log("Active?");
         
 
-        if (Input.GetButton("Pause"))
+        if (Input.GetButton(gameController.pauseInput))
             {
             AudioManager.Instance.Play_UI_Click_PauseMenu();
             if (!paused)
@@ -65,7 +65,9 @@ public class PauseMenu : MonoBehaviour
                     {
                         pauseMenu.SetActive(true);
                         decoration.SetActive(true);
-                       // acornDisplay.enabled = true;
+                    // acornDisplay.enabled = true;
+                        acornBoy.SetActive(true);
+                        post.SetActive(true);
                         acornText.enabled = true;
                         if(gameController.mulchant_GivenBottles)
                         {
@@ -99,7 +101,7 @@ public class PauseMenu : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonUp("Pause"))
+            if (Input.GetButtonUp(gameController.pauseInput))
             {
                 if (!paused)
                     paused = true;

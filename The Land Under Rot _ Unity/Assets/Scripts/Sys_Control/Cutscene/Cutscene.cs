@@ -63,7 +63,7 @@ public class Cutscene : MonoBehaviour
         while (true)
         {
             yield return new WaitForEndOfFrame();
-            if (Input.GetButton("Interact"))
+            if (Input.GetButton(GameController.Instance.interactInput))
             {
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 StopCoroutine(Scene());

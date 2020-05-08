@@ -40,6 +40,7 @@ public class TreeSeat_NPC_Talk : Interactable
 
         if (GameController.Instance != null)
         {
+            dialogueManager = GameController.Instance.dialogueManager;
             switch (treeSeatNPC)
             {
                 case TreeSeat_NPC.NONE:

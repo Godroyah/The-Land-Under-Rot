@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour
     [Tooltip("Name of the Scene for the DialogueManager to Find")]
     public int frameIndex;
     public string SceneName;
+    //private string interactHandle;
     public GameObject[] Frames;
     [Space(5)]
     [Header("Frame Triggers for Event Cam Shots")]
@@ -41,7 +42,7 @@ public class Dialogue : MonoBehaviour
         //{
         //    Debug.LogWarning("Please match and assign emotes for each frame of dialogue!");
         //}
-
+        gameController = GameController.Instance;
         camControl = GameObject.Find("Camera_Jig").GetComponent<CamControl>();
         dialogueCam = GameObject.Find("Dialogue_Cam").GetComponent<DialogueCam>();
 
@@ -67,9 +68,13 @@ public class Dialogue : MonoBehaviour
         //}
     }
 
+    //private void Update()
+    //{
+    //    Debug.Log(gameController.interactInput);
+    //}
+
     public void StartScene()
     {
-
         if (!isCamEventActive)
         {
             StartCoroutine(Scene());
@@ -126,6 +131,7 @@ public class Dialogue : MonoBehaviour
     IEnumerator Scene()
     {
         //Debug.Log("Scene Started");
+        //interactHandle = gameController.interactInput;
 
         if (dialogueManager != null)
         {
@@ -152,7 +158,7 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForEndOfFrame();
 
             // Wait while the text hasn't finished or the player interacts to finish the text
-            yield return new WaitUntil(() => (Input.GetButtonDown("Interact") || (hasFinishedDisplayingText || currentTextDisplayer == null)));
+            yield return new WaitUntil(() => (Input.GetButtonDown(gameController.interactInput) || (hasFinishedDisplayingText || currentTextDisplayer == null)));
 
             if (i == Frames.Length - 1)
             {
@@ -197,7 +203,7 @@ public class Dialogue : MonoBehaviour
                 }
                 else
                 {
-                    yield return new WaitUntil(() => Input.GetButtonDown("Interact"));
+                    yield return new WaitUntil(() => Input.GetButtonDown(gameController.interactInput));
                 }
                 
                 continue; // This continues to the next frame
@@ -239,7 +245,7 @@ public class Dialogue : MonoBehaviour
 
 
 
-            yield return new WaitUntil(() => Input.GetButtonDown("Interact"));
+            yield return new WaitUntil(() => Input.GetButtonDown(gameController.interactInput));
 
 
             #region OldCode

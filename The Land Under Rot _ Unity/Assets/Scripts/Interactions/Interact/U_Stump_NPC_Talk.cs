@@ -35,6 +35,7 @@ public class U_Stump_NPC_Talk : Interactable
 
         if (gameController != null)
         {
+            billboard_UI.SetActive(false);
             switch (understump_NPC)
             {
                 case U_Stump_NPC.NONE:
