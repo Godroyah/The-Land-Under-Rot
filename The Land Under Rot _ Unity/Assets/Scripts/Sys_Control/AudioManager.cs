@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Walk_Dirt()
     {
-        AkSoundEngine.PostEvent("char_footsteps_grass", gameObject);
+        AkSoundEngine.PostEvent("char_footsteps_dirt", gameObject);
     }
 
     public void Play_Walk_Mud()
@@ -267,7 +267,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Strawberry()
     {
-
+        AkSoundEngine.PostEvent("Strawberry", gameObject);
     }
 
     public void Play_Banan()
