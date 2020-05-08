@@ -34,6 +34,40 @@ MonoBehaviour:
   scale:
     overrideState: 0
     value: 1
+--- !u!114 &-4279674319100901807
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cabde2662242d624a91df3e7b6507120, type: 3}
+  m_Name: TextureFog
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  fogPower:
+    overrideState: 1
+    value: 0.5
+  skyboxOffset:
+    overrideState: 1
+    value: 10
+  distanceBlend:
+    overrideState: 1
+    value: 10
+  nearPush:
+    overrideState: 1
+    value: 10
+  depthColor:
+    overrideState: 1
+    value: {r: 0.28635636, g: 0.4245283, b: 0.4124983, a: 0}
+  debugDepth:
+    overrideState: 1
+    value: 0
 --- !u!114 &-525384342229229502
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -83,6 +117,7 @@ MonoBehaviour:
   - {fileID: -525384342229229502}
   - {fileID: -7197319190990643845}
   - {fileID: 4845516480161671086}
+  - {fileID: -4279674319100901807}
 --- !u!114 &1411481331198616355
 MonoBehaviour:
   m_ObjectHideFlags: 3
