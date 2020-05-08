@@ -197,6 +197,10 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Interaction
+    public void Play_Gong()
+    {
+        AkSoundEngine.PostEvent("int_gong", gameObject);
+    }
     public void Play_PurchaseNoise()
     {
 
