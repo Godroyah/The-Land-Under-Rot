@@ -377,6 +377,11 @@ public class AudioManager : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Start_Opening_Cinematic", gameObject);
     }
+    public void Play_Stinger_Start_EndCutscene()
+    {
+        AkSoundEngine.PostEvent("Start_EndAnamatic", gameObject);
+    }
+
     #endregion
 
     #region Switch Boards for Multiple Sound Types

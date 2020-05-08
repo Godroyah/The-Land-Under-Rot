@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID RETURN_TREE_SEAT = 1526298514U;
         static const AkUniqueID ROOTFORD = 1989498786U;
         static const AkUniqueID START_BUTTON = 2674457354U;
+        static const AkUniqueID START_ENDANAMATIC = 256903793U;
         static const AkUniqueID START_GAME = 1114964412U;
         static const AkUniqueID START_MENU_MUSIC = 1003497107U;
         static const AkUniqueID START_MULCHANT_THEME = 123246954U;
@@ -71,6 +72,7 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID FINAL_ANAMATIC = 350280330U;
                 static const AkUniqueID FRUITFUL_FOREST = 2199362622U;
                 static const AkUniqueID MAIN_MENU = 2005704188U;
                 static const AkUniqueID MULCHANT_THEME = 2745733789U;

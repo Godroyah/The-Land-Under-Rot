@@ -892,6 +892,93 @@
 								</MusicPlaylistItem>
 							</Playlist>
 						</MusicPlaylistContainer>
+						<MusicPlaylistContainer Name="Factory Animatic" ID="{684E27D1-4C74-403E-9A2E-EFDF7678C143}" ShortID="936248745">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="LUR Factory Animatic" ID="{F3D87513-1852-438D-A6F7-F5DBB1DA1315}" ShortID="856215693">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="78039.8866213152"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="LUR Factory Animatic" ID="{C09499F9-9784-4997-86E6-CBD2054311CF}" ShortID="707632903">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="LUR Factory Animatic" ID="{95A3A393-AE26-4DFD-9FA7-902684FBAD6F}" ShortID="479728114">
+													<Language>SFX</Language>
+													<AudioFile>LUR Factory Animatic.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{6E55509B-D653-4282-B866-9360A739D32B}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{F6226B58-B095-43E5-9518-8F214E6BF1F1}">
+													<ClipList>
+														<MusicClip Name="LUR Factory Animatic" ID="{DB3AD2CB-9B8D-4EC2-A52E-A474A6553569}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="78039.8866213152"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+															</PropertyList>
+															<AudioSourceRef Name="LUR Factory Animatic" ID="{95A3A393-AE26-4DFD-9FA7-902684FBAD6F}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
+									</ChildrenList>
+									<CueList>
+										<MusicCue Name="Entry Cue" ID="{03D16F05-8EA1-488D-8CC7-89EE81FFCC36}"/>
+										<MusicCue Name="Exit Cue" ID="{9FEFB189-E278-49EE-86B9-E47C3679B841}">
+											<PropertyList>
+												<Property Name="CueType" Type="int16" Value="1"/>
+												<Property Name="TimeMs" Type="Real64" Value="78039.8866213152"/>
+											</PropertyList>
+										</MusicCue>
+									</CueList>
+								</MusicSegment>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{2607CC54-82DD-46C9-A69C-0793AFF8B587}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{CEA7C71B-8123-45D8-97DE-68E45967FE88}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<Playlist>
+								<MusicPlaylistItem Name="" ID="{EC1FF1E1-0FED-43E5-876A-16D3E0085EB6}" ShortID="730440675"/>
+							</Playlist>
+						</MusicPlaylistContainer>
 					</ChildrenList>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{4F55DC7A-3216-4D8F-BAD0-8EA8EF55DA82}">
@@ -1064,6 +1151,14 @@
 							</Path>
 							<AudioNodeInfo>
 								<AudioNodeRef Name="Opening Cinematic" ID="{D2D84514-27B8-4986-BB28-569DC4F10AA8}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="Final_Anamatic" ID="{DAA4C1F2-F89A-4F19-BED1-1BFF1D06BB45}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="Factory Animatic" ID="{684E27D1-4C74-403E-9A2E-EFDF7678C143}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>
