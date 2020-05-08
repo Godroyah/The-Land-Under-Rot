@@ -22,7 +22,7 @@ public class Yellow_GazeGrowth : GazeGrowth
     private void Start()
     {
         thisDetector = GetComponent<SphereCollider>();
-        if (gameController.underStumpLightsOn)
+        if (GameController.Instance.underStumpLightsOn)
         {
             usesCamEvent = false;
         }
@@ -46,7 +46,7 @@ public class Yellow_GazeGrowth : GazeGrowth
             Debug.LogWarning("Please raise the duration about 0!");
         }
 
-        if (!gameController.underStumpLightsOn)
+        if (!GameController.Instance.underStumpLightsOn)
         {
             StartCoroutine(DelayThenStart());
         }
