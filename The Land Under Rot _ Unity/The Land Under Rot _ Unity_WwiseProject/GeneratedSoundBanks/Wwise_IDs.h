@@ -25,6 +25,10 @@ namespace AK
         static const AkUniqueID CHAR_HEADBUTT_WOOD = 3953657551U;
         static const AkUniqueID CHAR_JUMP = 3391211644U;
         static const AkUniqueID CLICK = 1584507803U;
+        static const AkUniqueID EMO_ANGRY = 53988696U;
+        static const AkUniqueID EMO_CONFUSED = 2346623172U;
+        static const AkUniqueID EMO_HAPPY = 2434727757U;
+        static const AkUniqueID EMO_SHOCKED = 2267447418U;
         static const AkUniqueID FENWAY = 851955753U;
         static const AkUniqueID GOURDO = 2161579817U;
         static const AkUniqueID HER = 915067362U;
