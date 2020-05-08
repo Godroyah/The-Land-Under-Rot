@@ -138,6 +138,9 @@ public class PlayerController : MonoBehaviour
     private Animator fadeAnim;
     public Interactable currentTarget = null;
 
+    public int numCoyoteFrames = 5;
+    private int currentNumOfCoyoteFrames = 0;
+
     private void Awake()
     {
         fadePane = GameObject.Find("FadePane");
@@ -232,8 +235,24 @@ public class PlayerController : MonoBehaviour
         Reset();
         GetInput();
 
-        IsGrounded = Physics.CheckSphere(groundChecker.position, 0.4f, playerLayerMask, QueryTriggerInteraction.Ignore);
+        bool tempGroundCheck = Physics.CheckSphere(groundChecker.position, 0.4f, playerLayerMask, QueryTriggerInteraction.Ignore);
         //IsGrounded = Physics.CheckBox(groundChecker.position, new Vector3(0.75f, 0.25f, 0.75f), transform.rotation, playerLayerMask, QueryTriggerInteraction.Ignore);
+
+        if (!tempGroundCheck)
+        {
+            currentNumOfCoyoteFrames += 1;
+
+            if (currentNumOfCoyoteFrames > numCoyoteFrames)
+            {
+                IsGrounded = false;
+            }
+        }
+        else
+        {
+            currentNumOfCoyoteFrames = 0;
+            IsGrounded = true;
+        }
+            
 
         //if (Camera.main.enabled)
         //{
