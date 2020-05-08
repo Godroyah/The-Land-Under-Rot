@@ -32,6 +32,8 @@ public class SelfReport : MonoBehaviour
                 break;
             case Report_Type.ACORN:
                 gameController.acornCount = GetComponent<TextMeshProUGUI>();
+                if (gameController.acornCount != null)
+                    gameController.acornCount.text = gameController.acorns.ToString();
                 break;
             default:
                 break;

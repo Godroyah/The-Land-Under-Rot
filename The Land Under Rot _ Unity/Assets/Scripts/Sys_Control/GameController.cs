@@ -33,8 +33,9 @@ public class GameController : MonoBehaviour
     #region Bools
     public bool levelStart;
     public bool isDead;
-    //public bool paused;
 
+    //public bool paused;
+    public int acorns;
     public int tempSceneIndex;
 
     [Space(5)]
@@ -245,7 +246,7 @@ public class GameController : MonoBehaviour
         //playerController.acorns = playerAcorns;
 
         if (acornCount != null)
-            acornCount.text = playerAcorns.ToString();
+            acornCount.text = acorns.ToString();
 
         Instance.onLevelLoaded = Instance.SaveGame; // Resets the delegate every time a new level is loaded
     }
@@ -441,10 +442,10 @@ public class GameController : MonoBehaviour
     public void SetAcorns()
     {
         //TODO: needs to be modified to stop resetting acorns
-        GameData data = SaveSystem.LoadGame();
-        playerAcorns = data.playerAcorns;
-        acornCount.text = playerAcorns.ToString() + "/" + maxAcorns.ToString();
-        oldAcorns = playerAcorns;
+        //GameData data = SaveSystem.LoadGame();
+        //playerAcorns = data.playerAcorns;
+        acornCount.text = acorns.ToString() + "/" + maxAcorns.ToString();
+        oldAcorns = acorns;
     }
 
 
@@ -465,18 +466,18 @@ public class GameController : MonoBehaviour
 
     public void PickUpCount()
     {
-        GameData data = SaveSystem.LoadGame();
-        playerAcorns = playerController.acorns;
-        data.playerAcorns = playerAcorns;
+        //GameData data = SaveSystem.LoadGame();
+        //playerAcorns = playerController.acorns;
+        //data.playerAcorns = playerAcorns;
 
         //playerMulch = playerController.mulch;
 
-        if (oldAcorns != playerAcorns)
+        if (oldAcorns != acorns)
         {
             if (acornCount != null)
             {
-                acornCount.text = playerAcorns.ToString();
-                oldAcorns = playerAcorns;
+                acornCount.text = acorns.ToString() + "/" + maxAcorns.ToString();
+                oldAcorns = acorns;
             }
         }
         //if (oldMulch != playerMulch)
