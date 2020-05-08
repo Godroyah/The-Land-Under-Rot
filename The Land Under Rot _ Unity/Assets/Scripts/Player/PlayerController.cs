@@ -197,6 +197,8 @@ public class PlayerController : MonoBehaviour
         gameController = GameController.Instance;
         gameController.playerController = this;
 
+        gameController.SetAcorns();
+
         playFootFalls = true;
 
         JustHeadButted = true;
