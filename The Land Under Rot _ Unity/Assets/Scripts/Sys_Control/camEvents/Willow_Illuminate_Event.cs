@@ -31,11 +31,12 @@ public class Willow_Illuminate_Event : Event_Type
         foreach (Yellow_GazeGrowth gazeGrowth in yellowGazeGrowths)
         {
             gazeGrowth.usesCamEvent = false;
-            gazeGrowth.duration = 0;
+            gazeGrowth.duration = -1;
             gazeGrowth.overrideDuration = true;
 
             yield return new WaitForSeconds(dissipationDelay);
 
+            Debug.Log("Illuminating!");
             gazeGrowth.Interact();
 
             yield return null;

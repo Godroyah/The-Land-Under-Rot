@@ -46,11 +46,11 @@ public class Yellow_GazeGrowth : GazeGrowth
             Debug.LogWarning("Please raise the duration about 0!");
         }
 
-        if (!GameController.Instance.underStumpLightsOn)
-        {
-            StartCoroutine(DelayThenStart());
-        }
-
+        //if (!GameController.Instance.underStumpLightsOn)
+        //{
+        //    StartCoroutine(DelayThenStart());
+        //}
+        StartCoroutine(DelayThenStart());
     }
 
     private void OnTriggerEnter(Collider other)
