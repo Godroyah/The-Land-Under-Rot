@@ -4986,6 +4986,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1753471434}
     m_Modifications:
+    - target: {fileID: 3185060475442403911, guid: 25e91080e1bc5c54fb7efb31e7913bb3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c2d7cb3952481324c80e80f01f404799, type: 2}
     - target: {fileID: 7139923574696762164, guid: 25e91080e1bc5c54fb7efb31e7913bb3,
         type: 3}
       propertyPath: m_Name
@@ -51485,6 +51490,8 @@ MonoBehaviour:
   mulchantPrompt: {fileID: 4918416010639050844}
   mulchantDelay: 3.25
   treeDelay: 7
+  mulchantBottle_ParticleSystem: {fileID: 0}
+  particleSystemDelay: 0
 --- !u!4 &1046154753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8347814309153096427, guid: d7c29751210f18a4ca1f71bbc6d839a9,
@@ -97273,7 +97280,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1976799459468813334, guid: defe4b8a1c4fbe640bba51be9a254c05, type: 3}
+  - {fileID: 2100000, guid: c2d7cb3952481324c80e80f01f404799, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
