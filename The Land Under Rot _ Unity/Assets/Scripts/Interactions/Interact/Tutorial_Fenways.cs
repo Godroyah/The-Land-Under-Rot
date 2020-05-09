@@ -13,6 +13,7 @@ public class Tutorial_Fenways : Interactable
     void Start()
     {
         billboard_UI.SetActive(false);
+        doneTalking = true;
     }
 
     public override void Interact()

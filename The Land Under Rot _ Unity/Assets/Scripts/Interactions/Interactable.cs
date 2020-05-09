@@ -23,6 +23,7 @@ public class Interactable : MonoBehaviour
     public bool headButtActivation;
     public bool dialogueActivation;
     public bool triggerActivation;
+    public bool doneTalking;
    
 
     private void Awake()
@@ -66,10 +67,10 @@ public class Interactable : MonoBehaviour
         // This method is meant to be overwritten
         Debug.Log(gameObject.name + " has been interacted with.");
 
-        if(billboard_UI != null)
-        {
-            billboard_UI.SetActive(false);
-        }
+        //if(billboard_UI != null)
+        //{
+        //    billboard_UI.SetActive(false);
+        //}
        
         //billboardSprite.enabled = false;
 

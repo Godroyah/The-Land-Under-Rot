@@ -17,6 +17,7 @@ public class CartDriver : Interactable
 
         gameController = GameController.Instance;
         dialogueManager = gameController.dialogueManager;
+        doneTalking = true;
     }
 
     public override void Interact()

@@ -21,6 +21,7 @@ public class F_Forest_NPC_Talk : Interactable
     void Start()
     {
         billboard_UI.SetActive(false);
+        doneTalking = true;
         gameController = GameController.Instance;
     }
 

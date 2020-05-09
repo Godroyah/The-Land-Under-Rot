@@ -23,6 +23,7 @@ public class TreeSeat_NPC_Talk : Interactable
     void Start()
     {
         billboard_UI.SetActive(false);
+        doneTalking = true;
         if (treeSeatNPC == TreeSeat_NPC.PEDALTON)
         {
             dialogueCam = GameObject.Find("Dialogue_Cam").GetComponent<DialogueCam>();

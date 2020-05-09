@@ -7,6 +7,7 @@ public class AngelTree_Talk : Interactable
     void Start()
     {
         billboard_UI.SetActive(false);
+        doneTalking = true;
     }
 
     public override void Interact()

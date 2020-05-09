@@ -11,6 +11,7 @@ public class Oldman : Interactable
     void Start()
     {
         billboard_UI.SetActive(false);
+        doneTalking = true;
         GameController.Instance.onLevelLoaded += UpdateOnLevelLoad;
     }
 

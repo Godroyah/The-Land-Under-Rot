@@ -294,10 +294,18 @@ public class Dialogue : MonoBehaviour
         hasFinishedDisplayingText = false;
         Frames[Frames.Length - 1].SetActive(false);
 
-        //Calls on Event_Trigger to start a cam event
-        //KNOWN BUG: Currently is causing the next (or last) frame of dialogue to repeat during cam event.
-        //Debug.Log("Dialogue is done!");
-        if (dialogueManager.prepCamEvent && isCamEventActive)
+        for (int i = 0; i < dialogueManager.npcs.Length; i++)
+        {
+            if (NPC == dialogueManager.npcs[i].NPC)
+            {
+                dialogueManager.npcs[i].npcEmotes.interactable.doneTalking = true;
+            }
+        }
+
+                //Calls on Event_Trigger to start a cam event
+                //KNOWN BUG: Currently is causing the next (or last) frame of dialogue to repeat during cam event.
+                //Debug.Log("Dialogue is done!");
+                if (dialogueManager.prepCamEvent && isCamEventActive)
         {
             //dialogueManager.hasActiveDialogue = false;
             eventTrigger.InitiateEvent();

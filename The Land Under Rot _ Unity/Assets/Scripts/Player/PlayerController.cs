@@ -389,6 +389,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (interactables.Contains(currentTarget)) // TODO: Another check to see if it still exists/in range
                 {
+                    if(currentTarget.doneTalking == true)
                     ToggleHighlight(currentTarget, true);
                 }
                 else
@@ -516,6 +517,8 @@ public class PlayerController : MonoBehaviour
         if (currentTarget != null && interactables.Contains(currentTarget))
         {
             currentTarget.Interact();
+            currentTarget.doneTalking = false;
+            //currentTarget.billboard_UI.SetActive(false);
 
             if (dialogueCam != null)
             {
