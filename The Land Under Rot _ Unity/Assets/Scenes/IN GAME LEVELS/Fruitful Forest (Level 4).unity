@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2795,6 +2795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13539e85db96b4088bb2b3206aec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   Sleeping: {fileID: 64923261}
   Waiting: {fileID: 64923262}
   Exclamation: {fileID: 64923267}
@@ -4609,6 +4610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13539e85db96b4088bb2b3206aec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   Sleeping: {fileID: 1364692853}
   Waiting: {fileID: 1344536472}
   Exclamation: {fileID: 781523892}
@@ -4642,6 +4644,7 @@ MonoBehaviour:
   headButtActivation: 0
   dialogueActivation: 0
   triggerActivation: 0
+  doneTalking: 0
   fruitForest_NPC: 4
   mulchantAnim: {fileID: 0}
 --- !u!54 &120187446
@@ -8183,6 +8186,7 @@ MonoBehaviour:
   headButtActivation: 0
   dialogueActivation: 1
   triggerActivation: 0
+  doneTalking: 0
   fruitForest_NPC: 2
   mulchantAnim: {fileID: 0}
 --- !u!135 &228487958
@@ -8226,6 +8230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13539e85db96b4088bb2b3206aec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   Sleeping: {fileID: 0}
   Waiting: {fileID: 0}
   Exclamation: {fileID: 0}
@@ -52175,6 +52180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13539e85db96b4088bb2b3206aec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   Sleeping: {fileID: 0}
   Waiting: {fileID: 0}
   Exclamation: {fileID: 0}
@@ -52202,6 +52208,7 @@ MonoBehaviour:
   headButtActivation: 0
   dialogueActivation: 0
   triggerActivation: 0
+  doneTalking: 0
   fruitForest_NPC: 6
   mulchantAnim: {fileID: 0}
 --- !u!4 &1054699287 stripped
@@ -60625,7 +60632,7 @@ BoxCollider:
   m_GameObject: {fileID: 1260368130}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 6, y: 0.99999994, z: 0.9999999}
   m_Center: {x: 0, y: -0.000000014901161, z: 0.00000011920929}
@@ -63152,6 +63159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13539e85db96b4088bb2b3206aec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   Sleeping: {fileID: 1803283316}
   Waiting: {fileID: 245030758}
   Exclamation: {fileID: 220812552}
@@ -72586,6 +72594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13539e85db96b4088bb2b3206aec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   Sleeping: {fileID: 0}
   Waiting: {fileID: 0}
   Exclamation: {fileID: 0}
@@ -72613,6 +72622,7 @@ MonoBehaviour:
   headButtActivation: 0
   dialogueActivation: 0
   triggerActivation: 0
+  doneTalking: 0
   fruitForest_NPC: 7
   mulchantAnim: {fileID: 0}
 --- !u!4 &1589374494 stripped
@@ -91948,6 +91958,10 @@ PrefabInstance:
       propertyPath: isDisabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1568275249, guid: adf8a69b60766504c8d8b8f710eb72d1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 831804485457539581, guid: adf8a69b60766504c8d8b8f710eb72d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -96519,6 +96533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce13539e85db96b4088bb2b3206aec32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 0}
   Sleeping: {fileID: 1763583378}
   Waiting: {fileID: 504506480}
   Exclamation: {fileID: 1623541509}
@@ -98738,6 +98753,7 @@ MonoBehaviour:
   headButtActivation: 0
   dialogueActivation: 1
   triggerActivation: 0
+  doneTalking: 0
   fruitForest_NPC: 1
   mulchantAnim: {fileID: 4918416010619693771}
 --- !u!65 &8088969717579581278
