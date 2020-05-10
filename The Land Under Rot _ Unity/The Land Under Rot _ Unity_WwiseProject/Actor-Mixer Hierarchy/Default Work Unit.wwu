@@ -2736,14 +2736,25 @@
 								<AudioFileSource Name="LUR_ambience_fruitful_forest" ID="{1C66A5E3-4AFB-495A-B9AA-F360759D233E}" ShortID="923451777">
 									<PropertyList>
 										<Property Name="CrossfadeDuration" Type="Real64" Value="100"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.843770599868161"/>
 										<Property Name="FadeOutDuration" Type="Real64" Value="0.337508239947283"/>
 										<Property Name="LoopBegin" Type="Real64" Value="11.2275618994243"/>
 										<Property Name="LoopEnd" Type="Real64" Value="130.509616027621"/>
+										<Property Name="MarkerInputMode" Type="int16" Value="2"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 										<Property Name="TrimEnd" Type="Real64" Value="141.473"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>LUR_ambience_fruitful_forest.wav</AudioFile>
+									<PluginInnerObjectList>
+										<List Name="Markers">
+											<PluginInnerObject Name="" ID="{901E73AB-5460-4D60-9114-6A6A7420007D}" PluginName="Marker" CompanyID="0" PluginID="993">
+												<PropertyList>
+													<Property Name="Label" Type="string" Value="base64:VGVtcG86IDEyMC4wAAA="/>
+												</PropertyList>
+											</PluginInnerObject>
+										</List>
+									</PluginInnerObjectList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
