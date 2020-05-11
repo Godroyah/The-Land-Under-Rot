@@ -51,7 +51,7 @@ public class TreeSeat_NPC_Talk : Interactable
                     StartCoroutine(Boss_Mulchant());
                     break;
                 case TreeSeat_NPC.CATKIN:
-                    AkSoundEngine.PostEvent("Catkin_Test", gameObject);
+                    
                     StartCoroutine(Catkin());
                     break;
                 case TreeSeat_NPC.BUDDY:
@@ -115,12 +115,12 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Catkin()
     {
-        // AudioManager.Instance.Play_Catkin();
-        
+        AudioManager.Instance.Play_Catkin();
+
         if (!isIntroduced)
 
         {
-            AudioManager.Instance.Play_Catkin();
+           
             dialogueManager.StartDialogue(Reply.Catkin_Intro);
             isIntroduced = true;
         }

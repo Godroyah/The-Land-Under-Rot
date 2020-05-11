@@ -189,6 +189,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="LuR_BreakWood" ID="{15903B52-1BB1-4E1C-ACAF-624BA0B4458D}" ShortID="334024107">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-5.7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>LuR_BreakWood.wav</AudioFile>
 								</AudioFileSource>
@@ -215,6 +222,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="LuR_BreakStone" ID="{1FDA5DA6-658D-4CAF-9C27-C5DBB8442477}" ShortID="345723967">
+									<PropertyList>
+										<Property Name="VolumeOffset" Type="Real64">
+											<ValueList>
+												<Value>-5.7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>LuR_BreakStone.wav</AudioFile>
 								</AudioFileSource>
@@ -391,6 +405,13 @@
 						</RandomSequenceContainer>
 						<Sound Name="lur_sfx_CHAR_headbutt" ID="{8C7FAB71-218D-4F1C-BDFC-3DA8427391E8}" ShortID="964599026">
 							<PropertyList>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -403,6 +424,11 @@
 											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -430,6 +456,14 @@
 						</Sound>
 						<RandomSequenceContainer Name="lur_sfx_CHAR_jump" ID="{FADDD8A6-5191-4FC4-AD58-B5C7153C380D}" ShortID="683446923">
 							<PropertyList>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -442,6 +476,11 @@
 											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>

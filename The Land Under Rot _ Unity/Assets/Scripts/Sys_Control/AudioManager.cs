@@ -256,7 +256,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Catkin()
     {
-        AkSoundEngine.PostEvent("Catkin_Play", gameObject);
+        AkSoundEngine.PostEvent("Catkin_Test", gameObject);
     }
 
     //Labeled Play_Her in the doc
