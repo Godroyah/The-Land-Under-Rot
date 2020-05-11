@@ -9,7 +9,7 @@
 							<ObjectRef Name="MX Conversion Settings" ID="{C863ABF0-325F-43EB-8056-4D2297141BD5}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="MX Bus" ID="{FB78B34F-3CF0-484B-A7CB-1F473D4C50FE}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+							<ObjectRef Name="Music Bus" ID="{5F9E27B6-4A9B-4829-A920-BC7208968F9A}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -107,105 +107,6 @@
 												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 											</PropertyList>
 											<SegmentRef Name="LUR Tutorial Track" ID="{8D5527F3-F5F1-487F-A230-7BD3202A82DB}"/>
-										</MusicPlaylistItem>
-									</ChildrenList>
-								</MusicPlaylistItem>
-							</Playlist>
-						</MusicPlaylistContainer>
-						<MusicPlaylistContainer Name="Mulchant Theme" ID="{6FE99508-DEE8-46E6-ACAB-84FAF2127C10}" ShortID="831788160">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<MusicSegment Name="LUR Mulchant Theme" ID="{BD97D6A8-D791-473E-8C5D-B71AF0030952}" ShortID="484247752">
-									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="60000"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<MusicTrack Name="LUR Mulchant Theme" ID="{782051A3-3223-45A3-B7B3-E6B2E66C9485}" ShortID="395663969">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="LUR Mulchant Theme" ID="{112FA819-B525-434B-827F-174DEBCC2B11}" ShortID="434009415">
-													<Language>SFX</Language>
-													<AudioFile>LUR Mulchant Theme.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{EAC2EF41-9B6B-47BE-8CA1-C9537A34A02A}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<SequenceList>
-												<MusicTrackSequence Name="" ID="{20BC9A0E-4F67-4367-A7BF-66897AA645A7}">
-													<ClipList>
-														<MusicClip Name="LUR Mulchant Theme" ID="{ACC8EC4B-2EB9-467A-939A-5AAA69469DAB}">
-															<PropertyList>
-																<Property Name="EndTrimOffset" Type="Real64" Value="60000"/>
-																<Property Name="FadeInMode" Type="int16" Value="0"/>
-																<Property Name="FadeOutMode" Type="int16" Value="0"/>
-															</PropertyList>
-															<AudioSourceRef Name="LUR Mulchant Theme" ID="{112FA819-B525-434B-827F-174DEBCC2B11}"/>
-														</MusicClip>
-													</ClipList>
-												</MusicTrackSequence>
-											</SequenceList>
-										</MusicTrack>
-									</ChildrenList>
-									<CueList>
-										<MusicCue Name="Entry Cue" ID="{3FC3618F-40A8-4355-B479-2DCD41BA14FA}"/>
-										<MusicCue Name="Exit Cue" ID="{67750DBB-3731-4469-86BE-0BD261CC4D09}">
-											<PropertyList>
-												<Property Name="CueType" Type="int16" Value="1"/>
-												<Property Name="TimeMs" Type="Real64" Value="60000"/>
-											</PropertyList>
-										</MusicCue>
-									</CueList>
-								</MusicSegment>
-							</ChildrenList>
-							<TransitionList>
-								<MusicTransition Name="Root" ID="{DEADA524-8857-4B62-A200-DCEF44E093A4}">
-									<PropertyList>
-										<Property Name="IsFolder" Type="bool" Value="True"/>
-									</PropertyList>
-									<ChildrenList>
-										<MusicTransition Name="Transition" ID="{35603F30-01C8-44F7-AB86-A11A8497E2E8}">
-											<TransitionInfo/>
-										</MusicTransition>
-									</ChildrenList>
-									<TransitionInfo/>
-								</MusicTransition>
-							</TransitionList>
-							<Playlist>
-								<MusicPlaylistItem Name="" ID="{7297D636-4197-4524-BD39-B245CECC40C3}" ShortID="241926036">
-									<PropertyList>
-										<Property Name="LoopCount" Type="int16" Value="0"/>
-									</PropertyList>
-									<ChildrenList>
-										<MusicPlaylistItem Name="" ID="{E397C7A2-FADE-477C-99B8-30C5BAB356E0}" ShortID="601763132">
-											<PropertyList>
-												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
-											</PropertyList>
-											<SegmentRef Name="LUR Mulchant Theme" ID="{BD97D6A8-D791-473E-8C5D-B71AF0030952}"/>
 										</MusicPlaylistItem>
 									</ChildrenList>
 								</MusicPlaylistItem>
@@ -1047,13 +948,8 @@
 										<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
-										<Property Name="SourceContextType" Type="int16" Value="2"/>
 									</PropertyList>
-									<ReferenceList>
-										<Reference Name="SourceContextObject">
-											<ObjectRef Name="Mulchant Theme" ID="{6FE99508-DEE8-46E6-ACAB-84FAF2127C10}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}"/>
-										</Reference>
-									</ReferenceList>
+									<ReferenceList/>
 									<TransitionInfo>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{F823FB63-659F-4E71-8DA1-3A8050B55D8D}">
@@ -1076,15 +972,10 @@
 								</MusicTransition>
 								<MusicTransition Name="Transition" ID="{F4978443-9451-43DB-AA75-2B7A629863B3}">
 									<PropertyList>
-										<Property Name="DestinationContextType" Type="int16" Value="2"/>
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
 									</PropertyList>
-									<ReferenceList>
-										<Reference Name="DestinationContextObject">
-											<ObjectRef Name="Mulchant Theme" ID="{6FE99508-DEE8-46E6-ACAB-84FAF2127C10}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}"/>
-										</Reference>
-									</ReferenceList>
+									<ReferenceList/>
 									<TransitionInfo>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{ABF6AB5A-03AF-4980-A745-E7E8BBCFB3F7}">
@@ -1167,14 +1058,6 @@
 						</Entry>
 						<Entry>
 							<Path>
-								<PathElementRef Name="Mulchant_Theme" ID="{6EE2FE09-85CF-4CBD-8BDA-B5CD42EF9F2E}"/>
-							</Path>
-							<AudioNodeInfo>
-								<AudioNodeRef Name="Mulchant Theme" ID="{6FE99508-DEE8-46E6-ACAB-84FAF2127C10}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}" Platform="Linked"/>
-							</AudioNodeInfo>
-						</Entry>
-						<Entry>
-							<Path>
 								<PathElementRef Name="Tree_Seat" ID="{8D4D5187-9454-4162-9DC9-4E685E15DED9}"/>
 							</Path>
 							<AudioNodeInfo>
@@ -1223,6 +1106,105 @@
 						</Entry>
 					</EntryList>
 				</MusicSwitchContainer>
+				<MusicPlaylistContainer Name="Mulchant Theme" ID="{6FE99508-DEE8-46E6-ACAB-84FAF2127C10}" ShortID="831788160">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="MX Conversion Settings" ID="{C863ABF0-325F-43EB-8056-4D2297141BD5}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Mulchant Bus" ID="{6481A2F0-F2B4-42B8-A963-BA475598EB60}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="LUR Mulchant Theme" ID="{BD97D6A8-D791-473E-8C5D-B71AF0030952}" ShortID="484247752">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="60000"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="LUR Mulchant Theme" ID="{782051A3-3223-45A3-B7B3-E6B2E66C9485}" ShortID="395663969">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="LUR Mulchant Theme" ID="{112FA819-B525-434B-827F-174DEBCC2B11}" ShortID="434009415">
+											<Language>SFX</Language>
+											<AudioFile>LUR Mulchant Theme.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{EAC2EF41-9B6B-47BE-8CA1-C9537A34A02A}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{20BC9A0E-4F67-4367-A7BF-66897AA645A7}">
+											<ClipList>
+												<MusicClip Name="LUR Mulchant Theme" ID="{ACC8EC4B-2EB9-467A-939A-5AAA69469DAB}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="60000"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="LUR Mulchant Theme" ID="{112FA819-B525-434B-827F-174DEBCC2B11}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{3FC3618F-40A8-4355-B479-2DCD41BA14FA}"/>
+								<MusicCue Name="Exit Cue" ID="{67750DBB-3731-4469-86BE-0BD261CC4D09}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="60000"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{DEADA524-8857-4B62-A200-DCEF44E093A4}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{35603F30-01C8-44F7-AB86-A11A8497E2E8}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{7297D636-4197-4524-BD39-B245CECC40C3}" ShortID="241926036">
+							<PropertyList>
+								<Property Name="LoopCount" Type="int16" Value="0"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{E397C7A2-FADE-477C-99B8-30C5BAB356E0}" ShortID="601763132">
+									<PropertyList>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="LUR Mulchant Theme" ID="{BD97D6A8-D791-473E-8C5D-B71AF0030952}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>
