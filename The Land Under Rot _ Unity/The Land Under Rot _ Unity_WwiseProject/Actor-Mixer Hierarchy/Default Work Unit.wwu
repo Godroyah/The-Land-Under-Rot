@@ -1036,6 +1036,55 @@
 								<ActiveSource Name="Char_falling" ID="{D9BBFFF7-FD99-413D-BF3C-4C1EEA0CBC82}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="lur_sfx_INT_mulch" ID="{355AE36C-B731-41EC-8CC3-621DEF699992}" ShortID="456701760">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>23</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{DDDCD3EA-0A13-4B5D-B043-5AA96F149F62}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{43A3E124-F8E0-4D94-B815-3D0BC2F1079A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="51"/>
+													<Property Name="Min" Type="Real64" Value="-202"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MulchHit" ID="{FB4C0BE2-4A37-4DFF-897D-14C59E5DF7EA}" ShortID="62689875">
+									<Language>SFX</Language>
+									<AudioFile>MulchHit.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="MulchHit" ID="{FB4C0BE2-4A37-4DFF-897D-14C59E5DF7EA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="VOX Actor Mixer" ID="{BEE2A2B9-97E2-404A-93AA-4E692ECBA26E}" ShortID="918045649">

@@ -39,6 +39,7 @@ namespace AK
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID INT_GONG = 1297618496U;
+        static const AkUniqueID INT_MULCH = 350247510U;
         static const AkUniqueID LADYTREE = 763473049U;
         static const AkUniqueID LILBLUE = 1424246264U;
         static const AkUniqueID LIZARD = 3858407449U;

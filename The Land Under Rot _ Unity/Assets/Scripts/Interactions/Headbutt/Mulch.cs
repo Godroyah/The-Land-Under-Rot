@@ -123,6 +123,7 @@ public class Mulch : Interactable
                 //^ Reactivate when replacement code for Mulch_Collected is available!
                 fullMulch.enabled = false;
                 depletedMulch.enabled = true;
+                AudioManager.Instance.Play_SmashingMulch();
                 AudioManager.Instance.Play_Mulch_Smash();
             }
         }

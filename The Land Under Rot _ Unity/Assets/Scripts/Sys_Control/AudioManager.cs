@@ -238,7 +238,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_SmashingMulch()
     {
-
+        AkSoundEngine.PostEvent("int_mulch", gameObject);
     }
     #endregion
 
@@ -358,12 +358,13 @@ public class AudioManager : MonoBehaviour
 
     public void Play_ClearingBranches()
     {
-        AkSoundEngine.PostEvent("int_cordyceps", gameObject);
+       // AkSoundEngine.PostEvent("int_cordyceps", gameObject);
     }
 
     public void Play_Mulch_Smash()
     {
         AkSoundEngine.PostEvent("stg_obtain_mulch", gameObject);
+       
     }
 
     public void Play_Acorn_Pickup()
