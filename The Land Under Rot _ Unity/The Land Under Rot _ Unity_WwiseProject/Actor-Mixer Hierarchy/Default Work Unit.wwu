@@ -293,7 +293,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-25</Value>
+										<Value>-32</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -644,7 +644,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-23</Value>
+										<Value>-29</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -780,7 +780,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-25</Value>
+										<Value>-30</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -894,7 +894,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-23</Value>
+										<Value>-30</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2324,7 +2324,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>8</Value>
+										<Value>12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2373,25 +2373,6 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="lur_vox_NPC__elder_tree_ 02" ID="{2DD84ACB-3926-4341-A516-35668CCD2A86}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="lur_vox_NPC__elder_tree_ 03" ID="{691A2689-3735-4C4A-8218-CACF3310A057}" ShortID="298557329">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="lur_vox_NPC__elder_tree_ 03" ID="{7046412D-8280-4E70-9CD6-B2D2A70A347A}" ShortID="515579057">
-											<Language>SFX</Language>
-											<AudioFile>VOX_elder tree\lur_vox_NPC__elder_tree_ 03.wav</AudioFile>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="lur_vox_NPC__elder_tree_ 03" ID="{7046412D-8280-4E70-9CD6-B2D2A70A347A}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__elder_tree_ 04" ID="{220D809C-CFFB-40FE-B991-C87EC7338BEC}" ShortID="435465877">
@@ -2762,6 +2743,11 @@
 						<Sound Name="lur_ambience_fruitful_forest" ID="{FC0091B4-7186-41B2-A586-F36A3C2D3469}" ShortID="537132507">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-18</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2803,6 +2789,11 @@
 						<Sound Name="lur_ambience_tree_seat" ID="{2167638C-49E7-49E6-B5E9-79FAC5A65947}" ShortID="993778896">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2832,6 +2823,11 @@
 						<Sound Name="lur_ambience_tutorial" ID="{C49AA5E7-7C99-4EDC-B6F8-91C53216D3FE}" ShortID="631571513">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2859,6 +2855,11 @@
 						</Sound>
 						<Sound Name="lur_ambience_understump" ID="{46A3C6AE-624C-4C51-854D-C1BAC5869665}" ShortID="84426278">
 							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
@@ -2866,6 +2867,11 @@
 											<Modifier Name="" ID="{325DAD0E-7A34-42EB-8084-EF26F492C34B}"/>
 										</ModifierInfo>
 									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -2895,6 +2901,11 @@
 						<Sound Name="lur_ambience_stinkhorn" ID="{6FB919A6-BE8C-494D-9397-CBDFC513D901}" ShortID="471875956">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2919,6 +2930,35 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="lur_ambience_stinkhorn" ID="{7A8F1A73-BADD-4B4D-BCFB-824520F4183B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Understump_Ambience" ID="{7B1CF7E0-DC74-4DBB-ADFE-3B82237A1355}" ShortID="159025143">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Understump_Ambience" ID="{B7E97723-6102-4786-8821-AC7E3C8552CF}" ShortID="881420021">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Understump_Ambience.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Understump_Ambience" ID="{B7E97723-6102-4786-8821-AC7E3C8552CF}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

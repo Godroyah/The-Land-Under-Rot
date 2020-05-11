@@ -182,7 +182,7 @@
 								<Action Name="" ID="{0AE69234-30E4-4DD9-A3C8-2C84A5C521DF}" ShortID="935923164">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="lur_ambience_understump" ID="{46A3C6AE-624C-4C51-854D-C1BAC5869665}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+											<ObjectRef Name="Understump_Ambience" ID="{7B1CF7E0-DC74-4DBB-ADFE-3B82237A1355}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -259,6 +259,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Final_Anamatic" ID="{DAA4C1F2-F89A-4F19-BED1-1BFF1D06BB45}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Return_Understump" ID="{4E9EFCA7-321E-4838-880E-93BA7D30813A}">
+							<ChildrenList>
+								<Action Name="" ID="{A62771C8-80F8-469E-933D-7436789088E9}" ShortID="72659477">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Understump" ID="{EDD9A8CE-E6E2-4A5C-8C78-309EF7E95EFC}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -515,6 +529,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="lur_sfx_EMO_happy" ID="{22E167BB-CBB0-4E43-9F1C-8598863B7C3F}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="char_footsteps_dirt" ID="{69D7CEC3-AA3A-4FD5-825B-F48F8D06C24D}">
+									<ChildrenList>
+										<Action Name="" ID="{F794B4A5-D8DF-4906-813F-BB0C7A2142FE}" ShortID="96770275">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_CHAR_footsteps_dirt" ID="{C723E38B-8CDB-4DCC-AB18-B0D7608B8305}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

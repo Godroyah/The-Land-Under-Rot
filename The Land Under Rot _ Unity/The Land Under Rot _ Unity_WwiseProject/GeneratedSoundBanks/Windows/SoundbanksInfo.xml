@@ -25,6 +25,7 @@
 				<Event Id="3718854415" Name="Buddy" ObjectPath="\Events\Default Work Unit\VOX\Buddy"/>
 				<Event Id="2004258622" Name="Catkin_Test" ObjectPath="\Events\Default Work Unit\VOX\Catkin_Test"/>
 				<Event Id="2781918869" Name="char_falling" ObjectPath="\Events\Default Work Unit\SFX\Finished\char_falling"/>
+				<Event Id="1410430459" Name="char_footsteps_dirt" ObjectPath="\Events\Default Work Unit\SFX\Finished\char_footsteps_dirt"/>
 				<Event Id="3543977830" Name="char_footsteps_grass" ObjectPath="\Events\Default Work Unit\SFX\Finished\char_footsteps_grass"/>
 				<Event Id="2543644351" Name="char_footsteps_stone" ObjectPath="\Events\Default Work Unit\SFX\Finished\char_footsteps_stone"/>
 				<Event Id="3744065311" Name="char_footsteps_wood" ObjectPath="\Events\Default Work Unit\SFX\Finished\char_footsteps_wood"/>
@@ -48,6 +49,7 @@
 				<Event Id="3092587493" Name="Pause" ObjectPath="\Events\Default Work Unit\UI\Pause"/>
 				<Event Id="3336759787" Name="Return_Fruitful_Forest" ObjectPath="\Events\Default Work Unit\MX\Return_Fruitful_Forest"/>
 				<Event Id="1526298514" Name="Return_Tree_Seat" ObjectPath="\Events\Default Work Unit\MX\Return_Tree_Seat"/>
+				<Event Id="4145974081" Name="Return_Understump" ObjectPath="\Events\Default Work Unit\MX\Return_Understump"/>
 				<Event Id="1989498786" Name="Rootford" ObjectPath="\Events\Default Work Unit\VOX\Rootford"/>
 				<Event Id="2674457354" Name="Start_Button" ObjectPath="\Events\Default Work Unit\UI\Start_Button"/>
 				<Event Id="256903793" Name="Start_EndAnamatic" ObjectPath="\Events\Default Work Unit\MX\Start_EndAnamatic"/>
@@ -91,6 +93,10 @@
 				<File Id="28341570" Language="SFX">
 					<ShortName>rot_deep_voice3.wav</ShortName>
 					<Path>SFX\rot_deep_voice3_0A04F515.wem</Path>
+				</File>
+				<File Id="40953901" Language="SFX">
+					<ShortName>CHAR_footsteps_dirt_b.wav</ShortName>
+					<Path>SFX\CHAR_footsteps_dirt_b_6296B0F9.wem</Path>
 				</File>
 				<File Id="60125920" Language="SFX">
 					<ShortName>LUR Button Cancel or Back.wav</ShortName>
@@ -140,9 +146,9 @@
 					<ShortName>VOX_lady tree\lur_vox_NPC__lady_tree_ 04.wav</ShortName>
 					<Path>SFX\VOX_lady tree\lur_vox_NPC__lady_tree_ 04_B09F49DF.wem</Path>
 				</File>
-				<File Id="155007829" Language="SFX">
-					<ShortName>LUR_ambience_understump.wav</ShortName>
-					<Path>SFX\LUR_ambience_understump_09425EB3.wem</Path>
+				<File Id="162575205" Language="SFX">
+					<ShortName>CHAR_footsteps_dirt_d.wav</ShortName>
+					<Path>SFX\CHAR_footsteps_dirt_d_6296B0F9.wem</Path>
 				</File>
 				<File Id="166891793" Language="SFX">
 					<ShortName>Emotes\lur_sfx_EMO_confusion_2.wav</ShortName>
@@ -288,10 +294,6 @@
 					<ShortName>LUR Main Menu.wav</ShortName>
 					<Path>SFX\LUR Main Menu_4811579D.wem</Path>
 				</File>
-				<File Id="515579057" Language="SFX">
-					<ShortName>VOX_elder tree\lur_vox_NPC__elder_tree_ 03.wav</ShortName>
-					<Path>SFX\VOX_elder tree\lur_vox_NPC__elder_tree_ 03_B09F49DF.wem</Path>
-				</File>
 				<File Id="522702061" Language="SFX">
 					<ShortName>lur_vox_NPC_her_06.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_her_06_B09F49DF.wem</Path>
@@ -351,6 +353,10 @@
 				<File Id="703566757" Language="SFX">
 					<ShortName>CHAR_jump_b.wav</ShortName>
 					<Path>SFX\CHAR_jump_b_6296B0F9.wem</Path>
+				</File>
+				<File Id="723109666" Language="SFX">
+					<ShortName>CHAR_footsteps_dirt_a.wav</ShortName>
+					<Path>SFX\CHAR_footsteps_dirt_a_6296B0F9.wem</Path>
 				</File>
 				<File Id="731019388" Language="SFX">
 					<ShortName>lur_vox_NPC__strawberry_01.wav</ShortName>
@@ -440,6 +446,10 @@
 					<ShortName>Emotes\lur_sfx_EMO_confusion_1.wav</ShortName>
 					<Path>SFX\Emotes\lur_sfx_EMO_confusion_1_B09F49DF.wem</Path>
 				</File>
+				<File Id="881420021" Language="SFX">
+					<ShortName>Understump_Ambience.wav</ShortName>
+					<Path>SFX\Understump_Ambience_6296B0F9.wem</Path>
+				</File>
 				<File Id="902085705" Language="SFX">
 					<ShortName>INT_gong.wav</ShortName>
 					<Path>SFX\INT_gong_6296B0F9.wem</Path>
@@ -500,6 +510,10 @@
 					<ShortName>lur_vox_NPC_buddy_02.wav</ShortName>
 					<Path>SFX\lur_vox_NPC_buddy_02_B09F49DF.wem</Path>
 				</File>
+				<File Id="990234941" Language="SFX">
+					<ShortName>CHAR_footsteps_dirt_e.wav</ShortName>
+					<Path>SFX\CHAR_footsteps_dirt_e_6296B0F9.wem</Path>
+				</File>
 				<File Id="1010735661" Language="SFX">
 					<ShortName>lur_vox_NPC__strawberry_05.wav</ShortName>
 					<Path>SFX\lur_vox_NPC__strawberry_05_B09F49DF.wem</Path>
@@ -531,6 +545,10 @@
 				<File Id="1065757300" Language="SFX">
 					<ShortName>VOX_elder tree\lur_vox_NPC__elder_tree_ 01.wav</ShortName>
 					<Path>SFX\VOX_elder tree\lur_vox_NPC__elder_tree_ 01_B09F49DF.wem</Path>
+				</File>
+				<File Id="1070341149" Language="SFX">
+					<ShortName>CHAR_footsteps_dirt_c.wav</ShortName>
+					<Path>SFX\CHAR_footsteps_dirt_c_6296B0F9.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

@@ -16,6 +16,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
     public ParticleSystem runParticleSystem;
 
     // Start is called before the first frame update
+
     void Start()
     {
         playerController = GetComponent<PlayerController>();
@@ -123,6 +124,8 @@ public class CharacterAnimatorV2 : MonoBehaviour
 
 }
 
+
+
 public enum CharAnimation
 {
     Headbutt_Trigger,
@@ -135,3 +138,4 @@ public enum CharAnimation
     //Is_Jumping_Bool,
     //Is_Sprinting_Bool // not set up yet
 }
+ 

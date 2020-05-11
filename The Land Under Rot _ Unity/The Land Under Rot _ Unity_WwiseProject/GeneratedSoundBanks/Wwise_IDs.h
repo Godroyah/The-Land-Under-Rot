@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID BUDDY = 3718854415U;
         static const AkUniqueID CATKIN_TEST = 2004258622U;
         static const AkUniqueID CHAR_FALLING = 2781918869U;
+        static const AkUniqueID CHAR_FOOTSTEPS_DIRT = 1410430459U;
         static const AkUniqueID CHAR_FOOTSTEPS_GRASS = 3543977830U;
         static const AkUniqueID CHAR_FOOTSTEPS_STONE = 2543644351U;
         static const AkUniqueID CHAR_FOOTSTEPS_WOOD = 3744065311U;
@@ -40,6 +41,7 @@ namespace AK
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID RETURN_FRUITFUL_FOREST = 3336759787U;
         static const AkUniqueID RETURN_TREE_SEAT = 1526298514U;
+        static const AkUniqueID RETURN_UNDERSTUMP = 4145974081U;
         static const AkUniqueID ROOTFORD = 1989498786U;
         static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID START_ENDANAMATIC = 256903793U;

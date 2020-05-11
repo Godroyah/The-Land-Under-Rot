@@ -20,6 +20,7 @@ public class AngelTree_Talk : Interactable
 
         if (GameController.Instance != null)
         {
+            AudioManager.Instance.Play_WillowTree();
             billboard_UI.SetActive(false);
             // Select which dialogue to 'say'
             if(!GameController.Instance.revealNewAreas)
