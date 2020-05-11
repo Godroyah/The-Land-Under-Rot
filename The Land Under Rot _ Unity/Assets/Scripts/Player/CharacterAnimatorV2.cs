@@ -10,6 +10,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
     float inputValue;
     bool justMoved;
     bool isFalling = false;
+    public GameObject Seedling;
 
     public WalkSurface surfaceType = WalkSurface.NONE;
     public ParticleSystem runParticleSystem;
@@ -60,7 +61,9 @@ public class CharacterAnimatorV2 : MonoBehaviour
                     {
                         runParticleSystem.Play();
                         AudioManager.Instance.Play_ClothesRustle();
-                        AudioManager.Instance.Play_Walk(surfaceType);
+                      //  AudioManager.Instance.Play_Walk(surfaceType);
+                        //   Seedling.GetComponent<PlayerSounds>().footstepPlay();
+
                     }
                     else if (runParticleSystem.isPlaying && !playerController.IsGrounded)
                     {
@@ -116,6 +119,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
         }
 
     }
+    
 
 }
 

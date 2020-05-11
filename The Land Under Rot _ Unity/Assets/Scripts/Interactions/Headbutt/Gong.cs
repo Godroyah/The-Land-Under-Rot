@@ -21,6 +21,7 @@ public class Gong : Interactable
         if (other.CompareTag("Headbutt"))
         {
             Interact();
+            AudioManager.Instance.Play_Gong();
         }
     }
 }

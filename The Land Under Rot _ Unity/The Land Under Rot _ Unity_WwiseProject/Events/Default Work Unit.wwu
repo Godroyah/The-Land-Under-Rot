@@ -220,6 +220,20 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Start_EndAnamatic" ID="{8C8ECF09-AA44-47A5-A0B8-01EAA647533A}">
+							<ChildrenList>
+								<Action Name="" ID="{8444F1F1-3B11-45F7-AC34-7CE842DD9854}" ShortID="53167720">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Final_Anamatic" ID="{DAA4C1F2-F89A-4F19-BED1-1BFF1D06BB45}" WorkUnitID="{094E25B8-9776-49A7-972C-B7C464154C2B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Start Switches" ID="{03A86141-8EF6-4249-AFF7-483B921C478E}" ShortID="471800048">
@@ -244,7 +258,13 @@
 							<ChildrenList>
 								<Event Name="char_falling" ID="{4F3E9394-D5EE-4EC9-8A73-B598ECC70A52}">
 									<ChildrenList>
-										<Action Name="" ID="{2DC9FED5-1A6B-452D-96F8-8C46C1603F0D}" ShortID="489720793"/>
+										<Action Name="" ID="{2DC9FED5-1A6B-452D-96F8-8C46C1603F0D}" ShortID="489720793">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Char_falling" ID="{84360472-D67A-4D1D-A6C0-250847F5D574}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="char_footsteps_grass" ID="{7F32AE69-0E1D-46C8-B462-6EBACCC53FB5}">
@@ -252,7 +272,7 @@
 										<Action Name="" ID="{4EFA11CA-F395-48DD-AD38-DBC50ED897FD}" ShortID="530731101">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="lur_sfx_CHAR_footsteps_grass" ID="{13B3D3AD-6420-42A2-8771-AFB82B3C8F75}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+													<ObjectRef Name="lur_sfx_CHAR_footsteps_grass" ID="{903958F6-382A-496A-9461-161C673765DB}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -263,7 +283,7 @@
 										<Action Name="" ID="{95D67D36-5133-49D9-809D-AB58B07ECF69}" ShortID="446549614">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="lur_sfx_CHAR_footsteps_stone" ID="{D0219DC6-5697-4CC7-927F-B125976BF8E0}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+													<ObjectRef Name="lur_sfx_CHAR_footsteps_stone" ID="{BD705C3E-111F-4601-B2C5-6547DE5F51FE}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -274,7 +294,7 @@
 										<Action Name="" ID="{1717017A-88F5-4AF1-B800-828A7E5A8BC9}" ShortID="1052580127">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="lur_sfx_CHAR_footsteps_wood" ID="{E7B3A67B-984E-46FB-9424-B340D4F6B26A}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+													<ObjectRef Name="lur_sfx_CHAR_footsteps_wood" ID="{AF236D3D-3216-4FF5-9478-3A08D6DFF857}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -403,6 +423,83 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="char_headbutt" ID="{7EFCF0E2-00EA-4ECC-8380-4DF7E123CFDC}">
+									<ChildrenList>
+										<Action Name="" ID="{26C874F2-D0D1-4B7D-AD10-87600B5EAB66}" ShortID="227624259">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_CHAR_headbutt" ID="{8C7FAB71-218D-4F1C-BDFC-3DA8427391E8}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="int_gong" ID="{087C47D8-7CB7-43BD-A23B-B5AFA72BDDC3}">
+									<ChildrenList>
+										<Action Name="" ID="{080B95CD-95FC-4788-B478-A8E574CFE702}" ShortID="759818883">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_INT_gong" ID="{4F32CF51-C4F6-4FCA-8432-700A1C16AF6D}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="char_jump" ID="{8ECE4C22-68E2-40D7-90D4-33FD3B0A965A}">
+									<ChildrenList>
+										<Action Name="" ID="{C1CF0E74-97EA-452A-8A97-04E792790B5E}" ShortID="763624760">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_CHAR_jump" ID="{FADDD8A6-5191-4FC4-AD58-B5C7153C380D}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="emo_angry" ID="{F377584B-59BB-475C-83FF-64B8F216D544}">
+									<ChildrenList>
+										<Action Name="" ID="{D827A1C5-295C-4281-8A73-04B1A6395BCA}" ShortID="833050227">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_EMO_angry" ID="{C10E661D-DC52-4EBD-B561-8FCDC5FD3FE1}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="emo_confused" ID="{62AF9B89-5664-4967-809C-E3E77FFB8F5B}">
+									<ChildrenList>
+										<Action Name="" ID="{1749EC71-4847-4D5B-87AE-4C721B84D461}" ShortID="755272515">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="EMO_confusion" ID="{955E4042-88B2-45D6-AAAE-E97BCD202E92}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="emo_shocked" ID="{07C1959C-4404-495C-99F4-0593B999EF51}">
+									<ChildrenList>
+										<Action Name="" ID="{5987BB95-34C5-4140-A228-DE3C0910E799}" ShortID="517491801">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_EMO_shock" ID="{4BE20AA9-A59E-4925-A4DE-D7E95B9B9621}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="emo_happy" ID="{71D66939-7218-4A1F-857D-B81610D8100F}">
+									<ChildrenList>
+										<Action Name="" ID="{A8E9755A-00EC-43AE-82E1-FDA5FDFD8B72}" ShortID="700704984">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="lur_sfx_EMO_happy" ID="{22E167BB-CBB0-4E43-9F1C-8598863B7C3F}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -459,6 +556,61 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Mulchant" ID="{D2DF8950-6197-48DB-A977-8BDD06081FB1}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Gourdo" ID="{E07C0EC0-0BE7-49A9-BDD1-919EF7A0AE50}">
+							<ChildrenList>
+								<Action Name="" ID="{426E6952-66AA-42E8-B454-F1B0A1873FB9}" ShortID="670507922">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Gourdo" ID="{0FD058D8-81EB-441B-97DD-3B83F3CD9EC6}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Strawberry" ID="{C0DFE4FA-D5AE-41F3-9F47-91F60A22B34B}">
+							<ChildrenList>
+								<Action Name="" ID="{EBB7841D-F450-4E0B-A55D-884BAAADE2BD}" ShortID="498445332">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Straweberry" ID="{0E72A947-7BE2-4FAC-80B3-A18882E34DED}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Ladytree" ID="{5EF1F5BE-3719-440D-9CCB-199285E7956D}">
+							<ChildrenList>
+								<Action Name="" ID="{66AF51C5-F4DB-44BA-9ED3-03FCBE0E90D7}" ShortID="186899378">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VOX_lady tree" ID="{7A62D6EB-89DD-45C6-8E27-4C01D4E5F34F}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Willowtree" ID="{FFE01612-570A-4219-BC2F-D0334AC69F7D}">
+							<ChildrenList>
+								<Action Name="" ID="{650F09A7-0D34-48D3-B255-8A0C0DA7599B}" ShortID="597296061">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VOX_elder tree" ID="{028E65FD-EF28-44DC-B976-E66C3A91BEF2}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Catkin" ID="{B6AB803A-9B0B-494B-B05A-9A59F72B6583}">
+							<ChildrenList>
+								<Action Name="" ID="{7D47845E-DB78-4224-AEB3-79F5D2517024}" ShortID="1055510620">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VOX_catkin" ID="{DCD90E69-8FCD-4B0E-8A42-2DD4A2BE866B}" WorkUnitID="{CD8F26E2-9AB8-421C-924F-8977F1196D58}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
 
     private static AudioManager _instance = null;
     public static AudioManager Instance { get { return _instance; } }
-
+  
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Walk_Dirt()
     {
-        AkSoundEngine.PostEvent("char_footsteps_grass", gameObject);
+        AkSoundEngine.PostEvent("char_footsteps_dirt", gameObject);
     }
 
     public void Play_Walk_Mud()
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Headbutt()
     {
-
+        AkSoundEngine.PostEvent("char_headbutt", gameObject);
     }
 
     public void Play_Headbutt_Wood()
@@ -104,7 +104,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Jump()
     {
-
+        AkSoundEngine.PostEvent("char_jump", gameObject);
     }
 
     public void Play_Landing_OnButt()
@@ -197,6 +197,10 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Interaction
+    public void Play_Gong()
+    {
+        AkSoundEngine.PostEvent("int_gong", gameObject);
+    }
     public void Play_PurchaseNoise()
     {
 
@@ -252,7 +256,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Catkin()
     {
-
+        AkSoundEngine.PostEvent("Catkin", gameObject);
     }
 
     //Labeled Play_Her in the doc
@@ -263,7 +267,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Strawberry()
     {
-
+        AkSoundEngine.PostEvent("Strawberry", gameObject);
     }
 
     public void Play_Banan()
@@ -273,6 +277,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Gourdo()
     {
+        AkSoundEngine.PostEvent("Gourdo", gameObject);
 
     }
 
@@ -305,11 +310,14 @@ public class AudioManager : MonoBehaviour
     {
 
     }
+   
 
     public void Play_WillowTree()
     {
-
+        AkSoundEngine.PostEvent("Willowtree", gameObject);
     }
+
+
 
     public void Play_Lizard_Walk()
     {
@@ -372,6 +380,11 @@ public class AudioManager : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Start_Opening_Cinematic", gameObject);
     }
+    public void Play_Stinger_Start_EndCutscene()
+    {
+        AkSoundEngine.PostEvent("Start_EndAnamatic", gameObject);
+    }
+
     #endregion
 
     #region Switch Boards for Multiple Sound Types

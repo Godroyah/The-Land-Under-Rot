@@ -24,25 +24,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d66c262e9a30c1439a42480633dd373d
     GuidInternal: 
-    m_lastTime: -8586136125226897163
-    List:
-    - name: Reverb_Aux_Bus
-      guid: 27af3e5254ff4f4dbe7aaa4b199fadf2
-      id: 1494052673
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-      - ElementName: Reverb_Aux_Bus
-        ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\Reverb_Aux_Bus
+    m_lastTime: -8586126336209309230
+    List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 064bbc1ca2365343907353b58bc27dd1
     GuidInternal: 
-    m_lastTime: -8586136132647600301
+    m_lastTime: -8586126350572570793
     List:
     - name: LUR_SoundBank
       guid: 48b48698b413444180b96f817ef17101
@@ -58,7 +47,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: af5e013a0288ad42b56d86caa361ed90
     GuidInternal: 
-    m_lastTime: -8586132256416477170
+    m_lastTime: -8586126319809261857
     List:
     - name: Back_Button
       guid: ad4dddfa9a6aec428de53f0746326c74
@@ -66,11 +55,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: UI Triggers
+      - ElementName: UI
         ObjectType: 4
       - ElementName: Back_Button
         ObjectType: 3
-      Path: Default Work Unit\UI Triggers\Back_Button
+      Path: Default Work Unit\UI\Back_Button
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -80,11 +69,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Dialogue Triggers
+      - ElementName: VOX
         ObjectType: 4
       - ElementName: Buddy
         ObjectType: 3
-      Path: Default Work Unit\Dialogue Triggers\Buddy
+      Path: Default Work Unit\VOX\Buddy
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -94,13 +83,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: char_falling
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\char_falling
+      Path: Default Work Unit\SFX\Finished\char_falling
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -110,13 +99,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: char_footsteps_grass
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\char_footsteps_grass
+      Path: Default Work Unit\SFX\Finished\char_footsteps_grass
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -126,13 +115,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: char_footsteps_stone
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\char_footsteps_stone
+      Path: Default Work Unit\SFX\Finished\char_footsteps_stone
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -142,13 +131,29 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: char_footsteps_wood
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\char_footsteps_wood
+      Path: Default Work Unit\SFX\Finished\char_footsteps_wood
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: char_headbutt
+      guid: e2f0fc7eea00cc4e83804df7e123cfdc
+      id: 1802740349
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Finished
+        ObjectType: 4
+      - ElementName: char_headbutt
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Finished\char_headbutt
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -158,13 +163,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: char_headbutt_stone
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\char_headbutt_stone
+      Path: Default Work Unit\SFX\Finished\char_headbutt_stone
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -174,13 +179,29 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: char_headbutt_wood
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\char_headbutt_wood
+      Path: Default Work Unit\SFX\Finished\char_headbutt_wood
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: char_jump
+      guid: 224cce8ee268d74090d433fd3b0a965a
+      id: 3391211644
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Finished
+        ObjectType: 4
+      - ElementName: char_jump
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Finished\char_jump
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -190,11 +211,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: UI Triggers
+      - ElementName: UI
         ObjectType: 4
       - ElementName: Click
         ObjectType: 3
-      Path: Default Work Unit\UI Triggers\Click
+      Path: Default Work Unit\UI\Click
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -204,11 +225,25 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Dialogue Triggers
+      - ElementName: VOX
         ObjectType: 4
       - ElementName: Fenway
         ObjectType: 3
-      Path: Default Work Unit\Dialogue Triggers\Fenway
+      Path: Default Work Unit\VOX\Fenway
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Gourdo
+      guid: c00e7ce0e70ba949bdd1919ef7a0ae50
+      id: 2161579817
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VOX
+        ObjectType: 4
+      - ElementName: Gourdo
+        ObjectType: 3
+      Path: Default Work Unit\VOX\Gourdo
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -218,11 +253,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Dialogue Triggers
+      - ElementName: VOX
         ObjectType: 4
       - ElementName: Her
         ObjectType: 3
-      Path: Default Work Unit\Dialogue Triggers\Her
+      Path: Default Work Unit\VOX\Her
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -232,13 +267,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: int_boing
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\int_boing
+      Path: Default Work Unit\SFX\Finished\int_boing
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -248,13 +283,29 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: int_cordyceps
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\int_cordyceps
+      Path: Default Work Unit\SFX\Finished\int_cordyceps
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: int_gong
+      guid: d8477c08b77cbd43a23bb5afa72bddc3
+      id: 1297618496
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX
+        ObjectType: 4
+      - ElementName: Finished
+        ObjectType: 4
+      - ElementName: int_gong
+        ObjectType: 3
+      Path: Default Work Unit\SFX\Finished\int_gong
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -264,11 +315,25 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Dialogue Triggers
+      - ElementName: VOX
         ObjectType: 4
       - ElementName: Mulchant
         ObjectType: 3
-      Path: Default Work Unit\Dialogue Triggers\Mulchant
+      Path: Default Work Unit\VOX\Mulchant
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Pause
+      guid: c70ace881f7c844abe7bda9f863f62e9
+      id: 3092587493
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 4
+      - ElementName: Pause
+        ObjectType: 3
+      Path: Default Work Unit\UI\Pause
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -278,11 +343,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: Return_Fruitful_Forest
         ObjectType: 3
-      Path: Default Work Unit\Levels\Return_Fruitful_Forest
+      Path: Default Work Unit\MX\Return_Fruitful_Forest
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -292,11 +357,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: Return_Tree_Seat
         ObjectType: 3
-      Path: Default Work Unit\Levels\Return_Tree_Seat
+      Path: Default Work Unit\MX\Return_Tree_Seat
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -306,11 +371,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Dialogue Triggers
+      - ElementName: VOX
         ObjectType: 4
       - ElementName: Rootford
         ObjectType: 3
-      Path: Default Work Unit\Dialogue Triggers\Rootford
+      Path: Default Work Unit\VOX\Rootford
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -320,11 +385,25 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: UI Triggers
+      - ElementName: UI
         ObjectType: 4
       - ElementName: Start_Button
         ObjectType: 3
-      Path: Default Work Unit\UI Triggers\Start_Button
+      Path: Default Work Unit\UI\Start_Button
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Start_EndAnamatic
+      guid: 09cf8e8c44aaa547a0b801eaa647533a
+      id: 256903793
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MX
+        ObjectType: 4
+      - ElementName: Start_EndAnamatic
+        ObjectType: 3
+      Path: Default Work Unit\MX\Start_EndAnamatic
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -348,11 +427,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: Start_Menu_Music
         ObjectType: 3
-      Path: Default Work Unit\Levels\Start_Menu_Music
+      Path: Default Work Unit\MX\Start_Menu_Music
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -362,11 +441,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: Start_Mulchant_Theme
         ObjectType: 3
-      Path: Default Work Unit\Levels\Start_Mulchant_Theme
+      Path: Default Work Unit\MX\Start_Mulchant_Theme
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -376,11 +455,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: Start_Opening_Cinematic
         ObjectType: 3
-      Path: Default Work Unit\Levels\Start_Opening_Cinematic
+      Path: Default Work Unit\MX\Start_Opening_Cinematic
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -390,11 +469,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: Start_Tree_Seat
         ObjectType: 3
-      Path: Default Work Unit\Levels\Start_Tree_Seat
+      Path: Default Work Unit\MX\Start_Tree_Seat
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -404,11 +483,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: Start_Understump
         ObjectType: 3
-      Path: Default Work Unit\Levels\Start_Understump
+      Path: Default Work Unit\MX\Start_Understump
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -418,11 +497,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: State_Fruitful_Forest
         ObjectType: 3
-      Path: Default Work Unit\Levels\State_Fruitful_Forest
+      Path: Default Work Unit\MX\State_Fruitful_Forest
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -432,11 +511,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: State_Stinkhorn
         ObjectType: 3
-      Path: Default Work Unit\Levels\State_Stinkhorn
+      Path: Default Work Unit\MX\State_Stinkhorn
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -446,11 +525,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Levels
+      - ElementName: MX
         ObjectType: 4
       - ElementName: State_Tutorial
         ObjectType: 3
-      Path: Default Work Unit\Levels\State_Tutorial
+      Path: Default Work Unit\MX\State_Tutorial
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -460,13 +539,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: stg_acorn_pickup
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\stg_acorn_pickup
+      Path: Default Work Unit\SFX\Finished\stg_acorn_pickup
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -476,13 +555,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: stg_angel_tree_awakened
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\stg_angel_tree_awakened
+      Path: Default Work Unit\SFX\Finished\stg_angel_tree_awakened
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -492,13 +571,13 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: stg_growth_function
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\stg_growth_function
+      Path: Default Work Unit\SFX\Finished\stg_growth_function
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -508,13 +587,27 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: SFX Triggers
+      - ElementName: SFX
         ObjectType: 4
       - ElementName: Finished
         ObjectType: 4
       - ElementName: stg_obtain_mulch
         ObjectType: 3
-      Path: Default Work Unit\SFX Triggers\Finished\stg_obtain_mulch
+      Path: Default Work Unit\SFX\Finished\stg_obtain_mulch
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Strawberry
+      guid: fae4dfc0aed5f3419f4791f60a22b34b
+      id: 3554262370
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VOX
+        ObjectType: 4
+      - ElementName: Strawberry
+        ObjectType: 3
+      Path: Default Work Unit\VOX\Strawberry
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -530,7 +623,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: b8254e097697a749972cb7c464154c2b
     GuidInternal: 
-    m_lastTime: -8586137777095675034
+    m_lastTime: -8586126319333815037
     List:
     - name: Gamez
       guid: 10a3f9772f15f949810690ff42a216c7
@@ -573,6 +666,12 @@ MonoBehaviour:
         ObjectType: 9
       Path: Default Work Unit\Levels
       values:
+      - name: Final_Anamatic
+        guid: f2c1a4da9af8194fbed11bff1d06bb45
+        id: 350280330
+        PathAndIcons:
+        - ElementName: Final_Anamatic
+          ObjectType: 8
       - name: Fruitful_Forest
         guid: 3bc4cf3820c7844daba4853ae4cdc375
         id: 2199362622
@@ -648,6 +747,6 @@ MonoBehaviour:
   - /The Land Under Rot _ Unity_WwiseProject
   - /The Land Under Rot _ Unity_WwiseProject/Events
   - /The Land Under Rot _ Unity_WwiseProject/Events/Default Work Unit
-  - /The Land Under Rot _ Unity_WwiseProject/Events/Default Work Unit/Levels
+  - /The Land Under Rot _ Unity_WwiseProject/Events/Default Work Unit/MX
   autoPopulateEnabled: 0
   CurrentPluginConfig: 
