@@ -208,7 +208,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_WoodenCartWheels_Dirt()
     {
-
+        AkSoundEngine.PostEvent("env_WoodenCart", gameObject);
     }
 
     public void Play_MushroomBounce()

@@ -33,6 +33,7 @@ namespace AK
         static const AkUniqueID EMO_CONFUSED = 2346623172U;
         static const AkUniqueID EMO_HAPPY = 2434727757U;
         static const AkUniqueID EMO_SHOCKED = 2267447418U;
+        static const AkUniqueID ENV_WOODENCART = 4192032869U;
         static const AkUniqueID FENWAY = 851955753U;
         static const AkUniqueID GOURDO = 2161579817U;
         static const AkUniqueID HER = 915067362U;

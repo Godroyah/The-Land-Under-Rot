@@ -173,9 +173,14 @@
 						</Sound>
 						<Sound Name="lur_sfx_CHAR_headbutt_wood" ID="{0C4094D1-9977-4C50-BF72-952F1C6091BA}" ShortID="175208408">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-200</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1083,6 +1088,32 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="MulchHit" ID="{FB4C0BE2-4A37-4DFF-897D-14C59E5DF7EA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="lur_sfx_ENV_WoodenCart" ID="{91A88CAB-FBC0-4BA0-92CB-ADAC5D41167B}" ShortID="791193914">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="lur_sfx_ENV_WoodenCart" ID="{26A56765-5AAC-4822-9303-988FC2706991}" ShortID="149737563">
+									<Language>SFX</Language>
+									<AudioFile>lur_sfx_ENV_WoodenCart.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="lur_sfx_ENV_WoodenCart" ID="{26A56765-5AAC-4822-9303-988FC2706991}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
@@ -3836,7 +3867,7 @@
 								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-9</Value>
+										<Value>-11</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
