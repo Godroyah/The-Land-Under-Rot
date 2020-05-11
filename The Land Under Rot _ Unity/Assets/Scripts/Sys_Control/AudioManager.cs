@@ -280,6 +280,11 @@ public class AudioManager : MonoBehaviour
         AkSoundEngine.PostEvent("Gourdo", gameObject);
 
     }
+    public void Play_Peabody()
+    {
+        AkSoundEngine.PostEvent("Peabody", gameObject);
+
+    }
 
     public void Play_Spud()
     {
@@ -298,17 +303,17 @@ public class AudioManager : MonoBehaviour
 
     public void Play_CarrotSlug()
     {
-
+        AkSoundEngine.PostEvent("CarrotSlug", gameObject);
     }
 
     public void Play_Pedalton()
     {
-
+        AkSoundEngine.PostEvent("Pedalton", gameObject);
     }
 
     public void Play_Cactus()
     {
-
+        AkSoundEngine.PostEvent("Cactus", gameObject);
     }
    
 

@@ -15,6 +15,8 @@ namespace AK
     {
         static const AkUniqueID BACK_BUTTON = 2886972203U;
         static const AkUniqueID BUDDY = 3718854415U;
+        static const AkUniqueID CACTUS = 1127558284U;
+        static const AkUniqueID CARROTSLUG = 3936785893U;
         static const AkUniqueID CATKIN_TEST = 2004258622U;
         static const AkUniqueID CHAR_FALLING = 2781918869U;
         static const AkUniqueID CHAR_FOOTSTEPS_DIRT = 1410430459U;
@@ -39,6 +41,8 @@ namespace AK
         static const AkUniqueID LADYTREE = 763473049U;
         static const AkUniqueID MULCHANT = 2403460855U;
         static const AkUniqueID PAUSE = 3092587493U;
+        static const AkUniqueID PEABODY = 1839764065U;
+        static const AkUniqueID PEDALTON = 3702246838U;
         static const AkUniqueID RETURN_FRUITFUL_FOREST = 3336759787U;
         static const AkUniqueID RETURN_TREE_SEAT = 1526298514U;
         static const AkUniqueID RETURN_UNDERSTUMP = 4145974081U;
