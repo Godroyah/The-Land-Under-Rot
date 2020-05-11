@@ -172,7 +172,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_BloomingPlantWoosh()
     {
-
+        AkSoundEngine.PostEvent("int_bloom", gameObject);
     }
 
     public void Play_BioluminescentPlantLighting()

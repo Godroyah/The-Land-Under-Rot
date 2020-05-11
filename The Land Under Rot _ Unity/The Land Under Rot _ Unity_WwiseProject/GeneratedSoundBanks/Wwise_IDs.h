@@ -37,6 +37,7 @@ namespace AK
         static const AkUniqueID FENWAY = 851955753U;
         static const AkUniqueID GOURDO = 2161579817U;
         static const AkUniqueID HER = 915067362U;
+        static const AkUniqueID INT_BLOOM = 1941386476U;
         static const AkUniqueID INT_BOING = 3774898542U;
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID INT_GONG = 1297618496U;

@@ -1116,6 +1116,37 @@
 								<ActiveSource Name="lur_sfx_ENV_WoodenCart" ID="{26A56765-5AAC-4822-9303-988FC2706991}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="FlowerBloom" ID="{EF30163C-C8F7-41DD-8CDC-25004AEEFA2F}" ShortID="359850338">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>33</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-17</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="FlowerBloom" ID="{4C954FD0-26A6-44BE-B56A-542B19CF82AE}" ShortID="101142729">
+									<Language>SFX</Language>
+									<AudioFile>FlowerBloom.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="FlowerBloom" ID="{4C954FD0-26A6-44BE-B56A-542B19CF82AE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="VOX Actor Mixer" ID="{BEE2A2B9-97E2-404A-93AA-4E692ECBA26E}" ShortID="918045649">
@@ -1132,7 +1163,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>9</Value>
+										<Value>12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1146,6 +1177,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="lur_vox_NPC__gourdo_01" ID="{F7DFFDBC-285E-46A7-A4DB-4DABEFC065C0}" ShortID="296888906">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -1165,6 +1203,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__gourdo_02" ID="{1FB09C63-A11A-4809-A4E3-7F5764EFAA7F}" ShortID="146598076">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -1184,6 +1229,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__gourdo_03" ID="{212FD604-4C8C-45B7-9D8C-8E7B30EB1F1E}" ShortID="934908364">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -1203,6 +1255,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__gourdo_04" ID="{CE88874D-CAE5-4EE6-9925-0C5205D7D27F}" ShortID="164100669">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -1222,6 +1281,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__gourdo_05" ID="{7C3A0471-55BF-45FF-B3DD-6D63DA12028D}" ShortID="834539057">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -1241,6 +1307,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__gourdo_06" ID="{30B3EEAE-9049-4130-934B-C0D8C0A8A7EF}" ShortID="736016762">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -1827,6 +1900,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="lur_vox_NPC_her_01" ID="{1D3FF1DE-B7D2-4339-84FE-424D5D251CDC}" ShortID="183970863">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -1849,7 +1929,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-4</Value>
+												<Value>-1</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1880,7 +1960,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-8</Value>
+												<Value>5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1906,7 +1986,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>2</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1929,13 +2009,6 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC_her_05" ID="{0D6AA265-7441-4260-81C7-2C801CD055A7}" ShortID="647156358">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-4</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -1958,7 +2031,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-4</Value>
+												<Value>3</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2264,7 +2337,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2411,6 +2484,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="lur_vox_NPC__elder_tree_ 01" ID="{C566FD9D-C332-4AC2-A182-40ECBCA16B0C}" ShortID="346019324">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2430,6 +2510,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__elder_tree_ 02" ID="{59D89BC3-C831-4999-B281-2B650AA3743A}" ShortID="907876706">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2449,6 +2536,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__elder_tree_ 04" ID="{220D809C-CFFB-40FE-B991-C87EC7338BEC}" ShortID="435465877">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2468,6 +2562,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__elder_tree_ 05" ID="{2044BEDB-DAE0-447A-89FD-3B32FF219DA9}" ShortID="256994282">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2487,6 +2588,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__elder_tree_ 06" ID="{41C48510-42D1-43FD-87DB-7BF37BA9EC0B}" ShortID="231753281">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2511,7 +2619,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2525,6 +2633,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="lur_vox_NPC__lady_tree_ 01" ID="{53CD69B1-B281-4CCC-A0F6-44ECA59A8D42}" ShortID="132315365">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2544,6 +2659,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__lady_tree_ 02" ID="{1904BD4A-510C-4AF0-A7AC-9B96DA6AB1ED}" ShortID="88068240">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2563,6 +2685,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__lady_tree_ 03" ID="{512EA7BA-606C-4BC1-A605-9E0EA51747EE}" ShortID="463035512">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2582,6 +2711,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__lady_tree_ 04" ID="{6A7A6794-5E47-479E-BF79-6740FEDA8832}" ShortID="607919632">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2601,6 +2737,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__lady_tree_ 05" ID="{FA24FC75-0BAD-402E-ABF5-F1450E5311AC}" ShortID="67503530">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -2620,6 +2763,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="lur_vox_NPC__lady_tree_ 06" ID="{4EC2FE1A-AA73-459F-9761-5FBBFDC89D00}" ShortID="729439217">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
@@ -3121,6 +3271,13 @@
 							</ChildrenList>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Banan" ID="{C2CE1149-A038-45E9-A020-4C3554750C5F}" ShortID="558249771">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
