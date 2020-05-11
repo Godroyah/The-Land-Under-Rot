@@ -114,9 +114,12 @@ public class TreeSeat_NPC_Talk : Interactable
 
     IEnumerator Catkin()
     {
-        AudioManager.Instance.Play_Catkin();
-        if(!isIntroduced)
+        // AudioManager.Instance.Play_Catkin();
+        
+        if (!isIntroduced)
+
         {
+            AudioManager.Instance.Play_Catkin();
             dialogueManager.StartDialogue(Reply.Catkin_Intro);
             isIntroduced = true;
         }
