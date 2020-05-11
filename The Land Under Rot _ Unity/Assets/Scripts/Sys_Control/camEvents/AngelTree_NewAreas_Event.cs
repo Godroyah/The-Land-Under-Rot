@@ -151,7 +151,7 @@ public class AngelTree_NewAreas_Event : Event_Type
         dropSpeedAngelBoss = dropRecorderAngelBoss;
         float angelBossIteration = dropSpeedAngelBoss;
 
-        //yield return new WaitForSeconds(treeSeatBossBranchDelay);
+        yield return new WaitForSeconds(treeSeatBossBranchDelay);
 
         while (dropSpeedAngelBoss < totalSpeed)
         {
