@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BACK_BUTTON = 2886972203U;
+        static const AkUniqueID BANAN = 3277570401U;
         static const AkUniqueID BUDDY = 3718854415U;
         static const AkUniqueID CACTUS = 1127558284U;
         static const AkUniqueID CARROTSLUG = 3936785893U;
@@ -39,6 +40,7 @@ namespace AK
         static const AkUniqueID INT_CORDYCEPS = 261243135U;
         static const AkUniqueID INT_GONG = 1297618496U;
         static const AkUniqueID LADYTREE = 763473049U;
+        static const AkUniqueID LILBLUE = 1424246264U;
         static const AkUniqueID MULCHANT = 2403460855U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID PEABODY = 1839764065U;
@@ -47,6 +49,7 @@ namespace AK
         static const AkUniqueID RETURN_TREE_SEAT = 1526298514U;
         static const AkUniqueID RETURN_UNDERSTUMP = 4145974081U;
         static const AkUniqueID ROOTFORD = 1989498786U;
+        static const AkUniqueID SPUD = 621799855U;
         static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID START_ENDANAMATIC = 256903793U;
         static const AkUniqueID START_GAME = 1114964412U;
@@ -55,6 +58,7 @@ namespace AK
         static const AkUniqueID START_OPENING_CINEMATIC = 3054947144U;
         static const AkUniqueID START_TREE_SEAT = 2233760634U;
         static const AkUniqueID START_UNDERSTUMP = 450410057U;
+        static const AkUniqueID STARTREE = 4003154661U;
         static const AkUniqueID STATE_FRUITFUL_FOREST = 198996940U;
         static const AkUniqueID STATE_STINKHORN = 3972511701U;
         static const AkUniqueID STATE_TUTORIAL = 1138897517U;

@@ -108,6 +108,7 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator StarTree()
     {
+        AudioManager.Instance.Play_StarTree();
         if (!gameController.wormsInFruitfulGone)
         {
             if (!gameController.starTreeAwake)
@@ -147,8 +148,10 @@ public class F_Forest_NPC_Talk : Interactable
 
     IEnumerator LittleBlue()
     {
-        if(!isIntroduced)
+        AudioManager.Instance.Play_LittleBlue();
+        if (!isIntroduced)
         {
+           
             dialogueManager.StartDialogue(Reply.Little_Blue_Intro);
             isIntroduced = true;
         }
