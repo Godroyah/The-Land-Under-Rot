@@ -80,12 +80,12 @@ public class Cutscene : MonoBehaviour
                     loader.sceneToLoadIndex = BuildOrder.StartScreen;
                     loader.currentSceneIndex = BuildOrder.FactoryCutscene;
                 }
-                loader.LoadScene();
-                if(cutsceneName == CutsceneName.FACTORY_ANIMATIC)
+                if (cutsceneName == CutsceneName.FACTORY_ANIMATIC)
                 {
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
                 }
+                loader.LoadScene();
                 break;
             }
 

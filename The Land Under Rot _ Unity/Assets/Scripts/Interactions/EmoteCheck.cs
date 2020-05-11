@@ -16,6 +16,7 @@ public class EmoteCheck : MonoBehaviour
     [Space(5)]
 
     [Header("'PLAY' IS NOT A TOY! LEAVE UNCHECKED!")]
+    [HideInInspector]
     public bool play = false;
    
     //public bool ready = true;

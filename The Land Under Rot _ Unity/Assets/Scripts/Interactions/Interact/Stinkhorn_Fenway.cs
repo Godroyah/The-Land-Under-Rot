@@ -14,6 +14,7 @@ public class Stinkhorn_Fenway : Interactable
     void Start()
     {
         billboard_UI.SetActive(false);
+        doneTalking = true;
     }
 
 

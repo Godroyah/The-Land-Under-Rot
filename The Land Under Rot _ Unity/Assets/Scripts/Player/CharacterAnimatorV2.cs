@@ -33,8 +33,6 @@ public class CharacterAnimatorV2 : MonoBehaviour
 
                 if (playerController.ShouldJump)
                 {
-                    animator.SetTrigger(CharAnimation.Jump_Start_Trigger.ToString());
-                    animator.SetBool(CharAnimation.Is_Jumping_Bool.ToString(), true);
                     AudioManager.Instance.Play_Jump();
                 }
 
@@ -53,20 +51,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
                 //if (!animator.GetBool("Airborne_Bool") && (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")))
                 //    animator.SetTrigger("Run_Button_Trigger");
 
-                if (!animator.GetBool(CharAnimation.Is_Falling_Bool.ToString()) && (Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
-                {
-                    if (!justMoved)
-                    {
-                        animator.SetTrigger(CharAnimation.Run_Start_Trigger.ToString());
-                    }
-                    justMoved = true;
-
-                }
-                else
-                    justMoved = false;
-
-
-                #endregion
+               #endregion
 
 
                 if ((Mathf.Abs(playerController.HorizontalInput) > 0.1f || Mathf.Abs(playerController.VerticalInput) > 0.1f))
@@ -136,33 +121,17 @@ public class CharacterAnimatorV2 : MonoBehaviour
     }
     
 
-    IEnumerator IsJumpingCheck()
-    {
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-
-        while (true)
-        {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump V2") == false) // '0' references the anim layer
-            {
-                animator.SetBool(CharAnimation.Is_Jumping_Bool.ToString(), false);
-            }
-
-            yield return new WaitForEndOfFrame();
-        }
-    }
 }
 
 public enum CharAnimation
 {
     Headbutt_Trigger,
-    Run_Start_Trigger,
-    Jump_Start_Trigger,
-    Idle_Break_Trigger, // not set up yet
+    //Run_Start_Trigger,
+    //Jump_Start_Trigger,
+    //Idle_Break_Trigger, // not set up yet
     Is_Falling_Bool,
-    Is_Drowning_Bool, // not set up yet
+    //Is_Drowning_Bool, // not set up yet
     Is_Walking_Bool,
-    Is_Jumping_Bool,
-    Is_Sprinting_Bool // not set up yet
+    //Is_Jumping_Bool,
+    //Is_Sprinting_Bool // not set up yet
 }

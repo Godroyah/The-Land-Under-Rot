@@ -16,8 +16,9 @@ public class Mulchant_Talk : Interactable
         mulchantCollider = GetComponent<CapsuleCollider>();
 
         billboard_UI.SetActive(false);
+        doneTalking = true;
 
-        if(gameController.starTreeAwake && gameController.willowTreeAwake)
+        if (gameController.starTreeAwake && gameController.willowTreeAwake)
         {
             if(mulchantRenderer != null)
             {

@@ -145,7 +145,7 @@ public class Event_Cam : MonoBehaviour
                         lastShot = true;
                     }
 
-                    if(lastShot && Input.GetButtonDown("Interact") && conversation.textIsDone)
+                    if(lastShot && Input.GetButtonDown(GameController.Instance.interactInput) && conversation.textIsDone)
                     {
                         startScene = false;
                     }

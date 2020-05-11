@@ -72,20 +72,23 @@ public class Branch_Event : Event_Type
         //AudioManager.Instance.Play_ClearingBranches();
         //AudioManager.Instance.Play_MassiveRootsMoving();
 
+        if (branchType == Branch_Type.STAR)
+        {
+            Debug.Log("islowered?");
+            gameController.starBranchDown = true;
+        }
+        else if (branchType == Branch_Type.WILLOW)
+        {
+            gameController.willowBranchDown = true;
+        }
+
         while (dropSpeedBranch < totalSpeed)
         {
             branch.transform.position = Vector3.Lerp(branch.transform.position, branchLoweredPos, dropSpeedBranch * Time.deltaTime);
             dropSpeedBranch += branchIteration * Time.deltaTime;
+            Debug.Log("Lowering!");
             yield return null;
         }
-
-        if(branchType == Branch_Type.STAR)
-        {
-            gameController.starBranchDown = true;
-        }
-        else if(branchType == Branch_Type.WILLOW)
-        {
-            gameController.willowBranchDown = true;
-        }
+        Debug.Log("Getting here?");
     }
 }

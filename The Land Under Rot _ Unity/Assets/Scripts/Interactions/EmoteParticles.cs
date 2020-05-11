@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class EmoteParticles : MonoBehaviour
 {
+    public Interactable interactable;
 
+    private void Start()
+    {
+        interactable = GetComponent<Interactable>();
+    }
 
     [Header("Emote Particles")]
     #region Emote Particles

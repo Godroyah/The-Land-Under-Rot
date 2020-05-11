@@ -35,7 +35,8 @@ public class Sign : Interactable
         //}
         //#endregion
 
-       // billboard_UI.SetActive(false);
+        billboard_UI.SetActive(false);
+        doneTalking = true;
     }
 
     public override void Interact()
