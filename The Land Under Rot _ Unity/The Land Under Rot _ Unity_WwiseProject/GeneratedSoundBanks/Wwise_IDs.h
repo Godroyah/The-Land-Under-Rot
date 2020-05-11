@@ -15,7 +15,7 @@ namespace AK
     {
         static const AkUniqueID BACK_BUTTON = 2886972203U;
         static const AkUniqueID BUDDY = 3718854415U;
-        static const AkUniqueID CATKIN = 3289597467U;
+        static const AkUniqueID CATKIN_TEST = 2004258622U;
         static const AkUniqueID CHAR_FALLING = 2781918869U;
         static const AkUniqueID CHAR_FOOTSTEPS_GRASS = 3543977830U;
         static const AkUniqueID CHAR_FOOTSTEPS_STONE = 2543644351U;

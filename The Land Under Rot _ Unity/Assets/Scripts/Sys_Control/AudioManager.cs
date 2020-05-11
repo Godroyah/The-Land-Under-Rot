@@ -94,7 +94,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Falling()
     {
-        AkSoundEngine.PostEvent("char_falling", gameObject);
+     //   AkSoundEngine.PostEvent("char_falling", gameObject);
     }
 
     public void Play_Landing_OnFeet()
@@ -256,7 +256,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_Catkin()
     {
-        AkSoundEngine.PostEvent("Catkin", gameObject);
+        AkSoundEngine.PostEvent("Catkin_Play", gameObject);
     }
 
     //Labeled Play_Her in the doc
