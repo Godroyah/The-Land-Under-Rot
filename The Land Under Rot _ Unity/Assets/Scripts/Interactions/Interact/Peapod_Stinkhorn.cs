@@ -24,6 +24,7 @@ public class Peapod_Stinkhorn : Interactable
 
         if (GameController.Instance != null)
         {
+            AudioManager.Instance.Play_Peabody();
             billboard_UI.SetActive(false);
             if (!isIntroduced)
             {
