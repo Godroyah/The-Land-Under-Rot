@@ -34,7 +34,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
 
                 if (playerController.ShouldJump)
                 {
-                    AudioManager.Instance.Play_Jump();
+                  //  AudioManager.Instance.Play_Jump();
                 }
 
                 //faster falling
@@ -85,7 +85,7 @@ public class CharacterAnimatorV2 : MonoBehaviour
                 if (playerController.ShouldHeadbutt && playerController.HeadbuttCoroutine == null)
                 {
                     animator.SetTrigger(CharAnimation.Headbutt_Trigger.ToString());
-                    AudioManager.Instance.Play_Headbutt();
+                 //   AudioManager.Instance.Play_Headbutt();
                 }
 
 

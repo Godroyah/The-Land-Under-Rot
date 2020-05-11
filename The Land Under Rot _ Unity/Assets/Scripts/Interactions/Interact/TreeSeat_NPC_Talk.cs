@@ -62,6 +62,7 @@ public class TreeSeat_NPC_Talk : Interactable
                     StartCoroutine(PeaPod());
                     break;
                 case TreeSeat_NPC.LIZARD:
+                    AudioManager.Instance.Play_Lizard();
                     StartCoroutine(Lizard());
                     break;
                 case TreeSeat_NPC.ROOTFORD:

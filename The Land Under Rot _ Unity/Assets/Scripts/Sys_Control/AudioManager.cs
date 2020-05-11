@@ -279,6 +279,10 @@ public class AudioManager : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Gourdo", gameObject);
     }
+    public void Play_Lizard()
+    {
+        AkSoundEngine.PostEvent("Lizard", gameObject);
+    }
     public void Play_LittleBlue()
     {
         AkSoundEngine.PostEvent("LilBlue", gameObject);

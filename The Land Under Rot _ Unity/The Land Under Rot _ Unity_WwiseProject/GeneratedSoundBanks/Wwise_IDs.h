@@ -41,6 +41,7 @@ namespace AK
         static const AkUniqueID INT_GONG = 1297618496U;
         static const AkUniqueID LADYTREE = 763473049U;
         static const AkUniqueID LILBLUE = 1424246264U;
+        static const AkUniqueID LIZARD = 3858407449U;
         static const AkUniqueID MULCHANT = 2403460855U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID PEABODY = 1839764065U;
