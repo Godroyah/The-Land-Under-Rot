@@ -46,6 +46,7 @@ public class Branch_Event : Event_Type
         gameController = GameController.Instance;
         if ((branchType == Branch_Type.STAR && gameController.starBranchDown) || (branchType == Branch_Type.WILLOW && gameController.willowBranchDown))
         {
+            
             branch.transform.position = gameController.branchEndPos;
         }
 
@@ -69,7 +70,7 @@ public class Branch_Event : Event_Type
 
         yield return new WaitForSeconds(branchDelay);
 
-        //AudioManager.Instance.Play_ClearingBranches();
+     //   AudioManager.Instance.Play_Cordyceps_GoingUnderground();
         //AudioManager.Instance.Play_MassiveRootsMoving();
 
         if (branchType == Branch_Type.STAR)
@@ -87,6 +88,7 @@ public class Branch_Event : Event_Type
             branch.transform.position = Vector3.Lerp(branch.transform.position, branchLoweredPos, dropSpeedBranch * Time.deltaTime);
             dropSpeedBranch += branchIteration * Time.deltaTime;
             Debug.Log("Lowering!");
+            
             yield return null;
         }
         Debug.Log("Getting here?");

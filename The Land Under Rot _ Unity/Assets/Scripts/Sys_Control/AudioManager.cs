@@ -358,7 +358,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play_ClearingBranches()
     {
-        //     AkSoundEngine.PostEvent("stg_growth_function", gameObject);
+        AkSoundEngine.PostEvent("int_cordyceps", gameObject);
     }
 
     public void Play_Mulch_Smash()

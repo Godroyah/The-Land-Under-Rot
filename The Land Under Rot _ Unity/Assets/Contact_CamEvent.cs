@@ -20,10 +20,12 @@ public class Contact_CamEvent : Interactable
         if(branch == Branch_Type.STAR && gameController.starTreeAwake)
         {
             thisCollider.enabled = true;
+            
         }
         else if(branch == Branch_Type.WILLOW && gameController.willowTreeAwake)
         {
             thisCollider.enabled = true;
+            
         }
         else
         {
