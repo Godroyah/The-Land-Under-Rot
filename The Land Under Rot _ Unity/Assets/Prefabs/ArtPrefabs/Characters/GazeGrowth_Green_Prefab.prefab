@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScene: 0
+  conversation: {fileID: 0}
   shots:
   - name: 
     canGlide: 0
@@ -270,6 +271,9 @@ MonoBehaviour:
     transitionSpeed: 3
     viewpoint: {fileID: 1094251464}
   currentTime: 0
+  currentScene: 0
+  isInteractable: 0
+  lastShot: 0
 --- !u!1 &260230007982805765
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733519546757518798}
   m_LocalRotation: {x: 0.044067603, y: 0.9480855, z: -0.0646251, w: -0.308246}
-  m_LocalPosition: {x: -0.10117583, y: -0.007915533, z: 0.0053638155}
+  m_LocalPosition: {x: -0.102, y: -0.0147, z: 0.0233}
   m_LocalScale: {x: 0.033193305, y: 0.03319331, z: 0.033193313}
   m_Children: []
   m_Father: {fileID: 7668208589892421269}
@@ -729,6 +733,7 @@ MonoBehaviour:
   cinematicCamera: {fileID: 2070275744}
   interactionStarted: 0
   alwaysInteract: 1
+  interactableShots: 0
   canSound: 0
 --- !u!114 &1484275731219479420
 MonoBehaviour:
@@ -749,6 +754,7 @@ MonoBehaviour:
   headButtActivation: 1
   dialogueActivation: 0
   triggerActivation: 0
+  doneTalking: 0
   growthType: 2
   animator: {fileID: 545899605737881947}
   changeDelay: 3

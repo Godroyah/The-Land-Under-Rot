@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScene: 0
+  conversation: {fileID: 0}
   shots:
   - name: 
     canGlide: 0
@@ -228,6 +229,9 @@ MonoBehaviour:
     transitionSpeed: 3
     viewpoint: {fileID: 1672013137}
   currentTime: 0
+  currentScene: 0
+  isInteractable: 0
+  lastShot: 0
 --- !u!114 &1071913500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +291,9 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  m_AfterStackBundles:
+  - assemblyQualifiedName: TextureFog, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &148285484046674970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +353,9 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  m_AfterStackBundles:
+  - assemblyQualifiedName: TextureFog, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &865244945854001048
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733519546757518798}
   m_LocalRotation: {x: -0, y: 0.9467336, z: -0, w: -0.32201785}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.49, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2080297379611150314}
@@ -473,8 +481,10 @@ MonoBehaviour:
   headButtActivation: 1
   dialogueActivation: 0
   triggerActivation: 0
+  doneTalking: 0
   growthType: 1
   animator: {fileID: 6664170028224856006}
+  interactionObject: 0
   cordysepBarrier: {fileID: 0}
   lowerDistance: 30
   cordyDelay: 4
@@ -512,6 +522,7 @@ MonoBehaviour:
   cinematicCamera: {fileID: 2070275744}
   interactionStarted: 0
   alwaysInteract: 1
+  interactableShots: 0
   canSound: 0
 --- !u!135 &1723247698529803422
 SphereCollider:
