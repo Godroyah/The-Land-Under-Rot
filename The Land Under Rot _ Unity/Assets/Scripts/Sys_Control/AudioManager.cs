@@ -184,6 +184,10 @@ public class AudioManager : MonoBehaviour
     {
 
     }
+    public void Play_MineCart()
+    {
+        AkSoundEngine.PostEvent("env_MineCart", gameObject);
+    }
 
     public void Play_PipesSteam()
     {

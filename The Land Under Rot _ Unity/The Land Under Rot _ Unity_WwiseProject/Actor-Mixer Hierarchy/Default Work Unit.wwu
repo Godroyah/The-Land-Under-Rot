@@ -1147,6 +1147,37 @@
 								<ActiveSource Name="FlowerBloom" ID="{4C954FD0-26A6-44BE-B56A-542B19CF82AE}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="lur_sfx_ENV_MineCart" ID="{0A15909D-579A-47BE-9913-29425347FE93}" ShortID="753724012">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-100</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2E266CD6-309A-43C1-9A42-480633DD373D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Minecart" ID="{6FFE6C58-10B1-4E31-B265-040202DAADA7}" ShortID="962178755">
+									<Language>SFX</Language>
+									<AudioFile>Minecart.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Minecart" ID="{6FFE6C58-10B1-4E31-B265-040202DAADA7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="VOX Actor Mixer" ID="{BEE2A2B9-97E2-404A-93AA-4E692ECBA26E}" ShortID="918045649">

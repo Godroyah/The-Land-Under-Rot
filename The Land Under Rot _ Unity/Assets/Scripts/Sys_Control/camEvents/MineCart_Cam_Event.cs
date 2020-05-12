@@ -57,7 +57,7 @@ public class MineCart_Cam_Event : Event_Type
     IEnumerator FollowTrack()
     {
         started = true;
-        //AudioManager.Instance.
+        AudioManager.Instance.Play_MineCart();
 
         targetDirection = wayPoint.position - tipAxis.position;
         distToPoint = Vector3.Distance(tipAxis.position, wayPoint.position);
