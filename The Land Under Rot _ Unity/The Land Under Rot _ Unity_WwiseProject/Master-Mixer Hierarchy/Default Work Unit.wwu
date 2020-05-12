@@ -57,24 +57,30 @@
 							</PropertyList>
 							<ChildrenList>
 								<Bus Name="Mulchant Bus" ID="{6481A2F0-F2B4-42B8-A963-BA475598EB60}">
-									<ReferenceList>
-										<Reference Name="Effect0">
-											<Custom>
-												<Effect Name="Wwise_Meter_(Custom)" ID="{FF23AA61-C72A-4D12-9997-0B986367D9F8}" ShortID="1000041576" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
-													<PropertyList>
-														<Property Name="AttackTime" Type="Real32" Value="0.3"/>
-														<Property Name="ReleaseTime" Type="Real32" Value="1"/>
-													</PropertyList>
-													<PluginData>
-	<GameParameter Name="Mulchant_Side_Chain" ID="{E7E5D438-3011-4F9F-93C8-3A6F1665CE32}"/>
-</PluginData>
-												</Effect>
-											</Custom>
-										</Reference>
-									</ReferenceList>
+									<PropertyList>
+										<Property Name="RecoveryTime" Type="Real64" Value="0"/>
+									</PropertyList>
+									<ReferenceList/>
+									<DuckingList>
+										<DuckItem>
+											<BusRef Name="Music Bus" ID="{5F9E27B6-4A9B-4829-A920-BC7208968F9A}"/>
+											<DuckingParam>
+												<Volume>-96</Volume>
+												<FadeInTime>1</FadeInTime>
+												<FadeOutTime>1</FadeOutTime>
+												<FadeCurve>FadeLog2</FadeCurve>
+												<TargetProp>BusVolume</TargetProp>
+											</DuckingParam>
+										</DuckItem>
+									</DuckingList>
 								</Bus>
 								<Bus Name="Music Bus" ID="{5F9E27B6-4A9B-4829-A920-BC7208968F9A}">
 									<PropertyList>
+										<Property Name="BusVolume" Type="Real64">
+											<ValueList>
+												<Value>-1</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<RTPCList>
 												<RTPC Name="" ID="{10418F4A-45A6-4433-8674-446CC60D42AB}" ShortID="750113906">
@@ -97,7 +103,6 @@
 																<XPos>-29.86838</XPos>
 																<YPos>0</YPos>
 																<Flags>0</Flags>
-																<SegmentShape>Exp2</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>-19.95929</XPos>

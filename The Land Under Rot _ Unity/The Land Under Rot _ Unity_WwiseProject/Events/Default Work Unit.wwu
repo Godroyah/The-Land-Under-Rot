@@ -108,6 +108,10 @@
 						<Event Name="Start_Mulchant_Theme" ID="{92A8F64B-E2A5-4ED0-B7B9-D7795E5DE8AE}">
 							<ChildrenList>
 								<Action Name="" ID="{FC682CD7-4084-45E6-97E6-0B5FC6A05C7B}" ShortID="857207567">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Mulchant Theme" ID="{6FE99508-DEE8-46E6-ACAB-84FAF2127C10}" WorkUnitID="{886A306B-F36B-47C5-881A-4B6B26EAE9AE}"/>
@@ -337,7 +341,7 @@
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
 										<Property Name="FadeOutCurve" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">

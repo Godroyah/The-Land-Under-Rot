@@ -949,7 +949,6 @@
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
 									</PropertyList>
-									<ReferenceList/>
 									<TransitionInfo>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{F823FB63-659F-4E71-8DA1-3A8050B55D8D}">
@@ -975,7 +974,6 @@
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
 									</PropertyList>
-									<ReferenceList/>
 									<TransitionInfo>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{ABF6AB5A-03AF-4980-A745-E7E8BBCFB3F7}">
@@ -1107,7 +1105,27 @@
 					</EntryList>
 				</MusicSwitchContainer>
 				<MusicPlaylistContainer Name="Mulchant Theme" ID="{6FE99508-DEE8-46E6-ACAB-84FAF2127C10}" ShortID="831788160">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="HoldListenerOrientation" Type="bool" Value="True"/>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="ListenerRelativeRouting" Type="bool" Value="False"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="MulchantThemeAttenuation" ID="{2AF744AB-06E7-4024-BE39-A70AB33C56B3}" WorkUnitID="{0CAC945D-5DED-4C22-B131-50E9776A78F9}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="MX Conversion Settings" ID="{C863ABF0-325F-43EB-8056-4D2297141BD5}" WorkUnitID="{BE899764-8F02-4853-ABA2-A643FF648958}"/>
 						</Reference>
@@ -1176,6 +1194,9 @@
 							</CueList>
 						</MusicSegment>
 					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{A7169B55-9A20-4301-B7B3-381454BB200D}"/>
+					</PositioningInfo>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{DEADA524-8857-4B62-A200-DCEF44E093A4}">
 							<PropertyList>

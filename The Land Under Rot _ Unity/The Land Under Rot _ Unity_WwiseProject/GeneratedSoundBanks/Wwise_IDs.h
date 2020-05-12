@@ -70,6 +70,7 @@ namespace AK
         static const AkUniqueID STG_ANGEL_TREE_AWAKENED = 745316089U;
         static const AkUniqueID STG_GROWTH_FUNCTION = 1530319798U;
         static const AkUniqueID STG_OBTAIN_MULCH = 3226351339U;
+        static const AkUniqueID STOP_MULCHANT_THEME = 1323879804U;
         static const AkUniqueID STRAWBERRY = 3554262370U;
         static const AkUniqueID WILLOWTREE = 3564066907U;
     } // namespace EVENTS
@@ -96,7 +97,6 @@ namespace AK
                 static const AkUniqueID FINAL_ANAMATIC = 350280330U;
                 static const AkUniqueID FRUITFUL_FOREST = 2199362622U;
                 static const AkUniqueID MAIN_MENU = 2005704188U;
-                static const AkUniqueID MULCHANT_THEME = 2745733789U;
                 static const AkUniqueID OPENING_CINEMATIC = 367308553U;
                 static const AkUniqueID STINKHORN = 2675958751U;
                 static const AkUniqueID TREE_SEAT = 2301024359U;
@@ -106,6 +106,11 @@ namespace AK
         } // namespace LEVELS
 
     } // namespace STATES
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID MULCHANT_SIDE_CHAIN = 975708913U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
@@ -120,6 +125,8 @@ namespace AK
         static const AkUniqueID HD_BUS = 2772244527U;
         static const AkUniqueID LD_BUS = 879536147U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MULCHANT_BUS = 4190892565U;
+        static const AkUniqueID MUSIC_BUS = 3127962312U;
         static const AkUniqueID MX_BUS = 3027868960U;
         static const AkUniqueID SFX_BUS = 1502772432U;
     } // namespace BUSSES
