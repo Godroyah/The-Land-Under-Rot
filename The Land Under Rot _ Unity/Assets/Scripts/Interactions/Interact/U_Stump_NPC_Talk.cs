@@ -131,6 +131,7 @@ public class U_Stump_NPC_Talk : Interactable
 
     IEnumerator Spud()
     {
+        AudioManager.Instance.Play_Spud();
         if (!isIntroduced)
         {
             dialogueManager.StartDialogue(Reply.Spud_Intro);
