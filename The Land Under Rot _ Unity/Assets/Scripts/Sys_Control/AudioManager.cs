@@ -337,7 +337,10 @@ public class AudioManager : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Willowtree", gameObject);
     }
-
+    public void Play_Willow()
+    {
+        AkSoundEngine.PostEvent("Willow", gameObject);
+    }
 
 
     public void Play_Lizard_Walk()

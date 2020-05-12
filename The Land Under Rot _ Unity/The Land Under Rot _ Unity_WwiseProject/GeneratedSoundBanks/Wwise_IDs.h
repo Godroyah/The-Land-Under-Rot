@@ -73,6 +73,7 @@ namespace AK
         static const AkUniqueID STG_OBTAIN_MULCH = 3226351339U;
         static const AkUniqueID STOP_MULCHANT_THEME = 1323879804U;
         static const AkUniqueID STRAWBERRY = 3554262370U;
+        static const AkUniqueID WILLOW = 1677918323U;
         static const AkUniqueID WILLOWTREE = 3564066907U;
     } // namespace EVENTS
 

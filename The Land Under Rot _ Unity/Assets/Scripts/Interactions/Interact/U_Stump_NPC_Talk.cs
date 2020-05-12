@@ -100,6 +100,7 @@ public class U_Stump_NPC_Talk : Interactable
 
     IEnumerator WillowTree()
     {
+        AudioManager.Instance.Play_Willow();
         if (!gameController.underStumpLightsOn)
         {
             if (!gameController.willowTreeAwake)
