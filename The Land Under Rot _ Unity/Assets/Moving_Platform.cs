@@ -8,6 +8,8 @@ public class Moving_Platform : MonoBehaviour
     //public Platform[] waypoints;
     public int currentPlatform = 0;
     Transform currentWaypoint;
+    [SerializeField]
+    Transform playerParent;
 
     public float snap;
     public float transitionSpeed;
@@ -73,13 +75,18 @@ public class Moving_Platform : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
-        other.transform.parent = transform;
+        {
+            playerParent = other.transform.root;
+            if(playerParent != transform)
+            playerParent.parent = transform;
+        }
+       
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-            other.transform.parent = null;
+           playerParent.parent = null;
     }
 
     //private void LateUpdate()
