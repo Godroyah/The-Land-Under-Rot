@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool prepCamEvent;
     public bool hasActiveDialogue = false;
+    //public bool hasRecurringDialogue = false;
 
     [Header("Scene Testing")]
     public GameObject TestScene;
